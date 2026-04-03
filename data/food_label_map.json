@@ -1,0 +1,142 @@
+{
+  "biryani": {
+    "display_name": "Biryani",
+    "indb_recipe_name": "Biryani",
+    "fallback_source": "INDB",
+    "density_g_per_cm3": 1.2,
+    "default_serving_size_g": 250,
+    "nutrition_per_100g": {
+      "calories": 280,
+      "protein_g": 11.5,
+      "carbs_g": 35.0,
+      "fat_g": 8.0,
+      "fiber_g": 2.8
+    }
+  },
+  "dal_makhani": {
+    "display_name": "Dal Makhani",
+    "indb_recipe_name": "Dal Makhani",
+    "fallback_source": "INDB",
+    "density_g_per_cm3": 1.3,
+    "default_serving_size_g": 180,
+    "nutrition_per_100g": {
+      "calories": 290,
+      "protein_g": 12.0,
+      "carbs_g": 25.0,
+      "fat_g": 14.5,
+      "fiber_g": 5.2
+    }
+  },
+  "dosa": {
+    "display_name": "Dosa",
+    "indb_recipe_name": "Dosa",
+    "fallback_source": "INDB",
+    "density_g_per_cm3": 0.8,
+    "default_serving_size_g": 120,
+    "nutrition_per_100g": {
+      "calories": 170,
+      "protein_g": 4.5,
+      "carbs_g": 30.0,
+      "fat_g": 2.5,
+      "fiber_g": 2.1
+    }
+  },
+  "samosa": {
+    "display_name": "Samosa",
+    "indb_recipe_name": "Samosa",
+    "fallback_source": "INDB",
+    "density_g_per_cm3": 0.9,
+    "default_serving_size_g": 60,
+    "nutrition_per_100g": {
+      "calories": 150,
+      "protein_g": 3.2,
+      "carbs_g": 18.0,
+      "fat_g": 7.8,
+      "fiber_g": 1.8
+    }
+  },
+  "paneer_butter": {
+    "display_name": "Paneer Butter Masala",
+    "indb_recipe_name": "Paneer Butter Masala",
+    "fallback_source": "INDB",
+    "density_g_per_cm3": 1.1,
+    "default_serving_size_g": 200,
+    "nutrition_per_100g": {
+      "calories": 320,
+      "protein_g": 14.0,
+      "carbs_g": 12.0,
+      "fat_g": 22.0,
+      "fiber_g": 3.1
+    }
+  },
+  "chole_bhature": {
+    "display_name": "Chole Bhature",
+    "indb_recipe_name": "Chole Bhature",
+    "fallback_source": "INDB",
+    "density_g_per_cm3": 1.0,
+    "default_serving_size_g": 300,
+    "nutrition_per_100g": {
+      "calories": 350,
+      "protein_g": 8.5,
+      "carbs_g": 45.0,
+      "fat_g": 12.0,
+      "fiber_g": 4.2
+    }
+  },
+  "idli": {
+    "display_name": "Idli",
+    "indb_recipe_name": "Idli",
+    "fallback_source": "INDB",
+    "density_g_per_cm3": 0.7,
+    "default_serving_size_g": 80,
+    "nutrition_per_100g": {
+      "calories": 110,
+      "protein_g": 3.2,
+      "carbs_g": 22.0,
+      "fat_g": 0.3,
+      "fiber_g": 1.8
+    }
+  },
+  "vada_pav": {
+    "display_name": "Vada Pav",
+    "indb_recipe_name": "Vada Pav",
+    "fallback_source": "INDB",
+    "density_g_per_cm3": 0.85,
+    "default_serving_size_g": 150,
+    "nutrition_per_100g": {
+      "calories": 220,
+      "protein_g": 6.1,
+      "carbs_g": 28.0,
+      "fat_g": 8.5,
+      "fiber_g": 2.5
+    }
+  },
+  "rajma": {
+    "display_name": "Rajma",
+    "indb_recipe_name": "Rajma",
+    "fallback_source": "INDB",
+    "density_g_per_cm3": 1.25,
+    "default_serving_size_g": 200,
+    "nutrition_per_100g": {
+      "calories": 180,
+      "protein_g": 9.2,
+      "carbs_g": 28.0,
+      "fat_g": 5.5,
+      "fiber_g": 6.8
+    }
+  },
+  "kitchdi": {
+    "display_name": "Khichdi",
+    "indb_recipe_name": "Khichdi",
+    "fallback_source": "INDB",
+    "density_g_per_cm3": 1.15,
+    "default_serving_size_g": 220,
+    "nutrition_per_100g": {
+      "calories": 150,
+      "protein_g": 5.8,
+      "carbs_g": 25.0,
+      "fat_g": 3.2,
+      "fiber_g": 2.9
+    }
+  }
+}
