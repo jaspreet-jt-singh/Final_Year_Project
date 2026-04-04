@@ -1,9 +1,11 @@
 # AI Food Recognition — Cascade Rules
+
 ## .windsurf/rules/project.md
 
 ---
+
 trigger: always_on
----
+------------------
 
 > These rules are enforced in EVERY Cascade session.
 > Full project plan is in AGENTS.md at project root — read it before starting any phase.
@@ -20,6 +22,7 @@ trigger: always_on
 - PyTorch build: cu124
 
 Activate venv before any Python command:
+
 ```
 .venv\Scripts\activate
 ```
@@ -75,13 +78,13 @@ Tab 3 (Tests):    cd G:\Projects\Final_Year_Project
 
 ### Long-running commands (NOT stuck — do not interrupt)
 
-| Command | Expected wait |
-|---|---|
-| `npx create-next-app` | 2–3 minutes |
-| `pip install torch` | 5–10 minutes |
-| YOLOv8 first inference | 30–60 seconds |
-| `npm install` | 1–2 minutes |
-| YOLO training | 3–4 hours |
+| Command                 | Expected wait  |
+| ----------------------- | -------------- |
+| `npx create-next-app` | 2–3 minutes   |
+| `pip install torch`   | 5–10 minutes  |
+| YOLOv8 first inference  | 30–60 seconds |
+| `npm install`         | 1–2 minutes   |
+| YOLO training           | 3–4 hours     |
 
 ---
 
@@ -159,6 +162,7 @@ curl -UseBasicParsing http://localhost:8000/api/health
 - NEVER commit `.env`
 
 `.gitignore` must always contain:
+
 ```gitignore
 .venv/
 __pycache__/
@@ -196,3 +200,11 @@ Thumbs.db
 
 The user will say: "Stop. Re-read @AGENTS.md [Phase X]."
 Immediately revert the incorrect change and follow AGENTS.md exactly.
+
+## Notebook Execution
+
+- Windsurf: writes and edits .ipynb files only
+- VS Code: runs all .ipynb files (Jupyter works correctly there)
+- Cascade must NEVER try to execute notebook cells
+- Cascade must NEVER try to start a Jupyter kernel
+- Workflow: Cascade writes notebook → user opens in VS Code → user runs manually
