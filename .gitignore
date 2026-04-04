@@ -1,1 +1,7 @@
-/.*
+.venv/
+.env
+__pycache__/
+*.pyc
+models/*.pt
+.next/
+node_modules/
