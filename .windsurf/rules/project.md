@@ -84,7 +84,7 @@ Tab 3 (Tests):    cd G:\Projects\Final_Year_Project
 | `pip install torch`   | 5–10 minutes  |
 | YOLOv8 first inference  | 30–60 seconds |
 | `npm install`         | 1–2 minutes   |
-| YOLO training           | 3–4 hours     |
+| YOLO training           | 2–3 hours     |
 
 ---
 
@@ -121,23 +121,42 @@ curl -UseBasicParsing http://localhost:8000/api/health
 
 ## Vision Model Rules
 
-- ONE YOLOv8n-seg model only
-- NEVER add: EfficientNet, FastSAM, separate classifier, second detector
-- Model path via env: `os.getenv("YOLO_MODEL_PATH", "models/yolov8n-seg.pt")`
+- ONE YOLOv8n **detection** model only — task=detect, never task=segment
+- NEVER use: yolov8n-seg, EfficientNet, FastSAM, separate classifier, second detector
+- Model path via env: `os.getenv("YOLO_MODEL_PATH", "models/yolov8n.pt")`
 - All PyTorch inference → `asyncio.run_in_executor` (never block event loop)
 - Resize all uploads to max 1024px before inference
 - SQLite → always `check_same_thread=False`
+- Use `model(image)[0].boxes` — detection boxes only, never `.masks`
 
 ---
 
 ## YOLO Training Rules (Local GPU)
 
 - batch=8, amp=True, workers=2, device=0 (MANDATORY for 4GB VRAM)
-- Training script: `python backend\scripts\train_yolo_seg.py`
+- Training script: `python backend\scripts\train_yolo_det.py`
 - Training notebook: `notebooks/02_train_yolo.ipynb`
 - Monitor: `nvidia-smi -l 3` in separate terminal
-- Output: `models/yolov8_indian_seg.pt` + `models/class_names.json`
-- After training: update `.env` → `YOLO_MODEL_PATH=models/yolov8_indian_seg.pt`
+- Output: `models/yolov8n_indian.pt` + `models/class_names.json`
+- After training: update `.env` → `YOLO_MODEL_PATH=models/yolov8n_indian.pt`
+
+---
+
+## Data & Database Rules
+
+- **Single DB table: `indb_recipes`** — INDB.xlsx is the only source imported
+- **NIN_fct.xlsx is never read or imported** — it covers raw ingredients only, not composite dishes
+- **No `food_label_map.json`** — never create it; the DB is the only lookup source
+- **No `ifct_ingredients` table** — never create it; assert its absence in test_phase0.py
+- All macros stored and returned **per 100g** — no serving size scaling anywhere
+- YOLO label normalisation: `label.replace("_", " ").title()` inside `nutrition_service.py` only
+- DB lookup: `WHERE LOWER(name) = LOWER(?)` — never case-sensitive
+- Column rename on import (INDB raw → DB schema):
+  - `energy_kcal` → `calories`
+  - `carb_g`      → `carbs_g`
+  - `protein_g`   → `protein_g` (unchanged)
+  - `fat_g`       → `fat_g`     (unchanged)
+- Known missing foods (always return `food_not_found: true`): `kathi_roll`, `vada_pav`, `momos`
 
 ---
 
@@ -152,6 +171,18 @@ curl -UseBasicParsing http://localhost:8000/api/health
 - Never import a component before that file is fully written
 - Zustand for ALL state — no Redux, no prop drilling
 - Canvas bbox → ALWAYS scale: `scaleX = canvas.offsetWidth / img_width`
+- Add `'use client'` to every component using Zustand hooks, onClick, onChange, or browser APIs
+- NEVER add `'use client'` to `layout.tsx` or `page.tsx`
+
+### Zustand Store Rules
+
+- Use `persist` middleware for `userProfile` field ONLY
+- All other state (imageFile, imageUrl, result, isLoading, error) is session-only — never persisted
+- Persist config:
+  ```typescript
+  { name: "nutrigen-user-profile", partialize: (state) => ({ userProfile: state.userProfile }) }
+  ```
+- Install: `npm install zustand` — persist is built-in, no extra package needed
 
 ---
 
@@ -201,6 +232,8 @@ Thumbs.db
 The user will say: "Stop. Re-read @AGENTS.md [Phase X]."
 Immediately revert the incorrect change and follow AGENTS.md exactly.
 
+---
+
 ## Notebook Execution
 
 - Windsurf: writes and edits .ipynb files only
@@ -208,3 +241,11 @@ Immediately revert the incorrect change and follow AGENTS.md exactly.
 - Cascade must NEVER try to execute notebook cells
 - Cascade must NEVER try to start a Jupyter kernel
 - Workflow: Cascade writes notebook → user opens in VS Code → user runs manually
+
+---
+
+## Line Endings
+
+- All files use LF line endings (not CRLF)
+- .gitattributes enforces this automatically
+- Never change line endings manually
