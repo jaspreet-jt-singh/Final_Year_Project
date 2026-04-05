@@ -3,19 +3,35 @@ FastAPI Backend for AI Food Recognition
 Phase 1: Working Food Recognition MVP
 """
 
-from fastapi import FastAPI, File, UploadFile, HTTPException
+from fastapi import FastAPI, File, UploadFile, HTTPException, Form, Request
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import JSONResponse
+from slowapi import Limiter, _rate_limit_exceeded_handler
+from slowapi.util import get_remote_address
+from slowapi.errors import RateLimitExceeded
 import uvicorn
 import os
-import json
-import sqlite3
+import asyncio
+import concurrent.futures
 from pathlib import Path
 import logging
+import torch
+from ultralytics import YOLO
+from dotenv import load_dotenv
+
+# Load environment variables
+load_dotenv()
+
+# Import services
+from services.vision_service import VisionService
+from services.nutrition_service import NutritionService
 
 # Setup logging
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
+
+# Initialize rate limiter
+limiter = Limiter(key_func=get_remote_address)
 
 # Initialize FastAPI app
 app = FastAPI(
@@ -24,121 +40,78 @@ app = FastAPI(
     version="1.0.0"
 )
 
+# Add rate limit exception handler
+app.state.limiter = limiter
+app.add_exception_handler(RateLimitExceeded, _rate_limit_exceeded_handler)
+
 # Add CORS middleware
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],  # For development, restrict in production
+    allow_origins=["http://localhost:3000"],  # Next.js frontend
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
 )
 
-# Global variables for model and data
-model_loaded = False
-food_label_map = None
-nutrition_db_path = None
-
-def load_food_label_map():
-    """Load food label mapping from Phase 0 data"""
-    global food_label_map
-    try:
-        food_map_path = Path(__file__).parent.parent / "data" / "food_label_map.json"
-        with open(food_map_path, 'r') as f:
-            food_label_map = json.load(f)
-        logger.info(f"Loaded food label map with {len(food_label_map)} classes")
-        return True
-    except Exception as e:
-        logger.error(f"Error loading food label map: {e}")
-        return False
-
-def initialize_nutrition_db():
-    """Initialize nutrition database connection"""
-    global nutrition_db_path
-    try:
-        nutrition_db_path = Path(__file__).parent.parent / "data" / "nutrition.db"
-        if nutrition_db_path.exists():
-            logger.info("Nutrition database initialized")
-            return True
-        else:
-            logger.error("Nutrition database not found")
-            return False
-    except Exception as e:
-        logger.error(f"Error initializing nutrition database: {e}")
-        return False
-
-def get_nutrition_for_food(food_label: str, serving_size_g: float = None):
-    """Get nutrition information for a food label"""
-    global food_label_map
-    
-    if not food_label_map or food_label not in food_label_map:
-        return None
-    
-    food_data = food_label_map[food_label]
-    nutrition_100g = food_data['nutrition_per_100g']
-    
-    # Use default serving size if not provided
-    if serving_size_g is None:
-        serving_size_g = food_data['default_serving_size_g']
-    
-    # Scale nutrition to serving size
-    factor = serving_size_g / 100.0
-    
-    return {
-        "food_label": food_label,
-        "display_name": food_data['display_name'],
-        "estimated_mass_g": serving_size_g,
-        "mass_source": "default_serving_size",
-        "macros": {
-            "calories": round(nutrition_100g['calories'] * factor, 1),
-            "protein_g": round(nutrition_100g['protein_g'] * factor, 1),
-            "carbs_g": round(nutrition_100g['carbs_g'] * factor, 1),
-            "fat_g": round(nutrition_100g['fat_g'] * factor, 1)
-        },
-        "nutrition_source": food_data['fallback_source']
-    }
+# Global variables
+vision_service = None
+nutrition_service = None
+executor = concurrent.futures.ThreadPoolExecutor(max_workers=2)
 
 @app.on_event("startup")
 async def startup_event():
     """Initialize the application on startup"""
-    global model_loaded
+    global vision_service, nutrition_service
     
     logger.info("Starting AI Food Recognition API...")
     
-    # Load Phase 0 data
-    food_map_loaded = load_food_label_map()
-    db_initialized = initialize_nutrition_db()
-    
-    # For Phase 1, we'll simulate model loading
-    # In production, this would load the actual YOLOv8-seg model
-    model_loaded = food_map_loaded and db_initialized
-    
-    if model_loaded:
-        logger.info("✅ Backend initialized successfully")
-        logger.info("🎯 Phase 1 MVP ready")
-    else:
-        logger.error("❌ Backend initialization failed")
+    try:
+        # Initialize nutrition service
+        nutrition_service = NutritionService()
+        await nutrition_service.initialize()
+        logger.info("Nutrition service initialized")
+        
+        # Initialize vision service
+        vision_service = VisionService()
+        await vision_service.initialize()
+        logger.info("Vision service initialized")
+        
+        # Warm-up pass on dummy black image
+        await vision_service.warmup()
+        logger.info("Model warm-up completed")
+        
+        logger.info("Phase 1 MVP ready")
+        
+    except Exception as e:
+        logger.error(f"Backend initialization failed: {e}")
+        raise
 
 @app.get("/api/health")
 async def health_check():
     """Health check endpoint"""
     return {
         "status": "ok",
-        "model_loaded": model_loaded,
+        "model_loaded": vision_service is not None and vision_service.model is not None,
         "phase": "1",
         "description": "AI Food Recognition - Phase 1 MVP"
     }
 
 @app.post("/api/analyze-food")
-async def analyze_food(file: UploadFile = File(...)):
+@limiter.limit("5/minute")
+async def analyze_food(request: Request, file: UploadFile = File(...)):
     """
     Analyze uploaded food image and return nutrition information
-    Phase 1: Returns simulated results with real nutrition data
+    Phase 1: Real YOLO detection + SQLite nutrition lookup
     """
     
-    if not model_loaded:
+    # Debug logging
+    logger.info(f"Received file upload request: {file.filename if file else 'No file'}")
+    logger.info(f"File content type: {file.content_type if file else 'No file'}")
+    
+    if not vision_service or not nutrition_service:
         raise HTTPException(
             status_code=503, 
-            detail="Model not loaded. Please check /api/health"
+            detail="Services not initialized. Please check /api/health"
         )
     
     # Validate file type
@@ -148,40 +121,72 @@ async def analyze_food(file: UploadFile = File(...)):
             detail="File must be an image"
         )
     
+    # Validate file size (10MB limit)
+    content = await file.read()
+    if len(content) > 10 * 1024 * 1024:
+        raise HTTPException(
+            status_code=400,
+            detail="File size must be less than 10MB"
+        )
+    
     try:
-        # Read image content (for Phase 1, we don't actually process it)
-        image_content = await file.read()
+        # Run vision inference in thread pool to avoid blocking
+        detection_result = await asyncio.get_event_loop().run_in_executor(
+            executor, 
+            vision_service.analyze_image, 
+            content
+        )
         
-        # Phase 1: Simulate food detection
-        # In production, this would use YOLOv8-seg model
-        simulated_results = [
-            {"food_label": "biryani", "confidence": 0.91},
-            {"food_label": "dal_makhani", "confidence": 0.85},
-            {"food_label": "dosa", "confidence": 0.78},
-            {"food_label": "samosa", "confidence": 0.72}
-        ]
-        
-        # Get the highest confidence result
-        best_result = max(simulated_results, key=lambda x: x['confidence'])
-        food_label = best_result['food_label']
-        confidence = best_result['confidence']
-        
-        # Get nutrition information
-        nutrition_info = get_nutrition_for_food(food_label)
-        
-        if nutrition_info is None:
+        if not detection_result:
             raise HTTPException(
                 status_code=404,
-                detail=f"Nutrition information not found for {food_label}"
+                detail="No food detected in image"
             )
         
-        # Add confidence to response
-        nutrition_info['confidence'] = confidence
-        nutrition_info['food_not_found'] = False
+        # Get nutrition information
+        nutrition_info = await nutrition_service.get_nutrition_for_food(
+            detection_result["food_label"]
+        )
         
-        logger.info(f"Analyzed food: {food_label} with confidence {confidence}")
+        if nutrition_info is None:
+            # Handle known missing foods
+            missing_foods = ["kathi_roll", "vada_pav", "momos"]
+            if detection_result["food_label"] in missing_foods:
+                return {
+                    "food_label": detection_result["food_label"],
+                    "display_name": detection_result["food_label"].replace("_", " ").title(),
+                    "confidence": detection_result["confidence"],
+                    "bounding_box": detection_result["bounding_box"],
+                    "img_width": detection_result["img_width"],
+                    "img_height": detection_result["img_height"],
+                    "macros": None,
+                    "macros_unit": "per_100g",
+                    "nutrition_source": None,
+                    "food_not_found": True
+                }
+            else:
+                raise HTTPException(
+                    status_code=404,
+                    detail=f"Nutrition information not found for {detection_result['food_label']}"
+                )
         
-        return JSONResponse(content=nutrition_info)
+        # Combine detection and nutrition results
+        result = {
+            "food_label": detection_result["food_label"],
+            "display_name": nutrition_info["display_name"],
+            "confidence": detection_result["confidence"],
+            "bounding_box": detection_result["bounding_box"],
+            "img_width": detection_result["img_width"],
+            "img_height": detection_result["img_height"],
+            "macros": nutrition_info["macros"],
+            "macros_unit": "per_100g",
+            "nutrition_source": "INDB",
+            "food_not_found": False
+        }
+        
+        logger.info(f"Analyzed food: {detection_result['food_label']} with confidence {detection_result['confidence']}")
+        
+        return JSONResponse(content=result)
         
     except HTTPException:
         raise

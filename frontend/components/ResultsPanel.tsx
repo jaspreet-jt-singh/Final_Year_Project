@@ -2,29 +2,33 @@
 
 import React from 'react'
 import { CheckCircle, AlertCircle, TrendingUp, Activity, Zap } from 'lucide-react'
+import ImageOverlay from './ImageOverlay'
 
 interface FoodAnalysis {
   food_label: string
   display_name: string
   confidence: number
-  estimated_mass_g: number
-  mass_source: string
+  bounding_box: [number, number, number, number]
+  img_width: number
+  img_height: number
   macros: {
     calories: number
     protein_g: number
     carbs_g: number
     fat_g: number
   }
+  macros_unit: string
   nutrition_source: string
   food_not_found: boolean
 }
 
 interface ResultsPanelProps {
   analysis: FoodAnalysis | null
+  imageUrl: string | null
   isLoading: boolean
 }
 
-export default function ResultsPanel({ analysis, isLoading }: ResultsPanelProps) {
+export default function ResultsPanel({ analysis, imageUrl, isLoading }: ResultsPanelProps) {
   if (isLoading) {
     return (
       <div className="w-full max-w-2xl mx-auto">
@@ -61,35 +65,65 @@ export default function ResultsPanel({ analysis, isLoading }: ResultsPanelProps)
 
   return (
     <div className="w-full max-w-2xl mx-auto space-y-6">
-      {/* Food Identification */}
+      {/* Image with Detection Overlay */}
+      {imageUrl && analysis.bounding_box && (
+        <div className="card">
+          <h3 className="text-lg font-bold text-gray-900 mb-4">Food Detection</h3>
+          <ImageOverlay
+            imageUrl={imageUrl}
+            boundingBox={analysis.bounding_box}
+            confidence={analysis.confidence}
+            foodLabel={analysis.display_name}
+          />
+        </div>
+      )}
+
+      {/* Detection Info */}
       <div className="card">
         <div className="flex items-center justify-between mb-4">
-          <h3 className="text-xl font-bold text-gray-900">Food Identified</h3>
-          <div className={`flex items-center space-x-2 ${getConfidenceColor(analysis.confidence)}`}>
-            {analysis.confidence >= 0.6 ? (
-              <CheckCircle className="w-5 h-5" />
-            ) : (
-              <AlertCircle className="w-5 h-5" />
-            )}
-            <span className="text-sm font-medium">
-              {getConfidenceText(analysis.confidence)}
-            </span>
+          <h3 className="text-xl font-semibold text-gray-900">Detection Results</h3>
+          <div className={`px-3 py-1 rounded-full text-sm font-medium ${
+            analysis.confidence >= 0.8 ? 'bg-green-100 text-green-600' :
+            analysis.confidence >= 0.6 ? 'bg-yellow-100 text-yellow-600' :
+            'bg-red-100 text-red-600'
+          }`}>
+            {(analysis.confidence * 100).toFixed(1)}% confidence
           </div>
         </div>
-        
-        <div className="space-y-3">
-          <div>
-            <h4 className="text-2xl font-bold text-gray-900">{analysis.display_name}</h4>
-            <p className="text-sm text-gray-600">
-              Confidence: {(analysis.confidence * 100).toFixed(1)}%
-            </p>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
+          <div className="bg-gray-50 rounded-lg p-4">
+            <div className="flex items-center space-x-2 mb-2">
+              <CheckCircle className="w-5 h-5 text-green-600" />
+              <span className="font-medium text-gray-900">Detected Food</span>
+            </div>
+            <p className="text-2xl font-bold text-gray-900">{analysis.display_name}</p>
+            <p className="text-sm text-gray-600">Label: {analysis.food_label}</p>
           </div>
           
-          <div className="flex items-center space-x-4 text-sm text-gray-600">
-            <span>Source: {analysis.nutrition_source}</span>
-            <span>•</span>
-            <span>Est. Mass: {analysis.estimated_mass_g}g</span>
+          <div className="bg-gray-50 rounded-lg p-4">
+            <div className="flex items-center space-x-2 mb-2">
+              <Activity className="w-5 h-5 text-blue-600" />
+              <span className="font-medium text-gray-900">Detection Confidence</span>
+            </div>
+            <p className={`text-2xl font-bold ${
+              analysis.confidence >= 0.8 ? 'text-green-600' :
+              analysis.confidence >= 0.6 ? 'text-yellow-600' :
+              'text-red-600'
+            }`}>
+              {(analysis.confidence * 100).toFixed(1)}%
+            </p>
+            <p className="text-sm text-gray-600">
+              {analysis.confidence >= 0.8 ? 'High confidence' : 
+               analysis.confidence >= 0.6 ? 'Medium confidence' : 'Low confidence'}
+            </p>
           </div>
+        </div>
+
+        <div className="flex items-center space-x-4 text-sm text-gray-600">
+          <span>Source: {analysis.nutrition_source}</span>
+          <span>•</span>
+          <span>Unit: {analysis.macros_unit}</span>
         </div>
       </div>
 
@@ -168,25 +202,6 @@ export default function ResultsPanel({ analysis, isLoading }: ResultsPanelProps)
         </div>
       </div>
 
-      {/* Mass Estimation Info */}
-      <div className="card">
-        <h3 className="text-lg font-bold text-gray-900 mb-3">Mass Estimation</h3>
-        <div className="flex items-center justify-between">
-          <div>
-            <p className="text-sm text-gray-600">
-              Estimated using {analysis.mass_source.replace('_', ' ')}
-            </p>
-            <p className="text-xs text-gray-500 mt-1">
-              Phase 1: Using default serving size
-            </p>
-          </div>
-          <div className="text-right">
-            <div className="text-2xl font-bold text-gray-900">
-              {analysis.estimated_mass_g}g
-            </div>
-          </div>
-        </div>
       </div>
-    </div>
   )
 }

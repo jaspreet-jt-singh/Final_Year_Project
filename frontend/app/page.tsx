@@ -10,14 +10,16 @@ interface FoodAnalysis {
   food_label: string
   display_name: string
   confidence: number
-  estimated_mass_g: number
-  mass_source: string
+  bounding_box: [number, number, number, number]
+  img_width: number
+  img_height: number
   macros: {
     calories: number
     protein_g: number
     carbs_g: number
     fat_g: number
   }
+  macros_unit: string
   nutrition_source: string
   food_not_found: boolean
 }
@@ -26,31 +28,70 @@ export default function Home() {
   const [analysis, setAnalysis] = useState<FoodAnalysis | null>(null)
   const [isAnalyzing, setIsAnalyzing] = useState(false)
   const [error, setError] = useState<string | null>(null)
+  const [imageUrl, setImageUrl] = useState<string | null>(null)
 
   const analyzeFood = async (file: File) => {
     setIsAnalyzing(true)
     setError(null)
     setAnalysis(null)
+    setImageUrl(null)
 
     try {
+      // Create image URL for preview
+      const reader = new FileReader()
+      reader.onload = (e) => {
+        setImageUrl(e.target?.result as string)
+      }
+      reader.readAsDataURL(file)
+
       const formData = new FormData()
       formData.append('file', file)
 
       const response = await fetch('http://localhost:8000/api/analyze-food', {
         method: 'POST',
         body: formData,
+        // Don't set Content-Type header - let browser set it automatically for multipart forms
       })
 
       if (!response.ok) {
-        const errorData = await response.json()
-        throw new Error(errorData.detail || 'Failed to analyze food')
+        let errorData
+        try {
+          errorData = await response.json()
+        } catch (e) {
+          errorData = { detail: `HTTP ${response.status}: ${response.statusText}` }
+        }
+        throw new Error(errorData.detail || `Failed to analyze food (${response.status})`)
       }
 
       const result = await response.json()
       setAnalysis(result)
     } catch (err) {
       console.error('Error analyzing food:', err)
-      setError(err instanceof Error ? err.message : 'An error occurred')
+      console.error('Error type:', typeof err)
+      console.error('Error details:', JSON.stringify(err, null, 2))
+      
+      // Direct error display - force string conversion
+      let errorMessage = 'An error occurred'
+      if (err instanceof Error) {
+        errorMessage = err.message
+      } else if (typeof err === 'object' && err !== null) {
+        // Force object to string conversion
+        try {
+          errorMessage = JSON.stringify(err)
+        } catch (e) {
+          errorMessage = String(err)
+        }
+        if (errorMessage === '{}') {
+          errorMessage = 'Failed to analyze food - please try again'
+        }
+      } else if (typeof err === 'string') {
+        errorMessage = err
+      } else {
+        errorMessage = String(err)
+      }
+      
+      console.error('Final error message:', errorMessage)
+      setError(errorMessage)
     } finally {
       setIsAnalyzing(false)
     }
@@ -59,6 +100,7 @@ export default function Home() {
   const resetAnalysis = () => {
     setAnalysis(null)
     setError(null)
+    setImageUrl(null)
   }
 
   return (
@@ -82,7 +124,7 @@ export default function Home() {
             Indian Food Analysis with Nutrition Information
           </p>
           <div className="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-primary-100 text-primary-800">
-            Phase 1 MVP
+            Phase 2: Detection Overlay
           </div>
         </div>
 
@@ -138,6 +180,7 @@ export default function Home() {
               </div>
               <ResultsPanel 
                 analysis={analysis}
+                imageUrl={imageUrl}
                 isLoading={isAnalyzing}
               />
             </div>
@@ -148,19 +191,23 @@ export default function Home() {
         <div className="mt-16 text-center">
           <div className="max-w-2xl mx-auto">
             <div className="bg-white rounded-lg shadow-sm p-6">
-              <h3 className="text-lg font-semibold text-gray-900 mb-3">Phase 1 Features</h3>
+              <h3 className="text-lg font-semibold text-gray-900 mb-3">Phase 2 Features</h3>
               <div className="grid grid-cols-1 md:grid-cols-3 gap-4 text-sm text-gray-600">
                 <div className="text-center">
-                  <div className="font-medium text-gray-900 mb-1">🍛 Food Recognition</div>
+                  <div className="font-medium text-gray-900 mb-1">Food Recognition</div>
                   <p>Identifies Indian dishes from uploaded images</p>
                 </div>
                 <div className="text-center">
-                  <div className="font-medium text-gray-900 mb-1">📊 Nutrition Analysis</div>
+                  <div className="font-medium text-gray-900 mb-1">Detection Overlay</div>
+                  <p>Draws bounding boxes over detected food areas</p>
+                </div>
+                <div className="text-center">
+                  <div className="font-medium text-gray-900 mb-1">Nutrition Analysis</div>
                   <p>Provides calories, protein, carbs, and fat</p>
                 </div>
                 <div className="text-center">
-                  <div className="font-medium text-gray-900 mb-1">⚖️ Portion Estimation</div>
-                  <p>Uses default serving sizes for mass calculation</p>
+                  <div className="font-medium text-gray-900 mb-1">Mobile Responsive</div>
+                  <p>Optimized layout for mobile devices</p>
                 </div>
               </div>
             </div>
