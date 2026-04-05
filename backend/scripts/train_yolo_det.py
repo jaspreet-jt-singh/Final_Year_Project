@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Phase 0: YOLO Detection Training Script
+Phase 0: YOLOv11s Detection Training Script
 Same logic as notebook but as .py for terminal execution
 Usage: python backend\scripts\train_yolo_det.py
 """
@@ -14,7 +14,7 @@ from pathlib import Path
 from ultralytics import YOLO
 
 def main():
-    print("=== Phase 0: YOLO Detection Training ===")
+    print("=== Phase 0: YOLOv11s Detection Training ===")
     
     # Change to project root
     project_root = Path(__file__).parent.parent.parent
@@ -29,15 +29,14 @@ def main():
         print(f"CUDA version: {torch.version.cuda}")
         print(f"GPU device: {torch.cuda.get_device_name(0)}")
         print(f"GPU memory: {torch.cuda.get_device_properties(0).total_memory / 1e9:.1f} GB")
+        device = 0
     else:
         print("WARNING: CUDA not available - training will be very slow!")
         device = "cpu"
-    else:
-        device = 0
     
-    # Load YOLOv8n model for detection
-    print("\n=== Loading Model ===")
-    model = YOLO('yolov8n.pt')  # detection model
+    # Load YOLOv11s model for detection
+    print("\n=== Loading YOLOv11s Model ===")
+    model = YOLO('yolov11s.pt')  # YOLOv11 small model
     
     # Training configuration for 4GB VRAM
     training_args = {
@@ -51,19 +50,19 @@ def main():
         'amp': True,  # Mixed precision
         'save_period': 10,  # Save every 10 epochs
         'project': 'models/runs',
-        'name': 'indian_food_detection'
+        'name': 'indian_food_detection_yolo11s'
     }
     
     print(f"Training args: {training_args}")
     
-    # Train the model
-    print("\n=== Starting Training ===")
+    # Train model
+    print("\n=== Starting YOLOv11s Training ===")
     results = model.train(**training_args)
-    print("✅ Training completed!")
+    print("✅ YOLOv11s training completed!")
     
-    # Copy best model to models/yolov8n_indian.pt
-    print("\n=== Saving Model ===")
-    runs_dir = Path('models/runs/indian_food_detection')
+    # Copy best model to models/yolov11s_indian.pt
+    print("\n=== Saving YOLOv11s Model ===")
+    runs_dir = Path('models/runs/indian_food_detection_yolo11s')
     if runs_dir.exists():
         run_dirs = [d for d in runs_dir.iterdir() if d.is_dir()]
         if run_dirs:
@@ -72,8 +71,8 @@ def main():
             
             if best_model_path.exists():
                 Path('models').mkdir(exist_ok=True)
-                shutil.copy2(best_model_path, 'models/yolov8n_indian.pt')
-                print(f"✅ Copied best model to: models/yolov8n_indian.pt")
+                shutil.copy2(best_model_path, 'models/yolov11s_indian.pt')
+                print(f"✅ Copied best YOLOv11s model to: models/yolov11s_indian.pt")
                 print(f"Original path: {best_model_path}")
             else:
                 print(f"❌ best.pt not found in {latest_run / 'weights'}")
@@ -99,7 +98,7 @@ def main():
     else:
         print(f"❌ data.yaml not found at {data_yaml_path}")
     
-    print("\n✅ Phase 0 YOLO training script completed!")
+    print("\n✅ Phase 0 YOLOv11s training script completed!")
 
 if __name__ == "__main__":
     main()

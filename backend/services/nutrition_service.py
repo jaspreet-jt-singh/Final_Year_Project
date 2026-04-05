@@ -39,26 +39,74 @@ class NutritionService:
     async def get_nutrition_for_food(self, food_label: str) -> dict:
         """
         Get nutrition information for a food label
-        Handles both snake_case and PascalCase YOLO labels
+        Multiple matching strategies for better lookup success
         """
         try:
-            # Handle different YOLO label formats
-            if "_" in food_label:
-                # snake_case → Title Case
-                display_name = food_label.replace("_", " ").title()
+            # Special case handling for common mismatches
+            special_mappings = {
+                "WhiteRice": "White Rice",
+                "whiterice": "White Rice",
+                "White rice": "White Rice"
+            }
+            
+            # Check special mappings first
+            if food_label in special_mappings:
+                display_name = special_mappings[food_label]
+                logger.info(f"Using special mapping: {food_label} → {display_name}")
             else:
-                # PascalCase → Title Case (add spaces before capital letters)
-                import re
-                display_name = re.sub(r'([a-z])([A-Z])', r'\1 \2', food_label)
-                display_name = display_name.title()
+                # Strategy 1: Direct normalization (snake_case → Title Case, PascalCase → Title Case)
+                if "_" in food_label:
+                    display_name = food_label.replace("_", " ").title()
+                else:
+                    # PascalCase → Title Case (add spaces before capital letters)
+                    display_name = re.sub(r'([a-z])([A-Z])', r'\1 \2', food_label)
+                    display_name = display_name.title()
             
             async with aiosqlite.connect(str(self.db_path)) as db:
-                # Case-insensitive lookup
+                # Strategy 1: Exact case-insensitive match
                 cursor = await db.execute(
                     "SELECT name, calories, protein_g, carbs_g, fat_g FROM indb_recipes WHERE LOWER(name) = LOWER(?)",
                     (display_name,)
                 )
                 row = await cursor.fetchone()
+                logger.info(f"Strategy 1 - Looking for: '{display_name}' → Found: {row is not None}")
+                
+                if row is None:
+                    # Strategy 2: Try without spaces (for compound words)
+                    no_space_name = display_name.replace(" ", "")
+                    cursor = await db.execute(
+                        "SELECT name, calories, protein_g, carbs_g, fat_g FROM indb_recipes WHERE LOWER(name) = LOWER(?)",
+                        (no_space_name,)
+                    )
+                    row = await cursor.fetchone()
+                    logger.info(f"Strategy 2 - Looking for: '{no_space_name}' → Found: {row is not None}")
+                
+                if row is None:
+                    # Strategy 3: Try partial match (first word) - but prioritize exact food names
+                    first_word = display_name.split()[0]
+                    cursor = await db.execute(
+                        "SELECT name, calories, protein_g, carbs_g, fat_g FROM indb_recipes WHERE LOWER(name) LIKE LOWER(?) || '%' ORDER BY LENGTH(name) ASC LIMIT 5",
+                        (first_word,)
+                    )
+                    rows = await cursor.fetchall()
+                    # Prefer exact or shorter names over longer ones
+                    if rows:
+                        # Find the best match (prefer shorter names)
+                        best_match = min(rows, key=lambda x: len(x[0]))
+                        if len(best_match[0]) <= len(first_word) + 3:  # Reasonable length check
+                            row = best_match
+                            logger.info(f"Strategy 3 - Selected best match: '{row[0]}' from {len(rows)} options")
+                    else:
+                        logger.info(f"Strategy 3 - No matches found for '{first_word}%'")
+                
+                if row is None:
+                    # Strategy 4: Try original YOLO label (case-insensitive)
+                    cursor = await db.execute(
+                        "SELECT name, calories, protein_g, carbs_g, fat_g FROM indb_recipes WHERE LOWER(name) = LOWER(?)",
+                        (food_label,)
+                    )
+                    row = await cursor.fetchone()
+                    logger.info(f"Strategy 4 - Looking for: '{food_label}' → Found: {row is not None}")
                 
                 if row is None:
                     logger.warning(f"Food not found in database: {display_name} (from YOLO: {food_label})")
