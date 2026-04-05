@@ -16,9 +16,9 @@ interface FoodAnalysis {
     protein_g: number
     carbs_g: number
     fat_g: number
-  }
+  } | null
   macros_unit: string
-  nutrition_source: string
+  nutrition_source: string | null
   food_not_found: boolean
 }
 
@@ -128,79 +128,79 @@ export default function ResultsPanel({ analysis, imageUrl, isLoading }: ResultsP
       </div>
 
       {/* Nutrition Information */}
-      <div className="card">
-        <h3 className="text-xl font-bold text-gray-900 mb-6">Nutrition Information</h3>
-        
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-6">
-          <div className="text-center p-4 bg-orange-50 rounded-lg">
-            <Zap className="w-6 h-6 text-orange-600 mx-auto mb-2" />
-            <div className="text-2xl font-bold text-gray-900">
-              {analysis.macros.calories}
-            </div>
-            <div className="text-sm text-gray-600">Calories</div>
-          </div>
+      {!analysis.food_not_found && analysis.macros && (
+        <div className="card">
+          <h3 className="text-xl font-bold text-gray-900 mb-6">Nutrition Information</h3>
           
-          <div className="text-center p-4 bg-blue-50 rounded-lg">
-            <Activity className="w-6 h-6 text-blue-600 mx-auto mb-2" />
-            <div className="text-2xl font-bold text-gray-900">
-              {analysis.macros.protein_g}g
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-6">
+            <div className="text-center p-4 bg-orange-50 rounded-lg">
+              <Zap className="w-6 h-6 text-orange-600 mx-auto mb-2" />
+              <div className="text-2xl font-bold text-gray-900">
+                {Math.round(analysis.macros.calories)}
+              </div>
+              <div className="text-sm text-gray-600">Calories</div>
             </div>
-            <div className="text-sm text-gray-600">Protein</div>
+            
+            <div className="text-center p-4 bg-blue-50 rounded-lg">
+              <Activity className="w-6 h-6 text-blue-600 mx-auto mb-2" />
+              <div className="text-2xl font-bold text-gray-900">
+                {Math.round(analysis.macros.protein_g)}g
+              </div>
+              <div className="text-sm text-gray-600">Protein</div>
+            </div>
+            
+            <div className="text-center p-4 bg-green-50 rounded-lg">
+              <div className="w-6 h-6 bg-green-600 rounded-full mx-auto mb-2"></div>
+              <div className="text-2xl font-bold text-gray-900">
+                {Math.round(analysis.macros.carbs_g)}g
+              </div>
+              <div className="text-sm text-gray-600">Carbs</div>
+            </div>
+            
+            <div className="text-center p-4 bg-purple-50 rounded-lg">
+              <div className="w-6 h-6 bg-purple-600 rounded-full mx-auto mb-2"></div>
+              <div className="text-2xl font-bold text-gray-900">
+                {Math.round(analysis.macros.fat_g)}g
+              </div>
+              <div className="text-sm text-gray-600">Fat</div>
+            </div>
           </div>
-          
-          <div className="text-center p-4 bg-yellow-50 rounded-lg">
-            <TrendingUp className="w-6 h-6 text-yellow-600 mx-auto mb-2" />
-            <div className="text-2xl font-bold text-gray-900">
-              {analysis.macros.carbs_g}g
+
+          <div className="mt-4 p-4 bg-gray-50 rounded-lg">
+            <div className="flex items-center space-x-2">
+              <Zap className="w-5 h-5 text-yellow-600" />
+              <span className="font-medium text-gray-900">Source</span>
             </div>
-            <div className="text-sm text-gray-600">Carbs</div>
-          </div>
-          
-          <div className="text-center p-4 bg-green-50 rounded-lg">
-            <div className="w-6 h-6 bg-green-600 rounded-full mx-auto mb-2"></div>
-            <div className="text-2xl font-bold text-gray-900">
-              {analysis.macros.fat_g}g
-            </div>
-            <div className="text-sm text-gray-600">Fat</div>
+            <p className="text-sm text-gray-600">
+              Nutrition data from {analysis.nutrition_source} database
+            </p>
           </div>
         </div>
+      )}
 
-        {/* Macronutrient Breakdown */}
-        <div className="space-y-3">
-          <div className="flex items-center justify-between">
-            <span className="text-sm font-medium text-gray-700">Protein</span>
-            <span className="text-sm text-gray-600">{analysis.macros.protein_g}g</span>
+      {/* Food Not Found */}
+      {analysis.food_not_found && (
+        <div className="card">
+          <div className="flex items-center space-x-2 mb-4">
+            <AlertCircle className="w-5 h-5 text-red-600" />
+            <h3 className="text-xl font-semibold text-gray-900">Nutrition Information</h3>
           </div>
-          <div className="w-full bg-gray-200 rounded-full h-2">
-            <div 
-              className="bg-blue-600 h-2 rounded-full"
-              style={{ width: `${Math.min((analysis.macros.protein_g / 25) * 100, 100)}%` }}
-            ></div>
-          </div>
-
-          <div className="flex items-center justify-between">
-            <span className="text-sm font-medium text-gray-700">Carbohydrates</span>
-            <span className="text-sm text-gray-600">{analysis.macros.carbs_g}g</span>
-          </div>
-          <div className="w-full bg-gray-200 rounded-full h-2">
-            <div 
-              className="bg-yellow-600 h-2 rounded-full"
-              style={{ width: `${Math.min((analysis.macros.carbs_g / 50) * 100, 100)}%` }}
-            ></div>
-          </div>
-
-          <div className="flex items-center justify-between">
-            <span className="text-sm font-medium text-gray-700">Fat</span>
-            <span className="text-sm text-gray-600">{analysis.macros.fat_g}g</span>
-          </div>
-          <div className="w-full bg-gray-200 rounded-full h-2">
-            <div 
-              className="bg-green-600 h-2 rounded-full"
-              style={{ width: `${Math.min((analysis.macros.fat_g / 30) * 100, 100)}%` }}
-            ></div>
+          
+          <div className="bg-red-50 border border-red-200 rounded-lg p-4">
+            <div className="text-center">
+              <div className="text-lg font-medium text-red-800 mb-2">
+                "{analysis.display_name}" not found in nutrition database
+              </div>
+              <p className="text-sm text-red-700">
+                This food is not currently in our Indian nutrition database.
+              </p>
+              <p className="text-sm text-red-700 mt-2">
+                Known missing foods: kathi_roll, vada_pav, momos, chai, lassi, coconut chutney
+              </p>
+            </div>
           </div>
         </div>
-      </div>
+      )}
 
       </div>
   )

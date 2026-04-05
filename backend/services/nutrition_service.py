@@ -5,6 +5,7 @@ Phase 1: SQLite database lookup with INDB data only
 
 import sqlite3
 import asyncio
+import re
 from pathlib import Path
 import logging
 import aiosqlite
@@ -38,11 +39,18 @@ class NutritionService:
     async def get_nutrition_for_food(self, food_label: str) -> dict:
         """
         Get nutrition information for a food label
-        Normalizes YOLO label to title case for DB lookup
+        Handles both snake_case and PascalCase YOLO labels
         """
         try:
-            # Normalize YOLO label to title case (snake_case → Title Case)
-            display_name = food_label.replace("_", " ").title()
+            # Handle different YOLO label formats
+            if "_" in food_label:
+                # snake_case → Title Case
+                display_name = food_label.replace("_", " ").title()
+            else:
+                # PascalCase → Title Case (add spaces before capital letters)
+                import re
+                display_name = re.sub(r'([a-z])([A-Z])', r'\1 \2', food_label)
+                display_name = display_name.title()
             
             async with aiosqlite.connect(str(self.db_path)) as db:
                 # Case-insensitive lookup
@@ -53,7 +61,7 @@ class NutritionService:
                 row = await cursor.fetchone()
                 
                 if row is None:
-                    logger.warning(f"Food not found in database: {display_name}")
+                    logger.warning(f"Food not found in database: {display_name} (from YOLO: {food_label})")
                     return None
                 
                 # Extract nutrition data (per 100g as stored in DB)

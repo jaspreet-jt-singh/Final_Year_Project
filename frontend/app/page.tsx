@@ -18,9 +18,9 @@ interface FoodAnalysis {
     protein_g: number
     carbs_g: number
     fat_g: number
-  }
+  } | null
   macros_unit: string
-  nutrition_source: string
+  nutrition_source: string | null
   food_not_found: boolean
 }
 

@@ -149,26 +149,19 @@ async def analyze_food(request: Request, file: UploadFile = File(...)):
         )
         
         if nutrition_info is None:
-            # Handle known missing foods
-            missing_foods = ["kathi_roll", "vada_pav", "momos"]
-            if detection_result["food_label"] in missing_foods:
-                return {
-                    "food_label": detection_result["food_label"],
-                    "display_name": detection_result["food_label"].replace("_", " ").title(),
-                    "confidence": detection_result["confidence"],
-                    "bounding_box": detection_result["bounding_box"],
-                    "img_width": detection_result["img_width"],
-                    "img_height": detection_result["img_height"],
-                    "macros": None,
-                    "macros_unit": "per_100g",
-                    "nutrition_source": None,
-                    "food_not_found": True
-                }
-            else:
-                raise HTTPException(
-                    status_code=404,
-                    detail=f"Nutrition information not found for {detection_result['food_label']}"
-                )
+            # Handle any missing food gracefully - return proper JSON response
+            return {
+                "food_label": detection_result["food_label"],
+                "display_name": detection_result["food_label"].replace("_", " ").title(),
+                "confidence": detection_result["confidence"],
+                "bounding_box": detection_result["bounding_box"],
+                "img_width": detection_result["img_width"],
+                "img_height": detection_result["img_height"],
+                "macros": None,
+                "macros_unit": "per_100g",
+                "nutrition_source": None,
+                "food_not_found": True
+            }
         
         # Combine detection and nutrition results
         result = {
