@@ -44,6 +44,18 @@ app = FastAPI(
 app.state.limiter = limiter
 app.add_exception_handler(RateLimitExceeded, _rate_limit_exceeded_handler)
 
+# Add better rate limit error response
+@app.exception_handler(RateLimitExceeded)
+async def rate_limit_exception_handler(request: Request, exc: RateLimitExceeded):
+    return JSONResponse(
+        status_code=429,
+        content={
+            "error": "Rate limit exceeded",
+            "message": f"Too many requests. Limit is {os.getenv('RATE_LIMIT_PER_MINUTE', '30')} requests per minute. Please try again later.",
+            "retry_after": 60
+        }
+    )
+
 # Add CORS middleware
 app.add_middleware(
     CORSMiddleware,
@@ -91,13 +103,96 @@ async def health_check():
     """Health check endpoint"""
     return {
         "status": "ok",
-        "model_loaded": vision_service is not None and vision_service.model is not None,
-        "phase": "1",
-        "description": "AI Food Recognition - Phase 1 MVP"
+        "model_loaded": vision_service is not None,
+        "phase": "2",
+        "description": "AI Food Recognition - Phase 2 MVP"
+    }
+
+@app.get("/api/test-nutrition/{food_name}")
+async def test_nutrition(food_name: str):
+    """Test nutrition lookup directly"""
+    try:
+        nutrition = await nutrition_service.get_nutrition_for_food(food_name)
+        if nutrition:
+            return {
+                "food_label": food_name,
+                "found": True,
+                "nutrition": nutrition
+            }
+        else:
+            return {
+                "food_label": food_name,
+                "found": False,
+                "nutrition": None
+            }
+    except Exception as e:
+        return {
+            "food_label": food_name,
+            "found": False,
+            "error": str(e),
+            "nutrition": None
+        }
+
+@app.get("/api/validate-nutrition")
+async def validate_nutrition():
+    """Validate nutrition data for all YOLO classes"""
+    yolo_classes = [
+        "AlooGobi", "AlooMasala", "Bhatura", "BhindiMasala", "Biryani",
+        "Chai", "Chole", "CoconutChutney", "Dal", "Dosa", "DumAloo",
+        "FishCurry", "Ghevar", "GreenChutney", "GulabJamun", "Idli",
+        "Jalebi", "Kebab", "Kheer", "Kulfi", "Lassi", "MuttonCurry",
+        "OnionPakoda", "PalakPaneer", "Poha", "RajmaCurry", "RasMalai",
+        "Samosa", "ShahiPaneer", "VadaPav", "WhiteRice"
+    ]
+    
+    results = []
+    for yolo_class in yolo_classes:
+        try:
+            nutrition = await nutrition_service.get_nutrition_for_food(yolo_class)
+            if nutrition:
+                results.append({
+                    "yolo_class": yolo_class,
+                    "display_name": nutrition["display_name"],
+                    "found": True,
+                    "calories": nutrition["macros"]["calories"],
+                    "protein_g": nutrition["macros"]["protein_g"],
+                    "carbs_g": nutrition["macros"]["carbs_g"],
+                    "fat_g": nutrition["macros"]["fat_g"]
+                })
+            else:
+                results.append({
+                    "yolo_class": yolo_class,
+                    "display_name": None,
+                    "found": False,
+                    "calories": None,
+                    "protein_g": None,
+                    "carbs_g": None,
+                    "fat_g": None
+                })
+        except Exception as e:
+            results.append({
+                "yolo_class": yolo_class,
+                "display_name": None,
+                "found": False,
+                "error": str(e),
+                "calories": None,
+                "protein_g": None,
+                "carbs_g": None,
+                "fat_g": None
+            })
+    
+    success_count = sum(1 for r in results if r["found"])
+    success_rate = (success_count / len(yolo_classes)) * 100
+    
+    return {
+        "total_classes": len(yolo_classes),
+        "successful_matches": success_count,
+        "success_rate": round(success_rate, 1),
+        "results": results
     }
 
 @app.post("/api/analyze-food")
-@limiter.limit("5/minute")
+@limiter.limit(f"{os.getenv('RATE_LIMIT_PER_MINUTE', '30')}/minute")
 async def analyze_food(request: Request, file: UploadFile = File(...)):
     """
     Analyze uploaded food image and return nutrition information
@@ -177,6 +272,7 @@ async def analyze_food(request: Request, file: UploadFile = File(...)):
             "food_not_found": False
         }
         
+        logger.info(f"FINAL API RESPONSE: {result}")
         logger.info(f"Analyzed food: {detection_result['food_label']} with confidence {detection_result['confidence']}")
         
         return JSONResponse(content=result)

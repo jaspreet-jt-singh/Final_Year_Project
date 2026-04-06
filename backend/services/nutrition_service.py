@@ -28,9 +28,9 @@ class NutritionService:
             
             # Test database connection
             async with aiosqlite.connect(str(self.db_path)) as db:
-                cursor = await db.execute("SELECT COUNT(*) FROM indb_recipes")
+                cursor = await db.execute("SELECT COUNT(*) FROM indb_foods")
                 count = await cursor.fetchone()
-                logger.info(f"✅ Connected to nutrition database with {count[0]} recipes")
+                logger.info(f"✅ Connected to nutrition database with {count[0]} food items")
                 
         except Exception as e:
             logger.error(f"❌ Failed to initialize nutrition service: {e}")
@@ -39,70 +39,102 @@ class NutritionService:
     async def get_nutrition_for_food(self, food_label: str) -> dict:
         """
         Get nutrition information for a food label
-        Multiple matching strategies for better lookup success
+        Comprehensive mapping for all YOLO classes
         """
         try:
-            # Special case handling for common mismatches
-            special_mappings = {
+            # Comprehensive mapping for all YOLO classes to database names
+            comprehensive_mappings = {
+                # Exact matches (should work directly)
+                "Biryani": "Biryani",
+                "Chai": "Chai",
+                "Dal": "Dal",
+                "Dosa": "Dosa",
+                "Samosa": "Samosa",
+                "Idli": "Idli",
+                "Jalebi": "Jalebi",
+                "Kheer": "Kheer",
+                "Poha": "Poha",
+                
+                # Special case mappings
                 "WhiteRice": "White Rice",
                 "whiterice": "White Rice",
-                "White rice": "White Rice"
+                "White rice": "White Rice",
+                
+                # PascalCase → Title Case with variations
+                "AlooGobi": "Aloo Gobi",
+                "AlooMasala": "Aloo Masala", 
+                "Bhatura": "Bhatura",
+                "BhindiMasala": "Bhindi Masala",
+                "Chole": "Chole",
+                "CoconutChutney": "Coconut Chutney",
+                "DumAloo": "Dum Aloo",
+                "FishCurry": "Fish Curry",
+                "Ghevar": "Ghevar",
+                "GreenChutney": "Green Chutney",
+                "GulabJamun": "Gulab Jamun",
+                "Kebab": "Kebab",
+                "Kulfi": "Kulfi",
+                "Lassi": "Lassi",
+                "MuttonCurry": "Mutton Curry",
+                "OnionPakoda": "Onion Pakoda",
+                "PalakPaneer": "Palak Paneer",
+                "RajmaCurry": "Rajma Curry",
+                "RasMalai": "Ras Malai",
+                "ShahiPaneer": "Shahi Paneer",
+                "VadaPav": "Vada Pav"
             }
             
-            # Check special mappings first
-            if food_label in special_mappings:
-                display_name = special_mappings[food_label]
-                logger.info(f"Using special mapping: {food_label} → {display_name}")
-            else:
-                # Strategy 1: Direct normalization (snake_case → Title Case, PascalCase → Title Case)
+            # Get the mapped name
+            display_name = comprehensive_mappings.get(food_label, food_label)
+            
+            # If no specific mapping, apply default normalization
+            if display_name == food_label:
                 if "_" in food_label:
                     display_name = food_label.replace("_", " ").title()
                 else:
-                    # PascalCase → Title Case (add spaces before capital letters)
                     display_name = re.sub(r'([a-z])([A-Z])', r'\1 \2', food_label)
                     display_name = display_name.title()
+            
+            logger.info(f"YOLO: '{food_label}' → Mapped: '{display_name}'")
             
             async with aiosqlite.connect(str(self.db_path)) as db:
                 # Strategy 1: Exact case-insensitive match
                 cursor = await db.execute(
-                    "SELECT name, calories, protein_g, carbs_g, fat_g FROM indb_recipes WHERE LOWER(name) = LOWER(?)",
+                    "SELECT name, calories, protein_g, carbs_g, fat_g FROM indb_foods WHERE LOWER(name) = LOWER(?)",
                     (display_name,)
                 )
                 row = await cursor.fetchone()
                 logger.info(f"Strategy 1 - Looking for: '{display_name}' → Found: {row is not None}")
                 
                 if row is None:
-                    # Strategy 2: Try without spaces (for compound words)
+                    # Strategy 2: Try without spaces
                     no_space_name = display_name.replace(" ", "")
                     cursor = await db.execute(
-                        "SELECT name, calories, protein_g, carbs_g, fat_g FROM indb_recipes WHERE LOWER(name) = LOWER(?)",
+                        "SELECT name, calories, protein_g, carbs_g, fat_g FROM indb_foods WHERE LOWER(name) = LOWER(?)",
                         (no_space_name,)
                     )
                     row = await cursor.fetchone()
                     logger.info(f"Strategy 2 - Looking for: '{no_space_name}' → Found: {row is not None}")
                 
                 if row is None:
-                    # Strategy 3: Try partial match (first word) - but prioritize exact food names
+                    # Strategy 3: Try partial match with better selection
                     first_word = display_name.split()[0]
                     cursor = await db.execute(
-                        "SELECT name, calories, protein_g, carbs_g, fat_g FROM indb_recipes WHERE LOWER(name) LIKE LOWER(?) || '%' ORDER BY LENGTH(name) ASC LIMIT 5",
+                        "SELECT name, calories, protein_g, carbs_g, fat_g FROM indb_foods WHERE LOWER(name) LIKE LOWER(?) || '%' ORDER BY LENGTH(name) ASC LIMIT 5",
                         (first_word,)
                     )
                     rows = await cursor.fetchall()
-                    # Prefer exact or shorter names over longer ones
                     if rows:
-                        # Find the best match (prefer shorter names)
+                        # Prefer shorter, more relevant matches
                         best_match = min(rows, key=lambda x: len(x[0]))
-                        if len(best_match[0]) <= len(first_word) + 3:  # Reasonable length check
+                        if len(best_match[0]) <= len(first_word) + 5:
                             row = best_match
                             logger.info(f"Strategy 3 - Selected best match: '{row[0]}' from {len(rows)} options")
-                    else:
-                        logger.info(f"Strategy 3 - No matches found for '{first_word}%'")
                 
                 if row is None:
-                    # Strategy 4: Try original YOLO label (case-insensitive)
+                    # Strategy 4: Try original YOLO label
                     cursor = await db.execute(
-                        "SELECT name, calories, protein_g, carbs_g, fat_g FROM indb_recipes WHERE LOWER(name) = LOWER(?)",
+                        "SELECT name, calories, protein_g, carbs_g, fat_g FROM indb_foods WHERE LOWER(name) = LOWER(?)",
                         (food_label,)
                     )
                     row = await cursor.fetchone()
@@ -115,6 +147,10 @@ class NutritionService:
                 # Extract nutrition data (per 100g as stored in DB)
                 name, calories, protein_g, carbs_g, fat_g = row
                 
+                # Validate nutrition values are reasonable
+                if calories <= 0 or protein_g < 0 or carbs_g < 0 or fat_g < 0:
+                    logger.warning(f"Invalid nutrition values for {name}: calories={calories}, protein={protein_g}, carbs={carbs_g}, fat={fat_g}")
+                
                 nutrition_data = {
                     "display_name": name,
                     "macros": {
@@ -125,8 +161,21 @@ class NutritionService:
                     }
                 }
                 
-                logger.info(f"Found nutrition data for {name}")
-                return nutrition_data
+                logger.info(f"Found nutrition data for {name}: {calories:.1f} cal, {protein_g:.1f}g protein, {carbs_g:.1f}g carbs, {fat_g:.1f}g fat")
+                
+                # Double-check the values being returned
+                final_nutrition = {
+                    "display_name": name,
+                    "macros": {
+                        "calories": float(calories),
+                        "protein_g": float(protein_g),
+                        "carbs_g": float(carbs_g),
+                        "fat_g": float(fat_g)
+                    }
+                }
+                
+                logger.info(f"FINAL NUTRITION DATA: {final_nutrition}")
+                return final_nutrition
                 
         except Exception as e:
             logger.error(f"❌ Error getting nutrition for {food_label}: {e}")
@@ -137,21 +186,21 @@ class NutritionService:
         try:
             async with aiosqlite.connect(str(self.db_path)) as db:
                 cursor = await db.execute(
-                    "SELECT name, calories, protein_g, carbs_g, fat_g FROM indb_recipes WHERE name LIKE ? ORDER BY name LIMIT ?",
+                    "SELECT name, calories, protein_g, carbs_g, fat_g FROM indb_foods WHERE name LIKE ? ORDER BY name LIMIT ?",
                     (f"%{query}%", limit)
                 )
                 rows = await cursor.fetchall()
                 
                 results = []
                 for row in rows:
-                    name, calories, protein_g, carbs_g, fat_g = row
+                    name, calories, protein, carbs, fat = row
                     results.append({
                         "name": name,
                         "macros": {
                             "calories": float(calories),
-                            "protein_g": float(protein_g),
-                            "carbs_g": float(carbs_g),
-                            "fat_g": float(fat_g)
+                            "protein_g": float(protein),
+                            "carbs_g": float(carbs),
+                            "fat_g": float(fat)
                         }
                     })
                 
@@ -165,7 +214,7 @@ class NutritionService:
         """Get all available foods (for debugging/testing)"""
         try:
             async with aiosqlite.connect(str(self.db_path)) as db:
-                cursor = await db.execute("SELECT name FROM indb_recipes ORDER BY name")
+                cursor = await db.execute("SELECT name FROM indb_foods ORDER BY name")
                 rows = await cursor.fetchall()
                 return [row[0] for row in rows]
                 
