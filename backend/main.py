@@ -13,6 +13,7 @@ import uvicorn
 import os
 import asyncio
 import concurrent.futures
+import re
 from pathlib import Path
 import logging
 import torch
@@ -245,9 +246,18 @@ async def analyze_food(request: Request, file: UploadFile = File(...)):
         
         if nutrition_info is None:
             # Handle any missing food gracefully - return proper JSON response
+            # Convert YOLOv11s PascalCase to readable format
+            food_label = detection_result["food_label"]
+            if "_" in food_label:
+                display_name = food_label.replace("_", " ").title()
+            else:
+                # Convert PascalCase to Title Case (AlooGobi -> Aloo Gobi)
+                spaced = re.sub(r'([a-z])([A-Z])', r'\1 \2', food_label)
+                display_name = spaced.title()
+            
             return {
-                "food_label": detection_result["food_label"],
-                "display_name": detection_result["food_label"].replace("_", " ").title(),
+                "food_label": food_label,
+                "display_name": display_name,
                 "confidence": detection_result["confidence"],
                 "bounding_box": detection_result["bounding_box"],
                 "img_width": detection_result["img_width"],

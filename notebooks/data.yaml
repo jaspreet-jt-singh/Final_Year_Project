@@ -1,0 +1,13 @@
+train: ../train/images
+val: ../valid/images
+test: ../test/images
+
+nc: 30
+names: ['AlooGobi', 'AlooMasala', 'Bhatura', 'BhindiMasala', 'Biryani', 'Chai', 'Chole', 'CoconutChutney', 'Dal', 'Dosa', 'DumAloo', 'FishCurry', 'Ghevar', 'GreenChutney', 'GulabJamun', 'Idli', 'Jalebi', 'Kebab', 'Kheer', 'Kulfi', 'Lassi', 'MuttonCurry', 'OnionPakoda', 'PalakPaneer', 'Poha', 'RajmaCurry', 'RasMalai', 'Samosa', 'ShahiPaneer', 'WhiteRice']
+
+roboflow:
+  workspace: indianfoodnet
+  project: indianfoodnet
+  version: 1
+  license: CC BY 4.0
+  url: https://universe.roboflow.com/indianfoodnet/indianfoodnet/dataset/1

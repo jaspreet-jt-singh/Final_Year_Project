@@ -24,17 +24,22 @@ class VisionService:
         """Initialize YOLO model"""
         try:
             # Get model path from environment or default
-            self.model_path = os.getenv("YOLO_MODEL_PATH", "models/yolov8n_indian.pt")
+            model_path_env = os.getenv("YOLO_MODEL_PATH", "models/yolo11s_indian.pt")
             
             # Ensure we're in project root
             project_root = Path(__file__).parent.parent.parent
-            model_full_path = project_root / self.model_path
+            model_full_path = project_root / model_path_env
+            
+            # Check if model path is empty or invalid
+            if not model_path_env or model_path_env.strip() == "":
+                raise ValueError("YOLO_MODEL_PATH environment variable is empty. Please set a valid model path in .env file")
             
             if not model_full_path.exists():
                 raise FileNotFoundError(f"Model not found at {model_full_path}")
             
             # Load YOLOv8n detection model
             self.model = YOLO(str(model_full_path))
+            self.model_path = model_path_env
             
             # Set model to evaluation mode
             self.model.eval()
