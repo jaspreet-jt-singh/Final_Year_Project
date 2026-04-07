@@ -56,6 +56,18 @@ export default function ResultsPanel({ analysis, imageUrl, isLoading }: ResultsP
     return null
   }
 
+  // Format YOLO label for display (gulabjamun → Gulab Jamun, paneerKheer → Paneer Kheer)
+  const formatYoloLabel = (label: string): string => {
+    // Insert space before uppercase letters (camelCase → camel Case)
+    let formatted = label.replace(/([a-z])([A-Z])/g, '$1 $2')
+    // Replace underscores with spaces (snake_case → snake case)
+    formatted = formatted.replace(/_/g, ' ')
+    // Title case
+    return formatted.replace(/\w\S*/g, (txt) => 
+      txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase()
+    )
+  }
+
   const getConfidenceBadge = (confidence: number) => {
     if (confidence >= 0.8) return 'bg-green-100 text-green-600'
     if (confidence >= 0.6) return 'bg-yellow-100 text-yellow-600'
@@ -97,7 +109,7 @@ export default function ResultsPanel({ analysis, imageUrl, isLoading }: ResultsP
                 }}
               >
                 <span className="absolute -top-6 left-0 bg-blue-500 text-white text-xs px-2 py-1 rounded whitespace-nowrap">
-                  {det.display_name} ({(det.confidence * 100).toFixed(0)}%)
+                  {formatYoloLabel(det.food_label)} ({(det.confidence * 100).toFixed(0)}%)
                 </span>
               </div>
             ))}
@@ -108,19 +120,40 @@ export default function ResultsPanel({ analysis, imageUrl, isLoading }: ResultsP
       {/* Each Detected Food */}
       {analysis.detections.map((detection, index) => (
         <div key={index} className="card">
-          {/* Detection Header */}
+          {/* Detection Header - Shows formatted YOLO label, raw label, and database name */}
           <div className="flex items-center justify-between mb-4">
             <div className="flex items-center space-x-3">
               <span className="bg-primary-100 text-primary-800 w-8 h-8 rounded-full flex items-center justify-center font-bold">
                 {index + 1}
               </span>
               <div>
-                <h3 className="text-xl font-semibold text-gray-900">{detection.display_name}</h3>
-                <p className="text-sm text-gray-600">Label: {detection.food_label}</p>
+                {/* Main title: Formatted YOLO label */}
+                <h3 className="text-xl font-semibold text-gray-900">
+                  {formatYoloLabel(detection.food_label)}
+                </h3>
+                {/* Raw YOLO label */}
+                <p className="text-sm text-gray-500">
+                  <span className="font-medium text-gray-600">YOLO Label:</span>{' '}
+                  <code className="bg-gray-100 px-1 rounded">{detection.food_label}</code>
+                </p>
               </div>
             </div>
             <div className={`px-3 py-1 rounded-full text-sm font-medium ${getConfidenceBadge(detection.confidence)}`}>
               {(detection.confidence * 100).toFixed(1)}%
+            </div>
+          </div>
+
+          {/* Database mapping info */}
+          <div className="mb-4 grid grid-cols-1 md:grid-cols-2 gap-2 text-sm">
+            <div className="p-2 bg-gray-50 rounded">
+              <span className="font-medium text-gray-600">Database Name:</span>
+              <span className="ml-2 text-gray-900">{detection.display_name}</span>
+            </div>
+            <div className="p-2 bg-gray-50 rounded">
+              <span className="font-medium text-gray-600">Mapped:</span>
+              <span className={`ml-2 ${detection.food_label === detection.display_name ? 'text-yellow-600' : 'text-green-600'}`}>
+                {detection.food_label === detection.display_name ? '⚠ Same as YOLO' : '✓ Different name'}
+              </span>
             </div>
           </div>
 
@@ -164,7 +197,7 @@ export default function ResultsPanel({ analysis, imageUrl, isLoading }: ResultsP
               <div className="flex items-center space-x-2">
                 <AlertCircle className="w-5 h-5 text-red-600" />
                 <span className="font-medium text-red-800">
-                  Nutrition data not available for {detection.display_name}
+                  Nutrition data not available for {formatYoloLabel(detection.food_label)}
                 </span>
               </div>
             </div>
