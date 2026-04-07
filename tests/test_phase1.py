@@ -84,7 +84,7 @@ def test_phase1():
     except Exception as e:
         print(f"❌ Error checking service files: {e}")
     
-    # Test 3: Database has only indb_recipes table
+    # Test 3: Database has only indb_foods table
     tests_total += 1
     print("\n3. Testing database structure...")
     try:
@@ -97,8 +97,8 @@ def test_phase1():
         # Filter out SQLite internal tables
         user_tables = [t for t in tables if not t.startswith('sqlite_')]
         
-        if user_tables == ["indb_recipes"]:
-            print("✅ Database has only indb_recipes table")
+        if user_tables == ["indb_foods"]:
+            print("✅ Database has only indb_foods table")
             tests_passed += 1
         else:
             print(f"❌ Database has incorrect tables: {user_tables}")

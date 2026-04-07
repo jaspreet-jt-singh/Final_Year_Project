@@ -37,52 +37,52 @@ def test_phase0():
     else:
         print("❌ data/nutrition.db does not exist")
     
-    # Test 3: nutrition.db has table indb_recipes with > 0 rows
+    # Test 3: nutrition.db has table indb_foods with > 0 rows
     tests_total += 1
-    print("\n3. Testing indb_recipes table exists and has data...")
+    print("\n3. Testing indb_foods table exists and has data...")
     try:
         conn = sqlite3.connect("data/nutrition.db", check_same_thread=False)
         cursor = conn.cursor()
         
         # Check if table exists
-        cursor.execute("SELECT name FROM sqlite_master WHERE type='table' AND name='indb_recipes'")
+        cursor.execute("SELECT name FROM sqlite_master WHERE type='table' AND name='indb_foods'")
         table_exists = cursor.fetchone() is not None
         
         if table_exists:
             # Check row count
-            cursor.execute("SELECT COUNT(*) FROM indb_recipes")
+            cursor.execute("SELECT COUNT(*) FROM indb_foods")
             row_count = cursor.fetchone()[0]
             
             if row_count > 0:
-                print(f"✅ indb_recipes table exists with {row_count} rows")
+                print(f"✅ indb_foods table exists with {row_count} rows")
                 tests_passed += 1
             else:
-                print("❌ indb_recipes table exists but has 0 rows")
+                print("❌ indb_foods table exists but has 0 rows")
         else:
-            print("❌ indb_recipes table does not exist")
+            print("❌ indb_foods table does not exist")
         
         conn.close()
     except Exception as e:
         print(f"❌ Error checking database: {e}")
     
-    # Test 4: indb_recipes has correct columns
+    # Test 4: indb_foods has correct columns
     tests_total += 1
-    print("\n4. Testing indb_recipes table schema...")
+    print("\n4. Testing indb_foods table schema...")
     try:
         conn = sqlite3.connect("data/nutrition.db", check_same_thread=False)
         cursor = conn.cursor()
         
-        cursor.execute("PRAGMA table_info(indb_recipes)")
+        cursor.execute("PRAGMA table_info(indb_foods)")
         columns = [row[1] for row in cursor.fetchall()]
         
-        expected_columns = ['id', 'name', 'calories', 'protein_g', 'carbs_g', 'fat_g']
+        expected_columns = ['name', 'calories', 'protein_g', 'carbs_g', 'fat_g']
         missing_columns = [col for col in expected_columns if col not in columns]
         
         if not missing_columns:
-            print(f"✅ indb_recipes has correct columns: {columns}")
+            print(f"✅ indb_foods has correct columns: {columns}")
             tests_passed += 1
         else:
-            print(f"❌ indb_recipes missing columns: {missing_columns}")
+            print(f"❌ indb_foods missing columns: {missing_columns}")
             print(f"   Found columns: {columns}")
         
         conn.close()
