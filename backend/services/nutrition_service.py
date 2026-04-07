@@ -118,20 +118,16 @@ class NutritionService:
         """Generate multiple search variations for a YOLO label"""
         variations = []
         
-        # Original label (YOLOv11s returns PascalCase like "AlooGobi")
+        # Original label
         variations.append(food_label)
         
-        # PascalCase to Title Case (AlooGobi -> Aloo Gobi)
-        spaced = re.sub(r'([a-z])([A-Z])', r'\1 \2', food_label)
-        variations.append(spaced.title())
-        
-        # PascalCase to lowercase with spaces (AlooGobi -> aloo gobi)
-        variations.append(spaced.lower())
-        
-        # Title case with spaces (if original has underscores)
+        # Title case with spaces
         if "_" in food_label:
             variations.append(food_label.replace("_", " ").title())
-            variations.append(food_label.replace("_", " ").lower())
+        
+        # PascalCase to Title Case
+        spaced = re.sub(r'([a-z])([A-Z])', r'\1 \2', food_label)
+        variations.append(spaced.title())
         
         # Lowercase versions
         variations.extend([v.lower() for v in variations])
@@ -141,37 +137,57 @@ class NutritionService:
         
         # Common food word mappings for YOLOv11s classes
         food_mappings = {
+            # Rice dishes
+            'whiterice': 'White Rice',
+            'browrice': 'Brown Rice',
+            'biryani': 'Biryani',
+            'poha': 'Poha',
+            
+            # Breads
+            'dosa': 'Dosa',
+            'bhatura': 'Bhatura',
+            'idli': 'Idli',
+            
+            # Curries and gravies
+            'aloo': 'Aloo',
             'aloogobi': 'Aloo Gobi',
             'aloomasala': 'Aloo Masala',
-            'biryani': 'Biryani',
-            'bhatura': 'Bhatura',
-            'bhindimasala': 'Bhindi Masala',
-            'chai': 'Chai',
-            'chole': 'Chole',
-            'coconutchutney': 'Coconut Chutney',
-            'dal': 'Dal',
-            'dosa': 'Dosa',
             'dumaloo': 'Dum Aloo',
+            'palakpaneer': 'Palak Paneer',
+            'shahipaneer': 'Shahi Paneer',
+            'paneer': 'Paneer',
+            'chole': 'Chole',
+            'rajma': 'Rajma',
+            'rajmacurry': 'Rajma Curry',
+            'dal': 'Dal',
             'fishcurry': 'Fish Curry',
-            'ghevar': 'Ghevar',
+            'muttoncurry': 'Mutton Curry',
+            'bhindi': 'Bhindi',
+            'bhindimasala': 'Bhindi Masala',
             'greenchutney': 'Green Chutney',
-            'gulabjamun': 'Gulab Jamun',
-            'idli': 'Idli',
-            'jalebi': 'Jalebi',
+            'coconutchutney': 'Coconut Chutney',
+            'chutney': 'Chutney',
+            
+            # Snacks
+            'samosa': 'Samosa',
+            'onionpakoda': 'Onion Pakoda',
+            'pakoda': 'Pakoda',
+            'vadapav': 'Vada Pav',
             'kebab': 'Kebab',
+            
+            # Desserts
+            'jalebi': 'Jalebi',
+            'gulabjamun': 'Gulab Jamun',
+            'rasmalai': 'Ras Malai',
             'kheer': 'Kheer',
             'kulfi': 'Kulfi',
+            'ghevar': 'Ghevar',
+            
+            # Drinks
+            'chai': 'Chai',
             'lassi': 'Lassi',
-            'muttoncurry': 'Mutton Curry',
-            'onionpakoda': 'Onion Pakoda',
-            'palakpaneer': 'Palak Paneer',
-            'poha': 'Poha',
-            'rajmacurry': 'Rajma Curry',
-            'rasmalai': 'Ras Malai',
-            'samosa': 'Samosa',
-            'shahipaneer': 'Shahi Paneer',
-            'vadapav': 'Vada Pav',
-            'whiterice': 'White Rice'
+            'tea': 'Tea',
+            'coffee': 'Coffee'
         }
         
         normalized_label = self.normalize_text(food_label)

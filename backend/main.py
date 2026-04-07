@@ -6,6 +6,7 @@ Phase 1: Working Food Recognition MVP
 from fastapi import FastAPI, File, UploadFile, HTTPException, Form, Request
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import JSONResponse
+from starlette.middleware.cors import CORSMiddleware as StarletteCORSMiddleware
 from slowapi import Limiter, _rate_limit_exceeded_handler
 from slowapi.util import get_remote_address
 from slowapi.errors import RateLimitExceeded
@@ -41,7 +42,18 @@ app = FastAPI(
     version="1.0.0"
 )
 
-# Add rate limit exception handler
+# Add CORS middleware FIRST (before rate limiter)
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["http://localhost:3000", "http://127.0.0.1:3000"],
+    allow_credentials=True,
+    allow_methods=["GET", "POST", "PUT", "DELETE", "OPTIONS"],
+    allow_headers=["*"],
+    expose_headers=["*"],
+    max_age=3600,
+)
+
+# Add rate limit exception handler (after CORS)
 app.state.limiter = limiter
 app.add_exception_handler(RateLimitExceeded, _rate_limit_exceeded_handler)
 
@@ -56,15 +68,6 @@ async def rate_limit_exception_handler(request: Request, exc: RateLimitExceeded)
             "retry_after": 60
         }
     )
-
-# Add CORS middleware
-app.add_middleware(
-    CORSMiddleware,
-    allow_origins=["http://localhost:3000"],  # Next.js frontend
-    allow_credentials=True,
-    allow_methods=["*"],
-    allow_headers=["*"],
-)
 
 # Global variables
 vision_service = None
@@ -240,9 +243,13 @@ async def analyze_food(request: Request, file: UploadFile = File(...)):
             )
         
         # Get nutrition information
+        logger.info(f"Looking up nutrition for detected label: '{detection_result['food_label']}'")
         nutrition_info = await nutrition_service.get_nutrition_for_food(
             detection_result["food_label"]
         )
+        
+        if nutrition_info is None:
+            logger.warning(f"Nutrition not found for: '{detection_result['food_label']}'")
         
         if nutrition_info is None:
             # Handle any missing food gracefully - return proper JSON response
@@ -283,6 +290,7 @@ async def analyze_food(request: Request, file: UploadFile = File(...)):
         }
         
         logger.info(f"FINAL API RESPONSE: {result}")
+        logger.info(f"Display name sent to frontend: {result['display_name']}")
         logger.info(f"Analyzed food: {detection_result['food_label']} with confidence {detection_result['confidence']}")
         
         return JSONResponse(content=result)
