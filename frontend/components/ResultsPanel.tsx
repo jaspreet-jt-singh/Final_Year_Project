@@ -20,6 +20,7 @@ interface FoodAnalysis {
   macros_unit: string
   nutrition_source: string | null
   food_not_found: boolean
+  nutrition_not_found?: boolean
 }
 
 interface ResultsPanelProps {
@@ -128,7 +129,7 @@ export default function ResultsPanel({ analysis, imageUrl, isLoading }: ResultsP
       </div>
 
       {/* Nutrition Information */}
-      {!analysis.food_not_found && analysis.macros && (
+      {(!analysis.nutrition_not_found && !analysis.food_not_found && analysis.macros) && (
         <div className="card">
           <h3 className="text-xl font-bold text-gray-900 mb-6">Nutrition Information</h3>
           

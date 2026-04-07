@@ -195,16 +195,17 @@ async def analyze_food(request: Request, file: UploadFile = File(...)):
             return JSONResponse(
                 status_code=200,
                 content={
-                    "food_label"      : food_label,
-                    "display_name"    : display_name,
-                    "confidence"      : detection_result["confidence"],
-                    "bounding_box"    : detection_result["bounding_box"],
-                    "img_width"       : detection_result["img_width"],
-                    "img_height"      : detection_result["img_height"],
-                    "macros"          : None,
-                    "macros_unit"     : "per_100g",
-                    "nutrition_source": None,
-                    "food_not_found"  : True
+                    "food_label"        : food_label,
+                    "display_name"      : display_name,
+                    "confidence"        : detection_result["confidence"],
+                    "bounding_box"      : detection_result["bounding_box"],
+                    "img_width"         : detection_result["img_width"],
+                    "img_height"        : detection_result["img_height"],
+                    "macros"            : None,
+                    "macros_unit"       : "per_100g",
+                    "nutrition_source"  : None,
+                    "food_not_found"    : False,  # Food WAS detected
+                    "nutrition_not_found": True     # But nutrition lookup failed
                 }
             )
 

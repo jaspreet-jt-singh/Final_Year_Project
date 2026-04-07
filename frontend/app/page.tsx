@@ -19,10 +19,11 @@ interface FoodAnalysis {
     carbs_g   : number
     fat_g     : number
   } | null
-  macros_unit      : string
-  nutrition_source : string | null
-  food_not_found   : boolean
-  message         ?: string
+  macros_unit         : string
+  nutrition_source    : string | null
+  food_not_found      : boolean
+  nutrition_not_found?: boolean  // New: separate from food detection
+  message            ?: string
 }
 
 export default function Home() {
@@ -68,8 +69,9 @@ export default function Home() {
         throw new Error((result as any).detail || `Server error ${response.status}`)
       }
 
-      // FIX: handle "no food detected" as a soft state, not an error
-      if (result.food_not_found || result.food_label === null) {
+      // FIX: Only treat as "no food" if food_label is null (YOLO found nothing)
+      // nutrition_not_found is separate - we still show the detection
+      if (result.food_label === null) {
         setNoFood(true)
         return
       }
