@@ -170,60 +170,58 @@ async def analyze_food(request: Request, file: UploadFile = File(...)):
             return JSONResponse(
                 status_code=200,
                 content={
-                    "food_label"      : None,
-                    "display_name"    : None,
-                    "confidence"      : None,
-                    "bounding_box"    : None,
+                    "detections"      : [],
                     "img_width"       : None,
                     "img_height"      : None,
-                    "macros"          : None,
-                    "macros_unit"     : "per_100g",
-                    "nutrition_source": None,
                     "food_not_found"  : True,
                     "message"         : "No food detected in image"
                 }
             )
 
-        logger.info(f"Looking up nutrition for detected label: '{detection_result['food_label']}'")
-        nutrition_info = await nutrition_service.get_nutrition_for_food(detection_result["food_label"])
-
-        if nutrition_info is None:
-            logger.warning(f"Nutrition not found for: '{detection_result['food_label']}'")
-            food_label   = detection_result["food_label"]
-            spaced       = re.sub(r'([a-z])([A-Z])', r'\1 \2', food_label)
-            display_name = spaced.title()
-            return JSONResponse(
-                status_code=200,
-                content={
-                    "food_label"        : food_label,
-                    "display_name"      : display_name,
-                    "confidence"        : detection_result["confidence"],
-                    "bounding_box"      : detection_result["bounding_box"],
-                    "img_width"         : detection_result["img_width"],
-                    "img_height"        : detection_result["img_height"],
-                    "macros"            : None,
-                    "macros_unit"       : "per_100g",
-                    "nutrition_source"  : None,
-                    "food_not_found"    : False,  # Food WAS detected
-                    "nutrition_not_found": True     # But nutrition lookup failed
-                }
-            )
+        # Process ALL detections and lookup nutrition for each
+        all_detections = []
+        for det in detection_result["detections"]:
+            logger.info(f"Looking up nutrition for: '{det['food_label']}'")
+            nutrition_info = await nutrition_service.get_nutrition_for_food(det["food_label"])
+            
+            if nutrition_info is None:
+                # Format display name from YOLO label
+                food_label   = det["food_label"]
+                spaced       = re.sub(r'([a-z])([A-Z])', r'\1 \2', food_label)
+                display_name = spaced.title()
+                
+                all_detections.append({
+                    "food_label"         : food_label,
+                    "display_name"       : display_name,
+                    "confidence"       : det["confidence"],
+                    "bounding_box"       : det["bounding_box"],
+                    "macros"             : None,
+                    "macros_unit"        : "per_100g",
+                    "nutrition_source"   : None,
+                    "nutrition_not_found": True
+                })
+            else:
+                all_detections.append({
+                    "food_label"      : det["food_label"],
+                    "display_name"    : nutrition_info["display_name"],
+                    "confidence"      : det["confidence"],
+                    "bounding_box"    : det["bounding_box"],
+                    "macros"          : nutrition_info["macros"],
+                    "macros_unit"     : "per_100g",
+                    "nutrition_source": "INDB"
+                })
 
         result = {
-            "food_label"      : detection_result["food_label"],
-            "display_name"    : nutrition_info["display_name"],
-            "confidence"      : detection_result["confidence"],
-            "bounding_box"    : detection_result["bounding_box"],
-            "img_width"       : detection_result["img_width"],
-            "img_height"      : detection_result["img_height"],
-            "macros"          : nutrition_info["macros"],
-            "macros_unit"     : "per_100g",
-            "nutrition_source": "INDB",
-            "food_not_found"  : False
+            "detections"     : all_detections,
+            "img_width"      : detection_result["img_width"],
+            "img_height"     : detection_result["img_height"],
+            "food_not_found" : False
         }
 
-        logger.info(f"FINAL API RESPONSE: {result}")
-        logger.info(f"Analyzed food: {detection_result['food_label']} @ {detection_result['confidence']:.3f}")
+        logger.info(f"FINAL API RESPONSE: {len(all_detections)} foods detected")
+        for d in all_detections:
+            logger.info(f"  - {d['display_name']}: {d['confidence']:.3f}")
+        
         return JSONResponse(content=result)
 
     except HTTPException:

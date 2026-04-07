@@ -97,18 +97,24 @@ class VisionService:
                 logger.warning("All detections below per-class minimum confidence")
                 return None
 
-            # Pick highest confidence
-            best_box, food_label, best_conf = max(valid_boxes, key=lambda x: x[2])
-            bbox = best_box.xyxy[0].cpu().numpy().astype(int).tolist()
-
-            logger.info(f"Detected {food_label} with confidence {best_conf:.3f}")
-
+            # Return ALL valid detections (sorted by confidence)
+            valid_boxes.sort(key=lambda x: x[2], reverse=True)
+            
+            detections = []
+            for box, class_name, confidence in valid_boxes:
+                bbox = box.xyxy[0].cpu().numpy().astype(int).tolist()
+                detections.append({
+                    "food_label"   : class_name,
+                    "confidence"   : round(confidence, 4),
+                    "bounding_box" : bbox
+                })
+            
+            logger.info(f"Detected {len(detections)} foods: {[d['food_label'] for d in detections]}")
+            
             return {
-                "food_label"   : food_label,
-                "confidence"   : round(best_conf, 4),
-                "bounding_box" : bbox,
-                "img_width"    : img.width,
-                "img_height"   : img.height
+                "detections" : detections,
+                "img_width"  : img.width,
+                "img_height" : img.height
             }
 
         except Exception as e:

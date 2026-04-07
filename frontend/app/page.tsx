@@ -6,24 +6,28 @@ import NutritionLabel from '@/components/NutritionLabel'
 import ResultsPanel from '@/components/ResultsPanel'
 import { Brain, Utensils } from 'lucide-react'
 
-interface FoodAnalysis {
-  food_label     : string | null
-  display_name   : string | null
-  confidence     : number | null
-  bounding_box   : [number, number, number, number] | null
-  img_width      : number | null
-  img_height     : number | null
-  macros         : {
-    calories  : number
-    protein_g : number
-    carbs_g   : number
-    fat_g     : number
+interface FoodDetection {
+  food_label: string
+  display_name: string
+  confidence: number
+  bounding_box: [number, number, number, number]
+  macros: {
+    calories: number
+    protein_g: number
+    carbs_g: number
+    fat_g: number
   } | null
-  macros_unit         : string
-  nutrition_source    : string | null
-  food_not_found      : boolean
-  nutrition_not_found?: boolean  // New: separate from food detection
-  message            ?: string
+  macros_unit: string
+  nutrition_source: string | null
+  nutrition_not_found?: boolean
+}
+
+interface FoodAnalysis {
+  detections: FoodDetection[]
+  img_width: number | null
+  img_height: number | null
+  food_not_found: boolean
+  message?: string
 }
 
 export default function Home() {
@@ -69,9 +73,8 @@ export default function Home() {
         throw new Error((result as any).detail || `Server error ${response.status}`)
       }
 
-      // FIX: Only treat as "no food" if food_label is null (YOLO found nothing)
-      // nutrition_not_found is separate - we still show the detection
-      if (result.food_label === null) {
+      // FIX: Handle empty detections array (no food found)
+      if (!result.detections || result.detections.length === 0) {
         setNoFood(true)
         return
       }
