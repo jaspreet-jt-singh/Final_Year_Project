@@ -93,13 +93,6 @@ export default function Home() {
     }
   }, [])
 
-  const resetAnalysis = useCallback(() => {
-    setAnalysis(null)
-    setError(null)
-    setImageUrl(null)
-    setNoFood(false)
-  }, [])
-
   return (
     <main className="min-h-screen bg-gradient-to-br from-primary-50 to-white">
       <div className="container mx-auto px-4 py-8">
@@ -146,12 +139,6 @@ export default function Home() {
             <div className="bg-yellow-50 border border-yellow-200 rounded-lg p-4 text-center">
               <p className="text-yellow-800 font-medium">No food detected in this image.</p>
               <p className="text-yellow-600 text-sm mt-1">Try a clearer photo with good lighting.</p>
-              <button
-                onClick={resetAnalysis}
-                className="mt-3 text-sm text-yellow-700 underline hover:text-yellow-900"
-              >
-                Try another image
-              </button>
             </div>
           </div>
         )}
@@ -166,17 +153,7 @@ export default function Home() {
           {/* Results Section */}
           {(analysis || isAnalyzing) && (
             <div className="text-center">
-              <div className="flex items-center justify-center space-x-4 mb-6">
-                <h2 className="text-2xl font-semibold text-gray-900">Analysis Results</h2>
-                {!isAnalyzing && (
-                  <button
-                    onClick={resetAnalysis}
-                    className="text-sm text-gray-600 hover:text-gray-800 underline"
-                  >
-                    Analyze another image
-                  </button>
-                )}
-              </div>
+              <h2 className="text-2xl font-semibold text-gray-900 mb-6">Analysis Results</h2>
               <ResultsPanel analysis={analysis} imageUrl={imageUrl} isLoading={isAnalyzing} />
             </div>
           )}

@@ -81,9 +81,6 @@ export default function ResultsPanel({ analysis, imageUrl, isLoading }: ResultsP
         <h3 className="text-xl font-bold text-gray-900 mb-2">
           Detected {analysis.detections.length} Food Item{analysis.detections.length > 1 ? 's' : ''}
         </h3>
-        <p className="text-sm text-gray-600">
-          Image size: {analysis.img_width} × {analysis.img_height}
-        </p>
       </div>
 
       {/* Image with ALL Detection Overlays */}
@@ -144,16 +141,10 @@ export default function ResultsPanel({ analysis, imageUrl, isLoading }: ResultsP
           </div>
 
           {/* Database mapping info */}
-          <div className="mb-4 grid grid-cols-1 md:grid-cols-2 gap-2 text-sm">
+          <div className="mb-4 text-sm">
             <div className="p-2 bg-gray-50 rounded">
               <span className="font-medium text-gray-600">Database Name:</span>
               <span className="ml-2 text-gray-900">{detection.display_name}</span>
-            </div>
-            <div className="p-2 bg-gray-50 rounded">
-              <span className="font-medium text-gray-600">Mapped:</span>
-              <span className={`ml-2 ${detection.food_label === detection.display_name ? 'text-yellow-600' : 'text-green-600'}`}>
-                {detection.food_label === detection.display_name ? '⚠ Same as YOLO' : '✓ Different name'}
-              </span>
             </div>
           </div>
 
