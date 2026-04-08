@@ -117,7 +117,7 @@ export default function Home() {
           <h1 className="text-4xl font-bold text-gray-900 mb-2">AI Food Recognition</h1>
           <p className="text-xl text-gray-600 mb-2">Indian Food Analysis with Nutrition Information</p>
           <div className="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-primary-100 text-primary-800">
-            Phase 2 Detection Overlay
+            AI-Powered Food Detection
           </div>
         </div>
 
@@ -182,32 +182,6 @@ export default function Home() {
           )}
         </div>
 
-        {/* Footer Info */}
-        <div className="mt-16 text-center">
-          <div className="max-w-2xl mx-auto">
-            <div className="bg-white rounded-lg shadow-sm p-6">
-              <h3 className="text-lg font-semibold text-gray-900 mb-3">Phase 2 Features</h3>
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-4 text-sm text-gray-600">
-                <div className="text-center">
-                  <div className="font-medium text-gray-900 mb-1">Food Recognition</div>
-                  <p>Identifies Indian dishes from uploaded images</p>
-                </div>
-                <div className="text-center">
-                  <div className="font-medium text-gray-900 mb-1">Detection Overlay</div>
-                  <p>Draws bounding boxes over detected food areas</p>
-                </div>
-                <div className="text-center">
-                  <div className="font-medium text-gray-900 mb-1">Nutrition Analysis</div>
-                  <p>Provides calories, protein, carbs, and fat</p>
-                </div>
-                <div className="text-center">
-                  <div className="font-medium text-gray-900 mb-1">Mobile Responsive</div>
-                  <p>Optimized layout for mobile devices</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
 
       </div>
     </main>

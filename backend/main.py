@@ -79,7 +79,7 @@ async def startup_event():
 
         await vision_service.warmup()
         logger.info("Model warm-up completed")
-        logger.info("Phase 1 MVP ready")
+        logger.info("Services initialized successfully")
     except Exception as e:
         logger.error(f"Backend initialization failed: {e}")
         raise
@@ -90,8 +90,7 @@ async def health_check():
     return {
         "status": "ok",
         "model_loaded": vision_service is not None,
-        "phase": "2",
-        "description": "AI Food Recognition - Phase 2 MVP"
+        "description": "AI Food Recognition API"
     }
 
 
@@ -235,7 +234,6 @@ async def analyze_food(request: Request, file: UploadFile = File(...)):
 async def root():
     return {
         "message"  : "AI Food Recognition API",
-        "phase"    : "2",
         "status"   : "running",
         "endpoints": {"health": "/api/health", "analyze_food": "/api/analyze-food"}
     }

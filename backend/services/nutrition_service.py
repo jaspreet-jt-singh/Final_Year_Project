@@ -1,6 +1,6 @@
 """
 Nutrition Service for Food Data Lookup
-Phase 1: SQLite database lookup with INDB data only
+SQLite database lookup with INDB data only
 """
 
 import sqlite3

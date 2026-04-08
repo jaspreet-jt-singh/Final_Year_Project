@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Phase 0: Data Foundation - merge_db.py (UPDATED FOR NEW INDB)
+Data Foundation - merge_db.py (UPDATED FOR NEW INDB)
 Imports INDB.xlsx into SQLite nutrition.db with ONE table only: indb_foods
 Correctly processes the actual INDB.xlsx structure
 """
@@ -17,7 +17,7 @@ def main():
         project_root = Path(__file__).parent.parent.parent
         os.chdir(project_root)
         
-        print("=== Phase 0: Data Foundation - merge_db.py (UPDATED FOR NEW INDB) ===")
+        print("=== Data Foundation - merge_db.py (UPDATED FOR NEW INDB) ===")
         
         # Step A - Load the new INDB data from "Nutrient Data" sheet
         print("Step A: Loading new INDB.xlsx from 'Nutrient Data' sheet...")
@@ -144,7 +144,7 @@ def main():
         conn.commit()
         conn.close()
         
-        print("\n✅ Phase 0 merge_db.py completed successfully!")
+        print("\n✅ merge_db.py completed successfully!")
         print(f"Database created: data/nutrition.db")
         print(f"Table: indb_foods with {count} rows")
         print(f"Found {len(yolo_foods)} YOLO-relevant foods")
