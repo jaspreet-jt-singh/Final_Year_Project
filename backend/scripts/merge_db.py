@@ -9,7 +9,10 @@ import pandas as pd
 import sqlite3
 import os
 import sys
+import json
 from pathlib import Path
+sys.path.insert(0, str(Path(__file__).parent.parent))
+from utils.food_normalizer import normalize_food_name, find_best_match
 
 def main():
     try:
@@ -50,6 +53,17 @@ def main():
             'carb_g': 'carbs_g'  # Fix: carb_g -> carbs_g
         })
         
+        # Add normalized name column for better matching
+        print("\nNormalizing food names for better matching...")
+        df_clean['normalized_name'] = df_clean['name'].apply(normalize_food_name)
+        
+        # Remove duplicates based on normalized names (keep first occurrence)
+        initial_count = len(df_clean)
+        df_clean = df_clean.drop_duplicates(subset=['normalized_name'], keep='first')
+        dedup_count = len(df_clean)
+        if initial_count != dedup_count:
+            print(f"Removed {initial_count - dedup_count} duplicate foods (same normalized name)")
+        
         # Convert to numeric, handling any string values
         for col in ['calories', 'protein_g', 'carbs_g', 'fat_g']:
             df_clean[col] = pd.to_numeric(df_clean[col], errors='coerce')
@@ -76,7 +90,7 @@ def main():
                     'name': row['name'],
                     'calories': row['calories'],
                     'protein_g': row['protein_g'],
-                    'carbs_g': row['carb_g'],
+                    'carbs_g': row['carbs_g'],
                     'fat_g': row['fat_g']
                 })
         
@@ -98,11 +112,12 @@ def main():
         conn = sqlite3.connect("data/nutrition.db", check_same_thread=False)
         cursor = conn.cursor()
         
-        # Create indb_foods table ONLY
+        # Create indb_foods table with normalized_name
         cursor.execute('''
             CREATE TABLE indb_foods (
                 id INTEGER PRIMARY KEY AUTOINCREMENT,
                 name TEXT UNIQUE NOT NULL,
+                normalized_name TEXT NOT NULL,
                 calories REAL,
                 protein_g REAL,
                 carbs_g REAL,
@@ -110,8 +125,54 @@ def main():
             )
         ''')
         
-        # Insert the cleaned nutrition data
-        df_clean.to_sql('indb_foods', conn, if_exists='append', index=False)
+        # Create index on normalized_name for faster lookups
+        cursor.execute('CREATE INDEX idx_normalized ON indb_foods(normalized_name)')
+        
+        # Insert the cleaned nutrition data (select only needed columns in correct order)
+        df_insert = df_clean[['name', 'normalized_name', 'calories', 'protein_g', 'carbs_g', 'fat_g']]
+        df_insert.to_sql('indb_foods', conn, if_exists='append', index=False)
+        
+        # Create YOLO to DB mapping for all YOLO classes
+        print("\nCreating YOLO class mappings...")
+        
+        # Load YOLO classes dynamically from models/class_names.json
+        class_names_path = project_root / "models" / "class_names.json"
+        if class_names_path.exists():
+            with open(class_names_path, 'r', encoding='utf-8') as f:
+                yolo_classes = json.load(f)
+            print(f"Loaded {len(yolo_classes)} YOLO classes from {class_names_path}")
+        else:
+            print(f"⚠️  YOLO class names file not found at {class_names_path}")
+            yolo_classes = []
+        
+        # Create mapping table
+        cursor.execute('''
+            CREATE TABLE IF NOT EXISTS yolo_mappings (
+                yolo_class TEXT PRIMARY KEY,
+                matched_food_name TEXT,
+                match_score REAL,
+                FOREIGN KEY (matched_food_name) REFERENCES indb_foods(name)
+            )
+        ''')
+        
+        # Get all foods from DB for matching
+        cursor.execute("SELECT name, normalized_name FROM indb_foods")
+        db_foods = {row[0]: row[1] for row in cursor.fetchall()}
+        
+        mapped_count = 0
+        for yolo_class in yolo_classes:
+            matched_name, score = find_best_match(yolo_class, list(db_foods.keys()))
+            if matched_name:
+                cursor.execute('''
+                    INSERT OR REPLACE INTO yolo_mappings (yolo_class, matched_food_name, match_score)
+                    VALUES (?, ?, ?)
+                ''', (yolo_class, matched_name, score))
+                mapped_count += 1
+                print(f"  ✓ {yolo_class} → {matched_name} (score: {score:.2f})")
+            else:
+                print(f"  ✗ {yolo_class} → No match found")
+        
+        print(f"\nMapped {mapped_count}/{len(yolo_classes)} YOLO classes to database foods")
         
         # Verify insertion
         cursor.execute("SELECT COUNT(*) FROM indb_foods")
@@ -119,11 +180,11 @@ def main():
         print(f"Inserted {count} food items into indb_foods")
         
         # Print sample data
-        cursor.execute("SELECT * FROM indb_foods LIMIT 10")
+        cursor.execute("SELECT name, normalized_name, calories, protein_g, carbs_g, fat_g FROM indb_foods LIMIT 10")
         sample = cursor.fetchall()
         print("\nSample data from database:")
         for row in sample:
-            print(f"  {row[1]:40} {row[2]:3.0f} cal, {row[3]:4.1f}g P, {row[4]:4.1f}g C, {row[5]:4.1f}g F")
+            print(f"  {row[0]:35} | {row[1]:25} | {row[2]:3.0f} cal")
         
         # Show nutrition statistics
         cursor.execute("SELECT calories, protein_g, carbs_g, fat_g FROM indb_foods")
