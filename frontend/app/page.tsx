@@ -107,11 +107,8 @@ export default function Home() {
               <Utensils className="w-8 h-8 text-white" />
             </div>
           </div>
-          <h1 className="text-4xl font-bold text-gray-900 mb-2">AI Food Recognition</h1>
-          <p className="text-xl text-gray-600 mb-2">Indian Food Analysis with Nutrition Information</p>
-          <div className="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-primary-100 text-primary-800">
-            AI-Powered Food Detection
-          </div>
+          <h1 className="text-4xl font-bold text-gray-900 mb-2">AI Based Food Recognition</h1>
+          <p className="text-xl text-gray-600 mb-2">with Nutrition Aware Recommendations</p>
         </div>
 
         {/* Error Display */}

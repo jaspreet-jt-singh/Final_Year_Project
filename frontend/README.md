@@ -1,4 +1,4 @@
-# AI Food Recognition - Frontend
+# AI Based Food Recognition with Nutrition Aware Recommendations
 
 ## Phase 1 MVP Setup Instructions
 

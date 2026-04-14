@@ -106,7 +106,7 @@ class NutritionService:
             # Try exact match on normalized names
             for db_name, db_normalized in self._cached_foods.items():
                 if normalized_input == db_normalized:
-                    logger.info(f"✅ Exact normalized match: {food_label} → {db_name}")
+                    logger.info(f"Exact normalized match: {food_label} → {db_name}")
                     async with aiosqlite.connect(str(self.db_path)) as db:
                         return await self._get_nutrition_by_name(db, db_name, food_label)
             
@@ -123,18 +123,18 @@ class NutritionService:
                         best_match = db_name
             
             if best_match:
-                logger.info(f"✅ Partial match: {food_label} → {best_match} (score: {best_score:.2f})")
+                logger.info(f"Partial match: {food_label} → {best_match} (score: {best_score:.2f})")
                 async with aiosqlite.connect(str(self.db_path)) as db:
                     return await self._get_nutrition_by_name(db, best_match, food_label)
             
             # Step 4: Try similarity matching with variations
             variations = get_food_variations(food_label)
-            logger.info(f"🔄 Trying {len(variations)} search variations")
+            logger.info(f"Trying {len(variations)} search variations")
             
             for variation in variations:
                 for db_name, db_normalized in self._cached_foods.items():
                     if variation in db_normalized or db_normalized in variation:
-                        logger.info(f"✅ Variation match: {food_label} ({variation}) → {db_name}")
+                        logger.info(f"Variation match: {food_label} ({variation}) → {db_name}")
                         async with aiosqlite.connect(str(self.db_path)) as db:
                             return await self._get_nutrition_by_name(db, db_name, food_label)
             
@@ -143,15 +143,15 @@ class NutritionService:
             matched_name, score = find_best_match(food_label, db_names)
             
             if matched_name and score >= 0.4:  # Lower threshold for last resort
-                logger.info(f"✅ Fuzzy match: {food_label} → {matched_name} (score: {score:.2f})")
+                logger.info(f"Fuzzy match: {food_label} → {matched_name} (score: {score:.2f})")
                 async with aiosqlite.connect(str(self.db_path)) as db:
                     return await self._get_nutrition_by_name(db, matched_name, food_label)
             
-            logger.warning(f"❌ No match found for '{food_label}'")
+            logger.warning(f"No match found for '{food_label}'")
             return None
             
         except Exception as e:
-            logger.error(f"❌ Error getting nutrition for {food_label}: {e}")
+            logger.error(f"Error getting nutrition for {food_label}: {e}")
             raise
     
     async def _get_nutrition_by_name(self, db, db_food_name: str, original_label: str) -> dict:
@@ -188,7 +188,7 @@ class NutritionService:
                 rows = await cursor.fetchall()
                 return [{"name": row[0], "normalized": row[1]} for row in rows]
         except Exception as e:
-            logger.error(f"❌ Error getting all foods: {e}")
+            logger.error(f"Error getting all foods: {e}")
             raise
 
 
