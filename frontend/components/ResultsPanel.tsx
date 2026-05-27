@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect } from 'react'
 import { CheckCircle, AlertCircle, TrendingUp, Activity, Zap, Sparkles, Loader2 } from 'lucide-react'
+import NutritionLabel from './NutritionLabel'
 import ImageOverlay from './ImageOverlay'
 
 interface FoodDetection {
@@ -158,88 +159,48 @@ export default function ResultsPanel({ analysis, imageUrl, isLoading, userGoal =
 
       {/* Each Detected Food */}
       {analysis.detections.map((detection, index) => (
-        <div key={index} className="card">
-          {/* Detection Header - Shows formatted YOLO label, raw label, and database name */}
+        <div key={index} className="bg-white rounded-2xl shadow-md border border-gray-100 p-6 text-left">
+          {/* Detection Header */}
           <div className="flex items-center justify-between mb-4">
             <div className="flex items-center space-x-3">
-              <span className="bg-primary-100 text-primary-800 w-8 h-8 rounded-full flex items-center justify-center font-bold">
+              <span className="bg-gradient-to-br from-orange-400 to-amber-500 text-white w-8 h-8 rounded-full flex items-center justify-center font-bold text-sm shadow-md">
                 {index + 1}
               </span>
               <div>
-                {/* Main title: Formatted YOLO label */}
                 <h3 className="text-xl font-semibold text-gray-900">
                   {formatYoloLabel(detection.food_label)}
                 </h3>
-                {/* Raw YOLO label */}
                 <p className="text-sm text-gray-500">
-                  <span className="font-medium text-gray-600">YOLO Label:</span>{' '}
-                  <code className="bg-gray-100 px-1 rounded">{detection.food_label}</code>
+                  {detection.display_name !== formatYoloLabel(detection.food_label) && (
+                    <span>{detection.display_name} · </span>
+                  )}
+                  <span className="text-gray-400">per 100g</span>
                 </p>
               </div>
             </div>
-            <div className={`px-3 py-1 rounded-full text-sm font-medium ${getConfidenceBadge(detection.confidence)}`}>
-              {(detection.confidence * 100).toFixed(1)}%
-            </div>
-          </div>
-
-          {/* Database mapping info */}
-          <div className="mb-4 text-sm">
-            <div className="p-2 bg-gray-50 rounded">
-              <span className="font-medium text-gray-600">Database Name:</span>
-              <span className="ml-2 text-gray-900">{detection.display_name}</span>
+            <div className={`px-3 py-1 rounded-full text-sm font-semibold ${getConfidenceBadge(detection.confidence)}`}>
+              {(detection.confidence * 100).toFixed(0)}%
             </div>
           </div>
 
           {/* Nutrition or Not Found */}
           {!detection.nutrition_not_found && detection.macros ? (
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-              <div className="text-center p-4 bg-orange-50 rounded-lg">
-                <Zap className="w-6 h-6 text-orange-600 mx-auto mb-2" />
-                <div className="text-2xl font-bold text-gray-900">
-                  {Math.round(detection.macros.calories)}
-                </div>
-                <div className="text-sm text-gray-600">Calories</div>
-              </div>
-              
-              <div className="text-center p-4 bg-blue-50 rounded-lg">
-                <Activity className="w-6 h-6 text-blue-600 mx-auto mb-2" />
-                <div className="text-2xl font-bold text-gray-900">
-                  {Math.round(detection.macros.protein_g)}g
-                </div>
-                <div className="text-sm text-gray-600">Protein</div>
-              </div>
-              
-              <div className="text-center p-4 bg-green-50 rounded-lg">
-                <div className="w-6 h-6 bg-green-600 rounded-full mx-auto mb-2"></div>
-                <div className="text-2xl font-bold text-gray-900">
-                  {Math.round(detection.macros.carbs_g)}g
-                </div>
-                <div className="text-sm text-gray-600">Carbs</div>
-              </div>
-              
-              <div className="text-center p-4 bg-purple-50 rounded-lg">
-                <div className="w-6 h-6 bg-purple-600 rounded-full mx-auto mb-2"></div>
-                <div className="text-2xl font-bold text-gray-900">
-                  {Math.round(detection.macros.fat_g)}g
-                </div>
-                <div className="text-sm text-gray-600">Fat</div>
-              </div>
-            </div>
+            <NutritionLabel macros={detection.macros} />
           ) : (
-            <div className="bg-red-50 border border-red-200 rounded-lg p-4">
+            <div className="bg-amber-50 border border-amber-200 rounded-xl p-4">
               <div className="flex items-center space-x-2">
-                <AlertCircle className="w-5 h-5 text-red-600" />
-                <span className="font-medium text-red-800">
+                <AlertCircle className="w-5 h-5 text-amber-600 flex-shrink-0" />
+                <span className="text-sm text-amber-800">
                   Nutrition data not available for {formatYoloLabel(detection.food_label)}
                 </span>
               </div>
             </div>
           )}
 
-          <div className="mt-4 flex items-center space-x-4 text-sm text-gray-600">
+          <div className="mt-4 pt-3 border-t border-gray-100 flex items-center space-x-4 text-xs text-gray-400">
             <span>Source: {detection.nutrition_source || 'N/A'}</span>
             <span>•</span>
-            <span>Unit: {detection.macros_unit}</span>
+            <span>Confidence: {(detection.confidence * 100).toFixed(1)}%</span>
           </div>
         </div>
       ))}
