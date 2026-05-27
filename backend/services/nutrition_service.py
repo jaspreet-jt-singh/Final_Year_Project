@@ -138,7 +138,7 @@ class NutritionService:
                         async with aiosqlite.connect(str(self.db_path)) as db:
                             return await self._get_nutrition_by_name(db, db_name, food_label)
             
-            # Step 5: Last resort - fuzzy matching
+            # Fuzzy matching
             db_names = list(self._cached_foods.keys())
             matched_name, score = find_best_match(food_label, db_names)
             

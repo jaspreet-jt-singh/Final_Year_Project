@@ -69,10 +69,10 @@ class VisionService:
         try:
             img_hash = hashlib.md5(image_content).hexdigest()[:8]
             logger.info(f"Image hash: {img_hash} | Size: {len(image_content)} bytes")
-            # ✅ PIL always RGB — strips alpha, no BGR swap needed
+            # PIL always RGB — strips alpha, no BGR swap needed
             img       = Image.open(io.BytesIO(image_content)).convert('RGB')
 
-            # ✅ iou=0.45 matches notebook — was missing before
+            # iou=0.45 matches notebook
             results    = self.model.predict(img, verbose=False, conf=conf, iou=iou, imgsz=640)
             detections = results[0].boxes
             logger.info(f"Found {len(detections)} detections above {conf} confidence")

@@ -1,7 +1,7 @@
 'use client'
 
-import React from 'react'
-import { CheckCircle, AlertCircle, TrendingUp, Activity, Zap } from 'lucide-react'
+import React, { useState, useEffect } from 'react'
+import { CheckCircle, AlertCircle, TrendingUp, Activity, Zap, Sparkles, Loader2 } from 'lucide-react'
 import ImageOverlay from './ImageOverlay'
 
 interface FoodDetection {
@@ -31,9 +31,51 @@ interface ResultsPanelProps {
   analysis: FoodAnalysis | null
   imageUrl: string | null
   isLoading: boolean
+  userGoal?: string
 }
 
-export default function ResultsPanel({ analysis, imageUrl, isLoading }: ResultsPanelProps) {
+export default function ResultsPanel({ analysis, imageUrl, isLoading, userGoal = 'Maintenance' }: ResultsPanelProps) {
+  // Phase 3: AI Recommendations state
+  const [recommendations, setRecommendations] = useState<string[]>([])
+  const [isLoadingRecommendations, setIsLoadingRecommendations] = useState(false)
+  const [recommendationSource, setRecommendationSource] = useState<string>('')
+  // Fetch AI recommendations when analysis is complete
+  useEffect(() => {
+    if (analysis && analysis.detections && analysis.detections.length > 0 && !isLoading) {
+      fetchRecommendations()
+    }
+  }, [analysis, isLoading])
+
+  const fetchRecommendations = async () => {
+    if (!analysis || !analysis.detections || analysis.detections.length === 0) return
+    
+    setIsLoadingRecommendations(true)
+    setRecommendations([])
+    
+    try {
+      const response = await fetch('http://localhost:8000/api/recommendations', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          detected_foods: analysis.detections,
+          user_goal: userGoal
+        })
+      })
+      
+      if (response.ok) {
+        const data = await response.json()
+        setRecommendations(data.recommendations || [])
+        setRecommendationSource(data.source || 'unknown')
+      }
+    } catch (err) {
+      console.error('Failed to fetch recommendations:', err)
+    } finally {
+      setIsLoadingRecommendations(false)
+    }
+  }
+
   if (isLoading) {
     return (
       <div className="w-full max-w-2xl mx-auto">
@@ -201,6 +243,42 @@ export default function ResultsPanel({ analysis, imageUrl, isLoading }: ResultsP
           </div>
         </div>
       ))}
+
+      {/* Phase 3: AI Dietary Guidance */}
+      <div className="card bg-gradient-to-br from-purple-50 to-indigo-50 border-purple-200">
+        <div className="flex items-center mb-4">
+          <Sparkles className="w-6 h-6 text-purple-600 mr-2" />
+          <h3 className="text-xl font-bold text-gray-900">AI Dietary Guidance</h3>
+        </div>
+        
+        {isLoadingRecommendations ? (
+          <div className="flex items-center justify-center py-8">
+            <Loader2 className="w-8 h-8 text-purple-600 animate-spin" />
+            <span className="ml-3 text-gray-600">Generating personalized advice...</span>
+          </div>
+        ) : recommendations.length > 0 ? (
+          <div className="space-y-3">
+            {recommendations.map((rec, idx) => (
+              <div key={idx} className="flex items-start space-x-3">
+                <div className="flex-shrink-0 w-6 h-6 bg-purple-100 rounded-full flex items-center justify-center mt-0.5">
+                  <span className="text-purple-600 text-sm font-medium">{idx + 1}</span>
+                </div>
+                <p className="text-gray-700 flex-1">{rec}</p>
+              </div>
+            ))}
+            <div className="mt-4 pt-3 border-t border-purple-200">
+              <p className="text-xs text-gray-500">
+                Powered by AI • Goal: {userGoal}
+              </p>
+            </div>
+          </div>
+        ) : (
+          <div className="text-center py-6 text-gray-500">
+            <p>Unable to generate recommendations at this time.</p>
+            <p className="text-sm mt-1">Your goal: {userGoal}</p>
+          </div>
+        )}
+      </div>
     </div>
   )
 }
