@@ -4,7 +4,7 @@ import React, { useState, useCallback, useEffect } from 'react'
 import ImageUpload from '@/components/ImageUpload'
 import NutritionLabel from '@/components/NutritionLabel'
 import ResultsPanel from '@/components/ResultsPanel'
-import { Brain, Utensils, Target, Flame, ArrowDown, Camera, RotateCcw, Info } from 'lucide-react'
+import { Brain, Utensils, Target, Flame, ArrowDown, Camera, RotateCcw, Info, Heart } from 'lucide-react'
 
 interface FoodDetection {
   food_label: string
@@ -51,6 +51,11 @@ interface GoalOption {
   description: string
 }
 
+interface HealthConditionOption {
+  name: string
+  description: string
+}
+
 const FALLBACK_GOALS: GoalOption[] = [
   { name: 'Weight Loss', carbs_percent: 40, protein_percent: 35, fat_percent: 25, description: 'Higher protein, moderate carbs for satiety' },
   { name: 'Muscle Gain', carbs_percent: 40, protein_percent: 30, fat_percent: 30, description: 'Balanced macros for muscle synthesis' },
@@ -58,7 +63,32 @@ const FALLBACK_GOALS: GoalOption[] = [
   { name: 'Endurance',   carbs_percent: 55, protein_percent: 20, fat_percent: 20, description: 'Higher carbs for sustained energy' },
 ]
 
-function calculateLocalMacros(goal: string, calories: number): MacroGoal {
+const FALLBACK_HEALTH_CONDITIONS: HealthConditionOption[] = [
+  { name: 'None', description: 'No specific health conditions' },
+  { name: 'Diabetic', description: 'Focus on low glycemic index foods, manage blood sugar spikes' },
+  { name: 'Hypertension (High BP)', description: 'Low sodium diet, avoid processed foods' },
+  { name: 'Heart Disease', description: 'Low saturated fat, low cholesterol' },
+  { name: 'High Cholesterol', description: 'Low saturated/trans fats, high fiber' },
+  { name: 'Digestive Issues', description: 'Easily digestible foods, small frequent meals' },
+  { name: 'Kidney Disease', description: 'Low potassium, controlled protein intake' },
+  { name: 'Anemia', description: 'Iron-rich foods, vitamin C to aid absorption' },
+  { name: 'Thyroid Disorder', description: 'Iodine balance, selenium-rich foods' },
+]
+
+function calculateLocalMacros(goal: string, calories: number, healthCondition: string = 'None'): MacroGoal {
+  // Health condition macro modifiers (mirrors backend logic for offline mode)
+  const conditionModifiers: Record<string, { carbs: number; protein: number; fat: number }> = {
+    'None':                    { carbs: 1.0, protein: 1.0, fat: 1.0 },
+    'Diabetic':                { carbs: 0.8, protein: 1.15, fat: 1.0 },
+    'Hypertension (High BP)':  { carbs: 1.0, protein: 1.0, fat: 0.9 },
+    'Heart Disease':           { carbs: 1.05, protein: 1.0, fat: 0.8 },
+    'High Cholesterol':        { carbs: 1.05, protein: 1.1, fat: 0.75 },
+    'Digestive Issues':        { carbs: 1.0, protein: 0.9, fat: 0.85 },
+    'Kidney Disease':          { carbs: 1.15, protein: 0.6, fat: 1.0 },
+    'Anemia':                  { carbs: 1.0, protein: 1.1, fat: 0.9 },
+    'Thyroid Disorder':        { carbs: 1.0, protein: 1.05, fat: 1.0 },
+  }
+
   const goalMap: Record<string, { carbs_pct: number; protein_pct: number; fat_pct: number }> = {
     'Weight Loss': { carbs_pct: 40, protein_pct: 35, fat_pct: 25 },
     'Muscle Gain': { carbs_pct: 40, protein_pct: 30, fat_pct: 30 },
@@ -70,13 +100,26 @@ function calculateLocalMacros(goal: string, calories: number): MacroGoal {
   const descMap: Record<string, string> = {}
   FALLBACK_GOALS.forEach(g => { descMap[g.name] = g.description })
   
+  // Apply condition modifiers
+  const mods = conditionModifiers[healthCondition] || conditionModifiers['None']
+  const totalMod = (split.carbs_pct * mods.carbs) + (split.protein_pct * mods.protein) + (split.fat_pct * mods.fat)
+  const carbsPct = Math.round((split.carbs_pct * mods.carbs) / totalMod * 100)
+  const proteinPct = Math.round((split.protein_pct * mods.protein) / totalMod * 100)
+  const fatPct = 100 - carbsPct - proteinPct
+  
+  let description = descMap[goal] || ''
+  if (healthCondition !== 'None') {
+    const condDesc = FALLBACK_HEALTH_CONDITIONS.find(c => c.name === healthCondition)
+    if (condDesc) description += ` | Adapted for ${healthCondition}`
+  }
+  
   return {
     goal, goal_key: goalKey, target_calories: calories,
-    carbs_g: Math.round((calories * split.carbs_pct / 100) / 4),
-    protein_g: Math.round((calories * split.protein_pct / 100) / 4),
-    fat_g: Math.round((calories * split.fat_pct / 100) / 9),
-    carbs_percent: split.carbs_pct, protein_percent: split.protein_pct, fat_percent: split.fat_pct,
-    description: descMap[goal] || ''
+    carbs_g: Math.round((calories * carbsPct / 100) / 4),
+    protein_g: Math.round((calories * proteinPct / 100) / 4),
+    fat_g: Math.round((calories * fatPct / 100) / 9),
+    carbs_percent: carbsPct, protein_percent: proteinPct, fat_percent: fatPct,
+    description
   }
 }
 
@@ -96,13 +139,16 @@ export default function Home() {
   const [consumedFat, setConsumedFat] = useState<number>(0)
   const [goalOptions, setGoalOptions] = useState<GoalOption[]>(FALLBACK_GOALS)
   const [showMacroDetails, setShowMacroDetails] = useState(false)
+  const [selectedHealthCondition, setSelectedHealthCondition] = useState<string>('None')
+  const [healthConditionOptions, setHealthConditionOptions] = useState<HealthConditionOption[]>(FALLBACK_HEALTH_CONDITIONS)
+  const [showConditionDetails, setShowConditionDetails] = useState(false)
 
-  const calculateMacros = useCallback(async (goal: string, calories: number) => {
+  const calculateMacros = useCallback(async (goal: string, calories: number, healthCondition: string = 'None') => {
     try {
       const response = await fetch('http://localhost:8000/api/user/calculate-macros', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ goal, target_calories: calories })
+        body: JSON.stringify({ goal, target_calories: calories, health_condition: healthCondition })
       })
       if (response.ok) {
         const data = await response.json()
@@ -112,29 +158,38 @@ export default function Home() {
     } catch {
       // Backend unavailable — use local calculation
     }
-    setMacroGoal(calculateLocalMacros(goal, calories))
+    setMacroGoal(calculateLocalMacros(goal, calories, healthCondition))
   }, [])
 
   useEffect(() => {
-    const fetchGoals = async () => {
+    const fetchInitialData = async () => {
       try {
-        const response = await fetch('http://localhost:8000/api/user/goals')
-        if (response.ok) {
-          const data = await response.json()
-          if (data.goals && data.goals.length > 0) {
-            setGoalOptions(data.goals)
+        // Fetch goals
+        const goalsRes = await fetch('http://localhost:8000/api/user/goals')
+        if (goalsRes.ok) {
+          const goalsData = await goalsRes.json()
+          if (goalsData.goals && goalsData.goals.length > 0) {
+            setGoalOptions(goalsData.goals)
+          }
+        }
+        // Fetch health conditions
+        const healthRes = await fetch('http://localhost:8000/api/user/health-conditions')
+        if (healthRes.ok) {
+          const healthData = await healthRes.json()
+          if (healthData.health_conditions && healthData.health_conditions.length > 0) {
+            setHealthConditionOptions(healthData.health_conditions)
           }
         }
       } catch {
-        console.warn('Backend not running — using hardcoded goal options')
+        console.warn('Backend not running — using hardcoded options')
       }
     }
-    fetchGoals()
+    fetchInitialData()
   }, [])
 
   useEffect(() => {
-    calculateMacros(selectedGoal, targetCalories)
-  }, [selectedGoal, targetCalories, calculateMacros])
+    calculateMacros(selectedGoal, targetCalories, selectedHealthCondition)
+  }, [selectedGoal, targetCalories, selectedHealthCondition, calculateMacros])
 
   const remainingCalories = macroGoal ? macroGoal.target_calories - consumedCalories : 0
   const remainingProtein = macroGoal ? macroGoal.protein_g - consumedProtein : 0
@@ -385,6 +440,47 @@ export default function Home() {
               </div>
             )}
 
+            {/* Health Condition Selector */}
+            <div className="mt-4 pt-4 border-t border-gray-100">
+              <div className="flex items-center justify-between mb-3">
+                <label className="text-sm font-medium text-gray-700 flex items-center">
+                  <Heart className="w-4 h-4 mr-1.5 text-red-500" />
+                  Health Condition
+                </label>
+                <button
+                  onClick={() => setShowConditionDetails(!showConditionDetails)}
+                  className="text-xs text-gray-500 hover:text-gray-700 flex items-center space-x-1"
+                >
+                  <Info className="w-3 h-3" />
+                  <span>{showConditionDetails ? 'Hide' : 'What is this?'}</span>
+                </button>
+              </div>
+              <select
+                value={selectedHealthCondition}
+                onChange={(e) => setSelectedHealthCondition(e.target.value)}
+                className="w-full px-4 py-2.5 border border-gray-300 rounded-xl focus:ring-2 focus:ring-red-500 focus:border-transparent bg-white text-gray-900 mb-2"
+              >
+                {healthConditionOptions.map((option) => (
+                  <option key={option.name} value={option.name}>
+                    {option.name}
+                  </option>
+                ))}
+              </select>
+              {showConditionDetails && selectedHealthCondition !== 'None' && (
+                <p className="text-xs text-gray-500 mt-1 animate-fade-in">
+                  {healthConditionOptions.find(c => c.name === selectedHealthCondition)?.description || ''}
+                </p>
+              )}
+              {selectedHealthCondition !== 'None' && (
+                <div className="mt-2 flex items-center space-x-2 bg-red-50 border border-red-200 rounded-lg px-3 py-2">
+                  <Heart className="w-3.5 h-3.5 text-red-500 flex-shrink-0" />
+                  <p className="text-xs text-red-700">
+                    Macros and recommendations will be adapted for <strong>{selectedHealthCondition}</strong>
+                  </p>
+                </div>
+              )}
+            </div>
+
             {/* Quick calorie presets */}
             <div className="mt-4">
               <label className="block text-xs text-gray-500 mb-2">Quick select:</label>
@@ -533,6 +629,7 @@ export default function Home() {
                 imageUrl={imageUrl} 
                 isLoading={isAnalyzing} 
                 userGoal={selectedGoal}
+                healthCondition={selectedHealthCondition}
               />
             </div>
           )}

@@ -242,16 +242,18 @@ async def analyze_food(request: Request, file: UploadFile = File(...)):
 class MacroCalculationRequest(BaseModel):
     goal: str
     target_calories: int
+    health_condition: str = "none"
 
 @app.post("/api/user/calculate-macros")
 async def calculate_macros(request: MacroCalculationRequest):
     """
-    Calculate macro targets based on user goal and calorie target.
+    Calculate macro targets based on user goal, calorie target, and health condition.
     
     Request body:
         {
             "goal": "Weight Loss",
-            "target_calories": 2000
+            "target_calories": 2000,
+            "health_condition": "none"
         }
     
     Returns:
@@ -266,7 +268,7 @@ async def calculate_macros(request: MacroCalculationRequest):
     if request.target_calories > 5000:
         raise HTTPException(status_code=400, detail="Target calories seem unrealistically high")
     
-    result = recommendation_service.calculate_macros(request.goal, request.target_calories)
+    result = recommendation_service.calculate_macros(request.goal, request.target_calories, request.health_condition)
     return result
 
 
@@ -283,17 +285,31 @@ async def get_available_goals():
     }
 
 
+@app.get("/api/user/health-conditions")
+async def get_available_health_conditions():
+    """
+    Get list of available health conditions and their dietary descriptions.
+    """
+    if not recommendation_service:
+        raise HTTPException(status_code=503, detail="Recommendation service not initialized")
+    
+    return {
+        "health_conditions": list(recommendation_service.HEALTH_CONDITIONS.values())
+    }
+
+
 # ============== Phase 3: AI Recommendations ==============
 
 @app.post("/api/recommendations")
 async def get_recommendations(request: Request):
     """
-    Get AI-powered dietary recommendations based on scanned food and user goal.
+    Get AI-powered dietary recommendations based on scanned food, user goal, and health condition.
     
     Request body:
         {
             "detected_foods": [...],  # Array of detected food items from analysis
-            "user_goal": "Weight Loss"  # User's dietary goal
+            "user_goal": "Weight Loss",  # User's dietary goal
+            "health_condition": "none"  # User's health condition (optional)
         }
     
     Returns:
@@ -309,6 +325,7 @@ async def get_recommendations(request: Request):
     
     detected_foods = body.get("detected_foods", [])
     user_goal = body.get("user_goal", "Maintenance")
+    health_condition = body.get("health_condition", "none")
     
     if not detected_foods:
         raise HTTPException(status_code=400, detail="No detected foods provided")
@@ -317,7 +334,7 @@ async def get_recommendations(request: Request):
         raise HTTPException(status_code=400, detail="No user goal provided")
     
     try:
-        result = await recommendation_service.get_recommendations(detected_foods, user_goal)
+        result = await recommendation_service.get_recommendations(detected_foods, user_goal, health_condition)
         return result
     except Exception as e:
         logger.error(f"Error getting recommendations: {e}")

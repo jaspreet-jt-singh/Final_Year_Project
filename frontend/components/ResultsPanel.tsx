@@ -33,9 +33,10 @@ interface ResultsPanelProps {
   imageUrl: string | null
   isLoading: boolean
   userGoal?: string
+  healthCondition?: string
 }
 
-export default function ResultsPanel({ analysis, imageUrl, isLoading, userGoal = 'Maintenance' }: ResultsPanelProps) {
+export default function ResultsPanel({ analysis, imageUrl, isLoading, userGoal = 'Maintenance', healthCondition = 'None' }: ResultsPanelProps) {
   // Phase 3: AI Recommendations state
   const [recommendations, setRecommendations] = useState<string[]>([])
   const [isLoadingRecommendations, setIsLoadingRecommendations] = useState(false)
@@ -45,7 +46,7 @@ export default function ResultsPanel({ analysis, imageUrl, isLoading, userGoal =
     if (analysis && analysis.detections && analysis.detections.length > 0 && !isLoading) {
       fetchRecommendations()
     }
-  }, [analysis, isLoading])
+  }, [analysis, isLoading, healthCondition])
 
   const fetchRecommendations = async () => {
     if (!analysis || !analysis.detections || analysis.detections.length === 0) return
@@ -61,7 +62,8 @@ export default function ResultsPanel({ analysis, imageUrl, isLoading, userGoal =
         },
         body: JSON.stringify({
           detected_foods: analysis.detections,
-          user_goal: userGoal
+          user_goal: userGoal,
+          health_condition: healthCondition
         })
       })
       
@@ -205,11 +207,11 @@ export default function ResultsPanel({ analysis, imageUrl, isLoading, userGoal =
         </div>
       ))}
 
-      {/* Phase 3: AI Dietary Guidance */}
+      {/* Phase 3: Dietary Guidance */}
       <div className="card bg-gradient-to-br from-purple-50 to-indigo-50 border-purple-200">
         <div className="flex items-center mb-4">
           <Sparkles className="w-6 h-6 text-purple-600 mr-2" />
-          <h3 className="text-xl font-bold text-gray-900">AI Dietary Guidance</h3>
+          <h3 className="text-xl font-bold text-gray-900">Dietary Guidance</h3>
         </div>
         
         {isLoadingRecommendations ? (
@@ -227,16 +229,16 @@ export default function ResultsPanel({ analysis, imageUrl, isLoading, userGoal =
                 <p className="text-gray-700 flex-1">{rec}</p>
               </div>
             ))}
-            <div className="mt-4 pt-3 border-t border-purple-200">
-              <p className="text-xs text-gray-500">
-                Powered by AI • Goal: {userGoal}
-              </p>
-            </div>
+              <div className="mt-4 pt-3 border-t border-purple-200">
+                <p className="text-xs text-gray-500">
+                  Goal: {userGoal}{healthCondition !== 'None' ? ` • Adapted for ${healthCondition}` : ''}
+                </p>
+              </div>
           </div>
         ) : (
           <div className="text-center py-6 text-gray-500">
             <p>Unable to generate recommendations at this time.</p>
-            <p className="text-sm mt-1">Your goal: {userGoal}</p>
+            <p className="text-sm mt-1">Your goal: {userGoal}{healthCondition !== 'None' ? ` • ${healthCondition}` : ''}</p>
           </div>
         )}
       </div>
