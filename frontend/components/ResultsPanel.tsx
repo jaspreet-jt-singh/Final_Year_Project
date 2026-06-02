@@ -1,7 +1,7 @@
 'use client'
 
 import React, { useState, useEffect } from 'react'
-import { CheckCircle, AlertCircle, TrendingUp, Activity, Zap, Sparkles, Loader2 } from 'lucide-react'
+import { CheckCircle, AlertCircle, TrendingUp, Activity, Zap, Sparkles, Loader2, Plus, Minus } from 'lucide-react'
 import NutritionLabel from './NutritionLabel'
 import ImageOverlay from './ImageOverlay'
 
@@ -34,13 +34,55 @@ interface ResultsPanelProps {
   isLoading: boolean
   userGoal?: string
   healthCondition?: string
+  onNutritionChange?: (totals: { calories: number; protein: number; carbs: number; fat: number }) => void
 }
 
-export default function ResultsPanel({ analysis, imageUrl, isLoading, userGoal = 'Maintenance', healthCondition = 'None' }: ResultsPanelProps) {
+export default function ResultsPanel({ analysis, imageUrl, isLoading, userGoal = 'Maintenance', healthCondition = 'None', onNutritionChange }: ResultsPanelProps) {
   // Phase 3: AI Recommendations state
   const [recommendations, setRecommendations] = useState<string[]>([])
   const [isLoadingRecommendations, setIsLoadingRecommendations] = useState(false)
   const [recommendationSource, setRecommendationSource] = useState<string>('')
+  // Serving multipliers for each detected food
+  const [servingMultipliers, setServingMultipliers] = useState<number[]>([])
+  
+  // Initialize multipliers when analysis changes
+  useEffect(() => {
+    if (analysis && analysis.detections) {
+      setServingMultipliers(analysis.detections.map(() => 1))
+    }
+  }, [analysis])
+  
+  // Recalculate and propagate totals whenever multipliers change
+  useEffect(() => {
+    if (!analysis || !analysis.detections || !onNutritionChange) return
+    
+    let totalCalories = 0
+    let totalProtein = 0
+    let totalCarbs = 0
+    let totalFat = 0
+    
+    analysis.detections.forEach((det, idx) => {
+      const mult = servingMultipliers[idx] ?? 1
+      if (det.macros) {
+        totalCalories += (det.macros.calories || 0) * mult
+        totalProtein += (det.macros.protein_g || 0) * mult
+        totalCarbs += (det.macros.carbs_g || 0) * mult
+        totalFat += (det.macros.fat_g || 0) * mult
+      }
+    })
+    
+    onNutritionChange({ calories: totalCalories, protein: totalProtein, carbs: totalCarbs, fat: totalFat })
+  }, [servingMultipliers, analysis, onNutritionChange])
+  
+  const handleServeChange = (index: number, delta: number) => {
+    setServingMultipliers(prev => {
+      const next = [...prev]
+      const current = next[index] ?? 1
+      const newVal = Math.max(0.25, Math.min(10, current + delta))
+      next[index] = Math.round(newVal * 4) / 4 // Round to nearest 0.25
+      return next
+    })
+  }
   // Fetch AI recommendations when analysis is complete
   useEffect(() => {
     if (analysis && analysis.detections && analysis.detections.length > 0 && !isLoading) {
@@ -195,6 +237,32 @@ export default function ResultsPanel({ analysis, imageUrl, isLoading, userGoal =
                 <span className="text-sm text-amber-800">
                   Nutrition data not available for {formatYoloLabel(detection.food_label)}
                 </span>
+              </div>
+            </div>
+          )}
+
+          {/* Serving Size Multiplier */}
+          {!detection.nutrition_not_found && detection.macros && (
+            <div className="mt-4 flex items-center justify-between bg-gray-50 rounded-xl px-4 py-2.5">
+              <span className="text-sm text-gray-600 font-medium">Servings (100g each)</span>
+              <div className="flex items-center space-x-3">
+                <button
+                  onClick={() => handleServeChange(index, -0.25)}
+                  disabled={(servingMultipliers[index] ?? 1) <= 0.25}
+                  className="w-8 h-8 rounded-full bg-white border border-gray-300 flex items-center justify-center hover:bg-gray-100 disabled:opacity-40 disabled:cursor-not-allowed transition-colors"
+                >
+                  <Minus className="w-3.5 h-3.5 text-gray-600" />
+                </button>
+                <span className="text-lg font-bold text-gray-900 w-12 text-center">
+                  {servingMultipliers[index] ?? 1}x
+                </span>
+                <button
+                  onClick={() => handleServeChange(index, 0.25)}
+                  disabled={(servingMultipliers[index] ?? 1) >= 10}
+                  className="w-8 h-8 rounded-full bg-white border border-gray-300 flex items-center justify-center hover:bg-gray-100 disabled:opacity-40 disabled:cursor-not-allowed transition-colors"
+                >
+                  <Plus className="w-3.5 h-3.5 text-gray-600" />
+                </button>
               </div>
             </div>
           )}

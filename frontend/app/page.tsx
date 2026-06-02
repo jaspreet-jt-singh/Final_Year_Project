@@ -215,6 +215,13 @@ export default function Home() {
     setTargetCalories(calories)
   }
 
+  const handleNutritionChange = useCallback((totals: { calories: number; protein: number; carbs: number; fat: number }) => {
+    setConsumedCalories(Math.round(totals.calories))
+    setConsumedProtein(Math.round(totals.protein))
+    setConsumedCarbs(Math.round(totals.carbs))
+    setConsumedFat(Math.round(totals.fat))
+  }, [])
+
   const resetAll = useCallback(() => {
     setAnalysis(null)
     setImageUrl(null)
@@ -280,10 +287,7 @@ export default function Home() {
         }
       })
 
-      setConsumedCalories(totalCalories)
-      setConsumedProtein(totalProtein)
-      setConsumedCarbs(totalCarbs)
-      setConsumedFat(totalFat)
+      // Set initial analysis (totals will come from onNutritionChange callback)
       setAnalysis(result)
 
     } catch (err: any) {
@@ -630,6 +634,7 @@ export default function Home() {
                 isLoading={isAnalyzing} 
                 userGoal={selectedGoal}
                 healthCondition={selectedHealthCondition}
+                onNutritionChange={handleNutritionChange}
               />
             </div>
           )}
@@ -638,7 +643,7 @@ export default function Home() {
         {/* Footer */}
         <div className="mt-16 text-center">
           <p className="text-sm text-gray-400">
-            AI Food Recognition · Final Year Project · Jaspreet Singh
+            AI Food Recognition · Final Year Project
           </p>
         </div>
 
