@@ -26,8 +26,13 @@ import yaml
 from PIL import Image, ImageEnhance, ImageOps
 from iterstrat.ml_stratifiers import MultilabelStratifiedShuffleSplit
 
+MIN_TRAIN_IMAGES_PER_CLASS = 500      # only boost classes below this
+MAX_TRAIN_IMAGES_PER_CLASS = 1200     # optional safety cap for very large classes
+MAX_AUG_PER_CLASS = 250               # never add too many synthetic images for one class
+MAX_AUG_PER_SOURCE = 1                # at most one augmentation per original sample
+
 DATA_ROOT = Path("data")
-OUTPUT_DIR = DATA_ROOT / "master_dataset"
+OUTPUT_DIR = DATA_ROOT / "master_dataset_v2"
 LOG_PATH = OUTPUT_DIR / "build_log.txt"
 COUNTS_CSV = OUTPUT_DIR / "split_class_counts_before_after.csv"
 
@@ -372,8 +377,7 @@ def augment_train_only(train_samples: list[Sample], class_to_id: dict[str, int])
     image_dir = OUTPUT_DIR / "train" / "images"
     label_dir = OUTPUT_DIR / "train" / "labels"
 
-    ann_counts = class_annotation_counts(train_samples)
-    target = max(ann_counts.values()) if ann_counts else 0
+    img_counts = class_image_counts(train_samples)
 
     by_class = defaultdict(list)
     for sample in train_samples:
@@ -384,10 +388,39 @@ def augment_train_only(train_samples: list[Sample], class_to_id: dict[str, int])
     augmented = []
     next_index = len(train_samples) + 1
 
+    target_by_class = {}
+    usage_by_class = defaultdict(Counter)
+
     for cls in sorted(class_to_id):
+        current_count = img_counts[cls]
+
+        if current_count >= MIN_TRAIN_IMAGES_PER_CLASS:
+            target_by_class[cls] = min(current_count, MAX_TRAIN_IMAGES_PER_CLASS)
+            continue
+
+        target = min(MIN_TRAIN_IMAGES_PER_CLASS, MAX_TRAIN_IMAGES_PER_CLASS)
+        needed = target - current_count
+        needed = min(needed, MAX_AUG_PER_CLASS)
+
         pool = by_class.get(cls, [])
-        while pool and ann_counts[cls] < target:
-            source = random.choice(pool)
+        if not pool or needed <= 0:
+            target_by_class[cls] = current_count
+            continue
+
+        random.shuffle(pool)
+        created_for_cls = 0
+        pool_index = 0
+
+        while created_for_cls < needed:
+            source = pool[pool_index % len(pool)]
+            pool_index += 1
+
+            source_key = str(source.image_path)
+            if usage_by_class[cls][source_key] >= MAX_AUG_PER_SOURCE:
+                if all(usage_by_class[cls][str(s.image_path)] >= MAX_AUG_PER_SOURCE for s in pool):
+                    break
+                continue
+
             tag = dominant_class(source)
             out_name = f"train{next_index:04d}-{tag}.jpg"
             out_image = image_dir / out_name
@@ -398,11 +431,18 @@ def augment_train_only(train_samples: list[Sample], class_to_id: dict[str, int])
 
             new_sample = Sample(out_image, "augmented", annotations)
             augmented.append(new_sample)
-            ann_counts.update(c for c, _ in annotations)
+
+            present_classes = {c for c, _ in annotations}
+            for present_cls in present_classes:
+                img_counts[present_cls] += 1
+
+            usage_by_class[cls][source_key] += 1
+            created_for_cls += 1
             next_index += 1
 
-    return train_samples + augmented, target
+        target_by_class[cls] = img_counts[cls]
 
+    return train_samples + augmented, target_by_class
 def write_yaml(class_names: list[str]) -> None:
     data = {
         "path": str(OUTPUT_DIR.resolve()),
@@ -463,7 +503,7 @@ def main():
         for split in ("train", "valid", "test")
     }
 
-    exported["train"], train_target = augment_train_only(exported["train"], class_to_id)
+    exported["train"], train_targets = augment_train_only(exported["train"], class_to_id)
 
     after = {
         split: {
@@ -480,7 +520,10 @@ def main():
         handle.write("Merged dataset build complete\n")
         handle.write(f"Total classes: {len(class_names)}\n")
         handle.write(f"Universal split ratio: {TRAIN_RATIO:.2f}/{VALID_RATIO:.2f}/{TEST_RATIO:.2f}\n")
-        handle.write(f"Train augmentation target annotations per class: {train_target}\n\n")
+        handle.write("Train augmentation targets per class:\n")
+        for cls in class_names:
+            handle.write(f"{cls}: {train_targets.get(cls, 0)}\n")
+        handle.write("\n")
         for split in ("train", "valid", "test"):
             handle.write(f"[{split}]\n")
             for cls in class_names:

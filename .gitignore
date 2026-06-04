@@ -12,10 +12,11 @@ data/indian food.v6i.yolov11
 data/Indian_food.v2-indianfood-7.yolov11
 data/indianfoodnet_yolo
 data/south indian food detection.v19i.yolov11
-data/master_dataset/test
-data/master_dataset/train
-data/master_dataset/valid
-data/master_dataset.zip
+data/*/test
+data/*/train
+data/*/valid
+data/*.zip
+data/master_dataset
 frontend/.next/
 frontend/node_modules/
 *.log

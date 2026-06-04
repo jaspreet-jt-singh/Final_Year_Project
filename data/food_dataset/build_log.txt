@@ -1,0 +1,299 @@
+Merged dataset build complete
+Total classes: 72
+Universal split ratio: 0.70/0.15/0.15
+Train augmentation targets per class:
+aloo_gobi: 556
+aloo_masala: 520
+appam: 420
+beetroot_poriyal: 420
+besan_cheela: 414
+bhakarwadi: 500
+bhakri: 158
+bhatura: 680
+bhindi_masala: 1046
+biryani: 700
+carrot_poriyal: 421
+chai: 500
+chicken: 925
+chicken_65: 420
+chicken_biryani: 420
+chole: 1200
+coconut_chutney: 1012
+dal: 970
+dhokla: 703
+dosa: 1126
+dum_aloo: 500
+eggs: 535
+fish_curry: 500
+ghevar: 470
+green_chutney: 661
+gulab_jamun: 500
+idli: 822
+jalebi: 872
+kaara_chutney: 437
+kali: 423
+kebab: 322
+khandvi: 500
+kheer: 500
+koozh: 421
+kulfi: 500
+lassi: 500
+lemon_rice: 420
+medu_vada: 500
+modak: 240
+mushroom_biryani: 420
+mutton_biryani: 421
+mutton_curry: 500
+nandu_masala: 420
+nei_satham: 420
+omelette: 424
+onion_pakoda: 500
+paal_kolukattai: 420
+palak_paneer: 1000
+paneer_biryani: 420
+paratha: 254
+parupu_vadai: 425
+pidi_kolukattai: 421
+poha: 1049
+poorna_kolukattai: 421
+prawn_thokku: 420
+puri: 500
+raita: 500
+rajma_curry: 1010
+ras_malai: 500
+rice: 1200
+roti: 803
+saag: 525
+salad: 355
+sambar: 580
+sambar_satham: 420
+samosa: 500
+shahi_paneer: 878
+thepla: 377
+upma: 290
+veg_briyani: 420
+veg_pulao: 364
+ven_pongal: 433
+
+[train]
+aloo_gobi: before_images=556, after_images=568, before_annotations=560, after_annotations=572
+aloo_masala: before_images=520, after_images=528, before_annotations=530, after_annotations=538
+appam: before_images=210, after_images=421, before_annotations=236, after_annotations=473
+beetroot_poriyal: before_images=210, after_images=421, before_annotations=314, after_annotations=629
+besan_cheela: before_images=207, after_images=414, before_annotations=365, after_annotations=730
+bhakarwadi: before_images=256, after_images=500, before_annotations=257, after_annotations=502
+bhakri: before_images=79, after_images=168, before_annotations=112, after_annotations=240
+bhatura: before_images=680, after_images=680, before_annotations=1231, after_annotations=1231
+bhindi_masala: before_images=1046, after_images=1056, before_annotations=1051, after_annotations=1061
+biryani: before_images=700, after_images=703, before_annotations=719, after_annotations=722
+carrot_poriyal: before_images=210, after_images=421, before_annotations=338, after_annotations=677
+chai: before_images=340, after_images=511, before_annotations=494, after_annotations=735
+chicken: before_images=925, after_images=925, before_annotations=1027, after_annotations=1027
+chicken_65: before_images=210, after_images=421, before_annotations=219, after_annotations=440
+chicken_biryani: before_images=210, after_images=420, before_annotations=222, after_annotations=444
+chole: before_images=1277, after_images=1362, before_annotations=1361, after_annotations=1457
+coconut_chutney: before_images=1007, after_images=1207, before_annotations=1047, after_annotations=1257
+dal: before_images=970, after_images=985, before_annotations=1030, after_annotations=1045
+dhokla: before_images=703, after_images=704, before_annotations=863, after_annotations=865
+dosa: before_images=1125, after_images=1227, before_annotations=1458, after_annotations=1562
+dum_aloo: before_images=358, after_images=500, before_annotations=363, after_annotations=508
+eggs: before_images=519, after_images=561, before_annotations=584, after_annotations=632
+fish_curry: before_images=362, after_images=500, before_annotations=376, after_annotations=518
+ghevar: before_images=235, after_images=470, before_annotations=439, after_annotations=878
+green_chutney: before_images=661, after_images=748, before_annotations=695, after_annotations=784
+gulab_jamun: before_images=272, after_images=501, before_annotations=1744, after_annotations=3228
+idli: before_images=821, after_images=889, before_annotations=2426, after_annotations=2513
+jalebi: before_images=872, after_images=872, before_annotations=1041, after_annotations=1041
+kaara_chutney: before_images=218, after_images=457, before_annotations=227, after_annotations=477
+kali: before_images=210, after_images=423, before_annotations=323, after_annotations=654
+kebab: before_images=161, after_images=322, before_annotations=861, after_annotations=1722
+khandvi: before_images=325, after_images=500, before_annotations=344, after_annotations=530
+kheer: before_images=294, after_images=500, before_annotations=440, after_annotations=747
+koozh: before_images=210, after_images=421, before_annotations=262, after_annotations=528
+kulfi: before_images=332, after_images=500, before_annotations=628, after_annotations=953
+lassi: before_images=322, after_images=500, before_annotations=513, after_annotations=784
+lemon_rice: before_images=210, after_images=420, before_annotations=230, after_annotations=460
+medu_vada: before_images=386, after_images=522, before_annotations=456, after_annotations=620
+modak: before_images=120, after_images=240, before_annotations=613, after_annotations=1226
+mushroom_biryani: before_images=210, after_images=420, before_annotations=225, after_annotations=450
+mutton_biryani: before_images=210, after_images=421, before_annotations=210, after_annotations=421
+mutton_curry: before_images=350, after_images=500, before_annotations=350, after_annotations=500
+nandu_masala: before_images=210, after_images=420, before_annotations=216, after_annotations=432
+nei_satham: before_images=210, after_images=420, before_annotations=211, after_annotations=422
+omelette: before_images=212, after_images=440, before_annotations=220, after_annotations=457
+onion_pakoda: before_images=333, after_images=500, before_annotations=342, after_annotations=515
+paal_kolukattai: before_images=210, after_images=420, before_annotations=225, after_annotations=450
+palak_paneer: before_images=1000, after_images=1000, before_annotations=1017, after_annotations=1017
+paneer_biryani: before_images=210, after_images=420, before_annotations=211, after_annotations=422
+paratha: before_images=127, after_images=282, before_annotations=149, after_annotations=326
+parupu_vadai: before_images=210, after_images=425, before_annotations=256, after_annotations=522
+pidi_kolukattai: before_images=210, after_images=422, before_annotations=223, after_annotations=448
+poha: before_images=1049, after_images=1058, before_annotations=1138, after_annotations=1147
+poorna_kolukattai: before_images=210, after_images=421, before_annotations=228, after_annotations=457
+prawn_thokku: before_images=210, after_images=420, before_annotations=217, after_annotations=434
+puri: before_images=380, after_images=535, before_annotations=421, after_annotations=604
+raita: before_images=239, after_images=554, before_annotations=254, after_annotations=584
+rajma_curry: before_images=1008, after_images=1050, before_annotations=1019, after_annotations=1061
+ras_malai: before_images=322, after_images=500, before_annotations=370, after_annotations=569
+rice: before_images=1776, after_images=1856, before_annotations=1920, after_annotations=2018
+roti: before_images=803, after_images=821, before_annotations=913, after_annotations=931
+saag: before_images=525, after_images=525, before_annotations=532, after_annotations=532
+salad: before_images=157, after_images=360, before_annotations=191, after_annotations=434
+sambar: before_images=475, after_images=617, before_annotations=496, after_annotations=641
+sambar_satham: before_images=210, after_images=420, before_annotations=210, after_annotations=420
+samosa: before_images=358, after_images=500, before_annotations=1592, after_annotations=2220
+shahi_paneer: before_images=878, after_images=878, before_annotations=893, after_annotations=893
+thepla: before_images=174, after_images=377, before_annotations=190, after_annotations=419
+upma: before_images=145, after_images=290, before_annotations=159, after_annotations=318
+veg_briyani: before_images=210, after_images=420, before_annotations=216, after_annotations=432
+veg_pulao: before_images=170, after_images=364, before_annotations=182, after_annotations=391
+ven_pongal: before_images=210, after_images=433, before_annotations=214, after_annotations=441
+
+[valid]
+aloo_gobi: before_images=119, after_images=119, before_annotations=121, after_annotations=121
+aloo_masala: before_images=111, after_images=111, before_annotations=115, after_annotations=115
+appam: before_images=45, after_images=45, before_annotations=50, after_annotations=50
+beetroot_poriyal: before_images=45, after_images=45, before_annotations=65, after_annotations=65
+besan_cheela: before_images=44, after_images=44, before_annotations=69, after_annotations=69
+bhakarwadi: before_images=55, after_images=55, before_annotations=56, after_annotations=56
+bhakri: before_images=17, after_images=17, before_annotations=19, after_annotations=19
+bhatura: before_images=145, after_images=145, before_annotations=261, after_annotations=261
+bhindi_masala: before_images=224, after_images=224, before_annotations=225, after_annotations=225
+biryani: before_images=150, after_images=150, before_annotations=152, after_annotations=152
+carrot_poriyal: before_images=45, after_images=45, before_annotations=70, after_annotations=70
+chai: before_images=73, after_images=73, before_annotations=99, after_annotations=99
+chicken: before_images=198, after_images=198, before_annotations=214, after_annotations=214
+chicken_65: before_images=45, after_images=45, before_annotations=50, after_annotations=50
+chicken_biryani: before_images=45, after_images=45, before_annotations=45, after_annotations=45
+chole: before_images=273, after_images=273, before_annotations=289, after_annotations=289
+coconut_chutney: before_images=216, after_images=216, before_annotations=226, after_annotations=226
+dal: before_images=208, after_images=208, before_annotations=216, after_annotations=216
+dhokla: before_images=151, after_images=151, before_annotations=186, after_annotations=186
+dosa: before_images=241, after_images=241, before_annotations=319, after_annotations=319
+dum_aloo: before_images=77, after_images=77, before_annotations=84, after_annotations=84
+eggs: before_images=111, after_images=111, before_annotations=128, after_annotations=128
+fish_curry: before_images=77, after_images=77, before_annotations=78, after_annotations=78
+ghevar: before_images=50, after_images=50, before_annotations=100, after_annotations=100
+green_chutney: before_images=141, after_images=141, before_annotations=148, after_annotations=148
+gulab_jamun: before_images=58, after_images=58, before_annotations=409, after_annotations=409
+idli: before_images=176, after_images=176, before_annotations=506, after_annotations=506
+jalebi: before_images=187, after_images=187, before_annotations=241, after_annotations=241
+kaara_chutney: before_images=46, after_images=46, before_annotations=49, after_annotations=49
+kali: before_images=45, after_images=45, before_annotations=57, after_annotations=57
+kebab: before_images=34, after_images=34, before_annotations=179, after_annotations=179
+khandvi: before_images=70, after_images=70, before_annotations=75, after_annotations=75
+kheer: before_images=63, after_images=63, before_annotations=85, after_annotations=85
+koozh: before_images=45, after_images=45, before_annotations=47, after_annotations=47
+kulfi: before_images=71, after_images=71, before_annotations=139, after_annotations=139
+lassi: before_images=69, after_images=69, before_annotations=113, after_annotations=113
+lemon_rice: before_images=45, after_images=45, before_annotations=51, after_annotations=51
+medu_vada: before_images=83, after_images=83, before_annotations=101, after_annotations=101
+modak: before_images=26, after_images=26, before_annotations=94, after_annotations=94
+mushroom_biryani: before_images=45, after_images=45, before_annotations=48, after_annotations=48
+mutton_biryani: before_images=45, after_images=45, before_annotations=45, after_annotations=45
+mutton_curry: before_images=75, after_images=75, before_annotations=75, after_annotations=75
+nandu_masala: before_images=45, after_images=45, before_annotations=47, after_annotations=47
+nei_satham: before_images=45, after_images=45, before_annotations=47, after_annotations=47
+omelette: before_images=45, after_images=45, before_annotations=46, after_annotations=46
+onion_pakoda: before_images=71, after_images=71, before_annotations=73, after_annotations=73
+paal_kolukattai: before_images=45, after_images=45, before_annotations=53, after_annotations=53
+palak_paneer: before_images=214, after_images=214, before_annotations=220, after_annotations=220
+paneer_biryani: before_images=45, after_images=45, before_annotations=45, after_annotations=45
+paratha: before_images=27, after_images=27, before_annotations=34, after_annotations=34
+parupu_vadai: before_images=45, after_images=45, before_annotations=54, after_annotations=54
+pidi_kolukattai: before_images=45, after_images=45, before_annotations=62, after_annotations=62
+poha: before_images=224, after_images=224, before_annotations=235, after_annotations=235
+poorna_kolukattai: before_images=45, after_images=45, before_annotations=47, after_annotations=47
+prawn_thokku: before_images=45, after_images=45, before_annotations=48, after_annotations=48
+puri: before_images=81, after_images=81, before_annotations=88, after_annotations=88
+raita: before_images=51, after_images=51, before_annotations=52, after_annotations=52
+rajma_curry: before_images=216, after_images=216, before_annotations=220, after_annotations=220
+ras_malai: before_images=69, after_images=69, before_annotations=74, after_annotations=74
+rice: before_images=380, after_images=380, before_annotations=415, after_annotations=415
+roti: before_images=172, after_images=172, before_annotations=201, after_annotations=201
+saag: before_images=112, after_images=112, before_annotations=115, after_annotations=115
+salad: before_images=34, after_images=34, before_annotations=39, after_annotations=39
+sambar: before_images=102, after_images=102, before_annotations=106, after_annotations=106
+sambar_satham: before_images=45, after_images=45, before_annotations=45, after_annotations=45
+samosa: before_images=77, after_images=77, before_annotations=355, after_annotations=355
+shahi_paneer: before_images=188, after_images=188, before_annotations=189, after_annotations=189
+thepla: before_images=37, after_images=37, before_annotations=40, after_annotations=40
+upma: before_images=31, after_images=31, before_annotations=31, after_annotations=31
+veg_briyani: before_images=45, after_images=45, before_annotations=47, after_annotations=47
+veg_pulao: before_images=36, after_images=36, before_annotations=37, after_annotations=37
+ven_pongal: before_images=45, after_images=45, before_annotations=48, after_annotations=48
+
+[test]
+aloo_gobi: before_images=119, after_images=119, before_annotations=120, after_annotations=120
+aloo_masala: before_images=112, after_images=112, before_annotations=113, after_annotations=113
+appam: before_images=45, after_images=45, before_annotations=47, after_annotations=47
+beetroot_poriyal: before_images=45, after_images=45, before_annotations=63, after_annotations=63
+besan_cheela: before_images=45, after_images=45, before_annotations=84, after_annotations=84
+bhakarwadi: before_images=55, after_images=55, before_annotations=56, after_annotations=56
+bhakri: before_images=17, after_images=17, before_annotations=21, after_annotations=21
+bhatura: before_images=146, after_images=146, before_annotations=268, after_annotations=268
+bhindi_masala: before_images=224, after_images=224, before_annotations=224, after_annotations=224
+biryani: before_images=150, after_images=150, before_annotations=159, after_annotations=159
+carrot_poriyal: before_images=45, after_images=45, before_annotations=77, after_annotations=77
+chai: before_images=73, after_images=73, before_annotations=108, after_annotations=108
+chicken: before_images=198, after_images=198, before_annotations=214, after_annotations=214
+chicken_65: before_images=45, after_images=45, before_annotations=46, after_annotations=46
+chicken_biryani: before_images=45, after_images=45, before_annotations=50, after_annotations=50
+chole: before_images=274, after_images=274, before_annotations=289, after_annotations=289
+coconut_chutney: before_images=216, after_images=216, before_annotations=218, after_annotations=218
+dal: before_images=208, after_images=208, before_annotations=222, after_annotations=222
+dhokla: before_images=151, after_images=151, before_annotations=182, after_annotations=182
+dosa: before_images=241, after_images=241, before_annotations=285, after_annotations=285
+dum_aloo: before_images=77, after_images=77, before_annotations=78, after_annotations=78
+eggs: before_images=111, after_images=111, before_annotations=131, after_annotations=131
+fish_curry: before_images=78, after_images=78, before_annotations=81, after_annotations=81
+ghevar: before_images=51, after_images=51, before_annotations=97, after_annotations=97
+green_chutney: before_images=142, after_images=142, before_annotations=151, after_annotations=151
+gulab_jamun: before_images=59, after_images=59, before_annotations=415, after_annotations=415
+idli: before_images=176, after_images=176, before_annotations=499, after_annotations=499
+jalebi: before_images=187, after_images=187, before_annotations=236, after_annotations=236
+kaara_chutney: before_images=47, after_images=47, before_annotations=47, after_annotations=47
+kali: before_images=45, after_images=45, before_annotations=68, after_annotations=68
+kebab: before_images=35, after_images=35, before_annotations=175, after_annotations=175
+khandvi: before_images=70, after_images=70, before_annotations=76, after_annotations=76
+kheer: before_images=63, after_images=63, before_annotations=93, after_annotations=93
+koozh: before_images=45, after_images=45, before_annotations=62, after_annotations=62
+kulfi: before_images=71, after_images=71, before_annotations=142, after_annotations=142
+lassi: before_images=69, after_images=69, before_annotations=99, after_annotations=99
+lemon_rice: before_images=45, after_images=45, before_annotations=55, after_annotations=55
+medu_vada: before_images=83, after_images=83, before_annotations=98, after_annotations=98
+modak: before_images=26, after_images=26, before_annotations=101, after_annotations=101
+mushroom_biryani: before_images=45, after_images=45, before_annotations=48, after_annotations=48
+mutton_biryani: before_images=45, after_images=45, before_annotations=45, after_annotations=45
+mutton_curry: before_images=75, after_images=75, before_annotations=75, after_annotations=75
+nandu_masala: before_images=45, after_images=45, before_annotations=47, after_annotations=47
+nei_satham: before_images=45, after_images=45, before_annotations=45, after_annotations=45
+omelette: before_images=46, after_images=46, before_annotations=49, after_annotations=49
+onion_pakoda: before_images=72, after_images=72, before_annotations=76, after_annotations=76
+paal_kolukattai: before_images=45, after_images=45, before_annotations=52, after_annotations=52
+palak_paneer: before_images=214, after_images=214, before_annotations=216, after_annotations=216
+paneer_biryani: before_images=45, after_images=45, before_annotations=46, after_annotations=46
+paratha: before_images=28, after_images=28, before_annotations=31, after_annotations=31
+parupu_vadai: before_images=45, after_images=45, before_annotations=62, after_annotations=62
+pidi_kolukattai: before_images=45, after_images=45, before_annotations=50, after_annotations=50
+poha: before_images=225, after_images=225, before_annotations=244, after_annotations=244
+poorna_kolukattai: before_images=45, after_images=45, before_annotations=57, after_annotations=57
+prawn_thokku: before_images=45, after_images=45, before_annotations=46, after_annotations=46
+puri: before_images=82, after_images=82, before_annotations=91, after_annotations=91
+raita: before_images=52, after_images=52, before_annotations=57, after_annotations=57
+rajma_curry: before_images=216, after_images=216, before_annotations=219, after_annotations=219
+ras_malai: before_images=69, after_images=69, before_annotations=75, after_annotations=75
+rice: before_images=381, after_images=381, before_annotations=424, after_annotations=424
+roti: before_images=172, after_images=172, before_annotations=214, after_annotations=214
+saag: before_images=113, after_images=113, before_annotations=115, after_annotations=115
+salad: before_images=34, after_images=34, before_annotations=43, after_annotations=43
+sambar: before_images=102, after_images=102, before_annotations=110, after_annotations=110
+sambar_satham: before_images=45, after_images=45, before_annotations=45, after_annotations=45
+samosa: before_images=77, after_images=77, before_annotations=342, after_annotations=342
+shahi_paneer: before_images=189, after_images=189, before_annotations=191, after_annotations=191
+thepla: before_images=38, after_images=38, before_annotations=43, after_annotations=43
+upma: before_images=31, after_images=31, before_annotations=32, after_annotations=32
+veg_briyani: before_images=45, after_images=45, before_annotations=46, after_annotations=46
+veg_pulao: before_images=37, after_images=37, before_annotations=42, after_annotations=42
+ven_pongal: before_images=45, after_images=45, before_annotations=47, after_annotations=47
+
