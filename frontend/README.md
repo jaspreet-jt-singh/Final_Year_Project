@@ -1,51 +1,53 @@
-# AI Based Food Recognition with Nutrition Aware Recommendations
+# AI-Based Food Recognition Frontend
 
-## Phase 1 MVP Setup Instructions
+This frontend implements the user-facing application for the AI-based food recognition and nutrition recommendation system. It is built with Next.js 14, React, TypeScript, Tailwind CSS, and Lucide React icons.
 
-### Prerequisites
-- Node.js 18+ and npm installed
-- Backend server running on http://localhost:8000
+## Implemented Features
 
-### Installation
+| Feature | Implementation |
+|---|---|
+| Image upload | Drag-and-drop upload with file picker fallback |
+| Image preview | Local preview generated through FileReader |
+| Backend integration | Sends uploaded image as `FormData` to `http://localhost:8000/api/analyze-food` |
+| Detection results | Displays all detected food items with confidence values |
+| Bounding boxes | Renders detection boxes over the uploaded image |
+| Nutrition display | Shows calories, protein, carbs, and fat per 100g |
+| Serving adjustment | Allows per-food serving multipliers from 0.25x to 10x |
+| Daily goals | Supports Weight Loss, Muscle Gain, Maintenance, and Endurance |
+| Calorie target | Supports manual target entry and quick calorie presets |
+| Macro tracking | Calculates remaining calories, carbs, protein, and fat |
+| Health conditions | Supports condition-aware macro and recommendation adjustments |
+| Recommendations | Fetches dietary guidance from the backend recommendation endpoint |
+| Fallback behavior | Uses local goal, condition, and macro calculation when backend metadata calls fail |
+| Error handling | Handles timeout, backend connection, server, and no-food states |
 
-1. **Install dependencies:**
-   ```bash
-   cd frontend
-   npm install
-   ```
+## Main Files
 
-2. **Start development server:**
-   ```bash
-   npm run dev
-   ```
+| File | Purpose |
+|---|---|
+| `app/page.tsx` | Main screen, state management, API calls, macro tracking, goal controls |
+| `app/layout.tsx` | App shell and metadata |
+| `app/globals.css` | Tailwind and global styles |
+| `components/ImageUpload.tsx` | Upload area, drag/drop behavior, preview, loading overlay |
+| `components/ResultsPanel.tsx` | Detection summary, overlays, nutrition cards, servings, recommendations |
+| `components/NutritionLabel.tsx` | Nutrition metric cards |
+| `components/ImageOverlay.tsx` | Canvas-based overlay component retained for detection visualization support |
 
-3. **Open browser:**
-   Navigate to http://localhost:3000
+## User Flow
 
-### Phase 1 Features
+1. Select a dietary goal.
+2. Set a daily calorie target.
+3. Select a health condition.
+4. Upload a food image.
+5. View detected foods and bounding boxes.
+6. Review nutrition values per detected item.
+7. Adjust serving multipliers.
+8. Track remaining daily calories and macros.
+9. Read personalized dietary recommendations.
 
-✅ **ImageUpload Component**
-- Drag-and-drop image upload
-- File validation
-- Loading states during analysis
+## API Integration
 
-✅ **NutritionLabel Component**
-- Display calories, protein, carbs, fat
-- Visual progress bars for macronutrients
-
-✅ **ResultsPanel Component**
-- Food identification with confidence scores
-- Complete nutrition breakdown
-- Mass estimation information
-
-✅ **Main Page Integration**
-- Connected to backend API at http://localhost:8000/api/analyze-food
-- Error handling and loading states
-- Responsive design with Tailwind CSS
-
-### API Integration
-
-The frontend connects to the backend `/api/analyze-food` endpoint:
+The frontend calls the backend food-analysis endpoint:
 
 ```typescript
 const response = await fetch('http://localhost:8000/api/analyze-food', {
@@ -54,35 +56,55 @@ const response = await fetch('http://localhost:8000/api/analyze-food', {
 })
 ```
 
-### Expected Response Format
+Expected analysis response:
 
 ```json
 {
-  "food_label": "biryani",
-  "display_name": "Biryani",
-  "confidence": 0.91,
-  "estimated_mass_g": 250,
-  "mass_source": "default_serving_size",
-  "macros": {
-    "calories": 700,
-    "protein_g": 28.8,
-    "carbs_g": 87.5,
-    "fat_g": 20.0
-  },
-  "nutrition_source": "INDB",
+  "detections": [
+    {
+      "food_label": "Biryani",
+      "display_name": "Biryani",
+      "confidence": 0.91,
+      "bounding_box": [120, 80, 520, 430],
+      "macros": {
+        "calories": 170,
+        "protein_g": 5.2,
+        "carbs_g": 25,
+        "fat_g": 4.5
+      },
+      "macros_unit": "per_100g",
+      "nutrition_source": "INDB"
+    }
+  ],
+  "img_width": 640,
+  "img_height": 480,
   "food_not_found": false
 }
 ```
 
-### Testing Phase 1
+The frontend also uses these backend endpoints:
 
-1. Start the backend: `cd backend && python main.py`
-2. Start the frontend: `cd frontend && npm run dev`
-3. Upload any food image to test the complete flow
-4. Verify nutrition data displays correctly
+| Endpoint | Use |
+|---|---|
+| `/api/user/goals` | Load available dietary goals |
+| `/api/user/health-conditions` | Load available health condition options |
+| `/api/user/calculate-macros` | Calculate macro targets |
+| `/api/recommendations` | Generate personalized dietary guidance |
 
-### Next Phase
+## Local Run
 
-Phase 2 will add:
-- Bounding box visualization on uploaded images
-- Canvas overlay for detection results
+Prerequisites:
+
+- Node.js 18+
+- npm
+- Backend running at `http://localhost:8000`
+
+Commands:
+
+```bash
+cd frontend
+npm install
+npm run dev
+```
+
+Frontend URL: `http://localhost:3000`

@@ -26,6 +26,5 @@ models/runs/
 Thumbs.db
 .*/
 tests/
-*.md
 screenshots
 presentations
