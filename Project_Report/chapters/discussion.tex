@@ -1,0 +1,43 @@
+\chapter{DISCUSSION}
+
+\section{Interpretation of Results}
+
+The results show that the useful part of a food recognition system is not the detector by itself. The detector tells the system what appears in the image, but the nutrition layer decides what that label means in calories and macros. The frontend then makes those numbers adjustable and understandable. The main outcome of this project is therefore the integration of these layers, not only the presence of a YOLO model.
+
+The dataset engineering work was equally important. A model trained on inconsistent labels would produce confusing outputs even if the training process completed successfully. Canonical class normalization gave the detector a stable label space, and it also made nutrition mapping possible. The visual verification sheets were useful because they exposed real dataset issues that a file-count check would miss. A few noisy annotations remain, but the class list itself is aligned.
+
+\section{Strengths of the System}
+
+The first strength is full-stack completeness. Many student and research prototypes stop after model inference. This project goes further by including dataset building, backend APIs, nutrition database integration, recommendation logic, and a frontend workflow that can actually be used and inspected.
+
+The second strength is domain specificity. The dataset focuses on Indian foods, and the nutrition database uses Indian food names and macro values. The alias and mapping logic also accounts for regional naming patterns, which matters for labels such as \code{satham}, \code{medu_vadai}, \code{thengai_chutney}, and \code{nandu_masala}.
+
+The third strength is conservative nutrition mapping. Classes are mapped through explicit semantic rules first, and classes absent from INDB are covered only when a source-backed supplemental row is available. This is important for health-related applications because weak fuzzy matches can produce misleading macro values.
+
+The fourth strength is documentation and reproducibility. The project contains scripts for dataset construction, nutrition database creation, visual class verification, and macro verification. These scripts make the data pipeline inspectable instead of leaving the dataset and mappings as unexplained artifacts.
+
+\section{Limitations}
+
+The most important limitation is portion size. The system reports macros per 100 grams and allows serving adjustment, but it does not estimate exact food mass from the image. This limits calorie precision. Accurate portion estimation would require depth information, reference objects, segmentation masks, or learned volume estimation.
+
+The second limitation is nutrition source consistency. Five classes are covered through supplemental external sources because the available INDB sheet lacks safe equivalent entries. Some other classes use documented substitutes rather than exact dish rows. That is acceptable for a prototype, but a health-sensitive deployment would need stronger food-composition validation.
+
+The third limitation is dataset noise. Visual verification found a small number of annotation issues. Large food datasets often contain such noise, but it should still be cleaned because object detectors are sensitive to label quality.
+
+The fourth limitation is missing final 72-class model metrics in the local report artifacts. The system has a deployed model and training notebook, but a formal evaluation table for the latest expanded class set should be added.
+
+\section{Ethical and Practical Considerations}
+
+Nutrition applications can influence user behavior. Therefore, the system should avoid presenting estimates as medical advice. The recommendation text should be framed as general guidance, and users with medical conditions should consult qualified professionals. The application should also communicate uncertainty when a detected food uses supplemental nutrition data or when the model confidence is low.
+
+Data privacy is another consideration. Food images can reveal personal habits, location context, and health patterns. A production version should minimize image retention, protect API communication, and provide clear user consent. The current prototype is local and does not implement cloud storage for uploaded images.
+
+\section{Why Supplemental Rows Were Added}
+
+The classes \code{bhakarwadi}, \code{ghevar}, \code{jalebi}, \code{khandvi}, and \code{nandu_masala} were absent from the available INDB file. Mapping them through fuzzy matching would be unsafe because a sweet fried dessert should not be mapped to a generic sweet if the macro profile is different, and a crab masala class should not be mapped to a spice mix or unrelated seafood item. The database therefore adds verified supplemental rows for these classes and records their source URLs. This gives complete dataset coverage while keeping provenance visible.
+
+\section{Lessons Learned}
+
+The project shows that applied AI systems require more than model selection. Dataset curation, naming conventions, data contracts, API design, error handling, and UI workflow affected the final system as much as the detector choice. Food recognition is especially dependent on domain knowledge because visual labels and nutrition records rarely use identical names.
+
+Another lesson is that validation artifacts are valuable. The class verification sheets made it possible to check 72 classes quickly and gave a simple way to discuss dataset quality without opening hundreds of files manually. Without such artifacts, label errors could remain hidden until model performance degrades.

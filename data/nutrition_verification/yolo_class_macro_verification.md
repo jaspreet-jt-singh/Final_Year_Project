@@ -1,0 +1,95 @@
+# YOLO Class Macro Verification
+
+Generated from `data/food_dataset/data.yaml` and `data/nutrition.db`.
+All values are per 100g. `Macro kcal` is calculated as protein*4 + carbs*4 + fat*9 and is included as a consistency aid, not as a replacement for the database calorie field.
+
+## Summary
+
+- Dataset classes checked: 72
+- Verified mappings: 51
+- Review mappings: 21
+- Failed mappings: 0
+
+## Class-by-Class Results
+
+| YOLO class | Database name | Score | kcal | Protein | Carbs | Fat | Macro kcal | Delta | Source | Status | Note |
+|---|---|---:|---:|---:|---:|---:|---:|---:|---|---|---|
+| `aloo_gobi` | `Potato cauliflower (Aloo gobhi)` | 1.00 | 106.2 | 1.90 | 5.99 | 8.13 | 104.7 | 1.5 | INDB | VERIFIED | Direct class-to-food mapping with complete per-100g macros. |
+| `aloo_masala` | `Potato curry (Aloo ki sabzi)` | 0.90 | 89.6 | 1.52 | 10.42 | 4.47 | 88.0 | 1.6 | INDB | VERIFIED | High-confidence semantic mapping with complete per-100g macros. |
+| `appam` | `Appam` | 1.00 | 267.7 | 3.12 | 13.28 | 22.63 | 269.3 | -1.6 | INDB | VERIFIED | Direct class-to-food mapping with complete per-100g macros. |
+| `beetroot_poriyal` | `Vegetables stir fry ` | 0.75 | 30.8 | 1.04 | 3.19 | 1.47 | 30.2 | 0.6 | INDB | REVIEW | Low-confidence substitute mapping; keep documented as an approximation. |
+| `besan_cheela` | `Gram flour chilla/cheela (Besan chilla/cheela)` | 1.00 | 135.9 | 7.80 | 21.03 | 2.85 | 141.0 | -5.1 | INDB | VERIFIED | Direct class-to-food mapping with complete per-100g macros. |
+| `bhakarwadi` | `Bhakarwadi` | 1.00 | 510.0 | 10.76 | 57.03 | 26.55 | 510.1 | -0.1 | Supplemental: FatSecret Evolve Bhakarwadi nutrition label (https://www.fatsecret.co.in/calories-nutrition/evolve/bhakarwadi/100g) | VERIFIED | Direct class-to-food mapping with complete per-100g macros. |
+| `bhakri` | `Chapati/Roti` | 0.80 | 202.3 | 5.88 | 35.65 | 3.56 | 198.1 | 4.2 | INDB | REVIEW | Acceptable substitute mapping; verify against project scope. |
+| `bhatura` | `Bhatura` | 1.00 | 793.2 | 1.63 | 10.73 | 82.56 | 792.5 | 0.7 | INDB | VERIFIED | Direct class-to-food mapping with complete per-100g macros. |
+| `bhindi_masala` | `Okra/Lady's fingers fry (Bhindi sabzi/sabji/subji)` | 0.95 | 110.8 | 1.83 | 4.50 | 9.27 | 108.8 | 2.0 | INDB | VERIFIED | High-confidence semantic mapping with complete per-100g macros. |
+| `biryani` | `Vegetable biryani/biriyani` | 0.85 | 174.6 | 3.16 | 18.56 | 9.51 | 172.4 | 2.2 | INDB | REVIEW | Acceptable substitute mapping; verify against project scope. |
+| `carrot_poriyal` | `Carrot and cabbage with coconut (Nariyal ke saath pattagobhi aur gajar)` | 0.85 | 106.6 | 1.82 | 4.99 | 8.62 | 104.8 | 1.8 | INDB | REVIEW | Acceptable substitute mapping; verify against project scope. |
+| `chai` | `Hot tea (Garam Chai)` | 1.00 | 16.1 | 0.39 | 2.58 | 0.53 | 16.7 | -0.5 | INDB | VERIFIED | Direct class-to-food mapping with complete per-100g macros. |
+| `chicken` | `Chicken curry` | 0.85 | 129.2 | 11.79 | 3.38 | 7.57 | 128.8 | 0.4 | INDB | REVIEW | Acceptable substitute mapping; verify against project scope. |
+| `chicken_65` | `Chilli chicken` | 0.80 | 198.8 | 9.57 | 2.86 | 16.56 | 198.8 | 0.0 | INDB | REVIEW | Acceptable substitute mapping; verify against project scope. |
+| `chicken_biryani` | `Chicken pulao` | 0.80 | 108.2 | 6.07 | 11.17 | 8.48 | 145.3 | -37.0 | INDB | REVIEW | Calorie value differs materially from protein/carb/fat-derived kcal. |
+| `chole` | `Chickpeas curry (Safed channa curry)` | 1.00 | 163.4 | 6.10 | 19.98 | 6.84 | 165.9 | -2.5 | INDB | VERIFIED | Direct class-to-food mapping with complete per-100g macros. |
+| `coconut_chutney` | `Coconut chutney (Nariyal ki chutney)` | 1.00 | 265.9 | 3.59 | 8.29 | 25.00 | 272.5 | -6.6 | INDB | VERIFIED | Direct class-to-food mapping with complete per-100g macros. |
+| `dal` | `Mixed dal` | 0.90 | 61.9 | 2.51 | 5.79 | 3.10 | 61.1 | 0.8 | INDB | VERIFIED | High-confidence semantic mapping with complete per-100g macros. |
+| `dhokla` | `Dhokla` | 1.00 | 216.5 | 13.45 | 30.68 | 5.28 | 224.1 | -7.6 | INDB | VERIFIED | Direct class-to-food mapping with complete per-100g macros. |
+| `dosa` | `Plain dosa` | 0.95 | 380.9 | 10.34 | 64.08 | 8.43 | 373.5 | 7.4 | INDB | VERIFIED | High-confidence semantic mapping with complete per-100g macros. |
+| `dum_aloo` | `Dum aloo` | 1.00 | 682.3 | 0.70 | 3.33 | 74.01 | 682.2 | 0.2 | INDB | VERIFIED | Direct class-to-food mapping with complete per-100g macros. |
+| `eggs` | `Boiled egg (Ubla anda)` | 0.95 | 45.4 | 4.43 | 0.12 | 3.04 | 45.6 | -0.2 | INDB | VERIFIED | High-confidence semantic mapping with complete per-100g macros. |
+| `fish_curry` | `Fish curry (Machli curry)` | 1.00 | 111.1 | 8.76 | 3.77 | 6.69 | 110.4 | 0.8 | INDB | VERIFIED | Direct class-to-food mapping with complete per-100g macros. |
+| `ghevar` | `Ghevar` | 1.00 | 351.2 | 3.50 | 39.60 | 19.90 | 351.5 | -0.3 | Supplemental: Clearcals Ghevar recipe nutrition (https://clearcals.com/recipes/ghevar/) | VERIFIED | Direct class-to-food mapping with complete per-100g macros. |
+| `green_chutney` | `Green chutney` | 1.00 | 79.4 | 5.42 | 10.01 | 1.60 | 76.2 | 3.3 | INDB | VERIFIED | Direct class-to-food mapping with complete per-100g macros. |
+| `gulab_jamun` | `Gulab Jamun with khoya` | 1.00 | 586.1 | 2.03 | 26.09 | 53.23 | 591.6 | -5.5 | INDB | VERIFIED | Direct class-to-food mapping with complete per-100g macros. |
+| `idli` | `Idli` | 1.00 | 137.5 | 4.64 | 28.18 | 0.33 | 134.3 | 3.3 | INDB | VERIFIED | Direct class-to-food mapping with complete per-100g macros. |
+| `jalebi` | `Jalebi` | 1.00 | 316.8 | 3.40 | 44.60 | 13.80 | 316.2 | 0.6 | Supplemental: Clearcals Jalebi recipe nutrition (https://clearcals.com/recipes/jalebi/) | VERIFIED | Direct class-to-food mapping with complete per-100g macros. |
+| `kaara_chutney` | `Tomato chutney (Tamatar ki chutney)` | 0.85 | 176.1 | 0.97 | 31.85 | 6.01 | 185.3 | -9.3 | INDB | REVIEW | Acceptable substitute mapping; verify against project scope. |
+| `kali` | `Maize porridge` | 0.70 | 89.6 | 2.14 | 15.64 | 1.89 | 88.1 | 1.5 | INDB | REVIEW | Low-confidence substitute mapping; keep documented as an approximation. |
+| `kebab` | `Boti kebab` | 0.90 | 132.9 | 9.22 | 3.06 | 9.27 | 132.5 | 0.3 | INDB | VERIFIED | High-confidence semantic mapping with complete per-100g macros. |
+| `khandvi` | `Khandvi` | 1.00 | 232.7 | 9.30 | 21.70 | 12.10 | 232.9 | -0.2 | Supplemental: Clearcals Khandvi recipe nutrition (https://clearcals.com/recipes/khandvi/) | VERIFIED | Direct class-to-food mapping with complete per-100g macros. |
+| `kheer` | `Rice kheer (Chawal ki kheer)` | 1.00 | 75.0 | 2.30 | 10.05 | 2.97 | 76.1 | -1.1 | INDB | VERIFIED | Direct class-to-food mapping with complete per-100g macros. |
+| `koozh` | `Maize porridge` | 0.70 | 89.6 | 2.14 | 15.64 | 1.89 | 88.1 | 1.5 | INDB | REVIEW | Low-confidence substitute mapping; keep documented as an approximation. |
+| `kulfi` | `Kulfi` | 1.00 | 98.4 | 3.21 | 11.30 | 4.70 | 100.3 | -1.9 | INDB | VERIFIED | Direct class-to-food mapping with complete per-100g macros. |
+| `lassi` | `Sweet Lassi (Meethi lassi)` | 0.95 | 35.7 | 1.29 | 6.51 | 0.68 | 37.3 | -1.6 | INDB | VERIFIED | High-confidence semantic mapping with complete per-100g macros. |
+| `lemon_rice` | `Lemon rice (Pulihora, Elumichai sadam, Chitranna)` | 1.00 | 176.3 | 4.26 | 21.62 | 7.88 | 174.4 | 1.9 | INDB | VERIFIED | Direct class-to-food mapping with complete per-100g macros. |
+| `medu_vada` | `Plain urad dal vada (Uzunne vada/Minapa garelu/Ulundu vadai/Medu vada)` | 1.00 | 745.5 | 4.39 | 9.70 | 76.32 | 743.2 | 2.3 | INDB | VERIFIED | Direct class-to-food mapping with complete per-100g macros. |
+| `modak` | `Semolina ladoo with coconut (Suji/Rava aur nariyal ke ladoo )` | 0.70 | 464.4 | 5.68 | 50.90 | 27.03 | 469.6 | -5.2 | INDB | REVIEW | Low-confidence substitute mapping; keep documented as an approximation. |
+| `mushroom_biryani` | `Mushroom pulao` | 0.80 | 124.3 | 2.52 | 19.02 | 4.03 | 122.4 | 1.9 | INDB | REVIEW | Acceptable substitute mapping; verify against project scope. |
+| `mutton_biryani` | `Mutton biryani/biriyani` | 1.00 | 190.8 | 7.38 | 22.50 | 7.72 | 189.0 | 1.8 | INDB | VERIFIED | Direct class-to-food mapping with complete per-100g macros. |
+| `mutton_curry` | `Mutton korma` | 0.85 | 115.6 | 7.09 | 2.53 | 8.54 | 115.3 | 0.3 | INDB | REVIEW | Acceptable substitute mapping; verify against project scope. |
+| `nandu_masala` | `Nandu Kari (Crab masala)` | 1.00 | 128.1 | 7.00 | 7.00 | 8.00 | 128.0 | 0.1 | Supplemental: Clearcals Nandu Kari recipe nutrition (https://clearcals.com/recipes/nandu-kari/) | VERIFIED | Direct class-to-food mapping with complete per-100g macros. |
+| `nei_satham` | `Plain pulao` | 0.80 | 140.2 | 2.34 | 21.82 | 4.62 | 138.2 | 2.0 | INDB | REVIEW | Acceptable substitute mapping; verify against project scope. |
+| `omelette` | `Plain omelette/omlet` | 1.00 | 272.4 | 9.66 | 0.64 | 25.74 | 272.9 | -0.5 | INDB | VERIFIED | Direct class-to-food mapping with complete per-100g macros. |
+| `onion_pakoda` | `Onion pakora/pakoda (Pyaaz ke pakode)` | 1.00 | 674.6 | 1.90 | 5.41 | 71.84 | 675.8 | -1.2 | INDB | VERIFIED | Direct class-to-food mapping with complete per-100g macros. |
+| `paal_kolukattai` | `Rice kheer (Chawal ki kheer)` | 0.75 | 75.0 | 2.30 | 10.05 | 2.97 | 76.1 | -1.1 | INDB | REVIEW | Low-confidence substitute mapping; keep documented as an approximation. |
+| `palak_paneer` | `Spinach paneer (Palak paneer)` | 1.00 | 77.7 | 4.03 | 4.43 | 4.76 | 76.7 | 1.0 | INDB | VERIFIED | Direct class-to-food mapping with complete per-100g macros. |
+| `paneer_biryani` | `Paneer pulao` | 0.80 | 581.9 | 1.98 | 8.76 | 59.81 | 581.3 | 0.7 | INDB | REVIEW | Acceptable substitute mapping; verify against project scope. |
+| `paratha` | `Plain parantha/paratha` | 0.95 | 298.3 | 5.06 | 30.69 | 16.86 | 294.7 | 3.6 | INDB | VERIFIED | High-confidence semantic mapping with complete per-100g macros. |
+| `parupu_vadai` | `Fermented bengal gram vada (Khameerikrit/Ufna hua channa dal ka vada)` | 0.90 | 657.6 | 4.05 | 8.68 | 67.19 | 655.6 | 2.0 | INDB | VERIFIED | High-confidence semantic mapping with complete per-100g macros. |
+| `pidi_kolukattai` | `Rice puttu (Ari puttu)` | 0.75 | 82.0 | 1.26 | 11.82 | 3.13 | 80.5 | 1.5 | INDB | REVIEW | Low-confidence substitute mapping; keep documented as an approximation. |
+| `poha` | `Poha` | 1.00 | 294.5 | 6.09 | 35.05 | 14.14 | 291.8 | 2.7 | INDB | VERIFIED | Direct class-to-food mapping with complete per-100g macros. |
+| `poorna_kolukattai` | `Semolina ladoo with coconut (Suji/Rava aur nariyal ke ladoo )` | 0.70 | 464.4 | 5.68 | 50.90 | 27.03 | 469.6 | -5.2 | INDB | REVIEW | Low-confidence substitute mapping; keep documented as an approximation. |
+| `prawn_thokku` | `Prawn curry (with coconut) (Jhinga curry)` | 0.85 | 109.5 | 8.54 | 3.10 | 6.93 | 109.0 | 0.6 | INDB | REVIEW | Acceptable substitute mapping; verify against project scope. |
+| `puri` | `Poori` | 1.00 | 737.6 | 1.35 | 8.22 | 77.61 | 736.8 | 0.9 | INDB | VERIFIED | Direct class-to-food mapping with complete per-100g macros. |
+| `raita` | `Cucumber raita (Kheere ka raita)` | 0.90 | 59.1 | 4.04 | 6.35 | 2.08 | 60.2 | -1.1 | INDB | VERIFIED | High-confidence semantic mapping with complete per-100g macros. |
+| `rajma_curry` | `Kidney bean curry (Rajmah curry)` | 1.00 | 143.7 | 5.95 | 16.38 | 5.77 | 141.3 | 2.4 | INDB | VERIFIED | Direct class-to-food mapping with complete per-100g macros. |
+| `ras_malai` | `Rasmalai` | 1.00 | 135.5 | 1.61 | 29.17 | 2.11 | 142.1 | -6.6 | INDB | VERIFIED | Direct class-to-food mapping with complete per-100g macros. |
+| `rice` | `Boiled rice (Uble chawal)` | 1.00 | 117.2 | 2.60 | 25.72 | 0.18 | 114.9 | 2.2 | INDB | VERIFIED | Direct class-to-food mapping with complete per-100g macros. |
+| `roti` | `Chapati/Roti` | 1.00 | 202.3 | 5.88 | 35.65 | 3.56 | 198.1 | 4.2 | INDB | VERIFIED | Direct class-to-food mapping with complete per-100g macros. |
+| `saag` | `Sarson ka saag` | 1.00 | 87.8 | 3.00 | 5.33 | 5.86 | 86.1 | 1.8 | INDB | VERIFIED | Direct class-to-food mapping with complete per-100g macros. |
+| `salad` | `Tossed salad` | 0.90 | 63.0 | 1.02 | 4.95 | 4.22 | 61.9 | 1.1 | INDB | VERIFIED | High-confidence semantic mapping with complete per-100g macros. |
+| `sambar` | `Sambar` | 1.00 | 96.9 | 3.35 | 10.57 | 4.38 | 95.1 | 1.8 | INDB | VERIFIED | Direct class-to-food mapping with complete per-100g macros. |
+| `sambar_satham` | `Vegetable khichdi/khichri` | 0.80 | 143.2 | 5.61 | 19.57 | 4.53 | 141.5 | 1.7 | INDB | REVIEW | Acceptable substitute mapping; verify against project scope. |
+| `samosa` | `Potato samosa (Aloo ka samosa)` | 1.00 | 577.4 | 1.71 | 9.21 | 59.19 | 576.4 | 1.0 | INDB | VERIFIED | Direct class-to-food mapping with complete per-100g macros. |
+| `shahi_paneer` | `Shahi paneer` | 1.00 | 156.5 | 5.06 | 6.64 | 12.34 | 157.9 | -1.4 | INDB | VERIFIED | Direct class-to-food mapping with complete per-100g macros. |
+| `thepla` | `Methi thepla` | 0.95 | 346.2 | 8.98 | 41.34 | 15.95 | 344.8 | 1.4 | INDB | VERIFIED | High-confidence semantic mapping with complete per-100g macros. |
+| `upma` | `Semolina upma (Suji/Rava upma)` | 0.95 | 147.9 | 3.30 | 16.31 | 7.49 | 145.9 | 2.0 | INDB | VERIFIED | High-confidence semantic mapping with complete per-100g macros. |
+| `veg_briyani` | `Vegetable biryani/biriyani` | 1.00 | 174.6 | 3.16 | 18.56 | 9.51 | 172.4 | 2.2 | INDB | VERIFIED | Direct class-to-food mapping with complete per-100g macros. |
+| `veg_pulao` | `Mixed vegetable pulao` | 1.00 | 113.0 | 2.72 | 17.49 | 3.33 | 110.8 | 2.2 | INDB | VERIFIED | Direct class-to-food mapping with complete per-100g macros. |
+| `ven_pongal` | `Plain khitchdi (Plain khichri/khichdi)` | 0.75 | 57.0 | 1.72 | 10.04 | 1.01 | 56.1 | 0.9 | INDB | REVIEW | Low-confidence substitute mapping; keep documented as an approximation. |
+
+## Review Notes
+
+- `VERIFIED` means the class has a direct or high-confidence semantic mapping and complete per-100g macro fields.
+- `REVIEW` means the macro fields are present, but the mapped database row is a substitute or lower-confidence semantic approximation.
+- `FAIL` means the class is missing a mapping or one of the required macro fields.
+- Supplemental rows retain source URLs in the database and in this report.

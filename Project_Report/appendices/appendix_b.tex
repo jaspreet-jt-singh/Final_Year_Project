@@ -1,0 +1,158 @@
+\chapter{API RESPONSE EXAMPLES}
+
+\section{Analyze Food Response}
+
+The following listing shows the simplified structure of a successful image analysis response.
+
+\begin{lstlisting}[language=json,caption={Simplified food analysis response},label={lst:analysis-response}]
+{
+  "success": true,
+  "food_detected": true,
+  "image_width": 760,
+  "image_height": 787,
+  "detections": [
+    {
+      "food_label": "Chole",
+      "display_name": "Chickpeas curry (Safed channa curry)",
+      "confidence": 0.95,
+      "bbox": {
+        "x1": 442,
+        "y1": 194,
+        "x2": 697,
+        "y2": 551
+      },
+      "macros": {
+        "calories": 163.4,
+        "protein_g": 6.1,
+        "carbs_g": 20.0,
+        "fat_g": 6.8
+      },
+      "nutrition_source": "INDB"
+    }
+  ]
+}
+\end{lstlisting}
+
+\section{Macro Calculation Request}
+
+\begin{lstlisting}[language=json,caption={Macro calculation request},label={lst:macro-request}]
+{
+  "goal": "weight_loss",
+  "target_calories": 2000,
+  "health_condition": "diabetic"
+}
+\end{lstlisting}
+
+\section{Macro Calculation Response}
+
+\begin{lstlisting}[language=json,caption={Macro calculation response},label={lst:macro-response}]
+{
+  "goal": "weight_loss",
+  "target_calories": 2000,
+  "health_condition": "diabetic",
+  "macros": {
+    "carbs_percent": 33,
+    "protein_percent": 41,
+    "fat_percent": 26,
+    "carbs_g": 165,
+    "protein_g": 205,
+    "fat_g": 58
+  }
+}
+\end{lstlisting}
+
+\section{No Food Response}
+
+\begin{lstlisting}[language=json,caption={No-food response shape},label={lst:no-food-response}]
+{
+  "success": true,
+  "food_detected": false,
+  "food_not_found": true,
+  "detections": [],
+  "message": "No food items detected in the uploaded image."
+}
+\end{lstlisting}
+
+\section{Macro Target Reference Tables}
+
+The following tables show the macro targets generated for a 2,000 kcal daily target. The backend normalizes goal and health-condition modifiers before converting calories to grams.
+
+\begin{table}[H]
+\centering
+\caption{Weight-loss macro targets for 2,000 kcal}
+\begin{tabular}{lrrrrrr}
+\toprule
+Health profile & Carb \% & Protein \% & Fat \% & Carb g & Protein g & Fat g\\
+\midrule
+None & 40 & 35 & 25 & 200 & 175 & 56\\
+Diabetic & 33 & 41 & 26 & 165 & 205 & 58\\
+Hypertension & 41 & 36 & 23 & 205 & 180 & 51\\
+Heart disease & 43 & 36 & 21 & 215 & 180 & 47\\
+High cholesterol & 42 & 39 & 19 & 210 & 195 & 42\\
+Digestive issues & 43 & 34 & 23 & 215 & 170 & 51\\
+Kidney disease & 50 & 23 & 27 & 250 & 115 & 60\\
+Anemia & 40 & 38 & 22 & 200 & 190 & 49\\
+Thyroid disorder & 39 & 36 & 25 & 195 & 180 & 56\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\begin{table}[H]
+\centering
+\caption{Muscle-gain macro targets for 2,000 kcal}
+\begin{tabular}{lrrrrrr}
+\toprule
+Health profile & Carb \% & Protein \% & Fat \% & Carb g & Protein g & Fat g\\
+\midrule
+None & 40 & 30 & 30 & 200 & 150 & 67\\
+Diabetic & 33 & 36 & 31 & 165 & 180 & 69\\
+Hypertension & 41 & 31 & 28 & 205 & 155 & 62\\
+Heart disease & 44 & 31 & 25 & 220 & 155 & 56\\
+High cholesterol & 43 & 34 & 23 & 215 & 170 & 51\\
+Digestive issues & 43 & 29 & 28 & 215 & 145 & 62\\
+Kidney disease & 49 & 19 & 32 & 245 & 95 & 71\\
+Anemia & 40 & 33 & 27 & 200 & 165 & 60\\
+Thyroid disorder & 39 & 31 & 30 & 195 & 155 & 67\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\begin{table}[H]
+\centering
+\caption{Maintenance macro targets for 2,000 kcal}
+\begin{tabular}{lrrrrrr}
+\toprule
+Health profile & Carb \% & Protein \% & Fat \% & Carb g & Protein g & Fat g\\
+\midrule
+None & 50 & 25 & 25 & 250 & 125 & 56\\
+Diabetic & 43 & 31 & 26 & 215 & 155 & 58\\
+Hypertension & 51 & 26 & 23 & 255 & 130 & 51\\
+Heart disease & 54 & 26 & 20 & 270 & 130 & 44\\
+High cholesterol & 53 & 28 & 19 & 265 & 140 & 42\\
+Digestive issues & 53 & 24 & 23 & 265 & 120 & 51\\
+Kidney disease & 59 & 15 & 26 & 295 & 75 & 58\\
+Anemia & 50 & 28 & 22 & 250 & 140 & 49\\
+Thyroid disorder & 49 & 26 & 25 & 245 & 130 & 56\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\begin{table}[H]
+\centering
+\caption{Endurance macro targets for 2,000 kcal}
+\begin{tabular}{lrrrrrr}
+\toprule
+Health profile & Carb \% & Protein \% & Fat \% & Carb g & Protein g & Fat g\\
+\midrule
+None & 55 & 20 & 20 & 275 & 100 & 44\\
+Diabetic & 51 & 26 & 23 & 255 & 130 & 51\\
+Hypertension & 59 & 22 & 19 & 295 & 110 & 42\\
+Heart disease & 62 & 21 & 17 & 310 & 105 & 38\\
+High cholesterol & 61 & 23 & 16 & 305 & 115 & 36\\
+Digestive issues & 61 & 20 & 19 & 305 & 100 & 42\\
+Kidney disease & 66 & 13 & 21 & 330 & 65 & 47\\
+Anemia & 58 & 23 & 19 & 290 & 115 & 42\\
+Thyroid disorder & 57 & 22 & 21 & 285 & 110 & 47\\
+\bottomrule
+\end{tabular}
+\end{table}

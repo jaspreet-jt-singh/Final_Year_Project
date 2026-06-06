@@ -1,0 +1,311 @@
+\chapter{DATASET CLASSES AND NUTRITION MAPPINGS}
+
+\section{Expanded Dataset Class List}
+
+The final dataset contains 72 canonical classes. The class list is stored in the generated dataset configuration file, and visual verification confirmed that every class has image samples. The complete class set appears in the mapping table and the per-class count table below.
+
+\section{Class-to-INDB Mapping Table}
+
+Table \ref{tab:full-mapping} lists the database food name used for each dataset class. Most rows come from INDB. The few classes absent from the available INDB sheet use verified supplemental rows, as noted in the project database.
+
+\begingroup
+\small
+\setlength{\tabcolsep}{3pt}
+\begin{longtable}{p{0.24\textwidth}p{0.58\textwidth}p{0.08\textwidth}}
+\caption{Full 72-class dataset to INDB mapping table}
+\label{tab:full-mapping}\\
+\toprule
+Dataset class & Matched database food name & Score\\
+\midrule
+\endfirsthead
+\toprule
+Dataset class & Matched database food name & Score\\
+\midrule
+\endhead
+\code{aloo_gobi} & \code{Potato cauliflower (Aloo gobhi)} & 1.00\\
+\code{aloo_masala} & \code{Potato curry (Aloo ki sabzi)} & 0.90\\
+\code{appam} & \code{Appam} & 1.00\\
+\code{beetroot_poriyal} & \code{Vegetables stir fry} & 0.75\\
+\code{besan_cheela} & \code{Gram flour chilla/cheela (Besan chilla/cheela)} & 1.00\\
+\code{bhakarwadi} & \code{Bhakarwadi} & 1.00\\
+\code{bhakri} & \code{Chapati/Roti} & 0.80\\
+\code{bhatura} & \code{Bhatura} & 1.00\\
+\code{bhindi_masala} & \code{Okra/Lady's fingers fry (Bhindi sabzi/sabji/subji)} & 0.95\\
+\code{biryani} & \code{Vegetable biryani/biriyani} & 0.85\\
+\code{carrot_poriyal} & \code{Carrot and cabbage with coconut (Nariyal ke saath pattagobhi aur gajar)} & 0.85\\
+\code{chai} & \code{Hot tea (Garam Chai)} & 1.00\\
+\code{chicken} & \code{Chicken curry} & 0.85\\
+\code{chicken_65} & \code{Chilli chicken} & 0.80\\
+\code{chicken_biryani} & \code{Chicken pulao} & 0.80\\
+\code{chole} & \code{Chickpeas curry (Safed channa curry)} & 1.00\\
+\code{coconut_chutney} & \code{Coconut chutney (Nariyal ki chutney)} & 1.00\\
+\code{dal} & \code{Mixed dal} & 0.90\\
+\code{dhokla} & \code{Dhokla} & 1.00\\
+\code{dosa} & \code{Plain dosa} & 0.95\\
+\code{dum_aloo} & \code{Dum aloo} & 1.00\\
+\code{eggs} & \code{Boiled egg (Ubla anda)} & 0.95\\
+\code{fish_curry} & \code{Fish curry (Machli curry)} & 1.00\\
+\code{ghevar} & \code{Ghevar} & 1.00\\
+\code{green_chutney} & \code{Green chutney} & 1.00\\
+\code{gulab_jamun} & \code{Gulab Jamun with khoya} & 1.00\\
+\code{idli} & \code{Idli} & 1.00\\
+\code{jalebi} & \code{Jalebi} & 1.00\\
+\code{kaara_chutney} & \code{Tomato chutney (Tamatar ki chutney)} & 0.85\\
+\code{kali} & \code{Maize porridge} & 0.70\\
+\code{kebab} & \code{Boti kebab} & 0.90\\
+\code{khandvi} & \code{Khandvi} & 1.00\\
+\code{kheer} & \code{Rice kheer (Chawal ki kheer)} & 1.00\\
+\code{koozh} & \code{Maize porridge} & 0.70\\
+\code{kulfi} & \code{Kulfi} & 1.00\\
+\code{lassi} & \code{Sweet Lassi (Meethi lassi)} & 0.95\\
+\code{lemon_rice} & \code{Lemon rice (Pulihora, Elumichai sadam, Chitranna)} & 1.00\\
+\code{medu_vada} & \code{Plain urad dal vada (Uzunne vada/Minapa garelu/Ulundu vadai/Medu vada)} & 1.00\\
+\code{modak} & \code{Semolina ladoo with coconut (Suji/Rava aur nariyal ke ladoo )} & 0.70\\
+\code{mushroom_biryani} & \code{Mushroom pulao} & 0.80\\
+\code{mutton_biryani} & \code{Mutton biryani/biriyani} & 1.00\\
+\code{mutton_curry} & \code{Mutton korma} & 0.85\\
+\code{nandu_masala} & \code{Nandu Kari (Crab masala)} & 1.00\\
+\code{nei_satham} & \code{Plain pulao} & 0.80\\
+\code{omelette} & \code{Plain omelette/omlet} & 1.00\\
+\code{onion_pakoda} & \code{Onion pakora/pakoda (Pyaaz ke pakode)} & 1.00\\
+\code{paal_kolukattai} & \code{Rice kheer (Chawal ki kheer)} & 0.75\\
+\code{palak_paneer} & \code{Spinach paneer (Palak paneer)} & 1.00\\
+\code{paneer_biryani} & \code{Paneer pulao} & 0.80\\
+\code{paratha} & \code{Plain parantha/paratha} & 0.95\\
+\code{parupu_vadai} & \code{Fermented bengal gram vada (Khameerikrit/Ufna hua channa dal ka vada)} & 0.90\\
+\code{pidi_kolukattai} & \code{Rice puttu (Ari puttu)} & 0.75\\
+\code{poha} & \code{Poha} & 1.00\\
+\code{poorna_kolukattai} & \code{Semolina ladoo with coconut (Suji/Rava aur nariyal ke ladoo )} & 0.70\\
+\code{prawn_thokku} & \code{Prawn curry (with coconut) (Jhinga curry)} & 0.85\\
+\code{puri} & \code{Poori} & 1.00\\
+\code{raita} & \code{Cucumber raita (Kheere ka raita)} & 0.90\\
+\code{rajma_curry} & \code{Kidney bean curry (Rajmah curry)} & 1.00\\
+\code{ras_malai} & \code{Rasmalai} & 1.00\\
+\code{rice} & \code{Boiled rice (Uble chawal)} & 1.00\\
+\code{roti} & \code{Chapati/Roti} & 1.00\\
+\code{saag} & \code{Sarson ka saag} & 1.00\\
+\code{salad} & \code{Tossed salad} & 0.90\\
+\code{sambar} & \code{Sambar} & 1.00\\
+\code{sambar_satham} & \code{Vegetable khichdi/khichri} & 0.80\\
+\code{samosa} & \code{Potato samosa (Aloo ka samosa)} & 1.00\\
+\code{shahi_paneer} & \code{Shahi paneer} & 1.00\\
+\code{thepla} & \code{Methi thepla} & 0.95\\
+\code{upma} & \code{Semolina upma (Suji/Rava upma)} & 0.95\\
+\code{veg_briyani} & \code{Vegetable biryani/biriyani} & 1.00\\
+\code{veg_pulao} & \code{Mixed vegetable pulao} & 1.00\\
+\code{ven_pongal} & \code{Plain khitchdi (Plain khichri/khichdi)} & 0.75\\
+\bottomrule
+\end{longtable}
+\endgroup
+
+\section{Known Annotation Issues}
+
+\begin{table}[H]
+\centering
+\caption{Sample-level annotation issues found during visual verification}
+\label{tab:annotation-issues}
+\begingroup
+\small
+\begin{tabularx}{\textwidth}{L{0.32\textwidth}Y}
+\toprule
+File & Finding\\
+\midrule
+train27229-jalebi.jpg & Labeled as \code{jalebi}, but the image does not visually look like jalebi.\\
+train18550-kaara-chutney label & \code{kaara_chutney} box is placed on the vada instead of the visible chutney.\\
+train32747-nandu-masala label & Full image is crab, but the bounding box is extremely thin and produces a blank crop.\\
+\bottomrule
+\end{tabularx}
+\endgroup
+\end{table}
+
+\section{Visual Verification Sheet Set}
+
+The following figures reproduce the complete visual verification sheet set. The original eight contact sheets were divided into top and bottom halves, producing sixteen larger half-sheets for clearer reading in the printed report. The sheets were generated from actual dataset files, with sampled full images and label-based crops used to check whether the class names matched the visible food items.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.97\textwidth,keepaspectratio]{class_verification_half_01.jpg}
+\caption{Visual verification half-sheet 1}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.97\textwidth,keepaspectratio]{class_verification_half_02.jpg}
+\caption{Visual verification half-sheet 2}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.97\textwidth,keepaspectratio]{class_verification_half_03.jpg}
+\caption{Visual verification half-sheet 3}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.97\textwidth,keepaspectratio]{class_verification_half_04.jpg}
+\caption{Visual verification half-sheet 4}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.97\textwidth,keepaspectratio]{class_verification_half_05.jpg}
+\caption{Visual verification half-sheet 5}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.97\textwidth,keepaspectratio]{class_verification_half_06.jpg}
+\caption{Visual verification half-sheet 6}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.97\textwidth,keepaspectratio]{class_verification_half_07.jpg}
+\caption{Visual verification half-sheet 7}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.97\textwidth,keepaspectratio]{class_verification_half_08.jpg}
+\caption{Visual verification half-sheet 8}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.97\textwidth,keepaspectratio]{class_verification_half_09.jpg}
+\caption{Visual verification half-sheet 9}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.97\textwidth,keepaspectratio]{class_verification_half_10.jpg}
+\caption{Visual verification half-sheet 10}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.97\textwidth,keepaspectratio]{class_verification_half_11.jpg}
+\caption{Visual verification half-sheet 11}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.97\textwidth,keepaspectratio]{class_verification_half_12.jpg}
+\caption{Visual verification half-sheet 12}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.97\textwidth,keepaspectratio]{class_verification_half_13.jpg}
+\caption{Visual verification half-sheet 13}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.97\textwidth,keepaspectratio]{class_verification_half_14.jpg}
+\caption{Visual verification half-sheet 14}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.97\textwidth,keepaspectratio]{class_verification_half_15.jpg}
+\caption{Visual verification half-sheet 15}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.97\textwidth,keepaspectratio]{class_verification_half_16.jpg}
+\caption{Visual verification half-sheet 16}
+\end{figure}
+
+\section{Per-Class Dataset Counts}
+
+\begingroup
+\small
+\setlength{\tabcolsep}{4pt}
+\begin{longtable}{p{0.30\textwidth}rrr}
+\caption{Per-class dataset counts after merge and train augmentation}
+\label{tab:appendix-class-counts}\\
+\toprule
+Class & Train before $\rightarrow$ after & Valid & Test\\
+\midrule
+\endfirsthead
+\toprule
+Class & Train before $\rightarrow$ after & Valid & Test\\
+\midrule
+\endhead
+\code{aloo_gobi} & 556 $\rightarrow$ 568 & 119 & 119\\
+\code{aloo_masala} & 520 $\rightarrow$ 528 & 111 & 112\\
+\code{appam} & 210 $\rightarrow$ 421 & 45 & 45\\
+\code{beetroot_poriyal} & 210 $\rightarrow$ 421 & 45 & 45\\
+\code{besan_cheela} & 207 $\rightarrow$ 414 & 44 & 45\\
+\code{bhakarwadi} & 256 $\rightarrow$ 500 & 55 & 55\\
+\code{bhakri} & 79 $\rightarrow$ 168 & 17 & 17\\
+\code{bhatura} & 680 $\rightarrow$ 680 & 145 & 146\\
+\code{bhindi_masala} & 1046 $\rightarrow$ 1056 & 224 & 224\\
+\code{biryani} & 700 $\rightarrow$ 703 & 150 & 150\\
+\code{carrot_poriyal} & 210 $\rightarrow$ 421 & 45 & 45\\
+\code{chai} & 340 $\rightarrow$ 511 & 73 & 73\\
+\code{chicken} & 925 $\rightarrow$ 925 & 198 & 198\\
+\code{chicken_65} & 210 $\rightarrow$ 421 & 45 & 45\\
+\code{chicken_biryani} & 210 $\rightarrow$ 420 & 45 & 45\\
+\code{chole} & 1277 $\rightarrow$ 1362 & 273 & 274\\
+\code{coconut_chutney} & 1007 $\rightarrow$ 1207 & 216 & 216\\
+\code{dal} & 970 $\rightarrow$ 985 & 208 & 208\\
+\code{dhokla} & 703 $\rightarrow$ 704 & 151 & 151\\
+\code{dosa} & 1125 $\rightarrow$ 1227 & 241 & 241\\
+\code{dum_aloo} & 358 $\rightarrow$ 500 & 77 & 77\\
+\code{eggs} & 519 $\rightarrow$ 561 & 111 & 111\\
+\code{fish_curry} & 362 $\rightarrow$ 500 & 77 & 78\\
+\code{ghevar} & 235 $\rightarrow$ 470 & 50 & 51\\
+\code{green_chutney} & 661 $\rightarrow$ 748 & 141 & 142\\
+\code{gulab_jamun} & 272 $\rightarrow$ 501 & 58 & 59\\
+\code{idli} & 821 $\rightarrow$ 889 & 176 & 176\\
+\code{jalebi} & 872 $\rightarrow$ 872 & 187 & 187\\
+\code{kaara_chutney} & 218 $\rightarrow$ 457 & 46 & 47\\
+\code{kali} & 210 $\rightarrow$ 423 & 45 & 45\\
+\code{kebab} & 161 $\rightarrow$ 322 & 34 & 35\\
+\code{khandvi} & 325 $\rightarrow$ 500 & 70 & 70\\
+\code{kheer} & 294 $\rightarrow$ 500 & 63 & 63\\
+\code{koozh} & 210 $\rightarrow$ 421 & 45 & 45\\
+\code{kulfi} & 332 $\rightarrow$ 500 & 71 & 71\\
+\code{lassi} & 322 $\rightarrow$ 500 & 69 & 69\\
+\code{lemon_rice} & 210 $\rightarrow$ 420 & 45 & 45\\
+\code{medu_vada} & 386 $\rightarrow$ 522 & 83 & 83\\
+\code{modak} & 120 $\rightarrow$ 240 & 26 & 26\\
+\code{mushroom_biryani} & 210 $\rightarrow$ 420 & 45 & 45\\
+\code{mutton_biryani} & 210 $\rightarrow$ 421 & 45 & 45\\
+\code{mutton_curry} & 350 $\rightarrow$ 500 & 75 & 75\\
+\code{nandu_masala} & 210 $\rightarrow$ 420 & 45 & 45\\
+\code{nei_satham} & 210 $\rightarrow$ 420 & 45 & 45\\
+\code{omelette} & 212 $\rightarrow$ 440 & 45 & 46\\
+\code{onion_pakoda} & 333 $\rightarrow$ 500 & 71 & 72\\
+\code{paal_kolukattai} & 210 $\rightarrow$ 420 & 45 & 45\\
+\code{palak_paneer} & 1000 $\rightarrow$ 1000 & 214 & 214\\
+\code{paneer_biryani} & 210 $\rightarrow$ 420 & 45 & 45\\
+\code{paratha} & 127 $\rightarrow$ 282 & 27 & 28\\
+\code{parupu_vadai} & 210 $\rightarrow$ 425 & 45 & 45\\
+\code{pidi_kolukattai} & 210 $\rightarrow$ 422 & 45 & 45\\
+\code{poha} & 1049 $\rightarrow$ 1058 & 224 & 225\\
+\code{poorna_kolukattai} & 210 $\rightarrow$ 421 & 45 & 45\\
+\code{prawn_thokku} & 210 $\rightarrow$ 420 & 45 & 45\\
+\code{puri} & 380 $\rightarrow$ 535 & 81 & 82\\
+\code{raita} & 239 $\rightarrow$ 554 & 51 & 52\\
+\code{rajma_curry} & 1008 $\rightarrow$ 1050 & 216 & 216\\
+\code{ras_malai} & 322 $\rightarrow$ 500 & 69 & 69\\
+\code{rice} & 1776 $\rightarrow$ 1856 & 380 & 381\\
+\code{roti} & 803 $\rightarrow$ 821 & 172 & 172\\
+\code{saag} & 525 $\rightarrow$ 525 & 112 & 113\\
+\code{salad} & 157 $\rightarrow$ 360 & 34 & 34\\
+\code{sambar} & 475 $\rightarrow$ 617 & 102 & 102\\
+\code{sambar_satham} & 210 $\rightarrow$ 420 & 45 & 45\\
+\code{samosa} & 358 $\rightarrow$ 500 & 77 & 77\\
+\code{shahi_paneer} & 878 $\rightarrow$ 878 & 188 & 189\\
+\code{thepla} & 174 $\rightarrow$ 377 & 37 & 38\\
+\code{upma} & 145 $\rightarrow$ 290 & 31 & 31\\
+\code{veg_briyani} & 210 $\rightarrow$ 420 & 45 & 45\\
+\code{veg_pulao} & 170 $\rightarrow$ 364 & 36 & 37\\
+\code{ven_pongal} & 210 $\rightarrow$ 433 & 45 & 45\\
+\bottomrule
+\end{longtable}
+\endgroup

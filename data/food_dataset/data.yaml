@@ -1,4 +1,4 @@
-path: /kaggle/input/datasets/jaspreetjtsingh/food-dataset/food_dataset
+path: .
 train: train/images
 val: valid/images
 test: test/images

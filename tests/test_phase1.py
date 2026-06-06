@@ -84,7 +84,7 @@ def test_phase1():
     except Exception as e:
         print(f"❌ Error checking service files: {e}")
     
-    # Test 3: Database has only indb_foods table
+    # Test 3: Database has expected nutrition and mapping tables
     tests_total += 1
     print("\n3. Testing database structure...")
     try:
@@ -97,11 +97,13 @@ def test_phase1():
         # Filter out SQLite internal tables
         user_tables = [t for t in tables if not t.startswith('sqlite_')]
         
-        if user_tables == ["indb_foods"]:
-            print("✅ Database has only indb_foods table")
+        expected_tables = {"indb_foods", "yolo_mappings"}
+        if expected_tables.issubset(set(user_tables)):
+            print("✅ Database has expected nutrition and YOLO mapping tables")
             tests_passed += 1
         else:
-            print(f"❌ Database has incorrect tables: {user_tables}")
+            print(f"❌ Database is missing expected tables: {sorted(expected_tables - set(user_tables))}")
+            print(f"   User tables found: {user_tables}")
             print(f"   (All tables including internal: {tables})")
         
         conn.close()
@@ -212,7 +214,7 @@ def test_phase1():
         print("🎉 All Phase 1 tests PASSED!")
         print("\n📋 Phase 1 Requirements Met:")
         print("✅ FastAPI backend with real YOLO detection")
-        print("✅ SQLite nutrition lookup (INDB only)")
+        print("✅ SQLite nutrition lookup with INDB and supplemental rows")
         print("✅ Rate limiting (5 req/min)")
         print("✅ No food_label_map.json dependency")
         print("✅ Proper service architecture")

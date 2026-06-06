@@ -1,0 +1,79 @@
+\chapter{RESULTS}
+
+\section{Dataset Engineering Results}
+
+The dataset engineering phase produced a 72-class merged dataset. The important result was not just a larger dataset, but a cleaner label space built from five inconsistent sources. Table \ref{tab:dataset-class-groups} summarizes the types of classes represented in the final dataset.
+
+\begin{table}[H]
+\centering
+\caption{Representative categories in the 72-class dataset}
+\label{tab:dataset-class-groups}
+\begingroup
+\small
+\begin{tabularx}{\textwidth}{L{0.24\textwidth}Y}
+\toprule
+Category & Example classes\\
+\midrule
+Rice dishes & \code{rice}, \code{lemon_rice}, \code{sambar_satham}, \code{veg_briyani}, \code{veg_pulao}, \code{ven_pongal}\\
+Flatbreads and fried breads & \code{roti}, \code{paratha}, \code{bhakri}, \code{bhatura}, \code{puri}, \code{thepla}\\
+Curries and gravies & \code{chole}, \code{rajma_curry}, \code{fish_curry}, \code{mutton_curry}, \code{shahi_paneer}, \code{palak_paneer}\\
+Snacks & \code{samosa}, \code{onion_pakoda}, \code{medu_vada}, \code{parupu_vadai}, \code{bhakarwadi}, \code{khandvi}\\
+Sweets and desserts & \code{gulab_jamun}, \code{ras_malai}, \code{kheer}, \code{kulfi}, \code{modak}, \code{jalebi}\\
+Chutneys and sides & \code{coconut_chutney}, \code{green_chutney}, \code{kaara_chutney}, \code{raita}, \code{salad}\\
+\bottomrule
+\end{tabularx}
+\endgroup
+\end{table}
+
+The class verification output confirms that all classes have image samples. This matters because a dataset configuration can list classes even when no usable labels exist for them. The verification step confirmed that this is not the case here, while still identifying a few individual annotations that should be cleaned later.
+
+\section{Nutrition Mapping Results}
+
+The nutrition mapping results improved substantially compared with the earlier deployed-model-only mapping. Previously, fuzzy matching produced incorrect mappings such as \code{aloo_gobi} to a cauliflower dessert and \code{palak_paneer} to a generic cottage-cheese dish. The revised strategy maps these classes to more appropriate database entries and records source information for supplemental rows.
+
+\begin{table}[H]
+\centering
+\caption{Examples of improved nutrition mappings}
+\label{tab:improved-mappings}
+\begingroup
+\small
+\begin{tabularx}{\textwidth}{L{0.22\textwidth}L{0.32\textwidth}Y}
+\toprule
+Class & Corrected mapping & Reason\\
+\midrule
+\code{aloo_gobi} & \code{Potato cauliflower (Aloo gobhi)} & Direct dish-level semantic match.\\
+\code{palak_paneer} & \code{Spinach paneer (Palak paneer)} & Direct dish-level semantic match.\\
+\code{rice} & \code{Boiled rice (Uble chawal)} & Best base record for plain rice.\\
+\code{sambar} & \code{Sambar} & Exact database match.\\
+\code{shahi_paneer} & \code{Shahi paneer} & Exact database match.\\
+\bottomrule
+\end{tabularx}
+\endgroup
+\end{table}
+
+Some mappings remain approximate because the available INDB sheet does not contain every exact dish name. For example, \code{ven_pongal} maps to \code{Plain khitchdi}, and \code{chicken_biryani} maps to \code{Chicken pulao}. These approximations are documented through confidence scores and macro verification reports rather than hidden from the user.
+
+\section{Application Results}
+
+The frontend displays detected foods with bounding boxes and nutrition cards. In the demonstrated Bhatura and Chole image, the detector produced boxes around the large bhatura and the chole bowl. The frontend used these boxes for overlays and used the backend response to show macro values. This confirms the practical connection from image upload to visual output, nutrition lookup, and user-facing guidance.
+
+\section{Macro and Recommendation Results}
+
+The macro engine returns target grams for each dietary goal and health condition. For a fixed calorie target, different goals produce different distributions. A weight-loss goal emphasizes protein more strongly, while an endurance goal emphasizes carbohydrates. Health profiles further adjust this split. This gives the recommendation system more context than a generic food recognition application.
+
+The recommendation service produces three practical dietary suggestions based on detected foods and user profile. For example, if the detected meal is high in fried carbohydrates and the user chooses weight loss, the recommendation can advise smaller portions, additional protein, and lower-oil alternatives. If the user selects a diabetic profile, the advice can focus on carbohydrate moderation, fiber, and pairing with protein.
+
+\section{Summary of Results}
+
+The project produced the following verifiable results:
+
+\begin{itemize}
+    \item A complete 72-class Indian food dataset configuration.
+    \item 48,693 exported image-label pairs in the balanced generated dataset.
+    \item Visual verification artifacts covering all 72 classes.
+    \item A SQLite nutrition database with 1,010 food records.
+    \item A YOLO-to-database mapping table with 103 total mappings.
+    \item Safe nutrition mappings for all 72 expanded dataset classes.
+    \item A FastAPI backend with image analysis, nutrition lookup, macro calculation, and recommendation endpoints.
+    \item A Next.js frontend with detection overlays, nutrition cards, serving controls, and recommendations.
+\end{itemize}

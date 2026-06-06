@@ -1,0 +1,166 @@
+\chapter{SYSTEM DESIGN}
+
+\section{Design Goals}
+
+The system was designed around five practical goals: usability, modularity, traceable data flow, local deployability, and extensibility. Usability means that a user should be able to upload a food image and understand the result without knowing how the model works. Modularity keeps dataset building, model inference, nutrition lookup, recommendation generation, and interface rendering separate enough to debug independently. Traceable data flow makes detected labels, confidence scores, bounding boxes, and nutrition sources visible instead of hiding them inside the backend. Local deployability keeps the prototype easy to run on a developer machine. Extensibility leaves room for new classes, improved models, and better nutrition sources later.
+
+\section{High-Level Architecture}
+
+The project follows a layered architecture because each part of the system has a different responsibility. The data layer contains source datasets, the merged YOLO dataset, the INDB spreadsheet, and the SQLite nutrition database. The AI layer contains the YOLO model and inference service. The backend layer exposes APIs and coordinates the services. The frontend layer provides the user interaction. Figure \ref{fig:system-architecture} shows the high-level architecture.
+
+\begin{figure}[H]
+\centering
+\resizebox{0.98\textwidth}{!}{%
+\begin{tikzpicture}[
+    layer/.style={draw, rounded corners, align=center, minimum width=12cm, minimum height=1.0cm},
+    arrow/.style={-Latex, thick},
+    node distance=0.55cm
+]
+\node[layer, fill=green!8] (frontend) {Frontend Layer: Next.js upload, image preview, detection overlay, nutrition cards, macro tracking};
+\node[layer, fill=blue!8, below=of frontend] (backend) {Backend Layer: FastAPI endpoints, validation, service orchestration, recommendation calls};
+\node[layer, fill=orange!10, below=of backend] (ai) {AI Layer: YOLO model loading, image inference, confidence filtering, bounding-box extraction};
+\node[layer, fill=purple!8, below=of ai] (data) {Data Layer: YOLO dataset, INDB spreadsheet, SQLite nutrition database, mappings};
+\draw[arrow] (frontend) -- (backend);
+\draw[arrow] (backend) -- (ai);
+\draw[arrow] (backend) -- (data);
+\draw[arrow] (ai) -- (data);
+\end{tikzpicture}
+}
+\caption{Layered architecture of the food recognition and nutrition system}
+\label{fig:system-architecture}
+\end{figure}
+
+\section{Runtime Data Flow}
+
+The runtime flow begins when the user uploads an image. The frontend forwards the raw image to the backend. The backend validates the upload, sends it to the vision service, receives detected objects, and looks up nutrition for each detected label. The response includes image dimensions, bounding boxes, labels, confidence values, macro values, and nutrition source metadata. The frontend then renders the image with boxes and displays nutrition cards, so the user can see both the visual prediction and the nutrition consequence of that prediction.
+
+\begin{figure}[H]
+\centering
+\begin{tikzpicture}[
+    process/.style={draw, rounded corners, align=center, fill=blue!6, text width=7.5cm, minimum height=0.8cm},
+    side/.style={draw, rounded corners, align=center, fill=orange!10, text width=4.0cm, minimum height=0.8cm},
+    msg/.style={-Latex, thick},
+    node distance=0.55cm
+]
+\node[process] (upload) {1. User uploads a meal photo};
+\node[process, below=of upload] (validate) {2. FastAPI validates the request};
+\node[process, below=of validate] (vision) {3. VisionService returns labels, boxes, and scores};
+\node[process, below=of vision] (nutrition) {4. NutritionService adds calories and macros};
+\node[process, below=of nutrition] (json) {5. Backend returns analysis JSON};
+\node[process, below=of json] (ui) {6. Frontend renders overlays, cards, and totals};
+\node[side, right=1.0cm of nutrition] (recommend) {Recommendation\\Service\\uses detected foods\\and user profile};
+
+\draw[msg] (upload) -- (validate);
+\draw[msg] (validate) -- (vision);
+\draw[msg] (vision) -- (nutrition);
+\draw[msg] (nutrition) -- (json);
+\draw[msg] (json) -- (ui);
+\draw[msg] (nutrition) -- (recommend);
+\draw[msg] (recommend) |- (ui);
+\end{tikzpicture}
+\caption{Runtime request-response flow}
+\label{fig:runtime-flow}
+\end{figure}
+
+\section{Backend Design}
+
+The backend is implemented with FastAPI, an ASGI-compatible Python framework suitable for typed request models, upload handling, and asynchronous service execution \cite{fastapi2024}. The backend contains the following core services:
+
+\begin{itemize}
+    \item \textbf{VisionService}: loads the YOLO model and performs inference on uploaded images.
+    \item \textbf{NutritionService}: connects to SQLite, caches food names, loads \code{yolo_mappings}, and returns macro values.
+    \item \textbf{RecommendationService}: computes goal and health-condition context and generates dietary suggestions.
+\end{itemize}
+
+The backend design separates the endpoint layer from service logic. This makes it easier to test nutrition lookup without running image inference, and easier to test macro calculation without uploading files.
+
+\section{Frontend Design}
+
+The frontend is built with Next.js 14 and React \cite{nextjs2024}. It provides a single primary workflow: upload image, analyze, inspect detections, adjust serving estimates, review macro impact, and request recommendations. The frontend state is organized around the image analysis result, selected goal, target calories, selected health condition, and macro totals.
+
+The user interface avoids a marketing-style landing page. The first screen is the actual tool: upload controls, user nutrition context, and result panels. This is appropriate because the application is an operational nutrition assistant, not a promotional website.
+
+\section{Database Design}
+
+The SQLite database contains a normalized nutrition table and a precomputed mapping table. Table \ref{tab:database-schema} summarizes the database design.
+
+\begin{table}[H]
+\centering
+\caption{Runtime nutrition database tables}
+\label{tab:database-schema}
+\begingroup
+\small
+\setlength{\tabcolsep}{4pt}
+\begin{tabularx}{\textwidth}{L{0.22\textwidth}L{0.32\textwidth}Y}
+\toprule
+Table & Key columns & Purpose\\
+\midrule
+\code{indb_foods} & id, food name, normalized name, calories, protein, carbohydrates, fat, source & Stores INDB and supplemental nutrition records.\\
+\code{yolo_mappings} & YOLO class, matched food name, match score & Stores precomputed mappings from detector labels to database food rows.\\
+\bottomrule
+\end{tabularx}
+\endgroup
+\end{table}
+
+The database is intentionally simple. A heavier database server would add setup work without improving the core prototype. Since the nutrition data is mostly read-only at runtime, SQLite is sufficient and keeps the project easy to run locally.
+
+\begin{figure}[H]
+\centering
+\begin{tikzpicture}[
+    flowbox/.style={draw, rounded corners, align=center, fill=blue!6, text width=0.17\textwidth, minimum height=1.55cm, inner sep=5pt},
+    tablebox/.style={draw, rounded corners, align=left, fill=green!8, text width=0.235\textwidth, minimum height=2.05cm, inner sep=6pt},
+    outbox/.style={draw, rounded corners, align=center, fill=orange!10, text width=0.17\textwidth, minimum height=1.55cm, inner sep=5pt},
+    arrow/.style={-Latex, thick},
+    node distance=0.28cm
+]
+\node[flowbox] (label) {YOLO output\\class label};
+\node[tablebox, right=of label] (map) {\textbf{yolo\_mappings}\\YOLO class\\matched food name\\match score};
+\node[tablebox, right=of map] (foods) {\textbf{indb\_foods}\\food name\\calories\\protein, carbs, fat\\source};
+\node[outbox, right=of foods] (response) {Nutrition\\response\\for frontend};
+
+\draw[arrow] (label) -- (map);
+\draw[arrow] (map) -- node[above, font=\small]{matched name} (foods);
+\draw[arrow] (foods) -- (response);
+\end{tikzpicture}
+\caption{Entity relationship used for class-to-nutrition lookup}
+\label{fig:nutrition-er}
+\end{figure}
+
+\section{API Design}
+
+The API design exposes endpoints for health checks, image analysis, nutrition testing, nutrition validation, macro calculation, goal metadata, health-condition metadata, and recommendations. Table \ref{tab:api-design} lists the implemented endpoints.
+
+\begin{table}[H]
+\centering
+\caption{Implemented backend endpoints}
+\label{tab:api-design}
+\begingroup
+\small
+\setlength{\tabcolsep}{4pt}
+\begin{tabularx}{\textwidth}{L{0.34\textwidth}L{0.10\textwidth}Y}
+\toprule
+Endpoint & Method & Purpose\\
+\midrule
+\code{/} & GET & Root API description and endpoint list.\\
+\code{/api/health} & GET & Returns service health and model-loaded status.\\
+\code{/api/analyze-food} & POST & Accepts image upload, runs YOLO inference, and attaches nutrition data.\\
+\begin{tabular}[t]{@{}l@{}}\code{/api/test-nutrition/}\\\code{<food_name>}\end{tabular} & GET & Debug endpoint for a single food nutrition lookup.\\
+\code{/api/validate-nutrition} & GET & Validates nutrition lookup coverage for model classes.\\
+\begin{tabular}[t]{@{}l@{}}\code{/api/user/}\\\code{calculate-macros}\end{tabular} & POST & Calculates goal-specific macro targets.\\
+\code{/api/user/goals} & GET & Returns supported dietary goals.\\
+\begin{tabular}[t]{@{}l@{}}\code{/api/user/}\\\code{health-conditions}\end{tabular} & GET & Returns supported health condition options.\\
+\code{/api/recommendations} & POST & Generates dietary recommendations from detected foods and user profile.\\
+\bottomrule
+\end{tabularx}
+\endgroup
+\end{table}
+
+\section{Security and Validation Design}
+
+The system validates upload type, empty uploads, maximum file size, and service readiness. The backend enforces a maximum image upload size of 10 MB. Rate limiting is implemented for the food analysis endpoint to avoid repeated heavy inference calls. Secrets such as the Groq API key are loaded from environment variables and are not documented verbatim in the report.
+
+\section{Design Trade-Offs}
+
+The design uses per-100-gram nutrition values rather than automatic portion estimation. This choice limits exact calorie accuracy but improves reliability because monocular portion estimation requires plate scale, camera distance, depth, and food volume assumptions. The system instead provides serving multipliers in the frontend, allowing the user to adjust values interactively when the displayed serving is too small or too large.
+
+The design also keeps explicit nutrition mappings in the database build process. This is less automatic than fuzzy matching, but it is safer for nutrition applications. Wrong nutrition values can be more harmful than missing nutrition values; therefore, classes without safe INDB rows are handled only through verified supplemental entries with recorded source metadata.

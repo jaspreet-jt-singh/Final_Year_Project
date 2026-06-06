@@ -1,0 +1,105 @@
+\chapter{IMPLEMENTATION}
+
+\section{Development Environment}
+
+The project is implemented as a full-stack application rather than a standalone notebook experiment. This mattered during development because the detector, nutrition database, API response format, and frontend display all had to agree with each other. The backend uses Python, FastAPI, PyTorch, Ultralytics YOLO, Pillow, NumPy, Pandas, OpenPyXL, SQLite, and AioSQLite. The frontend uses Next.js, React, TypeScript, Tailwind CSS, and Lucide icons. The repository is organized into \code{backend/}, \code{frontend/}, \code{data/}, \code{models/}, \code{scripts/}, and \code{notebooks/} so that model assets, data processing, API code, and interface code remain separated.
+
+\section{Dataset Build Script}
+
+The dataset build script is located at \code{scripts/build_master_dataset.py}. It handles the repetitive work that would be error-prone if done manually: source dataset scanning, class-name loading, YOLO label parsing, canonical class conversion, multi-label split creation, image export, training augmentation, and artifact writing. It writes three key outputs: \code{data.yaml}, \code{build_log.txt}, and \code{split_class_counts_before_after.csv}.
+
+The final dataset contains 72 canonical classes. The generated balanced dataset contains 36,852 training image-label pairs, 5,922 validation pairs, and 5,919 test pairs. The total exported image-label pairs are 48,693. The larger secondary export retained in \code{data/master_dataset/} contains more aggressive train augmentation and is documented as an archived artifact.
+
+\section{Visual Class Verification Implementation}
+
+To verify that class names correspond to actual images, a visual verification script was created at \code{scripts/verify_food_classes_with_images.py}. The script groups exported images by the canonical class suffix in the filename, samples four images per class, parses corresponding labels for object crops, and writes contact sheets. This step was useful because file counts alone cannot reveal whether a class name is visually believable. The original eight sheets were then split into sixteen half-sheets so the labels and sampled images remain readable in print. Figure \ref{fig:class-verification-half-one} and Figure \ref{fig:class-verification-half-sixteen} show the first and final half-sheets.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.94\textwidth,keepaspectratio]{class_verification_half_01.jpg}
+\caption{Visual class verification contact half-sheet 1}
+\label{fig:class-verification-half-one}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.94\textwidth,keepaspectratio]{class_verification_half_16.jpg}
+\caption{Visual class verification contact half-sheet 16}
+\label{fig:class-verification-half-sixteen}
+\end{figure}
+
+The visual review confirmed that all 72 classes have actual image samples and that the class-name list is aligned. Three sample-level annotation issues were found: one \code{jalebi} image that does not visually look like jalebi, one \code{kaara_chutney} box placed on a vada, and one \code{nandu_masala} box with extremely thin dimensions. These issues do not indicate class-order failure but should be cleaned in a future dataset revision.
+
+\section{Nutrition Database Build Implementation}
+
+The nutrition database build script is located at \code{backend/scripts/merge_db.py}. It reads the INDB spreadsheet, verifies required columns, normalizes food names, removes duplicate normalized names, converts nutrition columns to numeric values, and rebuilds the local SQLite nutrition database. The script then loads the current dataset classes and appends legacy model labels so that older deployed labels still resolve correctly.
+
+Manual mappings are applied before fuzzy matching. This prevents incorrect string-based matches. For example, \code{aloo_gobi} maps to \code{Potato cauliflower (Aloo gobhi)}, \code{palak_paneer} maps to \code{Spinach paneer (Palak paneer)}, and \code{rice} maps to \code{Boiled rice (Uble chawal)}. The script also adds source-backed supplemental rows for classes that are present in the detector dataset but absent from the available INDB sheet.
+
+\section{Vision Service Implementation}
+
+The vision service loads YOLO model weights and processes uploaded images. It converts input bytes into an image representation, performs inference, applies class-level confidence rules, extracts bounding boxes, and returns structured detection dictionaries. Each detection contains the food label, confidence score, bounding box, and image dimensions.
+
+The model is warmed up during backend startup with a dummy image. This reduces the first real request latency. The backend executes inference in a thread pool so that the asynchronous API loop is not blocked by model computation.
+
+\section{Nutrition Service Implementation}
+
+The nutrition service initializes by connecting to \code{data/nutrition.db}. It caches all food names and normalized names and loads the \code{yolo_mappings} table. Runtime lookup follows this order:
+
+\begin{enumerate}[label=\arabic*.]
+    \item Check precomputed YOLO mapping.
+    \item Try exact normalized-name match.
+    \item Try partial normalized match.
+    \item Generate alias-based variations.
+    \item Use fuzzy matching as the last fallback.
+\end{enumerate}
+
+The precomputed mapping step is the most important because it avoids incorrect fuzzy matches. The returned nutrition object includes display name, macro values, unit, source, and food-found status.
+
+\section{Recommendation and Macro Implementation}
+
+The macro calculation function accepts a target calorie value, a selected goal, and a health condition. It applies base goal splits and health-condition modifiers, normalizes the result, and converts calories into grams. The recommendation service uses detected foods and user context to generate three practical suggestions. The prompt includes detected foods, calories, goal, health profile, and health-specific dietary guidance.
+
+\section{Frontend Implementation}
+
+The frontend is implemented in \code{frontend/app/page.tsx} and reusable components. \code{ImageUpload} manages drag-and-drop upload and file preview. \code{ResultsPanel} displays detection cards, nutrition values, serving controls, macro totals, and recommendations. \code{NutritionLabel} displays calories, protein, carbohydrates, and fat. \code{ImageOverlay} draws bounding boxes over the uploaded image.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.82\textwidth]{detection_overlay.png}
+\caption{Frontend detection overlay showing Bhatura and Chole detections}
+\label{fig:detection-overlay}
+\end{figure}
+
+\section{Code Organization}
+
+Table \ref{tab:implementation-files} summarizes the important implementation files.
+
+\begin{table}[H]
+\centering
+\caption{Important implementation files}
+\label{tab:implementation-files}
+\begingroup
+\small
+\setlength{\tabcolsep}{4pt}
+\begin{tabularx}{\textwidth}{L{0.28\textwidth}Y}
+\toprule
+File or component & Purpose\\
+\midrule
+\code{backend/main.py} & FastAPI application, endpoints, startup sequence, request validation.\\
+\code{vision_service.py} & YOLO model loading, inference, and detection formatting.\\
+\code{nutrition_service.py} & SQLite lookup, mapping cache, and nutrition response creation.\\
+\code{recommendation service} & Goal-aware and health-condition-aware recommendations.\\
+\code{merge_db.py} & INDB import, supplemental nutrition rows, and YOLO-to-database mapping creation.\\
+\code{food_normalizer.py} & Food-name normalization and variation generation.\\
+\code{dataset build script} & Merged dataset construction and augmentation.\\
+Class verification script & Contact-sheet generation for visual class verification.\\
+\code{page.tsx} and UI components & Main frontend workflow, detection cards, serving controls, and macro display.\\
+\bottomrule
+\end{tabularx}
+\endgroup
+\end{table}
+
+\section{Implementation Challenges}
+
+The most significant challenges were label inconsistency, nutrition mapping ambiguity, and multi-component integration. Label inconsistency was addressed through canonical class naming. Nutrition ambiguity was addressed by explicit mappings and conservative fallback. Integration complexity was handled by separating services and keeping JSON response shapes structured. In practice, the mapping work took more attention than expected because a visually correct food label can still produce the wrong macro values if it is matched to the wrong database row.

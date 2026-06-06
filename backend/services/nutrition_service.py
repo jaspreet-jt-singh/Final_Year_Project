@@ -157,13 +157,17 @@ class NutritionService:
     async def _get_nutrition_by_name(self, db, db_food_name: str, original_label: str) -> dict:
         """Get nutrition data by exact database food name"""
         cursor = await db.execute(
-            "SELECT name, calories, protein_g, carbs_g, fat_g FROM indb_foods WHERE name = ?",
-            (db_food_name,)
+            """
+            SELECT name, calories, protein_g, carbs_g, fat_g, source, source_url
+            FROM indb_foods
+            WHERE name = ?
+            """,
+            (db_food_name,),
         )
         row = await cursor.fetchone()
         
         if row:
-            name, calories, protein, carbs, fat = row
+            name, calories, protein, carbs, fat, source, source_url = row
             return {
                 "food_label": original_label,
                 "display_name": name,  # Return the ACTUAL database food name
@@ -175,7 +179,8 @@ class NutritionService:
                     "fat_g": float(fat)
                 },
                 "macros_unit": "per_100g",
-                "nutrition_source": "INDB",
+                "nutrition_source": source or "INDB",
+                "nutrition_source_url": source_url or None,
                 "food_not_found": False
             }
         return None

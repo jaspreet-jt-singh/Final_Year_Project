@@ -1,0 +1,2014 @@
+Plant Protein Classification using K-mer Encoding
+
+            A Report submitted
+in partial fulfillment of the requirement
+
+       for the award of a Degree of
+
+Bachelor of Technology
+
+in
+
+Computer Science and Engineering
+
+                                         by  S. Pranitha Reddy
+                                              (2019BCSE032)
+M. Pravallika Devi
+(2019BCSE039)
+
+Under the guidance of
+
+Dr. Veningston K
+
+Department of Computer Science and Engineering
+     National Institute of Technology, Srinagar,
+                Kashmir 190006, INDIA
+                          June 2023
+             PLANT PROTEIN CLASSIFICATION USING K-MER ENCODING 2023
+
+II Department of Computer Science and Engineering, National Institute of
+    Technology Srinagar
+                    PLANT PROTEIN CLASSIFICATION USING K-MER ENCODING 2023
+
+                        CERTIFICATE
+
+This is to certify that the project report entitled Plant Protein Classification
+using K-mer Encoding submitted by Pravallika Devi M (2019BCSE039)
+and Pranitha Reddy S (2019BCSE032) to the Department of Computer
+Science and Engineering, National Institute of Technology Srinagar,
+Kashmir, in partial fulfillment for the award of the degree of B.Tech in
+Computer Science and Engineering is a bona fide record of project work
+carried out by them under my supervision.
+
+Dr. Veningston K
+Supervisor
+Department of Computer Science and Engineering
+National Institute of Technology Srinagar
+
+      III Department of Computer Science and Engineering, National Institute of
+           Technology Srinagar
+              PLANT PROTEIN CLASSIFICATION USING K-MER ENCODING 2023
+
+IV Department of Computer Science and Engineering, National Institute of
+     Technology Srinagar
+                    PLANT PROTEIN CLASSIFICATION USING K-MER ENCODING 2023
+
+                 STUDENT DECLARATION
+
+We declare that this project report titled Plant Protein Classification using
+K-Mer Encoding submitted in partial fulfillment of the degree of B.Tech in
+Computer Science and Engineering is a record of original work carried out
+by us under the supervision of Dr. Veningston K. The matter embodied in
+this project, in full or in parts, have not been submitted to any other
+Institution or University for the award of any degree or diploma. We also
+declare that the work submitted by us is entirely original, free from
+plagiarism, and has been diligently checked through Turnitin software to
+ensure its authenticity.
+
+Pravallika Devi M  Pranitha Reddy S
+2019BCSE039         2019BCSE032
+
+Srinagar, 190006
+13-06-2023
+
+V Department of Computer Science and Engineering, National Institute of
+    Technology Srinagar
+              PLANT PROTEIN CLASSIFICATION USING K-MER ENCODING 2023
+
+VI Department of Computer Science and Engineering, National Institute of
+     Technology Srinagar
+                    PLANT PROTEIN CLASSIFICATION USING K-MER ENCODING 2023
+
+                  ACKNOWLEDGEMENTS
+
+We consider it as our privilege to express gratitude and respect to all those who
+guided and inspired us in the completion of our B.Tech project. First of all, we
+would like to acknowledge and extend our heartfelt gratitude to our guide, Dr.
+Veningston, Assistant Professor at the Department of Computer Science and
+Engineering, National Institute of Technology, Srinagar for his valuable guidance,
+constant encouragement, and kind help at various stages for the execution of this
+dissertation work. An erudite teacher, a magnificent person, and a strict
+disciplinarian, we consider our self fortunate to have worked under his
+supervision.
+We would also like to express our sincere thanks to the Department of Computer
+Science and Engineering at NIT Srinagar for providing us with this opportunity to
+work on this important project.
+We also place on record our sense of gratitude to one and all, who directly or
+indirectly, have lent their hand in this venture.
+
+                                                                             Pravallika Devi M
+                                                                              Pranitha Reddy S
+
+     VII Department of Computer Science and Engineering, National Institute of
+           Technology Srinagar
+               PLANT PROTEIN CLASSIFICATION USING K-MER ENCODING 2023
+
+VIII Department of Computer Science and Engineering, National Institute of
+       Technology Srinagar
+                    PLANT PROTEIN CLASSIFICATION USING K-MER ENCODING 2023
+
+                           ABSTRACT
+
+Proteins play an important role in human body and in plants. Lack of expertise in
+protein labeling in plants can make it extremely difficult to characterize and
+comprehend the precise roles and activities of different proteins. Furthermore, it
+restricts development in fields like biotechnology , disease resistance, and crop
+enhancement.
+The presented project focuses on plant protein classification, aiming to overcome
+the challenges arising from limited protein labeling knowledge. Advanced
+machine learning techniques, including various classification algorithms such as
+Logistic Regression, Decision Tree, K-nearest neighbors (KNN), Support Vector
+Machines (SVM), Random Forest (RF), Multinomial Naive Bayes (NB),
+AdaBoost, and XGBoost, are employed to accurately classify protein sequences
+into their respective families. This classification approach provides valuable
+insights into the functions and roles of proteins within plants, ultimately
+advancing our understanding of plant biology. This attempt offers new
+possibilities for advancement in critical sectors such as agriculture, drug discovery,
+and genomic research by eliminating the limitations associated with limited
+protein labeling knowledge.
+
+      IX Department of Computer Science and Engineering, National Institute of
+           Technology Srinagar
+             PLANT PROTEIN CLASSIFICATION USING K-MER ENCODING 2023
+
+X Department of Computer Science and Engineering, National Institute of
+    Technology Srinagar
+PLANT PROTEIN CLASSIFICATION USING K-MER ENCODING 2023
+
+TABLE OF CONTENTS
+
+DESCRIPTION                                PAGE NUMBER
+
+CERTIFICATE                                                iii
+DECLARATION                                                v
+ACKNOWLEDGEMENTS                                           vii
+ABSTRACT                                                    ix
+LIST OF FIGURES                                             xiii
+LIST OF TABLES                                              xv
+ABBREVIATIONS/ NOTATIONS/ NOMENCLATURE                      xvii
+                                                            1
+  1. INTRODUCTION                                           1
+         1.1 Overview                                       2
+                1.1.1 Gene Expression                       4
+                1.1.2 Genome Annotation                      7
+
+  2. LITERATURE SURVEY                                       19
+  3. PROPOSED METHODOLOGY                                    19
+                                                             19
+         3.1 Problem Statement                               22
+         3.2 Dataset Description                            22
+         3.3 Detailed Architecture                          26
+                                                            27
+                3.3.1 Dataset Preparation                   33
+         3.4 K-mer Encoding
+         3.5 Algorithms Used
+  4. RESULTS AND DISCUSSION
+
+XI Department of Computer Science and Engineering, National Institute of
+     Technology Srinagar
+PLANT PROTEIN CLASSIFICATION USING K-MER ENCODING 2023
+
+4.1 Evaluation Metrics                                                     33
+
+4.1.1 Confusion Matrix                                                     33
+
+4.1.2 Accuracy                                                             33
+
+4.1.3 Precision                                                            33
+
+4.1.4 Recall                                                               33
+
+4.1.5 F1-score                                                             34
+
+4.2 Experimental Evaluation using Entire Dataset
+
+                   ( using 34 classes)                                     34
+
+4.3 Divided Datasets Evaluation                                            38
+
+5. CONCLUSION and FUTURE WORKS                                             47
+
+REFERENCES                                                                 49
+
+Appendix A Output                                                          53
+
+XII Department of Computer Science and Engineering, National Institute of
+      Technology Srinagar
+        PLANT PROTEIN CLASSIFICATION USING K-MER ENCODING 2023
+
+        LIST OF FIGURES
+
+FIGURE  TITLE                                      PAGE NUMBER
+1.1
+1.2.    DNA Structure                              2
+1.3.
+1.4.    Central Dogma                              3
+3.1.
+3.2.    Genome Annotation                          4
+3.3.
+3.4.    General Architecture                       5
+3.5.
+3.6.    Plant GDB - Homepage                       20
+3.7.
+4.1.    Peach Genome                               20
+4.2.
+4.3.    Detailed Workflow                          21
+4.4.
+4.5.    peptide File Conversion (.fa to .csv)      22
+4.6.
+4.7.    Annotation File Conversion (.txt to .csv)  23
+4.27.
+        Final Dataset (filtered_data.csv)          23
+
+        4-mer representation                       26
+
+        Evaluation metric scores of all models     34
+
+        Confusion Matrix of all classes            37
+
+        Accuracy plots [D1] [D2]                   38
+
+        Precision plots [D1] [D2]                     39
+
+        Recall plots [D1][D2]                         39
+
+        F1-score plots [D1][D2]                       40
+
+        Confusion Matrix of all classes [D1]          41
+
+        Confusion Matrix of all classes [D2]          44
+
+XIII Department of Computer Science and Engineering, National Institute of
+      Technology Srinagar
+               PLANT PROTEIN CLASSIFICATION USING K-MER ENCODING 2023
+
+XIV Department of Computer Science and Engineering, National Institute of
+       Technology Srinagar
+       PLANT PROTEIN CLASSIFICATION USING K-MER ENCODING 2023
+
+       LIST OF TABLES
+
+TABLE                     TITLE        PAGE NUMBER
+2.1    Summary of Literature Survey                    14
+3.1.   Class Label Description                          24
+3.2.   Sequence Encoding Methods                        26
+4.1.   Evaluation Metric Results                        45
+4.2.   Evaluation Metric Results - D1                   45
+4.3.   Evaluation Metric Results - D2                   45
+
+XV Department of Computer Science and Engineering, National Institute of
+      Technology Srinagar
+               PLANT PROTEIN CLASSIFICATION USING K-MER ENCODING 2023
+
+XVI Department of Computer Science and Engineering, National Institute of
+       Technology Srinagar
+                    PLANT PROTEIN CLASSIFICATION USING K-MER ENCODING 2023
+
+ ABBREVIATIONS/NOTATIONS/NOMENCLATURE
+
+Abbrevations
+
+AdaBoost - Adaptive Boosting
+BOW - Bag of Words
+DNA - Deoxyribonucleic Acid
+DT - Decision Tree
+FN - False Negative
+FP - False Positive
+KNN - K Nearest Neighbor
+LR - Logistic Regression
+mRNA - Messenger Ribonucleic Acid
+Multinomial NB - Multinomial Naive Bayes
+PlantGDB - Plant Genome Database
+RF - Random Forest
+RNA - Ribonucleic Acid
+SVM - Support Vector Machine
+TN - True Negative
+TP - True Positive
+tRNA - Transfer Ribonucleic Acid
+XGBoost - Extreme Gradient Boosting
+
+   XVII Department of Computer Science and Engineering, National Institute of
+           Technology Srinagar
+                    PLANT PROTEIN CLASSIFICATION USING K-MER ENCODING 2023
+
+Notations
+
+A - Adenine
+T - Thymine
+G - Guanine
+C - Cytosine
+U - Uracil
+
+Biological Nomenclature
+
+Prunus persica - peach
+
+   XVIII Department of Computer Science and Engineering, National Institute of
+           Technology Srinagar
+                    PLANT PROTEIN CLASSIFICATION USING K-MER ENCODING 2023
+
+                            CHAPTER 1
+
+                        INTRODUCTION
+
+1.1 Overview
+
+Proteins are macromolecules that play crucial roles in the body. They are used to
+structure the body's organs and help in regulation and body functioning. They
+composed of hundreds of amino acids that are covalently connected to each other.
+There are amino acids of 20 types, and the sequence predicts the protein's 3D
+structure and corresponding function. Combining three nucleotide bases (`A',' T',' G',
+and' C') results in coded amino acids.
+
+Proteins play crucial role in plant growth and development. They provide a variety of
+functions, including photosynthesis, biosynthesis, transportation, immunology, etc. A
+diverse range of proteins, including enzymes, structural proteins, and storage proteins,
+are produced by plants.
+
+     Enzymes ­ Act as catalysts and are crucial for plant metabolism.
+     Structural Proteins ­ Provides support and shape to plant cells.
+     Storage proteins ­ Stores amino acids for later use.
+
+DNA is a macromolecule composed of two polynucleotide chains that forms double
+helix structure by coiling around each other as shown in fig 1.1. It carries the genetic
+code, which is essential for all living things,to develop, function, grow, and reproduce.
+The two DNA strands are made up of nucleotides further referred to as
+polynucleotides. Each nucleotide is made up of a phosphate group, a deoxyribose
+sugar, and one of the four nitrogen-containing nucleobases (A,T,G and C).
+
+       1 Department of Computer Science and Engineering, National Institute of
+            Technology Srinagar
+                    PLANT PROTEIN CLASSIFICATION USING K-MER ENCODING 2023
+
+Since more than 98% of human DNA is non-coding, it cannot serve as a guide for the
+construction of protein sequences. Due to the fact that they move in the opposing
+directions, the two DNA strands are antiparallel. Transcription is the process of
+converting DNA nucleotides into RNA strands, with the exception of thymine (T), for
+which RNA substitutes uracil (U). Translation is the process by which these RNA
+strands use the genetic instructions to direct the arrangement of amino acids in
+proteins.
+
+                       Fig 1.1 DNA Structure
+
+1.1.1 Gene Expression
+
+The genetic information of a cell is stored in DNA or RNA chemical form.
+
+ A Gene is a Portion of a DNA molecule.
+ The Genome is the entire DNA in a cell.
+
+Each cell has a complex and closely controlled process from gene to protein.
+Transcription and translation are the two main phases. Transcription and translation
+work together to produce gene expression.
+
+2 Department of Computer Science and Engineering, National Institute of
+    Technology Srinagar
+                    PLANT PROTEIN CLASSIFICATION USING K-MER ENCODING 2023
+The information contained in a gene's DNA is transferred to a similar molecule called
+RNA (ribonucleic acid) in the cell nucleus during the transcription process. Since
+messenger RNA (mRNA) transmits information from the nucleus to the cytoplasm, it
+is this type of RNA that contains the instructions needed to make a protein.
+
+The cell wall is where translation, the second step in turning a gene into a protein,
+takes place. The ribosome and the mRNA interact, and the ribosome "reads" the
+nucleotide sequence of the mRNA. Three nucleotide sequences make up a codon,
+which typically codes for one amino acid. One amino acid at a time, transfer RNA
+(tRNA), a kind of RNA, assembles the protein. Until the ribosome encounters a
+"stop" codon (a three-nucleotide sequence that does not code for an amino acid),
+protein production continues.
+
+The transmission of information from DNA through RNA to proteins is one of the
+fundamental ideas in molecular biology ("central dogma").
+
+                                          Fig 1.2 Central Dogma
+
+       3 Department of Computer Science and Engineering, National Institute of
+            Technology Srinagar
+                    PLANT PROTEIN CLASSIFICATION USING K-MER ENCODING 2023
+
+1.1.2 Genome Annotation
+
+Giving the sequence of the genome is never enough we need to know which part of
+the genome is coding and which part is non-coding. Here comes Genome Annotation,
+which is the process of describing the structure and function of a genome. Gene
+sequencing is the process of determining the nucleic acid sequence, or the
+arrangement of the nucleotides in DNA.
+
+Annotating a genome consists of three major steps:
+
+     Identifying the genome regions that do not contain protein-coding genes.
+     Gene Prediction - Process of identifying genome elements.
+     Linking biological information to the elements
+
+                     Genome
+
+                             Gene Sequencing
+
+DNA                  Genome
+
+     A T T G T A C CGenGe SeTquenAcingC C G A
+
+DNA  Coding          Non - Coding
+
+     A T T G T A C C G T A C C GA
+
+     Which Protein?  Non - Coding
+         Coding
+
+                     Fig 1.3 Genome Annotation
+
+     4 Department of Computer Science and Engineering, National Institute of
+         Technology Srinagar
+            PLANT PROTEIN CLASSIFICATION USING K-MER ENCODING 2023
+                                        Dataset Collection
+                                         Dataset Preparation
+
+                                Data Labelling and Pre-processing
+                                               Training
+                                                 Testing
+
+                                          Optimizing Results
+                                          Results Comparison
+
+                                                Outcome
+                                      Fig 1.4 General Architecture
+5 Department of Computer Science and Engineering, National Institute of
+    Technology Srinagar
+            PLANT PROTEIN CLASSIFICATION USING K-MER ENCODING 2023
+
+6 Department of Computer Science and Engineering, National Institute of
+    Technology Srinagar
+                    PLANT PROTEIN CLASSIFICATION USING K-MER ENCODING 2023
+
+                            CHAPTER 2
+
+                    LITERATURE SURVEY
+
+1. Protein classification using genome neighborhood.
+
+This researcher created a computational strategy employing machine learning (ML)
+and genomic neighborhood information to find photosynthetic protein and taken
+UniprotKB/Swiss-Prot database [12]. Genome neighborhood network (GNN)
+outperformed Random forest, decision tree methods with an accuracy of 87%. As
+evidence of the model's potential to increase photosynthetic efficiency, it also showed
+its capacity to recognize novel photosynthetic proteins. The key outcome of this is the
+functional relationship between the neighbors of photosynthetic genes.
+
+2. k-mer - HIV - 1 Genome Subtyping
+
+The study focuses on the classification of virus subtypes, notably within HIV-1. To
+address this issue, the researchers suggest using an open-source technique called
+Kameris, which classifies HIV-1 subtypes based on k-mer frequencies [17]. Kameris
+outperformed other evaluated software, achieving a high accuracy of 97% while
+processing more than 1,500 sequences per second. 15 classifiers were trained during
+supervised classification utilizing k-mer frequencies as feature vectors. SVM, LR,
+decision trees, and RF were utilized. The effectiveness of the categorization process
+was evaluated using cross-validation. The technique calculated pairwise distances
+between sequences based on their k-mer frequencies.
+
+3. Evaluating Plant Gene Models Using ML
+
+Truegene is an ml approach developedfor gene models classification and reduce false
+positive annotations in gene prediction [4]. The Legume Information System (LIS)
+provided the Pisum annotated gene and protein dataset. The NCBI NR database was
+
+       7 Department of Computer Science and Engineering, National Institute of
+            Technology Srinagar
+                    PLANT PROTEIN CLASSIFICATION USING K-MER ENCODING 2023
+
+compared to the annotated genes. It makes use of 41 protein-based traits, including
+amino acid and nucleotide sequences, and 14 genes. The Pisum genome was used for
+XGBoost model training, which resulted in optimized models with 87-90% prediction
+accuracy and F-1 scores of 0.91-0.94.
+
+4. LTR retrotransposons Classification using K-mer method
+
+Although LTR retrotransposons are prevalent repeating sequences in plant genomes,
+the classification often involve laborious, manual procedures [7]. To overcome the
+problem, the researchers created a technique for classifying LTR retrotransposons
+and mapping them into certain families using K-mer based ML algorithms. They used
+InpactorDB, which contains 67,241 LTR retrotransposon sequences from 195 plant
+species that have been systematically categorized into families. This dataset included
+sequences from Repbase, RepetDB, and PGSB. Their approach achieved an
+impressive of 95% F1-Score.
+
+5. Classification of plant transcription factor proteins
+
+Science still faces difficulties in categorizing amino acid sequences and
+comprehending the connection between amino acids and protein synthesis. To
+categorize the amino acid sequences of unidentified species, this study develops a
+hybrid DLM that makes use of the plant transcription factor database [1]. The model
+successfully classified transcription factor proteins in the kingdom of plants with a
+high success rate of 98.23% throughout tests. The hybrid model performs better than
+traditional LSTM- or CNN-based models due to its lightweight layers and shorter
+training time. The success of the suggested model is further increased by the usage of
+Word2Vec vectors.
+
+6. Plant vacuole protein prediction based on sequence
+
+Prediction of subcellular localization is essential for comprehending gene functions
+in proteomes. This study addresses this issue by developing various compositions and
+
+       8 Department of Computer Science and Engineering, National Institute of
+            Technology Srinagar
+                    PLANT PROTEIN CLASSIFICATION USING K-MER ENCODING 2023
+
+PSSM-based models, resulting in improved accuracy compared to previous methods
+[13]. They used UniportKB/SwissProt database. The best model achieved
+approximately 63% accuracy on a blind dataset, surpassing current tools. To make the
+models accessible, they developed `VacPred' [GUI based software], compatible with
+Windows and Linux platforms. They got an accuracy of 86.49%/87.84% and a
+sensitivity of 90.54%/93.24%.
+
+7. Protein Sequence Classification in Human using ML methods
+
+Various methods, including sequence similarity and ML approaches, have been used
+for protein function prediction. Swiss-Prot is the dataset (reviewed), whereas
+TrEMBL is unreviewed [15]. There are 559228 proteins in the reviewed data set and
+146106279 in the unreviewed dataset. This article compares six classification
+techniques (CART, Quick unbiased Efficient Statistical Tree, CHAID, C5.0, ANN,
+and SVM) and finds that C5.0 and SVM methods outperformed with an accuracy
+above 94%. The researchers analyzed a dataset of 4,314 proteins, each with 1,438
+features.
+
+8. DNA Sequence Classification in ML: K Mer Counting
+
+In genomic research, DNA sequences need to be classified to determine the
+applicability of a new protein . This study utilizes machine learning algorithms to
+identify classes of DNA sequences based on nucleotide sequences [5]. Open DNA
+sequence dataset was used to obtain the gene sequence dataset. Different datasets
+representing gene families are analyzed using substrings of defined lengths
+(determined by the 'k value') to capture sequence patterns. When they took the human
+dataset k=6 they obtained the best accuracy 98.4%, and Precision 98.4%. The
+researchers obtained a gene sequence dataset from Kaggle containing three text files:
+chimpanzee, dog, and human.
+
+       9 Department of Computer Science and Engineering, National Institute of
+            Technology Srinagar
+                    PLANT PROTEIN CLASSIFICATION USING K-MER ENCODING 2023
+
+9. Plant Protein Classification using Ensemble Classifiers
+
+The method for forecast the subcellular localization using several classifiers is
+enhanced in this research. The authors suggested an ensemble ML approach based on
+average voting [8]. The dataset for testing and training was obtained from Plant-
+mSubP. They gather different features appropriate for each sort of localization, use
+feature selection to lessen dimensionality, and then train three different models.
+According to experimental findings, using the testing dataset, the suggested ensemble
+technique could correctly classify objects in 11 compartments with an accuracy of
+84.58%.
+
+10. DNA Sequencing Using ML Algorithms
+
+DNA sequencing is an essential technique for discovering a person's genetic makeup
+and comprehending variations and mutations linked to genetic illnesses [6]. This data
+aids in understanding the patient's health status and aids in the planning of potential
+treatments for the patient. In this research, DNA is sequenced using a human dataset
+utilizing ML approaches like SVM, CNN, LSTM, RF, AdaBoost, Naive Bayes, and
+K-Nearest Neighbour (KNN). Finally, the LSTM model performed the best with a
+test accuracy of 99.5%.
+
+11. Plant electrical signal classification using NN model.
+
+Graph neural network model called PMESP was proposed in this study to discover
+electrical signal-related proteins. GNN model constructs a graph structure for
+visualizing protein interaction relationships and utilizes a Bi-LSTM for electrical
+signal feature extraction [2]. They used CNN model to predict proteins and a
+convolutional encoder for link prediction. They designed a dataset named PesPPI
+which comprises of 23,214 PPIs pairs and 3600 nodes. As shown by the results, the
+values of the model's AUC curve and the ROC curve are 96.24% and 96.84%, which
+gave better performance results than earlier techniques.
+
+      10 Department of Computer Science and Engineering, National Institute of
+            Technology Srinagar
+                    PLANT PROTEIN CLASSIFICATION USING K-MER ENCODING 2023
+
+12. Accuracy Prediction of a sample DNA Sequence Dataset
+
+The article analyses the development of DNA sequencing approaches and contrasts
+current methods with earlier ones. The importance of DNA as the blueprint for life
+and its critical function in the growth and survival of all creatures are emphasized [6].
+They used a set of exploratory datasets. It comprises of seven gene families and three
+organisms: humans, chimpanzees, and dogs. DNA sequencing has advanced
+significantly as a result of the quick rise in data generation. The New-Age DNA
+sequencing methods are significantly more effective than the older methods. They
+got 98.4% accuracy. Additionally, the promise of machine learning is highlighted,
+particularly when utilizing a Multinomial Naive Bayes classifier to predict DNA
+sequences.
+
+13. DNA Sequence Classification using CNN
+
+The classification of DNA sequences within the framework of the analysis of
+biomedical data was the study's main focus. The researchers used deep learning (DL)
+models, which have the ability to automatically extract pertinent features from the
+input data, to address this difficulty [9]. They specifically used three different
+architectures: CNN-LSTM, CNN-Bi LSTM, and CNN-Convolutional Neural
+Network (CNN). Both Label encoding and K-mer encoding strategies are used for
+representing the DNA sequences. When the models were tested using a variety of
+classification criteria, the CNN and CNN-Bi LSTM with K-mer encoding both
+demonstrated good accuracy, scoring 93.16% and 93.13% on the testing data.
+
+14. K-mer - Fixed-length DNA sequencing
+
+By using k-mer frequency and subsequences commencing at certain places as
+categorical features, the algorithm for categorizing fixed-length DNA sequences
+performed well [5]. They chose the datasets from the UCI ML Repository, Promoter,
+and Splice. Four models namely iNuc-PseKNC, iNuc-PseSTNC, 3LS and TNS were
+
+      11 Department of Computer Science and Engineering, National Institute of
+            Technology Srinagar
+                    PLANT PROTEIN CLASSIFICATION USING K-MER ENCODING 2023
+
+used. K-mer method used in generatin fixed-length vectors. In the human dataset, the
+prediction Accuracy is 86.33%.
+
+15. Prediction of Hormone-Binding Proteins using NB
+
+In order to correctly identify hormone-binding proteins (HBPs), a prediction model
+dubbed HBP_NB is put out in this paper. Traditional biochemical tests are expensive
+and time-consuming, making detecting HBPs difficult [10]. A collection of HBPs
+from the UniProt database is used in the HBP_NB model, and to extract features, k-
+mer approach is used. To reduce dimensionality and choose the best feature collection,
+feature selection is used. The chosen characteristics are then used to build the
+prediction model using Naive Bayes, which is assessed using Cross validation
+approach (cv=10). The accuracy, sensitivity, and specificity of the results--95.45%,
+94.17%, and 96.73%--indicate the viability and efficacy of the HBP_NB model.
+
+16. Protein Class Prediction on Count Vectorizer
+
+Machine learning technologies are crucial for sifting through this data for patterns
+and characteristics that may be used for stress phenotyping [14]. This study offers
+classification of ML tools and best-practice guidelines for the plant community to
+successfully employ ML approaches in analyzing biotic and abiotic stress features.
+The performance of multinomial NB classifier, KNN, RF, DT, and LR with k-mer
+encoding on test data is 93.16% and 93.13%, respectively.
+
+17. DNA sequencing Classification in bioinformatics
+
+An important area of bioinformatics study is the use of AI algorithms to group DNA.
+Researchers employ a range of techniques, including multinomial NB, SVM, KNN,
+decision trees, random forests, and logistic regression, to categorize DNA sequences
+and discover novel genes [17]. The usage of label and k-mer encoding allows these
+models to reach an accuracy of about 93% on testing data. These approaches improve
+the management of biological information while assisting in identifying the
+components of proteins.
+
+      12 Department of Computer Science and Engineering, National Institute of
+            Technology Srinagar
+                    PLANT PROTEIN CLASSIFICATION USING K-MER ENCODING 2023
+
+18. Plant Allergenic Protein Prediction based on sequence
+
+This paper comprehends the allergenic properties of dietary proteins. By combining
+supervised and unsupervised machine learning approaches, it is possible to predict if
+plant proteins may cause allergic reactions [3]. The method comprises rating
+descriptors and evaluating the effectiveness of their categorization. An SVM (support
+vector machine) is utilized for partitioning, while a KNN (k-nearest neighbor)
+classifier is used for classification. For variable selection and final classification, cv
+(cv=5) method is used to validate the KNN classifier. In order to address food
+allergies, the study emphasizes the necessity for a reliable and practical protein
+classification system.
+
+19. DL model for predicting next-generation sequencing
+
+Researchers have created a DL model to forecast the depth of next-generation
+sequencing (NGS) [11]. In three separate Next-Generation Sequencing (NGS) panels,
+including human SNP, human lncRNA, and non-human sequences for storage of
+DNA information, Depth Sequencing was predicted using a DLM with 93% accuracy
+for Single nucleotide polymorphisms and 99% accuracy for non-human panels.
+Independent testing revealed that the DLM trained on SNP panel correctly predicted
+the lncRNA panel 89% of the time.
+
+      13 Department of Computer Science and Engineering, National Institute of
+            Technology Srinagar
+             PLANT PROTEIN CLASSIFICATION USING K-MER ENCODING 2023
+
+                    Table 2.1: Summary of Literature Survey
+
+S.N Techniqu About Applicatio Dataset                        Results Limitations
+
+o        e&   Technique      ns       Used
+
+   Reference
+
+1 RF, DT, RF is an           Protein  UniprotKB/S GNN                        Since just
+
+   and GNN ensemble Classificati wiss-Prot. Accuracy - photosyntheti
+
+   [12].      method; DT on using                            87%.            c bacterial
+
+              is             GNN.                                            proteins were
+
+              classificatio                                                  used, the
+
+              n algorithm,                                                   system
+
+              GNN is a                                                       functions
+
+              gene                                                           well with
+
+              analysis                                                       prokaryotic
+
+              method.                                                        proteins
+
+                                                                             alone.
+
+2 RF SVM, All ML             k-mer-   Los Alamos Kameris This method
+
+   LR, DT methods are HIV1            (LANL)                 accuracy - does not offer
+
+   [16].      used for       genome sub sequence             97%.            a
+
+              classificatio typing.   database.                              justification
+
+              n or                                                           for how a
+
+              regression.                                                    DNA
+
+                                                                             sequence is
+
+                                                                             categorized.
+
+3 XGBoost, Xgboost is a Evaluating Pisum                     XGBoost
+
+   SVM, DT ensemble Plant Gene annotated classifier
+
+   [4].       method. DT Models       gene and               87-90%
+
+              is tree-based Using ML. protein                accuracy.            __
+
+              method,                 dataset from
+
+              svm is an ml            LIS.
+
+              method.
+
+4 LSV         LR & SVM k-mer          inpactorDB F1-Score Reducing the
+
+   Classifier, are linear method to contains                 of 95% . number of
+
+   LR, KN classificatio classify      67,241 LTR                             features won't
+
+   N, NB, n methods LTR-              retrotranspos                          improve the
+
+   DT, RF and KNN is retrotranspo on sequences                               performance
+
+   [7].       a              sons in  from 195                               of the
+
+              classificatio plant     plant species.                         algorithm
+
+              n algorithm. genomes.                                          because
+
+                                                                             processing
+
+                                                                             them can be
+
+                                                                             expensive in
+
+                                                                             terms of CPU
+
+                                                                             power.
+
+   14 Department of Computer Science and Engineering, National Institute of
+         Technology Srinagar
+             PLANT PROTEIN CLASSIFICATION USING K-MER ENCODING 2023
+
+S.N Techniqu About Applicatio Dataset                       Results Limitations
+
+o        e&   Technique           ns       Used
+
+   Reference
+
+5 CNNl,       CNN is a Plant               Plant        It                   It get the
+
+   ResNet- deep              transcriptio transcription classified three-stage
+
+   based      learning       n factor      factor       transcripti hybrid model
+
+   ProtCNN, algorithm. proteins database. on factor ready to use
+
+   LSTM                      Classificati               proteins of genetic
+
+   [1].                      on of DLM.                 plants with resources,to
+
+                                                        rate of              perform more
+
+                                                        98.23%. efficiently on
+
+                                                                             larger
+
+                                                                             datasets.
+
+6 SVM,        SVM            Sequence- UniportKB/S K-PSSM
+
+   Five-fold method can based              wissProt and TRI-
+
+   cross-     be used for prediction database. PSSM
+
+   validation the classi- of plant                      accuracy
+
+   [13].      fication or vacuole.                      86.49%/87                    __
+
+              regression                                .84%.
+
+              tasks.
+
+7 ANN,        All of these Human           Two          Support Due to the
+
+   SVM,       methods are Protein          datasets:    Vector               imbalance in
+
+   Classificat supervised Sequence Swiss-Prot Machine the dataset,
+
+   ion and learning          Classificati (reviewed accuracy these classes
+
+   Regressio techniques on using protein                of 94%. have poorer
+
+   n tree     and used for ML.             dataset),                         precision and
+
+   [15].      solving                      TrEMBL                            recall values
+
+              classificatio                (unreviewed                       than other
+
+              n.                           dataset).                         classes.
+
+8 MNB,        LR is linear DNA             Gene         Human It cannot
+
+   CNN, LR model,            Sequencing sequence dataset analyse
+
+   [5].       CNN is         Classificati dataset from k=6                   natural data
+
+              used for       on through Kaggle          accuracy in its raw
+
+              image          ml.           containing 3 of 98.4%. form as
+
+              classificatio                text files:                       quickly as
+
+              n purpose.                   chimpanzee,                       Deep
+
+                                           dog, human.                       learning can.
+
+9 XGBoost, These             Protein       Plant-       The
+
+   RF, KNN techniques Classificati mSubP.               ensemble
+
+   [8].       are come on in                            method
+
+              under          Ensemble                   achieved                   __
+
+              ensemble Classifiers.                     an overall
+
+              learning.                                 accuracy
+
+                                                        of 84.85%.
+
+   15 Department of Computer Science and Engineering, National Institute of
+         Technology Srinagar
+             PLANT PROTEIN CLASSIFICATION USING K-MER ENCODING 2023
+
+S.N Techniqu About Applicatio             Dataset   Results Limitations
+                                           Used
+o        e&   Technique          ns
+
+   Reference
+
+10 SVM,       RF is an       DNA                    LSTM                     In addition to
+                                                    model                    its
+   CNN, RFt, ensemble Sequencing                    performed                conventional
+                                                    the best                 uses in
+   AdaBoost, model, NB using ml                     with                     medicine,
+                                                    accuracy                 and
+   NBs,       is a           algorithms.            of 99.5%.                diagnosis, it
+                                                                             can also be
+   KNN,       probabilistic                                                  employed in
+                                                                             forensics and
+   LSTM       method,                                                        agriculture.
+
+   [6].       KNN is
+
+              used for
+
+              classificatio
+
+              n purposes.
+
+11 CNN,       CNN is         Plant        They      recall                   The PMESP
+
+   KNN, NB deep              electrical designed a curve                     can learn
+
+   [2].       learning       signal       dataset   values are about
+
+              algorithm, classificatio named        96.24% characteristic
+
+              KNN is a n in               PesPPI, it and                     s of electrical
+
+              classificatio biological has 23,214 96.84%. sign data
+
+              n algorithm, mechanism PPIs Pairs                              with different
+
+              NB is a        s.           and 3600                           salt, which
+
+              probabilistic               nodes.                             can truly
+
+              method.                                                        reveal
+
+                                                                             schemes of
+
+                                                                             data.
+
+12 MNB, RF RF is an          Accuracy exploratory They got
+
+   [6].       ensemble Prediction datasets of 98.4%
+
+              method, NB of a sample seven gene accuracy
+
+              is a               DNA families and in                                 __
+
+              Probabilistic sequence. three         multinomi
+
+              method.                     organisms. al naïve
+
+                                                    Bayes.
+
+13 CNN,       The            DNA          Public    CNN -                    LSTM with
+
+   CNN-       mentioned Sequence nucleotide 93.16%. label
+
+   Bidirectio techniques Classificati sequence                               encoding is a
+
+   nal LSTM, are ml          on using database.                              solid choice
+
+   CNN-       algorithms. CNN.                                               for improving
+
+   LSTM                                                                      class recall
+
+   [9].                                                                      and
+
+                                                                             sensitivity.
+
+   16 Department of Computer Science and Engineering, National Institute of
+         Technology Srinagar
+              PLANT PROTEIN CLASSIFICATION USING K-MER ENCODING 2023
+
+S.N Techniqu About Applicatio             Dataset      Results Limitations
+                                           Used
+o        e&   Technique           ns
+
+   Reference
+
+14 RF, SVM RF is a           DNA          They chose   In human              In addition to
+                                                       dataset               other areas of
+   [5].       ensemble Sequence the datasets           accuracy              sequence
+                                                       is 86.33%.            recognition,
+              model,         Classificati from UCI                           it can be used
+                                                                             to classify
+              SVM is         on using K- ML                                  protein
+                                                                             sequence
+              method that mer.            Repository                         data.
+
+              can be used                 of humans.
+
+              for
+
+              classificatio
+
+              n
+
+15 NB, RF,    NB use         Prediction   From         Hormone-              Collection of
+       LR     Bayesian       of           UniProt      Binding               training and
+       [10].  probability    Hormone-     database,    Proteins_             test set trials
+              for            Binding      they         Naive                 required(due
+              modeling       Proteins.    collected    Bayes                 to tiny
+              task, LR is                 hormone-     accuracy              dataset).
+              Linear                      binding      of 94.17%.
+              model.                      proteins.
+
+16 SVM,       SVM & LR Protein            They         k-mer
+
+   KNN, RF, are linear Class              generated    encoding
+
+   DT, LR, models,DT Prediction real-time              on test               __
+
+   MNB        is a tree- on Count data of              data they
+
+   [14].      based          Vectorizer. remote-       got
+
+              method, RF                  sensing      93.16%.
+
+              is an                       , velocity.
+
+              ensemble
+
+              method.
+
+17 KNN,       KNN & DT DNA                Public       SVM,
+
+   SVM,       are used for Sequencing nucleotide KNN --
+
+   MNB, RF, classificatio classificatio sequence 93%.
+
+   LR, DT n purpose, n in                 database.
+
+   [17].      NB is a        bioinformat                                     __
+
+              probabilistic ics.
+
+              method.
+
+   17 Department of Computer Science and Engineering, National Institute of
+         Technology Srinagar
+             PLANT PROTEIN CLASSIFICATION USING K-MER ENCODING 2023
+
+S.N Techniqu About Applicatio           Dataset  Results Limitations
+                                         Used
+o        e&   Technique          ns
+
+   Reference
+
+18 SVM,       SVM &       Prediction They        SVM
+
+   KNN, NB, KNN used of Plant           gathered 954 accuracy
+
+   RF         for         Allergenic food        of 93%
+
+   [3].       classifica- Proteins: allergens and compared
+
+              tion, NB is ML            nonallergens. to KNN,                __
+
+              a           Classificati           RF, and
+
+              probabilistic on.                  NB.
+
+              method, RF
+
+              is a ml
+
+              method.
+
+19 CNN,       LR & SVM Predicting DNA            They got Limited the
+
+   ANN,       are linear next           interaction 93% for inputs to a
+
+   SVM, LR models,        generation kinetics rate SNP and minimal set
+
+   [11].      ANN is a sequencing constants 99%                              of local
+
+              neural      using         and NGS accuracy variables that
+
+              network, DLM.             sequencing for non- can be
+
+              CNN is a                  depth.   human                       automatically
+
+              DL                                 panels. computed
+
+              algorithm.                                                     using DNA
+
+                                                                             sequence.
+
+   18 Department of Computer Science and Engineering, National Institute of
+         Technology Srinagar
+PLANT PROTEIN CLASSIFICATION USING K-MER ENCODING 2023
+
+                              CHAPTER 3
+
+PROPOSED METHODOLOGY
+
+3.1 Problem Statement
+
+Build a robust classification model that correctly maps amino acid sequences to
+protein families within the PlantGDB Database [1]. In this study, several models were
+used to solve the above problem. The model analyzes the input sequence data and
+predicts the protein class it belongs to with high accuracy and precision utilizing
+Machine Learning algorithms. By proposing an efficient and automated approach for
+protein family classification, this work aims to improve knowledge of protein
+structure and function.
+
+3.2 Dataset Description
+
+PlantGDB [1] is a data repository containing different plant species' genome
+
+sequences. In addition to sequence data, it also provides alignments and annotations.
+
+`Prunus persica [peach] genome' [2] taken from [1]. From [2], peptide file
+
+(Ppersica_139_peptide.fa.gz)  and  the   annotation                          file
+
+(Ppersica_139_annotation_info.text.gz) were considered as shown in Fig 3.2.
+
+19 Department of Computer Science and Engineering, National Institute of
+      Technology Srinagar
+              PLANT PROTEIN CLASSIFICATION USING K-MER ENCODING 2023
+
+            Figure 3.1: PlantGDB ­ Homepage ( http://plantgdb.org/ )
+
+                Figure 3.2: Peach Genome (http://plantgdb.org/PeGDB/)
+20 Department of Computer Science and Engineering, National Institute of
+
+      Technology Srinagar
+            PLANT PROTEIN CLASSIFICATION USING K-MER ENCODING 2023
+
+                      Plant GDB
+
+                      Extraction of Genome [Peach]
+               Data format conversion from FASTA into CSV
+Preparation of experimental data from peptide sequence and its annotation
+
+            Identification of # of classes i.e., 34 plant protein types
+
+            Input Sequence Representation k-mer counting                   Visualisation
+                                                                         (Target Variable)
+
+            Splitting the data for Training and Testing                  Encoding Target Variable
+                                                                              [Label Encoding]
+
+ Logistic   Decision  KNN        Multinomial                             SVM      Ensemble
+Regression    Tree                    NB                                          Learning
+
+                                                                         Bagging  Boosting
+
+                                                                      Random Forest AdaBoost XGBoost
+
+                                    Performance evaluation
+
+                                       Results Comparison
+                             Figure 3.3: Detailed Workflow
+21 Department of Computer Science and Engineering, National Institute of
+      Technology Srinagar
+                    PLANT PROTEIN CLASSIFICATION USING K-MER ENCODING 2023
+
+3.3 Detailed Architecture
+
+3.3.1 Dataset Preparation
+
+     The Peptide file considered for preparing data is in FASTA format and it
+         needs to be changed to CSV format for applying Machine Learning
+         algorithms. For reading the FASTA file SeqIO.parse() function from
+         BioPython Library is used. Extracted required attributes, stored them in a
+         pandas data frame, and finally saved them in a file named `peptide_data.csv'
+         as shown in Fig 3.4.
+
+                                Figure 3.4: Peptide File Conversion (.fa to .csv)
+     The annotation file was in text format(tab-separated). Read the file, convert it
+
+         into pandas dataframe, and finally save it to a CSV file named
+         `annotation_info.csv' as shown in Fig 3.5.
+
+      22 Department of Computer Science and Engineering, National Institute of
+            Technology Srinagar
+               PLANT PROTEIN CLASSIFICATION USING K-MER ENCODING 2023
+
+                        Figure 3.5: Annotation File Conversion (.txt to .csv)
+ The problem statement lies in classifying amino acid sequences into protein
+
+    families. Extract relevant features such as Sequence and ID columns from
+    `peptide_file.csv' and Protein families (Defline) and Transcript name columns
+    from `annotation_file.csv'. Merge these two files to make a single dataset
+    named `filtered_data.csv' based on common identifiers present in both files
+    (ID and Transcript name) respectively. Protein class labels were extracted
+    based on their occurrence count of at least 50 counts (count>=50), the
+    required condition to choose labels, and their corresponding sequence and id.
+    The final dataset named `filtered_data.csv' consists of 3824 sequence samples
+    over 34 different protein classes as shown in Table 1[3][4].
+
+                              Figure 3.6: Final Dataset (filtered_data.csv)
+
+ 23 Department of Computer Science and Engineering, National Institute of
+       Technology Srinagar
+      PLANT PROTEIN CLASSIFICATION USING K-MER ENCODING 2023
+
+      Table 3.1: Class Label Description
+
+S.No             Class Label                             Significance
+  1   'C2 domain-containing protein'                 Membrane Targeting
+
+2     'DNA binding'                                  Homologous recombination
+
+                                                     and Genome maintenance
+
+3 'DNAJ heat shock N-terminal domain-containing      Chaperone binding, heat
+
+      protein'                                       shock protein binding
+
+4     'F-box family protein'                         Responsible for vegetative
+
+                                                     and reproductive growth
+
+5 'FRS5 (FAR1-related sequence 5); zinc ion binding' Regulate DNA transcription
+
+6     'GDSL-motif lipase/hydrolase family protein'   Lipid metabolism
+
+7 'RNA recognition motif (RRM)-containing protein'   Binding RNA
+
+8     'UDP-glucoronosyl/UDP-glucosyl transferase     Involved in UDP glucosyl
+
+      family protein'                                transferase activity
+
+9     'Ankyrin repeat family protein'                Involved in mediating
+
+                                                     protein-protein interactions
+
+10    'Aspartyl protease family protein'             Protein Degradation
+
+11 'Basic helix-loop-helix (bHLH) family protein'    Transcription regulation
+                                                     Control Gene Regulation
+12    'binding'
+                                                         Defense Signaling
+13    'Disease resistance family protein'             Pathogen Recognition
+
+14 'Disease resistance protein (CC-NBS-LRR class),       Immune response
+                                 putative'              Defense activation
+
+15    'Disease resistance protein (NBS-LRR class),
+
+      putative'
+
+16 'Disease resistance protein (TIR-NBS-LRR class),
+                                 putative'
+
+      24 Department of Computer Science and Engineering, National Institute of
+            Technology Srinagar
+      PLANT PROTEIN CLASSIFICATION USING K-MER ENCODING 2023
+
+S.No  Class Label                                         Significance
+
+17    'hAT dimerization domain-containing protein'        Gene expression Regulation
+
+18    'Hydroxyproline-rich glycoprotein family protein'   Cell wall modification
+
+19 'Leucine-rich repeat family protein / protein kinase Regulates shoot and root growth
+                                family protein'
+
+20 'Leucine-rich repeat transmembrane protein kinase,     Innate immunity in plants
+                                    putative'
+
+21    'Nucleic acid binding'                              Gene regulation
+
+22    'Nucleic acid binding / ribonuclease H'             Catalyse RNA cleavage
+
+23    'Oxidoreductase, 2OG-Fe (II) oxygenase family       Protein and Nucleic acid
+                                                                 modification
+      protein'
+                                                                Editing RNA
+24 'Pentatricopeptide (PPR) repeat-containing protein'
+
+25    'Protein binding / zinc ion binding'                Regulate growth and stress
+                                                              adaptation in plants
+26    'Protein kinase family protein'
+                                                          Respond to environmental
+27    'Protein kinase, putative'                                      stresses
+
+                                                          Regulate biological activity
+
+28 'Reverse transcriptase, putative / RNA-dependent DNA Responsible for transcriptional
+
+      polymerase, putative'                               and post-transcriptional gene
+
+                                                          silencing
+
+29 'Short-chain dehydrogenase/reductase (SDR) family      Metabolic regulation
+
+      protein'
+
+30    'Transducin family protein / WD-40 repeat family    Nucleotide-binding
+
+      protein'
+
+31    'Transferase family protein'                        Involved in transferase activity
+
+32 'Zinc finger (C3HC4-type RING finger) family protein'  ATP and Zinc ion binding
+
+33    'Zinc finger protein-related'                       Regulate growth and Stress
+                                                                    adaptation
+34    'Zinc knuckle (CCHC-type) family protein'
+                                                           Nucleic acid and zinc ion
+                                                                     binding
+
+      25 Department of Computer Science and Engineering, National Institute of
+            Technology Srinagar
+PLANT PROTEIN CLASSIFICATION USING K-MER ENCODING 2023
+
+3.4. K-mer Encoding
+
+When processing the Genome sequence, conversion from string format to numerical
+
+value is necessary, to form a matrix input for model training. The features of the
+
+existing sequence encoding methods are shown in Table 2.
+
+Table 3.2: Sequence Encoding Methods
+
+Encoding Method      Features
+
+Sequential encoding  Encodes each character into a numeric value.
+
+One-hot encoding     Represents the categorical to binary value mapping in
+ K-mer encoding                        a binary vector format.
+
+                      Divide the sequence into k-length overlapping short
+                                       sequences or segments
+
+The problem that exists in the methods(other than k-mer encoding) mentioned above
+in Table 2 does not result in vectors of uniform length, which is the required
+condition to feed data to an algorithm (classification or regression). For the other two
+methods, we have to curtail or fill with "n" or "0" to meet the requirement.
+
+                           Figure 3.7: 4-mer representation
+
+26 Department of Computer Science and Engineering, National Institute of
+      Technology Srinagar
+                    PLANT PROTEIN CLASSIFICATION USING K-MER ENCODING 2023
+
+3.5 Algorithms Used
+
+Algorithm 1: Label Encoder
+
+Input: Target Variable (y)
+Output: Encoded Target Variable (y_encoded)
+Method
+Import the necessary libraries
+Initialize an instance of the LabelEncoder class as le
+for each y
+
+    Call the fit_transform () method on the le object, passing y as the
+argument, and assign the transformed values to a new variable
+
+  y_encoded=le.fit_transform(y).
+return the encoded target variable (y_encoded).
+
+Algorithm 2: K-mer Technique
+
+Input: Amino acid string sequence
+Output: Numeric N-gram representation (N=4)
+Method
+Divide the amino acid sequence into overlapping segments of length K (k=6).
+//create the BOW model using CountVectorizer()
+Convert list of kmers into string sentences of words
+for each n-gram
+
+       count the frequency
+return the document-term matrix representation.
+
+      27 Department of Computer Science and Engineering, National Institute of
+            Technology Srinagar
+                    PLANT PROTEIN CLASSIFICATION USING K-MER ENCODING 2023
+
+Algorithm 3: Logistic Regression
+
+ Input:
+     A set of protein sequence,  = {1, 2, .... , } where sequence is
+       represented as , 1     and  = || with its corresponding label
+       represented as , 1    34.
+
+ Output:
+     Classifier Model 1
+
+ Method
+
+  Encode Sequence Data using the K-mer Technique.
+  Encode Protein labels using a label encoding technique.
+  Data Splitting for Training and Testing Purposes (DTrain = 80, DTest = 20).
+  Initialize the logistic regression model with the desired hyperparameters.
+  Training the classifier.
+  Evaluate the trained C1 model using the testing data.
+  Assess the model's performance.
+
+Algorithm 4: Decision Tree
+
+Input:
+   A set of protein sequence,  = {1, 2, .... , } where sequence is represented
+     as , 1     and  = || with its corresponding label represented
+     as , 1    34.
+
+Output:
+   Classifier Model 2
+
+Method
+ Encode Sequence Data using the K-mer Technique.
+ Encode Protein labels using a label encoding technique.
+
+      28 Department of Computer Science and Engineering, National Institute of
+            Technology Srinagar
+                    PLANT PROTEIN CLASSIFICATION USING K-MER ENCODING 2023
+
+ Data Splitting for Training and Testing Purposes (DTrain = 80, DTest = 20).
+ Initialize the Decision Tree model with the desired hyperparameters.
+ Training the classifier.
+ Evaluate the trained C2 model using the testing data.
+ Assess the model's performance.
+
+Algorithm 5: K-Nearest Neighbor
+
+Input:
+   A set of protein sequence,  = {1, 2, .... , } where sequence is represented
+     as , 1     and  = || with its corresponding label represented
+     as , 1    34.
+
+Output:
+   Classifier Model 3
+
+Method
+
+ Encode Sequence Data using the K-mer Technique.
+ Encode Protein labels using a label encoding technique.
+ Data Splitting for Training and Testing Purposes (DTrain = 80, DTest = 20).
+ Initialize the KNN model with the desired hyperparameters.
+ Training the classifier.
+ Evaluate the trained C3 model using the testing data.
+ Assess the model's performance.
+
+Algorithm 6: Multinomial Naive Bayes
+
+Input:
+   A set of protein sequence,  = {1, 2, .... , } where sequence is represented
+     as , 1     and  = || with its corresponding label represented
+     as , 1    34.
+
+Output:
+   Classifier Model 4
+
+Method
+
+ Encode Sequence Data using the K-mer Technique.
+      29 Department of Computer Science and Engineering, National Institute of
+            Technology Srinagar
+                    PLANT PROTEIN CLASSIFICATION USING K-MER ENCODING 2023
+
+ Encode Protein labels using a label encoding technique.
+ Data Splitting for Training and Testing Purposes (DTrain = 80, DTest = 20).
+ Initialize the Multinomial NB model with the desired hyperparameters.
+ Training the classifier.
+ Evaluate the trained C4 model using the testing data.
+ Assess the model's performance.
+
+Algorithm 7: Support Vector Machine
+
+Input:
+   A set of protein sequence,  = {1, 2, .... , } where sequence is represented
+     as , 1     and  = || with its corresponding label represented
+     as , 1    34.
+
+Output:
+   Classifier Model 5
+
+Method
+ Encode Sequence Data using the K-mer Technique.
+ Encode Protein labels using a label encoding technique.
+ Data Splitting for Training and Testing Purposes (DTrain = 80, DTest = 20).
+ Initialize the SVM model with the desired hyperparameters.
+ Training the classifier.
+ Evaluate the trained C5 model using the testing data.
+ Assess the model's performance.
+
+      30 Department of Computer Science and Engineering, National Institute of
+            Technology Srinagar
+                    PLANT PROTEIN CLASSIFICATION USING K-MER ENCODING 2023
+
+Algorithm 8: Random Forest
+
+Input:
+   A set of protein sequence,  = {1, 2, .... , } where sequence is represented
+     as , 1     and  = || with its corresponding label represented
+     as , 1    34.
+
+Output:
+   Classifier Model 6
+
+Method
+ Encode Sequence Data using the K-mer Technique.
+
+ Encode Protein labels using a label encoding technique.
+
+ Data Splitting for Training and Testing Purposes (DTrain = 80, DTest = 20).
+
+ Initialize the Random Forest model with the desired hyperparameters.
+
+ Training the classifier.
+
+ Evaluate the trained C6 model using the testing data.
+
+ Assess the model's performance.
+
+Algorithm 9: AdaBoost
+
+Input:
+   A set of protein sequence,  = {1, 2, .... , } where sequence is represented
+     as , 1     and  = || with its corresponding label represented
+     as , 1    34.
+
+Output:
+
+   Classifier Model 7
+Method
+ Encode Sequence Data using the K-mer Technique.
+
+ Encode Protein labels using a label encoding technique.
+      31 Department of Computer Science and Engineering, National Institute of
+            Technology Srinagar
+                    PLANT PROTEIN CLASSIFICATION USING K-MER ENCODING 2023
+
+ Data Splitting for Training and Testing Purposes (DTrain = 80, DTest = 20).
+ Initialize the AdaBoost model with the desired hyperparameters.
+ Training the classifier..
+ Evaluate the trained C7 model using the testing data.
+ Assess the model's performance.
+
+Algorithm 10: XGBoost
+
+Input:
+   A set of protein sequence,  = {1, 2, .... , } where sequence is represented
+     as , 1     and  = || with its corresponding label represented
+     as , 1    34.
+
+Output:
+   Classifier Model 8
+
+Method
+ Encode Sequence Data using the K-mer Technique.
+ Encode Protein labels using a label encoding technique.
+ Data Splitting for Training and Testing Purposes (DTrain = 80, DTest = 20).
+ Initialize the XGBoost model with the desired hyperparameters.
+ Training the classifier.
+ Evaluate the trained C8 model using the testing data.
+ Assess the model's performance.
+
+      32 Department of Computer Science and Engineering, National Institute of
+            Technology Srinagar
+              PLANT PROTEIN CLASSIFICATION USING K-MER ENCODING 2023
+
+                        CHAPTER 4
+
+                 RESULTS AND DISCUSSION
+
+4.1 Evaluation Metrics
+
+To examine the ML model's performance, evaluation metrics are used. Below are the
+few evaluation metrics considered for this classification task.
+
+4.1.1 Confusion Matrix
+
+It is a table that represents the following four values: TPs, TNs, FPs, and FNs. It is
+
+used in examining the model's performance and identify the specific errors or
+
+misclassifications in protein labeling.
+
+                                         0  1
+
+                        TP                  TN
+
+                 0
+
+                 1      FP                  FN
+
+4.1.2 Accuracy
+
+Measures the overall correctness of the model's predictions for protein labels.
+
+                 Accuracy = TP+TN / (TP+TN+FP+FN)  eq 4.1
+
+4.1.3 Precision
+
+Measures the proportion of correctly predicted positive protein labels out of all
+samples that are predicted as positive, the focus is on positive prediction accuracy.
+
+                 Precision = TP / (TP+FP)          eq 4.2
+
+4.1.4 Recall
+
+Measures the proportion of correctly predicted positive protein labels out of actual
+instances of a specific protein.
+
+      33 Department of Computer Science and Engineering, National Institute of
+            Technology Srinagar
+PLANT PROTEIN CLASSIFICATION USING K-MER ENCODING 2023
+
+                Recall = TP / (TP+FN)  eq 4.3
+
+4.1.5 F1-score
+
+Measures the model's accuracy considering both precision and recall (harmonic
+mean).
+
+F1-score = 2 * (precision * recall) / (precision + recall) eq 4.4
+
+4.2 Experimental Evaluation Using Entire Dataset (with
+34 classes)
+
+The dataset used to train is "filtered_data.csv" prepared by taking files from [1]
+database. Detailed dataset preparation is mentioned in section 3.3.1. The dataset
+consists of 3824 sequence samples over 34 different protein classes as shown in Table
+1. For implementation python language is used and 8 Machine learning algorithms
+were considered which were explained in section 3.5.
+
+                                Fig 4.1 Evaluation metric scores of all models
+From various plots obtained as shown from above figures, it is shown that
+Multinomial Naïve Bayes outperformed other metods.
+
+      34 Department of Computer Science and Engineering, National Institute of
+            Technology Srinagar
+              PLANT PROTEIN CLASSIFICATION USING K-MER ENCODING 2023
+
+                                  (a) Confusion Matrix - LR
+
+                                     (b) Confusion Matrix - DT
+
+                               (c) Confusion Matrix - KNN
+35 Department of Computer Science and Engineering, National Institute of
+
+      Technology Srinagar
+              PLANT PROTEIN CLASSIFICATION USING K-MER ENCODING 2023
+
+                       (d) Confusion Matrix ­ Multinomial NB
+
+                               (e) Confusion Matrix - SVM
+
+                              (f) Confusion Matrix - RF
+36 Department of Computer Science and Engineering, National Institute of
+
+      Technology Srinagar
+                    PLANT PROTEIN CLASSIFICATION USING K-MER ENCODING 2023
+
+                                        (g) Confusion Matrix - AdaBoost
+
+                                       (h) Confusion Matrix - XGBoost
+                                 Fig 4.2 Confusion Matrix of all classes
+The amount of true positives, true negatives, false positives, and false negatives are
+displayed in the confusion matrices for each of these models, providing a detailed
+analysis of how effectively they were able to categorise plant proteins using k-mer
+encoding. With the use of these matrices, different models' performance in this
+classification job may be assessed and compared.
+      37 Department of Computer Science and Engineering, National Institute of
+            Technology Srinagar
+                    PLANT PROTEIN CLASSIFICATION USING K-MER ENCODING 2023
+
+4.3 Divided Datasets Evaluation
+
+From confusion matrix plots of various classifiers, it is clearly shown that classes 21,
+23, and 3 were assigned to most of the instances. Therefore, the dataset is split into
+two parts and was trained separately such that one dataset comprises classes 21, 23,
+and 3. And other dataset comprises of remaining 31 classes. The results from the two
+different datasets were shown below.
+Dataset 1(D1) - [3: 'F-box family protein', 21: 'nucleic acid binding/ribonuclease H',
+23: 'pentatricopeptide (PPR) repeat-containing protein']
+Dataset 2(D2) ­ [`Remaining 31 labels']
+
+                                       Fig 4.3 Accuracy plots [D1] [D2]
+
+    Accuracy plots show how each model's classification accuracy changes as a
+    function of different parameters or hyperparameter settings. They aid in
+    identifying the ideal setups for improving the precision of plant protein
+    classification using k-mer encoding, making it feasible to select the most
+    appropriate model for the task with knowledge.
+
+      38 Department of Computer Science and Engineering, National Institute of
+            Technology Srinagar
+               PLANT PROTEIN CLASSIFICATION USING K-MER ENCODING 2023
+
+                                      Fig 4.4 Precision plots [D1] [D2]
+The precision scores for each model are displayed on precision plots as a function
+of the parameters or hyperparameter settings. They aid in identifying the best
+setups for increasing the precision of plant protein classification by k-mer
+encoding, enabling informed decisions about the most suitable model for the task
+at hand.
+
+                                        Fig 4.5 Recall plots [D1] [D2]
+ 39 Department of Computer Science and Engineering, National Institute of
+
+       Technology Srinagar
+               PLANT PROTEIN CLASSIFICATION USING K-MER ENCODING 2023
+Recall plots display how various parameter or hyperparameter settings affect each
+model's recall scores. It is feasible to choose the most appropriate model for the
+task by employing them to help determine the optimum configurations for getting
+higher recall in plant protein categorization using k-mer encoding.
+
+                                      Fig 4.6 F1-score plots [D1] [D2]
+F1-score graphs demonstrate the effects of changing parameters or
+hyperparameter settings on the F1-scores of each model. They aid in figuring out
+the best setups for getting higher F1-scores when classifying plant proteins using
+k-mer encoding, making the choice of a model more informed.
+
+ 40 Department of Computer Science and Engineering, National Institute of
+       Technology Srinagar
+PLANT PROTEIN CLASSIFICATION USING K-MER ENCODING 2023
+
+(a) Confusion Matrix - LR[D1]   (b) Confusion Matrix - DT[D1]
+
+(c) Confusion Matrix - KNN[D1]  (d) Confusion Matrix - MNB[D1]
+
+(e) Confusion Matrix - SVM[D1]  (f) Confusion Matrix - RF[D1]
+
+  (g) Confusion Matrix - AdaBoost[D1] (h) Confusion Matrix - XGBoost[D1]
+
+                                 Fig 4.7 Confusion Matrix of all classes[D1]
+
+41 Department of Computer Science and Engineering, National Institute of
+      Technology Srinagar
+              PLANT PROTEIN CLASSIFICATION USING K-MER ENCODING 2023
+
+                             (a) Confusion Matrix - LR[D2]
+
+                              (b) Confusion Matrix - DT[D2]
+
+                             (c) Confusion Matrix - KNN[D2]
+42 Department of Computer Science and Engineering, National Institute of
+
+      Technology Srinagar
+              PLANT PROTEIN CLASSIFICATION USING K-MER ENCODING 2023
+
+                             (d) Confusion Matrix - MNB[D2]
+
+                                (e) Confusion Matrix - SVM[D2]
+
+                               (f) Confusion Matrix - RF[D2]
+43 Department of Computer Science and Engineering, National Institute of
+
+      Technology Srinagar
+                    PLANT PROTEIN CLASSIFICATION USING K-MER ENCODING 2023
+
+                                    (g) Confusion Matrix - AdaBoost[D2]
+
+                                      (h) Confusion Matrix - XGBoost[D2]
+                                    Fig 4.8 Confusion Matrix of all classes[D2]
+The confusion matrices on Datasets 1 and 2 for each model provide a thorough
+breakdown of each model's performance in the k-mer encoding-based categorization
+of plant proteins. They help with comparing and evaluating the efficacy of various
+models on diverse datasets by showing the amount of true positives, true negatives,
+false positives, and false negatives for each example.
+
+      44 Department of Computer Science and Engineering, National Institute of
+            Technology Srinagar
+PLANT PROTEIN CLASSIFICATION USING K-MER ENCODING 2023
+
+Evaluation Metric Results:
+
+                     Table 4.1 Evaluation Metric Results
+
+Model | Metric (%)   Accuracy   Precision  Recall              F1-score
+Logistic Regression      53         91       53                    61
+                         50         83       50                    54
+   Decision Tree         15         79       15                    15
+         KNN             61         94       61                    68
+                         24         51       24                    18
+  Multinomial NB         45         87       45                    49
+         SVM             17         17       17                    10
+                         33         47       33                    33
+   Random Forest
+      AdaBoost                                                 F1-score
+      XGBoost                                                      60
+                                                                   62
+                     Table 4.2 Evaluation Metric Results ­ D1      11
+                                                                   22
+Model | Metric (%)   Accuracy Precision Recall                     73
+Logistic Regression                                                46
+                            63  81         63                      38
+   Decision Tree                                                   59
+         KNN                66  80         66
+
+  Multinomial NB            12  26         12
+         SVM
+                            21  92         21
+   Random Forest
+      AdaBoost              76  70         76
+      XGBoost
+                            56  77         56
+
+                            53  35         53
+
+                            64  79         64
+
+                     Table 4.3 Evaluation Metric Results ­ D2
+
+Model | Metric (%)   Accuracy   Precision  Recall              F1-score
+Logistic Regression      50         90       50                    55
+                         50         88       50                    55
+   Decision Tree         15         81       15                    21
+         KNN             66         90       66                    72
+                         27         57       27                    25
+  Multinomial NB         42         83       42                    47
+         SVM             16         21       16                    12
+                         34         51       34                    34
+   Random Forest
+      AdaBoost
+      XGBoost
+
+From Table 4.2 and 4.3 results, it is shown that Support Vector Machine (SVM)
+outperformed in Dataset 1 and Multinomial NB outperformed in Dataset 2.
+
+45 Department of Computer Science and Engineering, National Institute of
+      Technology Srinagar
+              PLANT PROTEIN CLASSIFICATION USING K-MER ENCODING 2023
+
+46 Department of Computer Science and Engineering, National Institute of
+      Technology Srinagar
+                    PLANT PROTEIN CLASSIFICATION USING K-MER ENCODING 2023
+
+                            CHAPTER 5
+          CONCLUSION and FUTURE WORKS
+
+This project involves evaluating various classifiers, where Multinomial Naive Bayes
+(NB) achieved the highest accuracy. Notably, three classes (3, 21, and 23) were
+consistently assigned to most instances based on the confusion matrices. To delve
+deeper into this phenomenon, the dataset was divided into two parts: one comprising
+the frequently assigned classes and the other comprising the remaining classes. In
+dataset one, Support Vector Machine (SVM) exhibited the best performance, while
+Multinomial NB outperformed other models in dataset two.
+
+Future work involves optimizing accuracy by exploring additional classifiers such as
+deep learning models like Convolutional Neural Networks (CNN) and fine-tuning
+existing models. Additionally, investigating alternative feature representation
+techniques and incorporating additional biological or contextual features can
+contribute to enhanced classification performance. The project's outcomes have
+practical implications in phenotyping, facilitating advancements in crop improvement,
+disease resistance, and overall plant breeding strategies.
+
+      47 Department of Computer Science and Engineering, National Institute of
+            Technology Srinagar
+              PLANT PROTEIN CLASSIFICATION USING K-MER ENCODING 2023
+
+48 Department of Computer Science and Engineering, National Institute of
+      Technology Srinagar
+                         PLANT PROTEIN CLASSIFICATION USING K-MER ENCODING 2023
+
+                             REFERENCES
+
+1. Oncul, A. B., & Celik, Y. (2023). Signal, Image and Video Processing, 17(5), 2055-
+    2061.
+
+2. Yao, Jiepeng, Yi Ling, Peichen Hou, Zhongyi Wang, Lan Huang. A graph neural
+    network model for deciphering the biological mechanisms of plant electrical signal
+    classification. Applied Soft Computing 137 (2023): 110153.
+
+3. Nedyalkova, Miroslava, Sergio Madurga, Marek Tobiszewski, Vasil Simeonov.
+    Sequence-Based Prediction of Plant Allergenic Proteins: Machine Learning
+    Classification Approach. ACS Omega (2023).
+
+4. Upadhyaya, Shriprabha R., Philipp E. Bayer, Cassandria G. Tay Fernandez, Jakob
+    Petereit, Jacqueline Batley, Mohammed Bennamoun, Farid Boussaid, David Edwards.
+    Evaluating Plant Gene Models Using Machine Learning. Plants 11.12 (2022): 1619
+
+5. Juneja, Sapna, Annu Dhankhar, Abhinav Juneja, Shivani Bali. An Approach to DNA
+    Sequence Classification Through Machine Learning: DNA Sequencing, K Mer
+    Counting, Thresholding, Sequence Analysis. International Journal of Reliable and
+    Quality E-Healthcare (IJRQEH) 11.2 (2022): 1-15.
+
+6. Vigil, MS Antony, M. Mirutuhula, Sure Sarvagna, R. Supraja, and Gadusunari
+    Priyanka Reddy. DNA Sequencing Using Machine Learning Algorithms. In 2022
+    International Conference on Data Science, Agents & Artificial Intelligence
+    (ICDSAAI), vol. 1, pp. 1-4. IEEE, 2022.
+
+7. Orozco-Arias, Simon, Mariana S. Candamil-Cortés, Paula A. Jaimes, Johan S. Piña,
+    Reinel Tabares-Soto, Romain Guyot, and Gustavo Isaza. K-mer-based machine
+    learning method to classify LTR-retrotransposons in plant genomes. PeerJ 9 (2021):
+    e11456.Wattanapornprom, Warin, et al. "Ensemble of multiple classifiers for
+    multilabel classification of plant protein subcellular localization." Life 11.4 (2021):
+    293.
+
+          49 Department of Computer Science and Engineering, National Institute of
+                 Technology Srinagar
+                         PLANT PROTEIN CLASSIFICATION USING K-MER ENCODING 2023
+
+8. Gunasekaran, Hemalatha, K. Ramalakshmi, A. Rex Macedo Arokiaraj, S. Deepa
+    Kanmani, Chandran Venkatesan, and C. Suresh Gnana Dhas. Analysis of DNA
+    sequence classification using CNN and hybrid models. Computational and
+    Mathematical Methods in Medicine 2021 (2021).
+
+9. Guo, Yuxin, Liping Hou, Wen Zhu, and Peng Wang. Prediction of Hormone-Binding
+    Proteins Based on K-mer Feature Representation and Naive Bayes. Frontiers in
+    Genetics 12 (2021): 797641.
+
+10. Zhang, Jinny X., Boyan Yordanov, Alexander Gaunt, Michael X. Wang, Peng Dai,
+    Yuan-Jyue Chen, Kerou Zhang et al. A deep learning model for predicting next-
+    generation sequencing depth from DNA sequence. Nature communications 12, no. 1
+    (2021): 4387.
+
+11. Sangphukieo, Apiwat, Teeraphan Laomettachit, and Marasri Ruengjitchatchawalya.
+    Photosynthetic protein classification using genome neighborhood-based machine
+    learning feature. Scientific Reports 10, no. 1 (2020): 7108.
+
+12. Yadav, A. K., & Singla, D. (2020). VacPred: Sequence-based prediction of plant
+    vacuole proteins using machine-learning techniques. Journal of biosciences, 45, 1-9.
+
+13. Sekhar, S. M., Siddesh, G. M., Raj, M., & Manvi, S. S. (2021). Protein class
+    prediction based on Count Vectorizer and long short term memory. International
+    Journal of Information Technology, 13(1), 341-348.
+
+14. Gupta, C. P., Bihari, A., & Tripathi, S. (2019). Human Protein Sequence
+    Classification using Machine Learning and Statistical Classification Techniques. Int.
+    J. Recent Technol. Eng, 8(2).
+
+15. Solis-Reyes, S., Avino, M., Poon, A., & Kari, L. (2018). An open-source k-mer based
+    machine learning tool for fast and accurate subtyping of HIV-1 genomes. PloS one,
+    13(11), e0206409.
+
+16. Phan, D., Ngoc, G. N., Lumbanraja, F. R., Faisal, M. R., Abipihi, B., Purnama, B., ...
+    & Satou, K. (2017). Combined use of k-mer numerical features and position-specific
+    categorical features in fixed-length DNA sequence classification. Journal of
+    Biomedical Science and Engineering, 10(8), 390-401.
+
+          50 Department of Computer Science and Engineering, National Institute of
+                 Technology Srinagar
+                         PLANT PROTEIN CLASSIFICATION USING K-MER ENCODING 2023
+17. Gotoh, O., Morita, M., & Nelson, D. R. (2014). Assessment and refinement of
+
+    eukaryotic gene structure prediction with gene-structure-aware multiple protein
+    sequence alignment. Bmc Bioinformatics, 15(1), 1-13.
+18. http://plantgdb.org/ - "PlantGDB [Genome Database]" [14/06/2023]
+19. http://plantgdb.org/PeGDB/ - "Prunus persica [Peach] Genome" [14/06/2023]
+20. https://www.uniprot.org/ - "UniProt Database" [14/06/2023]
+21. https://pubmed.ncbi.nlm.nih.gov/ - "PubMed Repository" [14/06/2023]
+
+          51 Department of Computer Science and Engineering, National Institute of
+                 Technology Srinagar
+              PLANT PROTEIN CLASSIFICATION USING K-MER ENCODING 2023
+
+52 Department of Computer Science and Engineering, National Institute of
+      Technology Srinagar
+                    PLANT PROTEIN CLASSIFICATION USING K-MER ENCODING 2023
+
+                           APPENDIX A
+
+Input Sequence:
+MLITAHFIDGEWNLHKRVLNFCVIANHKGNSIGKLLETCLLHWDLKKILAITT
+DNTSSNTKAIDYLKSKMGHWKNGSLVLEGKYTHVRCCAHIVNLIVQDGLKK
+LEKSILSIRNAVRYVFYNMTLKMSISLYLASHTTFYNLIAMEGEIGDLFFGDQL
+PSQTHTSTILKDIACSMKMKFEKYWIDLDKVNQLLMVAHVLDPRYLTDPIEK
+VIPNFDIFKWWKLNGVKYPGLSLIAKDVLDIPSSTVISESFFAQVVNSFCTFLT
+PKIVEALICSQN
+Length: 276
+Predicted Label: ['DNA binding']
+
+Input Sequence:
+MSSESSATTAAAAESHAPLLLPRQASSGRDSSDLGSPTARPATLAMLLGRAT
+GRRGPSMLVRETAARELDERRADWGYSKPVVALDMMWNTAFVVVSVAML
+IWTDHEHPNTPIRLWICGYALQCFVHVVLVWVEYQRRNNIARRISRRNQDAQ
+QNQHQVEIDANDTDDEEAAAAARDLAISTRSSLSKRCETVNTMASFLWWIV
+GFYWVVAGGEVLLQNAPRLYWLAVVFLAFDVFFAIFCVVLACLIGVALCCC
+LPCIIAILYAVAGQEGASDADLSILPKYRFRSSSEEKSSVGAGKMIPVETSSGY
+LAIERILLPEDAECCICLSPYEDGTELHTLPCNHHFHATCIVKWLKMNATCPL
+CKYNILKGNEPV
+Length: 374
+Predicted Label: ['zinc finger (C3HC4-type RING finger) family protein']
+
+                            Multinomial Naive Bayes Predictions
+
+      53 Department of Computer Science and Engineering, National Institute of
+            Technology Srinagar
+                    PLANT PROTEIN CLASSIFICATION USING K-MER ENCODING 2023
+
+Input Sequence:
+MAFPEHLTADILSRLPAKSLVRFSSVRKEWQALIRDPHFISQHLNLNIAKEDQS
+GRLLVKYRCNVTRKNVISLLLHGTHGYMLSKLEIPSSVMDSHHLKLVGSCNG
+LLCLAHDKSAHLWSPMILLWNPAIREFSVLPDSVIDSVNDDDNVQARGIAHG
+FGYHPLIDDYKVVRIVSLSCFGNAWIRAEVYSSKMDCWQEVNTFHFEIYEHS
+CTALNGLLYWIAYGKGDRELIVSFDMCDDVFGELQLPDLSFLDTPMCTKLAE
+LKQSLYLIVYTFSGRQREIYVWKMIEHDAEVFWKREWTIGPLLGIERPLGCGL
+YGEIYMESRKGDLVLYNPSSEEAKHIPICGLRCSLEVHFYVESLVSTKGQREV
+LQETNKRIM
+Length: 377
+Predicted Label: ['F-box family protein']
+
+Input Sequence:
+MVSRQIQLLIQRSSSAAHLLQLHSLVLKTGLDHNPNFVSHYIYAACSISVEFSK
+LVFDHIPIKPPLFAWNSIIRAFTNSSNPLESLNFFFQLHRIGLKPDNFTYPFVLK
+ACGRCSIVGVGGPVHSLILKVGFDSDRYIRNTLLRMYAACGAIRLARRVFDE
+MTVRDVVSWSSMIAGYVACNCPLDAFKVFQDMKLANENPNSVTLVSLLSAC
+TRLLNFRAGESIHCYIVVNCIGIDVALGTALLEMYSKCGHVEKAFQVFNSMSE
+KNLQSWTIMISGLPDHGHGKDAISLFTRMEQTGLVPDSMSFSAILSACSHLGL
+VHKGRQFFNQMVRTYGIQPTLEHYGCLVDLLGRAGLIEEAYEIIKNMPMEPN
+SVILRSFLCACRNHGVAITLDDKLRKLLISEPNLGANYVLAASVSSLSGCWND
+AADLRVAMKQNGLVKVPGCSWVEVGGGGSTAATINEPLV
+Length: 462
+Predicted Label: ['pentatricopeptide (PPR) repeat-containing protein']
+
+                           SVM Predictions - Dataset 1(3 Classes)
+
+      54 Department of Computer Science and Engineering, National Institute of
+            Technology Srinagar
+                    PLANT PROTEIN CLASSIFICATION USING K-MER ENCODING 2023
+
+Input Sequence:
+MFLRQAAANLIKRRFRLPSQTVSSTSGTTTIPLSSRTKFSYQYHGPKDFSWRM
+NYSHRDPRVWLFLSGNAAIIFTIHSNTVLAKDASIESSPENDTEGAEAMGLRKI
+EDGSVISNIHTSKWRVFTDKGRDLFLQERILCLHSFGKLEEAEKLFLLALQEA
+KEGFGERDPHVASACNNLAELYRVNKAYNKAEPLYLDAISILEESFGPEDIRIS
+THSLFLYYL
+Length: 223
+Predicted Label: ['nucleic acid binding']
+
+Input Sequence:
+MVQILHISTTTVRPTTQDDQLTAPKIELTPWDLRLIQFDYIQKGILFHKSAETE
+DSNVSLVQRLKDSLSLTLNIFYPLAGRLVVSENAEDSTVSISIKCNGAGAEFV
+HAAADGVKVADILNPYIPDHVIFNLFSLNEVRNYEGVSKPLLSAQVTELLDGI
+FIGCSLNHLVADGTSFWHFFNTWAEISRSGSHKILQPRPVFGRQFLDGVIDLPV
+HLPFSYSEIIGEPIIKSSSFNAFLQRVVFHFPKEKIAKLKAKANAEMGTTSNISSL
+QALMAHLWQATTRARHLQPDQQVNYRFAIGLRQRWEPETLPKEYLGTAIIG
+VNVTAIASELLQNGLGWAASQINKKISSLTPEQARNDLVDWVNKPTLIPNMR
+NPTLLARLLTGSSPRFNVYGNDFGWGRPLAVRSGAGDKMDGKLTVFPGAEE
+GSIDFEACLLPETIQTMMDDAEFMEAVA
+Length: 452
+Predicted Label: ['transferase family protein']
+
+                          Multinomial NB Predictions - Dataset 2
+
+      55 Department of Computer Science and Engineering, National Institute of
+            Technology Srinagar
+

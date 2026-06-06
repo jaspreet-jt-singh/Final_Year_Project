@@ -1,0 +1,170 @@
+\chapter{METHODOLOGY}
+
+\section{Methodological Overview}
+
+The methodology follows the practical order in which the system was built. The dataset had to be made consistent before model integration could be trusted. The nutrition database had to be checked before recommendation output could be meaningful. Only after those two parts were stable did the backend and frontend become useful. The work begins with YOLO-format food datasets, moves through class normalization, split generation, train-only augmentation, detector integration, nutrition import, class-to-food mapping, and finally user-facing API and interface development. Figure \ref{fig:methodology-workflow} summarizes the main workflow.
+
+\begin{figure}[H]
+\centering
+\begin{tikzpicture}[
+    node distance=0.9cm,
+    block/.style={draw, rounded corners, align=center, minimum width=4.2cm, minimum height=0.9cm, fill=blue!7},
+    arrow/.style={-Latex, thick}
+]
+\node[block] (sources) {Source YOLO Food Datasets};
+\node[block, below=of sources] (normalize) {Class Normalization\\and Label Parsing};
+\node[block, below=of normalize] (split) {Train/Validation/Test Split};
+\node[block, below=of split] (augment) {Train-Only Augmentation};
+\node[block, below=of augment] (model) {YOLO Detection Service};
+\node[block, right=2.7cm of normalize] (indb) {INDB Spreadsheet\\and SQLite Database};
+\node[block, right=2.7cm of split] (mapping) {Food Class to\\Nutrition Mapping};
+\node[block, below=of mapping] (api) {FastAPI Backend};
+\node[block, below=of api] (ui) {Next.js Frontend};
+
+\draw[arrow] (sources) -- (normalize);
+\draw[arrow] (normalize) -- (split);
+\draw[arrow] (split) -- (augment);
+\draw[arrow] (augment) -- (model);
+\draw[arrow] (indb) -- (mapping);
+\draw[arrow] (mapping) -- (api);
+\draw[arrow] (model.east) -- ++(0.8,0) |- (api.west);
+\draw[arrow] (api) -- (ui);
+\draw[arrow] (normalize.east) -- ++(0.8,0) |- (mapping.west);
+\end{tikzpicture}
+\caption{Methodological workflow for dataset, model, nutrition, backend, and frontend integration}
+\label{fig:methodology-workflow}
+\end{figure}
+
+\section{YOLO Detection Approach}
+
+YOLO, short for You Only Look Once, is used in this project because it treats object detection as a single-pass prediction problem. For a food image, the model predicts bounding boxes, class probabilities, and confidence scores in one forward pass. This is well suited to a web application because the backend must return results quickly enough for a user to inspect the uploaded meal without a long delay.
+
+The project uses the YOLO label format and YOLO-style inference workflow followed by recent Indian food detection systems such as IndianFoodNet and Diet Engine \cite{indianfoodnet_2023,diet_engine_2025}. During inference, the model returns candidate detections for visible food items. The backend then applies confidence filtering and non-maximum suppression so that duplicate boxes are removed and only the strongest detections are passed to nutrition lookup. Each final detection contains a class name, confidence value, and normalized bounding box.
+
+The practical reason for using YOLO is not only speed. Indian meal photographs often contain more than one dish, so a whole-image classifier would usually miss part of the plate. YOLO allows the system to detect multiple foods in one image and map each detected class independently to the nutrition database. This gives the later macro calculation a clear trail: image region, detected class, database row, and final calories.
+
+\section{Source Dataset Collection}
+
+Five YOLO-format datasets were used as source datasets. Together they contained 40,797 source images across training, validation, and test folders before project-specific merging. The useful part of combining them was broader food coverage; the difficult part was that each dataset used its own naming style. Some labels were written in CamelCase, some used spaces, some used regional words, and some referred to the same dish with different spellings. Table \ref{tab:source-datasets} summarizes the source data.
+
+\begin{table}[H]
+\centering
+\caption{Source datasets used for merged Indian food dataset}
+\label{tab:source-datasets}
+\begingroup
+\small
+\setlength{\tabcolsep}{4pt}
+\begin{tabularx}{\textwidth}{L{0.06\textwidth}Yrrrr}
+\toprule
+\# & Source dataset & Classes & Train & Valid & Test\\
+\midrule
+1 & Indian food detection v1 & 17 & 7547 & 1053 & 453\\
+2 & Indian food v6 & 29 & 8088 & 213 & 105\\
+3 & Indian food v2 seven-class subset & 7 & 1698 & 159 & 92\\
+4 & IndianFoodNet YOLO export & 30 & 11387 & 1073 & 576\\
+5 & South Indian food detection v19 & 31 & 6478 & 1294 & 581\\
+\bottomrule
+\end{tabularx}
+\endgroup
+\end{table}
+
+The raw class count exceeded the final class count because many labels referred to the same food. For example, \code{satham}, \code{rice}, and \code{WhiteRice} were normalized into \code{rice}. This step is not just cosmetic. Object detectors learn one output channel per class; if equivalent labels remain separate, the model is trained to treat the same food as different objects.
+
+\section{Canonical Class Normalization}
+
+The canonical label set contains 72 food classes. The normalization process converts raw source labels into snake-case names, resolves spelling differences, and merges regional variants. Table \ref{tab:canonical-examples} shows examples.
+
+\begin{table}[H]
+\centering
+\caption{Examples of raw-to-canonical label normalization}
+\label{tab:canonical-examples}
+\begin{tabularx}{\textwidth}{L{0.42\textwidth}Y}
+\toprule
+Raw variants & Canonical class\\
+\midrule
+\code{AlooGobi}, \code{aloo gobhi}, \code{aloo_gobi} & \code{aloo_gobi}\\
+\code{CoconutChutney}, \code{thengai chutney}, \code{coconut chutney} & \code{coconut_chutney}\\
+\code{Idli}, \code{idly} & \code{idli}\\
+\code{WhiteRice}, \code{rice}, \code{satham} & \code{rice}\\
+\code{lemon satham} & \code{lemon_rice}\\
+\code{medu vadai}, \code{medu vada} & \code{medu_vada}\\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+\section{YOLO Label Representation}
+
+Each YOLO label file contains one row per annotated object:
+
+\begin{equation}
+    y = (c, x, y, w, h)
+\end{equation}
+
+where $c$ is the class identifier, $x$ and $y$ are normalized center coordinates, and $w$ and $h$ are normalized width and height. The normalized coordinate system makes labels independent of image resolution. During parsing, each raw class identifier is first resolved to its source dataset class name and then converted to the canonical class name.
+
+\section{Dataset Splitting and Augmentation}
+
+The merged dataset uses a 70/15/15 target ratio for training, validation, and testing. Multi-label images are handled by building a multi-label representation of class presence. A stratified split is attempted so that classes are distributed across splits. If rare-label constraints make stratification infeasible, deterministic random splitting is used.
+
+Augmentation is applied only to the training split. This prevents synthetic transformations from leaking into validation or test evaluation. The augmentation strategy includes horizontal flipping and mild brightness and contrast adjustment. The purpose is deliberately modest: improve coverage for underrepresented classes without creating images that no longer look like realistic food photographs.
+
+\begin{algorithm}[H]
+\caption{Dataset merge and export procedure}
+\label{alg:dataset-merge}
+\begin{algorithmic}[1]
+\State Initialize empty sample list $S$
+\For{each source dataset $D$}
+    \State Load source class names from \code{data.yaml}
+    \For{each image-label pair in $D$}
+        \State Parse YOLO labels
+        \State Convert raw class names to canonical classes
+        \State Add sample to $S$
+    \EndFor
+\EndFor
+\State Build multi-label matrix for all samples in $S$
+\State Split into train, validation, and test sets
+\State Export images and labels using canonical class identifiers
+\State Apply augmentation only to training samples below target count
+\State Write final \code{data.yaml}, build log, and per-class count CSV
+\end{algorithmic}
+\end{algorithm}
+
+\section{Nutrition Database Methodology}
+
+The nutrition database is built from the INDB spreadsheet. The required columns are \code{food_name}, \code{energy_kcal}, \code{protein_g}, \code{carb_g}, and \code{fat_g}. These are renamed to the runtime schema: \code{name}, \code{calories}, \code{protein_g}, \code{carbs_g}, and \code{fat_g}. A normalized food name column is added to support lookup and matching. Source metadata is also stored so that supplemental values can be distinguished from INDB rows.
+
+The database contains two main tables. The first table, \code{indb_foods}, stores food records, macronutrients, and source information. The second table, \code{yolo_mappings}, stores precomputed mappings from YOLO classes to database food names. This separation keeps runtime lookup fast and makes the mapping decisions inspectable.
+
+\section{Nutrition Mapping Methodology}
+
+Food-to-nutrition mapping is performed conservatively. Manual semantic mappings are attempted first. These mappings are created by checking exact database food names and selecting the closest nutritionally meaningful record. Verified supplemental rows are used when the available INDB sheet has no safe entry for a dataset class. Fuzzy matching is kept as a fallback and used only when the score is sufficiently high. This matters because a similar string is not always a similar food, especially when sweets, curries, chutneys, and fried snacks share common words.
+
+For a detected class $c$, the mapping function can be represented as:
+
+\begin{equation}
+M_c =
+\begin{cases}
+\text{manual}(c), & \text{if a verified manual mapping exists}\\
+\text{supplemental}(c), & \text{if a verified supplemental row exists}\\
+\text{fuzzy}(c), & \text{if score}(c) \geq 0.78\\
+\emptyset, & \text{otherwise}
+\end{cases}
+\end{equation}
+
+The current mapping covers all 72 dataset classes. The classes \code{bhakarwadi}, \code{ghevar}, \code{jalebi}, \code{khandvi}, and \code{nandu_masala} were absent from the available INDB sheet, so they are handled through verified supplemental nutrition rows with source metadata rather than weak fuzzy substitutes.
+
+\section{Macro Calculation Methodology}
+
+The macro engine converts a daily calorie target into grams of carbohydrates, protein, and fat. Each goal defines a base macro split. Health conditions modify this split before normalization. If $T$ is the target calorie value and $p_c$, $p_p$, and $p_f$ are the final percentages for carbohydrates, protein, and fat, then:
+
+\begin{align}
+    G_c &= \frac{T \times p_c}{4 \times 100}\\
+    G_p &= \frac{T \times p_p}{4 \times 100}\\
+    G_f &= \frac{T \times p_f}{9 \times 100}
+\end{align}
+
+where $G_c$, $G_p$, and $G_f$ are grams of carbohydrates, protein, and fat respectively. The values 4, 4, and 9 represent calories per gram for carbohydrates, protein, and fat.
+
+\section{Validation Methodology}
+
+Validation is performed at multiple levels because a failure in any one layer can make the final output misleading. Dataset validation checks class names, split counts, and visual class samples. Database validation checks row counts and schema. Mapping validation checks class-to-food mappings, coverage, and source provenance. Service validation checks whether the backend can initialize the nutrition service and return expected lookup results. Frontend validation checks whether the user workflow can display detections, nutrition labels, and recommendations.

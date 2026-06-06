@@ -6,7 +6,7 @@ This frontend implements the user-facing application for the AI-based food recog
 
 | Feature | Implementation |
 |---|---|
-| Image upload | Drag-and-drop upload with file picker fallback |
+| Image upload | Drag-and-drop upload with file picker option |
 | Image preview | Local preview generated through FileReader |
 | Backend integration | Sends uploaded image as `FormData` to `http://localhost:8000/api/analyze-food` |
 | Detection results | Displays all detected food items with confidence values |
@@ -18,7 +18,7 @@ This frontend implements the user-facing application for the AI-based food recog
 | Macro tracking | Calculates remaining calories, carbs, protein, and fat |
 | Health conditions | Supports condition-aware macro and recommendation adjustments |
 | Recommendations | Fetches dietary guidance from the backend recommendation endpoint |
-| Fallback behavior | Uses local goal, condition, and macro calculation when backend metadata calls fail |
+| Local default behavior | Uses local goal, condition, and macro calculation when backend metadata calls fail |
 | Error handling | Handles timeout, backend connection, server, and no-food states |
 
 ## Main Files
