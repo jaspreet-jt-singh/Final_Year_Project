@@ -1,16 +1,10 @@
 \chapter{FUTURE WORK}
 
-\section{Per-Class Model Improvement}
+\section{Self-Trained Recommendation Model}
 
-The current report now includes aggregate validation and held-out test metrics for the final 72-class YOLO11s model. The next version should go deeper into per-class error analysis by ranking classes by precision, recall, mAP@50, and mAP@50:95, then using those rankings to guide additional data collection and annotation cleanup. End-to-end latency should also be measured inside the local full-stack application, because notebook inference speed does not include upload handling, API serialization, nutrition lookup, and frontend rendering.
+The current prototype uses a language model to generate natural-language dietary suggestions from detected foods, macro values, goals, and health conditions. A future version should replace this dependency with a self-trained recommendation model. The model can be trained on curated Indian meal patterns, nutrition rules, health-condition constraints, and expert-reviewed recommendation examples. This would make the recommendation layer more controllable, easier to validate, and less dependent on external LLM services.
 
-\section{Dataset Cleaning}
-
-The sample-level annotation issues found during visual verification should be corrected before the next training cycle. Additional automated checks can detect extremely thin bounding boxes, duplicated boxes, missing labels, and class names that do not match filename suffixes. A small review dashboard would also be useful for inspecting random samples from each class before training, especially for visually similar dishes.
-
-\section{Nutrition Source Refinement}
-
-The five classes that were absent from INDB are now covered through source-backed supplemental rows. These values should be replaced or cross-checked with official Indian food composition entries, laboratory-verified values, or institutionally curated recipe data when available. This would improve source consistency while preserving 100\% class coverage.
+The self-trained model should receive structured inputs from the existing backend, including detected food classes, calories, protein, carbohydrates, fat, serving estimates, user goal, calorie target, and health profile. Its output should be constrained to safe dietary suggestions and should include confidence or rule-trace information so that users can understand why a recommendation was produced.
 
 \section{Portion Size Estimation}
 

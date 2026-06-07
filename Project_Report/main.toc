@@ -95,13 +95,11 @@
 \contentsline {section}{\numberline {8.6}Lessons Learned}{49}{section.8.6}%
 \contentsline {chapter}{\numberline {9}CONCLUSION}{50}{chapter.9}%
 \contentsline {chapter}{\numberline {10}FUTURE WORK}{52}{chapter.10}%
-\contentsline {section}{\numberline {10.1}Per-Class Model Improvement}{52}{section.10.1}%
-\contentsline {section}{\numberline {10.2}Dataset Cleaning}{52}{section.10.2}%
-\contentsline {section}{\numberline {10.3}Nutrition Source Refinement}{52}{section.10.3}%
-\contentsline {section}{\numberline {10.4}Portion Size Estimation}{53}{section.10.4}%
-\contentsline {section}{\numberline {10.5}Mobile Deployment}{53}{section.10.5}%
-\contentsline {section}{\numberline {10.6}Personalized Long-Term Tracking}{53}{section.10.6}%
-\contentsline {section}{\numberline {10.7}Clinical Safety and Explainability}{53}{section.10.7}%
+\contentsline {section}{\numberline {10.1}Self-Trained Recommendation Model}{52}{section.10.1}%
+\contentsline {section}{\numberline {10.2}Portion Size Estimation}{52}{section.10.2}%
+\contentsline {section}{\numberline {10.3}Mobile Deployment}{53}{section.10.3}%
+\contentsline {section}{\numberline {10.4}Personalized Long-Term Tracking}{53}{section.10.4}%
+\contentsline {section}{\numberline {10.5}Clinical Safety and Explainability}{53}{section.10.5}%
 \contentsline {chapter}{\numberline {A}DATASET CLASSES AND NUTRITION MAPPINGS}{57}{appendix.A}%
 \contentsline {section}{\numberline {A.1}Expanded Dataset Class List}{57}{section.A.1}%
 \contentsline {section}{\numberline {A.2}Class-to-INDB Mapping Table}{57}{section.A.2}%
