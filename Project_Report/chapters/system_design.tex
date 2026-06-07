@@ -107,19 +107,19 @@ The database is intentionally simple. A heavier database server would add setup 
 \begin{figure}[H]
 \centering
 \begin{tikzpicture}[
-    flowbox/.style={draw, rounded corners, align=center, fill=blue!6, text width=0.17\textwidth, minimum height=1.55cm, inner sep=5pt},
-    tablebox/.style={draw, rounded corners, align=left, fill=green!8, text width=0.235\textwidth, minimum height=2.05cm, inner sep=6pt},
-    outbox/.style={draw, rounded corners, align=center, fill=orange!10, text width=0.17\textwidth, minimum height=1.55cm, inner sep=5pt},
+    flowbox/.style={draw, rounded corners, align=center, fill=blue!6, text width=0.70\textwidth, minimum height=0.85cm, inner sep=6pt},
+    tablebox/.style={draw, rounded corners, align=center, fill=green!8, text width=0.70\textwidth, minimum height=1.05cm, inner sep=6pt},
+    outbox/.style={draw, rounded corners, align=center, fill=orange!10, text width=0.70\textwidth, minimum height=0.85cm, inner sep=6pt},
     arrow/.style={-Latex, thick},
-    node distance=0.28cm
+    node distance=0.50cm
 ]
-\node[flowbox] (label) {YOLO output\\class label};
-\node[tablebox, right=of label] (map) {\textbf{yolo\_mappings}\\YOLO class\\matched food name\\match score};
-\node[tablebox, right=of map] (foods) {\textbf{indb\_foods}\\food name\\calories\\protein, carbs, fat\\source};
-\node[outbox, right=of foods] (response) {Nutrition\\response\\for frontend};
+\node[flowbox] (label) {YOLO output: class label};
+\node[tablebox, below=of label] (map) {\textbf{yolo\_mappings}\\YOLO class, matched food name, match score};
+\node[tablebox, below=of map] (foods) {\textbf{indb\_foods}\\food name, calories, protein, carbohydrates, fat, source};
+\node[outbox, below=of foods] (response) {Nutrition response for frontend};
 
 \draw[arrow] (label) -- (map);
-\draw[arrow] (map) -- node[above, font=\small]{matched name} (foods);
+\draw[arrow] (map) -- node[right, font=\small]{matched name} (foods);
 \draw[arrow] (foods) -- (response);
 \end{tikzpicture}
 \caption{Entity relationship used for class-to-nutrition lookup}
