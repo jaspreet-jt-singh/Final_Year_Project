@@ -1,8 +1,8 @@
 \chapter{FUTURE WORK}
 
-\section{Improved Model Evaluation}
+\section{Per-Class Model Improvement}
 
-The next version should include a complete quantitative evaluation of the latest 72-class YOLO model. The evaluation should report mAP@50, mAP@50:95, per-class precision, per-class recall, confusion matrix, and inference latency. These metrics would make model quality easier to compare across training runs and would show which food classes still need more data.
+The current report now includes aggregate validation and held-out test metrics for the final 72-class YOLO11s model. The next version should go deeper into per-class error analysis by ranking classes by precision, recall, mAP@50, and mAP@50:95, then using those rankings to guide additional data collection and annotation cleanup. End-to-end latency should also be measured inside the local full-stack application, because notebook inference speed does not include upload handling, API serialization, nutrition lookup, and frontend rendering.
 
 \section{Dataset Cleaning}
 

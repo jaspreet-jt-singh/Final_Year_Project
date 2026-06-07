@@ -24,7 +24,7 @@ The second limitation is nutrition source consistency. Five classes are covered 
 
 The third limitation is dataset noise. Visual verification found a small number of annotation issues. Large food datasets often contain such noise, but it should still be cleaned because object detectors are sensitive to label quality.
 
-The fourth limitation is missing final 72-class model metrics in the local report artifacts. The system has a deployed model and training notebook, but a formal evaluation table for the latest expanded class set should be added.
+The fourth limitation is uneven per-class detector behavior. The final YOLO11s metrics are strong enough for a working prototype, but the confusion matrix shows that some visually similar or lower-data classes remain harder than others. This is especially important for a nutrition application because a wrong food class can propagate into an incorrect nutrition lookup even when the interface and database are functioning correctly.
 
 \section{Ethical and Practical Considerations}
 

@@ -2,7 +2,7 @@
 
 \section{Experimental Scope}
 
-The experiments in this project are written around evidence that could be verified from the repository and generated artifacts. The evaluation covers dataset construction, class-name verification, nutrition database integrity, mapping coverage, backend service behavior, frontend workflow, and qualitative detection output. The repository contains training material and deployed model metadata, but it does not contain a final metric export for the latest 72-class training run. For that reason, this report does not invent mAP, precision, or recall values. It reports the evidence that can be checked directly and leaves formal detector benchmarking as a clearly stated future evaluation step.
+The experiments in this project are written around evidence that could be verified from the repository and generated artifacts. The evaluation covers dataset construction, YOLO11s detector training, validation and test metrics, class-name verification, nutrition database integrity, mapping coverage, backend service behavior, frontend workflow, and qualitative detection output. The final training notebook and exported result directory provide the detector metrics used in this chapter, so the report includes quantitative mAP, precision, recall, confusion-matrix, and prediction-batch evidence for the latest 72-class model.
 
 \begin{figure}[H]
 \centering
@@ -61,6 +61,81 @@ Split target ratio & 70/15/15\\
 \end{table}
 
 The split counts indicate that the generated dataset is complete: every exported image has a corresponding label file. Validation and test augmentation are disabled so that held-out samples remain real images rather than transformed versions of the training data.
+
+\section{YOLO Training and Detector Evaluation}
+
+The final detector experiment used YOLO11s on the 72-class dataset. The run resumed from a previous checkpoint at epoch 56 and continued to 100 total epochs. Table \ref{tab:yolo-training-setup} summarizes the final training setup recorded in the final training notebook and the exported \code{args.yaml}.
+
+\begin{table}[H]
+\centering
+\caption{Final YOLO11s training setup}
+\label{tab:yolo-training-setup}
+\begin{tabularx}{\textwidth}{L{0.34\textwidth}Y}
+\toprule
+Property & Value\\
+\midrule
+Model & YOLO11s object detector\\
+Classes & 72\\
+Image size & 640 pixels\\
+Batch size & 16\\
+Training stage & Resumed from epoch 56 to epoch 100\\
+Training time for resumed stage & 10.636 hours\\
+Hardware & Tesla T4 GPU, 15.64 GB VRAM\\
+Framework & Ultralytics 8.4.60, PyTorch 2.10.0, CUDA 12.8\\
+Best exported weight & \code{yolo11s_indian_food_best.pt}\\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+The resumed training stage steadily reduced training and validation losses. The highest validation mAP@50 in \code{results.csv} was 0.83379 at epoch 78, while the final epoch recorded precision 0.8528, recall 0.8042, mAP@50 0.82806, and mAP@50:95 0.69164. Figure \ref{fig:yolo11s-training-curves} and Figure \ref{fig:yolo11s-results-plot} show the training curves generated from the final run.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.98\textwidth,keepaspectratio]{yolo11s_training_curves.png}
+\caption{YOLO11s final training curves from the resumed 72-class run}
+\label{fig:yolo11s-training-curves}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.98\textwidth,keepaspectratio]{yolo11s_results_plot.png}
+\caption{Ultralytics result plot for the final YOLO11s run}
+\label{fig:yolo11s-results-plot}
+\end{figure}
+
+The best exported model was evaluated on both validation and held-out test splits. Table \ref{tab:yolo-final-metrics} reports the aggregate detector metrics.
+
+\begin{table}[H]
+\centering
+\caption{Final YOLO11s aggregate detector metrics}
+\label{tab:yolo-final-metrics}
+\begin{tabular}{lrrrrrr}
+\toprule
+Split & Images & Instances & Precision & Recall & mAP@50 & mAP@50:95\\
+\midrule
+Validation & 5,922 & 8,812 & 0.847 & 0.807 & 0.830 & 0.692\\
+Test & 5,919 & 8,875 & 0.842 & 0.801 & 0.820 & 0.680\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+The validation run reported mAP@75 of 0.765, and the test run reported mAP@75 of 0.751. Both validation and test evaluation reported approximately 11.0 ms inference time per image on the Kaggle Tesla T4 environment, excluding application-level upload and response overhead.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.98\textwidth,keepaspectratio]{yolo11s_test_confusion_matrix_normalized.png}
+\caption{Normalized confusion matrix for the YOLO11s held-out test evaluation}
+\label{fig:yolo11s-test-confusion}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.98\textwidth,keepaspectratio]{yolo11s_test_predictions.jpg}
+\caption{Sample YOLO11s predictions from the held-out test split}
+\label{fig:yolo11s-test-predictions}
+\end{figure}
+
+The aggregate metrics show that the final detector generalizes from validation to the held-out test split with a small drop in mAP. The normalized confusion matrix still shows uneven class behavior, which is expected in a 72-class food detector where several dishes are visually similar and some classes contain fewer unique source images.
 
 \section{Class Verification Experiment}
 
@@ -208,4 +283,4 @@ Macro validation checks whether a target calorie value is converted correctly to
 
 \section{Experimental Findings}
 
-The experiments show that the dataset and application pipeline are internally consistent. The system can detect food classes, map all 72 expanded dataset classes to nutrition records, and display results in the frontend. The major remaining experimental gap is the lack of a complete final metrics report for the latest 72-class trained model. Future work should add a formal evaluation table including mAP@50, mAP@50:95, per-class precision, per-class recall, confusion matrix, and inference latency.
+The experiments show that the dataset and application pipeline are internally consistent. The final YOLO11s model achieved 0.830 mAP@50 and 0.692 mAP@50:95 on validation, and 0.820 mAP@50 and 0.680 mAP@50:95 on the held-out test split. The system can detect food classes, map all 72 expanded dataset classes to nutrition records, and display results in the frontend. The remaining experimental work is deeper per-class error analysis, cleaning known annotation issues, and measuring end-to-end latency in the local full-stack application rather than only model inference latency in the training environment.

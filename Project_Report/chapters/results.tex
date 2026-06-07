@@ -27,6 +27,12 @@ Chutneys and sides & \code{coconut_chutney}, \code{green_chutney}, \code{kaara_c
 
 The class verification output confirms that all classes have image samples. This matters because a dataset configuration can list classes even when no usable labels exist for them. The verification step confirmed that this is not the case here, while still identifying a few individual annotations that should be cleaned later.
 
+\section{Detector Training Results}
+
+The final YOLO11s training run produced a usable 72-class detector. The model was trained through epoch 100, with the final resumed stage covering 45 epochs from epoch 56 onward. During that stage, the best validation mAP@50 recorded in \code{results.csv} was 0.83379 at epoch 78. The final epoch recorded precision 0.8528, recall 0.8042, mAP@50 0.82806, and mAP@50:95 0.69164.
+
+The exported best model was then evaluated separately on validation and held-out test splits. On validation, it achieved 0.847 precision, 0.807 recall, 0.830 mAP@50, and 0.692 mAP@50:95. On the held-out test split, it achieved 0.842 precision, 0.801 recall, 0.820 mAP@50, and 0.680 mAP@50:95. The small difference between validation and test mAP indicates that the model is not only fitting the validation split, although the confusion matrix still shows that some visually similar or lower-data classes need further cleanup and targeted data improvement.
+
 \section{Nutrition Mapping Results}
 
 The nutrition mapping results improved substantially compared with the earlier deployed-model-only mapping. Previously, fuzzy matching produced incorrect mappings such as \code{aloo_gobi} to a cauliflower dessert and \code{palak_paneer} to a generic cottage-cheese dish. The revised strategy maps these classes to more appropriate database entries and records source information for supplemental rows.
@@ -70,6 +76,8 @@ The project produced the following verifiable results:
 \begin{itemize}
     \item A complete 72-class Indian food dataset configuration.
     \item 48,693 exported image-label pairs in the balanced generated dataset.
+    \item A final YOLO11s detector with 0.830 validation mAP@50 and 0.820 held-out test mAP@50.
+    \item Held-out test mAP@50:95 of 0.680 for the 72-class detector.
     \item Visual verification artifacts covering all 72 classes.
     \item A SQLite nutrition database with 1,010 food records.
     \item A YOLO-to-database mapping table with 103 total mappings.

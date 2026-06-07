@@ -10,6 +10,12 @@ The dataset build script is located at \code{scripts/build_master_dataset.py}. I
 
 The final dataset contains 72 canonical classes. The generated balanced dataset contains 36,852 training image-label pairs, 5,922 validation pairs, and 5,919 test pairs. The total exported image-label pairs are 48,693. The larger secondary export retained in \code{data/master_dataset/} contains more aggressive train augmentation and is documented as an archived artifact.
 
+\section{Final YOLO Training Notebook}
+
+The final model training workflow is recorded in the final training notebook under \code{notebooks/}. The notebook is configured for Kaggle execution, loads the generated 72-class \code{data.yaml}, resumes the \code{yolo11s_indian_food} run from an existing checkpoint, and trains to 100 total epochs. The final resumed stage covers epochs 56 to 100 and uses YOLO11s with 640-pixel images, batch size 16, automatic mixed precision, checkpoint saving every 10 epochs, and plot generation enabled.
+
+The run used PyTorch 2.10.0 with CUDA 12.8 on a Tesla T4 GPU. The exported artifacts include \code{best.pt}, \code{last.pt}, checkpoint weights, training curves, precision-recall curves, confusion matrices, prediction batches, and \code{results.csv}. The best model file was also exported as \code{yolo11s_indian_food_best.pt}, which is the detector artifact used for final evaluation.
+
 \section{Visual Class Verification Implementation}
 
 To verify that class names correspond to actual images, a visual verification script was created at \code{scripts/verify_food_classes_with_images.py}. The script groups exported images by the canonical class suffix in the filename, samples four images per class, parses corresponding labels for object crops, and writes contact sheets. This step was useful because file counts alone cannot reveal whether a class name is visually believable. The original eight sheets were then split into sixteen half-sheets so the labels and sampled images remain readable in print. Figure \ref{fig:class-verification-half-one} and Figure \ref{fig:class-verification-half-sixteen} show the first and final half-sheets.
