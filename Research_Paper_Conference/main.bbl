@@ -21,44 +21,72 @@
 \providecommand{\BIBdecl}{\relax}
 \BIBdecl
 
-\bibitem{min2019food}
-W.~Min, S.~Jiang, L.~Liu, Y.~Rui, and R.~Jain, ``A survey on food computing,''
-  \emph{ACM Computing Surveys}, vol.~52, no.~5, pp. 1--36, 2019.
+\bibitem{indianfoodnet_2023}
+R.~Agarwal, T.~Choudhury, N.~J. Ahuja, and T.~Sarkar, ``{IndianFoodNet}:
+  Detecting indian food items using deep learning,'' \emph{International
+  Journal of Computational Methods and Experimental Measurements}, vol.~11,
+  no.~4, pp. 221--232, 2023.
 
-\bibitem{kawano2014foodcam}
-Y.~Kawano and K.~Yanai, ``Foodcam: A real-time food recognition system on a
-  smartphone,'' \emph{Multimedia Tools and Applications}, vol.~74, pp.
-  5263--5287, 2014.
+\bibitem{khana_dataset_2025}
+O.~Prabhu, ``Khana: A comprehensive {Indian} cuisine dataset,'' \emph{arXiv
+  preprint arXiv:2509.06006}, 2025.
 
-\bibitem{meyers2015im2calories}
-A.~Meyers, N.~Johnston, V.~Rathod, A.~Korattikara, A.~Gorban, N.~Silberman,
-  S.~Guadarrama, G.~Papandreou, J.~Huang, and K.~P. Murphy, ``Im2calories:
-  Towards an automated mobile vision food diary,'' \emph{Proceedings of the
-  IEEE International Conference on Computer Vision}, pp. 1233--1241, 2015.
+\bibitem{indian_thali_2025}
+Y.~Arora, A.~Arun, and C.~V. Jawahar, ``What is there in an {Indian Thali}?''
+  in \emph{Proceedings of the 16th Indian Conference on Computer Vision,
+  Graphics and Image Processing}, 2025.
 
-\bibitem{ren2015fasterrcnn}
-S.~Ren, K.~He, R.~Girshick, and J.~Sun, ``Faster {R-CNN}: Towards real-time
-  object detection with region proposal networks,'' \emph{Advances in Neural
-  Information Processing Systems}, vol.~28, 2015.
+\bibitem{lightweight_cnn_food_2022}
+R.~U. Haque, R.~H. Khan, A.~S.~M. Shihavuddin, M.~M.~M. Syeed, and M.~F. Uddin,
+  ``Lightweight and parameter-optimized real-time food calorie estimation from
+  images using {CNN}-based approach,'' \emph{Applied Sciences}, vol.~12,
+  no.~19, p. 9733, 2022.
 
-\bibitem{redmon2016yolo}
-J.~Redmon, S.~Divvala, R.~Girshick, and A.~Farhadi, ``You only look once:
-  Unified, real-time object detection,'' in \emph{Proceedings of the IEEE
-  Conference on Computer Vision and Pattern Recognition}, 2016, pp. 779--788.
+\bibitem{mobilenetv3_indian_food_2023}
+J.~Patel and K.~Modi, ``{Indian} food image classification and recognition with
+  transfer learning technique using {MobileNetV3} and data augmentation,'' in
+  \emph{Engineering Proceedings}, vol.~56, no.~1, 2023, p. 197.
 
-\bibitem{redmon2018yolov3}
-J.~Redmon and A.~Farhadi, ``{YOLOv3}: An incremental improvement,'' \emph{arXiv
-  preprint arXiv:1804.02767}, 2018.
+\bibitem{development_indb_2024}
+A.~Vijayakumar, H.~B. Dubasi, A.~Awasthi, and L.~M. Jaacks, ``Development of an
+  {Indian} food composition database,'' \emph{Current Developments in
+  Nutrition}, vol.~8, no.~7, p. 103790, 2024.
 
-\bibitem{ultralytics2024}
-{Ultralytics}, ``Ultralytics yolo documentation,'' 2024, software
-  documentation; accessed during project development.
+\bibitem{synergistic_frameworks_2025}
+``Synergistic frameworks for {Indian} food computing: An analysis of
+  nutritional and visual dataset compatibility,'' 2025.
 
-\bibitem{lin2014coco}
-T.-Y. Lin, M.~Maire, S.~Belongie, J.~Hays, P.~Perona, D.~Ramanan,
-  P.~Doll{\'a}r, and C.~L. Zitnick, ``Microsoft {COCO}: Common objects in
-  context,'' in \emph{European Conference on Computer Vision}.\hskip 1em plus
-  0.5em minus 0.4em\relax Springer, 2014, pp. 740--755.
+\bibitem{fkg_llm_2024}
+S.~K. Gupta, L.~Dey, P.~P. Das, G.~Trilok-Kumar, and R.~Jain, ``Enhancing
+  {FKG.in}: Automating {Indian} food composition analysis,'' \emph{arXiv
+  preprint arXiv:2412.05248}, 2024.
+
+\bibitem{nutrigen_2025}
+S.~Khamesian, A.~Arefeen, S.~M. Carpenter, and H.~Ghasemzadeh, ``{NutriGen}:
+  Personalized meal plan generator leveraging large language models to enhance
+  dietary and nutritional adherence,'' \emph{arXiv preprint arXiv:2502.20601},
+  2025.
+
+\bibitem{genai_meal_planning_2025}
+S.~Hussain, N.~Khan, S.~A.~A. Shah, S.~Bano, and A.~W. Khan, ``{AI}-driven
+  personalized meal planning: A web-based platform for tailored nutrition and
+  health management,'' \emph{International Journal of Computer Applications},
+  vol. 187, no.~57, pp. 17--29, 2025.
+
+\bibitem{diet_engine_2025}
+A.~M. Saad, M.~R.~H. Rahi, M.~M. Islam, and G.~Rabbani, ``Diet engine: A
+  real-time food nutrition assistant system for personalized dietary
+  guidance,'' \emph{Food Chemistry Advances}, vol.~7, p. 100978, 2025.
+
+\bibitem{chatgpt_nutrient_estimation_2025}
+C.~O'Hara, G.~Kent, A.~C. Flynn, E.~R. Gibney, and C.~M. Timon, ``An evaluation
+  of {ChatGPT} for nutrient content estimation from meal photographs,''
+  \emph{Nutrients}, vol.~17, no.~4, p. 607, 2025.
+
+\bibitem{roboflow_placeholder}
+{Roboflow Dataset Contributors}, ``Yolo-format indian food datasets used for
+  project dataset engineering,'' 2026, pLACEHOLDER BIBTEX ENTRY: replace with
+  exact source dataset URLs and access dates before final submission.
 
 \bibitem{indb_placeholder}
 {Indian Nutrient Database}, ``Indian nutrient database spreadsheet used in
@@ -68,23 +96,27 @@ T.-Y. Lin, M.~Maire, S.~Belongie, J.~Hays, P.~Perona, D.~Ramanan,
 
 \bibitem{fatsecret_bhakarwadi_2026}
 {FatSecret India}, ``Evolve bhakarwadi nutrition facts per 100 g,''
-  \url{https://www.fatsecret.co.in/calories-nutrition/evolve/bhakarwadi/100g},
-  2026, accessed 2026-06-06.
+  \href{https://www.fatsecret.co.in/calories-nutrition/evolve/bhakarwadi/100g}{Online
+  nutrition record}, 2026, accessed 2026-06-06.
 
 \bibitem{clearcals_ghevar_2026}
 {Clearcals}, ``Ghevar recipe calories and nutrition per 100 g,''
-  \url{https://clearcals.com/recipes/ghevar/}, 2026, accessed 2026-06-06.
+  \href{https://clearcals.com/recipes/ghevar/}{Online nutrition record}, 2026,
+  accessed 2026-06-06.
 
 \bibitem{clearcals_jalebi_2026}
 ------, ``Jalebi recipe calories and nutrition per 100 g,''
-  \url{https://clearcals.com/recipes/jalebi/}, 2026, accessed 2026-06-06.
+  \href{https://clearcals.com/recipes/jalebi/}{Online nutrition record}, 2026,
+  accessed 2026-06-06.
 
 \bibitem{clearcals_khandvi_2026}
 ------, ``Khandvi recipe calories and nutrition per 100 g,''
-  \url{https://clearcals.com/recipes/khandvi/}, 2026, accessed 2026-06-06.
+  \href{https://clearcals.com/recipes/khandvi/}{Online nutrition record}, 2026,
+  accessed 2026-06-06.
 
 \bibitem{clearcals_nandu_kari_2026}
 ------, ``Nandu kari recipe calories and nutrition per 100 g,''
-  \url{https://clearcals.com/recipes/nandu-kari/}, 2026, accessed 2026-06-06.
+  \href{https://clearcals.com/recipes/nandu-kari/}{Online nutrition record},
+  2026, accessed 2026-06-06.
 
 \end{thebibliography}

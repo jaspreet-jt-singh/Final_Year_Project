@@ -69,19 +69,6 @@ The macro engine returns target grams for each dietary goal and health condition
 
 The recommendation service produces three practical dietary suggestions based on detected foods and user profile. For example, if the detected meal is high in fried carbohydrates and the user chooses weight loss, the recommendation can advise smaller portions, additional protein, and lower-oil alternatives. If the user selects a diabetic profile, the advice can focus on carbohydrate moderation, fiber, and pairing with protein.
 
-\section{Summary of Results}
+\section{Result Synthesis}
 
-The project produced the following verifiable results:
-
-\begin{itemize}
-    \item A complete 72-class Indian food dataset configuration.
-    \item 48,693 exported image-label pairs in the balanced generated dataset.
-    \item A final YOLO11s detector with 0.830 validation mAP@50 and 0.820 held-out test mAP@50.
-    \item Held-out test mAP@50:95 of 0.680 for the 72-class detector.
-    \item Visual verification artifacts covering all 72 classes.
-    \item A SQLite nutrition database with 1,010 food records.
-    \item A YOLO-to-database mapping table with 103 total mappings.
-    \item Safe nutrition mappings for all 72 expanded dataset classes.
-    \item A FastAPI backend with image analysis, nutrition lookup, macro calculation, and recommendation endpoints.
-    \item A Next.js frontend with detection overlays, nutrition cards, serving controls, and recommendations.
-\end{itemize}
+Taken together, the results show that the project is more than a detector experiment. The dataset, model, nutrition database, backend, and frontend all connect into a working pipeline. The most important outcome is that the visual detector output is traceable to explicit nutrition records and user-facing macro guidance, while known weaknesses such as portion-size estimation and remaining annotation noise are kept visible for future work.

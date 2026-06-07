@@ -2,7 +2,9 @@
 
 This folder contains an IEEE conference-style LaTeX research paper for:
 
-**Nutrition-Aware Indian Food Recognition Using YOLO11s and Conservative Class-to-Database Mapping**
+**AI-Based Food Recognition with Nutrition-Aware Recommendations**
+
+The paper is intentionally compressed for a conference format. It focuses on the implemented project: YOLO-based Indian food detection, conservative nutrition mapping, macro calculation, serving adjustment, and nutrition-aware recommendations.
 
 ## Build
 
@@ -20,7 +22,7 @@ pdflatex main.tex
 - `main.tex`: paper source
 - `main.pdf`: compiled paper after build
 - `bibliography/references.bib`: BibTeX references
-- `figures/`: prototype, class verification, and YOLO11s result figures
+- `figures/`: prototype and YOLO11s result figures
 
 ## Before Submission
 

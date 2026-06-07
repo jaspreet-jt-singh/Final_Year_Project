@@ -18,23 +18,9 @@ The run used PyTorch 2.10.0 with CUDA 12.8 on a Tesla T4 GPU. The exported artif
 
 \section{Visual Class Verification Implementation}
 
-To verify that class names correspond to actual images, a visual verification script was created at \code{scripts/verify_food_classes_with_images.py}. The script groups exported images by the canonical class suffix in the filename, samples four images per class, parses corresponding labels for object crops, and writes contact sheets. This step was useful because file counts alone cannot reveal whether a class name is visually believable. The original eight sheets were then split into sixteen half-sheets so the labels and sampled images remain readable in print. Figure \ref{fig:class-verification-half-one} and Figure \ref{fig:class-verification-half-sixteen} show the first and final half-sheets.
+To verify that class names correspond to actual images, a visual verification script was created at \code{scripts/verify_food_classes_with_images.py}. The script groups exported images by the canonical class suffix in the filename, samples four images per class, parses corresponding labels for object crops, and writes contact sheets. This step was useful because file counts alone cannot reveal whether a class name is visually believable. The original eight sheets were then split into sixteen half-sheets so the labels and sampled images remain readable in print. The full half-sheet set and the detailed annotation-issue table are placed in Appendix A to avoid repeating the same visual material in the implementation chapter.
 
-\begin{figure}[H]
-\centering
-\includegraphics[width=0.94\textwidth,keepaspectratio]{class_verification_half_01.jpg}
-\caption{Visual class verification contact half-sheet 1}
-\label{fig:class-verification-half-one}
-\end{figure}
-
-\begin{figure}[H]
-\centering
-\includegraphics[width=0.94\textwidth,keepaspectratio]{class_verification_half_16.jpg}
-\caption{Visual class verification contact half-sheet 16}
-\label{fig:class-verification-half-sixteen}
-\end{figure}
-
-The visual review confirmed that all 72 classes have actual image samples and that the class-name list is aligned. Three sample-level annotation issues were found: one \code{jalebi} image that does not visually look like jalebi, one \code{kaara_chutney} box placed on a vada, and one \code{nandu_masala} box with extremely thin dimensions. These issues do not indicate class-order failure but should be cleaned in a future dataset revision.
+The visual review confirmed that all 72 classes have actual image samples and that the class-name list is aligned. The remaining issues are sample-level annotation problems rather than class-order failures, and they should be cleaned in a future dataset revision.
 
 \section{Nutrition Database Build Implementation}
 
