@@ -1,8 +1,10 @@
 \contentsline {chapter}{CERTIFICATE}{i}{chapter*.1}%
-\contentsline {chapter}{STUDENT DECLARATION}{ii}{chapter*.2}%
-\contentsline {chapter}{ACKNOWLEDGEMENTS}{iii}{chapter*.3}%
-\contentsline {chapter}{ABSTRACT}{iv}{chapter*.4}%
-\contentsline {chapter}{ABBREVIATIONS AND NOTATIONS}{xiii}{chapter*.8}%
+\contentsline {chapter}{STUDENT DECLARATION}{iii}{chapter*.2}%
+\contentsline {chapter}{ACKNOWLEDGEMENTS}{v}{chapter*.3}%
+\contentsline {chapter}{ABSTRACT}{vii}{chapter*.4}%
+\contentsline {chapter}{LIST OF FIGURES}{xiii}{section*.6}%
+\contentsline {chapter}{LIST OF TABLES}{xv}{section*.8}%
+\contentsline {chapter}{ABBREVIATIONS AND NOTATIONS}{xvii}{chapter*.10}%
 \contentsline {chapter}{\numberline {1}INTRODUCTION}{1}{chapter.1}%
 \contentsline {section}{\numberline {1.1}Overview}{1}{section.1.1}%
 \contentsline {section}{\numberline {1.2}Motivation}{2}{section.1.2}%
@@ -11,104 +13,104 @@
 \contentsline {section}{\numberline {1.5}Scope of the Project}{3}{section.1.5}%
 \contentsline {section}{\numberline {1.6}Major Contributions}{4}{section.1.6}%
 \contentsline {section}{\numberline {1.7}Report Organization}{5}{section.1.7}%
-\contentsline {chapter}{\numberline {2}LITERATURE REVIEW}{6}{chapter.2}%
-\contentsline {section}{\numberline {2.1}Scope of the Review}{6}{section.2.1}%
-\contentsline {section}{\numberline {2.2}Paper-wise Review}{6}{section.2.2}%
-\contentsline {subsection}{\numberline {2.2.1}IndianFoodNet: Detecting Indian Food Items Using Deep Learning}{6}{subsection.2.2.1}%
-\contentsline {subsection}{\numberline {2.2.2}Khana: A Comprehensive Indian Cuisine Dataset}{7}{subsection.2.2.2}%
-\contentsline {subsection}{\numberline {2.2.3}What is there in an Indian Thali?}{7}{subsection.2.2.3}%
-\contentsline {subsection}{\numberline {2.2.4}Single-item Training for Multi-dish Recognition}{8}{subsection.2.2.4}%
-\contentsline {subsection}{\numberline {2.2.5}Lightweight Real-time Food Calorie Estimation Using CNNs}{8}{subsection.2.2.5}%
-\contentsline {subsection}{\numberline {2.2.6}Indian Food Image Classification with MobileNetV3}{8}{subsection.2.2.6}%
-\contentsline {subsection}{\numberline {2.2.7}Development of an Indian Food Composition Database}{9}{subsection.2.2.7}%
-\contentsline {subsection}{\numberline {2.2.8}Synergistic Frameworks for Indian Food Computing}{9}{subsection.2.2.8}%
-\contentsline {subsection}{\numberline {2.2.9}Enhancing FKG.in}{9}{subsection.2.2.9}%
-\contentsline {subsection}{\numberline {2.2.10}Label AI}{10}{subsection.2.2.10}%
-\contentsline {subsection}{\numberline {2.2.11}Nutrition Information Estimation from Food Photos}{10}{subsection.2.2.11}%
-\contentsline {subsection}{\numberline {2.2.12}NutriGen}{10}{subsection.2.2.12}%
-\contentsline {subsection}{\numberline {2.2.13}LLMs and Computer Vision for Personalized Nutrition Advice}{11}{subsection.2.2.13}%
-\contentsline {subsection}{\numberline {2.2.14}AI-driven Personalized Meal Planning}{11}{subsection.2.2.14}%
-\contentsline {subsection}{\numberline {2.2.15}Diet Engine}{11}{subsection.2.2.15}%
-\contentsline {subsection}{\numberline {2.2.16}Smart Diet Planner}{12}{subsection.2.2.16}%
-\contentsline {subsection}{\numberline {2.2.17}Evaluation of ChatGPT for Nutrient Estimation from Meal Photographs}{12}{subsection.2.2.17}%
-\contentsline {subsection}{\numberline {2.2.18}Indian Food Classification and Dietary Recommendations Using CNNs}{12}{subsection.2.2.18}%
-\contentsline {section}{\numberline {2.3}Comparative Summary}{13}{section.2.3}%
-\contentsline {section}{\numberline {2.4}Research Gap}{16}{section.2.4}%
-\contentsline {chapter}{\numberline {3}METHODOLOGY}{17}{chapter.3}%
-\contentsline {section}{\numberline {3.1}Methodological Overview}{17}{section.3.1}%
-\contentsline {section}{\numberline {3.2}YOLO Detection Approach}{18}{section.3.2}%
-\contentsline {section}{\numberline {3.3}Source Dataset Collection}{19}{section.3.3}%
-\contentsline {section}{\numberline {3.4}Canonical Class Normalization}{19}{section.3.4}%
-\contentsline {section}{\numberline {3.5}YOLO Label Representation}{20}{section.3.5}%
-\contentsline {section}{\numberline {3.6}Dataset Splitting and Augmentation}{20}{section.3.6}%
-\contentsline {section}{\numberline {3.7}Nutrition Database Methodology}{21}{section.3.7}%
-\contentsline {section}{\numberline {3.8}Nutrition Mapping Methodology}{22}{section.3.8}%
-\contentsline {section}{\numberline {3.9}Macro Calculation Methodology}{22}{section.3.9}%
-\contentsline {section}{\numberline {3.10}Validation Methodology}{23}{section.3.10}%
-\contentsline {chapter}{\numberline {4}SYSTEM DESIGN}{24}{chapter.4}%
-\contentsline {section}{\numberline {4.1}Design Goals}{24}{section.4.1}%
-\contentsline {section}{\numberline {4.2}High-Level Architecture}{24}{section.4.2}%
-\contentsline {section}{\numberline {4.3}Runtime Data Flow}{25}{section.4.3}%
-\contentsline {section}{\numberline {4.4}Backend Design}{26}{section.4.4}%
-\contentsline {section}{\numberline {4.5}Frontend Design}{27}{section.4.5}%
-\contentsline {section}{\numberline {4.6}Database Design}{27}{section.4.6}%
-\contentsline {section}{\numberline {4.7}API Design}{28}{section.4.7}%
-\contentsline {section}{\numberline {4.8}Security and Validation Design}{29}{section.4.8}%
-\contentsline {section}{\numberline {4.9}Design Trade-Offs}{30}{section.4.9}%
-\contentsline {chapter}{\numberline {5}IMPLEMENTATION}{31}{chapter.5}%
-\contentsline {section}{\numberline {5.1}Development Environment}{31}{section.5.1}%
-\contentsline {section}{\numberline {5.2}Dataset Build Script}{31}{section.5.2}%
-\contentsline {section}{\numberline {5.3}Final YOLO Training Notebook}{32}{section.5.3}%
-\contentsline {section}{\numberline {5.4}Visual Class Verification Implementation}{32}{section.5.4}%
-\contentsline {section}{\numberline {5.5}Nutrition Database Build Implementation}{33}{section.5.5}%
-\contentsline {section}{\numberline {5.6}Vision Service Implementation}{33}{section.5.6}%
-\contentsline {section}{\numberline {5.7}Nutrition Service Implementation}{34}{section.5.7}%
-\contentsline {section}{\numberline {5.8}Recommendation and Macro Implementation}{34}{section.5.8}%
-\contentsline {section}{\numberline {5.9}Frontend Implementation}{34}{section.5.9}%
-\contentsline {section}{\numberline {5.10}Code Organization}{35}{section.5.10}%
-\contentsline {section}{\numberline {5.11}Implementation Challenges}{36}{section.5.11}%
-\contentsline {chapter}{\numberline {6}EXPERIMENTS AND VALIDATION}{37}{chapter.6}%
-\contentsline {section}{\numberline {6.1}Experimental Scope}{37}{section.6.1}%
-\contentsline {section}{\numberline {6.2}Dataset Validation}{38}{section.6.2}%
-\contentsline {section}{\numberline {6.3}YOLO Training and Detector Evaluation}{38}{section.6.3}%
-\contentsline {section}{\numberline {6.4}Class Verification Experiment}{42}{section.6.4}%
-\contentsline {section}{\numberline {6.5}Nutrition Database Validation}{42}{section.6.5}%
-\contentsline {section}{\numberline {6.6}Nutrition Mapping Coverage Experiment}{43}{section.6.6}%
-\contentsline {section}{\numberline {6.7}Service Lookup Validation}{44}{section.6.7}%
-\contentsline {section}{\numberline {6.8}Backend API Validation}{44}{section.6.8}%
-\contentsline {section}{\numberline {6.9}Frontend Workflow Validation}{45}{section.6.9}%
-\contentsline {section}{\numberline {6.10}Macro Calculation Validation}{45}{section.6.10}%
-\contentsline {section}{\numberline {6.11}Experimental Findings}{46}{section.6.11}%
-\contentsline {chapter}{\numberline {7}RESULTS}{47}{chapter.7}%
-\contentsline {section}{\numberline {7.1}Dataset Engineering Results}{47}{section.7.1}%
-\contentsline {section}{\numberline {7.2}Detector Training Results}{48}{section.7.2}%
-\contentsline {section}{\numberline {7.3}Nutrition Mapping Results}{48}{section.7.3}%
-\contentsline {section}{\numberline {7.4}Application Results}{49}{section.7.4}%
-\contentsline {section}{\numberline {7.5}Macro and Recommendation Results}{49}{section.7.5}%
-\contentsline {section}{\numberline {7.6}Result Synthesis}{50}{section.7.6}%
-\contentsline {chapter}{\numberline {8}DISCUSSION}{51}{chapter.8}%
-\contentsline {section}{\numberline {8.1}Interpretation of Results}{51}{section.8.1}%
-\contentsline {section}{\numberline {8.2}Strengths of the System}{51}{section.8.2}%
-\contentsline {section}{\numberline {8.3}Limitations}{52}{section.8.3}%
-\contentsline {section}{\numberline {8.4}Ethical and Practical Considerations}{53}{section.8.4}%
-\contentsline {section}{\numberline {8.5}Why Supplemental Rows Were Added}{53}{section.8.5}%
-\contentsline {section}{\numberline {8.6}Lessons Learned}{54}{section.8.6}%
-\contentsline {chapter}{\numberline {9}CONCLUSION}{55}{chapter.9}%
-\contentsline {chapter}{\numberline {10}FUTURE WORK}{57}{chapter.10}%
-\contentsline {section}{\numberline {10.1}Self-Trained Recommendation Model}{57}{section.10.1}%
-\contentsline {section}{\numberline {10.2}Portion Size Estimation}{57}{section.10.2}%
-\contentsline {section}{\numberline {10.3}Mobile Deployment}{58}{section.10.3}%
-\contentsline {section}{\numberline {10.4}Personalized Long-Term Tracking}{58}{section.10.4}%
-\contentsline {section}{\numberline {10.5}Clinical Safety and Explainability}{58}{section.10.5}%
-\contentsline {chapter}{\numberline {A}DATASET CLASSES AND NUTRITION MAPPINGS}{62}{appendix.A}%
-\contentsline {section}{\numberline {A.1}Expanded Dataset Class List}{62}{section.A.1}%
-\contentsline {section}{\numberline {A.2}Class-to-INDB Mapping Table}{62}{section.A.2}%
-\contentsline {section}{\numberline {A.3}Known Annotation Issues}{65}{section.A.3}%
-\contentsline {section}{\numberline {A.4}Visual Verification Sheet Set}{66}{section.A.4}%
-\contentsline {section}{\numberline {A.5}Per-Class Dataset Counts}{81}{section.A.5}%
-\contentsline {chapter}{\numberline {B}API RESPONSE EXAMPLES}{85}{appendix.B}%
-\contentsline {section}{\numberline {B.1}Analyze Food Response}{85}{section.B.1}%
-\contentsline {section}{\numberline {B.2}Macro Calculation Request}{86}{section.B.2}%
-\contentsline {section}{\numberline {B.3}Macro Calculation Response}{86}{section.B.3}%
-\contentsline {section}{\numberline {B.4}No Food Response}{87}{section.B.4}%
-\contentsline {section}{\numberline {B.5}Macro Target Reference Tables}{87}{section.B.5}%
+\contentsline {chapter}{\numberline {2}LITERATURE REVIEW}{7}{chapter.2}%
+\contentsline {section}{\numberline {2.1}Scope of the Review}{7}{section.2.1}%
+\contentsline {section}{\numberline {2.2}Paper-wise Review}{7}{section.2.2}%
+\contentsline {subsection}{\numberline {2.2.1}IndianFoodNet: Detecting Indian Food Items Using Deep Learning}{7}{subsection.2.2.1}%
+\contentsline {subsection}{\numberline {2.2.2}Khana: A Comprehensive Indian Cuisine Dataset}{8}{subsection.2.2.2}%
+\contentsline {subsection}{\numberline {2.2.3}What is there in an Indian Thali?}{8}{subsection.2.2.3}%
+\contentsline {subsection}{\numberline {2.2.4}Single-item Training for Multi-dish Recognition}{9}{subsection.2.2.4}%
+\contentsline {subsection}{\numberline {2.2.5}Lightweight Real-time Food Calorie Estimation Using CNNs}{9}{subsection.2.2.5}%
+\contentsline {subsection}{\numberline {2.2.6}Indian Food Image Classification with MobileNetV3}{9}{subsection.2.2.6}%
+\contentsline {subsection}{\numberline {2.2.7}Development of an Indian Food Composition Database}{10}{subsection.2.2.7}%
+\contentsline {subsection}{\numberline {2.2.8}Synergistic Frameworks for Indian Food Computing}{10}{subsection.2.2.8}%
+\contentsline {subsection}{\numberline {2.2.9}Enhancing FKG.in}{10}{subsection.2.2.9}%
+\contentsline {subsection}{\numberline {2.2.10}Label AI}{11}{subsection.2.2.10}%
+\contentsline {subsection}{\numberline {2.2.11}Nutrition Information Estimation from Food Photos}{11}{subsection.2.2.11}%
+\contentsline {subsection}{\numberline {2.2.12}NutriGen}{11}{subsection.2.2.12}%
+\contentsline {subsection}{\numberline {2.2.13}LLMs and Computer Vision for Personalized Nutrition Advice}{12}{subsection.2.2.13}%
+\contentsline {subsection}{\numberline {2.2.14}AI-driven Personalized Meal Planning}{12}{subsection.2.2.14}%
+\contentsline {subsection}{\numberline {2.2.15}Diet Engine}{12}{subsection.2.2.15}%
+\contentsline {subsection}{\numberline {2.2.16}Smart Diet Planner}{13}{subsection.2.2.16}%
+\contentsline {subsection}{\numberline {2.2.17}Evaluation of ChatGPT for Nutrient Estimation from Meal Photographs}{13}{subsection.2.2.17}%
+\contentsline {subsection}{\numberline {2.2.18}Indian Food Classification and Dietary Recommendations Using CNNs}{13}{subsection.2.2.18}%
+\contentsline {section}{\numberline {2.3}Comparative Summary}{14}{section.2.3}%
+\contentsline {section}{\numberline {2.4}Research Gap}{17}{section.2.4}%
+\contentsline {chapter}{\numberline {3}METHODOLOGY}{19}{chapter.3}%
+\contentsline {section}{\numberline {3.1}Methodological Overview}{19}{section.3.1}%
+\contentsline {section}{\numberline {3.2}YOLO Detection Approach}{20}{section.3.2}%
+\contentsline {section}{\numberline {3.3}Source Dataset Collection}{21}{section.3.3}%
+\contentsline {section}{\numberline {3.4}Canonical Class Normalization}{21}{section.3.4}%
+\contentsline {section}{\numberline {3.5}YOLO Label Representation}{22}{section.3.5}%
+\contentsline {section}{\numberline {3.6}Dataset Splitting and Augmentation}{22}{section.3.6}%
+\contentsline {section}{\numberline {3.7}Nutrition Database Methodology}{23}{section.3.7}%
+\contentsline {section}{\numberline {3.8}Nutrition Mapping Methodology}{24}{section.3.8}%
+\contentsline {section}{\numberline {3.9}Macro Calculation Methodology}{24}{section.3.9}%
+\contentsline {section}{\numberline {3.10}Validation Methodology}{25}{section.3.10}%
+\contentsline {chapter}{\numberline {4}SYSTEM DESIGN}{27}{chapter.4}%
+\contentsline {section}{\numberline {4.1}Design Goals}{27}{section.4.1}%
+\contentsline {section}{\numberline {4.2}High-Level Architecture}{27}{section.4.2}%
+\contentsline {section}{\numberline {4.3}Runtime Data Flow}{28}{section.4.3}%
+\contentsline {section}{\numberline {4.4}Backend Design}{29}{section.4.4}%
+\contentsline {section}{\numberline {4.5}Frontend Design}{30}{section.4.5}%
+\contentsline {section}{\numberline {4.6}Database Design}{30}{section.4.6}%
+\contentsline {section}{\numberline {4.7}API Design}{31}{section.4.7}%
+\contentsline {section}{\numberline {4.8}Security and Validation Design}{32}{section.4.8}%
+\contentsline {section}{\numberline {4.9}Design Trade-Offs}{33}{section.4.9}%
+\contentsline {chapter}{\numberline {5}IMPLEMENTATION}{35}{chapter.5}%
+\contentsline {section}{\numberline {5.1}Development Environment}{35}{section.5.1}%
+\contentsline {section}{\numberline {5.2}Dataset Build Script}{35}{section.5.2}%
+\contentsline {section}{\numberline {5.3}Final YOLO Training Notebook}{36}{section.5.3}%
+\contentsline {section}{\numberline {5.4}Visual Class Verification Implementation}{36}{section.5.4}%
+\contentsline {section}{\numberline {5.5}Nutrition Database Build Implementation}{37}{section.5.5}%
+\contentsline {section}{\numberline {5.6}Vision Service Implementation}{37}{section.5.6}%
+\contentsline {section}{\numberline {5.7}Nutrition Service Implementation}{38}{section.5.7}%
+\contentsline {section}{\numberline {5.8}Recommendation and Macro Implementation}{38}{section.5.8}%
+\contentsline {section}{\numberline {5.9}Frontend Implementation}{38}{section.5.9}%
+\contentsline {section}{\numberline {5.10}Code Organization}{39}{section.5.10}%
+\contentsline {section}{\numberline {5.11}Implementation Challenges}{40}{section.5.11}%
+\contentsline {chapter}{\numberline {6}EXPERIMENTS AND VALIDATION}{41}{chapter.6}%
+\contentsline {section}{\numberline {6.1}Experimental Scope}{41}{section.6.1}%
+\contentsline {section}{\numberline {6.2}Dataset Validation}{42}{section.6.2}%
+\contentsline {section}{\numberline {6.3}YOLO Training and Detector Evaluation}{42}{section.6.3}%
+\contentsline {section}{\numberline {6.4}Class Verification Experiment}{46}{section.6.4}%
+\contentsline {section}{\numberline {6.5}Nutrition Database Validation}{46}{section.6.5}%
+\contentsline {section}{\numberline {6.6}Nutrition Mapping Coverage Experiment}{47}{section.6.6}%
+\contentsline {section}{\numberline {6.7}Service Lookup Validation}{48}{section.6.7}%
+\contentsline {section}{\numberline {6.8}Backend API Validation}{48}{section.6.8}%
+\contentsline {section}{\numberline {6.9}Frontend Workflow Validation}{49}{section.6.9}%
+\contentsline {section}{\numberline {6.10}Macro Calculation Validation}{49}{section.6.10}%
+\contentsline {section}{\numberline {6.11}Experimental Findings}{50}{section.6.11}%
+\contentsline {chapter}{\numberline {7}RESULTS}{51}{chapter.7}%
+\contentsline {section}{\numberline {7.1}Dataset Engineering Results}{51}{section.7.1}%
+\contentsline {section}{\numberline {7.2}Detector Training Results}{52}{section.7.2}%
+\contentsline {section}{\numberline {7.3}Nutrition Mapping Results}{52}{section.7.3}%
+\contentsline {section}{\numberline {7.4}Application Results}{53}{section.7.4}%
+\contentsline {section}{\numberline {7.5}Macro and Recommendation Results}{53}{section.7.5}%
+\contentsline {section}{\numberline {7.6}Result Synthesis}{54}{section.7.6}%
+\contentsline {chapter}{\numberline {8}DISCUSSION}{55}{chapter.8}%
+\contentsline {section}{\numberline {8.1}Interpretation of Results}{55}{section.8.1}%
+\contentsline {section}{\numberline {8.2}Strengths of the System}{55}{section.8.2}%
+\contentsline {section}{\numberline {8.3}Limitations}{56}{section.8.3}%
+\contentsline {section}{\numberline {8.4}Ethical and Practical Considerations}{57}{section.8.4}%
+\contentsline {section}{\numberline {8.5}Why Supplemental Rows Were Added}{57}{section.8.5}%
+\contentsline {section}{\numberline {8.6}Lessons Learned}{58}{section.8.6}%
+\contentsline {chapter}{\numberline {9}CONCLUSION}{59}{chapter.9}%
+\contentsline {chapter}{\numberline {10}FUTURE WORK}{61}{chapter.10}%
+\contentsline {section}{\numberline {10.1}Self-Trained Recommendation Model}{61}{section.10.1}%
+\contentsline {section}{\numberline {10.2}Portion Size Estimation}{61}{section.10.2}%
+\contentsline {section}{\numberline {10.3}Mobile Deployment}{62}{section.10.3}%
+\contentsline {section}{\numberline {10.4}Personalized Long-Term Tracking}{62}{section.10.4}%
+\contentsline {section}{\numberline {10.5}Clinical Safety and Explainability}{62}{section.10.5}%
+\contentsline {chapter}{\numberline {A}DATASET CLASSES AND NUTRITION MAPPINGS}{67}{appendix.A}%
+\contentsline {section}{\numberline {A.1}Expanded Dataset Class List}{67}{section.A.1}%
+\contentsline {section}{\numberline {A.2}Class-to-INDB Mapping Table}{67}{section.A.2}%
+\contentsline {section}{\numberline {A.3}Known Annotation Issues}{70}{section.A.3}%
+\contentsline {section}{\numberline {A.4}Visual Verification Sheet Set}{71}{section.A.4}%
+\contentsline {section}{\numberline {A.5}Per-Class Dataset Counts}{86}{section.A.5}%
+\contentsline {chapter}{\numberline {B}API RESPONSE EXAMPLES}{91}{appendix.B}%
+\contentsline {section}{\numberline {B.1}Analyze Food Response}{91}{section.B.1}%
+\contentsline {section}{\numberline {B.2}Macro Calculation Request}{92}{section.B.2}%
+\contentsline {section}{\numberline {B.3}Macro Calculation Response}{92}{section.B.3}%
+\contentsline {section}{\numberline {B.4}No Food Response}{93}{section.B.4}%
+\contentsline {section}{\numberline {B.5}Macro Target Reference Tables}{93}{section.B.5}%

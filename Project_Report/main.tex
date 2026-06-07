@@ -124,51 +124,75 @@
     sensitive=true
 }
 
+\newcommand{\cleartooddpage}{%
+    \clearpage
+    \ifodd\value{page}%
+    \else
+        \thispagestyle{empty}%
+        \null
+        \clearpage
+    \fi
+}
+\newcommand{\insertblankpage}{%
+    \clearpage
+    \thispagestyle{empty}%
+    \null
+    \clearpage
+}
+\newcommand{\inputonoddpage}[1]{%
+    \cleartooddpage
+    \input{#1}%
+}
+
 \begin{document}
 
 \hypersetup{pageanchor=false}
 \pagenumbering{gobble}
 \input{frontmatter/title_page}
-\cleardoublepage
+\insertblankpage
 \hypersetup{pageanchor=true}
 \pagenumbering{roman}
 \setcounter{page}{1}
 \input{frontmatter/certificate}
-\cleardoublepage
+\cleartooddpage
 \input{frontmatter/declaration}
-\cleardoublepage
+\cleartooddpage
 \input{frontmatter/acknowledgement}
-\cleardoublepage
+\cleartooddpage
 \input{frontmatter/abstract}
-\cleardoublepage
+\cleartooddpage
 
 \tableofcontents
-\cleardoublepage
+\cleartooddpage
+\phantomsection
+\addcontentsline{toc}{chapter}{LIST OF FIGURES}
 \listoffigures
-\cleardoublepage
+\cleartooddpage
+\phantomsection
+\addcontentsline{toc}{chapter}{LIST OF TABLES}
 \listoftables
-\cleardoublepage
+\cleartooddpage
 \input{frontmatter/abbreviations}
-\cleardoublepage
+\cleartooddpage
 
 \pagenumbering{arabic}
-\input{chapters/introduction}
-\input{chapters/literature_review}
-\input{chapters/methodology}
-\input{chapters/system_design}
-\input{chapters/implementation}
-\input{chapters/experiments}
-\input{chapters/results}
-\input{chapters/discussion}
-\input{chapters/conclusion}
-\input{chapters/future_work}
+\inputonoddpage{chapters/introduction}
+\inputonoddpage{chapters/literature_review}
+\inputonoddpage{chapters/methodology}
+\inputonoddpage{chapters/system_design}
+\inputonoddpage{chapters/implementation}
+\inputonoddpage{chapters/experiments}
+\inputonoddpage{chapters/results}
+\inputonoddpage{chapters/discussion}
+\inputonoddpage{chapters/conclusion}
+\inputonoddpage{chapters/future_work}
 
-\cleardoublepage
+\cleartooddpage
 \bibliographystyle{IEEEtran}
 \bibliography{bibliography/references}
 
 \appendix
-\input{appendices/appendix_a}
-\input{appendices/appendix_b}
+\inputonoddpage{appendices/appendix_a}
+\inputonoddpage{appendices/appendix_b}
 
 \end{document}

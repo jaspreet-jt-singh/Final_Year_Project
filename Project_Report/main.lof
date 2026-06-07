@@ -1,40 +1,40 @@
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {1.1}{\ignorespaces End-to-end workflow of the implemented food recognition and nutrition system}}{2}{figure.caption.11}%
+\contentsline {figure}{\numberline {1.1}{\ignorespaces End-to-end workflow of the implemented food recognition and nutrition system}}{2}{figure.caption.13}%
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {3.1}{\ignorespaces Methodological workflow for dataset, model, nutrition, backend, and frontend integration}}{18}{figure.caption.12}%
+\contentsline {figure}{\numberline {3.1}{\ignorespaces Methodological workflow for dataset, model, nutrition, backend, and frontend integration}}{20}{figure.caption.14}%
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {4.1}{\ignorespaces Layered architecture of the food recognition and nutrition system}}{25}{figure.caption.15}%
-\contentsline {figure}{\numberline {4.2}{\ignorespaces Runtime request-response flow}}{26}{figure.caption.16}%
-\contentsline {figure}{\numberline {4.3}{\ignorespaces Entity relationship used for class-to-nutrition lookup}}{28}{figure.caption.18}%
+\contentsline {figure}{\numberline {4.1}{\ignorespaces Layered architecture of the food recognition and nutrition system}}{28}{figure.caption.17}%
+\contentsline {figure}{\numberline {4.2}{\ignorespaces Runtime request-response flow}}{29}{figure.caption.18}%
+\contentsline {figure}{\numberline {4.3}{\ignorespaces Entity relationship used for class-to-nutrition lookup}}{31}{figure.caption.20}%
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {5.1}{\ignorespaces Frontend detection overlay showing Bhatura and Chole detections}}{35}{figure.caption.20}%
+\contentsline {figure}{\numberline {5.1}{\ignorespaces Frontend detection overlay showing Bhatura and Chole detections}}{39}{figure.caption.22}%
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {6.1}{\ignorespaces Verified system-level coverage used for validation}}{37}{figure.caption.22}%
-\contentsline {figure}{\numberline {6.2}{\ignorespaces YOLO11s final training curves from the resumed 72-class run}}{39}{figure.caption.25}%
-\contentsline {figure}{\numberline {6.3}{\ignorespaces Ultralytics result plot for the final YOLO11s run}}{40}{figure.caption.26}%
-\contentsline {figure}{\numberline {6.4}{\ignorespaces Normalized confusion matrix for the YOLO11s held-out test evaluation}}{41}{figure.caption.28}%
-\contentsline {figure}{\numberline {6.5}{\ignorespaces Sample YOLO11s predictions from the held-out test split}}{41}{figure.caption.29}%
-\contentsline {figure}{\numberline {6.6}{\ignorespaces Frontend workflow checks used during qualitative validation}}{45}{figure.caption.35}%
-\addvspace {10\p@ }
-\addvspace {10\p@ }
+\contentsline {figure}{\numberline {6.1}{\ignorespaces Verified system-level coverage used for validation}}{41}{figure.caption.24}%
+\contentsline {figure}{\numberline {6.2}{\ignorespaces YOLO11s final training curves from the resumed 72-class run}}{43}{figure.caption.27}%
+\contentsline {figure}{\numberline {6.3}{\ignorespaces Ultralytics result plot for the final YOLO11s run}}{44}{figure.caption.28}%
+\contentsline {figure}{\numberline {6.4}{\ignorespaces Normalized confusion matrix for the YOLO11s held-out test evaluation}}{45}{figure.caption.30}%
+\contentsline {figure}{\numberline {6.5}{\ignorespaces Sample YOLO11s predictions from the held-out test split}}{45}{figure.caption.31}%
+\contentsline {figure}{\numberline {6.6}{\ignorespaces Frontend workflow checks used during qualitative validation}}{49}{figure.caption.37}%
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {A.1}{\ignorespaces Visual verification half-sheet 1}}{66}{figure.caption.40}%
-\contentsline {figure}{\numberline {A.2}{\ignorespaces Visual verification half-sheet 2}}{67}{figure.caption.41}%
-\contentsline {figure}{\numberline {A.3}{\ignorespaces Visual verification half-sheet 3}}{68}{figure.caption.42}%
-\contentsline {figure}{\numberline {A.4}{\ignorespaces Visual verification half-sheet 4}}{69}{figure.caption.43}%
-\contentsline {figure}{\numberline {A.5}{\ignorespaces Visual verification half-sheet 5}}{70}{figure.caption.44}%
-\contentsline {figure}{\numberline {A.6}{\ignorespaces Visual verification half-sheet 6}}{71}{figure.caption.45}%
-\contentsline {figure}{\numberline {A.7}{\ignorespaces Visual verification half-sheet 7}}{72}{figure.caption.46}%
-\contentsline {figure}{\numberline {A.8}{\ignorespaces Visual verification half-sheet 8}}{73}{figure.caption.47}%
-\contentsline {figure}{\numberline {A.9}{\ignorespaces Visual verification half-sheet 9}}{74}{figure.caption.48}%
-\contentsline {figure}{\numberline {A.10}{\ignorespaces Visual verification half-sheet 10}}{75}{figure.caption.49}%
-\contentsline {figure}{\numberline {A.11}{\ignorespaces Visual verification half-sheet 11}}{76}{figure.caption.50}%
-\contentsline {figure}{\numberline {A.12}{\ignorespaces Visual verification half-sheet 12}}{77}{figure.caption.51}%
-\contentsline {figure}{\numberline {A.13}{\ignorespaces Visual verification half-sheet 13}}{78}{figure.caption.52}%
-\contentsline {figure}{\numberline {A.14}{\ignorespaces Visual verification half-sheet 14}}{79}{figure.caption.53}%
-\contentsline {figure}{\numberline {A.15}{\ignorespaces Visual verification half-sheet 15}}{80}{figure.caption.54}%
-\contentsline {figure}{\numberline {A.16}{\ignorespaces Visual verification half-sheet 16}}{81}{figure.caption.55}%
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {A.1}{\ignorespaces Visual verification half-sheet 1}}{71}{figure.caption.42}%
+\contentsline {figure}{\numberline {A.2}{\ignorespaces Visual verification half-sheet 2}}{72}{figure.caption.43}%
+\contentsline {figure}{\numberline {A.3}{\ignorespaces Visual verification half-sheet 3}}{73}{figure.caption.44}%
+\contentsline {figure}{\numberline {A.4}{\ignorespaces Visual verification half-sheet 4}}{74}{figure.caption.45}%
+\contentsline {figure}{\numberline {A.5}{\ignorespaces Visual verification half-sheet 5}}{75}{figure.caption.46}%
+\contentsline {figure}{\numberline {A.6}{\ignorespaces Visual verification half-sheet 6}}{76}{figure.caption.47}%
+\contentsline {figure}{\numberline {A.7}{\ignorespaces Visual verification half-sheet 7}}{77}{figure.caption.48}%
+\contentsline {figure}{\numberline {A.8}{\ignorespaces Visual verification half-sheet 8}}{78}{figure.caption.49}%
+\contentsline {figure}{\numberline {A.9}{\ignorespaces Visual verification half-sheet 9}}{79}{figure.caption.50}%
+\contentsline {figure}{\numberline {A.10}{\ignorespaces Visual verification half-sheet 10}}{80}{figure.caption.51}%
+\contentsline {figure}{\numberline {A.11}{\ignorespaces Visual verification half-sheet 11}}{81}{figure.caption.52}%
+\contentsline {figure}{\numberline {A.12}{\ignorespaces Visual verification half-sheet 12}}{82}{figure.caption.53}%
+\contentsline {figure}{\numberline {A.13}{\ignorespaces Visual verification half-sheet 13}}{83}{figure.caption.54}%
+\contentsline {figure}{\numberline {A.14}{\ignorespaces Visual verification half-sheet 14}}{84}{figure.caption.55}%
+\contentsline {figure}{\numberline {A.15}{\ignorespaces Visual verification half-sheet 15}}{85}{figure.caption.56}%
+\contentsline {figure}{\numberline {A.16}{\ignorespaces Visual verification half-sheet 16}}{86}{figure.caption.57}%
 \addvspace {10\p@ }
