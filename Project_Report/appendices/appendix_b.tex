@@ -2,7 +2,7 @@
 
 \section{Analyze Food Response}
 
-The following listing shows the simplified structure of a successful image analysis response.
+The following listing shows the simplified structure of a successful image analysis response. The actual backend response follows this structure so that the frontend can render detection boxes, nutrition cards, and macro totals from predictable fields.
 
 \begin{lstlisting}[language=json,caption={Simplified food analysis response},label={lst:analysis-response}]
 {
@@ -75,7 +75,7 @@ The following listing shows the simplified structure of a successful image analy
 
 \section{Macro Target Reference Tables}
 
-The following tables show the macro targets generated for a 2,000 kcal daily target. The backend normalizes goal and health-condition modifiers before converting calories to grams.
+The following tables show the macro targets generated for a 2,000 kcal daily target. The backend normalizes goal and health-condition modifiers before converting calories to grams. These tables were included as reference outputs so that the macro calculation logic can be checked without running the application.
 
 \begin{table}[H]
 \centering

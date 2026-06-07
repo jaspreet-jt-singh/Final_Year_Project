@@ -2,11 +2,11 @@
 
 \section{Expanded Dataset Class List}
 
-The final dataset contains 72 canonical classes. The class list is stored in the generated dataset configuration file, and visual verification confirmed that every class has image samples. The complete class set appears in the mapping table and the per-class count table below.
+The final dataset contains 72 canonical classes. The class list is stored in the generated dataset configuration file, and visual verification confirmed that every class has image samples. The complete class set appears in the mapping table and the per-class count table below so that the dataset used for training can be checked directly from the report.
 
 \section{Class-to-INDB Mapping Table}
 
-Table \ref{tab:full-mapping} lists the database food name used for each dataset class. Most rows come from INDB. The few classes absent from the available INDB sheet use verified supplemental rows, as noted in the project database.
+Table \ref{tab:full-mapping} lists the database food name used for each dataset class. Most rows come from INDB. The few classes absent from the available INDB sheet use verified supplemental rows, as noted in the project database. Including the table in the appendix makes the nutrition assumptions visible instead of leaving them only inside the generated SQLite file.
 
 \begingroup
 \small
@@ -120,7 +120,7 @@ train32747-nandu-masala label & Full image is crab, but the bounding box is extr
 
 \section{Visual Verification Sheet Set}
 
-The following figures reproduce the complete visual verification sheet set. The original eight contact sheets were divided into top and bottom halves, producing sixteen larger half-sheets for clearer reading in the printed report. The sheets were generated from actual dataset files, with sampled full images and label-based crops used to check whether the class names matched the visible food items.
+The following figures reproduce the complete visual verification sheet set. The original eight contact sheets were divided into top and bottom halves, producing sixteen larger half-sheets for clearer reading in the printed report. The sheets were generated from actual dataset files, with sampled full images and label-based crops used to check whether the class names matched the visible food items. These sheets were useful during review because they gave a quick visual check of the class list without opening the dataset folder manually.
 
 \begin{figure}[H]
 \centering

@@ -4,9 +4,13 @@
 
 The system was designed around five practical goals: usability, modularity, traceable data flow, local deployability, and extensibility. Usability means that a user should be able to upload a food image and understand the result without knowing how the model works. Modularity keeps dataset building, model inference, nutrition lookup, recommendation generation, and interface rendering separate enough to debug independently. Traceable data flow makes detected labels, confidence scores, bounding boxes, and nutrition sources visible instead of hiding them inside the backend. Local deployability keeps the prototype easy to run on a developer machine. Extensibility leaves room for new classes, improved models, and better nutrition sources later.
 
+These goals came from the way the project evolved. Early testing showed that a food-recognition result is difficult to trust if the label, confidence score, and nutrition source are not visible together. The design therefore avoids treating the model as a black box. Each layer returns structured information that can be checked during development and displayed clearly in the frontend.
+
 \section{High-Level Architecture}
 
 The project follows a layered architecture because each part of the system has a different responsibility. The data layer contains source datasets, the merged YOLO dataset, the INDB spreadsheet, and the SQLite nutrition database. The AI layer contains the YOLO model and inference service. The backend layer exposes APIs and coordinates the services. The frontend layer provides the user interaction. Figure \ref{fig:system-architecture} shows the high-level architecture.
+
+This layering also reduced debugging time. When a wrong macro value appeared, it could be checked against the mapping table without retraining the detector. When the frontend display looked incorrect, the backend JSON response could be inspected separately. This separation made the project easier to complete as a full-stack application rather than as one large script.
 
 \begin{figure}[H]
 \centering
@@ -33,6 +37,8 @@ The project follows a layered architecture because each part of the system has a
 \section{Runtime Data Flow}
 
 The runtime flow begins when the user uploads an image. The frontend forwards the raw image to the backend. The backend validates the upload, sends it to the vision service, receives detected objects, and looks up nutrition for each detected label. The response includes image dimensions, bounding boxes, labels, confidence values, macro values, and nutrition source metadata. The frontend then renders the image with boxes and displays nutrition cards, so the user can see both the visual prediction and the nutrition consequence of that prediction.
+
+The response format was kept detailed on purpose. During testing, it was not enough to know that the application had detected a food item. The team also needed to check where the box was drawn, how confident the model was, which database row was selected, and whether the macro values came from INDB or a supplemental source.
 
 \begin{figure}[H]
 \centering
@@ -72,13 +78,13 @@ The backend is implemented with FastAPI, an ASGI-compatible Python framework sui
     \item \textbf{RecommendationService}: computes goal and health-condition context and generates dietary suggestions.
 \end{itemize}
 
-The backend design separates the endpoint layer from service logic. This makes it easier to test nutrition lookup without running image inference, and easier to test macro calculation without uploading files.
+The backend design separates the endpoint layer from service logic. This makes it easier to test nutrition lookup without running image inference, and easier to test macro calculation without uploading files. This separation was useful when debugging the nutrition layer, because lookup errors could be reproduced using a single food name instead of repeating the complete image-upload workflow.
 
 \section{Frontend Design}
 
 The frontend is built with Next.js 14 and React \cite{nextjs2024}. It provides a single primary workflow: upload image, analyze, inspect detections, adjust serving estimates, review macro impact, and request recommendations. The frontend state is organized around the image analysis result, selected goal, target calories, selected health condition, and macro totals.
 
-The user interface avoids a marketing-style landing page. The first screen is the actual tool: upload controls, user nutrition context, and result panels. This is appropriate because the application is an operational nutrition assistant, not a promotional website.
+The user interface avoids a marketing-style landing page. The first screen is the actual tool: upload controls, user nutrition context, and result panels. This is appropriate because the application is an operational nutrition assistant, not a promotional website. During testing, the most useful interface behaviour was the ability to inspect the uploaded image and nutrition cards side by side, since this quickly showed whether the visual prediction and database output agreed with each other.
 
 \section{Database Design}
 
@@ -102,7 +108,7 @@ Table & Key columns & Purpose\\
 \endgroup
 \end{table}
 
-The database is intentionally simple. A heavier database server would add setup work without improving the core prototype. Since the nutrition data is mostly read-only at runtime, SQLite is sufficient and keeps the project easy to run locally.
+The database is intentionally simple. A heavier database server would add setup work without improving the core prototype. Since the nutrition data is mostly read-only at runtime, SQLite is sufficient and keeps the project easy to run locally. It also makes the generated database file easy to inspect after rebuilding the mapping table.
 
 \begin{figure}[H]
 \centering
@@ -128,7 +134,7 @@ The database is intentionally simple. A heavier database server would add setup 
 
 \section{API Design}
 
-The API design exposes endpoints for health checks, image analysis, nutrition testing, nutrition validation, macro calculation, goal metadata, health-condition metadata, and recommendations. Table \ref{tab:api-design} lists the implemented endpoints.
+The API design exposes endpoints for health checks, image analysis, nutrition testing, nutrition validation, macro calculation, goal metadata, health-condition metadata, and recommendations. The additional testing and validation endpoints were kept because they helped verify the system during development and are useful for future maintenance. Table \ref{tab:api-design} lists the implemented endpoints.
 
 \begin{table}[H]
 \centering
@@ -159,8 +165,10 @@ Endpoint & Method & Purpose\\
 
 The system validates upload type, empty uploads, maximum file size, and service readiness. The backend enforces a maximum image upload size of 10 MB. Rate limiting is implemented for the food analysis endpoint to avoid repeated heavy inference calls. Secrets such as the Groq API key are loaded from environment variables and are not documented verbatim in the report.
 
+These checks are basic, but they are important for a working prototype. Without them, a non-image file, an empty upload, or an unloaded model can produce unclear errors in the frontend. Returning structured failures makes the application easier to test and prevents the user interface from showing incomplete nutrition results.
+
 \section{Design Trade-Offs}
 
 The design uses per-100-gram nutrition values rather than automatic portion estimation. This choice limits exact calorie accuracy but improves reliability because monocular portion estimation requires plate scale, camera distance, depth, and food volume assumptions. The system instead provides serving multipliers in the frontend, allowing the user to adjust values interactively when the displayed serving is too small or too large.
 
-The design also keeps explicit nutrition mappings in the database build process. This is less automatic than fuzzy matching, but it is safer for nutrition applications. Wrong nutrition values can be more harmful than missing nutrition values; therefore, classes without safe INDB rows are handled only through verified supplemental entries with recorded source metadata.
+The design also keeps explicit nutrition mappings in the database build process. This is less automatic than fuzzy matching, but it is safer for nutrition applications. Wrong nutrition values can be more harmful than missing nutrition values; therefore, classes without safe INDB rows are handled only through verified supplemental entries with recorded source metadata. This trade-off makes the prototype slightly more manual to maintain, but it gives better control over a health-related output.

@@ -4,20 +4,20 @@
 
 The current prototype uses a language model to generate natural-language dietary suggestions from detected foods, macro values, goals, and health conditions. A future version should replace this dependency with a self-trained recommendation model. The model can be trained on curated Indian meal patterns, nutrition rules, health-condition constraints, and expert-reviewed recommendation examples. This would make the recommendation layer more controllable, easier to validate, and less dependent on external LLM services.
 
-The self-trained model should receive structured inputs from the existing backend, including detected food classes, calories, protein, carbohydrates, fat, serving estimates, user goal, calorie target, and health profile. Its output should be constrained to safe dietary suggestions and should include confidence or rule-trace information so that users can understand why a recommendation was produced.
+The self-trained model should receive structured inputs from the existing backend, including detected food classes, calories, protein, carbohydrates, fat, serving estimates, user goal, calorie target, and health profile. Its output should be constrained to safe dietary suggestions and should include confidence or rule-trace information so that users can understand why a recommendation was produced. This would also make testing easier because the same input profile should produce consistent and reviewable advice.
 
 \section{Portion Size Estimation}
 
-The current system reports nutrition per 100 grams and allows serving adjustment. Future versions should estimate portion size using reference objects, depth estimation, segmentation masks, or plate-size assumptions. Instance segmentation could improve food-region estimation compared with bounding boxes, especially for rice, chutneys, and mixed curries.
+The current system reports nutrition per 100 grams and allows serving adjustment. Future versions should estimate portion size using reference objects, depth estimation, segmentation masks, or plate-size assumptions. Instance segmentation could improve food-region estimation compared with bounding boxes, especially for rice, chutneys, and mixed curries. This enhancement would directly improve calorie usefulness because serving size is one of the largest sources of uncertainty in image-based food logging.
 
 \section{Mobile Deployment}
 
-A mobile version would make the system more practical for real meal logging. The frontend could be adapted as a progressive web app or native mobile application. Depending on device constraints, the model could run through server-side inference, quantized local inference, or a hybrid approach.
+A mobile version would make the system more practical for real meal logging. The frontend could be adapted as a progressive web app or native mobile application. Depending on device constraints, the model could run through server-side inference, quantized local inference, or a hybrid approach. Camera access, offline behaviour, and response time would need to be tested carefully because users are more likely to log food from a phone than from a desktop system.
 
 \section{Personalized Long-Term Tracking}
 
-Future versions can add user accounts, meal history, daily calorie budgets, trend charts, and weekly nutrition summaries. This would move the prototype from a single-image analyzer toward a long-term dietary assistant.
+Future versions can add user accounts, meal history, daily calorie budgets, trend charts, and weekly nutrition summaries. This would move the prototype from a single-image analyzer toward a long-term dietary assistant. The design should still allow users to edit detected meals manually, because long-term tracking becomes useful only when users can correct mistakes and maintain accurate records.
 
 \section{Clinical Safety and Explainability}
 
-Before deployment for health-sensitive users, the system should include stronger disclaimers, uncertainty indicators, and rule-based safeguards. Recommendations for conditions such as diabetes, kidney disease, hypertension, and heart disease should be reviewed by qualified nutrition professionals.
+Before deployment for health-sensitive users, the system should include stronger disclaimers, uncertainty indicators, and rule-based safeguards. Recommendations for conditions such as diabetes, kidney disease, hypertension, and heart disease should be reviewed by qualified nutrition professionals. The system should clearly separate general diet guidance from medical advice, especially when confidence is low or when the detected meal contains approximate nutrition mappings.

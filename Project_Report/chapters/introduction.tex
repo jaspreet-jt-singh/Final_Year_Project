@@ -2,11 +2,11 @@
 
 \section{Overview}
 
-Food logging looks simple on paper, but it becomes tedious very quickly in daily use. A person has to remember what was eaten, estimate the quantity, search for a matching food entry, and repeat the same process for every meal. Indian meals make this task even less direct because a single plate may contain rice, dal, chutney, curry, a fried snack, and a sweet in small portions. The user may remember the meal clearly, but the logging interface still forces the meal to be broken down one item at a time.
+Food logging appears simple at first, but it becomes inconvenient when it has to be done every day. A person has to remember what was eaten, estimate the quantity, search for a matching food entry, and repeat the same process for each item in the meal. In Indian meals this task is even less direct. A single plate may contain rice, dal, chutney, curry, a fried snack, and a sweet in small portions. The user may remember the meal clearly, but most logging applications still expect every item to be searched and entered separately.
 
-Computer vision can reduce part of this effort, but it does not remove the hard parts automatically. Food is deformable, lighting changes its appearance, and many dishes are partly hidden by bowls, plates, or other items. Indian food adds a further challenge because several dishes share ingredients and colours. For example, \code{aloo_gobi}, \code{dum_aloo}, and \code{aloo_masala} can all contain potato-heavy textures, while chutneys may appear only as small side portions. A useful system must therefore do more than produce a confident visual label; it must also map that label to a nutrition record that makes sense.
+Computer vision can reduce this effort, although it does not solve the complete nutrition problem on its own. Food does not have a fixed shape, lighting changes its appearance, and many items are partly hidden by bowls, plates, or other food items. Indian food adds another difficulty because many dishes share ingredients and colours. For example, \code{aloo_gobi}, \code{dum_aloo}, and \code{aloo_masala} can all contain potato-heavy textures, while chutneys may appear only as small side portions. During development it became clear that a useful system cannot stop after producing a confident visual label. That label must also be connected to a nutrition record that is reasonable for the dish.
 
-In this project, we built an AI-based food recognition system with nutrition-aware recommendations. The implemented system combines a YOLO object detector, a curated Indian food dataset, a SQLite nutrition database derived mainly from the Indian Nutrient Database, a FastAPI backend, and a Next.js frontend. It accepts a food image, detects visible food objects, maps each class to a nutrition record, calculates macronutrients, and generates dietary suggestions using the user's daily goal and selected health context.
+This project implements an AI-based food recognition system with nutrition-aware recommendations. The implemented system combines a YOLO object detector, a curated Indian food dataset, a SQLite nutrition database derived mainly from the Indian Nutrient Database, a FastAPI backend, and a Next.js frontend. It accepts a food image, detects visible food objects, maps each class to a nutrition record, calculates macronutrients, and generates dietary suggestions using the user's daily goal and selected health context.
 
 \begin{figure}[H]
 \centering
@@ -31,15 +31,15 @@ In this project, we built an AI-based food recognition system with nutrition-awa
 \draw[arrow] (db) -- (map);
 \end{tikzpicture}
 }
-\caption{End-to-end workflow of the proposed food recognition and nutrition system}
+\caption{End-to-end workflow of the implemented food recognition and nutrition system}
 \label{fig:project-workflow}
 \end{figure}
 
 \section{Motivation}
 
-The motivation for this work comes from three practical needs. First, food logging has to be fast enough to fit into daily life. If a user must search and type after every meal, the habit usually breaks. Second, Indian food recognition needs domain-specific labels and mapping logic. A general detector may identify a bowl or plate, but it will not reliably distinguish \code{rajma_curry}, \code{sambar}, \code{poha}, \code{thepla}, or \code{bhakarwadi}. Third, nutrition advice only makes sense in context. A calorie-dense meal may be acceptable for a muscle-gain goal but unsuitable for weight loss; a carbohydrate-heavy meal needs different guidance for a diabetic user than for an endurance-focused user.
+The motivation for this work came from three practical needs observed while studying existing food logging workflows. First, food logging has to be fast enough to fit into daily life. If a user must search and type after every meal, the habit usually breaks after a short period. Second, Indian food recognition needs domain-specific labels and mapping logic. A general detector may identify a bowl or plate, but it will not reliably distinguish \code{rajma_curry}, \code{sambar}, \code{poha}, \code{thepla}, or \code{bhakarwadi}. Third, nutrition advice only makes sense when user context is considered. A calorie-dense meal may be acceptable for a muscle-gain goal but unsuitable for weight loss; similarly, a carbohydrate-heavy meal needs different guidance for a diabetic user than for an endurance-focused user.
 
-The second major motivation came from a problem we encountered during implementation: detection and nutrition are not the same task. A model that returns \code{samosa} or \code{palak_paneer} still has to be connected to the correct database row. If the mapping is wrong, the system may display precise-looking but incorrect macros. During testing, weak fuzzy matching produced cases such as \code{palak_paneer} being mapped to a generic cottage-cheese entry instead of spinach paneer. That failure changed the direction of the project. Nutrition mapping was treated as a core engineering problem, not as a small post-processing step.
+A second motivation emerged during implementation. Detection and nutrition were found to be separate problems. A model may return \code{samosa} or \code{palak_paneer}, but the system still has to connect that label to the correct database row. If the mapping is wrong, the interface may display values that look precise but are nutritionally incorrect. During testing, weak fuzzy matching produced cases such as \code{palak_paneer} being mapped to a generic cottage-cheese entry instead of spinach paneer. This issue changed the direction of the project. Nutrition mapping was treated as a core engineering task rather than a small post-processing step.
 
 \section{Problem Statement}
 
@@ -54,7 +54,7 @@ The problem addressed in this project is to design and implement a full-stack sy
     \item Present the results through an accessible web interface with bounding boxes, serving adjustment, and macro tracking.
 \end{enumerate}
 
-The problem is not limited to model training. It includes dataset engineering, data validation, backend API design, frontend interaction design, and nutrition-aware business logic.
+The problem is therefore not limited to model training. It includes dataset engineering, data validation, backend API design, frontend interaction design, and nutrition-aware business logic. Each part affects the reliability of the final output. For example, a correct frontend cannot compensate for a wrong food-to-nutrition mapping, and a good detector still becomes less useful if the class labels are inconsistent.
 
 \section{Objectives}
 
@@ -73,13 +73,13 @@ The main objectives of the project are:
 
 \section{Scope of the Project}
 
-The scope of the implemented prototype is limited to image-based recognition of Indian food classes present in the curated dataset. The model output is treated as a detected dish label, and nutrition values are reported per 100 grams unless the user adjusts serving assumptions in the frontend. The system does not perform physical volume estimation or exact portion-size measurement from a single image. This is a deliberate boundary rather than an accidental omission: reliable portion estimation would need depth, scale, segmentation, or controlled capture conditions. The prototype therefore focuses on a practical nutrition-aware workflow that can later be extended with portion estimation, mobile deployment, and larger nutrition databases.
+The scope of the implemented prototype is limited to image-based recognition of Indian food classes present in the curated dataset. The model output is treated as a detected dish label, and nutrition values are reported per 100 grams unless the user adjusts serving assumptions in the frontend. The system does not perform physical volume estimation or exact portion-size measurement from a single image. This boundary was kept deliberately because reliable portion estimation would need depth, scale, segmentation, or controlled capture conditions. The prototype therefore focuses on a practical nutrition-aware workflow that can later be extended with portion estimation, mobile deployment, and larger nutrition databases.
 
-The backend and frontend are designed for local full-stack deployment. The backend exposes REST-style endpoints for analysis, macro calculation, validation, and recommendation generation. The frontend is built as a single-page user experience for uploading images and reviewing results. The recommendation module uses Groq-backed language model generation when a key is configured, with structured inputs from the detected foods and user profile.
+The backend and frontend are designed for local full-stack deployment. The backend exposes REST-style endpoints for analysis, macro calculation, validation, and recommendation generation. The frontend is built as a single-page user experience for uploading images and reviewing results. The recommendation module uses Groq-backed language model generation when a key is configured, with structured inputs from the detected foods and user profile. This makes the recommendation layer usable in the prototype while keeping the nutrition arithmetic inside the backend.
 
 \section{Major Contributions}
 
-The major contributions of this project are summarized below.
+The major contributions of this project are summarized below. They are written from the implemented system rather than only from the model-training stage, because the final output depends on the complete pipeline.
 
 \begin{enumerate}[label=\arabic*.]
     \item A merged Indian food dataset containing 72 canonical classes and 48,693 exported image-label pairs.
@@ -93,4 +93,4 @@ The major contributions of this project are summarized below.
 
 \section{Report Organization}
 
-The report is organized in the same order as the project was built. Chapter 2 reviews the supplied research papers. Chapter 3 describes dataset construction, nutrition mapping, macro logic, and validation strategy. Chapter 4 presents the system architecture. Chapter 5 explains implementation details. Chapter 6 covers experiments and validation. Chapter 7 presents the results. Chapter 8 discusses limitations and interpretation of results. Chapters 9 and 10 provide the conclusion and future work. The appendices include detailed class mappings, API examples, and supporting verification material.
+The report is organized in the same order in which the project was developed. Chapter 2 reviews the supplied research papers and identifies the gap addressed by the implementation. Chapter 3 describes dataset construction, nutrition mapping, macro logic, and validation strategy. Chapter 4 presents the system architecture. Chapter 5 explains implementation details and development challenges. Chapter 6 covers experiments and validation. Chapter 7 presents the results. Chapter 8 discusses limitations and interpretation of results. Chapters 9 and 10 provide the conclusion and future work. The appendices include detailed class mappings, API examples, and supporting verification material.

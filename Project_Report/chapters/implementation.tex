@@ -2,11 +2,13 @@
 
 \section{Development Environment}
 
-The project is implemented as a full-stack application rather than a standalone notebook experiment. This mattered during development because the detector, nutrition database, API response format, and frontend display all had to agree with each other. The backend uses Python, FastAPI, PyTorch, Ultralytics YOLO, Pillow, NumPy, Pandas, OpenPyXL, SQLite, and AioSQLite. The frontend uses Next.js, React, TypeScript, Tailwind CSS, and Lucide icons. The repository is organized into \code{backend/}, \code{frontend/}, \code{data/}, \code{models/}, \code{scripts/}, and \code{notebooks/} so that model assets, data processing, API code, and interface code remain separated.
+The project is implemented as a full-stack application rather than a standalone notebook experiment. This mattered during development because the detector, nutrition database, API response format, and frontend display all had to agree with each other. A change in one part often affected another part; for example, a class-name change in the dataset also required checking the nutrition mapping and frontend display name. The backend uses Python, FastAPI, PyTorch, Ultralytics YOLO, Pillow, NumPy, Pandas, OpenPyXL, SQLite, and AioSQLite. The frontend uses Next.js, React, TypeScript, Tailwind CSS, and Lucide icons. The repository is organized into \code{backend/}, \code{frontend/}, \code{data/}, \code{models/}, \code{scripts/}, and \code{notebooks/} so that model assets, data processing, API code, and interface code remain separated.
 
 \section{Dataset Build Script}
 
 The dataset build script is located at \code{scripts/build_master_dataset.py}. It handles the repetitive work that would be error-prone if done manually: source dataset scanning, class-name loading, YOLO label parsing, canonical class conversion, multi-label split creation, image export, training augmentation, and artifact writing. It writes three key outputs: \code{data.yaml}, \code{build_log.txt}, and \code{split_class_counts_before_after.csv}.
+
+This script was one of the most important parts of the implementation because the source datasets did not follow a single naming convention. Some files had class names embedded in filenames, some labels had to be read through dataset-specific \code{data.yaml} files, and several raw names referred to the same final dish. Automating the process reduced manual copying mistakes and made it possible to rebuild the dataset after correcting normalization rules.
 
 The final dataset contains 72 canonical classes. The generated balanced dataset contains 36,852 training image-label pairs, 5,922 validation pairs, and 5,919 test pairs. The total exported image-label pairs are 48,693. The larger secondary export retained in \code{data/master_dataset/} contains more aggressive train augmentation and is documented as an archived artifact.
 
@@ -14,25 +16,27 @@ The final dataset contains 72 canonical classes. The generated balanced dataset 
 
 The final model training workflow is recorded in the final training notebook under \code{notebooks/}. The notebook is configured for Kaggle execution, loads the generated 72-class \code{data.yaml}, resumes the \code{yolo11s_indian_food} run from an existing checkpoint, and trains to 100 total epochs. The final resumed stage covers epochs 56 to 100 and uses YOLO11s with 640-pixel images, batch size 16, automatic mixed precision, checkpoint saving every 10 epochs, and plot generation enabled.
 
+Training was resumed instead of restarted because the earlier checkpoint had already learned useful features from the merged dataset. The resumed run also made it possible to compare the later epochs through \code{results.csv} and training plots. The model was not selected only from the final epoch; the best exported weight was used because validation mAP peaked earlier than the last epoch.
+
 The run used PyTorch 2.10.0 with CUDA 12.8 on a Tesla T4 GPU. The exported artifacts include \code{best.pt}, \code{last.pt}, checkpoint weights, training curves, precision-recall curves, confusion matrices, prediction batches, and \code{results.csv}. The best model file was also exported as \code{yolo11s_indian_food_best.pt}, which is the detector artifact used for final evaluation.
 
 \section{Visual Class Verification Implementation}
 
 To verify that class names correspond to actual images, a visual verification script was created at \code{scripts/verify_food_classes_with_images.py}. The script groups exported images by the canonical class suffix in the filename, samples four images per class, parses corresponding labels for object crops, and writes contact sheets. This step was useful because file counts alone cannot reveal whether a class name is visually believable. The original eight sheets were then split into sixteen half-sheets so the labels and sampled images remain readable in print. The full half-sheet set and the detailed annotation-issue table are placed in Appendix A to avoid repeating the same visual material in the implementation chapter.
 
-The visual review confirmed that all 72 classes have actual image samples and that the class-name list is aligned. The remaining issues are sample-level annotation problems rather than class-order failures, and they should be cleaned in a future dataset revision.
+The visual review confirmed that all 72 classes have actual image samples and that the class-name list is aligned. It also exposed a few practical dataset issues, such as a crop that did not match the expected food or a box that was placed on the wrong side item. These were not class-order failures, but they are still important because object detectors learn from the exact boxes provided during training.
 
 \section{Nutrition Database Build Implementation}
 
 The nutrition database build script is located at \code{backend/scripts/merge_db.py}. It reads the INDB spreadsheet, verifies required columns, normalizes food names, removes duplicate normalized names, converts nutrition columns to numeric values, and rebuilds the local SQLite nutrition database. The script then loads the current dataset classes and appends legacy model labels so that older deployed labels still resolve correctly.
 
-Manual mappings are applied before fuzzy matching. This prevents incorrect string-based matches. For example, \code{aloo_gobi} maps to \code{Potato cauliflower (Aloo gobhi)}, \code{palak_paneer} maps to \code{Spinach paneer (Palak paneer)}, and \code{rice} maps to \code{Boiled rice (Uble chawal)}. The script also adds source-backed supplemental rows for classes that are present in the detector dataset but absent from the available INDB sheet.
+Manual mappings are applied before fuzzy matching. This prevents incorrect string-based matches. For example, \code{aloo_gobi} maps to \code{Potato cauliflower (Aloo gobhi)}, \code{palak_paneer} maps to \code{Spinach paneer (Palak paneer)}, and \code{rice} maps to \code{Boiled rice (Uble chawal)}. The script also adds source-backed supplemental rows for classes that are present in the detector dataset but absent from the available INDB sheet. This approach required more manual checking, but it avoided several wrong matches found during early testing.
 
 \section{Vision Service Implementation}
 
 The vision service loads YOLO model weights and processes uploaded images. It converts input bytes into an image representation, performs inference, applies class-level confidence rules, extracts bounding boxes, and returns structured detection dictionaries. Each detection contains the food label, confidence score, bounding box, and image dimensions.
 
-The model is warmed up during backend startup with a dummy image. This reduces the first real request latency. The backend executes inference in a thread pool so that the asynchronous API loop is not blocked by model computation.
+The model is warmed up during backend startup with a dummy image. This reduces the first real request latency, which otherwise can make the first upload feel unusually slow. The backend executes inference in a thread pool so that the asynchronous API loop is not blocked by model computation. Keeping the output as dictionaries also made it easier to attach nutrition data without changing the model inference code.
 
 \section{Nutrition Service Implementation}
 
@@ -46,15 +50,17 @@ The nutrition service initializes by connecting to \code{data/nutrition.db}. It 
     \item Use fuzzy matching as the last fallback.
 \end{enumerate}
 
-The precomputed mapping step is the most important because it avoids incorrect fuzzy matches. The returned nutrition object includes display name, macro values, unit, source, and food-found status.
+The precomputed mapping step is the most important because it avoids incorrect fuzzy matches. The returned nutrition object includes display name, macro values, unit, source, and food-found status. During testing, this status field was useful because the frontend could distinguish between a detected food with nutrition data and a detected food whose nutrition record was missing or uncertain.
 
 \section{Recommendation and Macro Implementation}
 
-The macro calculation function accepts a target calorie value, a selected goal, and a health condition. It applies base goal splits and health-condition modifiers, normalizes the result, and converts calories into grams. The recommendation service uses detected foods and user context to generate three practical suggestions. The prompt includes detected foods, calories, goal, health profile, and health-specific dietary guidance.
+The macro calculation function accepts a target calorie value, a selected goal, and a health condition. It applies base goal splits and health-condition modifiers, normalizes the result, and converts calories into grams. The recommendation service uses detected foods and user context to generate three practical suggestions. The prompt includes detected foods, calories, goal, health profile, and health-specific dietary guidance. The calculation was kept separate from the recommendation text so that macro targets can be tested even when the external recommendation service is not configured.
 
 \section{Frontend Implementation}
 
 The frontend is implemented in \code{frontend/app/page.tsx} and reusable components. \code{ImageUpload} manages drag-and-drop upload and file preview. \code{ResultsPanel} displays detection cards, nutrition values, serving controls, macro totals, and recommendations. \code{NutritionLabel} displays calories, protein, carbohydrates, and fat. \code{ImageOverlay} draws bounding boxes over the uploaded image.
+
+The serving controls were included because the detector can identify a food item but cannot know its exact mass from a single image. This kept the interface honest: the system provides a calculated baseline, and the user can adjust the assumed serving when the visible quantity is clearly larger or smaller.
 
 \begin{figure}[H]
 \centering
@@ -94,4 +100,6 @@ Class verification script & Contact-sheet generation for visual class verificati
 
 \section{Implementation Challenges}
 
-The most significant challenges were label inconsistency, nutrition mapping ambiguity, and multi-component integration. Label inconsistency was addressed through canonical class naming. Nutrition ambiguity was addressed by explicit mappings and conservative fallback. Integration complexity was handled by separating services and keeping JSON response shapes structured. In practice, the mapping work took more attention than expected because a visually correct food label can still produce the wrong macro values if it is matched to the wrong database row.
+The most significant challenges were label inconsistency, nutrition mapping ambiguity, and multi-component integration. Label inconsistency was addressed through canonical class naming. Nutrition ambiguity was addressed by explicit mappings and conservative fallback. Integration complexity was handled by separating services and keeping JSON response shapes structured.
+
+In practice, the mapping work took more attention than expected because a visually correct food label can still produce the wrong macro values if it is matched to the wrong database row. Another challenge was keeping the training artifacts, deployed model name, dataset classes, and frontend labels synchronized. Small mismatches did not always cause immediate errors, but they could produce confusing results during testing. For this reason, validation scripts and debug endpoints were retained in the project instead of being removed after the first successful run.
