@@ -1,4 +1,4 @@
-\chapter{RESULTS}
+% Merged into the Experimental Analysis and Discussion chapter.
 
 \section{Dataset Engineering Results}
 
@@ -27,11 +27,9 @@ Chutneys and sides & \code{coconut_chutney}, \code{green_chutney}, \code{kaara_c
 
 The class verification output confirms that all classes have image samples. This check was needed because a dataset configuration can list classes even when no usable labels exist for them. The verification step showed that this is not the case here. It also showed that the dataset is not perfect, since a few individual annotations were noisy. For a project prototype this was acceptable, but it is still recorded because annotation quality directly affects detector performance.
 
-\section{Detector Training Results}
+\section{Detector Training Result Summary}
 
-The final YOLO11s training run produced a usable 72-class detector. The model was trained through epoch 100, with the final resumed stage covering epochs 56 to 100. During that stage, the best validation mAP@50 recorded in \code{results.csv} was 0.83379 at epoch 78. The final epoch recorded precision 0.8528, recall 0.8042, mAP@50 0.82806, and mAP@50:95 0.69164.
-
-The exported best model was evaluated separately on validation and held-out test splits. On validation, it achieved 0.847 precision, 0.807 recall, 0.830 mAP@50, and 0.692 mAP@50:95. On the held-out test split, it achieved 0.842 precision, 0.801 recall, 0.820 mAP@50, and 0.680 mAP@50:95. The small difference between validation and test mAP suggests that the model is not fitting only to the validation split. At the same time, the confusion matrix shows that some dishes remain difficult to separate, especially when they share colour, texture, or serving style.
+The final YOLO11s training run produced a usable 72-class detector. The detailed training and split-level metrics are reported in Tables \ref{tab:training-metric-validation} and \ref{tab:yolo-final-metrics}. The main observation is that validation and held-out test performance remained close, with 0.830 mAP@50 on validation and 0.820 mAP@50 on test. This suggests that the detector is not fitting only to the validation split. At the same time, the confusion matrix shows that some dishes remain difficult to separate, especially when they share colour, texture, or serving style.
 
 \section{Nutrition Mapping Results}
 

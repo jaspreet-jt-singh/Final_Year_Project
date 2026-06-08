@@ -1,4 +1,4 @@
-\chapter{SYSTEM DESIGN}
+\chapter{SYSTEM DESIGN AND IMPLEMENTATION}
 
 \section{Design Goals}
 
@@ -172,3 +172,5 @@ These checks are basic, but they matter in a working prototype. Without them, a 
 The design uses per-100-gram nutrition values instead of automatic portion estimation. This limits exact calorie accuracy, but it avoids pretending that one image is enough to recover food mass reliably. Monocular portion estimation would require plate scale, camera distance, depth, and food-volume assumptions. The frontend therefore uses serving multipliers so the user can adjust values when the visible quantity is clearly smaller or larger than the baseline.
 
 The design also keeps explicit nutrition mappings in the database build process. This is less automatic than fuzzy matching, but it is safer for a nutrition-related application. A wrong nutrition value can be more harmful than a missing one. For that reason, classes without safe INDB rows are handled only through verified supplemental entries with source metadata. The prototype becomes a little more manual to maintain, but the output is easier to control.
+
+\input{chapters/implementation}
