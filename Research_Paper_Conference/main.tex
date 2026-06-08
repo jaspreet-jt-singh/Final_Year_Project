@@ -26,6 +26,8 @@
 
 \newcommand{\code}[1]{\texttt{\detokenize{#1}}}
 \newcommand{\projecttitle}{AI-Based Food Recognition with Nutrition-Aware Recommendations}
+\newcommand{\guide}{Dr. Lavanya Madhuri Bollipo}
+\newcommand{\coguide}{Dr. Insha Majeed}
 
 \begin{document}
 
@@ -39,12 +41,15 @@ National Institute of Technology Srinagar\\
 Kashmir 190006, India\\
 Email: [student email]
 }
+\IEEEauthorblockA{Project Guide: \guide\\
+Project Co-Guide: \coguide
+}
 }
 
 \maketitle
 
 \begin{abstract}
-Food-recognition applications are useful only when the predicted food label is connected to reliable nutrition information. This paper presents an AI-based Indian food recognition system that detects visible food items, links them to nutrition records, calculates macronutrients, and generates nutrition-aware recommendations from the computed values. The main technical contribution is a conservative nutrition-grounding layer placed between the YOLO detector and the recommendation module. Instead of relying on direct fuzzy string matching, the layer uses canonical class names, explicit semantic mappings, source-backed supplemental rows, thresholded fallback matching, and provenance metadata. Five YOLO-format Indian-food datasets were merged into a 72-class dataset with 48,693 exported image-label pairs. A YOLO11s detector trained on this dataset achieved 0.820 mAP@50 and 0.680 mAP@50:95 on the held-out test split. The nutrition database contains 1,010 food records and 103 detector-to-database mappings, covering all 72 expanded classes. Macro verification reported 51 verified mappings, 21 review-level mappings, and zero failed mappings. The resulting prototype connects image upload, detection overlays, nutrition lookup, serving adjustment, and personalized recommendations while keeping the numerical nutrition layer separate from generated advice.
+For dietary assessment, visual food labels must be tied to reliable nutrient records. This paper presents an AI-based Indian food recognition system that detects visible food items, maps detector classes to nutrition entries, computes macronutrients, and returns nutrition-aware recommendations from the computed values. The main technical contribution is a conservative nutrition-grounding layer between the YOLO detector and the recommendation module. The layer uses canonical class names, reviewed semantic mappings, source-backed supplemental rows, thresholded fallback matching, and provenance metadata rather than relying on unconstrained string similarity. Five YOLO-format Indian-food datasets were merged into a 72-class dataset with 48,693 exported image-label pairs. A YOLO11s detector trained on this dataset achieved 0.820 mAP@50 and 0.680 mAP@50:95 on the held-out test split. The nutrition database contains 1,010 food records and 103 detector-to-database mappings, covering all 72 expanded classes. Macro verification reported 51 verified mappings, 21 review-level mappings, and zero failed mappings. The prototype connects image upload, detection overlays, nutrition lookup, serving adjustment, and personalized recommendations while keeping nutrient arithmetic separate from recommendation text.
 \end{abstract}
 
 \begin{IEEEkeywords}
@@ -53,32 +58,32 @@ food recognition, nutrition-aware recommendations, YOLO, Indian food dataset, di
 
 \section{Introduction}
 
-Most food-recognition systems stop at the visual task: they identify what appears in an image. A diet-assistance application has to go one step further. A detected class such as \code{palak_paneer}, \code{rice}, or \code{samosa} must be linked to a nutrition entry before the system can say anything useful about calories, protein, carbohydrates, or fat. If this link is wrong, the final recommendation may look precise while being nutritionally misleading.
+Image-based food recognition is often evaluated as a visual classification or detection problem. In a diet-assistance setting, however, the predicted label is only an intermediate result. A class such as \code{palak_paneer}, \code{rice}, or \code{samosa} must be resolved to a nutrition entry before the system can report calories, protein, carbohydrates, or fat. An incorrect resolution can produce a recommendation that appears precise while being nutritionally wrong.
 
-This problem is especially visible in Indian meals. The same dish can appear under different spellings, regional names, or dataset-specific labels. For example, plain rice may be listed as \code{WhiteRice}, \code{satham}, or \code{rice}. A chutney label may refer to the side dish itself or to a small portion beside a larger food item. Biryani and pulao classes may look similar in an image but differ in ingredients and macro values. These cases make direct string matching a weak basis for nutrition lookup.
+The problem is pronounced in Indian food images. A single meal may contain several dishes, and the same dish may appear under regional names, spelling variants, or dataset-specific labels. Plain rice, for example, may be recorded as \code{WhiteRice}, \code{satham}, or \code{rice}. A chutney label may refer to a side dish or to a small portion attached to a larger item. Visually similar dishes such as biryani and pulao may also differ in ingredient composition and macro values. These cases make direct string matching a weak basis for nutrition lookup.
 
-This paper presents a project titled \textit{AI-Based Food Recognition with Nutrition-Aware Recommendations}. The system uses YOLO11s for object detection, a curated Indian-food dataset, a SQLite nutrition database, and a recommendation layer that receives already-computed nutrition values. The key idea is to keep recognition, nutrition grounding, and recommendation generation separate. The detector predicts visible food items; the nutrition layer decides whether a safe database match exists; the recommendation module uses those values to produce diet-aware guidance.
+This paper presents an implementation of the proposed food-recognition and nutrition-recommendation pipeline. The system uses YOLO11s for object detection, a curated Indian-food dataset, a SQLite nutrition database, and a recommendation layer that consumes already-computed nutrient values. The design separates three responsibilities: visual recognition, nutrition grounding, and recommendation generation. The detector identifies visible food items; the grounding layer decides whether a defensible database match exists; the recommendation module uses the resulting macro values and user profile to produce diet-aware guidance.
 
 The contributions are:
 \begin{enumerate}
-    \item a 72-class Indian-food object-detection dataset built by merging and normalizing five YOLO-format datasets;
-    \item a conservative detector-to-nutrition mapping method that reduces unsafe nutrition substitutions;
-    \item a working FastAPI and Next.js prototype that connects detection, macro calculation, serving adjustment, and personalized recommendations.
+    \item a 72-class Indian-food object-detection dataset obtained by merging, normalizing, and visually checking five YOLO-format datasets;
+    \item a nutrition-grounding layer with reviewed matches, fallback matches, supplemental sources, and missing-nutrition states;
+    \item a FastAPI and Next.js prototype that links detection, macro calculation, serving adjustment, and personalized recommendations.
 \end{enumerate}
 
 \section{Related Work}
 
-The literature reviewed for this project falls into three groups: Indian food recognition, nutrition database alignment, and recommendation systems. Work outside this scope, especially 3D volume or depth-based portion estimation, is not central to this paper because the implemented system reports database-backed per-100g macro values and leaves portion adjustment to the user.
+Prior work relevant to this study can be grouped into Indian food recognition, nutrition database alignment, and diet recommendation systems. Methods for depth-based volume estimation and calibrated portion measurement are related, but they are outside the implemented scope because the present system reports database-backed per-100g macro values and leaves serving adjustment to the user.
 
-Indian food recognition work shows why a domain-specific detector is needed. IndianFoodNet uses YOLO-style detection for Indian food items, which is closer to real meal images than single-label classification because one plate may contain several dishes \cite{indianfoodnet_2023}. Khana presents a larger Indian cuisine classification benchmark and highlights the familiar problems of class imbalance, visual similarity, and regional variation \cite{khana_dataset_2025}. The Indian Thali study goes further toward cluttered meal analysis through segmentation and controlled capture, but that setup is less convenient for a normal web-upload workflow \cite{indian_thali_2025}. Lightweight CNN and MobileNetV3 studies also support the use of compact models and train-time augmentation, though they remain closer to classification than multi-item detection \cite{lightweight_cnn_food_2022,mobilenetv3_indian_food_2023}.
+Indian food recognition studies show that domain-specific data are necessary, but they do not fully address nutrition grounding. IndianFoodNet uses YOLO-style detection for Indian food items and is therefore closer to real meal photographs than single-label classification, where one image is forced into one category \cite{indianfoodnet_2023}. Khana provides a larger Indian cuisine benchmark and reports recurring difficulties such as class imbalance, regional variation, and visual similarity between dishes \cite{khana_dataset_2025}. The Indian Thali study moves toward cluttered meal analysis through segmentation and controlled capture, although such capture assumptions are less convenient for ordinary web uploads \cite{indian_thali_2025}. Lightweight CNN and MobileNetV3 studies support compact architectures and augmentation for food recognition, but their experimental settings remain closer to classification than multi-item detection \cite{lightweight_cnn_food_2022,mobilenetv3_indian_food_2023}. These works motivate a detector trained on Indian food labels, but they leave the detector-to-nutrition link largely under-specified.
 
-The nutrition side of the literature is equally important. The Indian Food Composition Database work explains why cooked Indian recipes need dedicated nutrient records rather than direct raw-ingredient assumptions \cite{development_indb_2024}. The Synergistic Frameworks study directly identifies the compatibility problem between visual food labels and nutrition databases: the detector may use one label, while the nutrition row uses a different spelling, language, or preparation name \cite{synergistic_frameworks_2025}. FKG.in shows how language models and food knowledge graphs can help parse regional recipe descriptions, but the present system begins from a photograph rather than a typed recipe \cite{fkg_llm_2024}. This is why the implemented backend uses deterministic database lookup and audited class-to-food mappings instead of asking a language model to invent nutrition values.
+Nutrition database work addresses a different part of the problem. The Indian Food Composition Database study shows why cooked Indian foods require dedicated nutrient records rather than direct assumptions from raw ingredients \cite{development_indb_2024}. The Synergistic Frameworks study identifies a practical compatibility gap: visual food labels and food-composition records often differ in spelling, language, or preparation name \cite{synergistic_frameworks_2025}. FKG.in demonstrates how language models and food knowledge graphs can parse regional recipe descriptions, but that setting begins with text rather than an image \cite{fkg_llm_2024}. The present system therefore uses deterministic lookup, reviewed mappings, and recorded source metadata instead of delegating nutrient estimation to a language model.
 
-Recent recommendation systems show the value and the risk of generative AI in diet applications. NutriGen and other web-based meal-planning systems use LLMs to generate personalized plans from structured user constraints \cite{nutrigen_2025,genai_meal_planning_2025}. Diet Engine combines food detection with NLP-based dietary guidance, which is close to the high-level direction of this project \cite{diet_engine_2025}. At the same time, evaluations of ChatGPT-style nutrient estimation from meal photographs warn that fluent responses do not guarantee accurate calorie or macro values \cite{chatgpt_nutrient_estimation_2025}. The design used here follows that lesson: the recommendation layer receives detected foods and calculated macros from the backend, while nutrition arithmetic remains database-backed and inspectable.
+Recent recommendation systems illustrate both the utility and the risk of generated diet advice. NutriGen and other web-based meal-planning systems generate personalized plans from structured user constraints \cite{nutrigen_2025,genai_meal_planning_2025}. Diet Engine combines food detection with NLP-based dietary guidance and is close to the application direction of this work \cite{diet_engine_2025}. At the same time, evaluations of ChatGPT-style nutrient estimation from meal photographs show that well-formed responses do not guarantee accurate calorie or macro estimates \cite{chatgpt_nutrient_estimation_2025}. The proposed design follows a conservative boundary: recommendations are generated after detection and macro calculation, while the numerical nutrition layer remains database-backed and inspectable.
 
 \section{Proposed System}
 
-Fig.~\ref{fig:pipeline} summarizes the implemented system. The pipeline starts with dataset normalization and model training. At runtime, the frontend sends an uploaded food image to the backend. The backend runs YOLO11s, resolves each predicted class through the nutrition mapping table, calculates macro values, and returns the structured result to the frontend. Recommendation text is generated only after the numeric nutrition values have been calculated.
+Fig.~\ref{fig:pipeline} summarizes the implemented system. The design uses a modular pipeline rather than a single end-to-end predictor because each stage has a different failure mode. Dataset normalization controls the detector label space, YOLO11s performs multi-item food detection, the nutrition layer resolves labels to database rows, and the recommendation module receives structured macro values. YOLO11s was selected as a compact detector suitable for a web prototype where inference time, model size, and multi-object localization are practical constraints. Recommendation text is generated only after the backend has calculated nutrition values.
 
 \begin{figure}[!tbp]
 \centering
@@ -127,21 +132,21 @@ M_{\mathrm{fuzzy}}(c), & \text{if score}(c,n)\geq0.78,\\
 $}
 \label{eq:mapping}
 \end{equation}
-The final case is important. If no safe nutrition match exists, the system keeps the detection but does not invent macro values. In a health-oriented interface, a missing value is preferable to a wrong confident value.
+The last case is a deliberate design choice. If no safe nutrition match exists, the system keeps the detection visible but does not assign macro values. For a diet-assistance interface, an explicit missing value is preferable to a confident but unsupported nutrient estimate.
 
 For a meal image, the displayed macro vector is
 \begin{equation}
 \hat{\mathbf{m}}(x)=\sum_{q=1}^{Q_x}s_q\mathbf{m}_{M(\hat{c}_q)},
 \end{equation}
-where $s_q$ is the serving multiplier selected by the user. This keeps portion adjustment explicit rather than pretending that exact food weight can be recovered from a single image.
+where $s_q$ is the serving multiplier selected by the user. Portion adjustment is therefore explicit. The system does not infer exact food mass from a single image without depth, calibration, or a reference object.
 
 \subsection{Runtime Data Contract}
 
-The backend response is designed so that the frontend does not need to infer the meaning of missing or approximate values. Each detection carries the raw detector label, display name, confidence score, bounding box, image dimensions, macro values, nutrition unit, nutrition source, and missing-nutrition flag. If no valid food is detected, the API returns an explicit no-food state. If a class is detected but no safe nutrition match exists, the detection remains visible while macro values are left unavailable. This choice makes the system easier to inspect and prevents a recommendation from being based on hidden guesses.
+The backend response is structured so that the frontend does not infer missing or approximate values from presentation logic. Each detection carries the raw detector label, display name, confidence score, bounding box, image dimensions, macro values, nutrition unit, nutrition source, and missing-nutrition flag. If no valid food is detected, the API returns an explicit no-food state. If a detected class has no safe nutrition match, the detection remains visible while macro values remain unavailable. This contract keeps uncertainty visible to the user and prevents downstream recommendations from using hidden substitutions.
 
 \section{Dataset Construction}
 
-Five YOLO-format Indian-food datasets were merged into one canonical dataset \cite{roboflow_placeholder}. Source class names were decoded from each dataset configuration file, normalized for case and punctuation, and then reviewed for semantic variants. Examples include mapping \code{AlooGobi}, \code{aloo gobhi}, and \code{aloo_gobi} to \code{aloo_gobi}; mapping \code{WhiteRice}, \code{satham}, and \code{rice} to \code{rice}; and mapping \code{medu vadai} to \code{medu_vada}. Multi-food label files were preserved by rewriting every valid YOLO annotation row.
+Five YOLO-format Indian-food datasets were merged into one canonical dataset \cite{roboflow_placeholder}. The merge was performed at the label level rather than by simply concatenating folders, because the source exports used inconsistent class names and class orders. Source class names were decoded from each dataset configuration file, normalized for case and punctuation, and then reviewed for semantic variants. Examples include mapping \code{AlooGobi}, \code{aloo gobhi}, and \code{aloo_gobi} to \code{aloo_gobi}; mapping \code{WhiteRice}, \code{satham}, and \code{rice} to \code{rice}; and mapping \code{medu vadai} to \code{medu_vada}. Multi-food label files were preserved by rewriting every valid YOLO annotation row into the canonical class index.
 
 \begin{table}[!tbp]
 \centering
@@ -199,9 +204,9 @@ Known annotation issues found & 3\\
 \end{tabular}
 \end{table}
 
-The merge process used a 70/15/15 target ratio for training, validation, and test splits. Multi-label images were retained because a realistic food photograph may contain several dishes. Augmentation was applied only to the training split, mainly for underrepresented classes, so that validation and test metrics were not inflated by synthetic variants of the same images.
+The generated dataset used a 70/15/15 target ratio for training, validation, and test splits. Multi-label images were retained because realistic meal photographs often contain several dishes. Augmentation was restricted to the training split, mainly for underrepresented classes, so that validation and test metrics were not affected by synthetic variants of evaluation images.
 
-A visual verification script sampled real images for every class and generated contact sheets. This check confirmed that all 72 classes have image samples. It also found three local annotation issues: one \code{jalebi} sample that did not visually match jalebi, one \code{kaara_chutney} box placed on a vada, and one extremely thin \code{nandu_masala} box. These issues were recorded for future cleanup and did not indicate a class-order error.
+A visual verification script sampled real images for every class and generated contact sheets. This check confirmed that all 72 classes had image samples after merging. It also found three local annotation issues: one \code{jalebi} sample that did not visually match jalebi, one \code{kaara_chutney} box placed on a vada, and one extremely thin \code{nandu_masala} box. These issues were retained as documented dataset defects rather than treated as class-order errors.
 
 \begin{figure}[!tbp]
 \centering
@@ -215,7 +220,7 @@ A visual verification script sampled real images for every class and generated c
 \section{Detector Training and Evaluation}
 \suppressfloats[t]
 
-The final detector was trained with YOLO11s at 640-pixel image size and batch size 16. Training resumed from epoch 56 and continued to epoch 100 on a Tesla T4 GPU. The best logged validation mAP@50 was 0.83379 at epoch 78. On the held-out test split, the exported model reached 0.842 precision, 0.801 recall, 0.820 mAP@50, and 0.680 mAP@50:95 across 5,919 images and 8,875 instances.
+The final detector was trained with YOLO11s using 640-pixel images and batch size 16. Training resumed from epoch 56 and continued to epoch 100 on a Tesla T4 GPU. This configuration was chosen to keep the detector small enough for prototype inference while retaining multi-object localization, which is required for meal images containing more than one food item. The best logged validation mAP@50 was 0.83379 at epoch 78. On the held-out test split, the exported model reached 0.842 precision, 0.801 recall, 0.820 mAP@50, and 0.680 mAP@50:95 across 5,919 images and 8,875 instances.
 
 \begin{table}[H]
 \centering
@@ -245,7 +250,7 @@ Held-out test & 0.842 & 0.801 & 0.820 & 0.680\\
 \label{fig:test-predictions}
 \end{figure}
 
-The small validation-to-test gap is important for this project because the detector is only one part of the user-facing system. A model that performs well only on validation data would make the later nutrition and recommendation layers appear stronger than they are. The held-out result suggests that the detector generalizes reasonably across the generated split, although several visually similar categories still need deeper per-class error analysis.
+The validation and held-out test results are close, which suggests that the generated split is not producing a large optimistic validation bias. This matters because detector errors propagate into the nutrition and recommendation layers. The confusion matrix and qualitative test predictions were used as first-pass error-analysis artifacts. They indicate that the model is usable for prototype evaluation, but visually similar categories and classes with limited variation still require more detailed per-class analysis before deployment in a high-stakes dietary setting.
 
 \begin{figure}[!tbp]
 \centering
@@ -259,7 +264,7 @@ The small validation-to-test gap is important for this project because the detec
 \section{Nutrition Mapping and Recommendations}
 \suppressfloats[t]
 
-The nutrition database is built from an Indian Nutrient Database spreadsheet and stored in SQLite \cite{indb_placeholder}. The final table contains 1,010 food records with calories, protein, carbohydrates, fat, and source metadata. Five foods absent from the available INDB sheet were added as verified supplemental rows: \code{bhakarwadi}, \code{ghevar}, \code{jalebi}, \code{khandvi}, and \code{nandu_masala} \cite{fatsecret_bhakarwadi_2026,clearcals_ghevar_2026,clearcals_jalebi_2026,clearcals_khandvi_2026,clearcals_nandu_kari_2026}.
+The nutrition database was built from an Indian Nutrient Database spreadsheet and stored in SQLite \cite{indb_placeholder}. The final table contains 1,010 food records with calories, protein, carbohydrates, fat, and source metadata. Five detector classes absent from the available INDB sheet were added as source-backed supplemental rows: \code{bhakarwadi}, \code{ghevar}, \code{jalebi}, \code{khandvi}, and \code{nandu_masala} \cite{fatsecret_bhakarwadi_2026,clearcals_ghevar_2026,clearcals_jalebi_2026,clearcals_khandvi_2026,clearcals_nandu_kari_2026}.
 
 \begin{table}[H]
 \centering
@@ -279,7 +284,7 @@ Detector class & Nutrition database row & Score\\
 \end{tabular}
 \end{table}
 
-Table~\ref{tab:mapping-examples} shows that not all mappings are equally strong. Direct semantic matches are treated as verified. Lower-score preparation-family matches are kept available but marked for review. This distinction matters because a recommendation should be based on known nutrition values, not on hidden assumptions.
+Table~\ref{tab:mapping-examples} shows that the mapping layer distinguishes exact semantic matches from preparation-family approximations. Direct semantic matches are treated as verified. Lower-score matches are retained only with review status, which prevents the interface from presenting all nutrition links as equally certain.
 
 \begin{table}[H]
 \centering
@@ -301,7 +306,7 @@ Expanded-class coverage & 100.00\%\\
 \end{tabular}
 \end{table}
 
-The recommendation module uses the detected foods, calculated calories, macro totals, user goal, calorie target, and health profile. It does not generate the calorie and macronutrient values itself. This separation keeps the advice layer from becoming a source of fabricated numeric nutrition data.
+The recommendation module receives detected foods, calculated calories, macro totals, user goal, calorie target, and health profile. It does not generate calorie or macronutrient values. This separation keeps numerical nutrition data under deterministic backend control while allowing the advice layer to operate on structured inputs.
 
 The macro engine converts a calorie target into carbohydrate, protein, and fat grams. A selected goal defines the base macro split, and a health profile modifies that split before normalization. For a calorie target $T$ and final macro percentages $p_c$, $p_p$, and $p_f$, the target grams are:
 \begin{align}
@@ -309,7 +314,7 @@ G_c &= \frac{T p_c}{4 \times 100}, &
 G_p &= \frac{T p_p}{4 \times 100}, &
 G_f &= \frac{T p_f}{9 \times 100}.
 \end{align}
-The recommendation service receives these calculated values along with detected foods. For example, a high-carbohydrate fried meal under a weight-loss goal can trigger portion-control and protein-pairing advice, while a diabetic profile can shift the emphasis toward carbohydrate moderation and fiber.
+The recommendation service receives these calculated values along with the detected foods. For example, a high-carbohydrate fried meal under a weight-loss goal can trigger portion-control and protein-pairing advice, while a diabetic profile can shift the emphasis toward carbohydrate moderation and fiber. The output is therefore conditioned on database-backed macro values rather than on unverified nutrient estimates.
 
 \begin{table}[H]
 \centering
@@ -332,7 +337,7 @@ Endurance & 55\% & 20\% & 20\%\\
 \section{Prototype Validation}
 \suppressfloats[t]
 
-The backend is implemented with FastAPI, PyTorch, Ultralytics YOLO, SQLite, and supporting Python libraries. The frontend is built with Next.js, React, TypeScript, and Tailwind CSS. A user can upload an image, inspect detected boxes, review nutrition cards, adjust serving multipliers, and request dietary suggestions.
+The prototype was implemented to verify that the trained detector, nutrition database, mapping logic, and recommendation interface could operate as one system. The backend uses FastAPI, PyTorch, Ultralytics YOLO, SQLite, and supporting Python libraries. The frontend uses Next.js, React, TypeScript, and Tailwind CSS. A user can upload an image, inspect detected boxes, review nutrition cards, adjust serving multipliers, and request dietary suggestions.
 
 \begin{table}[H]
 \centering
@@ -360,7 +365,7 @@ Frontend interface & Handles upload, overlays, serving controls, macro display, 
 \label{fig:prototype}
 \end{figure}
 
-The image-analysis response includes the detector label, display name, confidence, bounding box, image dimensions, macro values, nutrition source, and missing-nutrition flags. Runtime checks were run for classes that are easy to mishandle, including \code{aloo_gobi}, \code{palak_paneer}, \code{rice}, \code{AlooGobi}, and \code{WhiteRice}. These resolved to the expected nutrition rows. The API also returns an explicit no-food state when no valid detection is found.
+The image-analysis response includes the detector label, display name, confidence, bounding box, image dimensions, macro values, nutrition source, and missing-nutrition flags. Runtime checks were run for classes that are easy to mishandle, including \code{aloo_gobi}, \code{palak_paneer}, \code{rice}, \code{AlooGobi}, and \code{WhiteRice}. These labels resolved to the expected nutrition rows. The API also returns an explicit no-food state when no valid detection is found.
 
 \begin{table}[H]
 \centering
@@ -384,7 +389,7 @@ Unmapped class & Preserve detection and mark nutrition unavailable\\
 \section{Validation Scope}
 \suppressfloats[t]
 
-The project was validated at several levels because a user-facing nutrition result depends on more than one model score. Dataset checks confirmed that class folders, label files, split counts, and visual samples were present. Model evaluation measured detection performance on validation and held-out test splits. Nutrition checks verified that detector classes resolve to complete macro rows. Runtime checks then confirmed that the backend response contains the fields the frontend needs for overlays, nutrition display, and recommendation prompts.
+Validation was performed at several levels because the user-facing nutrition result depends on more than detector accuracy alone. Dataset checks confirmed class folders, label files, split counts, and visual samples. Model evaluation measured detection performance on validation and held-out test splits. Nutrition checks verified that detector classes resolve to complete macro rows. Runtime checks confirmed that the backend response contains the fields required for overlays, nutrition display, serving controls, and recommendation prompts.
 
 \begin{table}[H]
 \centering
@@ -405,29 +410,28 @@ Frontend & Overlay rendering, nutrition cards, serving controls, recommendations
 
 \FloatBarrier
 
-This layered validation is useful for peer review because each failure mode is different. A detector can classify a food correctly while the nutrition service maps it poorly. A nutrition database can be complete while the frontend receives fields under unexpected names. Treating these checks separately makes the system easier to debug and makes the reported results more transparent.
+The layered validation separates failure modes that would otherwise be hidden inside a single demonstration. A detector can classify a food correctly while the nutrition service maps it poorly. A nutrition database can contain complete rows while the frontend receives fields under unexpected names. Reporting these checks separately makes the system easier to audit and clarifies what has, and has not, been validated.
 
 \section{Discussion}
 
-The project shows that the most fragile part of a nutrition-aware food assistant is often not the detector itself. A visually correct prediction can still become a poor dietary result if it is mapped to the wrong food-composition row. This is why the mapping table, source metadata, and explicit missing-value behavior are treated as part of the AI pipeline rather than as backend convenience code.
+The results show that nutrition-aware food recognition cannot be evaluated by detector mAP alone. A visually correct prediction can still produce an incorrect dietary result if it is mapped to the wrong food-composition row. The mapping table, source metadata, and explicit missing-value behavior are therefore part of the technical pipeline, not only backend implementation details.
 
-The system also shows a practical trade-off. It does not attempt exact portion estimation from a single image, because that would require assumptions that are difficult to verify in ordinary user photographs. Instead, it reports database-backed macro values and lets the user adjust serving multipliers. This is less ambitious than automatic plate-weight estimation, but it is more defensible for a working prototype.
+The system also reflects a practical trade-off. It does not attempt exact portion estimation from a single image, because that would require assumptions that are difficult to verify in ordinary user photographs. Instead, it reports database-backed macro values and lets the user adjust serving multipliers. This limits automation, but it keeps the reported nutrition values closer to the evidence available to the system.
 
 \section{Limitations}
 
-The system does not estimate exact portion mass from the image. Nutrition values are reported from database rows and adjusted through user-selected serving multipliers. Better portion estimation would need segmentation, depth cues, reference objects, or calibrated serving-size assumptions. The detector also has uneven per-class behavior for visually similar foods and classes with fewer diverse samples. Finally, the 21 review mappings should be interpreted as practical approximations rather than exact recipe equivalence.
+The system does not estimate exact portion mass from the image. Nutrition values are reported from database rows and adjusted through user-selected serving multipliers. More reliable portion estimation would require segmentation, depth cues, reference objects, or calibrated serving-size assumptions. The detector may also show uneven per-class behavior for visually similar foods and classes with fewer diverse samples. Finally, the 21 review mappings should be interpreted as practical approximations rather than exact recipe equivalence.
 
 \section{Conclusion}
 
-This paper presented \textit{AI-Based Food Recognition with Nutrition-Aware Recommendations}, an end-to-end system for Indian food detection, nutrition lookup, macro calculation, and personalized dietary guidance. The project combines a YOLO11s detector, a 72-class canonical Indian-food dataset, a conservative nutrition-mapping layer, and a full-stack prototype. The detector achieved 0.820 mAP@50 on the held-out test split, while the nutrition layer mapped all 72 expanded classes with zero failed macro mappings. The main lesson from the project is straightforward: food recognition becomes useful for dietary support only when visual predictions are grounded in auditable nutrition data and passed to the recommendation layer with their uncertainty preserved.
+This paper presented \textit{AI-Based Food Recognition with Nutrition-Aware Recommendations}, a system for Indian food detection, nutrition lookup, macro calculation, and personalized dietary guidance. The work combines a YOLO11s detector, a 72-class canonical Indian-food dataset, a conservative nutrition-mapping layer, and a full-stack prototype. The detector achieved 0.820 mAP@50 on the held-out test split, and the nutrition layer mapped all 72 expanded classes with zero failed macro mappings. The study indicates that food recognition becomes more useful for dietary support when visual predictions are connected to auditable nutrition data and passed to the recommendation layer with uncertainty preserved.
 
 \FloatBarrier
 
 \section*{Acknowledgment}
 
-The implementation and dataset engineering artifacts used in this manuscript were developed as part of a final year project in the Department of Computer Science and Engineering, National Institute of Technology Srinagar.
+The implementation and dataset engineering artifacts used in this manuscript were developed as part of a final year project in the Department of Computer Science and Engineering, National Institute of Technology Srinagar. The authors acknowledge the technical supervision and review provided by project guide \guide\ and project co-guide \coguide.
 
-\IEEEtriggeratref{10}
 \bibliographystyle{IEEEtran}
 \bibliography{bibliography/references}
 

@@ -2,9 +2,9 @@
 
 \section{Experimental Scope}
 
-The experiments in this project are based on evidence that could be verified from the repository and generated artifacts. The evaluation covers dataset construction, YOLO11s detector training, validation and test metrics, class-name verification, nutrition database integrity, mapping coverage, backend service behavior, frontend workflow, and qualitative detection output. The final training notebook and exported result directory provide the detector metrics used for reporting quantitative mAP, precision, recall, confusion-matrix, and prediction-batch evidence for the latest 72-class model.
+The experiments in this project are based on repository files, generated reports, and exported training artifacts. The evaluation covers dataset construction, YOLO11s detector training, validation and test metrics, class-name verification, nutrition database integrity, mapping coverage, backend service behavior, frontend workflow, and qualitative detection output. The final training notebook and exported result directory provide the detector metrics used for reporting mAP, precision, recall, confusion-matrix evidence, and prediction-batch samples for the latest 72-class model.
 
-The validation work was not limited to checking whether the model produced a number. Several parts of the system had to be checked together. For example, a detection result was useful only if the class existed in the final \code{data.yaml}, the nutrition service could resolve the class name, and the frontend could display the returned macro fields correctly.
+Validation was not limited to checking whether the model produced a score. Several parts of the system had to work together. A detection result was useful only if the class existed in the final \code{data.yaml}, the nutrition service could resolve the class name, and the frontend could display the returned macro fields correctly.
 
 \begin{figure}[H]
 \centering
@@ -39,7 +39,7 @@ The validation work was not limited to checking whether the model produced a num
 
 \section{Dataset Validation}
 
-The first validation task checks whether the merged dataset exists, contains expected split folders, and has a complete 72-class \code{data.yaml}. This was a necessary first step because a missing label file or a class-count mismatch would make later training results unreliable. The generated dataset summary is shown in Table \ref{tab:generated-dataset-summary}.
+The first validation task checks whether the merged dataset exists, contains the expected split folders, and has a complete 72-class \code{data.yaml}. This step was necessary because a missing label file or class-count mismatch would make later training results unreliable. The generated dataset summary is shown in Table \ref{tab:generated-dataset-summary}.
 
 \begin{table}[H]
 \centering
@@ -62,11 +62,11 @@ Split target ratio & 70/15/15\\
 \end{tabular}
 \end{table}
 
-The split counts indicate that the generated dataset is complete: every exported image has a corresponding label file. Validation and test augmentation are disabled so that held-out samples remain real images rather than transformed versions of the training data. This makes the reported validation and test metrics more meaningful because the model is not being evaluated on augmented copies of training-style images.
+The split counts indicate that the generated dataset is complete: every exported image has a corresponding label file. Validation and test augmentation are disabled so that held-out samples remain real images rather than transformed versions of training data. As a result, the validation and test metrics are not based on augmented copies.
 
 \section{YOLO Training and Detector Evaluation}
 
-The final detector experiment used YOLO11s on the 72-class dataset. The run resumed from a previous checkpoint at epoch 56 and continued to 100 total epochs. The resumed training approach was chosen because the earlier checkpoint was already stable enough to continue, and restarting from the beginning would have increased training time without adding new data. Table \ref{tab:yolo-training-setup} summarizes the final training setup recorded in the final training notebook and the exported \code{args.yaml}.
+The final detector experiment used YOLO11s on the 72-class dataset. The run resumed from a previous checkpoint at epoch 56 and continued to 100 total epochs. This approach was used because the earlier checkpoint was already stable enough to continue, and restarting from the beginning would have increased training time without adding new data. Table \ref{tab:yolo-training-setup} summarizes the final training setup recorded in the final training notebook and exported \code{args.yaml}.
 
 \begin{table}[H]
 \centering
@@ -89,7 +89,7 @@ Best exported weight & \code{yolo11s_indian_food_best.pt}\\
 \end{tabularx}
 \end{table}
 
-The resumed training stage steadily reduced training and validation losses. The highest validation mAP@50 in \code{results.csv} was 0.83379 at epoch 78, while the final epoch recorded precision 0.8528, recall 0.8042, mAP@50 0.82806, and mAP@50:95 0.69164. The fact that the best validation value occurred before the final epoch is normal in detector training and supports using the exported best checkpoint for evaluation. Figure \ref{fig:yolo11s-training-curves} and Figure \ref{fig:yolo11s-results-plot} show the training curves generated from the final run.
+The resumed training stage reduced training and validation losses with some normal epoch-to-epoch variation. The highest validation mAP@50 in \code{results.csv} was 0.83379 at epoch 78, while the final epoch recorded precision 0.8528, recall 0.8042, mAP@50 0.82806, and mAP@50:95 0.69164. Since the best validation value occurred before the final epoch, the exported best checkpoint was used for evaluation. Figure \ref{fig:yolo11s-training-curves} shows the resumed-stage training curves. Figure \ref{fig:yolo11s-results-plot} uses the merged result image to show the complete training trend after combining the available training segments.
 
 \begin{figure}[H]
 \centering
@@ -100,8 +100,8 @@ The resumed training stage steadily reduced training and validation losses. The 
 
 \begin{figure}[H]
 \centering
-\includegraphics[width=0.98\textwidth,keepaspectratio]{yolo11s_results_plot.png}
-\caption{Ultralytics result plot for the final YOLO11s run}
+\includegraphics[width=0.98\textwidth,keepaspectratio]{yolo11s_merged_training_curves.png}
+\caption{Merged YOLO11s training result curves for the complete 100-epoch run}
 \label{fig:yolo11s-results-plot}
 \end{figure}
 
@@ -121,7 +121,40 @@ Test & 5,919 & 8,875 & 0.842 & 0.801 & 0.820 & 0.680\\
 \end{tabular}
 \end{table}
 
-The validation run reported mAP@75 of 0.765, and the test run reported mAP@75 of 0.751. Both validation and test evaluation reported approximately 11.0 ms inference time per image on the Kaggle Tesla T4 environment, excluding application-level upload and response overhead. The reported inference time therefore describes the model stage only; the full web application also includes file upload, image decoding, nutrition lookup, and frontend rendering.
+The validation run reported mAP@75 of 0.765, and the test run reported mAP@75 of 0.751. Both validation and test evaluation reported approximately 11.0 ms inference time per image on the Kaggle Tesla T4 environment, excluding application-level upload and response overhead. This means the reported inference time describes only the model stage; the full web application also includes file upload, image decoding, nutrition lookup, and frontend rendering.
+
+The exported run also produced confidence and precision-recall curves for bounding-box evaluation. These plots helped during interpretation because they show how the model behaves across confidence thresholds instead of relying only on one aggregate value. Figure \ref{fig:yolo11s-after-discontinuation-curves} includes the F1-confidence, precision-recall, precision-confidence, and recall-confidence curves from the after-discontinuation YOLO11s run.
+
+\begin{figure}[H]
+\centering
+\begin{subfigure}[t]{0.48\textwidth}
+    \centering
+    \includegraphics[width=\linewidth,keepaspectratio]{yolo11s_after_box_f1_curve.png}
+    \caption{F1-confidence}
+\end{subfigure}
+\hfill
+\begin{subfigure}[t]{0.48\textwidth}
+    \centering
+    \includegraphics[width=\linewidth,keepaspectratio]{yolo11s_after_box_pr_curve.png}
+    \caption{Precision-recall}
+\end{subfigure}
+
+\vspace{0.35cm}
+
+\begin{subfigure}[t]{0.48\textwidth}
+    \centering
+    \includegraphics[width=\linewidth,keepaspectratio]{yolo11s_after_box_p_curve.png}
+    \caption{Precision-confidence}
+\end{subfigure}
+\hfill
+\begin{subfigure}[t]{0.48\textwidth}
+    \centering
+    \includegraphics[width=\linewidth,keepaspectratio]{yolo11s_after_box_r_curve.png}
+    \caption{Recall-confidence}
+\end{subfigure}
+\caption{After-discontinuation YOLO11s bounding-box evaluation curves}
+\label{fig:yolo11s-after-discontinuation-curves}
+\end{figure}
 
 \begin{figure}[H]
 \centering
@@ -137,13 +170,13 @@ The validation run reported mAP@75 of 0.765, and the test run reported mAP@75 of
 \label{fig:yolo11s-test-predictions}
 \end{figure}
 
-The aggregate metrics show that the final detector generalizes from validation to the held-out test split with a small drop in mAP. The normalized confusion matrix still shows uneven class behavior, which is expected in a 72-class food detector where several dishes are visually similar and some classes contain fewer unique source images. In visual inspection, most mistakes were easier to understand when the foods shared colour, texture, or serving style, such as rice-based dishes, paneer gravies, and chutney-side combinations.
+The aggregate metrics show that the final detector carries over from validation to the held-out test split with a small mAP drop. The normalized confusion matrix still shows uneven class behaviour, which is expected in a 72-class food detector where several dishes look similar and some classes have fewer unique source images. In visual inspection, many mistakes were understandable when foods shared colour, texture, or serving style, such as rice-based dishes, paneer gravies, and chutney-side combinations.
 
 \section{Class Verification Experiment}
 
-The class verification experiment generated contact sheets with four images per class. The goal was to catch practical mistakes that are easy to miss in code: class-order shifts, naming mismatches, or labels that do not match the visible food. The script found image samples for all 72 classes. Visual inspection found no class-list order problem. The issues found were sample-level annotation issues rather than class-list errors.
+The class verification experiment generated contact sheets with four images per class. The purpose was to catch practical mistakes that are easy to miss in code, such as class-order shifts, naming mismatches, or labels that do not match the visible food. The script found image samples for all 72 classes. Visual inspection found no class-list order problem. The issues observed were sample-level annotation issues rather than class-list errors.
 
-This experiment was useful because it gave a fast human-readable check of the dataset. Looking only at CSV counts would not show whether a \code{jalebi} sample actually looked like jalebi or whether a chutney box was placed on the correct food region. The contact sheets made these issues visible without opening hundreds of files manually.
+This experiment was useful because it gave a quick human-readable check of the dataset. CSV counts alone would not show whether a \code{jalebi} sample actually looked like jalebi or whether a chutney box was placed on the correct food region. The contact sheets made these problems visible without opening hundreds of files manually.
 
 \begin{table}[H]
 \centering
@@ -166,9 +199,9 @@ Sample-level issues found & 3\\
 
 \section{Nutrition Database Validation}
 
-The nutrition database validation checks schema and row counts. The database contains 1,010 records in \code{indb_foods} and 103 records in \code{yolo_mappings}. The food table is based on INDB and five source-backed supplemental rows for classes that were absent from INDB. The mapping count is larger than 72 because the table includes the expanded dataset classes and legacy deployed-model labels for backward compatibility.
+Nutrition database validation checks schema and row counts. The database contains 1,010 records in \code{indb_foods} and 103 records in \code{yolo_mappings}. The food table is based on INDB and five source-backed supplemental rows for classes absent from INDB. The mapping count is larger than 72 because the table includes expanded dataset classes and legacy deployed-model labels for backward compatibility.
 
-The row-count check was followed by lookup tests because a database can contain records but still fail to return the correct food for a detector label. This was especially important after the mapping logic was changed from mostly fuzzy matching to explicit class-to-food mappings.
+The row-count check was followed by lookup tests because a database can contain records and still return the wrong food for a detector label. This was especially important after the mapping logic was changed from mostly fuzzy matching to explicit class-to-food mappings.
 
 \begin{table}[H]
 \centering
@@ -186,7 +219,7 @@ Table & Purpose & Count\\
 
 \section{Nutrition Mapping Coverage Experiment}
 
-The mapping coverage experiment checks how many of the 72 dataset classes have a safe nutrition mapping. The result is shown in Table \ref{tab:mapping-coverage}. Coverage was measured on the final canonical class list rather than only on the currently detected labels, because the model can potentially return any of the 72 classes during use.
+The mapping coverage experiment checks how many of the 72 dataset classes have a safe nutrition mapping. The result is shown in Table \ref{tab:mapping-coverage}. Coverage was measured on the final canonical class list rather than only on currently detected labels, because the model can return any of the 72 classes during use.
 
 \begin{table}[H]
 \centering
@@ -204,7 +237,7 @@ Mapping coverage & 100.00\%\\
 \end{tabular}
 \end{table}
 
-The classes \code{bhakarwadi}, \code{ghevar}, \code{jalebi}, \code{khandvi}, and \code{nandu_masala} were not present as safe INDB rows, so verified supplemental entries were added with source metadata. The supplemental values use a FatSecret product nutrition label for \code{bhakarwadi} and Clearcals recipe nutrition pages for the remaining dishes \cite{fatsecret_bhakarwadi_2026,clearcals_ghevar_2026,clearcals_jalebi_2026,clearcals_khandvi_2026,clearcals_nandu_kari_2026}. This keeps the full 72-class dataset usable while avoiding unsafe fuzzy substitutions. These rows are not treated as equal to primary INDB coverage in the discussion; they are documented as supplemental values.
+The classes \code{bhakarwadi}, \code{ghevar}, \code{jalebi}, \code{khandvi}, and \code{nandu_masala} were not present as safe INDB rows, so verified supplemental entries were added with source metadata. The supplemental values use a FatSecret product nutrition label for \code{bhakarwadi} and Clearcals recipe nutrition pages for the remaining dishes \cite{fatsecret_bhakarwadi_2026,clearcals_ghevar_2026,clearcals_jalebi_2026,clearcals_khandvi_2026,clearcals_nandu_kari_2026}. This keeps the full 72-class dataset usable while avoiding unsafe fuzzy substitutions. These rows are documented as supplemental values and are not treated as equal to primary INDB coverage in the discussion.
 
 \begin{table}[H]
 \centering
@@ -252,13 +285,13 @@ This confirms that the revised database mapping handles both canonical dataset l
 
 \section{Backend API Validation}
 
-The backend validation focuses on service readiness and response structure. The analysis endpoint returns HTTP 503 if vision or nutrition services are unavailable. Empty images, non-image MIME types, and uploads exceeding 10 MB are rejected. The analysis response includes food label, confidence, bounding box, nutrition source, macro values, and food-not-found status. This structured response is important because the frontend depends on predictable fields for visualization and macro tracking. It also makes debugging easier when a detection is correct but the nutrition object is missing or incomplete.
+Backend validation focuses on service readiness and response structure. The analysis endpoint returns HTTP 503 if vision or nutrition services are unavailable. Empty images, non-image MIME types, and uploads exceeding 10 MB are rejected. The analysis response includes food label, confidence, bounding box, nutrition source, macro values, and food-not-found status. This structured response is important because the frontend depends on predictable fields for visualization and macro tracking. It also makes debugging easier when a detection is correct but the nutrition object is missing or incomplete.
 
 \section{Frontend Workflow Validation}
 
-The frontend workflow was validated qualitatively by uploading sample food images and verifying that the interface displays bounding boxes, detected labels, confidence values, nutrition cards, serving controls, and recommendation text. Figure \ref{fig:detection-overlay} in Chapter 5 shows a successful example with Bhatura and Chole detections. The interface also handles no-food responses and backend error messages.
+The frontend workflow was validated qualitatively by uploading sample food images and checking that the interface displays bounding boxes, detected labels, confidence values, nutrition cards, serving controls, and recommendation text. Figure \ref{fig:detection-overlay} in Chapter 5 shows a successful example with Bhatura and Chole detections. The interface also handles no-food responses and backend error messages.
 
-The qualitative workflow test was important because some issues only appear after the model response reaches the browser. For example, box coordinates must align with the displayed image size, serving changes must update macro totals, and recommendation text must use the current user goal rather than a previous state.
+This workflow test was important because some issues appear only after the model response reaches the browser. Box coordinates must align with the displayed image size, serving changes must update macro totals, and recommendation text must use the current user goal rather than an old state.
 
 \begin{figure}[H]
 \centering
@@ -291,4 +324,4 @@ Macro validation checks whether a target calorie value is converted correctly to
 
 \section{Experimental Findings}
 
-The experiments show that the dataset and application pipeline are internally consistent. The final YOLO11s model achieved 0.830 mAP@50 and 0.692 mAP@50:95 on validation, and 0.820 mAP@50 and 0.680 mAP@50:95 on the held-out test split. The system can detect food classes, map all 72 expanded dataset classes to nutrition records, and display results in the frontend. The results are strong enough for a final-year prototype, while still showing practical limits such as class confusion among similar foods, dependence on per-100g nutrition values, and the difference between model inference time and full application response time.
+The experiments show that the dataset and application pipeline are internally consistent. The final YOLO11s model achieved 0.830 mAP@50 and 0.692 mAP@50:95 on validation, and 0.820 mAP@50 and 0.680 mAP@50:95 on the held-out test split. The system can detect food classes, map all 72 expanded dataset classes to nutrition records, and display results in the frontend. These results are suitable for a final-year prototype, while still showing practical limits such as class confusion among similar foods, dependence on per-100g nutrition values, and the difference between model inference time and full application response time.

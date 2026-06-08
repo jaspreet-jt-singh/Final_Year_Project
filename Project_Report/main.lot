@@ -1,35 +1,35 @@
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {table}{\numberline {2.1}{\ignorespaces Portrait summary of the supplied literature}}{14}{table.2.1}%
+\contentsline {table}{\numberline {2.1}{\ignorespaces Condensed summary of reviewed research papers}}{13}{table.2.1}%
 \addvspace {10\p@ }
-\contentsline {table}{\numberline {3.1}{\ignorespaces Source datasets used for merged Indian food dataset}}{21}{table.caption.15}%
-\contentsline {table}{\numberline {3.2}{\ignorespaces Examples of raw-to-canonical label normalization}}{22}{table.caption.16}%
+\contentsline {table}{\numberline {3.1}{\ignorespaces Source datasets used for merged Indian food dataset}}{17}{table.caption.15}%
+\contentsline {table}{\numberline {3.2}{\ignorespaces Examples of raw-to-canonical label normalization}}{18}{table.caption.16}%
 \addvspace {10\p@ }
-\contentsline {table}{\numberline {4.1}{\ignorespaces Runtime nutrition database tables}}{30}{table.caption.19}%
-\contentsline {table}{\numberline {4.2}{\ignorespaces Implemented backend endpoints}}{32}{table.caption.21}%
+\contentsline {table}{\numberline {4.1}{\ignorespaces Runtime nutrition database tables}}{26}{table.caption.19}%
+\contentsline {table}{\numberline {4.2}{\ignorespaces Implemented backend endpoints}}{28}{table.caption.21}%
 \addvspace {10\p@ }
-\contentsline {table}{\numberline {5.1}{\ignorespaces Important implementation files}}{40}{table.caption.23}%
+\contentsline {table}{\numberline {5.1}{\ignorespaces Important implementation files}}{36}{table.caption.23}%
 \addvspace {10\p@ }
-\contentsline {table}{\numberline {6.1}{\ignorespaces Generated dataset summary}}{42}{table.caption.25}%
-\contentsline {table}{\numberline {6.2}{\ignorespaces Final YOLO11s training setup}}{43}{table.caption.26}%
-\contentsline {table}{\numberline {6.3}{\ignorespaces Final YOLO11s aggregate detector metrics}}{44}{table.caption.29}%
-\contentsline {table}{\numberline {6.4}{\ignorespaces Visual class verification result}}{46}{table.caption.32}%
-\contentsline {table}{\numberline {6.5}{\ignorespaces Nutrition database validation result}}{47}{table.caption.33}%
-\contentsline {table}{\numberline {6.6}{\ignorespaces Nutrition mapping coverage for 72-class dataset}}{47}{table.caption.34}%
-\contentsline {table}{\numberline {6.7}{\ignorespaces Verified supplemental nutrition rows}}{48}{table.caption.35}%
-\contentsline {table}{\numberline {6.8}{\ignorespaces Corrected nutrition lookup examples}}{48}{table.caption.36}%
+\contentsline {table}{\numberline {6.1}{\ignorespaces Generated dataset summary}}{38}{table.caption.25}%
+\contentsline {table}{\numberline {6.2}{\ignorespaces Final YOLO11s training setup}}{39}{table.caption.26}%
+\contentsline {table}{\numberline {6.3}{\ignorespaces Final YOLO11s aggregate detector metrics}}{40}{table.caption.29}%
+\contentsline {table}{\numberline {6.4}{\ignorespaces Visual class verification result}}{43}{table.caption.33}%
+\contentsline {table}{\numberline {6.5}{\ignorespaces Nutrition database validation result}}{44}{table.caption.34}%
+\contentsline {table}{\numberline {6.6}{\ignorespaces Nutrition mapping coverage for 72-class dataset}}{44}{table.caption.35}%
+\contentsline {table}{\numberline {6.7}{\ignorespaces Verified supplemental nutrition rows}}{45}{table.caption.36}%
+\contentsline {table}{\numberline {6.8}{\ignorespaces Corrected nutrition lookup examples}}{45}{table.caption.37}%
 \addvspace {10\p@ }
-\contentsline {table}{\numberline {7.1}{\ignorespaces Representative categories in the 72-class dataset}}{51}{table.caption.38}%
-\contentsline {table}{\numberline {7.2}{\ignorespaces Examples of improved nutrition mappings}}{53}{table.caption.39}%
-\addvspace {10\p@ }
-\addvspace {10\p@ }
+\contentsline {table}{\numberline {7.1}{\ignorespaces Representative categories in the 72-class dataset}}{49}{table.caption.39}%
+\contentsline {table}{\numberline {7.2}{\ignorespaces Examples of improved nutrition mappings}}{51}{table.caption.40}%
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {table}{\numberline {A.1}{\ignorespaces Full 72-class dataset to INDB mapping table}}{67}{table.A.1}%
-\contentsline {table}{\numberline {A.2}{\ignorespaces Sample-level annotation issues found during visual verification}}{70}{table.caption.41}%
-\contentsline {table}{\numberline {A.3}{\ignorespaces Per-class dataset counts after merge and train augmentation}}{87}{table.A.3}%
 \addvspace {10\p@ }
-\contentsline {table}{\numberline {B.1}{\ignorespaces Weight-loss macro targets for 2,000 kcal}}{93}{table.caption.58}%
-\contentsline {table}{\numberline {B.2}{\ignorespaces Muscle-gain macro targets for 2,000 kcal}}{94}{table.caption.59}%
-\contentsline {table}{\numberline {B.3}{\ignorespaces Maintenance macro targets for 2,000 kcal}}{94}{table.caption.60}%
-\contentsline {table}{\numberline {B.4}{\ignorespaces Endurance macro targets for 2,000 kcal}}{95}{table.caption.61}%
+\addvspace {10\p@ }
+\contentsline {table}{\numberline {A.1}{\ignorespaces Full 72-class dataset to INDB mapping table}}{65}{table.A.1}%
+\contentsline {table}{\numberline {A.2}{\ignorespaces Sample-level annotation issues found during visual verification}}{68}{table.caption.42}%
+\contentsline {table}{\numberline {A.3}{\ignorespaces Per-class dataset counts after merge and train augmentation}}{85}{table.A.3}%
+\addvspace {10\p@ }
+\contentsline {table}{\numberline {B.1}{\ignorespaces Weight-loss macro targets for 2,000 kcal}}{91}{table.caption.59}%
+\contentsline {table}{\numberline {B.2}{\ignorespaces Muscle-gain macro targets for 2,000 kcal}}{92}{table.caption.60}%
+\contentsline {table}{\numberline {B.3}{\ignorespaces Maintenance macro targets for 2,000 kcal}}{92}{table.caption.61}%
+\contentsline {table}{\numberline {B.4}{\ignorespaces Endurance macro targets for 2,000 kcal}}{93}{table.caption.62}%

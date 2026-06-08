@@ -2,133 +2,139 @@
 
 \section{Scope of the Review}
 
-This review is restricted to the research papers supplied with the project material. The papers cover Indian food image datasets, YOLO and CNN-based recognition, segmentation for thali-style meals, Indian nutrition databases, food-name mapping, barcode-based nutrition systems, LLM-assisted meal planning, and the reliability limits of direct vision-language nutrient estimation. Papers centred on 3D volume or depth estimation are intentionally excluded because the implemented system reports per-100g macro values and does not attempt monocular volume measurement.
+This review uses the supplied research papers as background for the implemented project. The papers cover food recognition, Indian cuisine datasets, nutrition databases, semantic mapping, and recommendation systems. They were not read only as separate benchmarks; they were studied to understand what would be needed to move from an uploaded food image to a usable nutrition output in a working application.
 
-The review is written around the actual problem faced in the project. A food image has to be converted into detected classes, those classes have to be matched to reliable nutrition rows, and the result has to be useful enough for a recommendation workflow. This helped keep the reading focused. Instead of treating computer vision, databases, and recommendations as separate topics, the papers were compared according to how much they helped in designing the implemented pipeline.
+For this project, the papers fall into three useful groups. The first group discusses food localization and classification through YOLO, CNNs, transfer learning, segmentation, and compact recognition models. The second group deals with nutrition databases and the harder-than-expected task of connecting a visual food label to a food-composition row. The third group looks at recommendation systems and LLM-assisted meal planning, including the risk of treating generated nutrition estimates as exact values.
 
-\section{Paper-wise Review}
+\section{Expanded Paper Summaries}
 
-\subsection{IndianFoodNet: Detecting Indian Food Items Using Deep Learning}
+\subsection{Vision and Object Detection}
 
-IndianFoodNet focuses on detecting Indian food items with YOLO-style object detection rather than classifying a full image as a single dish \cite{indianfoodnet_2023}. This was relevant because Indian meals often contain multiple items in the same photograph. A detector can mark each visible item with a bounding box and a class label, which is more useful than a single top-level prediction for a whole plate.
+\subsubsection{IndianFoodNet}
 
-The paper provided a clear reason to use a custom food detector for Indian cuisine. However, it also showed a boundary that became important during implementation. Detection alone does not complete nutrition tracking. A correct label such as \code{samosa} or \code{idli} still has to be connected to a database row containing calories, protein, carbohydrates, and fat. The implemented project therefore extends the detection stage with a separate mapping and nutrition layer.
+IndianFoodNet is relevant because it treats Indian food recognition as an object-detection task rather than only an image-classification task \cite{indianfoodnet_2023}. The use of YOLO-based bounding boxes is suitable for Indian meals, where chutney, dal, rice, fried snacks, and curries may appear together in one image. A single image label would miss these smaller or side items.
 
-\subsection{Khana: A Comprehensive Indian Cuisine Dataset}
+The work helped justify the use of a single-stage detector in the project architecture. In this system, YOLO11s first localizes food items, and the backend then performs nutrition lookup for each detected class. IndianFoodNet mainly focuses on the visual detection stage. The current project continues after detection by adding database-backed macro values and recommendation output.
 
-The Khana dataset study addresses the lack of large Indian food image benchmarks by presenting a larger collection of Indian cuisine images across 80 classes \cite{khana_dataset_2025}. The work compares classification backbones such as ResNet, Vision Transformer, and ConvNeXT, and reports ConvNeXT-S as the best-performing model in the supplied summary.
+\subsubsection{Khana Dataset}
 
-The main value of this paper for the project was its discussion of data quality and class coverage. Indian foods have high visual similarity, strong regional variation, and class imbalance. Similar issues appeared in the merged dataset prepared for this work, where visually close dishes and rare classes required careful normalization and train-only augmentation. The limitation is that Khana is mainly a single-label classification benchmark. The implemented system needed multi-item detection, so the data-related lesson was adopted while the deployed task remained YOLO object detection.
+The Khana dataset paper addresses the shortage of large Indian cuisine benchmarks by presenting more than 131,000 images across 80 classes \cite{khana_dataset_2025}. It also makes clear why Indian food recognition is difficult: several dishes share colour, texture, garnish, and serving style even when their ingredients and macro values are different.
 
-\subsection{What is there in an Indian Thali?}
+This point matched the problems seen while merging the project dataset. Canonical class normalization, train-only augmentation, and visual class verification were needed because a confused label does not only affect detector accuracy; it also affects the nutrition record selected later. The paper also shows why class-wise checking is useful, since aggregate metrics can hide weak classes.
 
-The Indian Thali paper studies the cluttered and overlapping nature of thali meals \cite{indian_thali_2025}. It uses segmentation and prototype matching to identify food regions in a controlled multi-camera setup. This paper was useful because it describes a difficulty that also appears in ordinary meal photographs: curries, rice, dal, chutneys, and fried items may touch or overlap, making boundaries unclear.
+\subsubsection{Enhanced Food Image Recognition}
 
-The implemented system uses a more lightweight input setting. It accepts a single uploaded image and predicts YOLO bounding boxes instead of relying on a kiosk or multi-view camera hardware. This does not provide the same boundary detail as segmentation, but it is easier for a normal user to operate. The paper therefore serves mainly as a reference for future improvement, especially if the project later adds instance segmentation for mixed plates.
+The enhanced food image recognition study uses transfer learning with lightweight networks such as MobileNetV2 to keep inference cost low while maintaining acceptable precision \cite{enhanced_food_cnn_2024}. In food logging, this is a practical requirement because users expect a result soon after taking or uploading a meal image.
 
-\subsection{Single-item Training for Multi-dish Recognition}
+The project uses YOLO detection rather than single-image classification, but the same response-time concern remains. The backend has to receive the uploaded image, run inference, attach nutrition data, and return a response without feeling slow. For that reason, model size and service design were treated as deployment concerns, not only as training choices.
 
-The single-item training paper studies multi-dish Indian food recognition using a class-agnostic framework based on segmentation and DenseNet-style feature extraction \cite{sedensenet_multidish_2026}. Its main contribution is the attempt to generalize from individual dish examples to more complex platter scenes. This is a realistic concern because gathering well-annotated multi-dish Indian meal data takes more time than collecting single-food images.
+\subsubsection{Single-item Training for Multi-dish Recognition}
 
-The paper indicates that stronger feature learning can help in multi-food scenes. At the same time, its two-stage design is less convenient for a responsive web application. For the current implementation, a single-stage YOLO pipeline was selected so that localization and classification happen in one inference pass. This keeps the backend easier to integrate and makes API usage more practical on ordinary development hardware.
+The single-item training paper studies complex Indian platter recognition using a Squeeze-and-Excitation DenseNet121-style architecture with class-agnostic feature extraction \cite{sedensenet_multidish_2026}. The reported accuracy is high, but the pipeline is heavier and more complex to deploy in a simple web application.
 
-\subsection{Lightweight Real-time Food Calorie Estimation Using CNNs}
+This project keeps the recognition path simpler. YOLO performs localization and classification in one inference pass, which made it easier to integrate with the FastAPI backend. This choice does not solve every problem caused by overlapping foods, but it was more practical for the prototype than building a segmentation-first pipeline.
 
-The lightweight CNN paper argues for low-latency food recognition models in nutrition applications \cite{lightweight_cnn_food_2022}. The supplied summary reports a parameter-optimized CNN with useful validation accuracy and fast inference on common food datasets. The broader lesson is practical: a dietary tool should not feel slow, because users are unlikely to wait through a heavy model every time they log a meal.
+\subsubsection{Lightweight and Parameter-Optimized CNN}
 
-This influenced the preference for a compact detector and a web API design where image inference, nutrition lookup, and response generation are kept as separate services. The paper is less aligned with the Indian-food requirement because its datasets are mostly generic or Western. That gap is handled through Indian food datasets and a 72-class canonical label set.
+The lightweight CNN paper concentrates on latency reduction for real-time food calorie estimation \cite{lightweight_cnn_food_2022}. It adjusts convolution, pooling, and dropout choices to make prediction faster while keeping accuracy usable. The main lesson for this project is straightforward: a meal-logging tool has to respond quickly enough for repeated use.
 
-\subsection{Indian Food Image Classification with MobileNetV3}
+For this project, the paper justifies compact detector variants and a backend where image inference, nutrition lookup, and recommendation generation are separate stages. Each stage can then be checked and improved independently. The main limitation from the project viewpoint is that the food coverage is mostly generic rather than focused on Indian dishes.
 
-The MobileNetV3 transfer learning paper applies data augmentation and pretrained mobile-friendly models to Indian food classification \cite{mobilenetv3_indian_food_2023}. It is relevant because it shows that smaller models can still perform well when training data is limited, provided augmentation is handled carefully.
+\subsubsection{What is in an Indian Thali?}
 
-The same general idea is applied here at the object detection level. Augmentation is applied only to the training split so that synthetic variants do not leak into validation or test evaluation. The limitation of the MobileNetV3 study is its narrow class range, which is not enough for a realistic Indian meal assistant. The implemented dataset therefore expands the class coverage and uses detection so that multiple foods can be handled in one image.
+The Indian Thali paper studies one of the most difficult cases for Indian food recognition: overlapping and partly hidden items in a thali meal \cite{indian_thali_2025}. It uses segmentation, pixel masking, and a multi-camera setup to separate items on the same plate.
 
-\subsection{Development of an Indian Food Composition Database}
+The paper is useful because similar overlap also appears in ordinary meal photographs. However, its capture setup is not convenient for a daily food-logging user. The project works from a single uploaded image and uses YOLO bounding boxes instead of multi-camera segmentation. The boundaries are less precise, but the method fits the web-based prototype better.
 
-The INDB paper is central to the nutrition layer of this project \cite{development_indb_2024}. It focuses on cooked Indian recipes and highlights why raw ingredient tables are often inadequate for estimating food macros. Cooking method, oil absorption, water loss, and recipe composition can change the final nutrient profile substantially.
+\subsection{Nutrition Databases and Semantic Mapping}
 
-For this project, the INDB spreadsheet is converted into a SQLite database used by the FastAPI backend. This gives the system a deterministic source for calories and macronutrients instead of asking a language model to estimate numerical values. The remaining challenge is coverage. Some YOLO classes were absent from the available database sheet, so verified supplemental rows were added with source metadata rather than forcing unsafe fuzzy matches.
+\subsubsection{Development of INDB}
 
-\subsection{Synergistic Frameworks for Indian Food Computing}
+The Development of an Indian Food Composition Database paper is central to the nutrition part of this project \cite{development_indb_2024}. It reports nutrient values for cooked Indian recipes, which are more relevant for meal tracking than raw ingredient values alone. Cooking changes the final macro profile through oil absorption, water loss, ingredient ratios, and preparation method.
 
-The synergistic frameworks paper describes the compatibility problem between visual food datasets and nutritional databases \cite{synergistic_frameworks_2025}. A model label and a database food name may refer to the same dish but still differ in spelling, language, word order, or regional naming. This is a common source of failure in food computing systems because the model may be visually correct while the nutrition lookup fails.
+The backend converts the available INDB spreadsheet into a local SQLite database. This gives the application a fixed source for calories, protein, carbohydrates, and fat. The detector is used to identify the dish, while the database supplies the numerical macro values. This avoids asking a language model to guess nutrition values directly from an image.
 
-This idea was directly observed during backend development. The project uses normalized class names, manual semantic mappings, source-backed supplemental rows, and conservative fuzzy matching. This treats mapping as a major part of the system rather than a small string-matching detail. The paper also supports the decision to store mappings in the database build output so that they can be inspected later.
+\subsubsection{Indian Food Composition Tables}
 
-\subsection{Enhancing FKG.in}
+The Indian Food Composition Tables provide a strong analytical baseline for raw Indian foods \cite{ifct_2017}. They are valuable because they come from standardized biochemical measurements and help explain the nutrient profile of ingredients.
 
-The FKG.in paper uses large language models and food knowledge graphs to parse regional recipe text and derive structured nutritional information \cite{fkg_llm_2024}. Its strength is that it can work with unstructured recipe descriptions, which are common in Indian cooking because recipes are often written informally and vary by household.
+For this system, the limitation is that raw food values do not always match cooked meals. A curry, sweet, or fried snack can differ a lot from its raw ingredients after cooking. For this reason, the project uses cooked recipe-style INDB data as the main runtime source while still treating food-composition tables as an important reference.
 
-This implementation uses a different entry point. Instead of asking the user to type or paste a recipe, the system begins with a food photograph. YOLO provides the initial food labels, and the nutrition database provides macro values. The LLM layer is used later for recommendation text, not for creating the base nutrient values. This separation was important because numerical macro values should come from a traceable data source.
+\subsubsection{Synergistic Frameworks for Indian Food Computing}
 
-\subsection{Label AI}
+The synergistic frameworks paper points out the mapping gap between visual food labels and nutrition database rows \cite{synergistic_frameworks_2025}. A detector may use one spelling, while the database may use a regional name or a longer recipe name. Without a mapping layer, even a correct visual label can fail during nutrition lookup.
 
-Label AI studies barcode scanning and nutrition mapping for packaged foods \cite{label_ai_2025}. It uses product codes and external food data to support fitness planning and packaged-food assessment. This kind of system works well when the food has a barcode and a standard label.
+The same issue appeared during implementation. Labels such as \code{satham}, \code{medu_vadai}, and \code{thengai_chutney} had to be normalized before they could be connected to database entries. The backend therefore uses canonical labels, explicit mappings, aliases, and conservative fuzzy matching rather than depending on exact string equality.
 
-Indian home-cooked meals usually do not fit that scenario. A serving of rajma, poha, idli, dosa, or a thali has no barcode, and the user may not know the exact ingredients. The implemented system replaces barcode input with visual detection and a local nutrition database. The comparison is useful because it shows that nutrition lookup is easier when a reliable identifier already exists. In this project, the identifier has to be inferred from the image and then checked against a food database.
+\subsubsection{Nutrition Information Estimation from Food Photos}
 
-\subsection{Nutrition Information Estimation from Food Photos}
+The nutrition information estimation paper combines food or ingredient predictions from photographs with structured nutrition datasets \cite{multitask_nutrition_2022}. This is close to the logic used here because nutrition is not treated as a direct pixel-to-calorie regression problem.
 
-The multi-dataset nutrition estimation paper predicts food or ingredient attributes from photos and then aggregates nutrition using structured data \cite{multitask_nutrition_2022}. This is close to the logic of the current system because both approaches avoid treating calorie estimation as a pure image-regression problem.
+The project uses dish-level detections instead of ingredient-level mass estimation. This boundary was kept because exact food weight cannot be recovered reliably from one image without depth, scale, or controlled capture conditions. The system therefore reports per-100g values and allows serving adjustment in the interface.
 
-The difference is in scope. Ingredient-level prediction is more detailed, but it is also harder to validate, especially when serving size and food mass are unknown. This work uses class-level macro lookup per 100g and lets the user adjust servings. This is a conservative choice. It provides useful macro context while avoiding claims about exact plate weight from a single 2D photograph.
+\subsubsection{Label AI}
 
-\subsection{NutriGen}
+Label AI maps barcode-scanned packaged foods to nutrition values and fitness goals \cite{label_ai_2025}. That approach works well when the product already has a barcode and a standardized label. The identifier is clear, so nutrition lookup is comparatively direct.
 
-NutriGen explores personalized meal-plan generation with large language models under nutritional constraints \cite{nutrigen_2025}. It supports the idea that LLMs can be useful in diet applications when the prompt contains user goals, macro targets, restrictions, and other structured context.
+Home-cooked Indian meals usually do not provide such identifiers. A plate of poha, rajma, idli, dosa, or thali has to be recognized visually. The present system replaces barcode input with YOLO detection and then connects the detected class to a SQLite nutrition database. This comparison explains why a visual-to-database mapping layer is needed for cooked food.
 
-The implementation uses this lesson but changes the data flow. Instead of relying only on a manually entered profile, the recommendation service receives detected foods and calculated macros from the backend. This means the generated advice can respond to what the user actually uploaded. The LLM is therefore used as an explanation and recommendation layer, while the backend remains responsible for nutrition arithmetic.
+\subsection{Recommendations, LLMs, and System Integration}
 
-\subsection{LLMs and Computer Vision for Personalized Nutrition Advice}
+\subsubsection{Diet Engine}
 
-The LLM and computer vision paper combines OCR with language models to read printed nutrition labels and generate advice \cite{ocr_llm_nutrition_2026}. It demonstrates a useful pattern: computer vision should extract grounded information first, and the language model should reason from that extracted information.
+Diet Engine combines YOLOv8 food detection with an NLP chatbot for real-time dietary guidance \cite{diet_engine_2025}. It is one of the closer works to this project because it connects object detection with advice instead of stopping at classification.
 
-The same pattern is followed here, but OCR is replaced with food-object detection. The backend extracts class labels and macro values, then passes structured context into the recommendation layer. This is more suitable for cooked meals because there is usually no printed label to read. The limitation of the OCR-based approach is therefore the point where food-image detection becomes useful.
+The system follows a similar broad loop but adapts it for Indian foods. The dataset, class names, and nutrition mappings are domain-specific, and the recommendation layer receives structured food and macro data from the backend. As a result, the advice is connected to the detected meal rather than only to typed user input.
 
-\subsection{AI-driven Personalized Meal Planning}
+\subsubsection{AI-driven Personalized Meal Planning}
 
-The AI-driven meal planning paper describes a web-based platform for tailoring diet plans to user goals and health constraints \cite{genai_meal_planning_2025}. Its relevance is not only the use of generative AI, but also the full-stack nature of the system. Users need an interface, profile settings, dietary targets, and suggestions they can understand.
+The AI-driven personalized meal planning paper presents a web platform that uses generative AI for diets based on user goals and health constraints \cite{genai_meal_planning_2025}. Its relevance is partly technical and partly practical, because the user needs one place to handle goals, health conditions, and dietary suggestions.
 
-The application developed here adopts this product-level view. The frontend asks for goals and health conditions, displays detected foods and macro totals, and then requests personalized advice. The difference is that this system visually checks the uploaded meal before recommendations are generated. This makes the advice more grounded than a plan generated from profile data alone.
+This project adopts the same full-stack view through a Next.js frontend and FastAPI backend. The difference is that the recommendation begins with an uploaded meal image. Detected foods and calculated macros are passed to the recommendation layer so that the advice is tied to what the user actually logged.
 
-\subsection{Diet Engine}
+\subsubsection{NutriGen}
 
-Diet Engine combines YOLOv8 food detection with an NLP chatbot for real-time dietary guidance \cite{diet_engine_2025}. It is one of the closest papers to the implemented architecture because it joins object detection with conversational recommendation.
+NutriGen shows that LLMs can generate personalized meal plans when they are constrained by nutrition databases and user preferences \cite{nutrigen_2025}. The useful idea is not just the use of an LLM, but the way structured nutrition context is provided to it.
 
-The project follows the same general loop but adapts it to Indian food. The dataset, class names, and nutrition mappings are treated as domain-specific engineering problems. The supplied summary also notes weak generalization to Indian foods in Diet Engine, which supports the decision to use Indian food datasets and verified class-to-database mappings instead of relying on generic food categories.
+This shaped the recommendation service design in the project. The backend calculates calories and macros first, then passes structured information to the recommendation layer. The LLM is therefore not used as the source of exact numerical nutrition values, which reduces the chance of unsupported calorie or macro claims.
 
-\subsection{Smart Diet Planner}
+\subsubsection{LLMs and Computer Vision for Personalized Nutrition Advice}
 
-Smart Diet Planner presents a web-based nutrition management system using a Python backend, database-backed food records, and health calculations such as BMR or TDEE \cite{smart_diet_planner_2025}. It is relevant because it treats diet planning as a software workflow, not only as a model prediction task.
+The LLM and computer vision nutrition paper combines OCR with language models to read printed food labels and generate dietary advice \cite{ocr_llm_nutrition_2026}. It follows a useful pattern: computer vision first extracts grounded information, and language generation is applied afterward.
 
-The implemented system shares the backend-plus-database pattern but adds a computer vision entry point. Manual logging is still useful for controlled diet tracking, but it can become tedious. By using image upload first and serving adjustment second, the system reduces some user effort without claiming that the camera can estimate every detail automatically.
+The present system follows that pattern, but the grounded input is cooked-food detection instead of OCR. Most Indian meals do not have printed labels, so the meal image itself becomes the input. YOLO detections and database-backed macros provide the structured context for the recommendation service.
 
-\subsection{Evaluation of ChatGPT for Nutrient Estimation from Meal Photographs}
+\subsubsection{AI-Based Nutrition Recommendation System}
 
-The ChatGPT nutrient-estimation evaluation is important because it reports a practical limitation of vision-language models \cite{chatgpt_nutrient_estimation_2025}. Such models may identify foods reasonably well, but the supplied summary notes poor agreement for exact nutrient values. This matters because fluent responses can hide numerical mistakes.
+The AI-based nutrition recommendation system uses combinatorial logic and user profile constraints to generate diet plans within macronutrient boundaries \cite{ai_nutrition_recommender_2025}. This is useful because it keeps recommendations within explicit nutrition limits instead of producing open-ended advice.
 
-The implemented system is designed with that warning in mind. The LLM is not the source of calories or macros. Those values come from the nutrition database and mapping table. The recommendation layer receives already-computed values and uses them to generate advice. This makes the system more defensible for a nutrition-aware project, even though it requires more backend work.
+From this project’s perspective, the limitation is that such a planner does not verify the meal the user actually ate. The system adds a visual logging step before recommendations are produced, creating a clearer connection between the uploaded meal and the advice shown to the user.
 
-\subsection{Indian Food Classification and Dietary Recommendations Using CNNs}
+\subsubsection{Evaluation of ChatGPT for Nutrient Estimation}
 
-The edge CNN dietary recommendation paper uses deep CNN-based food classification and localized diet advice on Raspberry Pi-style hardware \cite{edge_cnn_diet_recommendations_2025}. It shows that Indian food recognition can be connected to recommendation workflows outside a purely academic model benchmark.
+The ChatGPT nutrient-estimation evaluation reports that vision-language models can identify foods reasonably well but still struggle with exact macronutrient estimation from meal photographs \cite{chatgpt_nutrient_estimation_2025}. The concern is that fluent text can make uncertain estimates appear more reliable than they are.
 
-The implementation differs in deployment style. Instead of requiring specialized edge hardware, it uses a web frontend, FastAPI backend, YOLO inference service, SQLite nutrition database, and recommendation API. This makes the prototype easier to access from a normal browser while keeping the same broad goal: convert recognized Indian food into practical dietary feedback.
+The implemented architecture avoids this problem by keeping numerical nutrition calculation outside the LLM. Calories, protein, carbohydrates, and fat come from the SQLite nutrition database and mapping table. The LLM receives already-computed values and is used only for explanation and recommendation text.
+
+\subsubsection{Visual Nutrition Analysis}
+
+The visual nutrition analysis study uses segmentation models such as UNet or DeepLab-style networks to isolate food pixels and estimate nutrition through regression \cite{visual_nutrition_analysis_2024}. Such an approach can work well when segmentation masks are accurate and the dataset contains detailed nutrition labels.
+
+This project does not estimate nutrients directly from pixels. It separates recognition from nutrition lookup: YOLO identifies the food class, and the backend retrieves macros from a database. The design was easier to validate within the project scope, especially because exact serving-size estimation was not included.
 
 \section{Comparative Summary}
 
-Table \ref{tab:recent-literature-summary} gives a concise portrait-mode summary of the supplied papers. The detailed comments are kept in the paper-wise review above so that the table can remain readable even with all comparison columns shown.
+Table \ref{tab:recent-literature-summary} gives a short comparison of the reviewed papers. The earlier summaries explain the connection between each paper and the implemented system.
 
 \begingroup
 \definecolor{lithead}{RGB}{255,255,255}
 \definecolor{litbody}{RGB}{255,255,255}
 \arrayrulecolor{black}
-\footnotesize
-\setlength{\tabcolsep}{1.5pt}
-\renewcommand{\arraystretch}{1.38}
-\begin{longtable}{|>{\columncolor{litbody}\centering\arraybackslash}p{0.045\textwidth}|>{\columncolor{litbody}\RaggedRight\arraybackslash}p{0.140\textwidth}|>{\columncolor{litbody}\RaggedRight\arraybackslash}p{0.170\textwidth}|>{\columncolor{litbody}\RaggedRight\arraybackslash}p{0.135\textwidth}|>{\columncolor{litbody}\RaggedRight\arraybackslash}p{0.130\textwidth}|>{\columncolor{litbody}\RaggedRight\arraybackslash}p{0.115\textwidth}|>{\columncolor{litbody}\RaggedRight\arraybackslash}p{0.170\textwidth}|}
-\caption{Portrait summary of the supplied literature}
+\scriptsize
+\setlength{\tabcolsep}{1.2pt}
+\renewcommand{\arraystretch}{1.25}
+\begin{longtable}{|>{\columncolor{litbody}\centering\arraybackslash}p{0.045\textwidth}|>{\columncolor{litbody}\RaggedRight\arraybackslash}p{0.145\textwidth}|>{\columncolor{litbody}\RaggedRight\arraybackslash}p{0.155\textwidth}|>{\columncolor{litbody}\RaggedRight\arraybackslash}p{0.135\textwidth}|>{\columncolor{litbody}\RaggedRight\arraybackslash}p{0.145\textwidth}|>{\columncolor{litbody}\RaggedRight\arraybackslash}p{0.150\textwidth}|>{\columncolor{litbody}\RaggedRight\arraybackslash}p{0.145\textwidth}|}
+\caption{Condensed summary of reviewed research papers}
 \label{tab:recent-literature-summary}\\
 \hline
 \rowcolor{lithead}
@@ -140,47 +146,47 @@ Table \ref{tab:recent-literature-summary} gives a concise portrait-mode summary 
 \shortstack{\textbf{S.}\\\textbf{No}} & \shortstack{\textbf{Technique}\\\textbf{\& Reference}} & \shortstack{\textbf{About}\\\textbf{Technique}} & \textbf{Applications} & \shortstack{\textbf{Dataset}\\\textbf{Used}} & \textbf{Results} & \textbf{Limitations}\\
 \hline
 \endhead
-1 & YOLOv5, YOLOv7 and YOLOv8, IndianFoodNet \cite{indianfoodnet_2023} & Single-stage detectors localize foods with bounding boxes, class labels, and confidence scores. & Indian food detection in meal images. & IFN: 5,500+ images, 30 classes. & YOLOv8 gave the strongest reported precision among tested models. & Detection is not connected to a nutrition database.\\
+1 & YOLO architectures, IndianFoodNet \cite{indianfoodnet_2023} & Bounding-box detection. & Real-time Indian food tracking. & IFN: 5,500+ images. & YOLOv5 mAP 0.807; YOLOv8 0.671. & No nutrition database.\\
 \hline
-2 & CNN, ViT and ConvNeXT, Khana \cite{khana_dataset_2025} & Deep classifiers and retrieval baselines model fine-grained Indian cuisine images. & Dish classification, segmentation, and retrieval. & Khana: about 131K images, 80 labels. & Provides a large Indian cuisine benchmark. & Mainly benchmark-oriented; not a complete nutrition workflow.\\
+2 & CNNs, ViT and ConvNeXT, Khana \cite{khana_dataset_2025} & Fine-grained classification. & Indian cuisine benchmarking. & Khana: 131K images, 80 classes. & ConvNeXT-S top-1: 86.72\%. & Single-label task.\\
 \hline
-3 & Segmentation and prototype matching, Indian Thali \cite{indian_thali_2025} & Segmentation separates visible thali components before classification and nutrition summarization. & Multi-item thali analysis. & Indian Thali Dataset and Weight Estimation Dataset. & Handles cluttered and overlapping thali foods. & Uses controlled capture hardware; less convenient for normal users.\\
+3 & Transfer learning, Enhanced Food CNNs \cite{enhanced_food_cnn_2024} & MobileNetV2 retraining. & Fast web/mobile classification. & Custom data. & Weighted precision: 76\%. & No multi-dish detection.\\
 \hline
-4 & SAM and SE-DenseNet121, single-item training \cite{sedensenet_multidish_2026} & SAM proposes food regions; SE-DenseNet121 classifies each segment. & Multi-dish recognition from single-item training data. & IFN30 and separate thali images. & 97.48\% single-item accuracy in the reported study. & Two-stage pipeline is heavier than direct YOLO detection.\\
+4 & SE-DenseNet121, single-item training \cite{sedensenet_multidish_2026} & SE feature extraction. & Cluttered platter recognition. & 30 Indian categories. & Top-1: 97.48\%; saved 333--500 annotation hours. & Computationally heavy.\\
 \hline
-5 & Parameter-optimized CNN \cite{lightweight_cnn_food_2022} & A lightweight CNN is tuned for lower inference cost and food calorie estimation. & Fast image-based calorie assistant. & Food image datasets used for regular meal recognition. & About 85\% accuracy with real-time focus. & Mostly generic food coverage; weak Indian food specificity.\\
+5 & Lightweight CNN \cite{lightweight_cnn_food_2022} & Tuned MaxPool and Dropout layers. & Mobile calorie estimation. & Food-101 and Fruit-360. & About 85\%; 0.0013 s. & Mostly Western foods.\\
 \hline
-6 & MobileNetV3 transfer learning \cite{mobilenetv3_indian_food_2023} & Pretrained MobileNetV3 is fine-tuned with rotation and horizontal-flip augmentation. & Indian food image classification. & 9 Indian food classes, about 2,700 images. & Accuracy improved to 95.3\% with augmentation. & Very limited class diversity.\\
+6 & Object segmentation, Indian Thali \cite{indian_thali_2025} & Pixel masking and KNN matching. & Occluded thali segmentation. & ITD and WED. & Segmented 5--10 overlapping items. & Needs five-camera rig.\\
 \hline
-7 & Indian Nutrient Databank \cite{development_indb_2024} & Cooked-recipe nutrient values are built from ingredient data and recipe composition. & Reliable macro lookup for Indian recipes. & 1,095 food items and 1,014 cooked recipes. & Creates an open Indian food composition resource. & Static database still needs class-name mapping.\\
+7 & Biochemical aggregation, INDB \cite{development_indb_2024} & Cooked recipe macro profiling. & Indian recipe nutrition. & INDB. & Macros for 1,014 cooked recipes. & Needs AI mapping bridge.\\
 \hline
-8 & Alias and fuzzy semantic mapping \cite{synergistic_frameworks_2025} & Name normalization, aliases, and partial matching link visual labels to nutrition rows. & Visual-to-nutrition dataset compatibility. & Visual food labels and nutrition tables. & Identifies the key mapping bottleneck. & Depends on clean names, aliases, and structured food taxonomy.\\
+8 & Analytical baseline, IFCT \cite{ifct_2017} & Direct lab measurements. & Raw Indian food reference. & NIN databank. & Standardized 528 foods. & Raw foods only.\\
 \hline
-9 & LLM and food knowledge graph, FKG.in \cite{fkg_llm_2024} & LLMs help resolve regional recipe text and knowledge-graph nutrition entities. & Recipe composition analysis. & FKG.in, IFCT, INDB, and Nutritionix sources. & Supports automated nutrition aggregation from recipes. & Text-based; does not begin from a food photograph.\\
+9 & Fuzzy semantic mapping \cite{synergistic_frameworks_2025} & Partial string matching to database rows. & Visual-to-database mapping. & Visual and nutrition tables. & Supports 72-class linking. & Needs clean taxonomy.\\
 \hline
-10 & Barcode scanning and hybrid scoring, Label AI \cite{label_ai_2025} & UPC barcode lookup retrieves packaged-food data and computes a health score. & Packaged food fitness planning. & Open Food Facts product records. & Produces a 0--10 nutrition-style score. & Cannot help home-cooked meals without barcodes.\\
+10 & Pretrained CNNs and DB lookup \cite{multitask_nutrition_2022} & Visual prediction plus nutrition lookup. & Multi-task macro extraction. & Yelp and Nutrition5k. & 85\% ingredient accuracy; F1 49.09\%. & Multiple lookup overhead.\\
 \hline
-11 & Multi-task ML nutrition estimation \cite{multitask_nutrition_2022} & Food ingredients are predicted from photos and then combined with database values. & Nutrition estimation from food photos. & Yelp food photos and nutrition datasets. & Reported 85\% ingredient-attribute accuracy. & Ingredient mass and serving size remain uncertain.\\
+11 & CatBoost and barcodes, Label AI \cite{label_ai_2025} & Barcode APIs and ML scoring. & Packaged food tracking. & Open Food Facts. & $R^2$ 0.9002; explained variance 0.9010. & Not for home-cooked meals.\\
 \hline
-12 & Prompted LLM meal planning, NutriGen \cite{nutrigen_2025} & LLM prompts are constrained with reliable nutrition references and user preferences. & Personalized meal-plan generation. & Personalized nutrition database and USDA references. & Llama 3.1 and GPT-3.5 showed low calorie-target error. & Does not visually verify what the user ate.\\
+12 & YOLOv8 and NLP bot, Diet Engine \cite{diet_engine_2025} & Detection piped to chatbot. & Mobile diet consulting. & Custom: 6,692 images. & F1 0.86 at 0.264 confidence; mAP 0.897. & Weak Indian generalization.\\
 \hline
-13 & OCR and LLM advice \cite{ocr_llm_nutrition_2026} & OCR extracts printed label text and an LLM generates personalized advice. & Packaged-food nutrition guidance. & Food product labels and user profiles. & Shows feasible CV-to-LLM advice. & Reads labels, not cooked food pixels.\\
+13 & LLM meal planning \cite{genai_meal_planning_2025} & DeepSeek/ChatGPT diet generation. & Chronic disease diets. & User health profiles. & 90\% weight-loss accuracy; 87\% diabetic alignment. & Manual inputs.\\
 \hline
-14 & DeepSeek-R1 and ChatGPT web planner \cite{genai_meal_planning_2025} & Generative models process health inputs and produce meal plans. & Health-aware personalized diet planning. & User profiles and health constraints. & Reported stronger personalization than compared planners. & Recommendation quality depends on accurate user input.\\
+14 & Prompted LLMs, NutriGen \cite{nutrigen_2025} & USDA-constrained generation. & Personalized plans. & USDA database. & Calorie error as low as 1.55\%. & Requires manual logging.\\
 \hline
-15 & YOLOv8, CNN and NLP, Diet Engine \cite{diet_engine_2025} & YOLOv8 detects food; NLP/chatbot modules provide dietary suggestions. & Real-time food nutrition assistant. & Custom dataset with 6,692 images. & Reports real-time classification and personalized guidance. & Computationally heavy and less focused on Indian food.\\
+15 & OCR and LLM \cite{ocr_llm_nutrition_2026} & Printed label extraction for LLMs. & Context-aware diet chat. & Packaged labels. & 100\% text extraction for JSON output. & Cannot read cooked food pixels.\\
 \hline
-16 & Flask, SQLAlchemy and diet rules, Smart Diet Planner \cite{smart_diet_planner_2025} & A web backend stores foods, logs meals, and calculates user nutrition needs. & BMR, TDEE, diabetic filtering, and meal alternatives. & Indian food database with 500+ records. & 95\% calculation accuracy and 87\% user satisfaction. & Depends mainly on manual food logging.\\
+16 & Combinatorial logic recommender \cite{ai_nutrition_recommender_2025} & Macro-boundary matching. & Seasonal diet generation. & Mediterranean database. & 100\% acceptable spring/summer plans for 840 users. & No visual verification.\\
 \hline
-17 & Vision-language nutrient estimation, ChatGPT evaluation \cite{chatgpt_nutrient_estimation_2025} & ChatGPT identifies foods and estimates weight and nutrients from meal photos. & AI dietary assessment benchmark. & 114 meal photographs. & 93\% food identification precision. & Poor nutrient agreement; exact macro values are unreliable.\\
+17 & VLM estimation, ChatGPT evaluation \cite{chatgpt_nutrient_estimation_2025} & GPT-4V estimates macros from photos. & Zero-shot dietary assessment. & 114 meal photos. & Mean correlation 0.62; exact match 33.3--57.9\%. & Hallucinates exact math.\\
 \hline
-18 & Raspberry Pi and CNN recommendations \cite{edge_cnn_diet_recommendations_2025} & Edge CNN classification links food recognition with diet suggestions. & Local meal analysis and diet recommendation. & Custom Indian meal images. & Gives immediate food and nutrition feedback. & Requires edge hardware and still faces portion-estimation limits.\\
+18 & UNet segmentation, Visual Nutrition Analysis \cite{visual_nutrition_analysis_2024} & Segmentation and nutrient regression. & Direct macro estimation. & Nutrition5k. & Dice 97.69\%; Jaccard 95.52\%. & Hidden ingredients remain difficult.\\
 \hline
 \end{longtable}
 \endgroup
 
 \section{Research Gap}
 
-Across the supplied papers, three strengths appear repeatedly. First, Indian food recognition benefits from domain-specific data because generic food categories do not capture regional dishes well. Second, nutrition systems become more trustworthy when they use structured food-composition data instead of free-form estimates. Third, personalized recommendation systems are more useful when they receive grounded inputs such as detected foods, macro totals, health goals, and dietary constraints.
+The reviewed papers show that food recognition, nutrition lookup, and recommendation generation are often handled separately. Detection papers can localize foods, but they may not connect those labels to reliable nutrition records. Nutrition databases contain structured macro values, but they do not identify what is present in a user-uploaded image. Recommendation systems can generate diet suggestions, but they often depend on manual inputs and may not verify the meal visually.
 
-The gap is in the careful connection between these parts. A detector can find food but does not know nutrition. A nutrition database stores macros but does not know what appears in a user's image. A language model can explain and recommend, but it should not be treated as the source of exact nutrient values. The implemented project sits in this middle ground by combining YOLO-based detection, a verified class-to-nutrition mapping layer, a SQLite nutrition database, deterministic macro calculation, and a recommendation service that uses structured backend outputs.
+This project addresses that integration gap for Indian food. The system combines YOLO-based detection, a canonical Indian food label set, SQLite-backed nutrition lookup, explicit class-to-database mapping, deterministic macro calculation, and structured recommendation generation. The workflow is more complete than a detector-only system and avoids asking an LLM or vision-language model to guess exact nutrition values from a photograph.

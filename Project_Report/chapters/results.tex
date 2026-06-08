@@ -2,7 +2,7 @@
 
 \section{Dataset Engineering Results}
 
-The dataset engineering phase produced a 72-class merged dataset. The important result was not just a larger dataset, but a cleaner label space built from five inconsistent sources. This mattered during later stages because the same canonical class names were used in the YOLO training file, nutrition mapping table, backend response, and frontend display. Table \ref{tab:dataset-class-groups} summarizes the types of classes represented in the final dataset.
+The dataset engineering phase produced a merged dataset with 72 canonical classes. The main result was not only an increase in data size, but a cleaner label space built from five inconsistent sources. This mattered in later stages because the same canonical names were used in the YOLO training file, nutrition mapping table, backend response, and frontend display. Table \ref{tab:dataset-class-groups} summarizes the types of classes represented in the final dataset.
 
 \begin{table}[H]
 \centering
@@ -25,17 +25,17 @@ Chutneys and sides & \code{coconut_chutney}, \code{green_chutney}, \code{kaara_c
 \endgroup
 \end{table}
 
-The class verification output confirms that all classes have image samples. This matters because a dataset configuration can list classes even when no usable labels exist for them. The verification step confirmed that this is not the case here. It also showed that the dataset is not perfect, since a few individual annotations were found to be noisy. For a project prototype, this was acceptable, but it is still useful to record because model performance depends strongly on annotation quality.
+The class verification output confirms that all classes have image samples. This check was needed because a dataset configuration can list classes even when no usable labels exist for them. The verification step showed that this is not the case here. It also showed that the dataset is not perfect, since a few individual annotations were noisy. For a project prototype this was acceptable, but it is still recorded because annotation quality directly affects detector performance.
 
 \section{Detector Training Results}
 
-The final YOLO11s training run produced a usable 72-class detector. The model was trained through epoch 100, with the final resumed stage covering 45 epochs from epoch 56 onward. During that stage, the best validation mAP@50 recorded in \code{results.csv} was 0.83379 at epoch 78. The final epoch recorded precision 0.8528, recall 0.8042, mAP@50 0.82806, and mAP@50:95 0.69164.
+The final YOLO11s training run produced a usable 72-class detector. The model was trained through epoch 100, with the final resumed stage covering epochs 56 to 100. During that stage, the best validation mAP@50 recorded in \code{results.csv} was 0.83379 at epoch 78. The final epoch recorded precision 0.8528, recall 0.8042, mAP@50 0.82806, and mAP@50:95 0.69164.
 
-The exported best model was then evaluated separately on validation and held-out test splits. On validation, it achieved 0.847 precision, 0.807 recall, 0.830 mAP@50, and 0.692 mAP@50:95. On the held-out test split, it achieved 0.842 precision, 0.801 recall, 0.820 mAP@50, and 0.680 mAP@50:95. The small difference between validation and test mAP indicates that the model is not only fitting the validation split. At the same time, the confusion matrix shows that some dishes remain harder to separate, especially when they share colour, texture, or serving style.
+The exported best model was evaluated separately on validation and held-out test splits. On validation, it achieved 0.847 precision, 0.807 recall, 0.830 mAP@50, and 0.692 mAP@50:95. On the held-out test split, it achieved 0.842 precision, 0.801 recall, 0.820 mAP@50, and 0.680 mAP@50:95. The small difference between validation and test mAP suggests that the model is not fitting only to the validation split. At the same time, the confusion matrix shows that some dishes remain difficult to separate, especially when they share colour, texture, or serving style.
 
 \section{Nutrition Mapping Results}
 
-The nutrition mapping results improved substantially compared with the earlier deployed-model-only mapping. Previously, fuzzy matching produced incorrect mappings such as \code{aloo_gobi} to a cauliflower dessert and \code{palak_paneer} to a generic cottage-cheese dish. These errors were important because the final output still looked numerical and confident even when the food record was wrong. The revised strategy maps these classes to more appropriate database entries and records source information for supplemental rows.
+The nutrition mapping results improved compared with the earlier deployed-model-only mapping. Previously, fuzzy matching produced incorrect mappings such as \code{aloo_gobi} to a cauliflower dessert and \code{palak_paneer} to a generic cottage-cheese dish. These errors were serious because the final output still looked numerical and confident even when the food record was wrong. The revised strategy maps these classes to more appropriate database entries and records source information for supplemental rows.
 
 \begin{table}[H]
 \centering
@@ -57,20 +57,20 @@ Class & Corrected mapping & Reason\\
 \endgroup
 \end{table}
 
-Some mappings remain approximate because the available INDB sheet does not contain every exact dish name. For example, \code{ven_pongal} maps to \code{Plain khitchdi}, and \code{chicken_biryani} maps to \code{Chicken pulao}. These approximations are documented through confidence scores and macro verification reports rather than hidden from the user. This is important because a prototype should make its assumptions visible, especially when the output is related to diet and health.
+Some mappings remain approximate because the available INDB sheet does not contain every exact dish name. For example, \code{ven_pongal} maps to \code{Plain khitchdi}, and \code{chicken_biryani} maps to \code{Chicken pulao}. These assumptions are documented through confidence scores and macro verification reports rather than being hidden. For a nutrition prototype, showing where values come from is necessary because the output may influence diet choices.
 
 \section{Application Results}
 
 The frontend displays detected foods with bounding boxes and nutrition cards. In the demonstrated Bhatura and Chole image, the detector produced boxes around the large bhatura and the chole bowl. The frontend used these boxes for overlays and used the backend response to show macro values. This confirms the practical connection from image upload to visual output, nutrition lookup, and user-facing guidance.
 
-The application result is significant because it checks more than model accuracy. It verifies that the image can move through the upload flow, the backend can return structured detections, the nutrition service can attach macro values, and the frontend can render the combined result in a readable form.
+This application result checks more than model accuracy. It verifies that an image can move through the upload flow, the backend can return structured detections, the nutrition service can attach macro values, and the frontend can render the combined result in a readable form.
 
 \section{Macro and Recommendation Results}
 
-The macro engine returns target grams for each dietary goal and health condition. For a fixed calorie target, different goals produce different distributions. A weight-loss goal emphasizes protein more strongly, while an endurance goal emphasizes carbohydrates. Health profiles further adjust this split. This gives the recommendation system more context than a generic food recognition application.
+The macro engine returns target grams for each dietary goal and health condition. For a fixed calorie target, different goals produce different distributions. A weight-loss goal places more emphasis on protein, while an endurance goal increases carbohydrate share. Health profiles further adjust these splits. This gives the recommendation system more context than a generic food-recognition output.
 
-The recommendation service produces three practical dietary suggestions based on detected foods and user profile. For example, if the detected meal is high in fried carbohydrates and the user chooses weight loss, the recommendation can advise smaller portions, additional protein, and lower-oil alternatives. If the user selects a diabetic profile, the advice can focus on carbohydrate moderation, fiber, and pairing with protein. The recommendation output was intentionally kept short because long diet explanations are less useful in a meal-logging workflow.
+The recommendation service produces three practical dietary suggestions based on detected foods and the user profile. For example, if the detected meal is high in fried carbohydrates and the user chooses weight loss, the recommendation can suggest smaller portions, additional protein, and lower-oil alternatives. If the user selects a diabetic profile, the advice can focus on carbohydrate moderation, fiber, and pairing with protein. The recommendation output was kept short because long diet explanations are less useful during meal logging.
 
 \section{Result Synthesis}
 
-Taken together, the results show that the project is more than a detector experiment. The dataset, model, nutrition database, backend, and frontend all connect into a working pipeline. The most important outcome is that the visual detector output is traceable to explicit nutrition records and user-facing macro guidance. The results also show the boundaries of the prototype: portion size is still controlled by user adjustment, some food classes are naturally difficult to distinguish, and nutrition mappings depend on the availability of suitable food-composition records.
+Overall, the results show that the project is more than a detector experiment. The dataset, model, nutrition database, backend, and frontend connect into a working pipeline. The most important outcome is that visual detector output can be traced to explicit nutrition records and user-facing macro guidance. The results also show the boundaries of the prototype: portion size is still controlled by user adjustment, some food classes are naturally difficult to distinguish, and nutrition mappings depend on the availability of suitable food-composition records.
