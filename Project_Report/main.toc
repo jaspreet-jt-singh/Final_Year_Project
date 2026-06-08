@@ -75,26 +75,21 @@
 \contentsline {section}{\numberline {5.1}Experimental Scope}{35}{section.5.1}%
 \contentsline {section}{\numberline {5.2}Dataset Validation}{36}{section.5.2}%
 \contentsline {section}{\numberline {5.3}YOLO Training and Detector Evaluation}{36}{section.5.3}%
-\contentsline {section}{\numberline {5.4}Class Verification Experiment}{41}{section.5.4}%
-\contentsline {section}{\numberline {5.5}Nutrition Database Validation}{42}{section.5.5}%
+\contentsline {section}{\numberline {5.4}Class Verification Experiment}{42}{section.5.4}%
+\contentsline {section}{\numberline {5.5}Nutrition Database Validation}{43}{section.5.5}%
 \contentsline {section}{\numberline {5.6}Nutrition Mapping Coverage Experiment}{43}{section.5.6}%
 \contentsline {section}{\numberline {5.7}Service Lookup Validation}{44}{section.5.7}%
-\contentsline {section}{\numberline {5.8}Backend API Validation}{44}{section.5.8}%
-\contentsline {section}{\numberline {5.9}Frontend Workflow Validation}{44}{section.5.9}%
+\contentsline {section}{\numberline {5.8}Backend API Validation}{45}{section.5.8}%
+\contentsline {section}{\numberline {5.9}Frontend Workflow Validation}{45}{section.5.9}%
 \contentsline {section}{\numberline {5.10}Macro Calculation Validation}{45}{section.5.10}%
-\contentsline {section}{\numberline {5.11}Experimental Findings}{45}{section.5.11}%
-\contentsline {section}{\numberline {5.12}Dataset Engineering Results}{46}{section.5.12}%
-\contentsline {section}{\numberline {5.13}Detector Training Result Summary}{46}{section.5.13}%
-\contentsline {section}{\numberline {5.14}Nutrition Mapping Results}{47}{section.5.14}%
-\contentsline {section}{\numberline {5.15}Application Results}{47}{section.5.15}%
-\contentsline {section}{\numberline {5.16}Macro and Recommendation Results}{48}{section.5.16}%
-\contentsline {section}{\numberline {5.17}Result Synthesis}{48}{section.5.17}%
-\contentsline {section}{\numberline {5.18}Interpretation of Results}{49}{section.5.18}%
-\contentsline {section}{\numberline {5.19}Strengths of the System}{49}{section.5.19}%
-\contentsline {section}{\numberline {5.20}Limitations}{50}{section.5.20}%
-\contentsline {section}{\numberline {5.21}Ethical and Practical Considerations}{50}{section.5.21}%
-\contentsline {section}{\numberline {5.22}Why Supplemental Rows Were Added}{51}{section.5.22}%
-\contentsline {section}{\numberline {5.23}Lessons Learned}{51}{section.5.23}%
+\contentsline {section}{\numberline {5.11}Experimental Findings}{46}{section.5.11}%
+\contentsline {section}{\numberline {5.12}Integrated Result Synthesis}{46}{section.5.12}%
+\contentsline {section}{\numberline {5.13}Dataset Coverage in the Final Label Space}{47}{section.5.13}%
+\contentsline {section}{\numberline {5.14}Result Interpretation}{48}{section.5.14}%
+\contentsline {section}{\numberline {5.15}Discussion}{49}{section.5.15}%
+\contentsline {section}{\numberline {5.16}Limitations and Practical Considerations}{49}{section.5.16}%
+\contentsline {section}{\numberline {5.17}Safety and Ethics}{50}{section.5.17}%
+\contentsline {section}{\numberline {5.18}Lessons Learned}{50}{section.5.18}%
 \contentsline {chapter}{\numberline {6}CONCLUSION}{53}{chapter.6}%
 \contentsline {chapter}{\numberline {7}FUTURE WORK}{55}{chapter.7}%
 \contentsline {section}{\numberline {7.1}Self-Trained Recommendation Model}{55}{section.7.1}%

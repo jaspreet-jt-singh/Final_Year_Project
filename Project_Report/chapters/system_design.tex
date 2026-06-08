@@ -2,15 +2,15 @@
 
 \section{Design Goals}
 
-The system was designed around five practical goals: usability, modularity, traceable data flow, local deployability, and extensibility. Usability means that a user should be able to upload a food image and understand the result without knowing the internal model details. Modularity keeps dataset building, model inference, nutrition lookup, recommendation generation, and interface rendering separated enough for independent debugging. Traceable data flow makes detected labels, confidence scores, bounding boxes, and nutrition sources visible instead of hiding them inside backend logic. Local deployability keeps the prototype easy to run on a developer machine, while extensibility leaves space for additional classes, improved models, and better nutrition sources later.
+The design was guided by five practical goals: usability, modularity, traceable data flow, local deployability, and extensibility. Usability means that a user should be able to upload a food image and understand the result without knowing how the model works internally. Modularity keeps dataset building, model inference, nutrition lookup, recommendation generation, and interface rendering separated enough for independent debugging. Traceable data flow keeps detected labels, confidence scores, bounding boxes, and nutrition sources visible instead of hiding them inside backend logic. Local deployability keeps the prototype easy to run on a developer machine, while extensibility leaves room for additional food classes, improved models, and better nutrition sources later.
 
-These goals came from the problems faced during development. Early testing showed that a food-recognition result is hard to trust when the label, confidence score, and nutrition source are not visible together. The design therefore avoids treating the detector as an unexplained black box. Each layer returns structured information that can be checked during development and shown clearly in the frontend.
+These goals came from issues faced during development. Early testing showed that a food-recognition result is hard to trust when the label, confidence score, and nutrition source are not visible together. The design therefore avoids treating the detector as an unexplained black box. Each layer returns structured information that can be checked during debugging and shown clearly in the frontend.
 
 \section{High-Level Architecture}
 
-The project follows a layered architecture because each part has a different responsibility. The data layer contains the source datasets, merged YOLO dataset, INDB spreadsheet, and SQLite nutrition database. The AI layer contains the YOLO model and inference service. The backend layer exposes APIs and coordinates services. The frontend layer handles the user workflow. Figure \ref{fig:system-architecture} shows the high-level architecture.
+The project follows a layered architecture because each part has a different responsibility. The data layer contains the source datasets, merged YOLO dataset, INDB spreadsheet, and SQLite nutrition database. The AI layer contains the YOLO model and inference service. The backend layer exposes APIs and coordinates services. The frontend layer handles the user workflow. Figure \ref{fig:system-architecture} shows this architecture.
 
-This layering reduced debugging time. When a wrong macro value appeared, the mapping table could be checked without retraining the detector. When the frontend display looked incorrect, the backend JSON response could be inspected separately. This separation made the project easier to handle as a full-stack application instead of a single large script.
+This layering reduced debugging time. When a wrong macro value appeared, the mapping table could be checked without retraining the detector. When the frontend display looked incorrect, the backend JSON response could be inspected separately. This separation made the project easier to manage as a full-stack application instead of one large script.
 
 \begin{figure}[H]
 \centering
@@ -36,7 +36,7 @@ This layering reduced debugging time. When a wrong macro value appeared, the map
 
 \section{Runtime Data Flow}
 
-The runtime flow begins when the user uploads an image. The frontend sends the raw image to the backend. The backend validates the upload, sends it to the vision service, receives detected objects, and looks up nutrition for each detected label. The response includes image dimensions, bounding boxes, labels, confidence values, macro values, and nutrition source metadata. The frontend then renders boxes over the image and displays nutrition cards, allowing the user to connect the visual prediction with the nutrition values.
+The runtime flow begins when the user uploads an image. The frontend sends the raw image to the backend. The backend validates the upload, passes it to the vision service, receives detected objects, and looks up nutrition for each detected label. The response includes image dimensions, bounding boxes, labels, confidence values, macro values, and nutrition source metadata. The frontend then renders boxes over the image and displays nutrition cards so the user can compare the visual prediction with the nutrition values.
 
 The response format was kept detailed deliberately. During testing, it was not enough to know that the application detected a food item. It was also necessary to check where the box was drawn, how confident the model was, which database row was selected, and whether the macro values came from INDB or a supplemental source.
 
@@ -78,13 +78,13 @@ The backend is implemented with FastAPI, an ASGI-compatible Python framework sui
     \item \textbf{RecommendationService}: computes goal and health-condition context and generates dietary suggestions.
 \end{itemize}
 
-The backend design separates the endpoint layer from service logic. Nutrition lookup can be tested without running image inference, and macro calculation can be tested without uploading files. This separation was useful while debugging the nutrition layer because lookup errors could be reproduced with a single food name instead of repeating the complete image-upload workflow.
+The backend separates the endpoint layer from service logic. Nutrition lookup can be tested without running image inference, and macro calculation can be tested without uploading files. This separation was useful while debugging the nutrition layer because lookup errors could be reproduced with a single food name instead of repeating the complete image-upload workflow.
 
 \section{Frontend Design}
 
 The frontend is built with Next.js 14 and React \cite{nextjs2024}. It follows one main workflow: upload an image, analyze it, inspect detections, adjust serving estimates, review macro impact, and request recommendations. Frontend state is organized around the image analysis result, selected goal, target calories, selected health condition, and macro totals.
 
-The interface opens directly to the working tool rather than a marketing-style page. The first screen contains upload controls, user nutrition context, and result panels. This fits the purpose of the application because it is meant to be used for checking a meal, not for browsing product information. During testing, the most useful interface behaviour was seeing the uploaded image and nutrition cards together, because this quickly showed whether the visual prediction and database output matched.
+The interface opens directly to the working tool rather than a marketing-style page. The first screen contains upload controls, user nutrition context, and result panels. This fits the purpose of the application because it is meant for checking a meal, not for browsing product information. During testing, the most useful interface behaviour was seeing the uploaded image and nutrition cards together, because it quickly showed whether the visual prediction and database output matched.
 
 \section{Database Design}
 
@@ -169,8 +169,8 @@ These checks are basic, but they matter in a working prototype. Without them, a 
 
 \section{Design Trade-Offs}
 
-The design uses per-100-gram nutrition values instead of automatic portion estimation. This limits exact calorie accuracy, but it avoids pretending that one image is enough to recover food mass reliably. Monocular portion estimation would require plate scale, camera distance, depth, and food-volume assumptions. The frontend therefore uses serving multipliers so the user can adjust values when the visible quantity is clearly smaller or larger than the baseline.
+The design uses per-100-gram nutrition values instead of automatic portion estimation. This limits calorie accuracy, but it avoids pretending that one image is enough to recover food mass reliably. Monocular portion estimation would require plate scale, camera distance, depth, and food-volume assumptions. The frontend therefore uses serving multipliers so the user can adjust values when the visible quantity is clearly smaller or larger than the baseline.
 
-The design also keeps explicit nutrition mappings in the database build process. This is less automatic than fuzzy matching, but it is safer for a nutrition-related application. A wrong nutrition value can be more harmful than a missing one. For that reason, classes without safe INDB rows are handled only through verified supplemental entries with source metadata. The prototype becomes a little more manual to maintain, but the output is easier to control.
+The design also keeps explicit nutrition mappings in the database build process. This is less automatic than fuzzy matching, but it is safer for a nutrition-related application. A wrong nutrition value can be more misleading than a missing one. For that reason, classes without safe INDB rows are handled only through verified supplemental entries with source metadata. The prototype becomes slightly more manual to maintain, but the output is easier to control.
 
 \input{chapters/implementation}

@@ -2,7 +2,7 @@
 
 \section{Development Environment}
 
-The project was implemented as a full-stack application rather than only a training notebook. This made the work closer to a usable prototype, but it also meant that the detector, nutrition database, API response format, and frontend display had to stay consistent. A small class-name change in the dataset, for example, also required checking the nutrition mapping and display name. The backend uses Python, FastAPI, PyTorch, Ultralytics YOLO, Pillow, NumPy, Pandas, OpenPyXL, SQLite, and AioSQLite. The frontend uses Next.js, React, TypeScript, Tailwind CSS, and Lucide icons. The repository is organized into \code{backend/}, \code{frontend/}, \code{data/}, \code{models/}, \code{scripts/}, and \code{notebooks/} so that model assets, data processing, API code, and interface code remain separated.
+The project was implemented as a full-stack application rather than only a training notebook. This made the final work closer to a usable prototype, but it also meant that the detector, nutrition database, API response format, and frontend display had to remain consistent with each other. A small class-name change in the dataset, for example, also required checking the nutrition mapping and display name. The backend uses Python, FastAPI, PyTorch, Ultralytics YOLO, Pillow, NumPy, Pandas, OpenPyXL, SQLite, and AioSQLite. The frontend uses Next.js, React, TypeScript, Tailwind CSS, and Lucide icons. The repository is organized into \code{backend/}, \code{frontend/}, \code{data/}, \code{models/}, \code{scripts/}, and \code{notebooks/} so that model assets, data processing, API code, and interface code remain separated.
 
 \section{Dataset Build Script}
 
@@ -14,11 +14,11 @@ The final dataset contains 72 canonical classes. The generated balanced dataset 
 
 \section{Final YOLO Training Notebook}
 
-The final model training workflow is recorded in the final training notebook under \code{notebooks/}. The notebook is configured for Kaggle execution, loads the generated 72-class \code{data.yaml}, resumes the \code{yolo11s_indian_food} run from an existing checkpoint, and trains to 100 total epochs. The final resumed stage covers epochs 56 to 100 and uses YOLO11s with 640-pixel images, batch size 16, automatic mixed precision, checkpoint saving every 10 epochs, and plot generation enabled.
+The final model training workflow is recorded in the final training notebook under \code{notebooks/}. The notebook loads the generated 72-class \code{data.yaml} and records the YOLO11s training workflow used for the final 100-epoch result. For the report, the detector metric values are taken from the consolidated artifacts in \code{merge_results/}. The configuration uses 640-pixel images, batch size 16, automatic mixed precision, checkpoint saving every 10 epochs, and plot generation enabled.
 
-Training was resumed instead of restarted because the earlier checkpoint had already learned useful features from the merged dataset. The resumed run also provided later-epoch metrics through \code{results.csv} and training plots. The deployed model was not selected simply from the last epoch. The best exported weight was used because validation mAP reached its strongest value before the final epoch.
+The deployed model was not selected simply from the last epoch. The best exported weight was used because validation mAP reached its strongest value before the final logged epoch. The \code{merge_results/} folder was kept with the exported model so that the reported precision, recall, mAP values, and plotted curves could be checked against the saved artifacts.
 
-The run used PyTorch 2.10.0 with CUDA 12.8 on a Tesla T4 GPU. The exported artifacts include \code{best.pt}, \code{last.pt}, checkpoint weights, training curves, precision-recall curves, confusion matrices, prediction batches, and \code{results.csv}. The best model file was also exported as \code{yolo11s_indian_food_best.pt}, which is the detector artifact used for final evaluation.
+The run used PyTorch 2.10.0 with CUDA 12.8 on a Tesla T4 GPU. The exported artifacts include \code{best.pt}, \code{last.pt}, checkpoint weights, training curves, precision-recall curves, confusion matrices, prediction batches, and the consolidated \code{merge_results/merged_results_1_to_100.csv}. The best model file was also exported as \code{yolo11s_indian_food_best.pt}, which is the detector artifact used for final evaluation.
 
 \section{Visual Class Verification Implementation}
 
@@ -30,7 +30,7 @@ The visual review confirmed that all 72 classes have actual image samples and th
 
 The nutrition database build script is located at \code{backend/scripts/merge_db.py}. It reads the INDB spreadsheet, verifies required columns, normalizes food names, removes duplicate normalized names, converts nutrition columns to numeric values, and rebuilds the local SQLite nutrition database. The script then loads the current dataset classes and appends legacy model labels so that older deployed labels still resolve correctly.
 
-Manual mappings are applied before fuzzy matching. This prevents incorrect string-based matches. For example, \code{aloo_gobi} maps to \code{Potato cauliflower (Aloo gobhi)}, \code{palak_paneer} maps to \code{Spinach paneer (Palak paneer)}, and \code{rice} maps to \code{Boiled rice (Uble chawal)}. The script also adds source-backed supplemental rows for classes present in the detector dataset but absent from the available INDB sheet. This required more checking, but it avoided several wrong matches found in early tests.
+Manual mappings are applied before fuzzy matching. This prevents incorrect string-based matches. For example, \code{aloo_gobi} maps to \code{Potato cauliflower (Aloo gobhi)}, \code{palak_paneer} maps to \code{Spinach paneer (Palak paneer)}, and \code{rice} maps to \code{Boiled rice (Uble chawal)}. The script also adds source-backed supplemental rows for detector classes absent from the available INDB sheet. This required more checking, but it avoided several wrong matches found in early tests.
 
 \section{Vision Service Implementation}
 
@@ -60,7 +60,7 @@ The macro calculation function accepts a target calorie value, a selected goal, 
 
 The frontend is implemented in \code{frontend/app/page.tsx} and reusable components. \code{ImageUpload} manages drag-and-drop upload and file preview. \code{ResultsPanel} displays detection cards, nutrition values, serving controls, macro totals, and recommendations. \code{NutritionLabel} displays calories, protein, carbohydrates, and fat. \code{ImageOverlay} draws bounding boxes over the uploaded image.
 
-The serving controls were included because the detector can identify a food item but cannot know its exact mass from a single image. This keeps the interface honest: the system starts with a calculated baseline, and the user can adjust the assumed serving when the visible quantity is clearly larger or smaller.
+The serving controls were included because the detector can identify a food item but cannot know its exact mass from a single image. This keeps the interface honest: the application starts with a calculated baseline, and the user can adjust the assumed serving when the visible quantity is clearly larger or smaller.
 
 \begin{figure}[H]
 \centering

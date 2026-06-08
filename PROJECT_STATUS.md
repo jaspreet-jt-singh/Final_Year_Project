@@ -1,6 +1,6 @@
 # Project Status - AI-Based Food Recognition with Nutrition-Aware Recommendations
 
-Document date: 2026-06-08  
+Document date: 2026-06-09  
 Project type: Final year full-stack AI application  
 Implementation status: Local full-stack prototype implemented
 
@@ -167,6 +167,7 @@ The project uses YOLO11s for food object detection.
 | Final run name | `yolo11s_indian_food` |
 | Training continuation | Resumed from epoch 56 and continued to epoch 100 |
 | Best logged validation mAP@50 | 0.83379 at epoch 78 |
+| Best logged validation mAP@50:95 | 0.69226 at epoch 97 |
 
 ### Training Configuration
 
@@ -180,14 +181,26 @@ The project uses YOLO11s for food object detection.
 | Epoch target | 100 |
 | Final resumed stage | Epoch 56 through epoch 100 |
 | Run name | `yolo11s_indian_food` |
-| Primary metrics | Precision, recall, mAP@50, mAP@50:95 |
+| Primary metrics | Precision, recall, mAP@50, mAP@75, mAP@50:95 |
 
-### Final Detector Metrics
+### Training Log Metric Checks
 
-| Split | Images | Instances | Precision | Recall | mAP@50 | mAP@50:95 |
-|---|---:|---:|---:|---:|---:|---:|
-| Validation | 5,922 | 8,812 | 0.847 | 0.807 | 0.830 | 0.692 |
-| Held-out test | 5,919 | 8,875 | 0.842 | 0.801 | 0.820 | 0.680 |
+These rows are read from `results_after_discontinuation/runs/yolo11s_indian_food/results.csv`.
+
+| Checked row | Epoch | Precision | Recall | mAP@50 | mAP@50:95 |
+|---|---:|---:|---:|---:|---:|
+| Best mAP@50 row | 78 | 0.84685 | 0.80852 | 0.83379 | 0.68440 |
+| Best mAP@50:95 row | 97 | 0.84696 | 0.80721 | 0.82999 | 0.69226 |
+| Final logged row | 100 | 0.85280 | 0.80420 | 0.82806 | 0.69164 |
+
+### Exported Best-Checkpoint Detector Metrics
+
+These values come from separate validation runs of the exported best checkpoint.
+
+| Split | Images | Instances | Precision | Recall | mAP@50 | mAP@75 | mAP@50:95 |
+|---|---:|---:|---:|---:|---:|---:|---:|
+| Validation | 5,922 | 8,812 | 0.847 | 0.807 | 0.830354 | 0.764597 | 0.692139 |
+| Held-out test | 5,919 | 8,875 | 0.842 | 0.801 | 0.819598 | 0.750709 | 0.679692 |
 
 The small gap between validation and held-out test performance indicates that the detector generalizes beyond the validation split, although visually similar dishes and lower-data classes still need deeper per-class error analysis.
 

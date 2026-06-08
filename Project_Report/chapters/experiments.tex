@@ -2,9 +2,9 @@
 
 \section{Experimental Scope}
 
-The experiments in this project are based on repository files, generated reports, and exported training artifacts. The evaluation covers dataset construction, YOLO11s detector training, validation and test metrics, class-name verification, nutrition database integrity, mapping coverage, backend service behavior, frontend workflow, and qualitative detection output. The final training notebook and exported result directory provide the detector metrics used for reporting mAP, precision, recall, confusion-matrix evidence, and prediction-batch samples for the latest 72-class model.
+The experiments in this project are based on repository files, generated reports, and exported training artifacts. The evaluation covers dataset construction, YOLO11s detector training, validation and test metrics, class-name verification, nutrition database integrity, mapping coverage, backend service behavior, frontend workflow, and qualitative detection output. For detector reporting, the \code{merge_results/} folder is used as the metric source. It contains the consolidated 100-epoch CSV, the training-curve image, and separate validation and test image-evaluation folders with PR, F1, precision, recall, confusion-matrix, and prediction-batch artifacts for the latest 72-class model.
 
-Validation was not limited to checking whether the model produced a score. Several parts of the system had to work together. A detection result was useful only if the class existed in the final \code{data.yaml}, the nutrition service could resolve the class name, and the frontend could display the returned macro fields correctly.
+Validation was not limited to checking whether the model produced a score. Several parts of the application had to work together. A detection result was useful only if the class existed in the final \code{data.yaml}, the nutrition service could resolve the class name, and the frontend could display the returned macro fields correctly.
 
 \begin{figure}[H]
 \centering
@@ -39,7 +39,7 @@ Validation was not limited to checking whether the model produced a score. Sever
 
 \section{Dataset Validation}
 
-The first validation task checks whether the merged dataset exists, contains the expected split folders, and has a complete 72-class \code{data.yaml}. This step was necessary because a missing label file or class-count mismatch would make later training results unreliable. The generated dataset summary is shown in Table \ref{tab:generated-dataset-summary}.
+The first validation task checked whether the merged dataset contained the expected split folders and a complete 72-class \code{data.yaml}. This step was necessary because a missing label file or class-count mismatch would make later training results unreliable. The generated dataset summary is shown in Table \ref{tab:generated-dataset-summary}.
 
 \begin{table}[H]
 \centering
@@ -62,11 +62,11 @@ Split target ratio & 70/15/15\\
 \end{tabular}
 \end{table}
 
-The split counts indicate that the generated dataset is complete: every exported image has a corresponding label file. Validation and test augmentation are disabled so that held-out samples remain real images rather than transformed versions of training data. As a result, the validation and test metrics are not based on augmented copies.
+The split counts show that every exported image has a corresponding label file. Validation and test augmentation are disabled so that held-out samples remain real images rather than transformed versions of training data. As a result, the validation and test metrics are not based on augmented copies.
 
 \section{YOLO Training and Detector Evaluation}
 
-The final detector experiment used YOLO11s on the 72-class dataset. The run resumed from a previous checkpoint at epoch 56 and continued to 100 total epochs. This approach was used because the earlier checkpoint was already stable enough to continue, and restarting from the beginning would have increased training time without adding new data. Table \ref{tab:yolo-training-setup} summarizes the final training setup recorded in the final training notebook and exported \code{args.yaml}.
+The final detector experiment used YOLO11s on the 72-class dataset and reports the final 100-epoch training and evaluation outcome. Table \ref{tab:yolo-training-setup} summarizes the training setup used for the run, while the reported metric values are taken from the consolidated artifacts stored in \code{merge_results/}.
 
 \begin{table}[H]
 \centering
@@ -80,8 +80,8 @@ Model & YOLO11s object detector\\
 Classes & 72\\
 Image size & 640 pixels\\
 Batch size & 16\\
-Training stage & Resumed from epoch 56 to epoch 100\\
-Training time for resumed stage & 10.636 hours\\
+Epochs reported & 100\\
+Training-curve source & Consolidated curve artifact from \code{merge_results/}\\
 Hardware & Tesla T4 GPU, 15.64 GB VRAM\\
 Framework & Ultralytics 8.4.60, PyTorch 2.10.0, CUDA 12.8\\
 Best exported weight & \code{yolo11s_indian_food_best.pt}\\
@@ -89,11 +89,11 @@ Best exported weight & \code{yolo11s_indian_food_best.pt}\\
 \end{tabularx}
 \end{table}
 
-The resumed training stage reduced training and validation losses with some normal epoch-to-epoch variation. The training metrics were checked directly from \code{results_after_discontinuation/runs/yolo11s_indian_food/results.csv}. The highest validation mAP@50 in this file was 0.83379 at epoch 78, and the highest mAP@50:95 was 0.69226 at epoch 97. The final epoch recorded precision 0.8528, recall 0.8042, mAP@50 0.82806, and mAP@50:95 0.69164. Since the best validation value occurred before the final epoch, the exported best checkpoint was used for evaluation. Figure \ref{fig:yolo11s-training-curves} shows the resumed-stage training curves. Figure \ref{fig:yolo11s-results-plot} uses the merged result image to show the complete training trend after combining the available training segments.
+The final training log shows that training and validation losses reduced with normal epoch-to-epoch variation. The training metrics were checked from \path{merge_results/merged_results_1_to_100.csv}. The highest validation mAP@50 in this CSV file was 0.83379 at epoch 78, and the highest mAP@50:95 was 0.69226 at epoch 97. The final epoch recorded precision 0.85280, recall 0.80420, mAP@50 0.82806, and mAP@50:95 0.69164. Since the best validation value occurred before the final epoch, the exported best checkpoint was used for evaluation. The plotted training curves are shown separately using the consolidated curve artifact in Figure \ref{fig:yolo11s-results-plot}.
 
 \begin{table}[H]
 \centering
-\caption{Training metric validation from YOLO11s results.csv}
+\caption{Training metric validation from the merged 100-epoch CSV}
 \label{tab:training-metric-validation}
 \begin{tabularx}{\textwidth}{L{0.35\textwidth}L{0.18\textwidth}Y}
 \toprule
@@ -108,49 +108,44 @@ Final logged row & 100 & Precision 0.85280, recall 0.80420, mAP@50 0.82806, mAP@
 
 \begin{figure}[H]
 \centering
-\includegraphics[width=0.98\textwidth,keepaspectratio]{yolo11s_training_curves.png}
-\caption{YOLO11s final training curves from the resumed 72-class run}
-\label{fig:yolo11s-training-curves}
-\end{figure}
-
-\begin{figure}[H]
-\centering
 \includegraphics[width=0.98\textwidth,keepaspectratio]{yolo11s_merged_training_curves.png}
-\caption{Merged YOLO11s training result curves for the complete 100-epoch run}
+\caption{YOLO11s training result curves for the complete 100-epoch run}
 \label{fig:yolo11s-results-plot}
 \end{figure}
 
-The best exported model was evaluated on both validation and held-out test splits. The split-level values in Table \ref{tab:yolo-final-metrics} were cross-checked with the exported validation/test summary recorded in the project status artifact and the corresponding YOLO validation output folders. The folders contain the saved confusion matrices, precision-recall curves, and prediction batches; YOLO does not save the console summary as a separate CSV by default.
+The best exported model was evaluated on both validation and held-out test images. The split-level values in Table \ref{tab:yolo-final-metrics} are read only from the image-evaluation artifacts inside \path{merge_results/valid_validation_metrics/} and \path{merge_results/test_validation_metrics/}. These folders contain the plotted metric curves and prediction outputs. They do not contain a separate numeric mAP@50:95 summary file, so mAP@50:95 is reported from the 100-epoch training CSV only and is not assigned to the split-level image-evaluation rows.
 
 \begin{table}[H]
 \centering
-\caption{Final YOLO11s aggregate detector metrics}
+\caption{YOLO11s split-level image-evaluation metrics from merge results}
 \label{tab:yolo-final-metrics}
-\begin{tabular}{lrrrrrr}
+\begingroup
+\small
+\setlength{\tabcolsep}{3pt}
+\begin{tabularx}{\textwidth}{L{0.16\textwidth}L{0.20\textwidth}L{0.10\textwidth}Y}
 \toprule
-Split & Images & Instances & Precision & Recall & mAP@50 & mAP@50:95\\
+Split & Artifact & mAP50 & Curve values read from legends\\
 \midrule
-Validation & 5,922 & 8,812 & 0.847 & 0.807 & 0.830 & 0.692\\
-Test & 5,919 & 8,875 & 0.842 & 0.801 & 0.820 & 0.680\\
+Validation & Validation curves & 0.776 & Best F1 0.81 at confidence 0.318; maximum recall 0.82 at confidence 0.000; maximum precision 1.00 at confidence 0.976.\\
+Held-out test & Test curves & 0.765 & Best F1 0.80 at confidence 0.343; maximum recall 0.81 at confidence 0.000; maximum precision 1.00 at confidence 0.971.\\
 \bottomrule
-\end{tabular}
+\end{tabularx}
+\endgroup
 \end{table}
 
-The validation run reported mAP@75 of 0.765, and the test run reported mAP@75 of 0.751. Both validation and test evaluation reported approximately 11.0 ms inference time per image on the Kaggle Tesla T4 environment, excluding application-level upload and response overhead. This means the reported inference time describes only the model stage; the full web application also includes file upload, image decoding, nutrition lookup, and frontend rendering.
-
-The exported run also produced confidence and precision-recall curves for bounding-box evaluation. These plots helped during interpretation because they show how the model behaves across confidence thresholds instead of relying only on one aggregate value. Figure \ref{fig:yolo11s-after-discontinuation-curves} includes the F1-confidence, precision-recall, precision-confidence, and recall-confidence curves from the after-discontinuation YOLO11s run.
+The exported run also produced confidence and precision-recall curves for bounding-box evaluation. These plots were useful during interpretation because they show how the model behaves across confidence thresholds instead of relying only on one aggregate value. Figure \ref{fig:yolo11s-valid-box-eval-curves} shows the validation image-evaluation curves, and Figure \ref{fig:yolo11s-test-box-eval-curves} shows the held-out test image-evaluation curves.
 
 \begin{figure}[H]
 \centering
 \begin{subfigure}[t]{0.48\textwidth}
     \centering
-    \includegraphics[width=\linewidth,keepaspectratio]{yolo11s_after_box_f1_curve.png}
+    \includegraphics[width=\linewidth,keepaspectratio]{yolo11s_valid_box_f1_curve.png}
     \caption{F1-confidence}
 \end{subfigure}
 \hfill
 \begin{subfigure}[t]{0.48\textwidth}
     \centering
-    \includegraphics[width=\linewidth,keepaspectratio]{yolo11s_after_box_pr_curve.png}
+    \includegraphics[width=\linewidth,keepaspectratio]{yolo11s_valid_box_pr_curve.png}
     \caption{Precision-recall}
 \end{subfigure}
 
@@ -158,17 +153,55 @@ The exported run also produced confidence and precision-recall curves for boundi
 
 \begin{subfigure}[t]{0.48\textwidth}
     \centering
-    \includegraphics[width=\linewidth,keepaspectratio]{yolo11s_after_box_p_curve.png}
+    \includegraphics[width=\linewidth,keepaspectratio]{yolo11s_valid_box_p_curve.png}
     \caption{Precision-confidence}
 \end{subfigure}
 \hfill
 \begin{subfigure}[t]{0.48\textwidth}
     \centering
-    \includegraphics[width=\linewidth,keepaspectratio]{yolo11s_after_box_r_curve.png}
+    \includegraphics[width=\linewidth,keepaspectratio]{yolo11s_valid_box_r_curve.png}
     \caption{Recall-confidence}
 \end{subfigure}
-\caption{After-discontinuation YOLO11s bounding-box evaluation curves}
-\label{fig:yolo11s-after-discontinuation-curves}
+\caption{YOLO11s validation image-evaluation curves}
+\label{fig:yolo11s-valid-box-eval-curves}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\begin{subfigure}[t]{0.48\textwidth}
+    \centering
+    \includegraphics[width=\linewidth,keepaspectratio]{yolo11s_test_box_f1_curve.png}
+    \caption{F1-confidence}
+\end{subfigure}
+\hfill
+\begin{subfigure}[t]{0.48\textwidth}
+    \centering
+    \includegraphics[width=\linewidth,keepaspectratio]{yolo11s_test_box_pr_curve.png}
+    \caption{Precision-recall}
+\end{subfigure}
+
+\vspace{0.35cm}
+
+\begin{subfigure}[t]{0.48\textwidth}
+    \centering
+    \includegraphics[width=\linewidth,keepaspectratio]{yolo11s_test_box_p_curve.png}
+    \caption{Precision-confidence}
+\end{subfigure}
+\hfill
+\begin{subfigure}[t]{0.48\textwidth}
+    \centering
+    \includegraphics[width=\linewidth,keepaspectratio]{yolo11s_test_box_r_curve.png}
+    \caption{Recall-confidence}
+\end{subfigure}
+\caption{YOLO11s held-out test image-evaluation curves}
+\label{fig:yolo11s-test-box-eval-curves}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.98\textwidth,keepaspectratio]{yolo11s_valid_confusion_matrix_normalized.png}
+\caption{Normalized confusion matrix for the YOLO11s validation image evaluation}
+\label{fig:yolo11s-valid-confusion}
 \end{figure}
 
 \begin{figure}[H]
@@ -185,7 +218,7 @@ The exported run also produced confidence and precision-recall curves for boundi
 \label{fig:yolo11s-test-predictions}
 \end{figure}
 
-The aggregate metrics show that the final detector carries over from validation to the held-out test split with a small mAP drop. The normalized confusion matrix still shows uneven class behaviour, which is expected in a 72-class food detector where several dishes look similar and some classes have fewer unique source images. In visual inspection, many mistakes were understandable when foods shared colour, texture, or serving style, such as rice-based dishes, paneer gravies, and chutney-side combinations.
+The split-level image-evaluation metrics show that the held-out test mAP@50 is close to the validation mAP@50, with a drop from 0.776 to 0.765. The best all-class F1 score also changes only slightly, from 0.81 on validation to 0.80 on the held-out test split. The normalized confusion matrices still show uneven class behaviour, which is expected in a 72-class food detector where several dishes look similar and some classes have fewer unique source images. During visual inspection, many mistakes were understandable when foods shared colour, texture, or serving style, such as rice-based dishes, paneer gravies, and chutney-side combinations.
 
 \section{Class Verification Experiment}
 
@@ -214,7 +247,7 @@ Sample-level issues found & 3\\
 
 \section{Nutrition Database Validation}
 
-Nutrition database validation checks schema and row counts. The database contains 1,010 records in \code{indb_foods} and 103 records in \code{yolo_mappings}. The food table is based on INDB and five source-backed supplemental rows for classes absent from INDB. The mapping count is larger than 72 because the table includes expanded dataset classes and legacy deployed-model labels for backward compatibility.
+Nutrition database validation checked schema and row counts. The database contains 1,010 records in \code{indb_foods} and 103 records in \code{yolo_mappings}. The food table is based on INDB and five source-backed supplemental rows for classes absent from INDB. The mapping count is larger than 72 because the table includes expanded dataset classes and legacy deployed-model labels for backward compatibility.
 
 The row-count check was followed by lookup tests because a database can contain records and still return the wrong food for a detector label. This was especially important after the mapping logic was changed from mostly fuzzy matching to explicit class-to-food mappings.
 
@@ -234,7 +267,7 @@ Table & Purpose & Count\\
 
 \section{Nutrition Mapping Coverage Experiment}
 
-The mapping coverage experiment checks how many of the 72 dataset classes have a safe nutrition mapping. The result is shown in Table \ref{tab:mapping-coverage}. Coverage was measured on the final canonical class list rather than only on currently detected labels, because the model can return any of the 72 classes during use.
+The mapping coverage experiment checked how many of the 72 dataset classes have a safe nutrition mapping. The result is shown in Table \ref{tab:mapping-coverage}. Coverage was measured on the final canonical class list rather than only on currently detected labels, because the model can return any of the 72 classes during use.
 
 \begin{table}[H]
 \centering
@@ -300,7 +333,7 @@ This confirms that the revised database mapping handles both canonical dataset l
 
 \section{Backend API Validation}
 
-Backend validation focuses on service readiness and response structure. The analysis endpoint returns HTTP 503 if vision or nutrition services are unavailable. Empty images, non-image MIME types, and uploads exceeding 10 MB are rejected. The analysis response includes food label, confidence, bounding box, nutrition source, macro values, and food-not-found status. This structured response is important because the frontend depends on predictable fields for visualization and macro tracking. It also makes debugging easier when a detection is correct but the nutrition object is missing or incomplete.
+Backend validation focused on service readiness and response structure. The analysis endpoint returns HTTP 503 if vision or nutrition services are unavailable. Empty images, non-image MIME types, and uploads exceeding 10 MB are rejected. The analysis response includes food label, confidence, bounding box, nutrition source, macro values, and food-not-found status. This structured response is important because the frontend depends on predictable fields for visualization and macro tracking. It also makes debugging easier when a detection is correct but the nutrition object is missing or incomplete.
 
 \section{Frontend Workflow Validation}
 
@@ -335,11 +368,11 @@ This workflow test was important because some issues appear only after the model
 
 \section{Macro Calculation Validation}
 
-Macro validation checks whether a target calorie value is converted correctly to grams. For example, for a 2,000 kcal weight-loss goal with a 40/35/25 split, the carbohydrate target is 200 g, protein target is 175 g, and fat target is approximately 56 g. Health profiles modify these base splits. The formula was discussed in Chapter 3. These calculations are simple enough to verify manually, which is useful because they directly affect the recommendation context shown to the user.
+Macro validation checked whether a target calorie value is converted correctly to grams. For example, for a 2,000 kcal weight-loss goal with a 40/35/25 split, the carbohydrate target is 200 g, protein target is 175 g, and fat target is approximately 56 g. Health profiles modify these base splits. The formula was discussed in Chapter 3. These calculations are simple enough to verify manually, which is useful because they directly affect the recommendation context shown to the user.
 
 \section{Experimental Findings}
 
-The experiments show that the dataset and application pipeline are internally consistent. The final YOLO11s model achieved 0.830 mAP@50 and 0.692 mAP@50:95 on validation, and 0.820 mAP@50 and 0.680 mAP@50:95 on the held-out test split. The system can detect food classes, map all 72 expanded dataset classes to nutrition records, and display results in the frontend. These results are suitable for a final-year prototype, while still showing practical limits such as class confusion among similar foods, dependence on per-100g nutrition values, and the difference between model inference time and full application response time. The following sections summarize these results and discuss their practical meaning in the combined system.
+The experiments show that the dataset and application pipeline are internally consistent. In \code{merge_results/}, the consolidated training CSV records a best validation mAP@50 of 0.83379 and best validation mAP@50:95 of 0.69226, while the latest split-level image-evaluation curves report 0.776 mAP@50 on validation images and 0.765 mAP@50 on held-out test images. The same validation sequence also confirmed that all 72 expanded dataset classes have nutrition mappings and that the frontend can display detections, macro values, serving controls, and recommendation text. The next sections synthesize these observations and discuss their practical meaning in the complete system.
 
 \input{chapters/results}
 \input{chapters/discussion}

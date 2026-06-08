@@ -2,9 +2,9 @@
 
 \section{Self-Trained Recommendation Model}
 
-The current prototype uses a language model to generate natural-language dietary suggestions from detected foods, macro values, goals, and health conditions. In a future version, this dependency should be replaced with a self-trained recommendation model. The model can be trained on curated Indian meal patterns, nutrition rules, health-condition constraints, and expert-reviewed recommendation examples. This would make the recommendation layer more controllable, easier to validate, and less dependent on external LLM services.
+The current prototype uses a language model to generate natural-language dietary suggestions from detected foods, macro values, goals, and health conditions. In a future version, this dependency should be replaced with a self-trained recommendation model. That model can be trained on curated Indian meal patterns, nutrition rules, health-condition constraints, and expert-reviewed recommendation examples. This would make the recommendation layer more controllable, easier to validate, and less dependent on external LLM services.
 
-The self-trained model should receive structured inputs from the existing backend, including detected food classes, calories, protein, carbohydrates, fat, serving estimates, user goal, calorie target, and health profile. Its output should be constrained to safe dietary suggestions and should include confidence or rule-trace information so that users can understand why a recommendation was produced. It would also make testing easier because the same input profile should produce consistent and reviewable advice.
+The self-trained model should receive structured inputs from the existing backend, including detected food classes, calories, protein, carbohydrates, fat, serving estimates, user goal, calorie target, and health profile. Its output should be constrained to safe dietary suggestions and should include confidence or rule-trace information so that users can understand why a recommendation was produced. This would also make testing easier because the same input profile should produce consistent and reviewable advice.
 
 \section{Portion Size Estimation}
 
@@ -20,4 +20,4 @@ Future versions can add user accounts, meal history, daily calorie budgets, tren
 
 \section{Clinical Safety and Explainability}
 
-Before deployment for health-sensitive users, the system should include stronger disclaimers, uncertainty indicators, and rule-based safeguards. Recommendations for conditions such as diabetes, kidney disease, hypertension, and heart disease should be reviewed by qualified nutrition professionals. The system should clearly separate general diet guidance from medical advice, especially when confidence is low or when the detected meal contains approximate nutrition mappings.
+Before deployment for health-sensitive users, the system should include stronger disclaimers, uncertainty indicators, and rule-based safeguards. Recommendations for conditions such as diabetes, kidney disease, hypertension, and heart disease should be reviewed by qualified nutrition professionals. The interface should clearly separate general diet guidance from medical advice, especially when confidence is low or when the detected meal contains approximate nutrition mappings.
