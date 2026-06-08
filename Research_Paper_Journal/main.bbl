@@ -50,6 +50,19 @@ J.~Redmon, S.~Divvala, R.~Girshick, and A.~Farhadi, ``You only look once:
 J.~Redmon and A.~Farhadi, ``{YOLOv3}: An incremental improvement,'' \emph{arXiv
   preprint arXiv:1804.02767}, 2018.
 
+\bibitem{indianfoodnet_2023}
+R.~Agarwal, T.~Choudhury, N.~J. Ahuja, and T.~Sarkar, ``{IndianFoodNet}:
+  Detecting indian food items using deep learning,'' \emph{International
+  Journal of Computational Methods and Experimental Measurements}, vol.~11,
+  no.~4, pp. 221--232, 2023.
+
+\bibitem{dish_platter_2023}
+M.~Goel, S.~Dargar, S.~Ghatak, N.~Verma, P.~Chauhan, A.~Gupta,
+  N.~Vishnumolakala, H.~Amuru, E.~Gambhir, R.~Chhajed, M.~Jain, A.~Jain,
+  S.~Garg, N.~Narwade, N.~Verhwani, A.~Tiwari, K.~Vashishtha, and G.~Bagler,
+  ``Dish detection in food platters: A framework for automated diet logging and
+  nutrition management,'' \emph{arXiv preprint arXiv:2305.07552}, 2023.
+
 \bibitem{ultralytics2024}
 {Ultralytics}, ``Ultralytics yolo documentation,'' 2024, software
   documentation; accessed during project development.
@@ -60,11 +73,40 @@ T.-Y. Lin, M.~Maire, S.~Belongie, J.~Hays, P.~Perona, D.~Ramanan,
   context,'' in \emph{European Conference on Computer Vision}.\hskip 1em plus
   0.5em minus 0.4em\relax Springer, 2014, pp. 740--755.
 
-\bibitem{indb_placeholder}
-{Indian Nutrient Database}, ``Indian nutrient database spreadsheet used in
-  project data layer,'' 2026, pLACEHOLDER BIBTEX ENTRY: replace with the
-  official publication or institutional citation for INDB.xlsx before final
-  submission.
+\bibitem{khana_dataset_2025}
+O.~Prabhu, ``Khana: A comprehensive {Indian} cuisine dataset,'' \emph{arXiv
+  preprint arXiv:2509.06006}, 2025.
+
+\bibitem{indian_thali_2025}
+Y.~Arora, A.~Arun, and C.~V. Jawahar, ``What is there in an {Indian Thali}?''
+  in \emph{Proceedings of the Indian Conference on Computer Vision, Graphics
+  and Image Processing}, 2025.
+
+\bibitem{development_indb_2024}
+A.~Vijayakumar, H.~B. Dubasi, A.~Awasthi, and L.~M. Jaacks, ``Development of an
+  {Indian} food composition database,'' \emph{Current Developments in
+  Nutrition}, vol.~8, no.~7, p. 103790, 2024.
+
+\bibitem{fkg_llm_2024}
+S.~K. Gupta, L.~Dey, P.~P. Das, G.~Trilok-Kumar, and R.~Jain, ``Enhancing
+  {FKG.in}: Automating {Indian} food composition analysis,'' \emph{arXiv
+  preprint arXiv:2412.05248}, 2024.
+
+\bibitem{chatgpt_nutrient_estimation_2025}
+C.~O'Hara, G.~Kent, A.~C. Flynn, E.~R. Gibney, and C.~M. Timon, ``An evaluation
+  of {ChatGPT} for nutrient content estimation from meal photographs,''
+  \emph{Nutrients}, vol.~17, no.~4, p. 607, 2025.
+
+\bibitem{nutrigen_2025}
+S.~Khamesian, A.~Arefeen, S.~M. Carpenter, and H.~Ghasemzadeh, ``{NutriGen}:
+  Personalized meal plan generator leveraging large language models to enhance
+  dietary and nutritional adherence,'' \emph{arXiv preprint arXiv:2502.20601},
+  2025.
+
+\bibitem{diet_engine_2025}
+A.~M. Saad, M.~R.~H. Rahi, M.~M. Islam, and G.~Rabbani, ``Diet engine: A
+  real-time food nutrition assistant system for personalized dietary
+  guidance,'' \emph{Food Chemistry Advances}, vol.~7, p. 100978, 2025.
 
 \bibitem{fatsecret_bhakarwadi_2026}
 {FatSecret India}, ``Evolve bhakarwadi nutrition facts per 100 g,''
