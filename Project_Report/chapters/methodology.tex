@@ -2,9 +2,9 @@
 
 \section{Methodological Overview}
 
-The methodology follows the order in which the project became reliable during development. The dataset had to be cleaned first, because model integration is difficult to trust when the same food appears under different labels. The nutrition database also had to be checked before any recommendation output could be considered meaningful. Once these two parts were stable, backend and frontend testing became easier because fewer unknowns remained. The workflow starts from YOLO-format food datasets and moves through class normalization, split generation, train-only augmentation, detector integration, nutrition import, class-to-food mapping, and finally API and interface development. Figure \ref{fig:methodology-workflow} summarizes the process.
+The methodology follows the order in which the system became dependable during development. Dataset cleanup came first because the same food could not be allowed to appear under multiple labels. Nutrition lookup was checked next because recommendations are not useful if the macro values behind them are wrong. After those two parts were more stable, backend and frontend testing became easier. The workflow starts from YOLO-format food datasets and moves through class normalization, split generation, train-only augmentation, detector integration, nutrition import, class-to-food mapping, and finally API and interface development. Figure \ref{fig:methodology-workflow} summarizes the process.
 
-This order was followed because early mistakes move forward into later stages. If one dish remains under two class names, the detector learns them as different outputs. If a detector class is linked to a wrong nutrition row, the frontend may still show a neat but incorrect result. For that reason, data checking and mapping verification received as much attention as model training.
+This order was used because early mistakes travel forward. If one dish remains under two class names, the detector learns two outputs for the same food. If a detector class is linked to a wrong nutrition row, the frontend can still show a polished but incorrect result. For this reason, data checking and mapping verification were treated as core methodology steps, not as cleanup after training.
 
 \begin{figure}[H]
 \centering
@@ -39,15 +39,15 @@ This order was followed because early mistakes move forward into later stages. I
 
 \section{YOLO Detection Approach}
 
-YOLO, short for You Only Look Once, was selected because it performs object detection in a single prediction pass. For a food image, the model predicts bounding boxes, class probabilities, and confidence scores together. This fits the web application because the backend has to return results quickly enough for the user to inspect the uploaded meal without a long delay.
+YOLO, short for You Only Look Once, was selected because it performs object detection in a single prediction pass. For a food image, it predicts bounding boxes, class probabilities, and confidence scores together. This fits the web application because the backend has to return a result quickly enough for the user to inspect the uploaded meal without a long delay.
 
 The project uses the YOLO label format and inference style followed by recent Indian food detection systems such as IndianFoodNet and Diet Engine \cite{indianfoodnet_2023,diet_engine_2025}. During inference, the model returns candidate detections for visible food items. The backend applies confidence filtering and non-maximum suppression so that repeated boxes are removed before nutrition lookup. Each final detection contains a class name, confidence value, and normalized bounding box.
 
-Speed was not the only reason for using YOLO. Indian meal photographs often contain more than one dish, and a whole-image classifier would usually miss side items. YOLO allows the application to detect multiple foods in the same image and map each detected class separately to the nutrition database. It also gives a useful debugging path: the image region, detected class, database row, and final macro values can be checked one by one.
+Speed was not the only reason for using YOLO. Indian meal photographs often contain more than one dish, and a whole-image classifier would usually miss side items. YOLO lets the application detect multiple foods in the same image and map each detected class separately to the nutrition database. It also gives a useful debugging path: the image region, detected class, database row, and final macro values can be checked one by one.
 
 \section{Source Dataset Collection}
 
-Five YOLO-format datasets were used as source datasets. The local exports include Roboflow Universe metadata, dataset versions, source URLs, and CC BY 4.0 license notes \cite{dataset_indian_food_detection_v1,dataset_indian_food_v6,dataset_indianfood_7_v2,dataset_indianfoodnet_30_v1,dataset_south_indian_food_v19}. Together, they contained 40,797 source images across training, validation, and test folders before project-specific merging. Combining them improved food coverage, but it also introduced naming and annotation issues. Some labels used CamelCase, some used spaces, some used regional words, and some referred to the same dish with different spellings. These differences were resolved before training so that the final model would not learn duplicate or confusing outputs. Table \ref{tab:source-datasets} summarizes the source data.
+Five YOLO-format datasets were used as source datasets. The local exports include Roboflow Universe metadata, dataset versions, source URLs, and CC BY 4.0 license notes \cite{dataset_indian_food_detection_v1,dataset_indian_food_v6,dataset_indianfood_7_v2,dataset_indianfoodnet_30_v1,dataset_south_indian_food_v19}. Together, they contained 40,797 source images across training, validation, and test folders before project-specific merging. The merge improved food coverage, but it also created naming and annotation issues. Some labels used CamelCase, some used spaces, some used regional words, and some described the same dish with different spellings. These differences were resolved before training so that the model would not learn duplicate outputs for the same food. Table \ref{tab:source-datasets} summarizes the source data.
 
 \begin{table}[H]
 \centering
@@ -70,7 +70,7 @@ Five YOLO-format datasets were used as source datasets. The local exports includ
 \endgroup
 \end{table}
 
-The raw class count was higher than the final class count because several labels referred to the same food. For example, \code{satham}, \code{rice}, and \code{WhiteRice} were normalized into \code{rice}. This was not just a naming cleanup. Object detectors learn one output channel per class, so equivalent labels left separate would train the model to treat the same food as different objects. The same normalized names also made the later nutrition mapping step more manageable.
+The raw class count was higher than the final class count because several labels referred to the same food. For example, \code{satham}, \code{rice}, and \code{WhiteRice} were normalized into \code{rice}. This was more than a naming cleanup. Object detectors learn one output channel per class, so equivalent labels left separate would teach the model to treat the same food as different objects. The same normalized names also made the later nutrition mapping step easier to check.
 
 \section{Canonical Class Normalization}
 
@@ -96,19 +96,19 @@ Raw variants & Canonical class\\
 
 \section{YOLO Label Representation}
 
-Each YOLO label file contains one row per annotated object:
+Each YOLO label file contains one row for each annotated object:
 
 \begin{equation}
     y = (c, x, y, w, h)
 \end{equation}
 
-where $c$ is the class identifier, $x$ and $y$ are normalized center coordinates, and $w$ and $h$ are normalized width and height. The normalized coordinate system makes labels independent of image resolution. During parsing, each raw class identifier is first resolved to its source dataset class name and then converted to the canonical class name. This two-step conversion was necessary because class identifiers are local to each dataset and cannot be compared directly across sources.
+where $c$ is the class identifier, $x$ and $y$ are normalized center coordinates, and $w$ and $h$ are normalized width and height. Labels are normalized so the same annotation works at different image sizes. During parsing, each raw class identifier is first resolved to its source dataset class name and then converted to the canonical class name. This two-step conversion was necessary because class identifiers are local to each dataset and cannot be compared directly across sources.
 
 \section{Dataset Splitting and Augmentation}
 
 The merged dataset uses a 70/15/15 target ratio for training, validation, and testing. Multi-label images are represented through class-presence vectors. A stratified split is attempted first so that classes remain reasonably distributed across splits. When rare-label constraints make this infeasible, deterministic random splitting is used. The split stage was kept deterministic so that the same dataset can be regenerated and checked again.
 
-Augmentation is applied only to the training split. This prevents transformed training samples from leaking into validation or test evaluation. The augmentation strategy uses horizontal flipping and mild brightness and contrast changes. The purpose was limited: increase coverage for underrepresented classes without creating food images that no longer look realistic. Stronger transformations were avoided because colour and texture are important cues for visually similar Indian dishes.
+Augmentation is applied only to the training split. This avoids transformed training samples appearing in validation or test evaluation. The augmentation strategy uses horizontal flipping and mild brightness and contrast changes. The purpose was limited: improve coverage for underrepresented classes without creating food images that no longer look realistic. Stronger transformations were avoided because colour and texture are important cues for similar Indian dishes.
 
 \begin{algorithm}[H]
 \caption{Dataset merge and export procedure}
@@ -141,7 +141,7 @@ The database contains two main tables. The first table, \code{indb_foods}, store
 
 Food-to-nutrition mapping is performed conservatively. Manual semantic mappings are tried first by checking database food names and choosing the closest nutritionally meaningful record. Verified supplemental rows are used only when the available INDB sheet has no safe entry for a dataset class. Fuzzy matching is kept as the final fallback and is used only when the score is high enough. This caution is necessary because two strings can look similar while the foods are nutritionally different, especially among sweets, curries, chutneys, and fried snacks.
 
-This mapping step took more time than expected. Several detector labels were easy for a person to understand but did not match the database wording exactly. A regional or shortened class name could fail exact lookup, while fuzzy matching could select the wrong food because the words looked close. Since the final application displays numerical macro values, mapping was treated as a validation problem rather than a convenience feature.
+This mapping step took more time than expected. Several detector labels were easy for a person to understand but did not match the database wording exactly. A regional or shortened class name could fail exact lookup, while fuzzy matching could select the wrong food because the words looked close. The clearest example was \code{palak_paneer}, where an early fuzzy match selected a generic cottage-cheese row instead of spinach paneer. Since the final application displays numerical macro values, mapping was treated as a validation problem rather than a convenience feature.
 
 For a detected class $c$, the mapping function can be represented as:
 
@@ -159,7 +159,7 @@ The current mapping covers all 72 dataset classes. The classes \code{bhakarwadi}
 
 \section{Macro Calculation Methodology}
 
-The macro engine converts a daily calorie target into grams of carbohydrates, protein, and fat. Each goal starts with a base macro split, and health conditions modify this split before normalization. The calculation was kept rule-based and explicit so it could be checked manually during testing. If $T$ is the target calorie value and $p_c$, $p_p$, and $p_f$ are the final percentages for carbohydrates, protein, and fat, then:
+The macro engine converts a daily calorie target into grams of carbohydrates, protein, and fat. Each goal starts with a base macro split, and health conditions modify this split before normalization. The calculation was kept rule-based so it could be checked manually during testing. If $T$ is the target calorie value and $p_c$, $p_p$, and $p_f$ are the final percentages for carbohydrates, protein, and fat, then:
 
 \begin{align}
     G_c &= \frac{T \times p_c}{4 \times 100}\\
@@ -167,8 +167,8 @@ The macro engine converts a daily calorie target into grams of carbohydrates, pr
     G_f &= \frac{T \times p_f}{9 \times 100}
 \end{align}
 
-where $G_c$, $G_p$, and $G_f$ are grams of carbohydrates, protein, and fat respectively. The values 4, 4, and 9 represent calories per gram for carbohydrates, protein, and fat. The generated values are later shown in the frontend as target macros against which the detected meal can be compared.
+where $G_c$, $G_p$, and $G_f$ are grams of carbohydrates, protein, and fat respectively. The values 4, 4, and 9 represent calories per gram for carbohydrates, protein, and fat. The generated values are later shown in the frontend as target macros, so the detected meal can be compared with the selected user goal.
 
 \section{Validation Methodology}
 
-Validation is performed at multiple levels because one failing layer can make the final output misleading. Dataset validation checks class names, split counts, and visual class samples. Database validation checks row counts and schema. Mapping validation checks class-to-food mappings, coverage, and source provenance. Service validation checks whether the backend can initialize the nutrition service and return expected lookup results. Frontend validation checks whether the user workflow can display detections, nutrition labels, and recommendations. This layered approach made debugging manageable because problems could be isolated to the dataset, database, service, or interface instead of being treated as one large application error.
+Validation is performed at multiple levels because one failing layer can make the final output misleading. Dataset validation checks class names, split counts, and visual class samples. Database validation checks row counts and schema. Mapping validation checks class-to-food mappings, coverage, and source provenance. Service validation checks whether the backend can initialize the nutrition service and return expected lookup results. Frontend validation checks whether the user workflow can display detections, nutrition labels, and recommendations. This layered approach made debugging manageable because a problem could be isolated to the dataset, database, service, or interface instead of being treated as one large application error.

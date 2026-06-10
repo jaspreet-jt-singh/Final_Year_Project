@@ -163,6 +163,8 @@ The project uses YOLO11s for food object detection.
 | Current local model path | `models/yolo11s_indian_food_best.pt` |
 | Backend code default | `models/yolo11s_indian.pt` |
 | Final training notebook | `notebooks/final_version_training.ipynb` |
+| Merged training metrics | `merge_results/merged_results_1_to_100.csv` |
+| Final result artifacts | `merge_results/` |
 | Image size | 640 |
 | Final run name | `yolo11s_indian_food` |
 | Training continuation | Resumed from epoch 56 and continued to epoch 100 |
@@ -179,30 +181,68 @@ The project uses YOLO11s for food object detection.
 | Batch size | 16 in the final training run |
 | AMP | Enabled |
 | Epoch target | 100 |
+| Merged history coverage | Epoch 1 through epoch 100 |
 | Final resumed stage | Epoch 56 through epoch 100 |
 | Run name | `yolo11s_indian_food` |
 | Primary metrics | Precision, recall, mAP@50, mAP@75, mAP@50:95 |
 
-### Training Log Metric Checks
+### Merge Result Artifacts
 
-These rows are read from `results_after_discontinuation/runs/yolo11s_indian_food/results.csv`.
+The `merge_results` folder is the project result archive for the completed detector run and split evaluations.
 
-| Checked row | Epoch | Precision | Recall | mAP@50 | mAP@50:95 |
+| Artifact | Project role |
+|---|---|
+| `merge_results/merged_results_1_to_100.csv` | Authoritative merged epoch log for the completed 100-epoch YOLO11s training run |
+| `merge_results/training curves.png` | Training-curve visualization generated from the merged training history |
+| `merge_results/valid_validation_metrics/` | Validation-split evaluation artifacts for the exported best checkpoint |
+| `merge_results/test_validation_metrics/` | Held-out test-split evaluation artifacts for the exported best checkpoint |
+
+### Merged Training Summary
+
+`merge_results/merged_results_1_to_100.csv` contains one header row and 100 epoch rows. The metric values below are read from that merged CSV.
+
+| Check | Epoch | Precision | Recall | mAP@50 | mAP@50:95 |
 |---|---:|---:|---:|---:|---:|
+| Initial logged row | 1 | 0.48098 | 0.43691 | 0.41831 | 0.28246 |
 | Best mAP@50 row | 78 | 0.84685 | 0.80852 | 0.83379 | 0.68440 |
 | Best mAP@50:95 row | 97 | 0.84696 | 0.80721 | 0.82999 | 0.69226 |
 | Final logged row | 100 | 0.85280 | 0.80420 | 0.82806 | 0.69164 |
 
+| Metric | Epoch 1 | Epoch 100 | Absolute change |
+|---|---:|---:|---:|
+| Precision | 0.48098 | 0.85280 | +0.37182 |
+| Recall | 0.43691 | 0.80420 | +0.36729 |
+| mAP@50 | 0.41831 | 0.82806 | +0.40975 |
+| mAP@50:95 | 0.28246 | 0.69164 | +0.40918 |
+
+### Training Loss Checks
+
+| Checked row | Epoch | Train box loss | Train cls loss | Train DFL loss | Val box loss | Val cls loss | Val DFL loss |
+|---|---:|---:|---:|---:|---:|---:|---:|
+| Initial logged row | 1 | 1.11398 | 2.39729 | 1.50858 | 1.19658 | 1.88730 | 1.67549 |
+| Best mAP@50 row | 78 | 0.65247 | 0.58409 | 1.13532 | 0.72492 | 0.50607 | 1.16019 |
+| Best mAP@50:95 row | 97 | 0.45205 | 0.29936 | 1.02892 | 0.68674 | 0.51374 | 1.13935 |
+| Final logged row | 100 | 0.43372 | 0.28180 | 1.01761 | 0.68075 | 0.51583 | 1.13832 |
+
 ### Exported Best-Checkpoint Detector Metrics
 
-These values come from separate validation runs of the exported best checkpoint.
+These values come from separate validation runs of the exported best checkpoint. The corresponding curve plots, confusion matrices, prediction JSON files, and batch visualizations are stored in `merge_results/valid_validation_metrics/` and `merge_results/test_validation_metrics/`.
 
 | Split | Images | Instances | Precision | Recall | mAP@50 | mAP@75 | mAP@50:95 |
 |---|---:|---:|---:|---:|---:|---:|---:|
 | Validation | 5,922 | 8,812 | 0.847 | 0.807 | 0.830354 | 0.764597 | 0.692139 |
 | Held-out test | 5,919 | 8,875 | 0.842 | 0.801 | 0.819598 | 0.750709 | 0.679692 |
 
-The small gap between validation and held-out test performance indicates that the detector generalizes beyond the validation split, although visually similar dishes and lower-data classes still need deeper per-class error analysis.
+The validation-to-test gap is 0.010756 for mAP@50 and 0.012447 for mAP@50:95, indicating that the detector generalizes beyond the validation split, although visually similar dishes and lower-data classes still need deeper per-class error analysis.
+
+### Split Evaluation Artifacts
+
+| Split | Folder | Artifact count | Prediction JSON | Prediction entries | Included visual artifacts |
+|---|---|---:|---|---:|---|
+| Validation | `merge_results/valid_validation_metrics/` | 13 | `predictions (1).json` | 8,886 | Box F1, precision-recall, precision, recall curves; raw and normalized confusion matrices; three label/prediction batch pairs |
+| Held-out test | `merge_results/test_validation_metrics/` | 13 | `predictions.json` | 8,846 | Box F1, precision-recall, precision, recall curves; raw and normalized confusion matrices; three label/prediction batch pairs |
+
+These prediction-entry counts are detections exported by the evaluator, not ground-truth instance counts. Ground-truth instance counts are recorded in the aggregate metrics table above.
 
 ### Inference Configuration
 
@@ -479,6 +519,10 @@ The project includes validation coverage for:
 | `scripts/verify_yolo_class_macros.py` | Verifies macro availability and mapping quality for all 72 canonical classes |
 | `data/food_dataset/class_verification/verification_summary.md` | Summarizes class image availability and annotation issues |
 | `data/nutrition_verification/yolo_class_macro_verification.md` | Summarizes 72-class macro mapping status |
+| `merge_results/merged_results_1_to_100.csv` | Stores the completed detector training history for epochs 1 through 100 |
+| `merge_results/training curves.png` | Visualizes the merged detector training curves |
+| `merge_results/valid_validation_metrics/` | Stores validation-split detector curves, confusion matrices, batch predictions, and prediction JSON |
+| `merge_results/test_validation_metrics/` | Stores held-out test detector curves, confusion matrices, batch predictions, and prediction JSON |
 | `tests/test_phase0.py` | Validates nutrition foundation and core data assets |
 | `tests/test_phase1.py` | Validates backend services, API code, database tables, and model-path handling |
 | `tests/test_phase2.py` | Validates frontend structure and detection visualization integration |
@@ -496,6 +540,13 @@ The project includes validation coverage for:
 | Expanded classes with macro mappings | 72 |
 | Expanded-class mapping failures | 0 |
 | Known annotation issues for future cleanup | 3 |
+| Merged detector epoch rows | 100 |
+| Best logged validation mAP@50 | 0.83379 at epoch 78 |
+| Best logged validation mAP@50:95 | 0.69226 at epoch 97 |
+| Validation best-checkpoint mAP@50:95 | 0.692139 |
+| Held-out test best-checkpoint mAP@50:95 | 0.679692 |
+| Validation prediction entries in `merge_results` | 8,886 |
+| Held-out test prediction entries in `merge_results` | 8,846 |
 
 ## Local Run
 
@@ -562,6 +613,8 @@ python scripts/verify_yolo_class_macros.py
 - [x] Merged 72-class Indian-food YOLO dataset created.
 - [x] Dataset split into train, validation, and held-out test sets.
 - [x] YOLO11s detector trained and evaluated.
+- [x] Merged epoch 1-100 detector metrics archived in `merge_results/merged_results_1_to_100.csv`.
+- [x] Validation and held-out test evaluation artifacts archived under `merge_results`.
 - [x] SQLite nutrition database integrated.
 - [x] Detector-to-nutrition mapping implemented.
 - [x] All 72 expanded dataset classes mapped to nutrition records.

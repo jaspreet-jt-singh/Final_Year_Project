@@ -2,7 +2,7 @@
 
 \section{Integrated Result Synthesis}
 
-The previous sections report the individual counts, metrics, lookup tests, and workflow validations. Table \ref{tab:integrated-result-synthesis} connects that evidence with its practical meaning in the complete system.
+The previous sections report the counts, metrics, lookup tests, and workflow checks separately. Table \ref{tab:integrated-result-synthesis} brings them together so the result can be read as one working system rather than as disconnected experiments.
 
 \begin{table}[H]
 \centering
@@ -29,7 +29,7 @@ Macro and advice layer & Manual macro validation for a 2,000 kcal example and st
 
 \section{Dataset Coverage in the Final Label Space}
 
-The dataset result is not only a larger image count. The more important outcome is that the final label space covers common Indian meal components using normalized names that can be shared by the detector and nutrition service. Table \ref{tab:dataset-class-groups} gives representative groups from the 72-class set.
+The dataset result is not only a larger image count. The more important outcome is the final label space. It covers common Indian meal components using normalized names that can be shared by the detector, nutrition service, backend response, and frontend labels. Table \ref{tab:dataset-class-groups} gives representative groups from the 72-class set.
 
 \begin{table}[H]
 \centering
@@ -56,8 +56,8 @@ The class groups also show why a single whole-image classifier would have been w
 
 \section{Result Interpretation}
 
-The detector results are suitable for a final-year prototype, but they should be read together with the confusion matrix and prediction samples. The split-level image-evaluation curves in \code{merge_results/} show close validation and held-out test mAP@50 values, which suggests that the model is not fitting only to one split. At the same time, visually similar dishes remain difficult. This matters because a wrong detector label can move through the rest of the pipeline and produce a wrong nutrition lookup even when the backend and frontend are functioning correctly.
+The detector results are suitable for a final-year prototype, but they should be read together with the confusion matrix and prediction samples. The split-level image-evaluation curves in \code{merge_results/} show close validation and held-out test mAP@50 values, which suggests that the model is not fitting only to one split. At the same time, visually similar dishes remain difficult. A wrong detector label can move through the rest of the pipeline and produce a wrong nutrition lookup even when the backend and frontend are functioning correctly.
 
-The nutrition mapping result is one of the stronger outcomes of the project. Earlier fuzzy matching tests produced misleading matches for some dish names. The final mapping strategy corrects these cases through explicit class-to-food mappings and uses source-backed supplemental rows only when the INDB sheet has no safe equivalent. Some mappings still remain approximate, such as \code{ven_pongal} to \code{Plain khitchdi} and \code{chicken_biryani} to \code{Chicken pulao}. These assumptions are kept visible through mapping confidence and source metadata rather than being hidden behind a confident interface.
+The nutrition mapping result is one of the stronger outcomes of the project because it corrected failures that appeared in early testing. The final mapping strategy uses explicit class-to-food mappings and source-backed supplemental rows only when the INDB sheet has no safe equivalent. Some mappings still remain approximate, such as \code{ven_pongal} to \code{Plain khitchdi} and \code{chicken_biryani} to \code{Chicken pulao}. These assumptions are kept visible through mapping confidence and source metadata instead of being hidden behind the interface.
 
-The application result confirms that the pipeline is usable from upload to output. The frontend can display bounding boxes, confidence values, nutrition cards, serving controls, macro totals, and recommendation text. This is important because model accuracy alone does not prove that a user can understand or correct the result. The serving control is especially necessary because the detector identifies food type, not exact food mass.
+The application result confirms that the pipeline is usable from upload to output. The frontend can display bounding boxes, confidence values, nutrition cards, serving controls, macro totals, and recommendation text. This matters because model accuracy alone does not prove that a user can understand or correct the result. The serving control is especially necessary because the detector identifies food type, not exact food mass.

@@ -2,9 +2,9 @@
 
 \section{Experimental Scope}
 
-The experiments in this project are based on repository files, generated reports, and exported training artifacts. The evaluation covers dataset construction, YOLO11s detector training, validation and test metrics, class-name verification, nutrition database integrity, mapping coverage, backend service behavior, frontend workflow, and qualitative detection output. For detector reporting, the \code{merge_results/} folder is used as the metric source. It contains the consolidated 100-epoch CSV, the training-curve image, and separate validation and test image-evaluation folders with PR, F1, precision, recall, confusion-matrix, and prediction-batch artifacts for the latest 72-class model.
+The experiments were organized around the files produced by the actual build: dataset summaries, mapping reports, training artifacts, backend checks, frontend screenshots, and exported YOLO evaluation plots. The evaluation covers dataset construction, YOLO11s detector training, validation and test metrics, class-name verification, nutrition database integrity, mapping coverage, backend service behavior, frontend workflow, and qualitative detection output. For detector reporting, the \code{merge_results/} folder is used as the metric source. It contains the consolidated 100-epoch CSV, the training-curve image, and separate validation and test image-evaluation folders with PR, F1, precision, recall, confusion-matrix, and prediction-batch artifacts for the latest 72-class model.
 
-Validation was not limited to checking whether the model produced a score. Several parts of the application had to work together. A detection result was useful only if the class existed in the final \code{data.yaml}, the nutrition service could resolve the class name, and the frontend could display the returned macro fields correctly.
+Validation was not limited to checking whether the model produced a score. A detection result was useful only if the class existed in the final \code{data.yaml}, the nutrition service could resolve the class name, and the frontend could display the returned macro fields correctly. This is why the experiments include dataset, database, API, and interface checks along with detector metrics.
 
 \begin{figure}[H]
 \centering
@@ -39,7 +39,7 @@ Validation was not limited to checking whether the model produced a score. Sever
 
 \section{Dataset Validation}
 
-The first validation task checked whether the merged dataset contained the expected split folders and a complete 72-class \code{data.yaml}. This step was necessary because a missing label file or class-count mismatch would make later training results unreliable. The generated dataset summary is shown in Table \ref{tab:generated-dataset-summary}.
+The first validation task was basic but important: the merged dataset had to contain the expected split folders and a complete 72-class \code{data.yaml}. A missing label file or class-count mismatch would make later training results difficult to trust. The generated dataset summary is shown in Table \ref{tab:generated-dataset-summary}.
 
 \begin{table}[H]
 \centering
@@ -218,11 +218,11 @@ The exported run also produced confidence and precision-recall curves for boundi
 \label{fig:yolo11s-test-predictions}
 \end{figure}
 
-The split-level image-evaluation metrics show that the held-out test mAP@50 is close to the validation mAP@50, with a drop from 0.776 to 0.765. The best all-class F1 score also changes only slightly, from 0.81 on validation to 0.80 on the held-out test split. The normalized confusion matrices still show uneven class behaviour, which is expected in a 72-class food detector where several dishes look similar and some classes have fewer unique source images. During visual inspection, many mistakes were understandable when foods shared colour, texture, or serving style, such as rice-based dishes, paneer gravies, and chutney-side combinations.
+The split-level image-evaluation metrics show that the held-out test mAP@50 is close to the validation mAP@50, with a drop from 0.776 to 0.765. The best all-class F1 score also changes only slightly, from 0.81 on validation to 0.80 on the held-out test split. The normalized confusion matrices still show uneven class behaviour. This was expected after looking through the prediction batches, because several dishes share colour, texture, or serving style. Rice-based items, paneer gravies, and chutney-side combinations were the most obvious examples during visual inspection.
 
 \section{Class Verification Experiment}
 
-The class verification experiment generated contact sheets with four images per class. The purpose was to catch practical mistakes that are easy to miss in code, such as class-order shifts, naming mismatches, or labels that do not match the visible food. The script found image samples for all 72 classes. Visual inspection found no class-list order problem. The issues observed were sample-level annotation issues rather than class-list errors.
+The class verification experiment generated contact sheets with four images per class. The purpose was to catch mistakes that code can easily miss, such as class-order shifts, naming mismatches, or labels that do not match the visible food. The script found image samples for all 72 classes. Visual inspection found no class-list order problem. The issues observed were sample-level annotation issues rather than class-list errors.
 
 This experiment was useful because it gave a quick human-readable check of the dataset. CSV counts alone would not show whether a \code{jalebi} sample actually looked like jalebi or whether a chutney box was placed on the correct food region. The contact sheets made these problems visible without opening hundreds of files manually.
 
@@ -249,7 +249,7 @@ Sample-level issues found & 3\\
 
 Nutrition database validation checked schema and row counts. The database contains 1,010 records in \code{indb_foods} and 103 records in \code{yolo_mappings}. The food table is based on INDB and five source-backed supplemental rows for classes absent from INDB. The mapping count is larger than 72 because the table includes expanded dataset classes and legacy deployed-model labels for backward compatibility.
 
-The row-count check was followed by lookup tests because a database can contain records and still return the wrong food for a detector label. This was especially important after the mapping logic was changed from mostly fuzzy matching to explicit class-to-food mappings.
+The row-count check was followed by lookup tests because a database can contain records and still return the wrong food for a detector label. This became especially important after fuzzy matching produced misleading early results and the mapping logic was changed to prefer explicit class-to-food mappings.
 
 \begin{table}[H]
 \centering
@@ -339,7 +339,7 @@ Backend validation focused on service readiness and response structure. The anal
 
 The frontend workflow was validated qualitatively by uploading sample food images and checking that the interface displays bounding boxes, detected labels, confidence values, nutrition cards, serving controls, and recommendation text. Figure \ref{fig:detection-overlay} in the implementation section shows a successful example with Bhatura and Chole detections. The interface also handles no-food responses and backend error messages.
 
-This workflow test was important because some issues appear only after the model response reaches the browser. Box coordinates must align with the displayed image size, serving changes must update macro totals, and recommendation text must use the current user goal rather than an old state.
+This workflow test was necessary because some issues appear only after the model response reaches the browser. Box coordinates have to align with the displayed image size, serving changes have to update macro totals, and recommendation text has to use the current user goal rather than an old state.
 
 \begin{figure}[H]
 \centering
@@ -372,7 +372,7 @@ Macro validation checked whether a target calorie value is converted correctly t
 
 \section{Experimental Findings}
 
-The experiments show that the dataset and application pipeline are internally consistent. In \code{merge_results/}, the consolidated training CSV records a best validation mAP@50 of 0.83379 and best validation mAP@50:95 of 0.69226, while the latest split-level image-evaluation curves report 0.776 mAP@50 on validation images and 0.765 mAP@50 on held-out test images. The same validation sequence also confirmed that all 72 expanded dataset classes have nutrition mappings and that the frontend can display detections, macro values, serving controls, and recommendation text. The next sections synthesize these observations and discuss their practical meaning in the complete system.
+The experiments show that the dataset and application pipeline are internally consistent. In \code{merge_results/}, the consolidated training CSV records a best validation mAP@50 of 0.83379 and best validation mAP@50:95 of 0.69226, while the latest split-level image-evaluation curves report 0.776 mAP@50 on validation images and 0.765 mAP@50 on held-out test images. The same validation sequence confirmed that all 72 expanded dataset classes have nutrition mappings and that the frontend can display detections, macro values, serving controls, and recommendation text. The next sections discuss what these results mean for the complete system.
 
 \input{chapters/results}
 \input{chapters/discussion}

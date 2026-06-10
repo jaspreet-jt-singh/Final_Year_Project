@@ -9,7 +9,7 @@
 \contentsline {figure}{\numberline {4.3}{\ignorespaces Entity relationship used for class-to-nutrition lookup}}{27}{figure.caption.20}%
 \contentsline {figure}{\numberline {4.4}{\ignorespaces Frontend detection overlay showing Bhatura and Chole detections}}{33}{figure.caption.22}%
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {5.1}{\ignorespaces Verified system-level coverage used for validation}}{35}{figure.caption.24}%
+\contentsline {figure}{\numberline {5.1}{\ignorespaces Verified system-level coverage used for validation}}{36}{figure.caption.24}%
 \contentsline {figure}{\numberline {5.2}{\ignorespaces YOLO11s training result curves for the complete 100-epoch run}}{38}{figure.caption.28}%
 \contentsline {figure}{\numberline {5.3}{\ignorespaces YOLO11s validation image-evaluation curves}}{39}{figure.caption.30}%
 \contentsline {figure}{\numberline {5.4}{\ignorespaces YOLO11s held-out test image-evaluation curves}}{40}{figure.caption.31}%

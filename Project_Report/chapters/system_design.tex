@@ -4,7 +4,7 @@
 
 The design was guided by five practical goals: usability, modularity, traceable data flow, local deployability, and extensibility. Usability means that a user should be able to upload a food image and understand the result without knowing how the model works internally. Modularity keeps dataset building, model inference, nutrition lookup, recommendation generation, and interface rendering separated enough for independent debugging. Traceable data flow keeps detected labels, confidence scores, bounding boxes, and nutrition sources visible instead of hiding them inside backend logic. Local deployability keeps the prototype easy to run on a developer machine, while extensibility leaves room for additional food classes, improved models, and better nutrition sources later.
 
-These goals came from issues faced during development. Early testing showed that a food-recognition result is hard to trust when the label, confidence score, and nutrition source are not visible together. The design therefore avoids treating the detector as an unexplained black box. Each layer returns structured information that can be checked during debugging and shown clearly in the frontend.
+These goals came from problems seen while testing the prototype. A food-recognition result was hard to trust when the label, confidence score, and nutrition source were not visible together. In one case, the visual prediction looked correct but the mapped nutrition row was not suitable. The design therefore avoids treating the detector as an unexplained black box. Each layer returns structured information that can be checked during debugging and shown clearly in the frontend.
 
 \section{High-Level Architecture}
 
