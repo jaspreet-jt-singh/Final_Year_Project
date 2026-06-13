@@ -23,6 +23,8 @@ Cleared after full-image check:
 | `data/food_dataset/train/images/train9492-besan_cheela.jpg` | Valid rolled cheela sample. |
 | `data/food_dataset/train/images/train34415-pidi_kolukattai.jpg` | Acceptable pidi/kozhukattai-style sample variant. |
 
+The contact-sheet sampler avoids very thin or zero-area boxes for display, so the sheets remain useful even when known noisy labels are retained for dataset review.
+
 ## Contact Sheets
 
 - `data/food_dataset/class_verification/class_verification_page_01.jpg`
@@ -33,6 +35,25 @@ Cleared after full-image check:
 - `data/food_dataset/class_verification/class_verification_page_06.jpg`
 - `data/food_dataset/class_verification/class_verification_page_07.jpg`
 - `data/food_dataset/class_verification/class_verification_page_08.jpg`
+
+## Report Half Sheets
+
+- `data/food_dataset/class_verification/class_verification_half_01.jpg`
+- `data/food_dataset/class_verification/class_verification_half_02.jpg`
+- `data/food_dataset/class_verification/class_verification_half_03.jpg`
+- `data/food_dataset/class_verification/class_verification_half_04.jpg`
+- `data/food_dataset/class_verification/class_verification_half_05.jpg`
+- `data/food_dataset/class_verification/class_verification_half_06.jpg`
+- `data/food_dataset/class_verification/class_verification_half_07.jpg`
+- `data/food_dataset/class_verification/class_verification_half_08.jpg`
+- `data/food_dataset/class_verification/class_verification_half_09.jpg`
+- `data/food_dataset/class_verification/class_verification_half_10.jpg`
+- `data/food_dataset/class_verification/class_verification_half_11.jpg`
+- `data/food_dataset/class_verification/class_verification_half_12.jpg`
+- `data/food_dataset/class_verification/class_verification_half_13.jpg`
+- `data/food_dataset/class_verification/class_verification_half_14.jpg`
+- `data/food_dataset/class_verification/class_verification_half_15.jpg`
+- `data/food_dataset/class_verification/class_verification_half_16.jpg`
 
 ## Sample Counts
 

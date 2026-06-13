@@ -25,9 +25,9 @@
 \addvspace {10\p@ }
 \contentsline {table}{\numberline {A.1}{\ignorespaces Full 72-class dataset to INDB mapping table}}{57}{table.A.1}%
 \contentsline {table}{\numberline {A.2}{\ignorespaces Sample-level annotation issues found during visual verification}}{60}{table.caption.44}%
-\contentsline {table}{\numberline {A.3}{\ignorespaces Per-class dataset counts after merge and train augmentation}}{77}{table.A.3}%
+\contentsline {table}{\numberline {A.3}{\ignorespaces Per-class dataset counts after merge and train augmentation}}{78}{table.A.3}%
 \addvspace {10\p@ }
-\contentsline {table}{\numberline {B.1}{\ignorespaces Weight-loss macro targets for 2,000 kcal}}{82}{table.caption.61}%
-\contentsline {table}{\numberline {B.2}{\ignorespaces Muscle-gain macro targets for 2,000 kcal}}{83}{table.caption.62}%
-\contentsline {table}{\numberline {B.3}{\ignorespaces Maintenance macro targets for 2,000 kcal}}{83}{table.caption.63}%
-\contentsline {table}{\numberline {B.4}{\ignorespaces Endurance macro targets for 2,000 kcal}}{84}{table.caption.64}%
+\contentsline {table}{\numberline {B.1}{\ignorespaces Weight-loss macro targets for 2,000 kcal}}{83}{table.caption.61}%
+\contentsline {table}{\numberline {B.2}{\ignorespaces Muscle-gain macro targets for 2,000 kcal}}{84}{table.caption.62}%
+\contentsline {table}{\numberline {B.3}{\ignorespaces Maintenance macro targets for 2,000 kcal}}{84}{table.caption.63}%
+\contentsline {table}{\numberline {B.4}{\ignorespaces Endurance macro targets for 2,000 kcal}}{85}{table.caption.64}%

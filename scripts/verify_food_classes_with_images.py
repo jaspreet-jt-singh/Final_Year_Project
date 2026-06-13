@@ -4,9 +4,9 @@ Create visual contact sheets for checking YOLO food class names against images.
 
 The exported dataset filenames include the dominant canonical class
 (`valid0001-idli.jpg`, for example). This script groups images by that suffix,
-parses only the selected samples' YOLO labels for object crops, and writes page
-images plus a CSV index. Validation/test samples are preferred before train
-samples so the review mostly uses non-augmented images.
+checks YOLO labels for crop quality, and writes page images plus a CSV index.
+Validation/test samples are preferred before train samples so the review mostly
+uses non-augmented images.
 """
 
 from __future__ import annotations
@@ -23,6 +23,8 @@ from PIL import Image, ImageDraw, ImageFont, ImageOps
 
 IMAGE_EXTENSIONS = (".jpg", ".jpeg", ".png", ".bmp", ".webp")
 SPLIT_ORDER = ("valid", "test", "train")
+MIN_DISPLAY_BBOX_EDGE = 0.04
+MIN_DISPLAY_BBOX_AREA = 0.01
 
 
 @dataclass(frozen=True)
@@ -83,6 +85,27 @@ def find_bbox_for_class(label_path: Path, class_id: int) -> tuple[float, float, 
     return None
 
 
+def bbox_area(sample: Sample) -> float:
+    if sample.bbox is None:
+        return 1.0
+    return sample.bbox[2] * sample.bbox[3]
+
+
+def is_displayable_sample(sample: Sample) -> bool:
+    if sample.bbox is None:
+        return True
+
+    _, _, box_width, box_height = sample.bbox
+    if box_width <= 0 or box_height <= 0:
+        return False
+
+    return (
+        box_width >= MIN_DISPLAY_BBOX_EDGE
+        and box_height >= MIN_DISPLAY_BBOX_EDGE
+        and box_width * box_height >= MIN_DISPLAY_BBOX_AREA
+    )
+
+
 def collect_samples(dataset_dir: Path, class_names: list[str]) -> dict[int, list[Sample]]:
     class_to_id = {class_name: class_id for class_id, class_name in enumerate(class_names)}
     samples_by_class = {class_id: [] for class_id in range(len(class_names))}
@@ -101,6 +124,7 @@ def collect_samples(dataset_dir: Path, class_names: list[str]) -> dict[int, list
 
             class_id = class_to_id[class_name]
             label_path = labels_dir / f"{image_path.stem}.txt"
+            bbox = find_bbox_for_class(label_path, class_id)
             samples_by_class[class_id].append(
                 Sample(
                     class_id=class_id,
@@ -108,7 +132,7 @@ def collect_samples(dataset_dir: Path, class_names: list[str]) -> dict[int, list
                     split=split,
                     image_path=image_path,
                     label_path=label_path,
-                    bbox=None,
+                    bbox=bbox,
                 )
             )
 
@@ -128,8 +152,18 @@ def choose_samples(
             chosen[class_id] = samples
             continue
 
+        ranked_samples = sorted(
+            samples,
+            key=lambda sample: (
+                0 if is_displayable_sample(sample) else 1,
+                SPLIT_ORDER.index(sample.split),
+                -bbox_area(sample),
+                rng.random(),
+                sample.image_path.name,
+            ),
+        )
         chosen[class_id] = sorted(
-            rng.sample(samples, samples_per_class),
+            ranked_samples[:samples_per_class],
             key=lambda sample: (SPLIT_ORDER.index(sample.split), sample.image_path.name),
         )
 
@@ -291,6 +325,26 @@ def make_contact_sheets(
     return sheet_paths
 
 
+def write_half_sheets(sheet_paths: list[Path], output_dir: Path) -> list[Path]:
+    half_paths: list[Path] = []
+
+    for page_index, sheet_path in enumerate(sheet_paths):
+        image = Image.open(sheet_path).convert("RGB")
+        width, height = image.size
+        midpoint = height // 2
+        halves = [
+            image.crop((0, 0, width, midpoint)),
+            image.crop((0, midpoint, width, height)),
+        ]
+
+        for half_index, half in enumerate(halves):
+            half_path = output_dir / f"class_verification_half_{page_index * 2 + half_index + 1:02d}.jpg"
+            half.save(half_path, quality=92)
+            half_paths.append(half_path)
+
+    return half_paths
+
+
 def write_csv(chosen: dict[int, list[Sample]], output_path: Path) -> None:
     with output_path.open("w", newline="", encoding="utf-8") as handle:
         writer = csv.writer(handle)
@@ -329,6 +383,7 @@ def write_summary(
     samples_by_class: dict[int, list[Sample]],
     chosen: dict[int, list[Sample]],
     sheet_paths: list[Path],
+    half_sheet_paths: list[Path],
 ) -> None:
     missing = [class_names[class_id] for class_id, samples in samples_by_class.items() if not samples]
 
@@ -339,12 +394,38 @@ def write_summary(
         f"Classes with image samples: {len(class_names) - len(missing)}",
         f"Classes without image samples: {len(missing)}",
         "",
+        "## Manual Review Notes",
+        "",
+        "Visual inspection of the generated contact sheets found that the class names are broadly aligned with the actual food images across all 72 classes. The dataset has normal sample-level noise, but no class-name list ordering problem was found.",
+        "",
+        "Issues to review:",
+        "",
+        "| File | Finding | Suggested action |",
+        "|---|---|---|",
+        "| `data/food_dataset/train/images/train27229-jalebi.jpg` | Labeled as `jalebi`, but the image does not visually look like jalebi. | Remove from `jalebi` or relabel from the source annotation if the correct class exists. |",
+        "| `data/food_dataset/train/labels/train18550-kaara_chutney.txt` | The `kaara_chutney` box is placed on the vada, while the visible chutney in the cup is not the boxed object. | Correct the bounding box/class assignment or remove that annotation. |",
+        "| `data/food_dataset/train/labels/train32747-nandu_masala.txt` | Full image is crab/`nandu_masala`, but the sampled box is extremely thin and produces a blank crop. | Correct the bounding box dimensions. |",
+        "",
+        "Cleared after full-image check:",
+        "",
+        "| File | Review result |",
+        "|---|---|",
+        "| `data/food_dataset/train/images/train9492-besan_cheela.jpg` | Valid rolled cheela sample. |",
+        "| `data/food_dataset/train/images/train34415-pidi_kolukattai.jpg` | Acceptable pidi/kozhukattai-style sample variant. |",
+        "",
+        "The contact-sheet sampler avoids very thin or zero-area boxes for display, so the sheets remain useful even when known noisy labels are retained for dataset review.",
+        "",
         "## Contact Sheets",
         "",
     ]
 
     for sheet_path in sheet_paths:
         lines.append(f"- `{sheet_path.as_posix()}`")
+
+    lines.extend(["", "## Report Half Sheets", ""])
+
+    for half_sheet_path in half_sheet_paths:
+        lines.append(f"- `{half_sheet_path.as_posix()}`")
 
     lines.extend(
         [
@@ -393,6 +474,7 @@ def main() -> int:
         args.samples_per_class,
         args.classes_per_page,
     )
+    half_sheet_paths = write_half_sheets(sheet_paths, args.output_dir)
     write_csv(chosen, args.output_dir / "verification_samples.csv")
     write_summary(
         args.output_dir / "verification_summary.md",
@@ -400,11 +482,13 @@ def main() -> int:
         samples_by_class,
         chosen,
         sheet_paths,
+        half_sheet_paths,
     )
 
     classes_with_samples = sum(1 for samples in samples_by_class.values() if samples)
     print(f"Classes found in images: {classes_with_samples}/{len(class_names)}")
     print(f"Contact sheets written: {len(sheet_paths)}")
+    print(f"Report half sheets written: {len(half_sheet_paths)}")
     print(f"Output directory: {args.output_dir}")
     return 0
 

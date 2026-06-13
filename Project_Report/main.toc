@@ -74,7 +74,7 @@
 \contentsline {chapter}{\numberline {5}EXPERIMENTAL ANALYSIS AND DISCUSSION}{33}{chapter.5}%
 \contentsline {section}{\numberline {5.1}Experimental Scope}{33}{section.5.1}%
 \contentsline {section}{\numberline {5.2}Dataset Validation}{34}{section.5.2}%
-\contentsline {section}{\numberline {5.3}YOLO Training and Detector Evaluation}{35}{section.5.3}%
+\contentsline {section}{\numberline {5.3}YOLO Training and Detector Evaluation}{34}{section.5.3}%
 \contentsline {section}{\numberline {5.4}Class Verification Experiment}{40}{section.5.4}%
 \contentsline {section}{\numberline {5.5}Nutrition Database Validation}{40}{section.5.5}%
 \contentsline {section}{\numberline {5.6}Nutrition Mapping Coverage Experiment}{41}{section.5.6}%
@@ -102,10 +102,10 @@
 \contentsline {section}{\numberline {A.2}Class-to-INDB Mapping Table}{57}{section.A.2}%
 \contentsline {section}{\numberline {A.3}Known Annotation Issues}{60}{section.A.3}%
 \contentsline {section}{\numberline {A.4}Visual Verification Sheet Set}{61}{section.A.4}%
-\contentsline {section}{\numberline {A.5}Per-Class Dataset Counts}{76}{section.A.5}%
-\contentsline {chapter}{\numberline {B}API RESPONSE EXAMPLES}{80}{appendix.B}%
-\contentsline {section}{\numberline {B.1}Analyze Food Response}{80}{section.B.1}%
-\contentsline {section}{\numberline {B.2}Macro Calculation Request}{81}{section.B.2}%
-\contentsline {section}{\numberline {B.3}Macro Calculation Response}{81}{section.B.3}%
+\contentsline {section}{\numberline {A.5}Per-Class Dataset Counts}{77}{section.A.5}%
+\contentsline {chapter}{\numberline {B}API RESPONSE EXAMPLES}{81}{appendix.B}%
+\contentsline {section}{\numberline {B.1}Analyze Food Response}{81}{section.B.1}%
+\contentsline {section}{\numberline {B.2}Macro Calculation Request}{82}{section.B.2}%
+\contentsline {section}{\numberline {B.3}Macro Calculation Response}{82}{section.B.3}%
 \contentsline {section}{\numberline {B.4}No Food Response}{82}{section.B.4}%
-\contentsline {section}{\numberline {B.5}Macro Target Reference Tables}{82}{section.B.5}%
+\contentsline {section}{\numberline {B.5}Macro Target Reference Tables}{83}{section.B.5}%
