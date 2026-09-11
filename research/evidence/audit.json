@@ -1,0 +1,1334 @@
+{
+  "schema_version": 1,
+  "source_commit": "e2e9df6a40eb069fc615df58f19349b55ca746de",
+  "audit_script_sha256": "c67804949692df903a680319e49e9cd3e3b14851f2675b790da6787e3c6fcb2b",
+  "dataset": {
+    "class_count": 72,
+    "image_count": 48693,
+    "manifest_sha256": "719544b955d9f25012a95725e5f9104360d565d49948cabaa09f5dfd6bf52d9b",
+    "splits": {
+      "train": {
+        "images": 36852,
+        "instances": 56287,
+        "empty_labels": 0,
+        "issue_images": 51,
+        "orphan_labels": 0,
+        "orphan_examples": [],
+        "instances_per_class": {
+          "aloo_gobi": 572,
+          "aloo_masala": 538,
+          "appam": 469,
+          "beetroot_poriyal": 623,
+          "besan_cheela": 730,
+          "bhakarwadi": 502,
+          "bhakri": 240,
+          "bhatura": 1231,
+          "bhindi_masala": 1061,
+          "biryani": 722,
+          "carrot_poriyal": 675,
+          "chai": 735,
+          "chicken": 1027,
+          "chicken_65": 440,
+          "chicken_biryani": 444,
+          "chole": 1457,
+          "coconut_chutney": 1257,
+          "dal": 1045,
+          "dhokla": 865,
+          "dosa": 1552,
+          "dum_aloo": 508,
+          "eggs": 631,
+          "fish_curry": 518,
+          "ghevar": 878,
+          "green_chutney": 782,
+          "gulab_jamun": 3228,
+          "idli": 2513,
+          "jalebi": 1041,
+          "kaara_chutney": 475,
+          "kali": 654,
+          "kebab": 1722,
+          "khandvi": 530,
+          "kheer": 747,
+          "koozh": 528,
+          "kulfi": 953,
+          "lassi": 784,
+          "lemon_rice": 460,
+          "medu_vada": 619,
+          "modak": 1226,
+          "mushroom_biryani": 450,
+          "mutton_biryani": 421,
+          "mutton_curry": 500,
+          "nandu_masala": 428,
+          "nei_satham": 422,
+          "omelette": 457,
+          "onion_pakoda": 515,
+          "paal_kolukattai": 450,
+          "palak_paneer": 1017,
+          "paneer_biryani": 422,
+          "paratha": 326,
+          "parupu_vadai": 522,
+          "pidi_kolukattai": 448,
+          "poha": 1147,
+          "poorna_kolukattai": 453,
+          "prawn_thokku": 434,
+          "puri": 604,
+          "raita": 584,
+          "rajma_curry": 1061,
+          "ras_malai": 569,
+          "rice": 2008,
+          "roti": 926,
+          "saag": 532,
+          "salad": 434,
+          "sambar": 641,
+          "sambar_satham": 420,
+          "samosa": 2220,
+          "shahi_paneer": 893,
+          "thepla": 419,
+          "upma": 318,
+          "veg_briyani": 432,
+          "veg_pulao": 391,
+          "ven_pongal": 441
+        }
+      },
+      "valid": {
+        "images": 5922,
+        "instances": 8805,
+        "empty_labels": 0,
+        "issue_images": 7,
+        "orphan_labels": 0,
+        "orphan_examples": [],
+        "instances_per_class": {
+          "aloo_gobi": 121,
+          "aloo_masala": 115,
+          "appam": 50,
+          "beetroot_poriyal": 65,
+          "besan_cheela": 69,
+          "bhakarwadi": 56,
+          "bhakri": 19,
+          "bhatura": 261,
+          "bhindi_masala": 225,
+          "biryani": 152,
+          "carrot_poriyal": 69,
+          "chai": 99,
+          "chicken": 214,
+          "chicken_65": 50,
+          "chicken_biryani": 44,
+          "chole": 289,
+          "coconut_chutney": 226,
+          "dal": 216,
+          "dhokla": 186,
+          "dosa": 318,
+          "dum_aloo": 84,
+          "eggs": 128,
+          "fish_curry": 78,
+          "ghevar": 100,
+          "green_chutney": 148,
+          "gulab_jamun": 409,
+          "idli": 506,
+          "jalebi": 241,
+          "kaara_chutney": 48,
+          "kali": 57,
+          "kebab": 179,
+          "khandvi": 75,
+          "kheer": 85,
+          "koozh": 47,
+          "kulfi": 139,
+          "lassi": 113,
+          "lemon_rice": 51,
+          "medu_vada": 101,
+          "modak": 94,
+          "mushroom_biryani": 48,
+          "mutton_biryani": 44,
+          "mutton_curry": 75,
+          "nandu_masala": 46,
+          "nei_satham": 47,
+          "omelette": 46,
+          "onion_pakoda": 73,
+          "paal_kolukattai": 53,
+          "palak_paneer": 220,
+          "paneer_biryani": 45,
+          "paratha": 34,
+          "parupu_vadai": 53,
+          "pidi_kolukattai": 62,
+          "poha": 235,
+          "poorna_kolukattai": 47,
+          "prawn_thokku": 48,
+          "puri": 88,
+          "raita": 52,
+          "rajma_curry": 220,
+          "ras_malai": 74,
+          "rice": 415,
+          "roti": 201,
+          "saag": 115,
+          "salad": 39,
+          "sambar": 106,
+          "sambar_satham": 45,
+          "samosa": 355,
+          "shahi_paneer": 189,
+          "thepla": 40,
+          "upma": 31,
+          "veg_briyani": 47,
+          "veg_pulao": 37,
+          "ven_pongal": 48
+        }
+      },
+      "test": {
+        "images": 5919,
+        "instances": 8868,
+        "empty_labels": 0,
+        "issue_images": 7,
+        "orphan_labels": 0,
+        "orphan_examples": [],
+        "instances_per_class": {
+          "aloo_gobi": 120,
+          "aloo_masala": 113,
+          "appam": 47,
+          "beetroot_poriyal": 62,
+          "besan_cheela": 84,
+          "bhakarwadi": 56,
+          "bhakri": 21,
+          "bhatura": 268,
+          "bhindi_masala": 224,
+          "biryani": 159,
+          "carrot_poriyal": 77,
+          "chai": 108,
+          "chicken": 214,
+          "chicken_65": 46,
+          "chicken_biryani": 48,
+          "chole": 289,
+          "coconut_chutney": 218,
+          "dal": 222,
+          "dhokla": 182,
+          "dosa": 285,
+          "dum_aloo": 78,
+          "eggs": 131,
+          "fish_curry": 81,
+          "ghevar": 97,
+          "green_chutney": 151,
+          "gulab_jamun": 415,
+          "idli": 499,
+          "jalebi": 236,
+          "kaara_chutney": 47,
+          "kali": 68,
+          "kebab": 175,
+          "khandvi": 76,
+          "kheer": 93,
+          "koozh": 62,
+          "kulfi": 142,
+          "lassi": 99,
+          "lemon_rice": 55,
+          "medu_vada": 98,
+          "modak": 101,
+          "mushroom_biryani": 48,
+          "mutton_biryani": 45,
+          "mutton_curry": 75,
+          "nandu_masala": 47,
+          "nei_satham": 45,
+          "omelette": 49,
+          "onion_pakoda": 76,
+          "paal_kolukattai": 52,
+          "palak_paneer": 216,
+          "paneer_biryani": 46,
+          "paratha": 31,
+          "parupu_vadai": 62,
+          "pidi_kolukattai": 50,
+          "poha": 244,
+          "poorna_kolukattai": 56,
+          "prawn_thokku": 46,
+          "puri": 91,
+          "raita": 57,
+          "rajma_curry": 219,
+          "ras_malai": 75,
+          "rice": 423,
+          "roti": 212,
+          "saag": 115,
+          "salad": 43,
+          "sambar": 110,
+          "sambar_satham": 45,
+          "samosa": 342,
+          "shahi_paneer": 191,
+          "thepla": 43,
+          "upma": 32,
+          "veg_briyani": 46,
+          "veg_pulao": 42,
+          "ven_pongal": 47
+        }
+      }
+    },
+    "byte_duplicates": {
+      "cross_split_groups": 138,
+      "affected_images": 276,
+      "pairs": {
+        "train:valid": {
+          "shared_groups": 63,
+          "affected_images": 126
+        },
+        "train:test": {
+          "shared_groups": 56,
+          "affected_images": 112
+        },
+        "valid:test": {
+          "shared_groups": 19,
+          "affected_images": 38
+        }
+      },
+      "examples": [
+        [
+          "test/images/test0134-bhindi_masala.jpg",
+          "train/images/train16477-bhindi_masala.jpg"
+        ],
+        [
+          "test/images/test0176-shahi_paneer.jpg",
+          "train/images/train10269-shahi_paneer.jpg"
+        ],
+        [
+          "test/images/test0298-bhindi_masala.jpg",
+          "train/images/train11062-bhindi_masala.jpg"
+        ],
+        [
+          "test/images/test0307-bhindi_masala.jpg",
+          "train/images/train23017-bhindi_masala.jpg"
+        ],
+        [
+          "test/images/test0404-chole.jpg",
+          "train/images/train18386-chole.jpg"
+        ],
+        [
+          "test/images/test0435-chole.jpg",
+          "train/images/train4063-chole.jpg"
+        ],
+        [
+          "test/images/test0443-shahi_paneer.jpg",
+          "train/images/train26987-shahi_paneer.jpg"
+        ],
+        [
+          "test/images/test0450-shahi_paneer.jpg",
+          "train/images/train0532-shahi_paneer.jpg"
+        ],
+        [
+          "test/images/test0520-biryani.jpg",
+          "train/images/train21381-biryani.jpg"
+        ],
+        [
+          "test/images/test0692-shahi_paneer.jpg",
+          "valid/images/valid2642-shahi_paneer.jpg"
+        ],
+        [
+          "test/images/test0740-bhindi_masala.jpg",
+          "valid/images/valid4271-bhindi_masala.jpg"
+        ],
+        [
+          "test/images/test0836-biryani.jpg",
+          "train/images/train14791-biryani.jpg"
+        ],
+        [
+          "test/images/test0848-chole.jpg",
+          "valid/images/valid4331-chole.jpg"
+        ],
+        [
+          "test/images/test1042-bhatura.jpg",
+          "valid/images/valid3355-bhatura.jpg"
+        ],
+        [
+          "test/images/test1095-bhindi_masala.jpg",
+          "valid/images/valid2205-bhindi_masala.jpg"
+        ],
+        [
+          "test/images/test1126-chole.jpg",
+          "valid/images/valid3120-chole.jpg"
+        ],
+        [
+          "test/images/test1164-bhatura.jpg",
+          "train/images/train20331-bhatura.jpg"
+        ],
+        [
+          "test/images/test1192-chole.jpg",
+          "train/images/train22456-chole.jpg"
+        ],
+        [
+          "test/images/test1276-bhindi_masala.jpg",
+          "train/images/train22339-bhindi_masala.jpg"
+        ],
+        [
+          "test/images/test1316-chole.jpg",
+          "train/images/train26601-chole.jpg"
+        ]
+      ]
+    },
+    "pixel_duplicates": {
+      "cross_split_groups": 138,
+      "affected_images": 276,
+      "pairs": {
+        "train:valid": {
+          "shared_groups": 63,
+          "affected_images": 126
+        },
+        "train:test": {
+          "shared_groups": 56,
+          "affected_images": 112
+        },
+        "valid:test": {
+          "shared_groups": 19,
+          "affected_images": 38
+        }
+      },
+      "examples": [
+        [
+          "test/images/test0134-bhindi_masala.jpg",
+          "train/images/train16477-bhindi_masala.jpg"
+        ],
+        [
+          "test/images/test0176-shahi_paneer.jpg",
+          "train/images/train10269-shahi_paneer.jpg"
+        ],
+        [
+          "test/images/test0298-bhindi_masala.jpg",
+          "train/images/train11062-bhindi_masala.jpg"
+        ],
+        [
+          "test/images/test0307-bhindi_masala.jpg",
+          "train/images/train23017-bhindi_masala.jpg"
+        ],
+        [
+          "test/images/test0404-chole.jpg",
+          "train/images/train18386-chole.jpg"
+        ],
+        [
+          "test/images/test0435-chole.jpg",
+          "train/images/train4063-chole.jpg"
+        ],
+        [
+          "test/images/test0443-shahi_paneer.jpg",
+          "train/images/train26987-shahi_paneer.jpg"
+        ],
+        [
+          "test/images/test0450-shahi_paneer.jpg",
+          "train/images/train0532-shahi_paneer.jpg"
+        ],
+        [
+          "test/images/test0520-biryani.jpg",
+          "train/images/train21381-biryani.jpg"
+        ],
+        [
+          "test/images/test0692-shahi_paneer.jpg",
+          "valid/images/valid2642-shahi_paneer.jpg"
+        ],
+        [
+          "test/images/test0740-bhindi_masala.jpg",
+          "valid/images/valid4271-bhindi_masala.jpg"
+        ],
+        [
+          "test/images/test0836-biryani.jpg",
+          "train/images/train14791-biryani.jpg"
+        ],
+        [
+          "test/images/test0848-chole.jpg",
+          "valid/images/valid4331-chole.jpg"
+        ],
+        [
+          "test/images/test1042-bhatura.jpg",
+          "valid/images/valid3355-bhatura.jpg"
+        ],
+        [
+          "test/images/test1095-bhindi_masala.jpg",
+          "valid/images/valid2205-bhindi_masala.jpg"
+        ],
+        [
+          "test/images/test1126-chole.jpg",
+          "valid/images/valid3120-chole.jpg"
+        ],
+        [
+          "test/images/test1164-bhatura.jpg",
+          "train/images/train20331-bhatura.jpg"
+        ],
+        [
+          "test/images/test1192-chole.jpg",
+          "train/images/train22456-chole.jpg"
+        ],
+        [
+          "test/images/test1276-bhindi_masala.jpg",
+          "train/images/train22339-bhindi_masala.jpg"
+        ],
+        [
+          "test/images/test1316-chole.jpg",
+          "train/images/train26601-chole.jpg"
+        ]
+      ]
+    },
+    "issue_examples": [
+      {
+        "path": "test/images/test0213-roti.jpg",
+        "split": "test",
+        "sha256": "af4760fe38b55d5af23b42e0e6778b3bc651dd49f1b3eb27a3d69a781689a2be",
+        "label_sha256": "b73675dd23903a07ef9b0fe02fc89fdc1fd3e6ffbd591af3d695eed36c0ce14b",
+        "classes": [],
+        "issues": [
+          "invalid_label_line:1"
+        ],
+        "dimensions": [
+          640,
+          640
+        ],
+        "pixel_sha256": "e8204e1f25e880b660a444667be8f5c116e64d4be396e300a792d1bded05ccb3"
+      },
+      {
+        "path": "test/images/test0463-poorna_kolukattai.jpg",
+        "split": "test",
+        "sha256": "2c75f842d406e493418342612511145268ecc401b810383ae39a52c01b172dcf",
+        "label_sha256": "d38c5b0d72093dbb1ba73b0c20f8223839ce753eda037f42c97518aa15d937f2",
+        "classes": [
+          53
+        ],
+        "issues": [
+          "invalid_label_line:1"
+        ],
+        "dimensions": [
+          640,
+          640
+        ],
+        "pixel_sha256": "e93a5e2e533d7fa65cd31c11fd2fd1a8f6d3b968585a7c7e81b92b76bf7a33df"
+      },
+      {
+        "path": "test/images/test1916-beetroot_poriyal.jpg",
+        "split": "test",
+        "sha256": "5c42a83b2de1a6a16ea30bc8bb6f83993a63b3539a053c9365b14f7937531078",
+        "label_sha256": "98f396696877fed0aa768bb571de084700d4bbcb743b45a04a5cd66efac9e1f3",
+        "classes": [],
+        "issues": [
+          "invalid_label_line:1"
+        ],
+        "dimensions": [
+          640,
+          640
+        ],
+        "pixel_sha256": "95700ec15f36d8d5d0b42057c15d766afdfe33881d9a1fb83240c9971f114578"
+      },
+      {
+        "path": "test/images/test2472-rice.jpg",
+        "split": "test",
+        "sha256": "baf24f499fa75da42f6004bbbe31a09e863204481029df3037c67fa6eb19b3ff",
+        "label_sha256": "1659988c618542931d3efe1b3609584614bd5906461416804a12896f7cd17965",
+        "classes": [],
+        "issues": [
+          "invalid_label_line:1"
+        ],
+        "dimensions": [
+          640,
+          640
+        ],
+        "pixel_sha256": "0add0c07f531240713c2b0fcfa35760e86a3847ddf54096f3f97695a9328bc32"
+      },
+      {
+        "path": "test/images/test2758-chicken_biryani.jpg",
+        "split": "test",
+        "sha256": "e60d0f3d27c9fd8f0b34a240bb7287b59f96e5b18fd322d7e45a48d124544558",
+        "label_sha256": "a7d7c1ae51fafa7e20bb7718d6196d289424eae8fbbd229356c330999e221dfd",
+        "classes": [],
+        "issues": [
+          "invalid_label_line:1"
+        ],
+        "dimensions": [
+          640,
+          640
+        ],
+        "pixel_sha256": "df5b4742b08cfdd3ba9c6a0ae84c6f62475c707895787351ba3281936286779b"
+      },
+      {
+        "path": "test/images/test3985-roti.jpg",
+        "split": "test",
+        "sha256": "35282799cd476b50ccecaac161e7b20a17f4864e5aace7144edc982086e1d893",
+        "label_sha256": "95d6ccaccd3e3e01680449ec05d99260e0639337e20d897dae9f9f9d5f4dcda9",
+        "classes": [
+          60
+        ],
+        "issues": [
+          "invalid_label_line:2"
+        ],
+        "dimensions": [
+          640,
+          640
+        ],
+        "pixel_sha256": "bd5a149cfa447133b6b4b32067ce0ecc00e61fd26163fea0e4c9f537c07e8a24"
+      },
+      {
+        "path": "test/images/test4658-chicken_biryani.jpg",
+        "split": "test",
+        "sha256": "1ba24f2274d742905a57dc6f931de6ae9144ba361e5ef8f52aeec530b84e73fa",
+        "label_sha256": "d60d2e6e41344077a300bed184aa10801df19513ff1840de47d8b8424d8a7fed",
+        "classes": [
+          14,
+          14
+        ],
+        "issues": [
+          "invalid_label_line:1"
+        ],
+        "dimensions": [
+          640,
+          640
+        ],
+        "pixel_sha256": "04ac242f6eaa1a54157d71683d81925811a9660fa9e90f8e36a3bee45da0367f"
+      },
+      {
+        "path": "train/images/train0460-medu_vada.jpg",
+        "split": "train",
+        "sha256": "d35b69784e65e7b3e3fe59046f12feb46368f3c5bef0e339e93bfbef0932f6de",
+        "label_sha256": "3f1f7026a8ba2f97281e34b15da65f4b1ec9219d518e922e4216b991d35f06b1",
+        "classes": [],
+        "issues": [
+          "invalid_label_line:1"
+        ],
+        "dimensions": [
+          640,
+          640
+        ],
+        "pixel_sha256": "2c2f1c6ea0fd32dcbf174598f6d5cf77ae1fdc5deafd566ab75d28f8ab1025e8"
+      },
+      {
+        "path": "train/images/train10771-roti.jpg",
+        "split": "train",
+        "sha256": "19bc2b6c5a165008492ff9147d68db26d6bc72ec08bab141113100423bebb9f0",
+        "label_sha256": "5894e9e541edba5a7d5745e2fb74b5593f430456a5dd4b85bcc20c392b23d678",
+        "classes": [],
+        "issues": [
+          "invalid_label_line:1"
+        ],
+        "dimensions": [
+          640,
+          640
+        ],
+        "pixel_sha256": "2be0f9697135914f734a5deeae947af4cffdedfdf26c3872eda59257b49cfc10"
+      },
+      {
+        "path": "train/images/train10842-eggs.jpg",
+        "split": "train",
+        "sha256": "0ad3689f261c890435224b316eeb0cd1d242b7da9fa9d378aaac6e5e7f9ebadb",
+        "label_sha256": "db8ea30f9d51e6682c22e0d59563c8bae9e5df50a6a97fdd31763acffb8e7aa8",
+        "classes": [],
+        "issues": [
+          "invalid_label_line:1"
+        ],
+        "dimensions": [
+          640,
+          640
+        ],
+        "pixel_sha256": "e95d7dceae12924e1be80b068adff8ff358c9d320fc3ee9df40bfbc40ed38728"
+      },
+      {
+        "path": "train/images/train11010-carrot_poriyal.jpg",
+        "split": "train",
+        "sha256": "b089b57f698e576317c9bfaa8aca198f00784cbb077550ebcc4e873b3f2bf85c",
+        "label_sha256": "b7a5e525736df310b6ed2bf2e02243d653f093dc549980e41dbecfb06826b5f5",
+        "classes": [],
+        "issues": [
+          "invalid_label_line:1"
+        ],
+        "dimensions": [
+          640,
+          640
+        ],
+        "pixel_sha256": "543bcccd0e863a529568b82ac4deb73a3c2ea7131a0e57223f58358927baa815"
+      },
+      {
+        "path": "train/images/train1116-rice.jpg",
+        "split": "train",
+        "sha256": "eceeb32fa58cbc0543a7be7ebce1de74c0c5e2f1441cca1e7183c17a8ef185d0",
+        "label_sha256": "9b96cf0f5eb9ed892c2eb2464b591a088f8d16b7b22e881e3b1e2a66b46e029c",
+        "classes": [],
+        "issues": [
+          "invalid_label_line:1"
+        ],
+        "dimensions": [
+          640,
+          640
+        ],
+        "pixel_sha256": "95c99fa8ca8001ed6501c14f883409c4f36782a1f080fbccdf18000c60fa3522"
+      },
+      {
+        "path": "train/images/train11420-coconut_chutney.jpg",
+        "split": "train",
+        "sha256": "5222162561c979316e90bbad5bbb16dc32a030e6a1793e4969f7fcace49a2f3c",
+        "label_sha256": "b85c49315a083ba7f26e3cbcac87f13a55374d9f5a13da0627a3b2ec449e7cdf",
+        "classes": [
+          28,
+          16,
+          63
+        ],
+        "issues": [
+          "invalid_label_line:1"
+        ],
+        "dimensions": [
+          640,
+          640
+        ],
+        "pixel_sha256": "b530516f6e5b8226a2b8f2c3f07ecee9f8e73c721a609ee4840431d0236841fe"
+      },
+      {
+        "path": "train/images/train12329-beetroot_poriyal.jpg",
+        "split": "train",
+        "sha256": "16209814e72e72bf41d2e52f46444e88bad5dd30ae2ee7e723351837b518d7d9",
+        "label_sha256": "6c2f82f0d9d2147c31724846476788f40b2e06199bbc1ee6be56f7255c65569e",
+        "classes": [],
+        "issues": [
+          "invalid_label_line:1"
+        ],
+        "dimensions": [
+          640,
+          640
+        ],
+        "pixel_sha256": "ce1c8165e36a9a375605b8c19316d555965604ee17dc3a931f71e117e6d9d7b3"
+      },
+      {
+        "path": "train/images/train13295-roti.jpg",
+        "split": "train",
+        "sha256": "443cb8e2928cfc6544e2a27bfd4f7920853374c37c13e0c1671c3168d8216f0d",
+        "label_sha256": "cd833839e0ad63e511a53f034e07206d6eb39795bc86c8803e2167d415859551",
+        "classes": [],
+        "issues": [
+          "invalid_label_line:1"
+        ],
+        "dimensions": [
+          640,
+          640
+        ],
+        "pixel_sha256": "9a51f6a87902f99d086995a4ff9c755b33a0d19063a9275779181624d7eaf407"
+      },
+      {
+        "path": "train/images/train13511-rice.jpg",
+        "split": "train",
+        "sha256": "96c2f375a698f97e61e8c33cf2de8b41a14401966e226422277d80c650697577",
+        "label_sha256": "6df63a90d59ee6ba32870719ee3fc04bc598e265c957d13942478bb7124fbc3a",
+        "classes": [],
+        "issues": [
+          "invalid_label_line:1"
+        ],
+        "dimensions": [
+          640,
+          640
+        ],
+        "pixel_sha256": "470bbd99060926840566a8210d94674d9ded9c7550f0c601bc45cc83d98a5365"
+      },
+      {
+        "path": "train/images/train1467-rice.jpg",
+        "split": "train",
+        "sha256": "56d347a484d1f2b868bdc3e8eedbbab39f0d6eda1dde9b432fdf0c969389f59e",
+        "label_sha256": "06c5fa26904c8a9bf2b81c03eb4312b418a504787d9ec036bd2a3148f8263c3e",
+        "classes": [],
+        "issues": [
+          "invalid_label_line:1"
+        ],
+        "dimensions": [
+          640,
+          640
+        ],
+        "pixel_sha256": "72c9a1c85919e68cb535110d9f6f6a6926ae24f4f54397d316f5dc0e53df0f6d"
+      },
+      {
+        "path": "train/images/train14719-coconut_chutney.jpg",
+        "split": "train",
+        "sha256": "071acc985bf5b35d0fcf1e3007d600ef5a96d521c161c180724d261a6d5df1da",
+        "label_sha256": "27cbc7cf4deef357091fde78a796e605ab66c0774663a7321a5637cdad06f38e",
+        "classes": [
+          16,
+          63
+        ],
+        "issues": [
+          "invalid_label_line:1"
+        ],
+        "dimensions": [
+          640,
+          640
+        ],
+        "pixel_sha256": "ba9c8651eb547eaa66598f17ff43e8a5e270082ab70c367f5fdc1e909c30422c"
+      },
+      {
+        "path": "train/images/train14854-nandu_masala.jpg",
+        "split": "train",
+        "sha256": "68855c4b701bec93ae31f5cad28cec4445eea876cd8d8f3b5bbce4d1f1d60f7b",
+        "label_sha256": "5de9ce5ff349dfc06f54dc23d2ab356db9da93d020a3ed3d34f7085b64346be7",
+        "classes": [],
+        "issues": [
+          "invalid_label_line:1"
+        ],
+        "dimensions": [
+          640,
+          640
+        ],
+        "pixel_sha256": "c6ed38d9a092c0f83c01da5ee4b0d3b456a26e60bb8435cb4305d28cf2dfde04"
+      },
+      {
+        "path": "train/images/train15440-rice.jpg",
+        "split": "train",
+        "sha256": "ad27999fefed5cea42d6f4dbf88f2ce386e000f9da9dff2237dfb6eb2680fd59",
+        "label_sha256": "77a4c888249a7583d99a93069430dc7598a8517030145a7b9733b6e8621c6b88",
+        "classes": [],
+        "issues": [
+          "invalid_label_line:1"
+        ],
+        "dimensions": [
+          640,
+          640
+        ],
+        "pixel_sha256": "685a3ac0536ab9b367d606367cda3702d6062c18b260be15a79a4debcbcf9a13"
+      }
+    ],
+    "limitations": "No near-duplicate, source-identity, semantic-annotation or clinical validation."
+  },
+  "nutrition": {
+    "database_sha256": "3bdfb92fafd21b70dd20ade7edb06d78f20fe59f283a0e61f844b5e181aa317a",
+    "food_rows": 1010,
+    "mapping_rows": 103,
+    "sources": {
+      "INDB": 1005,
+      "Supplemental: FatSecret Evolve Bhakarwadi nutrition label": 1,
+      "Supplemental: Clearcals Ghevar recipe nutrition": 1,
+      "Supplemental: Clearcals Jalebi recipe nutrition": 1,
+      "Supplemental: Clearcals Khandvi recipe nutrition": 1,
+      "Supplemental: Clearcals Nandu Kari recipe nutrition": 1
+    },
+    "dataset_precomputed_mappings": 72,
+    "invalid_macro_classes": [],
+    "review_score_below_0_9_or_missing": 21,
+    "supplemental_records": [
+      {
+        "name": "Bhakarwadi",
+        "normalized_name": "bhakarwadi",
+        "calories": 510.0,
+        "protein_g": 10.76,
+        "carbs_g": 57.03,
+        "fat_g": 26.55,
+        "source": "Supplemental: FatSecret Evolve Bhakarwadi nutrition label",
+        "source_url": "https://www.fatsecret.co.in/calories-nutrition/evolve/bhakarwadi/100g"
+      },
+      {
+        "name": "Ghevar",
+        "normalized_name": "ghevar",
+        "calories": 351.2,
+        "protein_g": 3.5,
+        "carbs_g": 39.6,
+        "fat_g": 19.9,
+        "source": "Supplemental: Clearcals Ghevar recipe nutrition",
+        "source_url": "https://clearcals.com/recipes/ghevar/"
+      },
+      {
+        "name": "Jalebi",
+        "normalized_name": "jalebi",
+        "calories": 316.8,
+        "protein_g": 3.4,
+        "carbs_g": 44.6,
+        "fat_g": 13.8,
+        "source": "Supplemental: Clearcals Jalebi recipe nutrition",
+        "source_url": "https://clearcals.com/recipes/jalebi/"
+      },
+      {
+        "name": "Khandvi",
+        "normalized_name": "khandvi",
+        "calories": 232.7,
+        "protein_g": 9.3,
+        "carbs_g": 21.7,
+        "fat_g": 12.1,
+        "source": "Supplemental: Clearcals Khandvi recipe nutrition",
+        "source_url": "https://clearcals.com/recipes/khandvi/"
+      },
+      {
+        "name": "Nandu Kari (Crab masala)",
+        "normalized_name": "nandukari",
+        "calories": 128.1,
+        "protein_g": 7.0,
+        "carbs_g": 7.0,
+        "fat_g": 8.0,
+        "source": "Supplemental: Clearcals Nandu Kari recipe nutrition",
+        "source_url": "https://clearcals.com/recipes/nandu-kari/"
+      }
+    ],
+    "coverage_not_accuracy": {
+      "normalized_exact": 19,
+      "automatic_without_precomputed": 55,
+      "current_mapping": 72
+    },
+    "comparisons": [
+      {
+        "class": "aloo_gobi",
+        "normalized_exact": null,
+        "automatic_without_precomputed": "Pea potato sandwich (toasted) (Matar aloo ka sandwich)",
+        "current_mapping": "Potato cauliflower (Aloo gobhi)"
+      },
+      {
+        "class": "aloo_masala",
+        "normalized_exact": null,
+        "automatic_without_precomputed": "Pea potato sandwich (toasted) (Matar aloo ka sandwich)",
+        "current_mapping": "Potato curry (Aloo ki sabzi)"
+      },
+      {
+        "class": "appam",
+        "normalized_exact": "Appam",
+        "automatic_without_precomputed": "Appam",
+        "current_mapping": "Appam"
+      },
+      {
+        "class": "beetroot_poriyal",
+        "normalized_exact": null,
+        "automatic_without_precomputed": null,
+        "current_mapping": "Vegetables stir fry "
+      },
+      {
+        "class": "besan_cheela",
+        "normalized_exact": null,
+        "automatic_without_precomputed": null,
+        "current_mapping": "Gram flour chilla/cheela (Besan chilla/cheela)"
+      },
+      {
+        "class": "bhakarwadi",
+        "normalized_exact": "Bhakarwadi",
+        "automatic_without_precomputed": "Bhakarwadi",
+        "current_mapping": "Bhakarwadi"
+      },
+      {
+        "class": "bhakri",
+        "normalized_exact": null,
+        "automatic_without_precomputed": null,
+        "current_mapping": "Chapati/Roti"
+      },
+      {
+        "class": "bhatura",
+        "normalized_exact": "Bhatura",
+        "automatic_without_precomputed": "Bhatura",
+        "current_mapping": "Bhatura"
+      },
+      {
+        "class": "bhindi_masala",
+        "normalized_exact": null,
+        "automatic_without_precomputed": "Stuffed okra (Bharwa bhindi)",
+        "current_mapping": "Okra/Lady's fingers fry (Bhindi sabzi/sabji/subji)"
+      },
+      {
+        "class": "biryani",
+        "normalized_exact": null,
+        "automatic_without_precomputed": "Mutton biryani/biriyani",
+        "current_mapping": "Vegetable biryani/biriyani"
+      },
+      {
+        "class": "carrot_poriyal",
+        "normalized_exact": null,
+        "automatic_without_precomputed": null,
+        "current_mapping": "Carrot and cabbage with coconut (Nariyal ke saath pattagobhi aur gajar)"
+      },
+      {
+        "class": "chai",
+        "normalized_exact": null,
+        "automatic_without_precomputed": "Hot tea (Garam Chai)",
+        "current_mapping": "Hot tea (Garam Chai)"
+      },
+      {
+        "class": "chicken",
+        "normalized_exact": null,
+        "automatic_without_precomputed": "Chicken stew",
+        "current_mapping": "Chicken curry"
+      },
+      {
+        "class": "chicken_65",
+        "normalized_exact": null,
+        "automatic_without_precomputed": null,
+        "current_mapping": "Chilli chicken"
+      },
+      {
+        "class": "chicken_biryani",
+        "normalized_exact": null,
+        "automatic_without_precomputed": "Mutton biryani/biriyani",
+        "current_mapping": "Chicken pulao"
+      },
+      {
+        "class": "chole",
+        "normalized_exact": null,
+        "automatic_without_precomputed": "Green chickpeas pulao (Choliya pulao/Hare chane ka pulao)",
+        "current_mapping": "Chickpeas curry (Safed channa curry)"
+      },
+      {
+        "class": "coconut_chutney",
+        "normalized_exact": "Coconut chutney (Nariyal ki chutney)",
+        "automatic_without_precomputed": "Coconut chutney (Nariyal ki chutney)",
+        "current_mapping": "Coconut chutney (Nariyal ki chutney)"
+      },
+      {
+        "class": "dal",
+        "normalized_exact": null,
+        "automatic_without_precomputed": "Dalma",
+        "current_mapping": "Mixed dal"
+      },
+      {
+        "class": "dhokla",
+        "normalized_exact": "Dhokla",
+        "automatic_without_precomputed": "Dhokla",
+        "current_mapping": "Dhokla"
+      },
+      {
+        "class": "dosa",
+        "normalized_exact": null,
+        "automatic_without_precomputed": "Masala dosa",
+        "current_mapping": "Plain dosa"
+      },
+      {
+        "class": "dum_aloo",
+        "normalized_exact": "Dum aloo",
+        "automatic_without_precomputed": "Dum aloo",
+        "current_mapping": "Dum aloo"
+      },
+      {
+        "class": "eggs",
+        "normalized_exact": null,
+        "automatic_without_precomputed": "Egg sauce",
+        "current_mapping": "Boiled egg (Ubla anda)"
+      },
+      {
+        "class": "fish_curry",
+        "normalized_exact": "Fish curry (Machli curry)",
+        "automatic_without_precomputed": "Fish curry (Machli curry)",
+        "current_mapping": "Fish curry (Machli curry)"
+      },
+      {
+        "class": "ghevar",
+        "normalized_exact": "Ghevar",
+        "automatic_without_precomputed": "Ghevar",
+        "current_mapping": "Ghevar"
+      },
+      {
+        "class": "green_chutney",
+        "normalized_exact": "Green chutney",
+        "automatic_without_precomputed": "Green chutney",
+        "current_mapping": "Green chutney"
+      },
+      {
+        "class": "gulab_jamun",
+        "normalized_exact": null,
+        "automatic_without_precomputed": "Gulab Jamun with khoya",
+        "current_mapping": "Gulab Jamun with khoya"
+      },
+      {
+        "class": "idli",
+        "normalized_exact": "Idli",
+        "automatic_without_precomputed": "Idli",
+        "current_mapping": "Idli"
+      },
+      {
+        "class": "jalebi",
+        "normalized_exact": "Jalebi",
+        "automatic_without_precomputed": "Jalebi",
+        "current_mapping": "Jalebi"
+      },
+      {
+        "class": "kaara_chutney",
+        "normalized_exact": null,
+        "automatic_without_precomputed": "Saunth/Sonth chutney with tamarind/imli",
+        "current_mapping": "Tomato chutney (Tamatar ki chutney)"
+      },
+      {
+        "class": "kali",
+        "normalized_exact": null,
+        "automatic_without_precomputed": null,
+        "current_mapping": "Maize porridge"
+      },
+      {
+        "class": "kebab",
+        "normalized_exact": null,
+        "automatic_without_precomputed": "Boti kebab",
+        "current_mapping": "Boti kebab"
+      },
+      {
+        "class": "khandvi",
+        "normalized_exact": "Khandvi",
+        "automatic_without_precomputed": "Khandvi",
+        "current_mapping": "Khandvi"
+      },
+      {
+        "class": "kheer",
+        "normalized_exact": null,
+        "automatic_without_precomputed": "Rice kheer (Chawal ki kheer)",
+        "current_mapping": "Rice kheer (Chawal ki kheer)"
+      },
+      {
+        "class": "koozh",
+        "normalized_exact": null,
+        "automatic_without_precomputed": null,
+        "current_mapping": "Maize porridge"
+      },
+      {
+        "class": "kulfi",
+        "normalized_exact": "Kulfi",
+        "automatic_without_precomputed": "Kulfi",
+        "current_mapping": "Kulfi"
+      },
+      {
+        "class": "lassi",
+        "normalized_exact": "Lassi (salted)",
+        "automatic_without_precomputed": "Lassi (salted)",
+        "current_mapping": "Sweet Lassi (Meethi lassi)"
+      },
+      {
+        "class": "lemon_rice",
+        "normalized_exact": "Lemon rice (Pulihora, Elumichai sadam, Chitranna)",
+        "automatic_without_precomputed": "Lemon rice (Pulihora, Elumichai sadam, Chitranna)",
+        "current_mapping": "Lemon rice (Pulihora, Elumichai sadam, Chitranna)"
+      },
+      {
+        "class": "medu_vada",
+        "normalized_exact": null,
+        "automatic_without_precomputed": "Dahi vadas/Dahi bhalla",
+        "current_mapping": "Plain urad dal vada (Uzunne vada/Minapa garelu/Ulundu vadai/Medu vada)"
+      },
+      {
+        "class": "modak",
+        "normalized_exact": null,
+        "automatic_without_precomputed": null,
+        "current_mapping": "Semolina ladoo with coconut (Suji/Rava aur nariyal ke ladoo )"
+      },
+      {
+        "class": "mushroom_biryani",
+        "normalized_exact": null,
+        "automatic_without_precomputed": "Mutton biryani/biriyani",
+        "current_mapping": "Mushroom pulao"
+      },
+      {
+        "class": "mutton_biryani",
+        "normalized_exact": null,
+        "automatic_without_precomputed": "Mutton biryani/biriyani",
+        "current_mapping": "Mutton biryani/biriyani"
+      },
+      {
+        "class": "mutton_curry",
+        "normalized_exact": null,
+        "automatic_without_precomputed": "Mutton biryani/biriyani",
+        "current_mapping": "Mutton korma"
+      },
+      {
+        "class": "nandu_masala",
+        "normalized_exact": null,
+        "automatic_without_precomputed": null,
+        "current_mapping": "Nandu Kari (Crab masala)"
+      },
+      {
+        "class": "nei_satham",
+        "normalized_exact": null,
+        "automatic_without_precomputed": null,
+        "current_mapping": "Plain pulao"
+      },
+      {
+        "class": "omelette",
+        "normalized_exact": null,
+        "automatic_without_precomputed": "Plain omelette/omlet",
+        "current_mapping": "Plain omelette/omlet"
+      },
+      {
+        "class": "onion_pakoda",
+        "normalized_exact": null,
+        "automatic_without_precomputed": "Onion pakora/pakoda (Pyaaz ke pakode)",
+        "current_mapping": "Onion pakora/pakoda (Pyaaz ke pakode)"
+      },
+      {
+        "class": "paal_kolukattai",
+        "normalized_exact": null,
+        "automatic_without_precomputed": null,
+        "current_mapping": "Rice kheer (Chawal ki kheer)"
+      },
+      {
+        "class": "palak_paneer",
+        "normalized_exact": null,
+        "automatic_without_precomputed": "Paneer pea sandwich (toasted) (Paneer matar ka sandwich)",
+        "current_mapping": "Spinach paneer (Palak paneer)"
+      },
+      {
+        "class": "paneer_biryani",
+        "normalized_exact": null,
+        "automatic_without_precomputed": "Mutton biryani/biriyani",
+        "current_mapping": "Paneer pulao"
+      },
+      {
+        "class": "paratha",
+        "normalized_exact": null,
+        "automatic_without_precomputed": "Plain parantha/paratha",
+        "current_mapping": "Plain parantha/paratha"
+      },
+      {
+        "class": "parupu_vadai",
+        "normalized_exact": null,
+        "automatic_without_precomputed": "Dahi vadas/Dahi bhalla",
+        "current_mapping": "Fermented bengal gram vada (Khameerikrit/Ufna hua channa dal ka vada)"
+      },
+      {
+        "class": "pidi_kolukattai",
+        "normalized_exact": null,
+        "automatic_without_precomputed": null,
+        "current_mapping": "Rice puttu (Ari puttu)"
+      },
+      {
+        "class": "poha",
+        "normalized_exact": "Poha",
+        "automatic_without_precomputed": "Poha",
+        "current_mapping": "Poha"
+      },
+      {
+        "class": "poorna_kolukattai",
+        "normalized_exact": null,
+        "automatic_without_precomputed": null,
+        "current_mapping": "Semolina ladoo with coconut (Suji/Rava aur nariyal ke ladoo )"
+      },
+      {
+        "class": "prawn_thokku",
+        "normalized_exact": null,
+        "automatic_without_precomputed": null,
+        "current_mapping": "Prawn curry (with coconut) (Jhinga curry)"
+      },
+      {
+        "class": "puri",
+        "normalized_exact": null,
+        "automatic_without_precomputed": "Bhel puri ",
+        "current_mapping": "Poori"
+      },
+      {
+        "class": "raita",
+        "normalized_exact": null,
+        "automatic_without_precomputed": "Mint raita (Pudinay ka raita)",
+        "current_mapping": "Cucumber raita (Kheere ka raita)"
+      },
+      {
+        "class": "rajma_curry",
+        "normalized_exact": null,
+        "automatic_without_precomputed": "Kidney bean curry (Rajmah curry)",
+        "current_mapping": "Kidney bean curry (Rajmah curry)"
+      },
+      {
+        "class": "ras_malai",
+        "normalized_exact": "Rasmalai",
+        "automatic_without_precomputed": "Rasmalai",
+        "current_mapping": "Rasmalai"
+      },
+      {
+        "class": "rice",
+        "normalized_exact": null,
+        "automatic_without_precomputed": "Curd rice (Dahi bhaat/Dahi chawal/ Perugu annam/Daddojanam/Thayir saadam)",
+        "current_mapping": "Boiled rice (Uble chawal)"
+      },
+      {
+        "class": "roti",
+        "normalized_exact": null,
+        "automatic_without_precomputed": "Soya roti",
+        "current_mapping": "Chapati/Roti"
+      },
+      {
+        "class": "saag",
+        "normalized_exact": null,
+        "automatic_without_precomputed": "Sarson ka saag",
+        "current_mapping": "Sarson ka saag"
+      },
+      {
+        "class": "salad",
+        "normalized_exact": null,
+        "automatic_without_precomputed": "Kale salad",
+        "current_mapping": "Tossed salad"
+      },
+      {
+        "class": "sambar",
+        "normalized_exact": "Sambar",
+        "automatic_without_precomputed": "Sambar",
+        "current_mapping": "Sambar"
+      },
+      {
+        "class": "sambar_satham",
+        "normalized_exact": null,
+        "automatic_without_precomputed": "Sambar",
+        "current_mapping": "Vegetable khichdi/khichri"
+      },
+      {
+        "class": "samosa",
+        "normalized_exact": null,
+        "automatic_without_precomputed": "Potato samosa (Aloo ka samosa)",
+        "current_mapping": "Potato samosa (Aloo ka samosa)"
+      },
+      {
+        "class": "shahi_paneer",
+        "normalized_exact": "Shahi paneer",
+        "automatic_without_precomputed": "Shahi paneer",
+        "current_mapping": "Shahi paneer"
+      },
+      {
+        "class": "thepla",
+        "normalized_exact": null,
+        "automatic_without_precomputed": "Methi thepla",
+        "current_mapping": "Methi thepla"
+      },
+      {
+        "class": "upma",
+        "normalized_exact": null,
+        "automatic_without_precomputed": "Rice upma",
+        "current_mapping": "Semolina upma (Suji/Rava upma)"
+      },
+      {
+        "class": "veg_briyani",
+        "normalized_exact": null,
+        "automatic_without_precomputed": null,
+        "current_mapping": "Vegetable biryani/biriyani"
+      },
+      {
+        "class": "veg_pulao",
+        "normalized_exact": null,
+        "automatic_without_precomputed": null,
+        "current_mapping": "Mixed vegetable pulao"
+      },
+      {
+        "class": "ven_pongal",
+        "normalized_exact": null,
+        "automatic_without_precomputed": null,
+        "current_mapping": "Plain khitchdi (Plain khichri/khichdi)"
+      }
+    ],
+    "limitations": "Current mappings are implementation choices, NOT independent ground truth. Coverage is not correctness; no clinical/recipe equivalence claim."
+  },
+  "training": {
+    "sha256": "a8d22abeb5547501df1692fe4a09dbfd4a4722d4ca0ae15ff6ee40a7be5aa5e4",
+    "rows": 100,
+    "epochs_unique": 100,
+    "best_validation_map50": {
+      "epoch": "78",
+      "time": "19603.8",
+      "train/box_loss": "0.65247",
+      "train/cls_loss": "0.58409",
+      "train/dfl_loss": "1.13532",
+      "metrics/precision(B)": "0.84685",
+      "metrics/recall(B)": "0.80852",
+      "metrics/mAP50(B)": "0.83379",
+      "metrics/mAP50-95(B)": "0.6844",
+      "val/box_loss": "0.72492",
+      "val/cls_loss": "0.50607",
+      "val/dfl_loss": "1.16019",
+      "lr/pg0": "0.007131",
+      "lr/pg1": "0.002377",
+      "lr/pg2": "0.007131",
+      "lr/pg3": "0.002377",
+      "lr/pg4": "0.007131",
+      "lr/pg5": "0.002377",
+      "lr/pg6": "0.007131",
+      "lr/pg7": "0.002377"
+    },
+    "best_validation_map50_95": {
+      "epoch": "97",
+      "time": "35747.0",
+      "train/box_loss": "0.45205",
+      "train/cls_loss": "0.29936",
+      "train/dfl_loss": "1.02892",
+      "metrics/precision(B)": "0.84696",
+      "metrics/recall(B)": "0.80721",
+      "metrics/mAP50(B)": "0.82999",
+      "metrics/mAP50-95(B)": "0.69226",
+      "val/box_loss": "0.68674",
+      "val/cls_loss": "0.51374",
+      "val/dfl_loss": "1.13935",
+      "lr/pg0": "0.001488",
+      "lr/pg1": "0.000496",
+      "lr/pg2": "0.001488",
+      "lr/pg3": "0.000496",
+      "lr/pg4": "0.001488",
+      "lr/pg5": "0.000496",
+      "lr/pg6": "0.001488",
+      "lr/pg7": "0.000496"
+    },
+    "limitations": "Training validation CSV is not an independent held-out test evaluation."
+  },
+  "model_sha256": "935a1b34365bb949b75a7256facbc0ffa81629dd96ee1d0ac40260a4715a0827"
+}

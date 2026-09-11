@@ -17,6 +17,36 @@ from backend.settings import Settings
 
 
 class ContractTests(unittest.TestCase):
+    def test_prompt_keeps_database_units_and_unknowns_explicit(self):
+        from backend.domain.rules import NutritionRules
+        prompt = NutritionRules()._build_prompt([
+            {'food_label': 'Idli', 'display_name': None, 'macros': {'calories': 123}},
+            {'food_label': 'Unknown', 'macros': None},
+        ], 'Maintenance', 'diabetic')
+        self.assertIn('Idli (123 kcal per 100 g (database estimate))', prompt)
+        self.assertIn('Nutrition unavailable; do not treat as zero', prompt)
+        self.assertIn('NOT the amount eaten', prompt)
+        self.assertIn("today's saved meals are not provided", prompt)
+        self.assertNotIn('None (', prompt)
+
+    def test_analysis_preserves_supplemental_provenance(self):
+        from io import BytesIO
+        from PIL import Image
+        image = BytesIO()
+        Image.new('RGB', (20, 20)).save(image, format='PNG')
+        app = create_app(Settings(production=True))
+        detection = {'food_label': 'bhakarwadi', 'confidence': .8, 'bounding_box': [0, 0, 10, 10]}
+        with TestClient(app) as client:
+            with patch.object(app.state.services.inference, 'analyze', AsyncMock(return_value={'detections': [detection], 'img_width': 20, 'img_height': 20})):
+                response = client.post('/api/analyze-food', files={'file': ('food.png', image.getvalue(), 'image/png')})
+                self.assertEqual(response.status_code, 200, response.text)
+                food = response.json()['detections'][0]
+                self.assertTrue(food['nutrition_source'].startswith('Supplemental:'))
+                self.assertTrue(food['nutrition_source_url'].startswith('https://'))
+                self.assertIn('not independently validated', food['nutrition_mapping_note'])
+            result = asyncio.run(app.state.services.nutrition.get_nutrition_for_food('beetroot_poriyal'))
+            self.assertIn('Approximate', result['nutrition_mapping_note'])
+
     def test_analysis_deduplicates_lookups_and_preserves_null_nutrition(self):
         from io import BytesIO
         from PIL import Image

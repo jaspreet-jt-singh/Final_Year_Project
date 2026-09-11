@@ -1,5 +1,7 @@
 # Project Status - AI-Based Food Recognition with Nutrition-Aware Recommendations
 
+> 2026-09-12 update: this document is a historical snapshot, not current release or publication evidence. The app is now deployed with gram controls and a browser-only journal; see README.md and DEPLOYMENT.md. The full dataset audit found 138 identical-image groups spanning splits and 65 annotation-flagged images. Do not interpret historical test metrics as clean held-out generalization. See research/READINESS.md for measured evidence and submission blockers.
+
 Document date: 2026-06-09  
 Project type: Final year full-stack AI application  
 Implementation status: Local full-stack prototype implemented

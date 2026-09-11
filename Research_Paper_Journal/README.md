@@ -1,10 +1,14 @@
 # IEEE Transactions Initial Review Draft
 
+**Submission blocked (2026-09-12):** the new full dataset audit found 138 identical-image groups spanning splits and 65 annotation-flagged images. Read `../research/READINESS.md` before using historical performance claims. No target journal has been selected. The source and rebuilt PDF include an audit notice.
+
 This folder contains an IEEE Transactions-style initial-review LaTeX manuscript for:
 
 **AI-Based Food Recognition with Nutrition-Aware Recommendations**
 
 ## Build
+
+Preferred from the repository root: `python scripts/build_papers.py --refresh-pdfs`. This isolates build artifacts and refreshes both PDFs only after successful compilation. MiKTeX automatic package installation is disabled.
 
 Run from this folder:
 

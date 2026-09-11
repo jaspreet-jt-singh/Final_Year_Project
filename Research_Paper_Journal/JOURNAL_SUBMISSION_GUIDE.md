@@ -1,5 +1,7 @@
 # IEEE Journal Submission Guide
 
+> September 2026 audit supersedes earlier readiness claims below: 138 duplicate-image groups span partitions; 65 images have strict annotation flags. Resolve the independent-evaluation, mapping-review and permissions gates in `../research/READINESS.md`. The journal bibliography already contains an INDB-related article, but the local workbook's exact provenance remains unconfirmed. No target journal is selected.
+
 This note records the journal-writing guidance used to revise `main.tex` and lists the remaining items to complete before external submission.
 
 ## Current Draft Mode

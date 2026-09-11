@@ -584,6 +584,28 @@
             ],
             "title": "Nutrition Source"
           },
+          "nutrition_source_url": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Nutrition Source Url"
+          },
+          "nutrition_mapping_note": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Nutrition Mapping Note"
+          },
           "nutrition_not_found": {
             "anyOf": [
               {
@@ -872,7 +894,8 @@
               {
                 "type": "null"
               }
-            ]
+            ],
+            "description": "Database estimates per 100 g, not consumed portions."
           }
         },
         "type": "object",

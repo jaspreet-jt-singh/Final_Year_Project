@@ -11,6 +11,9 @@ merge_results
 Project_Report
 Research_Paper_Conference
 Research_Paper_Journal
+research
+README.md
+THIRD_PARTY_NOTICES.md
 results_before_discontinuation
 data/*
 !data/nutrition.db

@@ -3,6 +3,12 @@ import { readFileSync } from 'node:fs'
 import { test } from 'node:test'
 import { calculateLocalMacros, resolveCondition } from '../frontend/lib/goals.ts'
 import { recommendations, analyzeFood, calculateMacros } from '../frontend/lib/endpoints.ts'
+import { sourceUrl } from '../frontend/lib/sourceUrl.ts'
+
+test('nutrition source links allow only absolute HTTP(S) without credentials', () => {
+  assert.equal(sourceUrl('https://example.com/food'), 'https://example.com/food')
+  for (const value of [null, undefined, '', '/relative', '//example.com', 'javascript:alert(1)', 'data:text/html,hi', 'https://user:pass@example.com']) assert.equal(sourceUrl(value), null)
+})
 
 test('frontend macro calculations match every backend policy fixture', () => {
   const fixtures = JSON.parse(readFileSync(new URL('../tests/contracts/macro-fixtures.json', import.meta.url)))

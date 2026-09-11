@@ -9,7 +9,7 @@ try {
   let mode = 'normal'
   let resolveSlow
   let adviceCalls = 0
-  const food = { food_label: 'Idli', display_name: 'Idli', confidence: .9, bounding_box: [10, 10, 80, 80], macros: { calories: 100, protein_g: 3, carbs_g: 20, fat_g: 1 }, macros_unit: 'per_100g', nutrition_source: 'INDB' }
+  const food = { food_label: 'Idli', display_name: 'Idli', confidence: .9, bounding_box: [10, 10, 80, 80], macros: { calories: 100, protein_g: 3, carbs_g: 20, fat_g: 1 }, macros_unit: 'per_100g', nutrition_source: 'Supplemental: test source', nutrition_source_url: 'https://example.com/food', nutrition_mapping_note: 'Approximate or substitute database match; review required.' }
   await page.route('**/api/**', async route => {
     const path = new URL(route.request().url()).pathname
     let status = 200, body = {}
@@ -32,6 +32,11 @@ try {
   const png = await page.evaluate(() => { const canvas = document.createElement('canvas'); canvas.width = canvas.height = 100; return canvas.toDataURL().split(',')[1] })
   await page.locator('input[type=file]').setInputFiles({ name: 'food.png', mimeType: 'image/png', buffer: Buffer.from(png, 'base64') })
   await page.getByText('General nutrition guidance', { exact: true }).waitFor()
+  await page.getByText('Nutrition sources & matching limitations', { exact: true }).click()
+  await page.getByText('Approximate or substitute database match; review required.', { exact: true }).waitFor()
+  assert.equal(await page.getByRole('link', { name: 'View source', exact: true }).getAttribute('href'), 'https://example.com/food')
+  await page.getByText('About this demo & your privacy', { exact: true }).click()
+  await page.getByText('For analysis, your processed photo', { exact: false }).waitFor()
   await page.getByText('Goals & advanced settings', { exact: true }).click()
   const select = page.getByLabel('Health context (this session only)')
   await select.selectOption('diabetic')

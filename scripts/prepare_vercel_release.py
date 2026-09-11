@@ -27,6 +27,8 @@ def git(*args, cwd=ROOT):
 
 
 def prepare(commit=False):
+    if git("status", "--porcelain", "--untracked-files=normal"):
+        raise RuntimeError("Commit or separately preserve all source changes before generating a release. A release must identify its exact clean source commit.")
     required = (
         "backend/domain/nutrition_policy.json",
         "frontend/lib/generated/api.d.ts",
@@ -44,6 +46,10 @@ def prepare(commit=False):
                 ".py", ".ts", ".tsx", ".css", ".json", ".svg", ".png", ".jpg", ".ico", ".woff2"
             }:
                 paths.add(path)
+    tracked = set(git("ls-files").splitlines())
+    paths = {path for path in paths if path.relative_to(ROOT).as_posix() in tracked}
+    if any(name not in tracked for name in (*required, "data/nutrition.db", "results_after_discontinuation/yolo11s_indian_food_best.pt")):
+        raise RuntimeError("Required release assets must be tracked in the clean source commit")
     manifest = {"source_commit": git("rev-parse", "HEAD"), "files": {}}
     for source in sorted(paths):
         relative = source.relative_to(ROOT)

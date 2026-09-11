@@ -1,5 +1,7 @@
 # Research Paper
 
+**Submission blocked (2026-09-12):** the new full dataset audit found 138 identical-image groups spanning splits and 65 annotation-flagged images. Read `../research/READINESS.md` before using historical performance claims. The source and rebuilt PDF include an audit notice.
+
 This folder contains an IEEE conference-style LaTeX research paper for:
 
 **AI-Based Food Recognition with Nutrition-Aware Recommendations**
@@ -7,6 +9,8 @@ This folder contains an IEEE conference-style LaTeX research paper for:
 The paper is intentionally compressed for a conference format. It focuses on the implemented project: YOLO-based Indian food detection, conservative nutrition mapping, macro calculation, serving adjustment, and nutrition-aware recommendations.
 
 ## Build
+
+Preferred from the repository root: `python scripts/build_papers.py --refresh-pdfs`. It isolates build artifacts and refreshes both draft PDFs only after successful compilation. MiKTeX automatic package installation is disabled.
 
 Run from this folder:
 
@@ -28,4 +32,4 @@ pdflatex main.tex
 
 Update the author email in `main.tex`.
 
-Two bibliography entries remain marked as placeholders because the repository does not contain official citation metadata for the local INDB spreadsheet or the exact source dataset URLs.
+The five source-dataset versions/URLs have been recovered from local export metadata and cited. The INDB workbook citation remains explicitly unresolved; a related journal article alone does not establish the local file's version or reuse terms.

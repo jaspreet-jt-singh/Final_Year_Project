@@ -46,7 +46,7 @@
 \thanks{Jaspreet Singh and Inderpal Singh are with the Department of Computer Science and Engineering, National Institute of Technology Srinagar, Kashmir 190006, India. Email: [student email].}%
 \thanks{This work was developed as part of a final year project on AI-based food recognition with nutrition-aware recommendations.}}
 
-\markboth{IEEE Transactions Initial Review Draft, June 2026}{Singh and Singh: AI-Based Food Recognition With Nutrition-Aware Recommendations}
+\markboth{Working Draft -- Submission Blocked by September 2026 Audit}{Singh and Singh: AI-Based Food Recognition With Nutrition-Aware Recommendations}
 
 \maketitle
 \ReviewLineNumbers
@@ -58,6 +58,14 @@ Image-based dietary assessment becomes useful only when visual detections are co
 \begin{IEEEkeywords}
 Food recognition, object detection, Indian food dataset, nutrition databases, personalized recommendations, dietary assessment.
 \end{IEEEkeywords}
+
+\section*{Submission-blocking audit: September 2026}
+The five source versions have now been recovered from local export metadata \cite{source_project_z0tql,source_microplastics,source_indianfood7,source_indianfoodnet,source_south_indian}; this does not establish blanket image-level redistribution permission.
+A read-only audit of all 48,693 exported images identified 138 groups of byte-identical and decoded-pixel-identical images spanning splits: 63 train--validation, 56 train--test and 19 validation--test groups, affecting 276 images. Strict annotation checks flagged 65 images, including zero-width boxes. Archived detector results below are historical observations, not proof of clean held-out generalization. Original-source and augmentation-family grouping, annotation review, and new independent evaluation are required before external submission. No dataset was edited and no detector was retrained during this audit.
+
+The measured lookup-availability ablation covers 19/72 classes with normalized exact matching, 55/72 with automatic lookup without precomputed mappings, and 72/72 with the current mapping layer. This is not mapping accuracy: current mappings are not independent ground truth, and 21 have heuristic scores below 0.9. A blank independent-review template and scorer are supplied alongside \code{research/evidence/audit.json}. The local workbook's source/version, asset permissions, author details and a target venue still require confirmation. Historical ``VERIFIED'' labels do not establish nutritional or clinical equivalence.
+
+The current application uses gram-based portions and explicitly saved meals, not automatic consumption from scans. Health selections are session-only. Groq receives included food names and database nutrition per 100 g, goal and optional health context, but not photos, selected gram amounts or journal history. Existing clinical rules remain unvalidated, and health badges only identify response context. Historical screenshots should not be read as the September interface.
 
 \section{Introduction}
 
@@ -346,7 +354,7 @@ Raw label variants & Canonical label\\
 
 \subsection{Split Construction}
 
-The final dataset contains 72 canonical classes. The generated export contains 36,852 train image-label pairs, 5,922 validation pairs, and 5,919 held-out test pairs, for 48,693 total exported pairs. Training augmentation is applied only to the training split. Validation and test splits are kept as real held-out images so that detector evaluation is not inflated by transformed variants of training samples.
+The export contains 72 classes and 36,852 train, 5,922 validation and 5,919 test image-label pairs (48,693 total). Additional augmentation was applied only to training, but downloaded sources already contained augmented variants. The September audit confirmed cross-partition duplicates; validation/test originals are not established as independent by the present builder.
 
 Let $\set{D}_c$ be the set of images containing class $c$. The split procedure aims to preserve class presence across train, validation, and test partitions:
 \begin{equation}
@@ -489,7 +497,7 @@ Fig.~\ref{fig:training-curves} shows the final training curves. The best validat
 \label{fig:training-curves}
 \end{figure}
 
-The best exported model was evaluated separately on validation and held-out test splits. Table~\ref{tab:model-metrics} reports the aggregate results. The test split shows a small reduction relative to validation, indicating reasonable generalization while still leaving room for per-class improvement.
+The archived model evaluations were run on the partitions named validation and test. Table~\ref{tab:model-metrics} retains the historical aggregate results. Their small numerical difference cannot establish generalization because the September audit found split overlap; independent evaluation is pending.
 
 \begin{table}[H]
 \centering
@@ -687,7 +695,7 @@ The 21 review mappings are not missing data. They are cases where the mapped row
 
 \section{Prototype Implementation}
 
-The backend is implemented with FastAPI, PyTorch, Ultralytics YOLO, Pillow, Pandas, OpenPyXL, SQLite, and AioSQLite \cite{fastapi2024,paszke2019pytorch,ultralytics2024}. The frontend is implemented with Next.js 14, React, TypeScript, Tailwind CSS, Lucide icons, and componentized visualization code \cite{nextjs2024}. Fig.~\ref{fig:prototype} shows the frontend overlay for a sample meal.
+The runtime backend uses FastAPI, PyTorch, Ultralytics YOLO, Pillow, SQLite and AioSQLite; Pandas and OpenPyXL belong to offline database preparation \cite{fastapi2024,paszke2019pytorch,ultralytics2024}. The September frontend uses Next.js 16, React, TypeScript, Tailwind CSS and Lucide icons \cite{nextjs2024}. Fig.~\ref{fig:prototype} preserves a historical frontend example.
 
 \begin{figure}[H]
 \centering

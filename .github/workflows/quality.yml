@@ -40,6 +40,7 @@ jobs:
       - run: .venv/bin/python scripts/generate_contracts.py --check
       - run: .venv/bin/python scripts/test_deployment.py
       - run: .venv/bin/python scripts/test_architecture.py
+      - run: .venv/bin/python scripts/test_publication.py
       - run: npm --prefix frontend run lint
       - run: npm --prefix frontend run test:unit
       - run: npm --prefix frontend run build

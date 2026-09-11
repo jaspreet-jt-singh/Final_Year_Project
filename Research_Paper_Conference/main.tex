@@ -56,6 +56,13 @@ For dietary assessment, visual food labels must be tied to reliable nutrient rec
 food recognition, nutrition-aware recommendations, YOLO, Indian food dataset, dietary assessment, macronutrients
 \end{IEEEkeywords}
 
+\section*{Submission-blocking audit: September 2026}
+This is a working draft, not a submission-ready manuscript. A read-only audit of all 48,693 exported images found 138 groups of byte-identical and decoded-pixel-identical images spanning splits (63 train--validation, 56 train--test, and 19 validation--test groups), affecting 276 images. Strict annotation validation also flagged 65 images, including zero-width boxes. Historical detector metrics below are retained for traceability, but do not establish clean held-out generalization. Source exports already include augmented variants, so training-only augmentation in the merged export does not establish independence. Dataset lineage, grouped splitting and independent evaluation must be resolved before submission.
+
+Lookup coverage was 19/72 for normalized exact matching, 55/72 without precomputed mappings and 72/72 for the current mapping layer. These are availability counts, not independently verified correctness. The historical ``VERIFIED'' label is a heuristic macro/mapping check, not clinical or recipe validation. Machine-readable results, fingerprints, review templates and the recovery protocol accompany this repository under \code{research/}.
+
+The September application uses Next.js 16, explicit 25--1,000 g portions in 25 g steps, and browser-only history. Only explicitly saved meals contribute to daily totals. Photos and health selections are not persisted in the journal. Recommendation inputs identify database nutrition per 100 g and do not include selected grams or saved history. Health badges reflect the returned context, not medical certification. Older screenshots depict historical interface states.
+
 \section{Introduction}
 
 Image-based food recognition is often evaluated as a visual classification or detection problem. In a diet-assistance setting, however, the predicted label is only an intermediate result. A class such as \code{palak_paneer}, \code{rice}, or \code{samosa} must be resolved to a nutrition entry before the system can report calories, protein, carbohydrates, or fat. An incorrect resolution can produce a recommendation that appears precise while being nutritionally wrong.
@@ -146,7 +153,7 @@ The backend response is structured so that the frontend does not infer missing o
 
 \section{Dataset Construction}
 
-Five YOLO-format Indian-food datasets were merged into one canonical dataset \cite{roboflow_placeholder}. The merge was performed at the label level rather than by simply concatenating folders, because the source exports used inconsistent class names and class orders. Source class names were decoded from each dataset configuration file, normalized for case and punctuation, and then reviewed for semantic variants. Examples include mapping \code{AlooGobi}, \code{aloo gobhi}, and \code{aloo_gobi} to \code{aloo_gobi}; mapping \code{WhiteRice}, \code{satham}, and \code{rice} to \code{rice}; and mapping \code{medu vadai} to \code{medu_vada}. Multi-food label files were preserved by rewriting every valid YOLO annotation row into the canonical class index.
+Five source exports were merged into one label-normalized dataset \cite{source_project_z0tql,source_microplastics,source_indianfood7,source_indianfoodnet,source_south_indian}. Their names and class orders differ, so source labels were normalized for case, punctuation and selected semantic aliases before rewriting YOLO class indices. This engineering step preserves multi-food annotation rows but does not establish independent source families or resolve image-level reuse rights. The September audit qualifies all downstream detector claims.
 
 \begin{table}[!tbp]
 \centering
@@ -204,7 +211,7 @@ Known annotation issues found & 3\\
 \end{tabular}
 \end{table}
 
-The generated dataset used a 70/15/15 target ratio for training, validation, and test splits. Multi-label images were retained because realistic meal photographs often contain several dishes. Augmentation was restricted to the training split, mainly for underrepresented classes, so that validation and test metrics were not affected by synthetic variants of evaluation images.
+The generated dataset used a 70/15/15 target ratio. Multi-label images were retained. Additional augmentation was restricted to training, but some source exports already contained augmented variants. The September audit found identical images spanning partitions; independence cannot be inferred from this splitting procedure.
 
 A visual verification script sampled real images for every class and generated contact sheets. This check confirmed that all 72 classes had image samples after merging. It also found three local annotation issues: one \code{jalebi} sample that did not visually match jalebi, one \code{kaara_chutney} box placed on a vada, and one extremely thin \code{nandu_masala} box. These issues were retained as documented dataset defects rather than treated as class-order errors.
 
@@ -250,7 +257,7 @@ Held-out test & 0.842 & 0.801 & 0.820 & 0.680\\
 \label{fig:test-predictions}
 \end{figure}
 
-The validation and held-out test results are close, which suggests that the generated split is not producing a large optimistic validation bias. This matters because detector errors propagate into the nutrition and recommendation layers. The confusion matrix and qualitative test predictions were used as first-pass error-analysis artifacts. They indicate that the model is usable for prototype evaluation, but visually similar categories and classes with limited variation still require more detailed per-class analysis before deployment in a high-stakes dietary setting.
+The archived validation and test metrics are numerically close, but this does not rule out leakage. The confirmed split overlap prevents treating these numbers as proof of independent generalization. Confusion matrices and qualitative predictions remain descriptive historical artifacts; source-grouped evaluation and per-class analysis are required before stronger claims.
 
 \begin{figure}[!tbp]
 \centering

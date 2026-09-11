@@ -49,6 +49,15 @@ export default function Home() {
         setDeleted(null); setStatus('Meal history cleared. Goals were kept.'); return true
       }} />
     </div>
+    <details id="privacy" className="panel compact mt-7">
+      <summary>About this demo & your privacy</summary>
+      <div className="space-y-3 muted text-sm mt-3">
+        <p>This is an educational final-year project, not a medically validated dietary service. Health-context labels describe the context used for general suggestions, not a diagnosis or assurance of suitability.</p>
+        <p>For analysis, your processed photo is sent to our backend. The application does not deliberately store uploaded photos. For AI guidance, included food names, per-100-g nutrition estimates, your goal, and optional health context are sent to Groq. Your photo, saved journal, and selected portion weights are not sent to Groq.</p>
+        <p>Saved meals and calorie/goal preferences stay in this browser. Photos and health selections are not saved in the journal. Clearing browser data removes your history. Vercel and Groq process requests under their own policies; this is not a promise of zero provider retention.</p>
+        <p><a className="text-button" href="https://vercel.com/legal/privacy-policy" target="_blank" rel="noopener noreferrer" referrerPolicy="no-referrer">Vercel privacy policy</a> · <a className="text-button" href="https://groq.com/privacy-policy/" target="_blank" rel="noopener noreferrer" referrerPolicy="no-referrer">Groq privacy policy</a></p>
+      </div>
+    </details>
     <footer className="site-footer"><span>AI Food Recognition · Final Year Project</span><span>Nutrition estimates, not medical advice.</span></footer>
   </main>
 }

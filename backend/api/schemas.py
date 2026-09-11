@@ -27,6 +27,8 @@ class FoodDetection(BaseModel):
     macros: Macros | None
     macros_unit: Literal["per_100g"] = "per_100g"
     nutrition_source: str | None
+    nutrition_source_url: str | None = None
+    nutrition_mapping_note: str | None = None
     nutrition_not_found: bool | None = None
 
 
@@ -42,7 +44,7 @@ class RecommendationFood(BaseModel):
     model_config = ConfigDict(extra="ignore")
     food_label: str = Field(max_length=100)
     display_name: str | None = Field(default=None, max_length=100)
-    macros: Macros | None = None
+    macros: Macros | None = Field(default=None, description="Database estimates per 100 g, not consumed portions.")
 
     @field_validator("food_label", "display_name")
     @classmethod

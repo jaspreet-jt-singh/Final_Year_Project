@@ -80,7 +80,9 @@ def create_router(settings, limiter):
                             "bounding_box": det["bounding_box"],
                             "macros": nutrition_info["macros"],
                             "macros_unit": "per_100g",
-                            "nutrition_source": "INDB",
+                            "nutrition_source": nutrition_info["nutrition_source"],
+                            "nutrition_source_url": nutrition_info.get("nutrition_source_url"),
+                            "nutrition_mapping_note": nutrition_info.get("nutrition_mapping_note"),
                         }
                     )
 
