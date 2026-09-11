@@ -6,7 +6,7 @@
     "backend/config/food_aliases.json": "946315e9446619b386ae2c0170b745b919135c07f7a2027adb08946ea30f78fa",
     "backend/main.py": "fd51ebe8f52029a64a93222cc105f3d63f1d1f53351c47deb0a64f0f0c440e7c",
     "backend/scripts/merge_db.py": "6a64228196c05e8de34507b7936fb44829cf87b822a5e4c760b301bf7e1c193f",
-    "backend/services/inference_runtime.py": "b95413ea2f6beb50df97fc1dce0bed4b36582761d918026cb3ac0c4ab2bd25ac",
+    "backend/services/inference_runtime.py": "78cef82a274269749ab33e6d21aecd64f1712ee11f7ac2ad387441b8737fba5d",
     "backend/services/nutrition_service.py": "eb773005518c2c4e7c5817ad12b203923c099705e774fbd6ecd9bc14ec9e67a8",
     "backend/services/recommendation_service.py": "7b225f60e5b6c224f19e5eea2241d239433d8741e27b77047c4bfe061fa9c52e",
     "backend/services/vision_service.py": "fb27bf49a471d9886087e367a38ec2b54091aee4eef565a9806d7184bac3e726",

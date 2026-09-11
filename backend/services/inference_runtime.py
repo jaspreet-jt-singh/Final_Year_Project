@@ -10,6 +10,11 @@ from pathlib import Path
 from threading import BoundedSemaphore
 
 from PIL import Image, ImageOps, UnidentifiedImageError
+from PIL.JpegImagePlugin import JpegImageFile
+from PIL.PngImagePlugin import PngImageFile
+from PIL.WebPImagePlugin import WebPImageFile
+
+os.environ.setdefault("YOLO_AUTOINSTALL", "false")
 
 MAX_UPLOAD_BYTES = 4 * 1024 * 1024
 MAX_IMAGE_PIXELS = 25_000_000
@@ -39,21 +44,31 @@ class InferenceRuntime:
 
     def _analyze(self, content):
         started = time.monotonic()
+        # Ultralytics replaces Image.open with a HEIF auto-install fallback on
+        # ANY decoder error. Use supported Pillow decoders directly instead.
+        if content.startswith(b"\xff\xd8\xff"):
+            decoder = JpegImageFile
+        elif content.startswith(b"\x89PNG\r\n\x1a\n"):
+            decoder = PngImageFile
+        elif content[:4] == b"RIFF" and content[8:12] == b"WEBP":
+            decoder = WebPImageFile
+        else:
+            raise InvalidImage("Use a valid JPEG, PNG, or WebP image")
         try:
-            # Ultralytics may register optional image plugins. Only invoke the
-            # supported decoders, including when input has an invalid signature.
-            with Image.open(BytesIO(content), formats=("JPEG", "PNG", "WEBP")) as source:
+            with decoder(BytesIO(content)) as source:
                 if source.format not in {"JPEG", "PNG", "WEBP"}:
                     raise InvalidImage("Use a JPEG, PNG, or WebP image")
                 if source.width * source.height > MAX_IMAGE_PIXELS:
                     raise InvalidImage("Image must contain at most 25 megapixels")
                 source.verify()
-            with Image.open(BytesIO(content), formats=("JPEG", "PNG", "WEBP")) as source:
+            with decoder(BytesIO(content)) as source:
                 normalized = ImageOps.exif_transpose(source).convert("RGB")
                 buffer = BytesIO()
                 normalized.save(buffer, format="PNG")
                 normalized.close()
-        except (UnidentifiedImageError, OSError, SyntaxError, Image.DecompressionBombError) as exc:
+        except InvalidImage:
+            raise
+        except (UnidentifiedImageError, OSError, SyntaxError, ValueError, Image.DecompressionBombError) as exc:
             raise InvalidImage("The uploaded image cannot be decoded") from exc
 
         if self.service is None:
