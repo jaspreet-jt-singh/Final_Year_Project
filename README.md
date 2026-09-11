@@ -47,7 +47,9 @@ npm --prefix frontend exec -- playwright install --with-deps chromium
 npm --prefix frontend run test:browser
 ```
 
-CI never needs provider credentials or live AI calls. The full research audit is separate from CI because the source image datasets are not in the runtime release.
+CI never needs provider credentials or live AI calls. It includes synthetic source-grouping tests and an offline check of the pinned INDB workbook. The full research audit and candidate split preparation are separate from CI because source images are not in the runtime release.
+
+For research preparation, run `python scripts/audit_publication.py`, then `python scripts/prepare_research_split.py --output .deployment/research/my-reviewed-candidate`. The second command verifies the audited files, groups known source families and quarantines unresolved records in a new manifest; it never rewrites the dataset or trains a model. See the limitations before using it for experiments. Verify the original workbook with `python scripts/verify_nutrition_provenance.py --online`.
 
 ## Publication and reuse
 

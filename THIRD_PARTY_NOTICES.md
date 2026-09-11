@@ -20,7 +20,9 @@ Several exports already contain augmented variants: the first, second and Indian
 
 ## Nutrition
 
-The database imports `data/INDB.xlsx` and includes five supplemental records. The journal bibliography already contains the related article **Development of an Indian Food Composition Database** (2024), DOI `10.1016/j.cdnut.2024.103790`; this does not itself establish that the local spreadsheet is the exact licensed supplementary artifact. The original download/version and redistribution terms still need confirmation. Do not substitute a similarly named database citation without comparing the artifact.
+The database imports `data/INDB.xlsx` and includes five supplemental records. The local workbook is now verified **byte-identical** to `INDB.xlsx` in the [original authors' repository at commit fbdb62b](https://github.com/lindsayjaacks/Indian-Nutrient-Databank-INDB-/blob/fbdb62bec519c6e2468582a799fb47e194b42558/INDB.xlsx). Both files have SHA-256 `65f91911de09ebdb4b80c4a3dc3ff372a35420e05444239d8df8a42e8b5b9ecf` and 1,063,585 bytes. The workbook's internal modification date is November 18, 2024. Reproduce the comparison with `python scripts/verify_nutrition_provenance.py --online`; omit `--online` for the offline CI fingerprint check. [Machine-readable evidence](research/evidence/nutrition-provenance.json) pins the source artifact.
+
+The authors' [2024 article](https://pmc.ncbi.nlm.nih.gov/articles/PMC11277795/) explicitly identifies that repository as its data/code source. Its [2025 correction](https://pmc.ncbi.nlm.nih.gov/articles/PMC12147835/) corrects attribution to the original IFCT publications. This resolves artifact identity, not every reuse permission: the article declares CC BY 4.0, but the inspected repository has no blanket LICENSE and directs readers to the original sources for IFCT inputs. Confirm applicable derived-database and redistribution terms with the owners/supervisors; do not infer them solely from a public download or from the article's license.
 
 Supplemental sources are recorded in the database and `backend/scripts/merge_db.py`: FatSecret Evolve Bhakarwadi nutrition label; Clearcals recipe pages for Ghevar, Jalebi, Khandvi and Nandu Kari. A citation/source URL is not blanket permission to reproduce material. Product/recipe records also do not establish equivalence with every photographed preparation.
 
@@ -30,7 +32,7 @@ The application uses third-party packages under their respective licenses. Revie
 
 ## Required owner decisions
 
-- Supply the original INDB download and associated terms.
+- Confirm the terms applicable to the now-identified INDB workbook and derived database.
 - Confirm rights/attribution for the five image sources, including the crawled-image qualifications, and inherited model obligations.
 - Confirm author/institution ownership, code license and which artifacts may be publicly archived.
 - Do not publish a merged dataset, relicense third-party assets, or pay fees merely because the website demo works.

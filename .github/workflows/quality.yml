@@ -41,6 +41,8 @@ jobs:
       - run: .venv/bin/python scripts/test_deployment.py
       - run: .venv/bin/python scripts/test_architecture.py
       - run: .venv/bin/python scripts/test_publication.py
+      - run: .venv/bin/ruff check scripts/prepare_research_split.py scripts/verify_nutrition_provenance.py
+      - run: .venv/bin/python scripts/verify_nutrition_provenance.py
       - run: npm --prefix frontend run lint
       - run: npm --prefix frontend run test:unit
       - run: npm --prefix frontend run build

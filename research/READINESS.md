@@ -27,11 +27,34 @@ Historical test mAP50 of approximately 0.820 is retained as a previously reporte
 
 ## Candidate contribution and experiment protocol
 
+### Implemented recovery tooling
+
+`python scripts/prepare_research_split.py` now reconstructs candidate lineage against all five local source exports. It re-reads image bytes, decoded pixels and labels against the original audit manifest, rejects stale/incomplete input, joins exact-byte/pixel matches and within-export Roboflow filename families transitively, and assigns whole groups deterministically. Unknown lineage, strict annotation issues, empty accepted annotations and identical-pixel/different-label conflicts quarantine the entire related group. No dataset, checkpoint or database is edited or removed. Existing output directories are never overwritten.
+
+[Grouped candidate evidence](evidence/grouped-split-v1.json) records the parameters and hashes. The full local source inventory and assignments are in `.deployment/research/grouped-v1-verified/`; `grouped-v1/` preserves the first run. Reproduction must use a fresh `--output` path. These local artifacts are not included in website releases.
+
+Two independent full reads produced identical source-inventory and assignment SHA-256 hashes. The verified run also checks class-name ordering against the audit. The report's source commit identifies the base checkout and its script hash identifies the exact preparation code, added in this change. Ten synthetic research-tool tests pass, as do backend, frontend and browser regressions; both revised PDFs compile. These checks establish software reproducibility, not independent benchmark validity.
+
+| Candidate partition | Images | Groups | Classes represented |
+| --- | ---: | ---: | ---: |
+| Train | 26,384 | 10,251 | 72 |
+| Validation | 5,655 | 2,203 | 72 |
+| Test | 5,652 | 2,205 | 72 |
+| Quarantine | 11,002 | 9,274 | Not assigned |
+
+There are **5,548 candidate source-family groups spanning the old partitions**. This is a heuristic grouping result, not 5,548 visually verified duplicate originals. The candidate assignment has zero cross-partition overlap for known groups, exact bytes and exact oriented pixels. Upstream augmented variants and within-group duplicates remain; different-name crops/recompression across sources can still escape grouping. The new split is **review-only**, not a benchmark or a validation of the existing checkpoint. Review original/representative selection and label conflicts before freezing any experiment. Quarantine is a manifest status, not deletion.
+
+The INDB workbook provenance gap is resolved: it is byte-identical to the authors' pinned public artifact. [Provenance evidence](evidence/nutrition-provenance.json) and an offline/online checker now exist. Reuse terms still need owner review; no clinical correctness is inferred from identity.
+
+Both paper abstracts and conclusions now describe an application/evidence audit rather than claim clean detector generalization or safe mappings. Runtime descriptions distinguish the offline mapping threshold from the more permissive preserved runtime fallbacks, gram estimates from measurements, and recommendation inputs from journal totals.
+
+### Work still requiring evidence or approval
+
 Hypothesis: **a provenance-preserving reviewed mapping layer reduces inappropriate Indian-food-to-nutrition matches while exposing unsupported/approximate cases, compared with name-only retrieval**. This is not a verified novelty or medical claim. Runtime fallback thresholds are preserved, not certified as sufficiently conservative.
 
 1. Have a suitably qualified independent reviewer complete [mapping_review.csv](mapping_review.csv) using food-composition evidence, without copying current mapping outputs/scores as answers. Accepted database names are a JSON list; `[]` means no acceptable record was found after review. Every row needs reviewer identity and evidence. Adjudicate ambiguous cases and preserve original judgments.
 2. Run `python scripts/evaluate_mapping_review.py --review research/mapping_review.csv`. It refuses incomplete reviews. Compare correct/wrong matches, correct abstentions and missed supported cases for normalized exact, automatic lookup without precomputed mappings, and current mapping. These 72 classes are a discovery set, not an untouched tuning benchmark. Freeze methods before review and use a separately specified challenge set for later tuning/confirmatory claims.
-3. Before detector benchmarks, preserve the old export and reconstruct source-to-export lineage. Group exact duplicates, reviewed near duplicates and source augmentation families before assigning new partitions. Resolve annotation flags and conflicting labels with human review. Write a new versioned manifest, never replace the old dataset in place. Simply filtering the old test set does not make the existing checkpoint an independently evaluated model. Retrain on clean partitions or obtain a genuinely untouched external test set; confirm the protocol and compute resources first.
+3. Review the newly reconstructed source-to-export lineage and candidate grouped manifest, including near duplicates, representative selection, annotation flags and conflicting labels. Freeze a reviewed version without replacing the old dataset. Simply reassigning or filtering images does not make the existing checkpoint independently evaluated. Retrain on clean partitions or obtain a genuinely untouched external test set; confirm the protocol and compute resources first.
 4. Compare the existing architecture with one justified lightweight baseline under the same new split, input size and training budget. Report per-class results and CPU runtime. Run an augmentation ablation only if claiming augmentation benefit. Do not invent missing measurements or call old, differently trained checkpoints fair baselines.
 5. Existing recommendation tests establish context handling, timeout and fallback behavior, not medical quality. Claims of advice quality require independent qualified assessment and a defined rubric. Do not begin patient-data collection or a human-subject study without checking institutional review requirements.
 
@@ -39,9 +62,9 @@ Hypothesis: **a provenance-preserving reviewed mapping layer reduces inappropria
 
 - Both LaTeX drafts receive a blocking audit notice and updated application description; historical tables/figures remain historical. Rebuild PDFs with the notice before circulation.
 - Remove unsupported claims of independent originals. Resolve annotation flags and explain strict-audit/evaluator count differences.
-- Replace source placeholders only using verified metadata. The journal already cites an INDB-related paper, but the local workbook's exact source/version and reuse terms remain unresolved.
+- The INDB placeholder has been replaced with the verified, pinned workbook citation. Resolve its reuse terms separately; artifact identity is not a license grant.
 - Historical `VERIFIED` mapping labels describe heuristic checks, not clinical or recipe equivalence. Retain the 21 review flags.
-- Align remaining screenshots and protocol details with grams, saved-only daily totals, session-only health context and Groq-to-local fallback. Advice receives per-100-g values, not portion weights/history.
+- Runtime descriptions now reflect grams, saved-only daily totals, session-only health context and Groq-to-local fallback. Historical screenshots remain explicitly historical; replace them after choosing the final submission scope. Advice receives per-100-g values, not portion weights/history or calorie targets.
 - Confirm authors, email/ORCID, affiliations and consent. Follow the chosen publisher's AI-assistance disclosure rules, describing actual assistance without inventing author contributions.
 - Resolve [asset rights](../THIRD_PARTY_NOTICES.md), finish evidence, and then choose a [venue](VENUES.md) with the supervisors. None has been selected or contacted.
 

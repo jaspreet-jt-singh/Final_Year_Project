@@ -1,0 +1,26 @@
+{
+  "schema_version": 1,
+  "verified_date": "2026-09-12",
+  "local_artifact": "data/INDB.xlsx",
+  "local_sha256": "65f91911de09ebdb4b80c4a3dc3ff372a35420e05444239d8df8a42e8b5b9ecf",
+  "bytes": 1063585,
+  "upstream_repository": "https://github.com/lindsayjaacks/Indian-Nutrient-Databank-INDB-",
+  "upstream_commit": "fbdb62bec519c6e2468582a799fb47e194b42558",
+  "upstream_artifact": "https://raw.githubusercontent.com/lindsayjaacks/Indian-Nutrient-Databank-INDB-/fbdb62bec519c6e2468582a799fb47e194b42558/INDB.xlsx",
+  "upstream_sha256": "65f91911de09ebdb4b80c4a3dc3ff372a35420e05444239d8df8a42e8b5b9ecf",
+  "comparison": "byte_identical",
+  "workbook_modified_utc": "2024-11-18T05:02:21Z",
+  "worksheet": "Nutrient Data",
+  "publication": "https://doi.org/10.1016/j.cdnut.2024.103790",
+  "publication_full_text": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11277795/",
+  "citation_correction": "https://doi.org/10.1016/j.cdnut.2025.107450",
+  "provider_page": "https://www.anuvaad.org.in/indian-nutrient-databank/",
+  "status": "artifact_identity_verified_rights_review_pending",
+  "limits": [
+    "The publication identifies this repository as its public data/code source.",
+    "Byte identity establishes artifact provenance, not independent nutrient or recipe validation.",
+    "The article declares CC BY 4.0; do not silently apply that declaration to every upstream asset.",
+    "No repository-wide LICENSE was present at the inspected commit. Upstream README directs users to original sources for IFCT inputs.",
+    "Authors/supervisors must confirm applicable workbook, derived-database and downstream redistribution terms."
+  ]
+}

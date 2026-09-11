@@ -32,4 +32,4 @@ pdflatex main.tex
 
 Update the author email in `main.tex`.
 
-The five source-dataset versions/URLs have been recovered from local export metadata and cited. The INDB workbook citation remains explicitly unresolved; a related journal article alone does not establish the local file's version or reuse terms.
+The five source-dataset versions/URLs are cited. The INDB workbook is now byte-identical to the authors' pinned public artifact and has a verified citation; reuse terms remain a separate owner decision. Abstract, conclusion and runtime descriptions now distinguish historical metrics, measured coverage and unmeasured correctness. A review-only grouped split is available; neither it nor the application tests establish submission readiness.
