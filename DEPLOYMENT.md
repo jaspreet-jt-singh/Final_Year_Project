@@ -49,8 +49,12 @@ any implementation edits not yet committed to the source branch.
 
 Connect `vercel-live` from the existing GitHub repository and choose it as the
 production branch. For the initial release, deploy the printed directory with
-`npx.cmd vercel` to create a preview before pushing the production branch.
-Configure the environment variables above, then redeploy the preview.
+`npx.cmd vercel deploy --prod --skip-domain` to create a release candidate
+before pushing the production branch. Vercel can classify the first deployment
+as Production even when Preview is requested, so explicitly skip domain assignment.
+Configure the environment variables above before building. Verify the protected
+candidate through `vercel curl` from its linked release directory, or use the
+project-scoped smoke-test helper. Promote only after the checks below pass.
 
 ## Release gates
 

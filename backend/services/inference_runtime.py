@@ -40,13 +40,15 @@ class InferenceRuntime:
     def _analyze(self, content):
         started = time.monotonic()
         try:
-            with Image.open(BytesIO(content)) as source:
+            # Ultralytics may register optional image plugins. Only invoke the
+            # supported decoders, including when input has an invalid signature.
+            with Image.open(BytesIO(content), formats=("JPEG", "PNG", "WEBP")) as source:
                 if source.format not in {"JPEG", "PNG", "WEBP"}:
                     raise InvalidImage("Use a JPEG, PNG, or WebP image")
                 if source.width * source.height > MAX_IMAGE_PIXELS:
                     raise InvalidImage("Image must contain at most 25 megapixels")
                 source.verify()
-            with Image.open(BytesIO(content)) as source:
+            with Image.open(BytesIO(content), formats=("JPEG", "PNG", "WEBP")) as source:
                 normalized = ImageOps.exif_transpose(source).convert("RGB")
                 buffer = BytesIO()
                 normalized.save(buffer, format="PNG")
