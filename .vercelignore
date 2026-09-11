@@ -2,6 +2,7 @@
 .venv
 .env*
 .deployment
+web
 docx
 images
 notebooks

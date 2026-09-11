@@ -4,6 +4,8 @@ from concurrent.futures import ThreadPoolExecutor
 from functools import partial
 from io import BytesIO
 import os
+import logging
+import time
 from pathlib import Path
 from threading import BoundedSemaphore
 
@@ -36,6 +38,7 @@ class InferenceRuntime:
         return (root / os.getenv("YOLO_MODEL_PATH", "results_after_discontinuation/yolo11s_indian_food_best.pt")).is_file()
 
     def _analyze(self, content):
+        started = time.monotonic()
         try:
             with Image.open(BytesIO(content)) as source:
                 if source.format not in {"JPEG", "PNG", "WEBP"}:
@@ -66,7 +69,13 @@ class InferenceRuntime:
             except Exception:
                 self.status = "error"
                 raise
-        return self.service.analyze_image(buffer.getvalue(), conf=0.25, iou=0.45)
+        result = self.service.analyze_image(buffer.getvalue(), conf=0.25, iou=0.45)
+        peak_mib = None
+        if os.name == "posix":
+            import resource
+            peak_mib = round(resource.getrusage(resource.RUSAGE_SELF).ru_maxrss / 1024, 1)
+        logging.getLogger(__name__).info("Inference elapsed_seconds=%.2f peak_rss_mib=%s", time.monotonic() - started, peak_mib)
+        return result
 
     async def analyze(self, content):
         if not self.capacity.acquire(blocking=False):

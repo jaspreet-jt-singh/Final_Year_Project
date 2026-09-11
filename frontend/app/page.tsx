@@ -292,9 +292,9 @@ export default function Home() {
       console.error('Error analyzing food:', err)
       let errorMessage = ''
       if (err?.name === 'AbortError') {
-        errorMessage = 'Request timed out — make sure the backend is running:\n\ncd backend\npython main.py'
+        errorMessage = 'Analysis took too long. Please wait a moment and try again.'
       } else if (err instanceof TypeError && err.message.includes('fetch')) {
-        errorMessage = 'Cannot connect to backend — please start the server:\n\ncd backend\npython main.py'
+        errorMessage = 'Could not connect to the analyzer. Please check your connection and try again.'
       } else if (err instanceof Error) {
         errorMessage = err.message
       } else {

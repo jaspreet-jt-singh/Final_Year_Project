@@ -11,6 +11,7 @@ release requirement, not something the local Windows checks establish.
 - Fluid Compute enabled. Region: Mumbai (`bom1`).
 - Environment variables for Preview and Production:
   - `VERCEL_SUPPORT_LARGE_FUNCTIONS=1`
+  - `VERCEL_FASTAPI_STATIC_CDN=1` (required by the deployed Python builder)
   - `APP_ENV=production`
   - `YOLO_MODEL_PATH=results_after_discontinuation/yolo11s_indian_food_best.pt`
   - `RATE_LIMIT_PER_MINUTE=10`
@@ -19,9 +20,11 @@ release requirement, not something the local Windows checks establish.
 - Use Groq's free tier. Do not configure a paid provider or upgrade Vercel.
 
 Vercel installs from `pyproject.toml` and `uv.lock`. The build hook runs a clean
-frontend install and static export, then copies it to root `public/`. Root HTML
-and assets are served by the CDN, independently of model readiness. Do not mount
-`public/` in FastAPI. The build excludes frontend dependencies from the Python
+frontend install and static export, then copies it to root `web/`. FastAPI mounts
+this directory, and explicit static CDN collection promotes it during the build.
+Root HTML and assets are served by the CDN, independently of model readiness.
+`static.cdn=true` handles CORS middleware and `static.exclude=true` omits the
+frontend files from the Python bundle. The build excludes frontend dependencies from the Python
 function. The research `requirements.txt` is not part of a release.
 
 ## Verify and prepare

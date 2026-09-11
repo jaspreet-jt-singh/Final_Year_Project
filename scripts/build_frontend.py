@@ -16,8 +16,8 @@ def main():
     output = frontend / "out"
     if not (output / "index.html").is_file():
         raise RuntimeError("Next.js did not export index.html")
-    shutil.copytree(output, ROOT / "public", dirs_exist_ok=True)
-    print("Frontend exported to public/ for Vercel CDN")
+    shutil.copytree(output, ROOT / "web", dirs_exist_ok=True)
+    print("Frontend exported to web/ for FastAPI CDN collection")
 
 
 if __name__ == "__main__":

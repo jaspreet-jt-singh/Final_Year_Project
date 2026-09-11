@@ -5,6 +5,7 @@ FastAPI Backend for AI Food Recognition
 from fastapi import FastAPI, File, UploadFile, HTTPException, Request, Body
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import JSONResponse
+from fastapi.staticfiles import StaticFiles
 from pydantic import BaseModel
 from slowapi import Limiter, _rate_limit_exceeded_handler
 from slowapi.util import get_remote_address
@@ -386,6 +387,9 @@ async def root():
         }
     }
 
+
+if os.getenv("VERCEL") or (Path(__file__).resolve().parents[1] / "web").is_dir():
+    app.mount("/", StaticFiles(directory=str(Path(__file__).resolve().parents[1] / "web"), html=True, check_dir=False), name="frontend")
 
 if __name__ == "__main__":
     uvicorn.run("backend.main:app", host="0.0.0.0", port=8000, reload=True, log_level="info")

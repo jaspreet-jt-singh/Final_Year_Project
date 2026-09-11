@@ -23,6 +23,10 @@ entrypoint = "backend.main:app"
 [tool.vercel.scripts]
 build = "python scripts/build_frontend.py"
 
+[tool.vercel.fastapi.static]
+cdn = true
+exclude = true
+
 [tool.uv]
 environments = ["sys_platform == 'linux' and platform_machine == 'x86_64'"]
 
