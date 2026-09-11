@@ -1,7 +1,7 @@
 import assert from 'node:assert/strict'
-import { chromium } from '../.deployment/browser-tools/node_modules/playwright/index.mjs'
+import { launchBrowser, mockMacros } from './browser_support.mjs'
 
-const browser = await chromium.launch({ channel: 'msedge', headless: true })
+const browser = await launchBrowser()
 const url = 'http://127.0.0.1:4173'
 const key = 'food-recognition.journal'
 const food = { food_label: 'Idli', display_name: 'Idli', confidence: .9, bounding_box: [10, 10, 80, 80], macros: { calories: 100, protein_g: 3, carbs_g: 20, fat_g: 1 }, macros_unit: 'per_100g', nutrition_source: 'INDB' }
@@ -19,10 +19,10 @@ async function setup(options = {}) {
     if (path.endsWith('/health-conditions')) body = { health_conditions: [] }
     if (path.endsWith('/calculate-macros')) {
       const input = route.request().postDataJSON()
-      body = { target_calories: input.target_calories, carbs_g: 250, protein_g: input.target_calories / 10, fat_g: 56 }
+      body = mockMacros(input)
       if (input.target_calories === 2200) await new Promise(resolve => setTimeout(resolve, 1200))
     }
-    if (path.endsWith('/recommendations')) { guidanceCalls++; body = { recommendations: ['One', 'Two', 'Three'], source: 'fallback' }; if (scenario === 'advice-failure') { status = 503; body = { detail: 'Guidance unavailable' } } }
+    if (path.endsWith('/recommendations')) { guidanceCalls++; body = { recommendations: ['One', 'Two', 'Three'], source: 'fallback', health_condition: route.request().postDataJSON().health_condition || 'none' }; if (scenario === 'advice-failure') { status = 503; body = { detail: 'Guidance unavailable' } } }
     if (path.endsWith('/analyze-food')) body = { detections: scenario === 'unknown' ? [food, { ...food, food_label: 'Unknown', display_name: 'Unknown dish', macros: null }] : [food], img_width: 100, img_height: 100, food_not_found: false }
     await route.fulfill({ status, contentType: 'application/json', body: JSON.stringify(body) })
   })
@@ -76,7 +76,7 @@ try {
   await page.waitForTimeout(350)
   await page.getByLabel('Daily calorie target').fill('2500')
   await page.getByRole('button', { name: 'Save goals' }).click()
-  await page.getByLabel('Health context (this session only)').selectOption('Diabetic')
+  await page.getByLabel('Health context (this session only)').selectOption('diabetic')
   await page.waitForTimeout(1400)
   assert.equal((await read(page)).preferences.calories, 2500)
   await page.getByText('Protein 250 g · Carbs 250 g · Fat 56 g', { exact: true }).waitFor()
@@ -84,7 +84,7 @@ try {
   assert.equal(/Diabetic|imageUrl|data:image|blob:|bounding_box|confidence/.test(stored), false)
   await page.reload(); await waitText(page.locator('.daily-summary'), '2,500')
   await page.getByText('Goals & advanced settings', { exact: true }).click()
-  assert.equal(await page.getByLabel('Health context (this session only)').inputValue(), 'None')
+  assert.equal(await page.getByLabel('Health context (this session only)').inputValue(), 'none')
   await page.getByRole('button', { name: 'Clear history', exact: true }).click()
   await page.getByRole('button', { name: 'Keep history' }).click()
   assert.equal(await count(page), 1)

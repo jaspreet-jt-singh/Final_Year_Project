@@ -1,0 +1,2 @@
+# Development-only; never included in the deployment allowlist.
+ruff==0.15.7

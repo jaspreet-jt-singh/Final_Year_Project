@@ -1,0 +1,989 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "AI Food Recognition API",
+    "description": "Indian Food Recognition with Nutrition Analysis",
+    "version": "1.0.0"
+  },
+  "paths": {
+    "/api/analyze-food": {
+      "post": {
+        "summary": "Analyze Food",
+        "description": "Analyze uploaded food image and return nutrition information.\nAccepts FormData with key 'file' (from frontend).",
+        "operationId": "analyze_food_api_analyze_food_post",
+        "requestBody": {
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "$ref": "#/components/schemas/Body_analyze_food_api_analyze_food_post"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/FoodAnalysis"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          },
+          "413": {
+            "description": "Request Entity Too Large",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Unprocessable Entity",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "Too Many Requests",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          },
+          "503": {
+            "description": "Service Unavailable",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/recommendations": {
+      "post": {
+        "summary": "Recommendations",
+        "operationId": "recommendations_api_recommendations_post",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/RecommendationRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RecommendationResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          },
+          "413": {
+            "description": "Request Entity Too Large",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Unprocessable Entity",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "Too Many Requests",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          },
+          "503": {
+            "description": "Service Unavailable",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/user/goals": {
+      "get": {
+        "summary": "Goals",
+        "operationId": "goals_api_user_goals_get",
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GoalsResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/user/health-conditions": {
+      "get": {
+        "summary": "Conditions",
+        "operationId": "conditions_api_user_health_conditions_get",
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ConditionsResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/user/calculate-macros": {
+      "post": {
+        "summary": "Calculate Macros",
+        "operationId": "calculate_macros_api_user_calculate_macros_post",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/MacroCalculationRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/MacroGoal"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          },
+          "413": {
+            "description": "Request Entity Too Large",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Unprocessable Entity",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "Too Many Requests",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          },
+          "503": {
+            "description": "Service Unavailable",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api": {
+      "get": {
+        "summary": "Api Info",
+        "operationId": "api_info_api_get",
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/health": {
+      "get": {
+        "summary": "Health Check",
+        "operationId": "health_check_api_health_get",
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HealthResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/test-nutrition/{food_name}": {
+      "get": {
+        "summary": "Test Nutrition",
+        "operationId": "test_nutrition_api_test_nutrition__food_name__get",
+        "parameters": [
+          {
+            "name": "food_name",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "title": "Food Name"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/validate-nutrition": {
+      "get": {
+        "summary": "Validate Nutrition",
+        "operationId": "validate_nutrition_api_validate_nutrition_get",
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "Body_analyze_food_api_analyze_food_post": {
+        "properties": {
+          "file": {
+            "type": "string",
+            "contentMediaType": "application/octet-stream",
+            "title": "File"
+          }
+        },
+        "type": "object",
+        "required": [
+          "file"
+        ],
+        "title": "Body_analyze_food_api_analyze_food_post"
+      },
+      "ConditionOption": {
+        "properties": {
+          "key": {
+            "$ref": "#/components/schemas/HealthCondition"
+          },
+          "name": {
+            "type": "string",
+            "title": "Name"
+          },
+          "description": {
+            "type": "string",
+            "title": "Description"
+          },
+          "adjustment_label": {
+            "type": "string",
+            "title": "Adjustment Label"
+          }
+        },
+        "type": "object",
+        "required": [
+          "key",
+          "name",
+          "description",
+          "adjustment_label"
+        ],
+        "title": "ConditionOption"
+      },
+      "ConditionsResponse": {
+        "properties": {
+          "health_conditions": {
+            "items": {
+              "$ref": "#/components/schemas/ConditionOption"
+            },
+            "type": "array",
+            "title": "Health Conditions"
+          }
+        },
+        "type": "object",
+        "required": [
+          "health_conditions"
+        ],
+        "title": "ConditionsResponse"
+      },
+      "ErrorResponse": {
+        "properties": {
+          "detail": {
+            "type": "string",
+            "title": "Detail"
+          }
+        },
+        "type": "object",
+        "required": [
+          "detail"
+        ],
+        "title": "ErrorResponse"
+      },
+      "FoodAnalysis": {
+        "properties": {
+          "detections": {
+            "items": {
+              "$ref": "#/components/schemas/FoodDetection"
+            },
+            "type": "array",
+            "title": "Detections"
+          },
+          "img_width": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Img Width"
+          },
+          "img_height": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Img Height"
+          },
+          "food_not_found": {
+            "type": "boolean",
+            "title": "Food Not Found"
+          },
+          "message": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Message"
+          }
+        },
+        "type": "object",
+        "required": [
+          "detections",
+          "img_width",
+          "img_height",
+          "food_not_found"
+        ],
+        "title": "FoodAnalysis"
+      },
+      "FoodDetection": {
+        "properties": {
+          "food_label": {
+            "type": "string",
+            "title": "Food Label"
+          },
+          "display_name": {
+            "type": "string",
+            "title": "Display Name"
+          },
+          "confidence": {
+            "type": "number",
+            "title": "Confidence"
+          },
+          "bounding_box": {
+            "prefixItems": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "number"
+              },
+              {
+                "type": "number"
+              },
+              {
+                "type": "number"
+              }
+            ],
+            "type": "array",
+            "maxItems": 4,
+            "minItems": 4,
+            "title": "Bounding Box"
+          },
+          "macros": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/Macros"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "macros_unit": {
+            "type": "string",
+            "const": "per_100g",
+            "title": "Macros Unit",
+            "default": "per_100g"
+          },
+          "nutrition_source": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Nutrition Source"
+          },
+          "nutrition_not_found": {
+            "anyOf": [
+              {
+                "type": "boolean"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Nutrition Not Found"
+          }
+        },
+        "type": "object",
+        "required": [
+          "food_label",
+          "display_name",
+          "confidence",
+          "bounding_box",
+          "macros",
+          "nutrition_source"
+        ],
+        "title": "FoodDetection"
+      },
+      "GoalOption": {
+        "properties": {
+          "name": {
+            "type": "string",
+            "title": "Name"
+          },
+          "carbs_percent": {
+            "type": "integer",
+            "title": "Carbs Percent"
+          },
+          "protein_percent": {
+            "type": "integer",
+            "title": "Protein Percent"
+          },
+          "fat_percent": {
+            "type": "integer",
+            "title": "Fat Percent"
+          },
+          "description": {
+            "type": "string",
+            "title": "Description"
+          }
+        },
+        "type": "object",
+        "required": [
+          "name",
+          "carbs_percent",
+          "protein_percent",
+          "fat_percent",
+          "description"
+        ],
+        "title": "GoalOption"
+      },
+      "GoalsResponse": {
+        "properties": {
+          "goals": {
+            "items": {
+              "$ref": "#/components/schemas/GoalOption"
+            },
+            "type": "array",
+            "title": "Goals"
+          }
+        },
+        "type": "object",
+        "required": [
+          "goals"
+        ],
+        "title": "GoalsResponse"
+      },
+      "HTTPValidationError": {
+        "properties": {
+          "detail": {
+            "items": {
+              "$ref": "#/components/schemas/ValidationError"
+            },
+            "type": "array",
+            "title": "Detail"
+          }
+        },
+        "type": "object",
+        "title": "HTTPValidationError"
+      },
+      "HealthCondition": {
+        "type": "string",
+        "enum": [
+          "none",
+          "diabetic",
+          "hypertension",
+          "heart_disease",
+          "high_cholesterol",
+          "digestive_issues",
+          "kidney_disease",
+          "anemia",
+          "thyroid"
+        ],
+        "title": "HealthCondition"
+      },
+      "HealthResponse": {
+        "properties": {
+          "status": {
+            "type": "string",
+            "title": "Status"
+          },
+          "model_loaded": {
+            "type": "boolean",
+            "title": "Model Loaded"
+          },
+          "model_status": {
+            "type": "string",
+            "title": "Model Status"
+          },
+          "model_available": {
+            "type": "boolean",
+            "title": "Model Available"
+          },
+          "description": {
+            "type": "string",
+            "title": "Description"
+          }
+        },
+        "type": "object",
+        "required": [
+          "status",
+          "model_loaded",
+          "model_status",
+          "model_available",
+          "description"
+        ],
+        "title": "HealthResponse"
+      },
+      "MacroCalculationRequest": {
+        "properties": {
+          "goal": {
+            "type": "string",
+            "maxLength": 100,
+            "title": "Goal"
+          },
+          "target_calories": {
+            "type": "integer",
+            "title": "Target Calories"
+          },
+          "health_condition": {
+            "type": "string",
+            "maxLength": 100,
+            "title": "Health Condition",
+            "default": "none"
+          }
+        },
+        "type": "object",
+        "required": [
+          "goal",
+          "target_calories"
+        ],
+        "title": "MacroCalculationRequest"
+      },
+      "MacroGoal": {
+        "properties": {
+          "goal": {
+            "type": "string",
+            "title": "Goal"
+          },
+          "goal_key": {
+            "type": "string",
+            "title": "Goal Key"
+          },
+          "target_calories": {
+            "type": "integer",
+            "title": "Target Calories"
+          },
+          "carbs_g": {
+            "type": "integer",
+            "title": "Carbs G"
+          },
+          "protein_g": {
+            "type": "integer",
+            "title": "Protein G"
+          },
+          "fat_g": {
+            "type": "integer",
+            "title": "Fat G"
+          },
+          "carbs_percent": {
+            "type": "integer",
+            "title": "Carbs Percent"
+          },
+          "protein_percent": {
+            "type": "integer",
+            "title": "Protein Percent"
+          },
+          "fat_percent": {
+            "type": "integer",
+            "title": "Fat Percent"
+          },
+          "description": {
+            "type": "string",
+            "title": "Description"
+          },
+          "health_condition": {
+            "type": "string",
+            "title": "Health Condition"
+          },
+          "health_condition_key": {
+            "$ref": "#/components/schemas/HealthCondition"
+          }
+        },
+        "type": "object",
+        "required": [
+          "goal",
+          "goal_key",
+          "target_calories",
+          "carbs_g",
+          "protein_g",
+          "fat_g",
+          "carbs_percent",
+          "protein_percent",
+          "fat_percent",
+          "description",
+          "health_condition",
+          "health_condition_key"
+        ],
+        "title": "MacroGoal"
+      },
+      "Macros": {
+        "properties": {
+          "calories": {
+            "type": "number",
+            "maximum": 10000.0,
+            "minimum": 0.0,
+            "title": "Calories"
+          },
+          "protein_g": {
+            "type": "number",
+            "maximum": 10000.0,
+            "minimum": 0.0,
+            "title": "Protein G"
+          },
+          "carbs_g": {
+            "type": "number",
+            "maximum": 10000.0,
+            "minimum": 0.0,
+            "title": "Carbs G"
+          },
+          "fat_g": {
+            "type": "number",
+            "maximum": 10000.0,
+            "minimum": 0.0,
+            "title": "Fat G"
+          }
+        },
+        "type": "object",
+        "required": [
+          "calories",
+          "protein_g",
+          "carbs_g",
+          "fat_g"
+        ],
+        "title": "Macros"
+      },
+      "RecommendationFood": {
+        "properties": {
+          "food_label": {
+            "type": "string",
+            "maxLength": 100,
+            "title": "Food Label"
+          },
+          "display_name": {
+            "anyOf": [
+              {
+                "type": "string",
+                "maxLength": 100
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Display Name"
+          },
+          "macros": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/Macros"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          }
+        },
+        "type": "object",
+        "required": [
+          "food_label"
+        ],
+        "title": "RecommendationFood"
+      },
+      "RecommendationRequest": {
+        "properties": {
+          "detected_foods": {
+            "items": {
+              "$ref": "#/components/schemas/RecommendationFood"
+            },
+            "type": "array",
+            "maxItems": 10,
+            "minItems": 1,
+            "title": "Detected Foods"
+          },
+          "user_goal": {
+            "type": "string",
+            "maxLength": 100,
+            "title": "User Goal",
+            "default": "Maintenance"
+          },
+          "health_condition": {
+            "type": "string",
+            "maxLength": 100,
+            "title": "Health Condition",
+            "default": "none"
+          }
+        },
+        "type": "object",
+        "required": [
+          "detected_foods"
+        ],
+        "title": "RecommendationRequest"
+      },
+      "RecommendationResponse": {
+        "properties": {
+          "recommendations": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "maxItems": 3,
+            "minItems": 3,
+            "title": "Recommendations"
+          },
+          "source": {
+            "type": "string",
+            "enum": [
+              "groq",
+              "fallback",
+              "openai",
+              "ollama"
+            ],
+            "title": "Source"
+          },
+          "health_condition": {
+            "$ref": "#/components/schemas/HealthCondition"
+          }
+        },
+        "type": "object",
+        "required": [
+          "recommendations",
+          "source",
+          "health_condition"
+        ],
+        "title": "RecommendationResponse"
+      },
+      "ValidationError": {
+        "properties": {
+          "loc": {
+            "items": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "integer"
+                }
+              ]
+            },
+            "type": "array",
+            "title": "Location"
+          },
+          "msg": {
+            "type": "string",
+            "title": "Message"
+          },
+          "type": {
+            "type": "string",
+            "title": "Error Type"
+          },
+          "input": {
+            "title": "Input"
+          },
+          "ctx": {
+            "type": "object",
+            "title": "Context"
+          }
+        },
+        "type": "object",
+        "required": [
+          "loc",
+          "msg",
+          "type"
+        ],
+        "title": "ValidationError"
+      }
+    }
+  }
+}

@@ -1,0 +1,4106 @@
+[
+  {
+    "goal": "weight_loss",
+    "condition": "none",
+    "calories": 500,
+    "expected": {
+      "goal": "Weight Loss",
+      "goal_key": "weight_loss",
+      "target_calories": 500,
+      "carbs_g": 50,
+      "protein_g": 44,
+      "fat_g": 14,
+      "carbs_percent": 40,
+      "protein_percent": 35,
+      "fat_percent": 25,
+      "description": "Higher protein, moderate carbs, lower fat for satiety and muscle preservation",
+      "health_condition": "None",
+      "health_condition_key": "none"
+    }
+  },
+  {
+    "goal": "weight_loss",
+    "condition": "none",
+    "calories": 1500,
+    "expected": {
+      "goal": "Weight Loss",
+      "goal_key": "weight_loss",
+      "target_calories": 1500,
+      "carbs_g": 150,
+      "protein_g": 131,
+      "fat_g": 42,
+      "carbs_percent": 40,
+      "protein_percent": 35,
+      "fat_percent": 25,
+      "description": "Higher protein, moderate carbs, lower fat for satiety and muscle preservation",
+      "health_condition": "None",
+      "health_condition_key": "none"
+    }
+  },
+  {
+    "goal": "weight_loss",
+    "condition": "none",
+    "calories": 1800,
+    "expected": {
+      "goal": "Weight Loss",
+      "goal_key": "weight_loss",
+      "target_calories": 1800,
+      "carbs_g": 180,
+      "protein_g": 158,
+      "fat_g": 50,
+      "carbs_percent": 40,
+      "protein_percent": 35,
+      "fat_percent": 25,
+      "description": "Higher protein, moderate carbs, lower fat for satiety and muscle preservation",
+      "health_condition": "None",
+      "health_condition_key": "none"
+    }
+  },
+  {
+    "goal": "weight_loss",
+    "condition": "none",
+    "calories": 2000,
+    "expected": {
+      "goal": "Weight Loss",
+      "goal_key": "weight_loss",
+      "target_calories": 2000,
+      "carbs_g": 200,
+      "protein_g": 175,
+      "fat_g": 56,
+      "carbs_percent": 40,
+      "protein_percent": 35,
+      "fat_percent": 25,
+      "description": "Higher protein, moderate carbs, lower fat for satiety and muscle preservation",
+      "health_condition": "None",
+      "health_condition_key": "none"
+    }
+  },
+  {
+    "goal": "weight_loss",
+    "condition": "none",
+    "calories": 2500,
+    "expected": {
+      "goal": "Weight Loss",
+      "goal_key": "weight_loss",
+      "target_calories": 2500,
+      "carbs_g": 250,
+      "protein_g": 219,
+      "fat_g": 69,
+      "carbs_percent": 40,
+      "protein_percent": 35,
+      "fat_percent": 25,
+      "description": "Higher protein, moderate carbs, lower fat for satiety and muscle preservation",
+      "health_condition": "None",
+      "health_condition_key": "none"
+    }
+  },
+  {
+    "goal": "weight_loss",
+    "condition": "none",
+    "calories": 5000,
+    "expected": {
+      "goal": "Weight Loss",
+      "goal_key": "weight_loss",
+      "target_calories": 5000,
+      "carbs_g": 500,
+      "protein_g": 438,
+      "fat_g": 139,
+      "carbs_percent": 40,
+      "protein_percent": 35,
+      "fat_percent": 25,
+      "description": "Higher protein, moderate carbs, lower fat for satiety and muscle preservation",
+      "health_condition": "None",
+      "health_condition_key": "none"
+    }
+  },
+  {
+    "goal": "weight_loss",
+    "condition": "diabetic",
+    "calories": 500,
+    "expected": {
+      "goal": "Weight Loss",
+      "goal_key": "weight_loss",
+      "target_calories": 500,
+      "carbs_g": 41,
+      "protein_g": 51,
+      "fat_g": 14,
+      "carbs_percent": 33,
+      "protein_percent": 41,
+      "fat_percent": 26,
+      "description": "Higher protein, moderate carbs, lower fat for satiety and muscle preservation | Adapted for Diabetic: Focus on low glycemic index foods, manage blood sugar spikes",
+      "health_condition": "Diabetic",
+      "health_condition_key": "diabetic"
+    }
+  },
+  {
+    "goal": "weight_loss",
+    "condition": "diabetic",
+    "calories": 1500,
+    "expected": {
+      "goal": "Weight Loss",
+      "goal_key": "weight_loss",
+      "target_calories": 1500,
+      "carbs_g": 124,
+      "protein_g": 154,
+      "fat_g": 43,
+      "carbs_percent": 33,
+      "protein_percent": 41,
+      "fat_percent": 26,
+      "description": "Higher protein, moderate carbs, lower fat for satiety and muscle preservation | Adapted for Diabetic: Focus on low glycemic index foods, manage blood sugar spikes",
+      "health_condition": "Diabetic",
+      "health_condition_key": "diabetic"
+    }
+  },
+  {
+    "goal": "weight_loss",
+    "condition": "diabetic",
+    "calories": 1800,
+    "expected": {
+      "goal": "Weight Loss",
+      "goal_key": "weight_loss",
+      "target_calories": 1800,
+      "carbs_g": 148,
+      "protein_g": 184,
+      "fat_g": 52,
+      "carbs_percent": 33,
+      "protein_percent": 41,
+      "fat_percent": 26,
+      "description": "Higher protein, moderate carbs, lower fat for satiety and muscle preservation | Adapted for Diabetic: Focus on low glycemic index foods, manage blood sugar spikes",
+      "health_condition": "Diabetic",
+      "health_condition_key": "diabetic"
+    }
+  },
+  {
+    "goal": "weight_loss",
+    "condition": "diabetic",
+    "calories": 2000,
+    "expected": {
+      "goal": "Weight Loss",
+      "goal_key": "weight_loss",
+      "target_calories": 2000,
+      "carbs_g": 165,
+      "protein_g": 205,
+      "fat_g": 58,
+      "carbs_percent": 33,
+      "protein_percent": 41,
+      "fat_percent": 26,
+      "description": "Higher protein, moderate carbs, lower fat for satiety and muscle preservation | Adapted for Diabetic: Focus on low glycemic index foods, manage blood sugar spikes",
+      "health_condition": "Diabetic",
+      "health_condition_key": "diabetic"
+    }
+  },
+  {
+    "goal": "weight_loss",
+    "condition": "diabetic",
+    "calories": 2500,
+    "expected": {
+      "goal": "Weight Loss",
+      "goal_key": "weight_loss",
+      "target_calories": 2500,
+      "carbs_g": 206,
+      "protein_g": 256,
+      "fat_g": 72,
+      "carbs_percent": 33,
+      "protein_percent": 41,
+      "fat_percent": 26,
+      "description": "Higher protein, moderate carbs, lower fat for satiety and muscle preservation | Adapted for Diabetic: Focus on low glycemic index foods, manage blood sugar spikes",
+      "health_condition": "Diabetic",
+      "health_condition_key": "diabetic"
+    }
+  },
+  {
+    "goal": "weight_loss",
+    "condition": "diabetic",
+    "calories": 5000,
+    "expected": {
+      "goal": "Weight Loss",
+      "goal_key": "weight_loss",
+      "target_calories": 5000,
+      "carbs_g": 412,
+      "protein_g": 512,
+      "fat_g": 144,
+      "carbs_percent": 33,
+      "protein_percent": 41,
+      "fat_percent": 26,
+      "description": "Higher protein, moderate carbs, lower fat for satiety and muscle preservation | Adapted for Diabetic: Focus on low glycemic index foods, manage blood sugar spikes",
+      "health_condition": "Diabetic",
+      "health_condition_key": "diabetic"
+    }
+  },
+  {
+    "goal": "weight_loss",
+    "condition": "hypertension",
+    "calories": 500,
+    "expected": {
+      "goal": "Weight Loss",
+      "goal_key": "weight_loss",
+      "target_calories": 500,
+      "carbs_g": 51,
+      "protein_g": 45,
+      "fat_g": 13,
+      "carbs_percent": 41,
+      "protein_percent": 36,
+      "fat_percent": 23,
+      "description": "Higher protein, moderate carbs, lower fat for satiety and muscle preservation | Adapted for Hypertension (High BP): Low sodium diet, avoid processed foods, focus on potassium-rich foods",
+      "health_condition": "Hypertension (High BP)",
+      "health_condition_key": "hypertension"
+    }
+  },
+  {
+    "goal": "weight_loss",
+    "condition": "hypertension",
+    "calories": 1500,
+    "expected": {
+      "goal": "Weight Loss",
+      "goal_key": "weight_loss",
+      "target_calories": 1500,
+      "carbs_g": 154,
+      "protein_g": 135,
+      "fat_g": 38,
+      "carbs_percent": 41,
+      "protein_percent": 36,
+      "fat_percent": 23,
+      "description": "Higher protein, moderate carbs, lower fat for satiety and muscle preservation | Adapted for Hypertension (High BP): Low sodium diet, avoid processed foods, focus on potassium-rich foods",
+      "health_condition": "Hypertension (High BP)",
+      "health_condition_key": "hypertension"
+    }
+  },
+  {
+    "goal": "weight_loss",
+    "condition": "hypertension",
+    "calories": 1800,
+    "expected": {
+      "goal": "Weight Loss",
+      "goal_key": "weight_loss",
+      "target_calories": 1800,
+      "carbs_g": 184,
+      "protein_g": 162,
+      "fat_g": 46,
+      "carbs_percent": 41,
+      "protein_percent": 36,
+      "fat_percent": 23,
+      "description": "Higher protein, moderate carbs, lower fat for satiety and muscle preservation | Adapted for Hypertension (High BP): Low sodium diet, avoid processed foods, focus on potassium-rich foods",
+      "health_condition": "Hypertension (High BP)",
+      "health_condition_key": "hypertension"
+    }
+  },
+  {
+    "goal": "weight_loss",
+    "condition": "hypertension",
+    "calories": 2000,
+    "expected": {
+      "goal": "Weight Loss",
+      "goal_key": "weight_loss",
+      "target_calories": 2000,
+      "carbs_g": 205,
+      "protein_g": 180,
+      "fat_g": 51,
+      "carbs_percent": 41,
+      "protein_percent": 36,
+      "fat_percent": 23,
+      "description": "Higher protein, moderate carbs, lower fat for satiety and muscle preservation | Adapted for Hypertension (High BP): Low sodium diet, avoid processed foods, focus on potassium-rich foods",
+      "health_condition": "Hypertension (High BP)",
+      "health_condition_key": "hypertension"
+    }
+  },
+  {
+    "goal": "weight_loss",
+    "condition": "hypertension",
+    "calories": 2500,
+    "expected": {
+      "goal": "Weight Loss",
+      "goal_key": "weight_loss",
+      "target_calories": 2500,
+      "carbs_g": 256,
+      "protein_g": 225,
+      "fat_g": 64,
+      "carbs_percent": 41,
+      "protein_percent": 36,
+      "fat_percent": 23,
+      "description": "Higher protein, moderate carbs, lower fat for satiety and muscle preservation | Adapted for Hypertension (High BP): Low sodium diet, avoid processed foods, focus on potassium-rich foods",
+      "health_condition": "Hypertension (High BP)",
+      "health_condition_key": "hypertension"
+    }
+  },
+  {
+    "goal": "weight_loss",
+    "condition": "hypertension",
+    "calories": 5000,
+    "expected": {
+      "goal": "Weight Loss",
+      "goal_key": "weight_loss",
+      "target_calories": 5000,
+      "carbs_g": 512,
+      "protein_g": 450,
+      "fat_g": 128,
+      "carbs_percent": 41,
+      "protein_percent": 36,
+      "fat_percent": 23,
+      "description": "Higher protein, moderate carbs, lower fat for satiety and muscle preservation | Adapted for Hypertension (High BP): Low sodium diet, avoid processed foods, focus on potassium-rich foods",
+      "health_condition": "Hypertension (High BP)",
+      "health_condition_key": "hypertension"
+    }
+  },
+  {
+    "goal": "weight_loss",
+    "condition": "heart_disease",
+    "calories": 500,
+    "expected": {
+      "goal": "Weight Loss",
+      "goal_key": "weight_loss",
+      "target_calories": 500,
+      "carbs_g": 54,
+      "protein_g": 45,
+      "fat_g": 12,
+      "carbs_percent": 43,
+      "protein_percent": 36,
+      "fat_percent": 21,
+      "description": "Higher protein, moderate carbs, lower fat for satiety and muscle preservation | Adapted for Heart Disease: Low saturated fat, low cholesterol, increase omega-3 fatty acids",
+      "health_condition": "Heart Disease",
+      "health_condition_key": "heart_disease"
+    }
+  },
+  {
+    "goal": "weight_loss",
+    "condition": "heart_disease",
+    "calories": 1500,
+    "expected": {
+      "goal": "Weight Loss",
+      "goal_key": "weight_loss",
+      "target_calories": 1500,
+      "carbs_g": 161,
+      "protein_g": 135,
+      "fat_g": 35,
+      "carbs_percent": 43,
+      "protein_percent": 36,
+      "fat_percent": 21,
+      "description": "Higher protein, moderate carbs, lower fat for satiety and muscle preservation | Adapted for Heart Disease: Low saturated fat, low cholesterol, increase omega-3 fatty acids",
+      "health_condition": "Heart Disease",
+      "health_condition_key": "heart_disease"
+    }
+  },
+  {
+    "goal": "weight_loss",
+    "condition": "heart_disease",
+    "calories": 1800,
+    "expected": {
+      "goal": "Weight Loss",
+      "goal_key": "weight_loss",
+      "target_calories": 1800,
+      "carbs_g": 194,
+      "protein_g": 162,
+      "fat_g": 42,
+      "carbs_percent": 43,
+      "protein_percent": 36,
+      "fat_percent": 21,
+      "description": "Higher protein, moderate carbs, lower fat for satiety and muscle preservation | Adapted for Heart Disease: Low saturated fat, low cholesterol, increase omega-3 fatty acids",
+      "health_condition": "Heart Disease",
+      "health_condition_key": "heart_disease"
+    }
+  },
+  {
+    "goal": "weight_loss",
+    "condition": "heart_disease",
+    "calories": 2000,
+    "expected": {
+      "goal": "Weight Loss",
+      "goal_key": "weight_loss",
+      "target_calories": 2000,
+      "carbs_g": 215,
+      "protein_g": 180,
+      "fat_g": 47,
+      "carbs_percent": 43,
+      "protein_percent": 36,
+      "fat_percent": 21,
+      "description": "Higher protein, moderate carbs, lower fat for satiety and muscle preservation | Adapted for Heart Disease: Low saturated fat, low cholesterol, increase omega-3 fatty acids",
+      "health_condition": "Heart Disease",
+      "health_condition_key": "heart_disease"
+    }
+  },
+  {
+    "goal": "weight_loss",
+    "condition": "heart_disease",
+    "calories": 2500,
+    "expected": {
+      "goal": "Weight Loss",
+      "goal_key": "weight_loss",
+      "target_calories": 2500,
+      "carbs_g": 269,
+      "protein_g": 225,
+      "fat_g": 58,
+      "carbs_percent": 43,
+      "protein_percent": 36,
+      "fat_percent": 21,
+      "description": "Higher protein, moderate carbs, lower fat for satiety and muscle preservation | Adapted for Heart Disease: Low saturated fat, low cholesterol, increase omega-3 fatty acids",
+      "health_condition": "Heart Disease",
+      "health_condition_key": "heart_disease"
+    }
+  },
+  {
+    "goal": "weight_loss",
+    "condition": "heart_disease",
+    "calories": 5000,
+    "expected": {
+      "goal": "Weight Loss",
+      "goal_key": "weight_loss",
+      "target_calories": 5000,
+      "carbs_g": 538,
+      "protein_g": 450,
+      "fat_g": 117,
+      "carbs_percent": 43,
+      "protein_percent": 36,
+      "fat_percent": 21,
+      "description": "Higher protein, moderate carbs, lower fat for satiety and muscle preservation | Adapted for Heart Disease: Low saturated fat, low cholesterol, increase omega-3 fatty acids",
+      "health_condition": "Heart Disease",
+      "health_condition_key": "heart_disease"
+    }
+  },
+  {
+    "goal": "weight_loss",
+    "condition": "high_cholesterol",
+    "calories": 500,
+    "expected": {
+      "goal": "Weight Loss",
+      "goal_key": "weight_loss",
+      "target_calories": 500,
+      "carbs_g": 52,
+      "protein_g": 49,
+      "fat_g": 11,
+      "carbs_percent": 42,
+      "protein_percent": 39,
+      "fat_percent": 19,
+      "description": "Higher protein, moderate carbs, lower fat for satiety and muscle preservation | Adapted for High Cholesterol: Low saturated and trans fats, high fiber, plant-based proteins preferred",
+      "health_condition": "High Cholesterol",
+      "health_condition_key": "high_cholesterol"
+    }
+  },
+  {
+    "goal": "weight_loss",
+    "condition": "high_cholesterol",
+    "calories": 1500,
+    "expected": {
+      "goal": "Weight Loss",
+      "goal_key": "weight_loss",
+      "target_calories": 1500,
+      "carbs_g": 158,
+      "protein_g": 146,
+      "fat_g": 32,
+      "carbs_percent": 42,
+      "protein_percent": 39,
+      "fat_percent": 19,
+      "description": "Higher protein, moderate carbs, lower fat for satiety and muscle preservation | Adapted for High Cholesterol: Low saturated and trans fats, high fiber, plant-based proteins preferred",
+      "health_condition": "High Cholesterol",
+      "health_condition_key": "high_cholesterol"
+    }
+  },
+  {
+    "goal": "weight_loss",
+    "condition": "high_cholesterol",
+    "calories": 1800,
+    "expected": {
+      "goal": "Weight Loss",
+      "goal_key": "weight_loss",
+      "target_calories": 1800,
+      "carbs_g": 189,
+      "protein_g": 176,
+      "fat_g": 38,
+      "carbs_percent": 42,
+      "protein_percent": 39,
+      "fat_percent": 19,
+      "description": "Higher protein, moderate carbs, lower fat for satiety and muscle preservation | Adapted for High Cholesterol: Low saturated and trans fats, high fiber, plant-based proteins preferred",
+      "health_condition": "High Cholesterol",
+      "health_condition_key": "high_cholesterol"
+    }
+  },
+  {
+    "goal": "weight_loss",
+    "condition": "high_cholesterol",
+    "calories": 2000,
+    "expected": {
+      "goal": "Weight Loss",
+      "goal_key": "weight_loss",
+      "target_calories": 2000,
+      "carbs_g": 210,
+      "protein_g": 195,
+      "fat_g": 42,
+      "carbs_percent": 42,
+      "protein_percent": 39,
+      "fat_percent": 19,
+      "description": "Higher protein, moderate carbs, lower fat for satiety and muscle preservation | Adapted for High Cholesterol: Low saturated and trans fats, high fiber, plant-based proteins preferred",
+      "health_condition": "High Cholesterol",
+      "health_condition_key": "high_cholesterol"
+    }
+  },
+  {
+    "goal": "weight_loss",
+    "condition": "high_cholesterol",
+    "calories": 2500,
+    "expected": {
+      "goal": "Weight Loss",
+      "goal_key": "weight_loss",
+      "target_calories": 2500,
+      "carbs_g": 262,
+      "protein_g": 244,
+      "fat_g": 53,
+      "carbs_percent": 42,
+      "protein_percent": 39,
+      "fat_percent": 19,
+      "description": "Higher protein, moderate carbs, lower fat for satiety and muscle preservation | Adapted for High Cholesterol: Low saturated and trans fats, high fiber, plant-based proteins preferred",
+      "health_condition": "High Cholesterol",
+      "health_condition_key": "high_cholesterol"
+    }
+  },
+  {
+    "goal": "weight_loss",
+    "condition": "high_cholesterol",
+    "calories": 5000,
+    "expected": {
+      "goal": "Weight Loss",
+      "goal_key": "weight_loss",
+      "target_calories": 5000,
+      "carbs_g": 525,
+      "protein_g": 488,
+      "fat_g": 106,
+      "carbs_percent": 42,
+      "protein_percent": 39,
+      "fat_percent": 19,
+      "description": "Higher protein, moderate carbs, lower fat for satiety and muscle preservation | Adapted for High Cholesterol: Low saturated and trans fats, high fiber, plant-based proteins preferred",
+      "health_condition": "High Cholesterol",
+      "health_condition_key": "high_cholesterol"
+    }
+  },
+  {
+    "goal": "weight_loss",
+    "condition": "digestive_issues",
+    "calories": 500,
+    "expected": {
+      "goal": "Weight Loss",
+      "goal_key": "weight_loss",
+      "target_calories": 500,
+      "carbs_g": 54,
+      "protein_g": 42,
+      "fat_g": 13,
+      "carbs_percent": 43,
+      "protein_percent": 34,
+      "fat_percent": 23,
+      "description": "Higher protein, moderate carbs, lower fat for satiety and muscle preservation | Adapted for Digestive Issues: Easily digestible foods, avoid spicy/oily food, small frequent meals",
+      "health_condition": "Digestive Issues",
+      "health_condition_key": "digestive_issues"
+    }
+  },
+  {
+    "goal": "weight_loss",
+    "condition": "digestive_issues",
+    "calories": 1500,
+    "expected": {
+      "goal": "Weight Loss",
+      "goal_key": "weight_loss",
+      "target_calories": 1500,
+      "carbs_g": 161,
+      "protein_g": 128,
+      "fat_g": 38,
+      "carbs_percent": 43,
+      "protein_percent": 34,
+      "fat_percent": 23,
+      "description": "Higher protein, moderate carbs, lower fat for satiety and muscle preservation | Adapted for Digestive Issues: Easily digestible foods, avoid spicy/oily food, small frequent meals",
+      "health_condition": "Digestive Issues",
+      "health_condition_key": "digestive_issues"
+    }
+  },
+  {
+    "goal": "weight_loss",
+    "condition": "digestive_issues",
+    "calories": 1800,
+    "expected": {
+      "goal": "Weight Loss",
+      "goal_key": "weight_loss",
+      "target_calories": 1800,
+      "carbs_g": 194,
+      "protein_g": 153,
+      "fat_g": 46,
+      "carbs_percent": 43,
+      "protein_percent": 34,
+      "fat_percent": 23,
+      "description": "Higher protein, moderate carbs, lower fat for satiety and muscle preservation | Adapted for Digestive Issues: Easily digestible foods, avoid spicy/oily food, small frequent meals",
+      "health_condition": "Digestive Issues",
+      "health_condition_key": "digestive_issues"
+    }
+  },
+  {
+    "goal": "weight_loss",
+    "condition": "digestive_issues",
+    "calories": 2000,
+    "expected": {
+      "goal": "Weight Loss",
+      "goal_key": "weight_loss",
+      "target_calories": 2000,
+      "carbs_g": 215,
+      "protein_g": 170,
+      "fat_g": 51,
+      "carbs_percent": 43,
+      "protein_percent": 34,
+      "fat_percent": 23,
+      "description": "Higher protein, moderate carbs, lower fat for satiety and muscle preservation | Adapted for Digestive Issues: Easily digestible foods, avoid spicy/oily food, small frequent meals",
+      "health_condition": "Digestive Issues",
+      "health_condition_key": "digestive_issues"
+    }
+  },
+  {
+    "goal": "weight_loss",
+    "condition": "digestive_issues",
+    "calories": 2500,
+    "expected": {
+      "goal": "Weight Loss",
+      "goal_key": "weight_loss",
+      "target_calories": 2500,
+      "carbs_g": 269,
+      "protein_g": 212,
+      "fat_g": 64,
+      "carbs_percent": 43,
+      "protein_percent": 34,
+      "fat_percent": 23,
+      "description": "Higher protein, moderate carbs, lower fat for satiety and muscle preservation | Adapted for Digestive Issues: Easily digestible foods, avoid spicy/oily food, small frequent meals",
+      "health_condition": "Digestive Issues",
+      "health_condition_key": "digestive_issues"
+    }
+  },
+  {
+    "goal": "weight_loss",
+    "condition": "digestive_issues",
+    "calories": 5000,
+    "expected": {
+      "goal": "Weight Loss",
+      "goal_key": "weight_loss",
+      "target_calories": 5000,
+      "carbs_g": 538,
+      "protein_g": 425,
+      "fat_g": 128,
+      "carbs_percent": 43,
+      "protein_percent": 34,
+      "fat_percent": 23,
+      "description": "Higher protein, moderate carbs, lower fat for satiety and muscle preservation | Adapted for Digestive Issues: Easily digestible foods, avoid spicy/oily food, small frequent meals",
+      "health_condition": "Digestive Issues",
+      "health_condition_key": "digestive_issues"
+    }
+  },
+  {
+    "goal": "weight_loss",
+    "condition": "kidney_disease",
+    "calories": 500,
+    "expected": {
+      "goal": "Weight Loss",
+      "goal_key": "weight_loss",
+      "target_calories": 500,
+      "carbs_g": 62,
+      "protein_g": 29,
+      "fat_g": 15,
+      "carbs_percent": 50,
+      "protein_percent": 23,
+      "fat_percent": 27,
+      "description": "Higher protein, moderate carbs, lower fat for satiety and muscle preservation | Adapted for Kidney Disease: Low potassium, low phosphorus, controlled protein intake",
+      "health_condition": "Kidney Disease",
+      "health_condition_key": "kidney_disease"
+    }
+  },
+  {
+    "goal": "weight_loss",
+    "condition": "kidney_disease",
+    "calories": 1500,
+    "expected": {
+      "goal": "Weight Loss",
+      "goal_key": "weight_loss",
+      "target_calories": 1500,
+      "carbs_g": 188,
+      "protein_g": 86,
+      "fat_g": 45,
+      "carbs_percent": 50,
+      "protein_percent": 23,
+      "fat_percent": 27,
+      "description": "Higher protein, moderate carbs, lower fat for satiety and muscle preservation | Adapted for Kidney Disease: Low potassium, low phosphorus, controlled protein intake",
+      "health_condition": "Kidney Disease",
+      "health_condition_key": "kidney_disease"
+    }
+  },
+  {
+    "goal": "weight_loss",
+    "condition": "kidney_disease",
+    "calories": 1800,
+    "expected": {
+      "goal": "Weight Loss",
+      "goal_key": "weight_loss",
+      "target_calories": 1800,
+      "carbs_g": 225,
+      "protein_g": 104,
+      "fat_g": 54,
+      "carbs_percent": 50,
+      "protein_percent": 23,
+      "fat_percent": 27,
+      "description": "Higher protein, moderate carbs, lower fat for satiety and muscle preservation | Adapted for Kidney Disease: Low potassium, low phosphorus, controlled protein intake",
+      "health_condition": "Kidney Disease",
+      "health_condition_key": "kidney_disease"
+    }
+  },
+  {
+    "goal": "weight_loss",
+    "condition": "kidney_disease",
+    "calories": 2000,
+    "expected": {
+      "goal": "Weight Loss",
+      "goal_key": "weight_loss",
+      "target_calories": 2000,
+      "carbs_g": 250,
+      "protein_g": 115,
+      "fat_g": 60,
+      "carbs_percent": 50,
+      "protein_percent": 23,
+      "fat_percent": 27,
+      "description": "Higher protein, moderate carbs, lower fat for satiety and muscle preservation | Adapted for Kidney Disease: Low potassium, low phosphorus, controlled protein intake",
+      "health_condition": "Kidney Disease",
+      "health_condition_key": "kidney_disease"
+    }
+  },
+  {
+    "goal": "weight_loss",
+    "condition": "kidney_disease",
+    "calories": 2500,
+    "expected": {
+      "goal": "Weight Loss",
+      "goal_key": "weight_loss",
+      "target_calories": 2500,
+      "carbs_g": 312,
+      "protein_g": 144,
+      "fat_g": 75,
+      "carbs_percent": 50,
+      "protein_percent": 23,
+      "fat_percent": 27,
+      "description": "Higher protein, moderate carbs, lower fat for satiety and muscle preservation | Adapted for Kidney Disease: Low potassium, low phosphorus, controlled protein intake",
+      "health_condition": "Kidney Disease",
+      "health_condition_key": "kidney_disease"
+    }
+  },
+  {
+    "goal": "weight_loss",
+    "condition": "kidney_disease",
+    "calories": 5000,
+    "expected": {
+      "goal": "Weight Loss",
+      "goal_key": "weight_loss",
+      "target_calories": 5000,
+      "carbs_g": 625,
+      "protein_g": 288,
+      "fat_g": 150,
+      "carbs_percent": 50,
+      "protein_percent": 23,
+      "fat_percent": 27,
+      "description": "Higher protein, moderate carbs, lower fat for satiety and muscle preservation | Adapted for Kidney Disease: Low potassium, low phosphorus, controlled protein intake",
+      "health_condition": "Kidney Disease",
+      "health_condition_key": "kidney_disease"
+    }
+  },
+  {
+    "goal": "weight_loss",
+    "condition": "anemia",
+    "calories": 500,
+    "expected": {
+      "goal": "Weight Loss",
+      "goal_key": "weight_loss",
+      "target_calories": 500,
+      "carbs_g": 50,
+      "protein_g": 48,
+      "fat_g": 12,
+      "carbs_percent": 40,
+      "protein_percent": 38,
+      "fat_percent": 22,
+      "description": "Higher protein, moderate carbs, lower fat for satiety and muscle preservation | Adapted for Anemia: Iron-rich foods, vitamin C to aid absorption, avoid tea/coffee with meals",
+      "health_condition": "Anemia",
+      "health_condition_key": "anemia"
+    }
+  },
+  {
+    "goal": "weight_loss",
+    "condition": "anemia",
+    "calories": 1500,
+    "expected": {
+      "goal": "Weight Loss",
+      "goal_key": "weight_loss",
+      "target_calories": 1500,
+      "carbs_g": 150,
+      "protein_g": 142,
+      "fat_g": 37,
+      "carbs_percent": 40,
+      "protein_percent": 38,
+      "fat_percent": 22,
+      "description": "Higher protein, moderate carbs, lower fat for satiety and muscle preservation | Adapted for Anemia: Iron-rich foods, vitamin C to aid absorption, avoid tea/coffee with meals",
+      "health_condition": "Anemia",
+      "health_condition_key": "anemia"
+    }
+  },
+  {
+    "goal": "weight_loss",
+    "condition": "anemia",
+    "calories": 1800,
+    "expected": {
+      "goal": "Weight Loss",
+      "goal_key": "weight_loss",
+      "target_calories": 1800,
+      "carbs_g": 180,
+      "protein_g": 171,
+      "fat_g": 44,
+      "carbs_percent": 40,
+      "protein_percent": 38,
+      "fat_percent": 22,
+      "description": "Higher protein, moderate carbs, lower fat for satiety and muscle preservation | Adapted for Anemia: Iron-rich foods, vitamin C to aid absorption, avoid tea/coffee with meals",
+      "health_condition": "Anemia",
+      "health_condition_key": "anemia"
+    }
+  },
+  {
+    "goal": "weight_loss",
+    "condition": "anemia",
+    "calories": 2000,
+    "expected": {
+      "goal": "Weight Loss",
+      "goal_key": "weight_loss",
+      "target_calories": 2000,
+      "carbs_g": 200,
+      "protein_g": 190,
+      "fat_g": 49,
+      "carbs_percent": 40,
+      "protein_percent": 38,
+      "fat_percent": 22,
+      "description": "Higher protein, moderate carbs, lower fat for satiety and muscle preservation | Adapted for Anemia: Iron-rich foods, vitamin C to aid absorption, avoid tea/coffee with meals",
+      "health_condition": "Anemia",
+      "health_condition_key": "anemia"
+    }
+  },
+  {
+    "goal": "weight_loss",
+    "condition": "anemia",
+    "calories": 2500,
+    "expected": {
+      "goal": "Weight Loss",
+      "goal_key": "weight_loss",
+      "target_calories": 2500,
+      "carbs_g": 250,
+      "protein_g": 238,
+      "fat_g": 61,
+      "carbs_percent": 40,
+      "protein_percent": 38,
+      "fat_percent": 22,
+      "description": "Higher protein, moderate carbs, lower fat for satiety and muscle preservation | Adapted for Anemia: Iron-rich foods, vitamin C to aid absorption, avoid tea/coffee with meals",
+      "health_condition": "Anemia",
+      "health_condition_key": "anemia"
+    }
+  },
+  {
+    "goal": "weight_loss",
+    "condition": "anemia",
+    "calories": 5000,
+    "expected": {
+      "goal": "Weight Loss",
+      "goal_key": "weight_loss",
+      "target_calories": 5000,
+      "carbs_g": 500,
+      "protein_g": 475,
+      "fat_g": 122,
+      "carbs_percent": 40,
+      "protein_percent": 38,
+      "fat_percent": 22,
+      "description": "Higher protein, moderate carbs, lower fat for satiety and muscle preservation | Adapted for Anemia: Iron-rich foods, vitamin C to aid absorption, avoid tea/coffee with meals",
+      "health_condition": "Anemia",
+      "health_condition_key": "anemia"
+    }
+  },
+  {
+    "goal": "weight_loss",
+    "condition": "thyroid",
+    "calories": 500,
+    "expected": {
+      "goal": "Weight Loss",
+      "goal_key": "weight_loss",
+      "target_calories": 500,
+      "carbs_g": 49,
+      "protein_g": 45,
+      "fat_g": 14,
+      "carbs_percent": 39,
+      "protein_percent": 36,
+      "fat_percent": 25,
+      "description": "Higher protein, moderate carbs, lower fat for satiety and muscle preservation | Adapted for Thyroid Disorder: Iodine balance, selenium-rich foods, limit goitrogenic foods raw",
+      "health_condition": "Thyroid Disorder",
+      "health_condition_key": "thyroid"
+    }
+  },
+  {
+    "goal": "weight_loss",
+    "condition": "thyroid",
+    "calories": 1500,
+    "expected": {
+      "goal": "Weight Loss",
+      "goal_key": "weight_loss",
+      "target_calories": 1500,
+      "carbs_g": 146,
+      "protein_g": 135,
+      "fat_g": 42,
+      "carbs_percent": 39,
+      "protein_percent": 36,
+      "fat_percent": 25,
+      "description": "Higher protein, moderate carbs, lower fat for satiety and muscle preservation | Adapted for Thyroid Disorder: Iodine balance, selenium-rich foods, limit goitrogenic foods raw",
+      "health_condition": "Thyroid Disorder",
+      "health_condition_key": "thyroid"
+    }
+  },
+  {
+    "goal": "weight_loss",
+    "condition": "thyroid",
+    "calories": 1800,
+    "expected": {
+      "goal": "Weight Loss",
+      "goal_key": "weight_loss",
+      "target_calories": 1800,
+      "carbs_g": 176,
+      "protein_g": 162,
+      "fat_g": 50,
+      "carbs_percent": 39,
+      "protein_percent": 36,
+      "fat_percent": 25,
+      "description": "Higher protein, moderate carbs, lower fat for satiety and muscle preservation | Adapted for Thyroid Disorder: Iodine balance, selenium-rich foods, limit goitrogenic foods raw",
+      "health_condition": "Thyroid Disorder",
+      "health_condition_key": "thyroid"
+    }
+  },
+  {
+    "goal": "weight_loss",
+    "condition": "thyroid",
+    "calories": 2000,
+    "expected": {
+      "goal": "Weight Loss",
+      "goal_key": "weight_loss",
+      "target_calories": 2000,
+      "carbs_g": 195,
+      "protein_g": 180,
+      "fat_g": 56,
+      "carbs_percent": 39,
+      "protein_percent": 36,
+      "fat_percent": 25,
+      "description": "Higher protein, moderate carbs, lower fat for satiety and muscle preservation | Adapted for Thyroid Disorder: Iodine balance, selenium-rich foods, limit goitrogenic foods raw",
+      "health_condition": "Thyroid Disorder",
+      "health_condition_key": "thyroid"
+    }
+  },
+  {
+    "goal": "weight_loss",
+    "condition": "thyroid",
+    "calories": 2500,
+    "expected": {
+      "goal": "Weight Loss",
+      "goal_key": "weight_loss",
+      "target_calories": 2500,
+      "carbs_g": 244,
+      "protein_g": 225,
+      "fat_g": 69,
+      "carbs_percent": 39,
+      "protein_percent": 36,
+      "fat_percent": 25,
+      "description": "Higher protein, moderate carbs, lower fat for satiety and muscle preservation | Adapted for Thyroid Disorder: Iodine balance, selenium-rich foods, limit goitrogenic foods raw",
+      "health_condition": "Thyroid Disorder",
+      "health_condition_key": "thyroid"
+    }
+  },
+  {
+    "goal": "weight_loss",
+    "condition": "thyroid",
+    "calories": 5000,
+    "expected": {
+      "goal": "Weight Loss",
+      "goal_key": "weight_loss",
+      "target_calories": 5000,
+      "carbs_g": 488,
+      "protein_g": 450,
+      "fat_g": 139,
+      "carbs_percent": 39,
+      "protein_percent": 36,
+      "fat_percent": 25,
+      "description": "Higher protein, moderate carbs, lower fat for satiety and muscle preservation | Adapted for Thyroid Disorder: Iodine balance, selenium-rich foods, limit goitrogenic foods raw",
+      "health_condition": "Thyroid Disorder",
+      "health_condition_key": "thyroid"
+    }
+  },
+  {
+    "goal": "muscle_gain",
+    "condition": "none",
+    "calories": 500,
+    "expected": {
+      "goal": "Muscle Gain",
+      "goal_key": "muscle_gain",
+      "target_calories": 500,
+      "carbs_g": 50,
+      "protein_g": 38,
+      "fat_g": 17,
+      "carbs_percent": 40,
+      "protein_percent": 30,
+      "fat_percent": 30,
+      "description": "Balanced macros with adequate protein for muscle synthesis",
+      "health_condition": "None",
+      "health_condition_key": "none"
+    }
+  },
+  {
+    "goal": "muscle_gain",
+    "condition": "none",
+    "calories": 1500,
+    "expected": {
+      "goal": "Muscle Gain",
+      "goal_key": "muscle_gain",
+      "target_calories": 1500,
+      "carbs_g": 150,
+      "protein_g": 112,
+      "fat_g": 50,
+      "carbs_percent": 40,
+      "protein_percent": 30,
+      "fat_percent": 30,
+      "description": "Balanced macros with adequate protein for muscle synthesis",
+      "health_condition": "None",
+      "health_condition_key": "none"
+    }
+  },
+  {
+    "goal": "muscle_gain",
+    "condition": "none",
+    "calories": 1800,
+    "expected": {
+      "goal": "Muscle Gain",
+      "goal_key": "muscle_gain",
+      "target_calories": 1800,
+      "carbs_g": 180,
+      "protein_g": 135,
+      "fat_g": 60,
+      "carbs_percent": 40,
+      "protein_percent": 30,
+      "fat_percent": 30,
+      "description": "Balanced macros with adequate protein for muscle synthesis",
+      "health_condition": "None",
+      "health_condition_key": "none"
+    }
+  },
+  {
+    "goal": "muscle_gain",
+    "condition": "none",
+    "calories": 2000,
+    "expected": {
+      "goal": "Muscle Gain",
+      "goal_key": "muscle_gain",
+      "target_calories": 2000,
+      "carbs_g": 200,
+      "protein_g": 150,
+      "fat_g": 67,
+      "carbs_percent": 40,
+      "protein_percent": 30,
+      "fat_percent": 30,
+      "description": "Balanced macros with adequate protein for muscle synthesis",
+      "health_condition": "None",
+      "health_condition_key": "none"
+    }
+  },
+  {
+    "goal": "muscle_gain",
+    "condition": "none",
+    "calories": 2500,
+    "expected": {
+      "goal": "Muscle Gain",
+      "goal_key": "muscle_gain",
+      "target_calories": 2500,
+      "carbs_g": 250,
+      "protein_g": 188,
+      "fat_g": 83,
+      "carbs_percent": 40,
+      "protein_percent": 30,
+      "fat_percent": 30,
+      "description": "Balanced macros with adequate protein for muscle synthesis",
+      "health_condition": "None",
+      "health_condition_key": "none"
+    }
+  },
+  {
+    "goal": "muscle_gain",
+    "condition": "none",
+    "calories": 5000,
+    "expected": {
+      "goal": "Muscle Gain",
+      "goal_key": "muscle_gain",
+      "target_calories": 5000,
+      "carbs_g": 500,
+      "protein_g": 375,
+      "fat_g": 167,
+      "carbs_percent": 40,
+      "protein_percent": 30,
+      "fat_percent": 30,
+      "description": "Balanced macros with adequate protein for muscle synthesis",
+      "health_condition": "None",
+      "health_condition_key": "none"
+    }
+  },
+  {
+    "goal": "muscle_gain",
+    "condition": "diabetic",
+    "calories": 500,
+    "expected": {
+      "goal": "Muscle Gain",
+      "goal_key": "muscle_gain",
+      "target_calories": 500,
+      "carbs_g": 41,
+      "protein_g": 45,
+      "fat_g": 17,
+      "carbs_percent": 33,
+      "protein_percent": 36,
+      "fat_percent": 31,
+      "description": "Balanced macros with adequate protein for muscle synthesis | Adapted for Diabetic: Focus on low glycemic index foods, manage blood sugar spikes",
+      "health_condition": "Diabetic",
+      "health_condition_key": "diabetic"
+    }
+  },
+  {
+    "goal": "muscle_gain",
+    "condition": "diabetic",
+    "calories": 1500,
+    "expected": {
+      "goal": "Muscle Gain",
+      "goal_key": "muscle_gain",
+      "target_calories": 1500,
+      "carbs_g": 124,
+      "protein_g": 135,
+      "fat_g": 52,
+      "carbs_percent": 33,
+      "protein_percent": 36,
+      "fat_percent": 31,
+      "description": "Balanced macros with adequate protein for muscle synthesis | Adapted for Diabetic: Focus on low glycemic index foods, manage blood sugar spikes",
+      "health_condition": "Diabetic",
+      "health_condition_key": "diabetic"
+    }
+  },
+  {
+    "goal": "muscle_gain",
+    "condition": "diabetic",
+    "calories": 1800,
+    "expected": {
+      "goal": "Muscle Gain",
+      "goal_key": "muscle_gain",
+      "target_calories": 1800,
+      "carbs_g": 148,
+      "protein_g": 162,
+      "fat_g": 62,
+      "carbs_percent": 33,
+      "protein_percent": 36,
+      "fat_percent": 31,
+      "description": "Balanced macros with adequate protein for muscle synthesis | Adapted for Diabetic: Focus on low glycemic index foods, manage blood sugar spikes",
+      "health_condition": "Diabetic",
+      "health_condition_key": "diabetic"
+    }
+  },
+  {
+    "goal": "muscle_gain",
+    "condition": "diabetic",
+    "calories": 2000,
+    "expected": {
+      "goal": "Muscle Gain",
+      "goal_key": "muscle_gain",
+      "target_calories": 2000,
+      "carbs_g": 165,
+      "protein_g": 180,
+      "fat_g": 69,
+      "carbs_percent": 33,
+      "protein_percent": 36,
+      "fat_percent": 31,
+      "description": "Balanced macros with adequate protein for muscle synthesis | Adapted for Diabetic: Focus on low glycemic index foods, manage blood sugar spikes",
+      "health_condition": "Diabetic",
+      "health_condition_key": "diabetic"
+    }
+  },
+  {
+    "goal": "muscle_gain",
+    "condition": "diabetic",
+    "calories": 2500,
+    "expected": {
+      "goal": "Muscle Gain",
+      "goal_key": "muscle_gain",
+      "target_calories": 2500,
+      "carbs_g": 206,
+      "protein_g": 225,
+      "fat_g": 86,
+      "carbs_percent": 33,
+      "protein_percent": 36,
+      "fat_percent": 31,
+      "description": "Balanced macros with adequate protein for muscle synthesis | Adapted for Diabetic: Focus on low glycemic index foods, manage blood sugar spikes",
+      "health_condition": "Diabetic",
+      "health_condition_key": "diabetic"
+    }
+  },
+  {
+    "goal": "muscle_gain",
+    "condition": "diabetic",
+    "calories": 5000,
+    "expected": {
+      "goal": "Muscle Gain",
+      "goal_key": "muscle_gain",
+      "target_calories": 5000,
+      "carbs_g": 412,
+      "protein_g": 450,
+      "fat_g": 172,
+      "carbs_percent": 33,
+      "protein_percent": 36,
+      "fat_percent": 31,
+      "description": "Balanced macros with adequate protein for muscle synthesis | Adapted for Diabetic: Focus on low glycemic index foods, manage blood sugar spikes",
+      "health_condition": "Diabetic",
+      "health_condition_key": "diabetic"
+    }
+  },
+  {
+    "goal": "muscle_gain",
+    "condition": "hypertension",
+    "calories": 500,
+    "expected": {
+      "goal": "Muscle Gain",
+      "goal_key": "muscle_gain",
+      "target_calories": 500,
+      "carbs_g": 51,
+      "protein_g": 39,
+      "fat_g": 16,
+      "carbs_percent": 41,
+      "protein_percent": 31,
+      "fat_percent": 28,
+      "description": "Balanced macros with adequate protein for muscle synthesis | Adapted for Hypertension (High BP): Low sodium diet, avoid processed foods, focus on potassium-rich foods",
+      "health_condition": "Hypertension (High BP)",
+      "health_condition_key": "hypertension"
+    }
+  },
+  {
+    "goal": "muscle_gain",
+    "condition": "hypertension",
+    "calories": 1500,
+    "expected": {
+      "goal": "Muscle Gain",
+      "goal_key": "muscle_gain",
+      "target_calories": 1500,
+      "carbs_g": 154,
+      "protein_g": 116,
+      "fat_g": 47,
+      "carbs_percent": 41,
+      "protein_percent": 31,
+      "fat_percent": 28,
+      "description": "Balanced macros with adequate protein for muscle synthesis | Adapted for Hypertension (High BP): Low sodium diet, avoid processed foods, focus on potassium-rich foods",
+      "health_condition": "Hypertension (High BP)",
+      "health_condition_key": "hypertension"
+    }
+  },
+  {
+    "goal": "muscle_gain",
+    "condition": "hypertension",
+    "calories": 1800,
+    "expected": {
+      "goal": "Muscle Gain",
+      "goal_key": "muscle_gain",
+      "target_calories": 1800,
+      "carbs_g": 184,
+      "protein_g": 140,
+      "fat_g": 56,
+      "carbs_percent": 41,
+      "protein_percent": 31,
+      "fat_percent": 28,
+      "description": "Balanced macros with adequate protein for muscle synthesis | Adapted for Hypertension (High BP): Low sodium diet, avoid processed foods, focus on potassium-rich foods",
+      "health_condition": "Hypertension (High BP)",
+      "health_condition_key": "hypertension"
+    }
+  },
+  {
+    "goal": "muscle_gain",
+    "condition": "hypertension",
+    "calories": 2000,
+    "expected": {
+      "goal": "Muscle Gain",
+      "goal_key": "muscle_gain",
+      "target_calories": 2000,
+      "carbs_g": 205,
+      "protein_g": 155,
+      "fat_g": 62,
+      "carbs_percent": 41,
+      "protein_percent": 31,
+      "fat_percent": 28,
+      "description": "Balanced macros with adequate protein for muscle synthesis | Adapted for Hypertension (High BP): Low sodium diet, avoid processed foods, focus on potassium-rich foods",
+      "health_condition": "Hypertension (High BP)",
+      "health_condition_key": "hypertension"
+    }
+  },
+  {
+    "goal": "muscle_gain",
+    "condition": "hypertension",
+    "calories": 2500,
+    "expected": {
+      "goal": "Muscle Gain",
+      "goal_key": "muscle_gain",
+      "target_calories": 2500,
+      "carbs_g": 256,
+      "protein_g": 194,
+      "fat_g": 78,
+      "carbs_percent": 41,
+      "protein_percent": 31,
+      "fat_percent": 28,
+      "description": "Balanced macros with adequate protein for muscle synthesis | Adapted for Hypertension (High BP): Low sodium diet, avoid processed foods, focus on potassium-rich foods",
+      "health_condition": "Hypertension (High BP)",
+      "health_condition_key": "hypertension"
+    }
+  },
+  {
+    "goal": "muscle_gain",
+    "condition": "hypertension",
+    "calories": 5000,
+    "expected": {
+      "goal": "Muscle Gain",
+      "goal_key": "muscle_gain",
+      "target_calories": 5000,
+      "carbs_g": 512,
+      "protein_g": 388,
+      "fat_g": 156,
+      "carbs_percent": 41,
+      "protein_percent": 31,
+      "fat_percent": 28,
+      "description": "Balanced macros with adequate protein for muscle synthesis | Adapted for Hypertension (High BP): Low sodium diet, avoid processed foods, focus on potassium-rich foods",
+      "health_condition": "Hypertension (High BP)",
+      "health_condition_key": "hypertension"
+    }
+  },
+  {
+    "goal": "muscle_gain",
+    "condition": "heart_disease",
+    "calories": 500,
+    "expected": {
+      "goal": "Muscle Gain",
+      "goal_key": "muscle_gain",
+      "target_calories": 500,
+      "carbs_g": 55,
+      "protein_g": 39,
+      "fat_g": 14,
+      "carbs_percent": 44,
+      "protein_percent": 31,
+      "fat_percent": 25,
+      "description": "Balanced macros with adequate protein for muscle synthesis | Adapted for Heart Disease: Low saturated fat, low cholesterol, increase omega-3 fatty acids",
+      "health_condition": "Heart Disease",
+      "health_condition_key": "heart_disease"
+    }
+  },
+  {
+    "goal": "muscle_gain",
+    "condition": "heart_disease",
+    "calories": 1500,
+    "expected": {
+      "goal": "Muscle Gain",
+      "goal_key": "muscle_gain",
+      "target_calories": 1500,
+      "carbs_g": 165,
+      "protein_g": 116,
+      "fat_g": 42,
+      "carbs_percent": 44,
+      "protein_percent": 31,
+      "fat_percent": 25,
+      "description": "Balanced macros with adequate protein for muscle synthesis | Adapted for Heart Disease: Low saturated fat, low cholesterol, increase omega-3 fatty acids",
+      "health_condition": "Heart Disease",
+      "health_condition_key": "heart_disease"
+    }
+  },
+  {
+    "goal": "muscle_gain",
+    "condition": "heart_disease",
+    "calories": 1800,
+    "expected": {
+      "goal": "Muscle Gain",
+      "goal_key": "muscle_gain",
+      "target_calories": 1800,
+      "carbs_g": 198,
+      "protein_g": 140,
+      "fat_g": 50,
+      "carbs_percent": 44,
+      "protein_percent": 31,
+      "fat_percent": 25,
+      "description": "Balanced macros with adequate protein for muscle synthesis | Adapted for Heart Disease: Low saturated fat, low cholesterol, increase omega-3 fatty acids",
+      "health_condition": "Heart Disease",
+      "health_condition_key": "heart_disease"
+    }
+  },
+  {
+    "goal": "muscle_gain",
+    "condition": "heart_disease",
+    "calories": 2000,
+    "expected": {
+      "goal": "Muscle Gain",
+      "goal_key": "muscle_gain",
+      "target_calories": 2000,
+      "carbs_g": 220,
+      "protein_g": 155,
+      "fat_g": 56,
+      "carbs_percent": 44,
+      "protein_percent": 31,
+      "fat_percent": 25,
+      "description": "Balanced macros with adequate protein for muscle synthesis | Adapted for Heart Disease: Low saturated fat, low cholesterol, increase omega-3 fatty acids",
+      "health_condition": "Heart Disease",
+      "health_condition_key": "heart_disease"
+    }
+  },
+  {
+    "goal": "muscle_gain",
+    "condition": "heart_disease",
+    "calories": 2500,
+    "expected": {
+      "goal": "Muscle Gain",
+      "goal_key": "muscle_gain",
+      "target_calories": 2500,
+      "carbs_g": 275,
+      "protein_g": 194,
+      "fat_g": 69,
+      "carbs_percent": 44,
+      "protein_percent": 31,
+      "fat_percent": 25,
+      "description": "Balanced macros with adequate protein for muscle synthesis | Adapted for Heart Disease: Low saturated fat, low cholesterol, increase omega-3 fatty acids",
+      "health_condition": "Heart Disease",
+      "health_condition_key": "heart_disease"
+    }
+  },
+  {
+    "goal": "muscle_gain",
+    "condition": "heart_disease",
+    "calories": 5000,
+    "expected": {
+      "goal": "Muscle Gain",
+      "goal_key": "muscle_gain",
+      "target_calories": 5000,
+      "carbs_g": 550,
+      "protein_g": 388,
+      "fat_g": 139,
+      "carbs_percent": 44,
+      "protein_percent": 31,
+      "fat_percent": 25,
+      "description": "Balanced macros with adequate protein for muscle synthesis | Adapted for Heart Disease: Low saturated fat, low cholesterol, increase omega-3 fatty acids",
+      "health_condition": "Heart Disease",
+      "health_condition_key": "heart_disease"
+    }
+  },
+  {
+    "goal": "muscle_gain",
+    "condition": "high_cholesterol",
+    "calories": 500,
+    "expected": {
+      "goal": "Muscle Gain",
+      "goal_key": "muscle_gain",
+      "target_calories": 500,
+      "carbs_g": 54,
+      "protein_g": 42,
+      "fat_g": 13,
+      "carbs_percent": 43,
+      "protein_percent": 34,
+      "fat_percent": 23,
+      "description": "Balanced macros with adequate protein for muscle synthesis | Adapted for High Cholesterol: Low saturated and trans fats, high fiber, plant-based proteins preferred",
+      "health_condition": "High Cholesterol",
+      "health_condition_key": "high_cholesterol"
+    }
+  },
+  {
+    "goal": "muscle_gain",
+    "condition": "high_cholesterol",
+    "calories": 1500,
+    "expected": {
+      "goal": "Muscle Gain",
+      "goal_key": "muscle_gain",
+      "target_calories": 1500,
+      "carbs_g": 161,
+      "protein_g": 128,
+      "fat_g": 38,
+      "carbs_percent": 43,
+      "protein_percent": 34,
+      "fat_percent": 23,
+      "description": "Balanced macros with adequate protein for muscle synthesis | Adapted for High Cholesterol: Low saturated and trans fats, high fiber, plant-based proteins preferred",
+      "health_condition": "High Cholesterol",
+      "health_condition_key": "high_cholesterol"
+    }
+  },
+  {
+    "goal": "muscle_gain",
+    "condition": "high_cholesterol",
+    "calories": 1800,
+    "expected": {
+      "goal": "Muscle Gain",
+      "goal_key": "muscle_gain",
+      "target_calories": 1800,
+      "carbs_g": 194,
+      "protein_g": 153,
+      "fat_g": 46,
+      "carbs_percent": 43,
+      "protein_percent": 34,
+      "fat_percent": 23,
+      "description": "Balanced macros with adequate protein for muscle synthesis | Adapted for High Cholesterol: Low saturated and trans fats, high fiber, plant-based proteins preferred",
+      "health_condition": "High Cholesterol",
+      "health_condition_key": "high_cholesterol"
+    }
+  },
+  {
+    "goal": "muscle_gain",
+    "condition": "high_cholesterol",
+    "calories": 2000,
+    "expected": {
+      "goal": "Muscle Gain",
+      "goal_key": "muscle_gain",
+      "target_calories": 2000,
+      "carbs_g": 215,
+      "protein_g": 170,
+      "fat_g": 51,
+      "carbs_percent": 43,
+      "protein_percent": 34,
+      "fat_percent": 23,
+      "description": "Balanced macros with adequate protein for muscle synthesis | Adapted for High Cholesterol: Low saturated and trans fats, high fiber, plant-based proteins preferred",
+      "health_condition": "High Cholesterol",
+      "health_condition_key": "high_cholesterol"
+    }
+  },
+  {
+    "goal": "muscle_gain",
+    "condition": "high_cholesterol",
+    "calories": 2500,
+    "expected": {
+      "goal": "Muscle Gain",
+      "goal_key": "muscle_gain",
+      "target_calories": 2500,
+      "carbs_g": 269,
+      "protein_g": 212,
+      "fat_g": 64,
+      "carbs_percent": 43,
+      "protein_percent": 34,
+      "fat_percent": 23,
+      "description": "Balanced macros with adequate protein for muscle synthesis | Adapted for High Cholesterol: Low saturated and trans fats, high fiber, plant-based proteins preferred",
+      "health_condition": "High Cholesterol",
+      "health_condition_key": "high_cholesterol"
+    }
+  },
+  {
+    "goal": "muscle_gain",
+    "condition": "high_cholesterol",
+    "calories": 5000,
+    "expected": {
+      "goal": "Muscle Gain",
+      "goal_key": "muscle_gain",
+      "target_calories": 5000,
+      "carbs_g": 538,
+      "protein_g": 425,
+      "fat_g": 128,
+      "carbs_percent": 43,
+      "protein_percent": 34,
+      "fat_percent": 23,
+      "description": "Balanced macros with adequate protein for muscle synthesis | Adapted for High Cholesterol: Low saturated and trans fats, high fiber, plant-based proteins preferred",
+      "health_condition": "High Cholesterol",
+      "health_condition_key": "high_cholesterol"
+    }
+  },
+  {
+    "goal": "muscle_gain",
+    "condition": "digestive_issues",
+    "calories": 500,
+    "expected": {
+      "goal": "Muscle Gain",
+      "goal_key": "muscle_gain",
+      "target_calories": 500,
+      "carbs_g": 54,
+      "protein_g": 36,
+      "fat_g": 16,
+      "carbs_percent": 43,
+      "protein_percent": 29,
+      "fat_percent": 28,
+      "description": "Balanced macros with adequate protein for muscle synthesis | Adapted for Digestive Issues: Easily digestible foods, avoid spicy/oily food, small frequent meals",
+      "health_condition": "Digestive Issues",
+      "health_condition_key": "digestive_issues"
+    }
+  },
+  {
+    "goal": "muscle_gain",
+    "condition": "digestive_issues",
+    "calories": 1500,
+    "expected": {
+      "goal": "Muscle Gain",
+      "goal_key": "muscle_gain",
+      "target_calories": 1500,
+      "carbs_g": 161,
+      "protein_g": 109,
+      "fat_g": 47,
+      "carbs_percent": 43,
+      "protein_percent": 29,
+      "fat_percent": 28,
+      "description": "Balanced macros with adequate protein for muscle synthesis | Adapted for Digestive Issues: Easily digestible foods, avoid spicy/oily food, small frequent meals",
+      "health_condition": "Digestive Issues",
+      "health_condition_key": "digestive_issues"
+    }
+  },
+  {
+    "goal": "muscle_gain",
+    "condition": "digestive_issues",
+    "calories": 1800,
+    "expected": {
+      "goal": "Muscle Gain",
+      "goal_key": "muscle_gain",
+      "target_calories": 1800,
+      "carbs_g": 194,
+      "protein_g": 130,
+      "fat_g": 56,
+      "carbs_percent": 43,
+      "protein_percent": 29,
+      "fat_percent": 28,
+      "description": "Balanced macros with adequate protein for muscle synthesis | Adapted for Digestive Issues: Easily digestible foods, avoid spicy/oily food, small frequent meals",
+      "health_condition": "Digestive Issues",
+      "health_condition_key": "digestive_issues"
+    }
+  },
+  {
+    "goal": "muscle_gain",
+    "condition": "digestive_issues",
+    "calories": 2000,
+    "expected": {
+      "goal": "Muscle Gain",
+      "goal_key": "muscle_gain",
+      "target_calories": 2000,
+      "carbs_g": 215,
+      "protein_g": 145,
+      "fat_g": 62,
+      "carbs_percent": 43,
+      "protein_percent": 29,
+      "fat_percent": 28,
+      "description": "Balanced macros with adequate protein for muscle synthesis | Adapted for Digestive Issues: Easily digestible foods, avoid spicy/oily food, small frequent meals",
+      "health_condition": "Digestive Issues",
+      "health_condition_key": "digestive_issues"
+    }
+  },
+  {
+    "goal": "muscle_gain",
+    "condition": "digestive_issues",
+    "calories": 2500,
+    "expected": {
+      "goal": "Muscle Gain",
+      "goal_key": "muscle_gain",
+      "target_calories": 2500,
+      "carbs_g": 269,
+      "protein_g": 181,
+      "fat_g": 78,
+      "carbs_percent": 43,
+      "protein_percent": 29,
+      "fat_percent": 28,
+      "description": "Balanced macros with adequate protein for muscle synthesis | Adapted for Digestive Issues: Easily digestible foods, avoid spicy/oily food, small frequent meals",
+      "health_condition": "Digestive Issues",
+      "health_condition_key": "digestive_issues"
+    }
+  },
+  {
+    "goal": "muscle_gain",
+    "condition": "digestive_issues",
+    "calories": 5000,
+    "expected": {
+      "goal": "Muscle Gain",
+      "goal_key": "muscle_gain",
+      "target_calories": 5000,
+      "carbs_g": 538,
+      "protein_g": 362,
+      "fat_g": 156,
+      "carbs_percent": 43,
+      "protein_percent": 29,
+      "fat_percent": 28,
+      "description": "Balanced macros with adequate protein for muscle synthesis | Adapted for Digestive Issues: Easily digestible foods, avoid spicy/oily food, small frequent meals",
+      "health_condition": "Digestive Issues",
+      "health_condition_key": "digestive_issues"
+    }
+  },
+  {
+    "goal": "muscle_gain",
+    "condition": "kidney_disease",
+    "calories": 500,
+    "expected": {
+      "goal": "Muscle Gain",
+      "goal_key": "muscle_gain",
+      "target_calories": 500,
+      "carbs_g": 61,
+      "protein_g": 24,
+      "fat_g": 18,
+      "carbs_percent": 49,
+      "protein_percent": 19,
+      "fat_percent": 32,
+      "description": "Balanced macros with adequate protein for muscle synthesis | Adapted for Kidney Disease: Low potassium, low phosphorus, controlled protein intake",
+      "health_condition": "Kidney Disease",
+      "health_condition_key": "kidney_disease"
+    }
+  },
+  {
+    "goal": "muscle_gain",
+    "condition": "kidney_disease",
+    "calories": 1500,
+    "expected": {
+      "goal": "Muscle Gain",
+      "goal_key": "muscle_gain",
+      "target_calories": 1500,
+      "carbs_g": 184,
+      "protein_g": 71,
+      "fat_g": 53,
+      "carbs_percent": 49,
+      "protein_percent": 19,
+      "fat_percent": 32,
+      "description": "Balanced macros with adequate protein for muscle synthesis | Adapted for Kidney Disease: Low potassium, low phosphorus, controlled protein intake",
+      "health_condition": "Kidney Disease",
+      "health_condition_key": "kidney_disease"
+    }
+  },
+  {
+    "goal": "muscle_gain",
+    "condition": "kidney_disease",
+    "calories": 1800,
+    "expected": {
+      "goal": "Muscle Gain",
+      "goal_key": "muscle_gain",
+      "target_calories": 1800,
+      "carbs_g": 220,
+      "protein_g": 86,
+      "fat_g": 64,
+      "carbs_percent": 49,
+      "protein_percent": 19,
+      "fat_percent": 32,
+      "description": "Balanced macros with adequate protein for muscle synthesis | Adapted for Kidney Disease: Low potassium, low phosphorus, controlled protein intake",
+      "health_condition": "Kidney Disease",
+      "health_condition_key": "kidney_disease"
+    }
+  },
+  {
+    "goal": "muscle_gain",
+    "condition": "kidney_disease",
+    "calories": 2000,
+    "expected": {
+      "goal": "Muscle Gain",
+      "goal_key": "muscle_gain",
+      "target_calories": 2000,
+      "carbs_g": 245,
+      "protein_g": 95,
+      "fat_g": 71,
+      "carbs_percent": 49,
+      "protein_percent": 19,
+      "fat_percent": 32,
+      "description": "Balanced macros with adequate protein for muscle synthesis | Adapted for Kidney Disease: Low potassium, low phosphorus, controlled protein intake",
+      "health_condition": "Kidney Disease",
+      "health_condition_key": "kidney_disease"
+    }
+  },
+  {
+    "goal": "muscle_gain",
+    "condition": "kidney_disease",
+    "calories": 2500,
+    "expected": {
+      "goal": "Muscle Gain",
+      "goal_key": "muscle_gain",
+      "target_calories": 2500,
+      "carbs_g": 306,
+      "protein_g": 119,
+      "fat_g": 89,
+      "carbs_percent": 49,
+      "protein_percent": 19,
+      "fat_percent": 32,
+      "description": "Balanced macros with adequate protein for muscle synthesis | Adapted for Kidney Disease: Low potassium, low phosphorus, controlled protein intake",
+      "health_condition": "Kidney Disease",
+      "health_condition_key": "kidney_disease"
+    }
+  },
+  {
+    "goal": "muscle_gain",
+    "condition": "kidney_disease",
+    "calories": 5000,
+    "expected": {
+      "goal": "Muscle Gain",
+      "goal_key": "muscle_gain",
+      "target_calories": 5000,
+      "carbs_g": 612,
+      "protein_g": 238,
+      "fat_g": 178,
+      "carbs_percent": 49,
+      "protein_percent": 19,
+      "fat_percent": 32,
+      "description": "Balanced macros with adequate protein for muscle synthesis | Adapted for Kidney Disease: Low potassium, low phosphorus, controlled protein intake",
+      "health_condition": "Kidney Disease",
+      "health_condition_key": "kidney_disease"
+    }
+  },
+  {
+    "goal": "muscle_gain",
+    "condition": "anemia",
+    "calories": 500,
+    "expected": {
+      "goal": "Muscle Gain",
+      "goal_key": "muscle_gain",
+      "target_calories": 500,
+      "carbs_g": 50,
+      "protein_g": 41,
+      "fat_g": 15,
+      "carbs_percent": 40,
+      "protein_percent": 33,
+      "fat_percent": 27,
+      "description": "Balanced macros with adequate protein for muscle synthesis | Adapted for Anemia: Iron-rich foods, vitamin C to aid absorption, avoid tea/coffee with meals",
+      "health_condition": "Anemia",
+      "health_condition_key": "anemia"
+    }
+  },
+  {
+    "goal": "muscle_gain",
+    "condition": "anemia",
+    "calories": 1500,
+    "expected": {
+      "goal": "Muscle Gain",
+      "goal_key": "muscle_gain",
+      "target_calories": 1500,
+      "carbs_g": 150,
+      "protein_g": 124,
+      "fat_g": 45,
+      "carbs_percent": 40,
+      "protein_percent": 33,
+      "fat_percent": 27,
+      "description": "Balanced macros with adequate protein for muscle synthesis | Adapted for Anemia: Iron-rich foods, vitamin C to aid absorption, avoid tea/coffee with meals",
+      "health_condition": "Anemia",
+      "health_condition_key": "anemia"
+    }
+  },
+  {
+    "goal": "muscle_gain",
+    "condition": "anemia",
+    "calories": 1800,
+    "expected": {
+      "goal": "Muscle Gain",
+      "goal_key": "muscle_gain",
+      "target_calories": 1800,
+      "carbs_g": 180,
+      "protein_g": 148,
+      "fat_g": 54,
+      "carbs_percent": 40,
+      "protein_percent": 33,
+      "fat_percent": 27,
+      "description": "Balanced macros with adequate protein for muscle synthesis | Adapted for Anemia: Iron-rich foods, vitamin C to aid absorption, avoid tea/coffee with meals",
+      "health_condition": "Anemia",
+      "health_condition_key": "anemia"
+    }
+  },
+  {
+    "goal": "muscle_gain",
+    "condition": "anemia",
+    "calories": 2000,
+    "expected": {
+      "goal": "Muscle Gain",
+      "goal_key": "muscle_gain",
+      "target_calories": 2000,
+      "carbs_g": 200,
+      "protein_g": 165,
+      "fat_g": 60,
+      "carbs_percent": 40,
+      "protein_percent": 33,
+      "fat_percent": 27,
+      "description": "Balanced macros with adequate protein for muscle synthesis | Adapted for Anemia: Iron-rich foods, vitamin C to aid absorption, avoid tea/coffee with meals",
+      "health_condition": "Anemia",
+      "health_condition_key": "anemia"
+    }
+  },
+  {
+    "goal": "muscle_gain",
+    "condition": "anemia",
+    "calories": 2500,
+    "expected": {
+      "goal": "Muscle Gain",
+      "goal_key": "muscle_gain",
+      "target_calories": 2500,
+      "carbs_g": 250,
+      "protein_g": 206,
+      "fat_g": 75,
+      "carbs_percent": 40,
+      "protein_percent": 33,
+      "fat_percent": 27,
+      "description": "Balanced macros with adequate protein for muscle synthesis | Adapted for Anemia: Iron-rich foods, vitamin C to aid absorption, avoid tea/coffee with meals",
+      "health_condition": "Anemia",
+      "health_condition_key": "anemia"
+    }
+  },
+  {
+    "goal": "muscle_gain",
+    "condition": "anemia",
+    "calories": 5000,
+    "expected": {
+      "goal": "Muscle Gain",
+      "goal_key": "muscle_gain",
+      "target_calories": 5000,
+      "carbs_g": 500,
+      "protein_g": 412,
+      "fat_g": 150,
+      "carbs_percent": 40,
+      "protein_percent": 33,
+      "fat_percent": 27,
+      "description": "Balanced macros with adequate protein for muscle synthesis | Adapted for Anemia: Iron-rich foods, vitamin C to aid absorption, avoid tea/coffee with meals",
+      "health_condition": "Anemia",
+      "health_condition_key": "anemia"
+    }
+  },
+  {
+    "goal": "muscle_gain",
+    "condition": "thyroid",
+    "calories": 500,
+    "expected": {
+      "goal": "Muscle Gain",
+      "goal_key": "muscle_gain",
+      "target_calories": 500,
+      "carbs_g": 49,
+      "protein_g": 39,
+      "fat_g": 17,
+      "carbs_percent": 39,
+      "protein_percent": 31,
+      "fat_percent": 30,
+      "description": "Balanced macros with adequate protein for muscle synthesis | Adapted for Thyroid Disorder: Iodine balance, selenium-rich foods, limit goitrogenic foods raw",
+      "health_condition": "Thyroid Disorder",
+      "health_condition_key": "thyroid"
+    }
+  },
+  {
+    "goal": "muscle_gain",
+    "condition": "thyroid",
+    "calories": 1500,
+    "expected": {
+      "goal": "Muscle Gain",
+      "goal_key": "muscle_gain",
+      "target_calories": 1500,
+      "carbs_g": 146,
+      "protein_g": 116,
+      "fat_g": 50,
+      "carbs_percent": 39,
+      "protein_percent": 31,
+      "fat_percent": 30,
+      "description": "Balanced macros with adequate protein for muscle synthesis | Adapted for Thyroid Disorder: Iodine balance, selenium-rich foods, limit goitrogenic foods raw",
+      "health_condition": "Thyroid Disorder",
+      "health_condition_key": "thyroid"
+    }
+  },
+  {
+    "goal": "muscle_gain",
+    "condition": "thyroid",
+    "calories": 1800,
+    "expected": {
+      "goal": "Muscle Gain",
+      "goal_key": "muscle_gain",
+      "target_calories": 1800,
+      "carbs_g": 176,
+      "protein_g": 140,
+      "fat_g": 60,
+      "carbs_percent": 39,
+      "protein_percent": 31,
+      "fat_percent": 30,
+      "description": "Balanced macros with adequate protein for muscle synthesis | Adapted for Thyroid Disorder: Iodine balance, selenium-rich foods, limit goitrogenic foods raw",
+      "health_condition": "Thyroid Disorder",
+      "health_condition_key": "thyroid"
+    }
+  },
+  {
+    "goal": "muscle_gain",
+    "condition": "thyroid",
+    "calories": 2000,
+    "expected": {
+      "goal": "Muscle Gain",
+      "goal_key": "muscle_gain",
+      "target_calories": 2000,
+      "carbs_g": 195,
+      "protein_g": 155,
+      "fat_g": 67,
+      "carbs_percent": 39,
+      "protein_percent": 31,
+      "fat_percent": 30,
+      "description": "Balanced macros with adequate protein for muscle synthesis | Adapted for Thyroid Disorder: Iodine balance, selenium-rich foods, limit goitrogenic foods raw",
+      "health_condition": "Thyroid Disorder",
+      "health_condition_key": "thyroid"
+    }
+  },
+  {
+    "goal": "muscle_gain",
+    "condition": "thyroid",
+    "calories": 2500,
+    "expected": {
+      "goal": "Muscle Gain",
+      "goal_key": "muscle_gain",
+      "target_calories": 2500,
+      "carbs_g": 244,
+      "protein_g": 194,
+      "fat_g": 83,
+      "carbs_percent": 39,
+      "protein_percent": 31,
+      "fat_percent": 30,
+      "description": "Balanced macros with adequate protein for muscle synthesis | Adapted for Thyroid Disorder: Iodine balance, selenium-rich foods, limit goitrogenic foods raw",
+      "health_condition": "Thyroid Disorder",
+      "health_condition_key": "thyroid"
+    }
+  },
+  {
+    "goal": "muscle_gain",
+    "condition": "thyroid",
+    "calories": 5000,
+    "expected": {
+      "goal": "Muscle Gain",
+      "goal_key": "muscle_gain",
+      "target_calories": 5000,
+      "carbs_g": 488,
+      "protein_g": 388,
+      "fat_g": 167,
+      "carbs_percent": 39,
+      "protein_percent": 31,
+      "fat_percent": 30,
+      "description": "Balanced macros with adequate protein for muscle synthesis | Adapted for Thyroid Disorder: Iodine balance, selenium-rich foods, limit goitrogenic foods raw",
+      "health_condition": "Thyroid Disorder",
+      "health_condition_key": "thyroid"
+    }
+  },
+  {
+    "goal": "maintenance",
+    "condition": "none",
+    "calories": 500,
+    "expected": {
+      "goal": "Maintenance",
+      "goal_key": "maintenance",
+      "target_calories": 500,
+      "carbs_g": 62,
+      "protein_g": 31,
+      "fat_g": 14,
+      "carbs_percent": 50,
+      "protein_percent": 25,
+      "fat_percent": 25,
+      "description": "Balanced nutrition for maintaining current weight",
+      "health_condition": "None",
+      "health_condition_key": "none"
+    }
+  },
+  {
+    "goal": "maintenance",
+    "condition": "none",
+    "calories": 1500,
+    "expected": {
+      "goal": "Maintenance",
+      "goal_key": "maintenance",
+      "target_calories": 1500,
+      "carbs_g": 188,
+      "protein_g": 94,
+      "fat_g": 42,
+      "carbs_percent": 50,
+      "protein_percent": 25,
+      "fat_percent": 25,
+      "description": "Balanced nutrition for maintaining current weight",
+      "health_condition": "None",
+      "health_condition_key": "none"
+    }
+  },
+  {
+    "goal": "maintenance",
+    "condition": "none",
+    "calories": 1800,
+    "expected": {
+      "goal": "Maintenance",
+      "goal_key": "maintenance",
+      "target_calories": 1800,
+      "carbs_g": 225,
+      "protein_g": 112,
+      "fat_g": 50,
+      "carbs_percent": 50,
+      "protein_percent": 25,
+      "fat_percent": 25,
+      "description": "Balanced nutrition for maintaining current weight",
+      "health_condition": "None",
+      "health_condition_key": "none"
+    }
+  },
+  {
+    "goal": "maintenance",
+    "condition": "none",
+    "calories": 2000,
+    "expected": {
+      "goal": "Maintenance",
+      "goal_key": "maintenance",
+      "target_calories": 2000,
+      "carbs_g": 250,
+      "protein_g": 125,
+      "fat_g": 56,
+      "carbs_percent": 50,
+      "protein_percent": 25,
+      "fat_percent": 25,
+      "description": "Balanced nutrition for maintaining current weight",
+      "health_condition": "None",
+      "health_condition_key": "none"
+    }
+  },
+  {
+    "goal": "maintenance",
+    "condition": "none",
+    "calories": 2500,
+    "expected": {
+      "goal": "Maintenance",
+      "goal_key": "maintenance",
+      "target_calories": 2500,
+      "carbs_g": 312,
+      "protein_g": 156,
+      "fat_g": 69,
+      "carbs_percent": 50,
+      "protein_percent": 25,
+      "fat_percent": 25,
+      "description": "Balanced nutrition for maintaining current weight",
+      "health_condition": "None",
+      "health_condition_key": "none"
+    }
+  },
+  {
+    "goal": "maintenance",
+    "condition": "none",
+    "calories": 5000,
+    "expected": {
+      "goal": "Maintenance",
+      "goal_key": "maintenance",
+      "target_calories": 5000,
+      "carbs_g": 625,
+      "protein_g": 312,
+      "fat_g": 139,
+      "carbs_percent": 50,
+      "protein_percent": 25,
+      "fat_percent": 25,
+      "description": "Balanced nutrition for maintaining current weight",
+      "health_condition": "None",
+      "health_condition_key": "none"
+    }
+  },
+  {
+    "goal": "maintenance",
+    "condition": "diabetic",
+    "calories": 500,
+    "expected": {
+      "goal": "Maintenance",
+      "goal_key": "maintenance",
+      "target_calories": 500,
+      "carbs_g": 54,
+      "protein_g": 39,
+      "fat_g": 14,
+      "carbs_percent": 43,
+      "protein_percent": 31,
+      "fat_percent": 26,
+      "description": "Balanced nutrition for maintaining current weight | Adapted for Diabetic: Focus on low glycemic index foods, manage blood sugar spikes",
+      "health_condition": "Diabetic",
+      "health_condition_key": "diabetic"
+    }
+  },
+  {
+    "goal": "maintenance",
+    "condition": "diabetic",
+    "calories": 1500,
+    "expected": {
+      "goal": "Maintenance",
+      "goal_key": "maintenance",
+      "target_calories": 1500,
+      "carbs_g": 161,
+      "protein_g": 116,
+      "fat_g": 43,
+      "carbs_percent": 43,
+      "protein_percent": 31,
+      "fat_percent": 26,
+      "description": "Balanced nutrition for maintaining current weight | Adapted for Diabetic: Focus on low glycemic index foods, manage blood sugar spikes",
+      "health_condition": "Diabetic",
+      "health_condition_key": "diabetic"
+    }
+  },
+  {
+    "goal": "maintenance",
+    "condition": "diabetic",
+    "calories": 1800,
+    "expected": {
+      "goal": "Maintenance",
+      "goal_key": "maintenance",
+      "target_calories": 1800,
+      "carbs_g": 194,
+      "protein_g": 140,
+      "fat_g": 52,
+      "carbs_percent": 43,
+      "protein_percent": 31,
+      "fat_percent": 26,
+      "description": "Balanced nutrition for maintaining current weight | Adapted for Diabetic: Focus on low glycemic index foods, manage blood sugar spikes",
+      "health_condition": "Diabetic",
+      "health_condition_key": "diabetic"
+    }
+  },
+  {
+    "goal": "maintenance",
+    "condition": "diabetic",
+    "calories": 2000,
+    "expected": {
+      "goal": "Maintenance",
+      "goal_key": "maintenance",
+      "target_calories": 2000,
+      "carbs_g": 215,
+      "protein_g": 155,
+      "fat_g": 58,
+      "carbs_percent": 43,
+      "protein_percent": 31,
+      "fat_percent": 26,
+      "description": "Balanced nutrition for maintaining current weight | Adapted for Diabetic: Focus on low glycemic index foods, manage blood sugar spikes",
+      "health_condition": "Diabetic",
+      "health_condition_key": "diabetic"
+    }
+  },
+  {
+    "goal": "maintenance",
+    "condition": "diabetic",
+    "calories": 2500,
+    "expected": {
+      "goal": "Maintenance",
+      "goal_key": "maintenance",
+      "target_calories": 2500,
+      "carbs_g": 269,
+      "protein_g": 194,
+      "fat_g": 72,
+      "carbs_percent": 43,
+      "protein_percent": 31,
+      "fat_percent": 26,
+      "description": "Balanced nutrition for maintaining current weight | Adapted for Diabetic: Focus on low glycemic index foods, manage blood sugar spikes",
+      "health_condition": "Diabetic",
+      "health_condition_key": "diabetic"
+    }
+  },
+  {
+    "goal": "maintenance",
+    "condition": "diabetic",
+    "calories": 5000,
+    "expected": {
+      "goal": "Maintenance",
+      "goal_key": "maintenance",
+      "target_calories": 5000,
+      "carbs_g": 538,
+      "protein_g": 388,
+      "fat_g": 144,
+      "carbs_percent": 43,
+      "protein_percent": 31,
+      "fat_percent": 26,
+      "description": "Balanced nutrition for maintaining current weight | Adapted for Diabetic: Focus on low glycemic index foods, manage blood sugar spikes",
+      "health_condition": "Diabetic",
+      "health_condition_key": "diabetic"
+    }
+  },
+  {
+    "goal": "maintenance",
+    "condition": "hypertension",
+    "calories": 500,
+    "expected": {
+      "goal": "Maintenance",
+      "goal_key": "maintenance",
+      "target_calories": 500,
+      "carbs_g": 64,
+      "protein_g": 32,
+      "fat_g": 13,
+      "carbs_percent": 51,
+      "protein_percent": 26,
+      "fat_percent": 23,
+      "description": "Balanced nutrition for maintaining current weight | Adapted for Hypertension (High BP): Low sodium diet, avoid processed foods, focus on potassium-rich foods",
+      "health_condition": "Hypertension (High BP)",
+      "health_condition_key": "hypertension"
+    }
+  },
+  {
+    "goal": "maintenance",
+    "condition": "hypertension",
+    "calories": 1500,
+    "expected": {
+      "goal": "Maintenance",
+      "goal_key": "maintenance",
+      "target_calories": 1500,
+      "carbs_g": 191,
+      "protein_g": 98,
+      "fat_g": 38,
+      "carbs_percent": 51,
+      "protein_percent": 26,
+      "fat_percent": 23,
+      "description": "Balanced nutrition for maintaining current weight | Adapted for Hypertension (High BP): Low sodium diet, avoid processed foods, focus on potassium-rich foods",
+      "health_condition": "Hypertension (High BP)",
+      "health_condition_key": "hypertension"
+    }
+  },
+  {
+    "goal": "maintenance",
+    "condition": "hypertension",
+    "calories": 1800,
+    "expected": {
+      "goal": "Maintenance",
+      "goal_key": "maintenance",
+      "target_calories": 1800,
+      "carbs_g": 230,
+      "protein_g": 117,
+      "fat_g": 46,
+      "carbs_percent": 51,
+      "protein_percent": 26,
+      "fat_percent": 23,
+      "description": "Balanced nutrition for maintaining current weight | Adapted for Hypertension (High BP): Low sodium diet, avoid processed foods, focus on potassium-rich foods",
+      "health_condition": "Hypertension (High BP)",
+      "health_condition_key": "hypertension"
+    }
+  },
+  {
+    "goal": "maintenance",
+    "condition": "hypertension",
+    "calories": 2000,
+    "expected": {
+      "goal": "Maintenance",
+      "goal_key": "maintenance",
+      "target_calories": 2000,
+      "carbs_g": 255,
+      "protein_g": 130,
+      "fat_g": 51,
+      "carbs_percent": 51,
+      "protein_percent": 26,
+      "fat_percent": 23,
+      "description": "Balanced nutrition for maintaining current weight | Adapted for Hypertension (High BP): Low sodium diet, avoid processed foods, focus on potassium-rich foods",
+      "health_condition": "Hypertension (High BP)",
+      "health_condition_key": "hypertension"
+    }
+  },
+  {
+    "goal": "maintenance",
+    "condition": "hypertension",
+    "calories": 2500,
+    "expected": {
+      "goal": "Maintenance",
+      "goal_key": "maintenance",
+      "target_calories": 2500,
+      "carbs_g": 319,
+      "protein_g": 162,
+      "fat_g": 64,
+      "carbs_percent": 51,
+      "protein_percent": 26,
+      "fat_percent": 23,
+      "description": "Balanced nutrition for maintaining current weight | Adapted for Hypertension (High BP): Low sodium diet, avoid processed foods, focus on potassium-rich foods",
+      "health_condition": "Hypertension (High BP)",
+      "health_condition_key": "hypertension"
+    }
+  },
+  {
+    "goal": "maintenance",
+    "condition": "hypertension",
+    "calories": 5000,
+    "expected": {
+      "goal": "Maintenance",
+      "goal_key": "maintenance",
+      "target_calories": 5000,
+      "carbs_g": 638,
+      "protein_g": 325,
+      "fat_g": 128,
+      "carbs_percent": 51,
+      "protein_percent": 26,
+      "fat_percent": 23,
+      "description": "Balanced nutrition for maintaining current weight | Adapted for Hypertension (High BP): Low sodium diet, avoid processed foods, focus on potassium-rich foods",
+      "health_condition": "Hypertension (High BP)",
+      "health_condition_key": "hypertension"
+    }
+  },
+  {
+    "goal": "maintenance",
+    "condition": "heart_disease",
+    "calories": 500,
+    "expected": {
+      "goal": "Maintenance",
+      "goal_key": "maintenance",
+      "target_calories": 500,
+      "carbs_g": 68,
+      "protein_g": 32,
+      "fat_g": 11,
+      "carbs_percent": 54,
+      "protein_percent": 26,
+      "fat_percent": 20,
+      "description": "Balanced nutrition for maintaining current weight | Adapted for Heart Disease: Low saturated fat, low cholesterol, increase omega-3 fatty acids",
+      "health_condition": "Heart Disease",
+      "health_condition_key": "heart_disease"
+    }
+  },
+  {
+    "goal": "maintenance",
+    "condition": "heart_disease",
+    "calories": 1500,
+    "expected": {
+      "goal": "Maintenance",
+      "goal_key": "maintenance",
+      "target_calories": 1500,
+      "carbs_g": 202,
+      "protein_g": 98,
+      "fat_g": 33,
+      "carbs_percent": 54,
+      "protein_percent": 26,
+      "fat_percent": 20,
+      "description": "Balanced nutrition for maintaining current weight | Adapted for Heart Disease: Low saturated fat, low cholesterol, increase omega-3 fatty acids",
+      "health_condition": "Heart Disease",
+      "health_condition_key": "heart_disease"
+    }
+  },
+  {
+    "goal": "maintenance",
+    "condition": "heart_disease",
+    "calories": 1800,
+    "expected": {
+      "goal": "Maintenance",
+      "goal_key": "maintenance",
+      "target_calories": 1800,
+      "carbs_g": 243,
+      "protein_g": 117,
+      "fat_g": 40,
+      "carbs_percent": 54,
+      "protein_percent": 26,
+      "fat_percent": 20,
+      "description": "Balanced nutrition for maintaining current weight | Adapted for Heart Disease: Low saturated fat, low cholesterol, increase omega-3 fatty acids",
+      "health_condition": "Heart Disease",
+      "health_condition_key": "heart_disease"
+    }
+  },
+  {
+    "goal": "maintenance",
+    "condition": "heart_disease",
+    "calories": 2000,
+    "expected": {
+      "goal": "Maintenance",
+      "goal_key": "maintenance",
+      "target_calories": 2000,
+      "carbs_g": 270,
+      "protein_g": 130,
+      "fat_g": 44,
+      "carbs_percent": 54,
+      "protein_percent": 26,
+      "fat_percent": 20,
+      "description": "Balanced nutrition for maintaining current weight | Adapted for Heart Disease: Low saturated fat, low cholesterol, increase omega-3 fatty acids",
+      "health_condition": "Heart Disease",
+      "health_condition_key": "heart_disease"
+    }
+  },
+  {
+    "goal": "maintenance",
+    "condition": "heart_disease",
+    "calories": 2500,
+    "expected": {
+      "goal": "Maintenance",
+      "goal_key": "maintenance",
+      "target_calories": 2500,
+      "carbs_g": 338,
+      "protein_g": 162,
+      "fat_g": 56,
+      "carbs_percent": 54,
+      "protein_percent": 26,
+      "fat_percent": 20,
+      "description": "Balanced nutrition for maintaining current weight | Adapted for Heart Disease: Low saturated fat, low cholesterol, increase omega-3 fatty acids",
+      "health_condition": "Heart Disease",
+      "health_condition_key": "heart_disease"
+    }
+  },
+  {
+    "goal": "maintenance",
+    "condition": "heart_disease",
+    "calories": 5000,
+    "expected": {
+      "goal": "Maintenance",
+      "goal_key": "maintenance",
+      "target_calories": 5000,
+      "carbs_g": 675,
+      "protein_g": 325,
+      "fat_g": 111,
+      "carbs_percent": 54,
+      "protein_percent": 26,
+      "fat_percent": 20,
+      "description": "Balanced nutrition for maintaining current weight | Adapted for Heart Disease: Low saturated fat, low cholesterol, increase omega-3 fatty acids",
+      "health_condition": "Heart Disease",
+      "health_condition_key": "heart_disease"
+    }
+  },
+  {
+    "goal": "maintenance",
+    "condition": "high_cholesterol",
+    "calories": 500,
+    "expected": {
+      "goal": "Maintenance",
+      "goal_key": "maintenance",
+      "target_calories": 500,
+      "carbs_g": 66,
+      "protein_g": 35,
+      "fat_g": 11,
+      "carbs_percent": 53,
+      "protein_percent": 28,
+      "fat_percent": 19,
+      "description": "Balanced nutrition for maintaining current weight | Adapted for High Cholesterol: Low saturated and trans fats, high fiber, plant-based proteins preferred",
+      "health_condition": "High Cholesterol",
+      "health_condition_key": "high_cholesterol"
+    }
+  },
+  {
+    "goal": "maintenance",
+    "condition": "high_cholesterol",
+    "calories": 1500,
+    "expected": {
+      "goal": "Maintenance",
+      "goal_key": "maintenance",
+      "target_calories": 1500,
+      "carbs_g": 199,
+      "protein_g": 105,
+      "fat_g": 32,
+      "carbs_percent": 53,
+      "protein_percent": 28,
+      "fat_percent": 19,
+      "description": "Balanced nutrition for maintaining current weight | Adapted for High Cholesterol: Low saturated and trans fats, high fiber, plant-based proteins preferred",
+      "health_condition": "High Cholesterol",
+      "health_condition_key": "high_cholesterol"
+    }
+  },
+  {
+    "goal": "maintenance",
+    "condition": "high_cholesterol",
+    "calories": 1800,
+    "expected": {
+      "goal": "Maintenance",
+      "goal_key": "maintenance",
+      "target_calories": 1800,
+      "carbs_g": 238,
+      "protein_g": 126,
+      "fat_g": 38,
+      "carbs_percent": 53,
+      "protein_percent": 28,
+      "fat_percent": 19,
+      "description": "Balanced nutrition for maintaining current weight | Adapted for High Cholesterol: Low saturated and trans fats, high fiber, plant-based proteins preferred",
+      "health_condition": "High Cholesterol",
+      "health_condition_key": "high_cholesterol"
+    }
+  },
+  {
+    "goal": "maintenance",
+    "condition": "high_cholesterol",
+    "calories": 2000,
+    "expected": {
+      "goal": "Maintenance",
+      "goal_key": "maintenance",
+      "target_calories": 2000,
+      "carbs_g": 265,
+      "protein_g": 140,
+      "fat_g": 42,
+      "carbs_percent": 53,
+      "protein_percent": 28,
+      "fat_percent": 19,
+      "description": "Balanced nutrition for maintaining current weight | Adapted for High Cholesterol: Low saturated and trans fats, high fiber, plant-based proteins preferred",
+      "health_condition": "High Cholesterol",
+      "health_condition_key": "high_cholesterol"
+    }
+  },
+  {
+    "goal": "maintenance",
+    "condition": "high_cholesterol",
+    "calories": 2500,
+    "expected": {
+      "goal": "Maintenance",
+      "goal_key": "maintenance",
+      "target_calories": 2500,
+      "carbs_g": 331,
+      "protein_g": 175,
+      "fat_g": 53,
+      "carbs_percent": 53,
+      "protein_percent": 28,
+      "fat_percent": 19,
+      "description": "Balanced nutrition for maintaining current weight | Adapted for High Cholesterol: Low saturated and trans fats, high fiber, plant-based proteins preferred",
+      "health_condition": "High Cholesterol",
+      "health_condition_key": "high_cholesterol"
+    }
+  },
+  {
+    "goal": "maintenance",
+    "condition": "high_cholesterol",
+    "calories": 5000,
+    "expected": {
+      "goal": "Maintenance",
+      "goal_key": "maintenance",
+      "target_calories": 5000,
+      "carbs_g": 662,
+      "protein_g": 350,
+      "fat_g": 106,
+      "carbs_percent": 53,
+      "protein_percent": 28,
+      "fat_percent": 19,
+      "description": "Balanced nutrition for maintaining current weight | Adapted for High Cholesterol: Low saturated and trans fats, high fiber, plant-based proteins preferred",
+      "health_condition": "High Cholesterol",
+      "health_condition_key": "high_cholesterol"
+    }
+  },
+  {
+    "goal": "maintenance",
+    "condition": "digestive_issues",
+    "calories": 500,
+    "expected": {
+      "goal": "Maintenance",
+      "goal_key": "maintenance",
+      "target_calories": 500,
+      "carbs_g": 66,
+      "protein_g": 30,
+      "fat_g": 13,
+      "carbs_percent": 53,
+      "protein_percent": 24,
+      "fat_percent": 23,
+      "description": "Balanced nutrition for maintaining current weight | Adapted for Digestive Issues: Easily digestible foods, avoid spicy/oily food, small frequent meals",
+      "health_condition": "Digestive Issues",
+      "health_condition_key": "digestive_issues"
+    }
+  },
+  {
+    "goal": "maintenance",
+    "condition": "digestive_issues",
+    "calories": 1500,
+    "expected": {
+      "goal": "Maintenance",
+      "goal_key": "maintenance",
+      "target_calories": 1500,
+      "carbs_g": 199,
+      "protein_g": 90,
+      "fat_g": 38,
+      "carbs_percent": 53,
+      "protein_percent": 24,
+      "fat_percent": 23,
+      "description": "Balanced nutrition for maintaining current weight | Adapted for Digestive Issues: Easily digestible foods, avoid spicy/oily food, small frequent meals",
+      "health_condition": "Digestive Issues",
+      "health_condition_key": "digestive_issues"
+    }
+  },
+  {
+    "goal": "maintenance",
+    "condition": "digestive_issues",
+    "calories": 1800,
+    "expected": {
+      "goal": "Maintenance",
+      "goal_key": "maintenance",
+      "target_calories": 1800,
+      "carbs_g": 238,
+      "protein_g": 108,
+      "fat_g": 46,
+      "carbs_percent": 53,
+      "protein_percent": 24,
+      "fat_percent": 23,
+      "description": "Balanced nutrition for maintaining current weight | Adapted for Digestive Issues: Easily digestible foods, avoid spicy/oily food, small frequent meals",
+      "health_condition": "Digestive Issues",
+      "health_condition_key": "digestive_issues"
+    }
+  },
+  {
+    "goal": "maintenance",
+    "condition": "digestive_issues",
+    "calories": 2000,
+    "expected": {
+      "goal": "Maintenance",
+      "goal_key": "maintenance",
+      "target_calories": 2000,
+      "carbs_g": 265,
+      "protein_g": 120,
+      "fat_g": 51,
+      "carbs_percent": 53,
+      "protein_percent": 24,
+      "fat_percent": 23,
+      "description": "Balanced nutrition for maintaining current weight | Adapted for Digestive Issues: Easily digestible foods, avoid spicy/oily food, small frequent meals",
+      "health_condition": "Digestive Issues",
+      "health_condition_key": "digestive_issues"
+    }
+  },
+  {
+    "goal": "maintenance",
+    "condition": "digestive_issues",
+    "calories": 2500,
+    "expected": {
+      "goal": "Maintenance",
+      "goal_key": "maintenance",
+      "target_calories": 2500,
+      "carbs_g": 331,
+      "protein_g": 150,
+      "fat_g": 64,
+      "carbs_percent": 53,
+      "protein_percent": 24,
+      "fat_percent": 23,
+      "description": "Balanced nutrition for maintaining current weight | Adapted for Digestive Issues: Easily digestible foods, avoid spicy/oily food, small frequent meals",
+      "health_condition": "Digestive Issues",
+      "health_condition_key": "digestive_issues"
+    }
+  },
+  {
+    "goal": "maintenance",
+    "condition": "digestive_issues",
+    "calories": 5000,
+    "expected": {
+      "goal": "Maintenance",
+      "goal_key": "maintenance",
+      "target_calories": 5000,
+      "carbs_g": 662,
+      "protein_g": 300,
+      "fat_g": 128,
+      "carbs_percent": 53,
+      "protein_percent": 24,
+      "fat_percent": 23,
+      "description": "Balanced nutrition for maintaining current weight | Adapted for Digestive Issues: Easily digestible foods, avoid spicy/oily food, small frequent meals",
+      "health_condition": "Digestive Issues",
+      "health_condition_key": "digestive_issues"
+    }
+  },
+  {
+    "goal": "maintenance",
+    "condition": "kidney_disease",
+    "calories": 500,
+    "expected": {
+      "goal": "Maintenance",
+      "goal_key": "maintenance",
+      "target_calories": 500,
+      "carbs_g": 74,
+      "protein_g": 19,
+      "fat_g": 14,
+      "carbs_percent": 59,
+      "protein_percent": 15,
+      "fat_percent": 26,
+      "description": "Balanced nutrition for maintaining current weight | Adapted for Kidney Disease: Low potassium, low phosphorus, controlled protein intake",
+      "health_condition": "Kidney Disease",
+      "health_condition_key": "kidney_disease"
+    }
+  },
+  {
+    "goal": "maintenance",
+    "condition": "kidney_disease",
+    "calories": 1500,
+    "expected": {
+      "goal": "Maintenance",
+      "goal_key": "maintenance",
+      "target_calories": 1500,
+      "carbs_g": 221,
+      "protein_g": 56,
+      "fat_g": 43,
+      "carbs_percent": 59,
+      "protein_percent": 15,
+      "fat_percent": 26,
+      "description": "Balanced nutrition for maintaining current weight | Adapted for Kidney Disease: Low potassium, low phosphorus, controlled protein intake",
+      "health_condition": "Kidney Disease",
+      "health_condition_key": "kidney_disease"
+    }
+  },
+  {
+    "goal": "maintenance",
+    "condition": "kidney_disease",
+    "calories": 1800,
+    "expected": {
+      "goal": "Maintenance",
+      "goal_key": "maintenance",
+      "target_calories": 1800,
+      "carbs_g": 266,
+      "protein_g": 68,
+      "fat_g": 52,
+      "carbs_percent": 59,
+      "protein_percent": 15,
+      "fat_percent": 26,
+      "description": "Balanced nutrition for maintaining current weight | Adapted for Kidney Disease: Low potassium, low phosphorus, controlled protein intake",
+      "health_condition": "Kidney Disease",
+      "health_condition_key": "kidney_disease"
+    }
+  },
+  {
+    "goal": "maintenance",
+    "condition": "kidney_disease",
+    "calories": 2000,
+    "expected": {
+      "goal": "Maintenance",
+      "goal_key": "maintenance",
+      "target_calories": 2000,
+      "carbs_g": 295,
+      "protein_g": 75,
+      "fat_g": 58,
+      "carbs_percent": 59,
+      "protein_percent": 15,
+      "fat_percent": 26,
+      "description": "Balanced nutrition for maintaining current weight | Adapted for Kidney Disease: Low potassium, low phosphorus, controlled protein intake",
+      "health_condition": "Kidney Disease",
+      "health_condition_key": "kidney_disease"
+    }
+  },
+  {
+    "goal": "maintenance",
+    "condition": "kidney_disease",
+    "calories": 2500,
+    "expected": {
+      "goal": "Maintenance",
+      "goal_key": "maintenance",
+      "target_calories": 2500,
+      "carbs_g": 369,
+      "protein_g": 94,
+      "fat_g": 72,
+      "carbs_percent": 59,
+      "protein_percent": 15,
+      "fat_percent": 26,
+      "description": "Balanced nutrition for maintaining current weight | Adapted for Kidney Disease: Low potassium, low phosphorus, controlled protein intake",
+      "health_condition": "Kidney Disease",
+      "health_condition_key": "kidney_disease"
+    }
+  },
+  {
+    "goal": "maintenance",
+    "condition": "kidney_disease",
+    "calories": 5000,
+    "expected": {
+      "goal": "Maintenance",
+      "goal_key": "maintenance",
+      "target_calories": 5000,
+      "carbs_g": 738,
+      "protein_g": 188,
+      "fat_g": 144,
+      "carbs_percent": 59,
+      "protein_percent": 15,
+      "fat_percent": 26,
+      "description": "Balanced nutrition for maintaining current weight | Adapted for Kidney Disease: Low potassium, low phosphorus, controlled protein intake",
+      "health_condition": "Kidney Disease",
+      "health_condition_key": "kidney_disease"
+    }
+  },
+  {
+    "goal": "maintenance",
+    "condition": "anemia",
+    "calories": 500,
+    "expected": {
+      "goal": "Maintenance",
+      "goal_key": "maintenance",
+      "target_calories": 500,
+      "carbs_g": 62,
+      "protein_g": 35,
+      "fat_g": 12,
+      "carbs_percent": 50,
+      "protein_percent": 28,
+      "fat_percent": 22,
+      "description": "Balanced nutrition for maintaining current weight | Adapted for Anemia: Iron-rich foods, vitamin C to aid absorption, avoid tea/coffee with meals",
+      "health_condition": "Anemia",
+      "health_condition_key": "anemia"
+    }
+  },
+  {
+    "goal": "maintenance",
+    "condition": "anemia",
+    "calories": 1500,
+    "expected": {
+      "goal": "Maintenance",
+      "goal_key": "maintenance",
+      "target_calories": 1500,
+      "carbs_g": 188,
+      "protein_g": 105,
+      "fat_g": 37,
+      "carbs_percent": 50,
+      "protein_percent": 28,
+      "fat_percent": 22,
+      "description": "Balanced nutrition for maintaining current weight | Adapted for Anemia: Iron-rich foods, vitamin C to aid absorption, avoid tea/coffee with meals",
+      "health_condition": "Anemia",
+      "health_condition_key": "anemia"
+    }
+  },
+  {
+    "goal": "maintenance",
+    "condition": "anemia",
+    "calories": 1800,
+    "expected": {
+      "goal": "Maintenance",
+      "goal_key": "maintenance",
+      "target_calories": 1800,
+      "carbs_g": 225,
+      "protein_g": 126,
+      "fat_g": 44,
+      "carbs_percent": 50,
+      "protein_percent": 28,
+      "fat_percent": 22,
+      "description": "Balanced nutrition for maintaining current weight | Adapted for Anemia: Iron-rich foods, vitamin C to aid absorption, avoid tea/coffee with meals",
+      "health_condition": "Anemia",
+      "health_condition_key": "anemia"
+    }
+  },
+  {
+    "goal": "maintenance",
+    "condition": "anemia",
+    "calories": 2000,
+    "expected": {
+      "goal": "Maintenance",
+      "goal_key": "maintenance",
+      "target_calories": 2000,
+      "carbs_g": 250,
+      "protein_g": 140,
+      "fat_g": 49,
+      "carbs_percent": 50,
+      "protein_percent": 28,
+      "fat_percent": 22,
+      "description": "Balanced nutrition for maintaining current weight | Adapted for Anemia: Iron-rich foods, vitamin C to aid absorption, avoid tea/coffee with meals",
+      "health_condition": "Anemia",
+      "health_condition_key": "anemia"
+    }
+  },
+  {
+    "goal": "maintenance",
+    "condition": "anemia",
+    "calories": 2500,
+    "expected": {
+      "goal": "Maintenance",
+      "goal_key": "maintenance",
+      "target_calories": 2500,
+      "carbs_g": 312,
+      "protein_g": 175,
+      "fat_g": 61,
+      "carbs_percent": 50,
+      "protein_percent": 28,
+      "fat_percent": 22,
+      "description": "Balanced nutrition for maintaining current weight | Adapted for Anemia: Iron-rich foods, vitamin C to aid absorption, avoid tea/coffee with meals",
+      "health_condition": "Anemia",
+      "health_condition_key": "anemia"
+    }
+  },
+  {
+    "goal": "maintenance",
+    "condition": "anemia",
+    "calories": 5000,
+    "expected": {
+      "goal": "Maintenance",
+      "goal_key": "maintenance",
+      "target_calories": 5000,
+      "carbs_g": 625,
+      "protein_g": 350,
+      "fat_g": 122,
+      "carbs_percent": 50,
+      "protein_percent": 28,
+      "fat_percent": 22,
+      "description": "Balanced nutrition for maintaining current weight | Adapted for Anemia: Iron-rich foods, vitamin C to aid absorption, avoid tea/coffee with meals",
+      "health_condition": "Anemia",
+      "health_condition_key": "anemia"
+    }
+  },
+  {
+    "goal": "maintenance",
+    "condition": "thyroid",
+    "calories": 500,
+    "expected": {
+      "goal": "Maintenance",
+      "goal_key": "maintenance",
+      "target_calories": 500,
+      "carbs_g": 61,
+      "protein_g": 32,
+      "fat_g": 14,
+      "carbs_percent": 49,
+      "protein_percent": 26,
+      "fat_percent": 25,
+      "description": "Balanced nutrition for maintaining current weight | Adapted for Thyroid Disorder: Iodine balance, selenium-rich foods, limit goitrogenic foods raw",
+      "health_condition": "Thyroid Disorder",
+      "health_condition_key": "thyroid"
+    }
+  },
+  {
+    "goal": "maintenance",
+    "condition": "thyroid",
+    "calories": 1500,
+    "expected": {
+      "goal": "Maintenance",
+      "goal_key": "maintenance",
+      "target_calories": 1500,
+      "carbs_g": 184,
+      "protein_g": 98,
+      "fat_g": 42,
+      "carbs_percent": 49,
+      "protein_percent": 26,
+      "fat_percent": 25,
+      "description": "Balanced nutrition for maintaining current weight | Adapted for Thyroid Disorder: Iodine balance, selenium-rich foods, limit goitrogenic foods raw",
+      "health_condition": "Thyroid Disorder",
+      "health_condition_key": "thyroid"
+    }
+  },
+  {
+    "goal": "maintenance",
+    "condition": "thyroid",
+    "calories": 1800,
+    "expected": {
+      "goal": "Maintenance",
+      "goal_key": "maintenance",
+      "target_calories": 1800,
+      "carbs_g": 220,
+      "protein_g": 117,
+      "fat_g": 50,
+      "carbs_percent": 49,
+      "protein_percent": 26,
+      "fat_percent": 25,
+      "description": "Balanced nutrition for maintaining current weight | Adapted for Thyroid Disorder: Iodine balance, selenium-rich foods, limit goitrogenic foods raw",
+      "health_condition": "Thyroid Disorder",
+      "health_condition_key": "thyroid"
+    }
+  },
+  {
+    "goal": "maintenance",
+    "condition": "thyroid",
+    "calories": 2000,
+    "expected": {
+      "goal": "Maintenance",
+      "goal_key": "maintenance",
+      "target_calories": 2000,
+      "carbs_g": 245,
+      "protein_g": 130,
+      "fat_g": 56,
+      "carbs_percent": 49,
+      "protein_percent": 26,
+      "fat_percent": 25,
+      "description": "Balanced nutrition for maintaining current weight | Adapted for Thyroid Disorder: Iodine balance, selenium-rich foods, limit goitrogenic foods raw",
+      "health_condition": "Thyroid Disorder",
+      "health_condition_key": "thyroid"
+    }
+  },
+  {
+    "goal": "maintenance",
+    "condition": "thyroid",
+    "calories": 2500,
+    "expected": {
+      "goal": "Maintenance",
+      "goal_key": "maintenance",
+      "target_calories": 2500,
+      "carbs_g": 306,
+      "protein_g": 162,
+      "fat_g": 69,
+      "carbs_percent": 49,
+      "protein_percent": 26,
+      "fat_percent": 25,
+      "description": "Balanced nutrition for maintaining current weight | Adapted for Thyroid Disorder: Iodine balance, selenium-rich foods, limit goitrogenic foods raw",
+      "health_condition": "Thyroid Disorder",
+      "health_condition_key": "thyroid"
+    }
+  },
+  {
+    "goal": "maintenance",
+    "condition": "thyroid",
+    "calories": 5000,
+    "expected": {
+      "goal": "Maintenance",
+      "goal_key": "maintenance",
+      "target_calories": 5000,
+      "carbs_g": 612,
+      "protein_g": 325,
+      "fat_g": 139,
+      "carbs_percent": 49,
+      "protein_percent": 26,
+      "fat_percent": 25,
+      "description": "Balanced nutrition for maintaining current weight | Adapted for Thyroid Disorder: Iodine balance, selenium-rich foods, limit goitrogenic foods raw",
+      "health_condition": "Thyroid Disorder",
+      "health_condition_key": "thyroid"
+    }
+  },
+  {
+    "goal": "endurance",
+    "condition": "none",
+    "calories": 500,
+    "expected": {
+      "goal": "Endurance",
+      "goal_key": "endurance",
+      "target_calories": 500,
+      "carbs_g": 72,
+      "protein_g": 26,
+      "fat_g": 12,
+      "carbs_percent": 58,
+      "protein_percent": 21,
+      "fat_percent": 21,
+      "description": "Higher carbs for sustained energy during endurance activities",
+      "health_condition": "None",
+      "health_condition_key": "none"
+    }
+  },
+  {
+    "goal": "endurance",
+    "condition": "none",
+    "calories": 1500,
+    "expected": {
+      "goal": "Endurance",
+      "goal_key": "endurance",
+      "target_calories": 1500,
+      "carbs_g": 218,
+      "protein_g": 79,
+      "fat_g": 35,
+      "carbs_percent": 58,
+      "protein_percent": 21,
+      "fat_percent": 21,
+      "description": "Higher carbs for sustained energy during endurance activities",
+      "health_condition": "None",
+      "health_condition_key": "none"
+    }
+  },
+  {
+    "goal": "endurance",
+    "condition": "none",
+    "calories": 1800,
+    "expected": {
+      "goal": "Endurance",
+      "goal_key": "endurance",
+      "target_calories": 1800,
+      "carbs_g": 261,
+      "protein_g": 94,
+      "fat_g": 42,
+      "carbs_percent": 58,
+      "protein_percent": 21,
+      "fat_percent": 21,
+      "description": "Higher carbs for sustained energy during endurance activities",
+      "health_condition": "None",
+      "health_condition_key": "none"
+    }
+  },
+  {
+    "goal": "endurance",
+    "condition": "none",
+    "calories": 2000,
+    "expected": {
+      "goal": "Endurance",
+      "goal_key": "endurance",
+      "target_calories": 2000,
+      "carbs_g": 290,
+      "protein_g": 105,
+      "fat_g": 47,
+      "carbs_percent": 58,
+      "protein_percent": 21,
+      "fat_percent": 21,
+      "description": "Higher carbs for sustained energy during endurance activities",
+      "health_condition": "None",
+      "health_condition_key": "none"
+    }
+  },
+  {
+    "goal": "endurance",
+    "condition": "none",
+    "calories": 2500,
+    "expected": {
+      "goal": "Endurance",
+      "goal_key": "endurance",
+      "target_calories": 2500,
+      "carbs_g": 362,
+      "protein_g": 131,
+      "fat_g": 58,
+      "carbs_percent": 58,
+      "protein_percent": 21,
+      "fat_percent": 21,
+      "description": "Higher carbs for sustained energy during endurance activities",
+      "health_condition": "None",
+      "health_condition_key": "none"
+    }
+  },
+  {
+    "goal": "endurance",
+    "condition": "none",
+    "calories": 5000,
+    "expected": {
+      "goal": "Endurance",
+      "goal_key": "endurance",
+      "target_calories": 5000,
+      "carbs_g": 725,
+      "protein_g": 262,
+      "fat_g": 117,
+      "carbs_percent": 58,
+      "protein_percent": 21,
+      "fat_percent": 21,
+      "description": "Higher carbs for sustained energy during endurance activities",
+      "health_condition": "None",
+      "health_condition_key": "none"
+    }
+  },
+  {
+    "goal": "endurance",
+    "condition": "diabetic",
+    "calories": 500,
+    "expected": {
+      "goal": "Endurance",
+      "goal_key": "endurance",
+      "target_calories": 500,
+      "carbs_g": 64,
+      "protein_g": 32,
+      "fat_g": 13,
+      "carbs_percent": 51,
+      "protein_percent": 26,
+      "fat_percent": 23,
+      "description": "Higher carbs for sustained energy during endurance activities | Adapted for Diabetic: Focus on low glycemic index foods, manage blood sugar spikes",
+      "health_condition": "Diabetic",
+      "health_condition_key": "diabetic"
+    }
+  },
+  {
+    "goal": "endurance",
+    "condition": "diabetic",
+    "calories": 1500,
+    "expected": {
+      "goal": "Endurance",
+      "goal_key": "endurance",
+      "target_calories": 1500,
+      "carbs_g": 191,
+      "protein_g": 98,
+      "fat_g": 38,
+      "carbs_percent": 51,
+      "protein_percent": 26,
+      "fat_percent": 23,
+      "description": "Higher carbs for sustained energy during endurance activities | Adapted for Diabetic: Focus on low glycemic index foods, manage blood sugar spikes",
+      "health_condition": "Diabetic",
+      "health_condition_key": "diabetic"
+    }
+  },
+  {
+    "goal": "endurance",
+    "condition": "diabetic",
+    "calories": 1800,
+    "expected": {
+      "goal": "Endurance",
+      "goal_key": "endurance",
+      "target_calories": 1800,
+      "carbs_g": 230,
+      "protein_g": 117,
+      "fat_g": 46,
+      "carbs_percent": 51,
+      "protein_percent": 26,
+      "fat_percent": 23,
+      "description": "Higher carbs for sustained energy during endurance activities | Adapted for Diabetic: Focus on low glycemic index foods, manage blood sugar spikes",
+      "health_condition": "Diabetic",
+      "health_condition_key": "diabetic"
+    }
+  },
+  {
+    "goal": "endurance",
+    "condition": "diabetic",
+    "calories": 2000,
+    "expected": {
+      "goal": "Endurance",
+      "goal_key": "endurance",
+      "target_calories": 2000,
+      "carbs_g": 255,
+      "protein_g": 130,
+      "fat_g": 51,
+      "carbs_percent": 51,
+      "protein_percent": 26,
+      "fat_percent": 23,
+      "description": "Higher carbs for sustained energy during endurance activities | Adapted for Diabetic: Focus on low glycemic index foods, manage blood sugar spikes",
+      "health_condition": "Diabetic",
+      "health_condition_key": "diabetic"
+    }
+  },
+  {
+    "goal": "endurance",
+    "condition": "diabetic",
+    "calories": 2500,
+    "expected": {
+      "goal": "Endurance",
+      "goal_key": "endurance",
+      "target_calories": 2500,
+      "carbs_g": 319,
+      "protein_g": 162,
+      "fat_g": 64,
+      "carbs_percent": 51,
+      "protein_percent": 26,
+      "fat_percent": 23,
+      "description": "Higher carbs for sustained energy during endurance activities | Adapted for Diabetic: Focus on low glycemic index foods, manage blood sugar spikes",
+      "health_condition": "Diabetic",
+      "health_condition_key": "diabetic"
+    }
+  },
+  {
+    "goal": "endurance",
+    "condition": "diabetic",
+    "calories": 5000,
+    "expected": {
+      "goal": "Endurance",
+      "goal_key": "endurance",
+      "target_calories": 5000,
+      "carbs_g": 638,
+      "protein_g": 325,
+      "fat_g": 128,
+      "carbs_percent": 51,
+      "protein_percent": 26,
+      "fat_percent": 23,
+      "description": "Higher carbs for sustained energy during endurance activities | Adapted for Diabetic: Focus on low glycemic index foods, manage blood sugar spikes",
+      "health_condition": "Diabetic",
+      "health_condition_key": "diabetic"
+    }
+  },
+  {
+    "goal": "endurance",
+    "condition": "hypertension",
+    "calories": 500,
+    "expected": {
+      "goal": "Endurance",
+      "goal_key": "endurance",
+      "target_calories": 500,
+      "carbs_g": 74,
+      "protein_g": 28,
+      "fat_g": 11,
+      "carbs_percent": 59,
+      "protein_percent": 22,
+      "fat_percent": 19,
+      "description": "Higher carbs for sustained energy during endurance activities | Adapted for Hypertension (High BP): Low sodium diet, avoid processed foods, focus on potassium-rich foods",
+      "health_condition": "Hypertension (High BP)",
+      "health_condition_key": "hypertension"
+    }
+  },
+  {
+    "goal": "endurance",
+    "condition": "hypertension",
+    "calories": 1500,
+    "expected": {
+      "goal": "Endurance",
+      "goal_key": "endurance",
+      "target_calories": 1500,
+      "carbs_g": 221,
+      "protein_g": 82,
+      "fat_g": 32,
+      "carbs_percent": 59,
+      "protein_percent": 22,
+      "fat_percent": 19,
+      "description": "Higher carbs for sustained energy during endurance activities | Adapted for Hypertension (High BP): Low sodium diet, avoid processed foods, focus on potassium-rich foods",
+      "health_condition": "Hypertension (High BP)",
+      "health_condition_key": "hypertension"
+    }
+  },
+  {
+    "goal": "endurance",
+    "condition": "hypertension",
+    "calories": 1800,
+    "expected": {
+      "goal": "Endurance",
+      "goal_key": "endurance",
+      "target_calories": 1800,
+      "carbs_g": 266,
+      "protein_g": 99,
+      "fat_g": 38,
+      "carbs_percent": 59,
+      "protein_percent": 22,
+      "fat_percent": 19,
+      "description": "Higher carbs for sustained energy during endurance activities | Adapted for Hypertension (High BP): Low sodium diet, avoid processed foods, focus on potassium-rich foods",
+      "health_condition": "Hypertension (High BP)",
+      "health_condition_key": "hypertension"
+    }
+  },
+  {
+    "goal": "endurance",
+    "condition": "hypertension",
+    "calories": 2000,
+    "expected": {
+      "goal": "Endurance",
+      "goal_key": "endurance",
+      "target_calories": 2000,
+      "carbs_g": 295,
+      "protein_g": 110,
+      "fat_g": 42,
+      "carbs_percent": 59,
+      "protein_percent": 22,
+      "fat_percent": 19,
+      "description": "Higher carbs for sustained energy during endurance activities | Adapted for Hypertension (High BP): Low sodium diet, avoid processed foods, focus on potassium-rich foods",
+      "health_condition": "Hypertension (High BP)",
+      "health_condition_key": "hypertension"
+    }
+  },
+  {
+    "goal": "endurance",
+    "condition": "hypertension",
+    "calories": 2500,
+    "expected": {
+      "goal": "Endurance",
+      "goal_key": "endurance",
+      "target_calories": 2500,
+      "carbs_g": 369,
+      "protein_g": 138,
+      "fat_g": 53,
+      "carbs_percent": 59,
+      "protein_percent": 22,
+      "fat_percent": 19,
+      "description": "Higher carbs for sustained energy during endurance activities | Adapted for Hypertension (High BP): Low sodium diet, avoid processed foods, focus on potassium-rich foods",
+      "health_condition": "Hypertension (High BP)",
+      "health_condition_key": "hypertension"
+    }
+  },
+  {
+    "goal": "endurance",
+    "condition": "hypertension",
+    "calories": 5000,
+    "expected": {
+      "goal": "Endurance",
+      "goal_key": "endurance",
+      "target_calories": 5000,
+      "carbs_g": 738,
+      "protein_g": 275,
+      "fat_g": 106,
+      "carbs_percent": 59,
+      "protein_percent": 22,
+      "fat_percent": 19,
+      "description": "Higher carbs for sustained energy during endurance activities | Adapted for Hypertension (High BP): Low sodium diet, avoid processed foods, focus on potassium-rich foods",
+      "health_condition": "Hypertension (High BP)",
+      "health_condition_key": "hypertension"
+    }
+  },
+  {
+    "goal": "endurance",
+    "condition": "heart_disease",
+    "calories": 500,
+    "expected": {
+      "goal": "Endurance",
+      "goal_key": "endurance",
+      "target_calories": 500,
+      "carbs_g": 78,
+      "protein_g": 26,
+      "fat_g": 9,
+      "carbs_percent": 62,
+      "protein_percent": 21,
+      "fat_percent": 17,
+      "description": "Higher carbs for sustained energy during endurance activities | Adapted for Heart Disease: Low saturated fat, low cholesterol, increase omega-3 fatty acids",
+      "health_condition": "Heart Disease",
+      "health_condition_key": "heart_disease"
+    }
+  },
+  {
+    "goal": "endurance",
+    "condition": "heart_disease",
+    "calories": 1500,
+    "expected": {
+      "goal": "Endurance",
+      "goal_key": "endurance",
+      "target_calories": 1500,
+      "carbs_g": 232,
+      "protein_g": 79,
+      "fat_g": 28,
+      "carbs_percent": 62,
+      "protein_percent": 21,
+      "fat_percent": 17,
+      "description": "Higher carbs for sustained energy during endurance activities | Adapted for Heart Disease: Low saturated fat, low cholesterol, increase omega-3 fatty acids",
+      "health_condition": "Heart Disease",
+      "health_condition_key": "heart_disease"
+    }
+  },
+  {
+    "goal": "endurance",
+    "condition": "heart_disease",
+    "calories": 1800,
+    "expected": {
+      "goal": "Endurance",
+      "goal_key": "endurance",
+      "target_calories": 1800,
+      "carbs_g": 279,
+      "protein_g": 94,
+      "fat_g": 34,
+      "carbs_percent": 62,
+      "protein_percent": 21,
+      "fat_percent": 17,
+      "description": "Higher carbs for sustained energy during endurance activities | Adapted for Heart Disease: Low saturated fat, low cholesterol, increase omega-3 fatty acids",
+      "health_condition": "Heart Disease",
+      "health_condition_key": "heart_disease"
+    }
+  },
+  {
+    "goal": "endurance",
+    "condition": "heart_disease",
+    "calories": 2000,
+    "expected": {
+      "goal": "Endurance",
+      "goal_key": "endurance",
+      "target_calories": 2000,
+      "carbs_g": 310,
+      "protein_g": 105,
+      "fat_g": 38,
+      "carbs_percent": 62,
+      "protein_percent": 21,
+      "fat_percent": 17,
+      "description": "Higher carbs for sustained energy during endurance activities | Adapted for Heart Disease: Low saturated fat, low cholesterol, increase omega-3 fatty acids",
+      "health_condition": "Heart Disease",
+      "health_condition_key": "heart_disease"
+    }
+  },
+  {
+    "goal": "endurance",
+    "condition": "heart_disease",
+    "calories": 2500,
+    "expected": {
+      "goal": "Endurance",
+      "goal_key": "endurance",
+      "target_calories": 2500,
+      "carbs_g": 388,
+      "protein_g": 131,
+      "fat_g": 47,
+      "carbs_percent": 62,
+      "protein_percent": 21,
+      "fat_percent": 17,
+      "description": "Higher carbs for sustained energy during endurance activities | Adapted for Heart Disease: Low saturated fat, low cholesterol, increase omega-3 fatty acids",
+      "health_condition": "Heart Disease",
+      "health_condition_key": "heart_disease"
+    }
+  },
+  {
+    "goal": "endurance",
+    "condition": "heart_disease",
+    "calories": 5000,
+    "expected": {
+      "goal": "Endurance",
+      "goal_key": "endurance",
+      "target_calories": 5000,
+      "carbs_g": 775,
+      "protein_g": 262,
+      "fat_g": 94,
+      "carbs_percent": 62,
+      "protein_percent": 21,
+      "fat_percent": 17,
+      "description": "Higher carbs for sustained energy during endurance activities | Adapted for Heart Disease: Low saturated fat, low cholesterol, increase omega-3 fatty acids",
+      "health_condition": "Heart Disease",
+      "health_condition_key": "heart_disease"
+    }
+  },
+  {
+    "goal": "endurance",
+    "condition": "high_cholesterol",
+    "calories": 500,
+    "expected": {
+      "goal": "Endurance",
+      "goal_key": "endurance",
+      "target_calories": 500,
+      "carbs_g": 76,
+      "protein_g": 29,
+      "fat_g": 9,
+      "carbs_percent": 61,
+      "protein_percent": 23,
+      "fat_percent": 16,
+      "description": "Higher carbs for sustained energy during endurance activities | Adapted for High Cholesterol: Low saturated and trans fats, high fiber, plant-based proteins preferred",
+      "health_condition": "High Cholesterol",
+      "health_condition_key": "high_cholesterol"
+    }
+  },
+  {
+    "goal": "endurance",
+    "condition": "high_cholesterol",
+    "calories": 1500,
+    "expected": {
+      "goal": "Endurance",
+      "goal_key": "endurance",
+      "target_calories": 1500,
+      "carbs_g": 229,
+      "protein_g": 86,
+      "fat_g": 27,
+      "carbs_percent": 61,
+      "protein_percent": 23,
+      "fat_percent": 16,
+      "description": "Higher carbs for sustained energy during endurance activities | Adapted for High Cholesterol: Low saturated and trans fats, high fiber, plant-based proteins preferred",
+      "health_condition": "High Cholesterol",
+      "health_condition_key": "high_cholesterol"
+    }
+  },
+  {
+    "goal": "endurance",
+    "condition": "high_cholesterol",
+    "calories": 1800,
+    "expected": {
+      "goal": "Endurance",
+      "goal_key": "endurance",
+      "target_calories": 1800,
+      "carbs_g": 274,
+      "protein_g": 104,
+      "fat_g": 32,
+      "carbs_percent": 61,
+      "protein_percent": 23,
+      "fat_percent": 16,
+      "description": "Higher carbs for sustained energy during endurance activities | Adapted for High Cholesterol: Low saturated and trans fats, high fiber, plant-based proteins preferred",
+      "health_condition": "High Cholesterol",
+      "health_condition_key": "high_cholesterol"
+    }
+  },
+  {
+    "goal": "endurance",
+    "condition": "high_cholesterol",
+    "calories": 2000,
+    "expected": {
+      "goal": "Endurance",
+      "goal_key": "endurance",
+      "target_calories": 2000,
+      "carbs_g": 305,
+      "protein_g": 115,
+      "fat_g": 36,
+      "carbs_percent": 61,
+      "protein_percent": 23,
+      "fat_percent": 16,
+      "description": "Higher carbs for sustained energy during endurance activities | Adapted for High Cholesterol: Low saturated and trans fats, high fiber, plant-based proteins preferred",
+      "health_condition": "High Cholesterol",
+      "health_condition_key": "high_cholesterol"
+    }
+  },
+  {
+    "goal": "endurance",
+    "condition": "high_cholesterol",
+    "calories": 2500,
+    "expected": {
+      "goal": "Endurance",
+      "goal_key": "endurance",
+      "target_calories": 2500,
+      "carbs_g": 381,
+      "protein_g": 144,
+      "fat_g": 44,
+      "carbs_percent": 61,
+      "protein_percent": 23,
+      "fat_percent": 16,
+      "description": "Higher carbs for sustained energy during endurance activities | Adapted for High Cholesterol: Low saturated and trans fats, high fiber, plant-based proteins preferred",
+      "health_condition": "High Cholesterol",
+      "health_condition_key": "high_cholesterol"
+    }
+  },
+  {
+    "goal": "endurance",
+    "condition": "high_cholesterol",
+    "calories": 5000,
+    "expected": {
+      "goal": "Endurance",
+      "goal_key": "endurance",
+      "target_calories": 5000,
+      "carbs_g": 762,
+      "protein_g": 288,
+      "fat_g": 89,
+      "carbs_percent": 61,
+      "protein_percent": 23,
+      "fat_percent": 16,
+      "description": "Higher carbs for sustained energy during endurance activities | Adapted for High Cholesterol: Low saturated and trans fats, high fiber, plant-based proteins preferred",
+      "health_condition": "High Cholesterol",
+      "health_condition_key": "high_cholesterol"
+    }
+  },
+  {
+    "goal": "endurance",
+    "condition": "digestive_issues",
+    "calories": 500,
+    "expected": {
+      "goal": "Endurance",
+      "goal_key": "endurance",
+      "target_calories": 500,
+      "carbs_g": 76,
+      "protein_g": 25,
+      "fat_g": 11,
+      "carbs_percent": 61,
+      "protein_percent": 20,
+      "fat_percent": 19,
+      "description": "Higher carbs for sustained energy during endurance activities | Adapted for Digestive Issues: Easily digestible foods, avoid spicy/oily food, small frequent meals",
+      "health_condition": "Digestive Issues",
+      "health_condition_key": "digestive_issues"
+    }
+  },
+  {
+    "goal": "endurance",
+    "condition": "digestive_issues",
+    "calories": 1500,
+    "expected": {
+      "goal": "Endurance",
+      "goal_key": "endurance",
+      "target_calories": 1500,
+      "carbs_g": 229,
+      "protein_g": 75,
+      "fat_g": 32,
+      "carbs_percent": 61,
+      "protein_percent": 20,
+      "fat_percent": 19,
+      "description": "Higher carbs for sustained energy during endurance activities | Adapted for Digestive Issues: Easily digestible foods, avoid spicy/oily food, small frequent meals",
+      "health_condition": "Digestive Issues",
+      "health_condition_key": "digestive_issues"
+    }
+  },
+  {
+    "goal": "endurance",
+    "condition": "digestive_issues",
+    "calories": 1800,
+    "expected": {
+      "goal": "Endurance",
+      "goal_key": "endurance",
+      "target_calories": 1800,
+      "carbs_g": 274,
+      "protein_g": 90,
+      "fat_g": 38,
+      "carbs_percent": 61,
+      "protein_percent": 20,
+      "fat_percent": 19,
+      "description": "Higher carbs for sustained energy during endurance activities | Adapted for Digestive Issues: Easily digestible foods, avoid spicy/oily food, small frequent meals",
+      "health_condition": "Digestive Issues",
+      "health_condition_key": "digestive_issues"
+    }
+  },
+  {
+    "goal": "endurance",
+    "condition": "digestive_issues",
+    "calories": 2000,
+    "expected": {
+      "goal": "Endurance",
+      "goal_key": "endurance",
+      "target_calories": 2000,
+      "carbs_g": 305,
+      "protein_g": 100,
+      "fat_g": 42,
+      "carbs_percent": 61,
+      "protein_percent": 20,
+      "fat_percent": 19,
+      "description": "Higher carbs for sustained energy during endurance activities | Adapted for Digestive Issues: Easily digestible foods, avoid spicy/oily food, small frequent meals",
+      "health_condition": "Digestive Issues",
+      "health_condition_key": "digestive_issues"
+    }
+  },
+  {
+    "goal": "endurance",
+    "condition": "digestive_issues",
+    "calories": 2500,
+    "expected": {
+      "goal": "Endurance",
+      "goal_key": "endurance",
+      "target_calories": 2500,
+      "carbs_g": 381,
+      "protein_g": 125,
+      "fat_g": 53,
+      "carbs_percent": 61,
+      "protein_percent": 20,
+      "fat_percent": 19,
+      "description": "Higher carbs for sustained energy during endurance activities | Adapted for Digestive Issues: Easily digestible foods, avoid spicy/oily food, small frequent meals",
+      "health_condition": "Digestive Issues",
+      "health_condition_key": "digestive_issues"
+    }
+  },
+  {
+    "goal": "endurance",
+    "condition": "digestive_issues",
+    "calories": 5000,
+    "expected": {
+      "goal": "Endurance",
+      "goal_key": "endurance",
+      "target_calories": 5000,
+      "carbs_g": 762,
+      "protein_g": 250,
+      "fat_g": 106,
+      "carbs_percent": 61,
+      "protein_percent": 20,
+      "fat_percent": 19,
+      "description": "Higher carbs for sustained energy during endurance activities | Adapted for Digestive Issues: Easily digestible foods, avoid spicy/oily food, small frequent meals",
+      "health_condition": "Digestive Issues",
+      "health_condition_key": "digestive_issues"
+    }
+  },
+  {
+    "goal": "endurance",
+    "condition": "kidney_disease",
+    "calories": 500,
+    "expected": {
+      "goal": "Endurance",
+      "goal_key": "endurance",
+      "target_calories": 500,
+      "carbs_g": 82,
+      "protein_g": 16,
+      "fat_g": 12,
+      "carbs_percent": 66,
+      "protein_percent": 13,
+      "fat_percent": 21,
+      "description": "Higher carbs for sustained energy during endurance activities | Adapted for Kidney Disease: Low potassium, low phosphorus, controlled protein intake",
+      "health_condition": "Kidney Disease",
+      "health_condition_key": "kidney_disease"
+    }
+  },
+  {
+    "goal": "endurance",
+    "condition": "kidney_disease",
+    "calories": 1500,
+    "expected": {
+      "goal": "Endurance",
+      "goal_key": "endurance",
+      "target_calories": 1500,
+      "carbs_g": 248,
+      "protein_g": 49,
+      "fat_g": 35,
+      "carbs_percent": 66,
+      "protein_percent": 13,
+      "fat_percent": 21,
+      "description": "Higher carbs for sustained energy during endurance activities | Adapted for Kidney Disease: Low potassium, low phosphorus, controlled protein intake",
+      "health_condition": "Kidney Disease",
+      "health_condition_key": "kidney_disease"
+    }
+  },
+  {
+    "goal": "endurance",
+    "condition": "kidney_disease",
+    "calories": 1800,
+    "expected": {
+      "goal": "Endurance",
+      "goal_key": "endurance",
+      "target_calories": 1800,
+      "carbs_g": 297,
+      "protein_g": 58,
+      "fat_g": 42,
+      "carbs_percent": 66,
+      "protein_percent": 13,
+      "fat_percent": 21,
+      "description": "Higher carbs for sustained energy during endurance activities | Adapted for Kidney Disease: Low potassium, low phosphorus, controlled protein intake",
+      "health_condition": "Kidney Disease",
+      "health_condition_key": "kidney_disease"
+    }
+  },
+  {
+    "goal": "endurance",
+    "condition": "kidney_disease",
+    "calories": 2000,
+    "expected": {
+      "goal": "Endurance",
+      "goal_key": "endurance",
+      "target_calories": 2000,
+      "carbs_g": 330,
+      "protein_g": 65,
+      "fat_g": 47,
+      "carbs_percent": 66,
+      "protein_percent": 13,
+      "fat_percent": 21,
+      "description": "Higher carbs for sustained energy during endurance activities | Adapted for Kidney Disease: Low potassium, low phosphorus, controlled protein intake",
+      "health_condition": "Kidney Disease",
+      "health_condition_key": "kidney_disease"
+    }
+  },
+  {
+    "goal": "endurance",
+    "condition": "kidney_disease",
+    "calories": 2500,
+    "expected": {
+      "goal": "Endurance",
+      "goal_key": "endurance",
+      "target_calories": 2500,
+      "carbs_g": 412,
+      "protein_g": 81,
+      "fat_g": 58,
+      "carbs_percent": 66,
+      "protein_percent": 13,
+      "fat_percent": 21,
+      "description": "Higher carbs for sustained energy during endurance activities | Adapted for Kidney Disease: Low potassium, low phosphorus, controlled protein intake",
+      "health_condition": "Kidney Disease",
+      "health_condition_key": "kidney_disease"
+    }
+  },
+  {
+    "goal": "endurance",
+    "condition": "kidney_disease",
+    "calories": 5000,
+    "expected": {
+      "goal": "Endurance",
+      "goal_key": "endurance",
+      "target_calories": 5000,
+      "carbs_g": 825,
+      "protein_g": 162,
+      "fat_g": 117,
+      "carbs_percent": 66,
+      "protein_percent": 13,
+      "fat_percent": 21,
+      "description": "Higher carbs for sustained energy during endurance activities | Adapted for Kidney Disease: Low potassium, low phosphorus, controlled protein intake",
+      "health_condition": "Kidney Disease",
+      "health_condition_key": "kidney_disease"
+    }
+  },
+  {
+    "goal": "endurance",
+    "condition": "anemia",
+    "calories": 500,
+    "expected": {
+      "goal": "Endurance",
+      "goal_key": "endurance",
+      "target_calories": 500,
+      "carbs_g": 72,
+      "protein_g": 29,
+      "fat_g": 11,
+      "carbs_percent": 58,
+      "protein_percent": 23,
+      "fat_percent": 19,
+      "description": "Higher carbs for sustained energy during endurance activities | Adapted for Anemia: Iron-rich foods, vitamin C to aid absorption, avoid tea/coffee with meals",
+      "health_condition": "Anemia",
+      "health_condition_key": "anemia"
+    }
+  },
+  {
+    "goal": "endurance",
+    "condition": "anemia",
+    "calories": 1500,
+    "expected": {
+      "goal": "Endurance",
+      "goal_key": "endurance",
+      "target_calories": 1500,
+      "carbs_g": 218,
+      "protein_g": 86,
+      "fat_g": 32,
+      "carbs_percent": 58,
+      "protein_percent": 23,
+      "fat_percent": 19,
+      "description": "Higher carbs for sustained energy during endurance activities | Adapted for Anemia: Iron-rich foods, vitamin C to aid absorption, avoid tea/coffee with meals",
+      "health_condition": "Anemia",
+      "health_condition_key": "anemia"
+    }
+  },
+  {
+    "goal": "endurance",
+    "condition": "anemia",
+    "calories": 1800,
+    "expected": {
+      "goal": "Endurance",
+      "goal_key": "endurance",
+      "target_calories": 1800,
+      "carbs_g": 261,
+      "protein_g": 104,
+      "fat_g": 38,
+      "carbs_percent": 58,
+      "protein_percent": 23,
+      "fat_percent": 19,
+      "description": "Higher carbs for sustained energy during endurance activities | Adapted for Anemia: Iron-rich foods, vitamin C to aid absorption, avoid tea/coffee with meals",
+      "health_condition": "Anemia",
+      "health_condition_key": "anemia"
+    }
+  },
+  {
+    "goal": "endurance",
+    "condition": "anemia",
+    "calories": 2000,
+    "expected": {
+      "goal": "Endurance",
+      "goal_key": "endurance",
+      "target_calories": 2000,
+      "carbs_g": 290,
+      "protein_g": 115,
+      "fat_g": 42,
+      "carbs_percent": 58,
+      "protein_percent": 23,
+      "fat_percent": 19,
+      "description": "Higher carbs for sustained energy during endurance activities | Adapted for Anemia: Iron-rich foods, vitamin C to aid absorption, avoid tea/coffee with meals",
+      "health_condition": "Anemia",
+      "health_condition_key": "anemia"
+    }
+  },
+  {
+    "goal": "endurance",
+    "condition": "anemia",
+    "calories": 2500,
+    "expected": {
+      "goal": "Endurance",
+      "goal_key": "endurance",
+      "target_calories": 2500,
+      "carbs_g": 362,
+      "protein_g": 144,
+      "fat_g": 53,
+      "carbs_percent": 58,
+      "protein_percent": 23,
+      "fat_percent": 19,
+      "description": "Higher carbs for sustained energy during endurance activities | Adapted for Anemia: Iron-rich foods, vitamin C to aid absorption, avoid tea/coffee with meals",
+      "health_condition": "Anemia",
+      "health_condition_key": "anemia"
+    }
+  },
+  {
+    "goal": "endurance",
+    "condition": "anemia",
+    "calories": 5000,
+    "expected": {
+      "goal": "Endurance",
+      "goal_key": "endurance",
+      "target_calories": 5000,
+      "carbs_g": 725,
+      "protein_g": 288,
+      "fat_g": 106,
+      "carbs_percent": 58,
+      "protein_percent": 23,
+      "fat_percent": 19,
+      "description": "Higher carbs for sustained energy during endurance activities | Adapted for Anemia: Iron-rich foods, vitamin C to aid absorption, avoid tea/coffee with meals",
+      "health_condition": "Anemia",
+      "health_condition_key": "anemia"
+    }
+  },
+  {
+    "goal": "endurance",
+    "condition": "thyroid",
+    "calories": 500,
+    "expected": {
+      "goal": "Endurance",
+      "goal_key": "endurance",
+      "target_calories": 500,
+      "carbs_g": 71,
+      "protein_g": 28,
+      "fat_g": 12,
+      "carbs_percent": 57,
+      "protein_percent": 22,
+      "fat_percent": 21,
+      "description": "Higher carbs for sustained energy during endurance activities | Adapted for Thyroid Disorder: Iodine balance, selenium-rich foods, limit goitrogenic foods raw",
+      "health_condition": "Thyroid Disorder",
+      "health_condition_key": "thyroid"
+    }
+  },
+  {
+    "goal": "endurance",
+    "condition": "thyroid",
+    "calories": 1500,
+    "expected": {
+      "goal": "Endurance",
+      "goal_key": "endurance",
+      "target_calories": 1500,
+      "carbs_g": 214,
+      "protein_g": 82,
+      "fat_g": 35,
+      "carbs_percent": 57,
+      "protein_percent": 22,
+      "fat_percent": 21,
+      "description": "Higher carbs for sustained energy during endurance activities | Adapted for Thyroid Disorder: Iodine balance, selenium-rich foods, limit goitrogenic foods raw",
+      "health_condition": "Thyroid Disorder",
+      "health_condition_key": "thyroid"
+    }
+  },
+  {
+    "goal": "endurance",
+    "condition": "thyroid",
+    "calories": 1800,
+    "expected": {
+      "goal": "Endurance",
+      "goal_key": "endurance",
+      "target_calories": 1800,
+      "carbs_g": 256,
+      "protein_g": 99,
+      "fat_g": 42,
+      "carbs_percent": 57,
+      "protein_percent": 22,
+      "fat_percent": 21,
+      "description": "Higher carbs for sustained energy during endurance activities | Adapted for Thyroid Disorder: Iodine balance, selenium-rich foods, limit goitrogenic foods raw",
+      "health_condition": "Thyroid Disorder",
+      "health_condition_key": "thyroid"
+    }
+  },
+  {
+    "goal": "endurance",
+    "condition": "thyroid",
+    "calories": 2000,
+    "expected": {
+      "goal": "Endurance",
+      "goal_key": "endurance",
+      "target_calories": 2000,
+      "carbs_g": 285,
+      "protein_g": 110,
+      "fat_g": 47,
+      "carbs_percent": 57,
+      "protein_percent": 22,
+      "fat_percent": 21,
+      "description": "Higher carbs for sustained energy during endurance activities | Adapted for Thyroid Disorder: Iodine balance, selenium-rich foods, limit goitrogenic foods raw",
+      "health_condition": "Thyroid Disorder",
+      "health_condition_key": "thyroid"
+    }
+  },
+  {
+    "goal": "endurance",
+    "condition": "thyroid",
+    "calories": 2500,
+    "expected": {
+      "goal": "Endurance",
+      "goal_key": "endurance",
+      "target_calories": 2500,
+      "carbs_g": 356,
+      "protein_g": 138,
+      "fat_g": 58,
+      "carbs_percent": 57,
+      "protein_percent": 22,
+      "fat_percent": 21,
+      "description": "Higher carbs for sustained energy during endurance activities | Adapted for Thyroid Disorder: Iodine balance, selenium-rich foods, limit goitrogenic foods raw",
+      "health_condition": "Thyroid Disorder",
+      "health_condition_key": "thyroid"
+    }
+  },
+  {
+    "goal": "endurance",
+    "condition": "thyroid",
+    "calories": 5000,
+    "expected": {
+      "goal": "Endurance",
+      "goal_key": "endurance",
+      "target_calories": 5000,
+      "carbs_g": 712,
+      "protein_g": 275,
+      "fat_g": 117,
+      "carbs_percent": 57,
+      "protein_percent": 22,
+      "fat_percent": 21,
+      "description": "Higher carbs for sustained energy during endurance activities | Adapted for Thyroid Disorder: Iodine balance, selenium-rich foods, limit goitrogenic foods raw",
+      "health_condition": "Thyroid Disorder",
+      "health_condition_key": "thyroid"
+    }
+  }
+]

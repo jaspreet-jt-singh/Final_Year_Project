@@ -10,7 +10,8 @@ from unittest.mock import AsyncMock, patch
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 from PIL import Image
 from fastapi.testclient import TestClient
-from backend import main
+from backend.application import create_app
+from backend.settings import Settings
 from backend.services.inference_runtime import InferenceRuntime, InferenceBusy, InvalidImage, MAX_UPLOAD_BYTES
 from backend.services.recommendation_service import RecommendationService
 
@@ -27,9 +28,10 @@ def image_bytes(size=(20, 10), orientation=None):
 
 class ApiTests(unittest.TestCase):
     def setUp(self):
-        self.context = TestClient(main.app)
+        self.app = create_app(Settings(production=True))
+        self.context = TestClient(self.app)
         self.client = self.context.__enter__()
-        main.limiter.reset()
+        self.app.state.limiter.reset()
 
     def tearDown(self):
         self.context.__exit__(None, None, None)
@@ -56,11 +58,11 @@ class ApiTests(unittest.TestCase):
         self.assertEqual(response.status_code, 413)
 
     def test_busy_and_no_detection(self):
-        with patch.object(main.inference, "analyze", AsyncMock(side_effect=InferenceBusy("busy"))):
+        with patch.object(self.app.state.services.inference, "analyze", AsyncMock(side_effect=InferenceBusy("busy"))):
             response = self.client.post("/api/analyze-food", files={"file": ("x.jpg", image_bytes(), "image/jpeg")})
             self.assertEqual(response.status_code, 503)
             self.assertIn("retry-after", response.headers)
-        with patch.object(main.inference, "analyze", AsyncMock(return_value=None)):
+        with patch.object(self.app.state.services.inference, "analyze", AsyncMock(return_value=None)):
             response = self.client.post("/api/analyze-food", files={"file": ("x.jpg", image_bytes(), "image/jpeg")})
             self.assertTrue(response.json()["food_not_found"])
 
@@ -145,19 +147,19 @@ class RuntimeTests(unittest.IsolatedAsyncioTestCase):
             runtime.close()
 
     async def test_groq_failure_uses_free_fallback(self):
-        service = RecommendationService()
-        service.production = True
-        service.groq_api_key = "fake-test-key"
-        service.openai_api_key = "must-not-be-used"
-        service.ollama_host = "must-not-be-used"
-        with patch.object(service, "_call_groq", AsyncMock(side_effect=TimeoutError)), \
-             patch.object(service, "_call_openai", AsyncMock()) as paid, \
-             patch.object(service, "_call_ollama", AsyncMock()) as local:
+        from backend.services.providers import GroqProvider
+        settings = Settings(production=True, groq_key="fake", openai_key="must-not-be-used", ollama_host="must-not-be-used")
+        with patch.object(GroqProvider, "recommend", AsyncMock(side_effect=TimeoutError)), \
+             patch("backend.services.recommendation_service.OpenAIProvider") as paid, \
+             patch("backend.services.recommendation_service.OllamaProvider") as local:
+            service = RecommendationService(settings)
+            await service.initialize()
             result = await service.get_recommendations([{"food_label": "Idli"}], "Maintenance")
             self.assertEqual(result["source"], "fallback")
             self.assertEqual(len(result["recommendations"]), 3)
             paid.assert_not_called()
             local.assert_not_called()
+            await service.close()
 
 
 if __name__ == "__main__":

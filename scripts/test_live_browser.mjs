@@ -1,8 +1,8 @@
 import assert from 'node:assert/strict'
 import { spawnSync } from 'node:child_process'
-import { chromium } from '../.deployment/browser-tools/node_modules/playwright/index.mjs'
+import { launchBrowser, mockMacros } from './browser_support.mjs'
 
-const browser = await chromium.launch({ channel: 'msedge', headless: true })
+const browser = await launchBrowser()
 try {
   const url = process.argv[2] || 'https://food-recognition-nutrition.vercel.app'
   const page = await browser.newPage()
@@ -25,18 +25,26 @@ try {
   const result = await response.json()
   assert.equal(result.source, 'groq')
   assert.equal(result.recommendations.length, 3)
+  await page.getByText('General nutrition guidance', { exact: true }).waitFor()
+  await page.getByText('Goals & advanced settings', { exact: true }).click()
+  const health = page.getByLabel('Health context (this session only)')
+  await health.selectOption('diabetic')
+  await page.getByText('Adjusted for diabetes', { exact: true }).waitFor({ timeout: 45000 })
+  await health.selectOption('hypertension')
+  await page.getByText('Adjusted for high blood pressure', { exact: true }).waitFor({ timeout: 45000 })
   await page.getByText('Detected 1 Food Item. Review portions before saving.', { exact: true }).waitFor()
   assert.equal(await page.locator('#history article').count(), 0)
   await page.getByRole('button', { name: /^Increase .* portion$/ }).first().click()
   await page.getByRole('button', { name: 'Save meal', exact: true }).click()
   await page.getByRole('button', { name: 'Meal saved', exact: true }).waitFor()
   assert.equal(await page.locator('#history article').count(), 1)
+  await page.screenshot({ path: '.deployment/health-context-live.png', fullPage: true })
   await page.reload({ waitUntil: 'networkidle' })
   await page.locator('#history article').waitFor()
   assert.equal(await page.locator('#history article').count(), 1)
   assert.deepEqual(pageErrors, [])
   await page.screenshot({ path: '.deployment/food-first-live.png', fullPage: true })
-  console.log('PASS: real browser upload, food detection, Groq advice, portion editing, save and reload persistence; no browser exceptions')
+  console.log('PASS: real browser upload, Groq advice, diabetes/BP labels, portion editing, save and reload persistence; no browser exceptions')
 } finally {
   await browser.close()
 }

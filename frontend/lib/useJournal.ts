@@ -1,9 +1,10 @@
 'use client'
 
 import { useCallback, useEffect, useRef, useState } from 'react'
-import { emptyJournal, Journal, localDate, millisecondsToMidnight, parseJournal, STORAGE_KEY } from './meals'
+import { emptyJournal, Journal, localDate, millisecondsToMidnight, STORAGE_KEY } from './meals'
+import { browserJournalStorage, JournalStorage } from './journalStorage'
 
-export function useJournal() {
+export function useJournal(storage: JournalStorage = browserJournalStorage) {
   const [journal, setJournal] = useState(emptyJournal)
   const [ready, setReady] = useState(false)
   const [storageError, setStorageError] = useState('')
@@ -13,7 +14,7 @@ export function useJournal() {
   useEffect(() => {
     const read = () => {
       try {
-        const loaded = parseJournal(localStorage.getItem(STORAGE_KEY))
+        const loaded = storage.read()
         setJournal(loaded)
         blocked.current = false
         setStorageError('')
@@ -27,7 +28,7 @@ export function useJournal() {
     const onStorage = (event: StorageEvent) => { if (event.key === STORAGE_KEY || event.key === null) read() }
     window.addEventListener('storage', onStorage)
     return () => window.removeEventListener('storage', onStorage)
-  }, [])
+  }, [storage])
 
   useEffect(() => {
     let timer: ReturnType<typeof setTimeout>
@@ -46,9 +47,8 @@ export function useJournal() {
     if (!ready || blocked.current) return false
     try {
       // Read again so another tab's most recent saved meals are not discarded.
-      const stored = parseJournal(localStorage.getItem(STORAGE_KEY))
-      const next = parseJournal(JSON.stringify(change(stored)))
-      localStorage.setItem(STORAGE_KEY, JSON.stringify(next))
+      const stored = storage.read()
+      const next = storage.write(change(stored))
       setJournal(next)
       setStorageError('')
       return true
@@ -56,7 +56,7 @@ export function useJournal() {
       setStorageError(`Changes could not be saved in this browser. ${error instanceof Error ? error.message : 'Storage is unavailable.'} Your previous saved meals are unchanged; scanning still works.`)
       return false
     }
-  }, [ready])
+  }, [ready, storage])
 
   return { journal, commit, ready, today, storageError }
 }

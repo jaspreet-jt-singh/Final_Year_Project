@@ -102,11 +102,44 @@ Saved meals retain the calendar date at saving even if portions are edited later
 
 Serve `frontend/out` on localhost:4173 after building, then run
 `node scripts/test_frontend.mjs` and `node scripts/test_journal_browser.mjs`.
-These use the existing local Playwright installation under
-`.deployment/browser-tools/node_modules` and Microsoft Edge. Tests mock APIs;
+These use the locked Playwright development dependency and bundled Chromium.
+Install it with `npm --prefix frontend exec -- playwright install chromium`,
+then run `npm --prefix frontend run test:browser` to start/stop the static test
+server and execute all browser suites automatically. Tests mock APIs;
 they cover upload errors, alignment, portion calculations, journal persistence,
 deletion/undo, midnight rollover, privacy, storage failures, and mobile layout.
 `node scripts/test_live_browser.mjs <candidate-url> --protected` verifies a real
 preview scan, guidance, portion editing, save, and reload before promotion.
 The public URL can be tested without `--protected`. Test meals remain confined
 to the disposable test browser; they are not sent to a meal-storage service.
+
+## Architecture and quality gates
+
+`backend.main:app` delegates to an application factory. Routers validate public
+Pydantic contracts; injected application-owned services handle inference,
+read-only nutrition lookup, and bounded recommendation providers. Lifespan closes
+resources on shutdown and startup failure. Model loading remains lazy. Production
+still permits only Groq and deterministic local fallback, with two concurrent
+provider calls, no waiting queue, a 20-second provider timeout, and no retries.
+
+`backend/domain/nutrition_policy.json` is the single source for existing goal and
+condition rules. Run `python scripts/generate_contracts.py` after contract/policy
+changes, or `--check` to detect drift. This generates frontend transport types,
+offline policy, OpenAPI, and parity fixtures without loading the model or calling
+providers. Generated frontend files and policy JSON are included by the release
+allowlist; tests, CI, and Python development tools are not deployed.
+
+The frontend separates scan, goal, recommendation and journal hooks from visual
+components. All endpoint functions validate responses at runtime. Recommendation
+badges describe the backend-returned health context, never stale advice under a
+new selection. Health selections are session-only. Journal schema v1 is unchanged.
+
+Local gates: install `scripts/requirements-dev.txt` into the development Python
+environment, run `ruff check backend`, `python scripts/test_deployment.py`,
+`python scripts/test_architecture.py`, `npm --prefix frontend run test:unit`,
+frontend lint/build/typecheck, and `npm --prefix frontend run test:browser`.
+The GitHub quality workflow runs these checks on main/dev pushes and pull requests
+without credentials or live AI calls. The isolated release branch intentionally
+contains no CI workflow; publish it only after source checks and preview smoke
+tests pass. Operational logs contain allowlisted event metadata and generated
+request IDs, not request bodies, health selections, prompts, or API keys.

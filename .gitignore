@@ -26,6 +26,12 @@ models/runs/
 Thumbs.db
 .*/
 tests/
+!.github/
+!.github/workflows/
+!.github/workflows/quality.yml
+!tests/
+tests/*
+!tests/contracts/
 screenshots
 presentations
 # Generated deployment/build artifacts

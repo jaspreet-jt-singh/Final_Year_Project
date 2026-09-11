@@ -1,7 +1,7 @@
 import assert from 'node:assert/strict'
-import { chromium } from '../.deployment/browser-tools/node_modules/playwright/index.mjs'
+import { launchBrowser, mockMacros } from './browser_support.mjs'
 
-const browser = await chromium.launch({ channel: 'msedge', headless: true })
+const browser = await launchBrowser()
 try {
   const page = await browser.newPage()
   const errors = []
@@ -14,8 +14,8 @@ try {
     let body = {}
     if (path.endsWith('/goals')) body = { goals: [] }
     if (path.endsWith('/health-conditions')) body = { health_conditions: [] }
-    if (path.endsWith('/calculate-macros')) body = { target_calories: 2000, carbs_g: 250, protein_g: 125, fat_g: 56 }
-    if (path.endsWith('/recommendations')) body = { recommendations: ['One', 'Two', 'Three'], source: 'fallback' }
+    if (path.endsWith('/calculate-macros')) body = mockMacros(route.request().postDataJSON())
+    if (path.endsWith('/recommendations')) body = { recommendations: ['One', 'Two', 'Three'], source: 'fallback', health_condition: route.request().postDataJSON().health_condition || 'none' }
     if (path.endsWith('/analyze-food')) {
       uploadedBytes = route.request().postDataBuffer().length
       if (scenario === 'success') body = {

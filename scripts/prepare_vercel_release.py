@@ -27,6 +27,13 @@ def git(*args, cwd=ROOT):
 
 
 def prepare(commit=False):
+    required = (
+        "backend/domain/nutrition_policy.json",
+        "frontend/lib/generated/api.d.ts",
+        "frontend/lib/generated/nutritionPolicy.ts",
+    )
+    if any(not (ROOT / name).is_file() for name in required):
+        raise RuntimeError("Generate API contracts and nutrition policy before preparing a release")
     parent = ROOT / ".deployment"
     parent.mkdir(exist_ok=True)
     destination = Path(tempfile.mkdtemp(prefix="release-", dir=parent))
