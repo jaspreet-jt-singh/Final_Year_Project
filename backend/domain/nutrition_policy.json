@@ -1,0 +1,176 @@
+{
+  "goals": {
+    "weight_loss": {
+      "name": "Weight Loss",
+      "carbs_percent": 40,
+      "protein_percent": 35,
+      "fat_percent": 25,
+      "description": "Higher protein, moderate carbs, lower fat for satiety and muscle preservation"
+    },
+    "muscle_gain": {
+      "name": "Muscle Gain",
+      "carbs_percent": 40,
+      "protein_percent": 30,
+      "fat_percent": 30,
+      "description": "Balanced macros with adequate protein for muscle synthesis"
+    },
+    "maintenance": {
+      "name": "Maintenance",
+      "carbs_percent": 50,
+      "protein_percent": 25,
+      "fat_percent": 25,
+      "description": "Balanced nutrition for maintaining current weight"
+    },
+    "endurance": {
+      "name": "Endurance",
+      "carbs_percent": 55,
+      "protein_percent": 20,
+      "fat_percent": 20,
+      "description": "Higher carbs for sustained energy during endurance activities"
+    }
+  },
+  "conditions": {
+    "none": {
+      "name": "None",
+      "description": "No specific health conditions",
+      "key": "none",
+      "adjustment_label": "General nutrition guidance",
+      "aliases": [
+        "none",
+        "None",
+        ""
+      ]
+    },
+    "diabetic": {
+      "name": "Diabetic",
+      "description": "Focus on low glycemic index foods, manage blood sugar spikes",
+      "key": "diabetic",
+      "adjustment_label": "Adjusted for diabetes",
+      "aliases": [
+        "diabetic",
+        "Diabetic",
+        "diabetes"
+      ]
+    },
+    "hypertension": {
+      "name": "Hypertension (High BP)",
+      "description": "Low sodium diet, avoid processed foods, focus on potassium-rich foods",
+      "key": "hypertension",
+      "adjustment_label": "Adjusted for high blood pressure",
+      "aliases": [
+        "hypertension",
+        "Hypertension (High BP)",
+        "bp",
+        "high bp",
+        "high blood pressure"
+      ]
+    },
+    "heart_disease": {
+      "name": "Heart Disease",
+      "description": "Low saturated fat, low cholesterol, increase omega-3 fatty acids",
+      "key": "heart_disease",
+      "adjustment_label": "Adjusted for heart disease",
+      "aliases": [
+        "heart_disease",
+        "Heart Disease"
+      ]
+    },
+    "high_cholesterol": {
+      "name": "High Cholesterol",
+      "description": "Low saturated and trans fats, high fiber, plant-based proteins preferred",
+      "key": "high_cholesterol",
+      "adjustment_label": "Adjusted for high cholesterol",
+      "aliases": [
+        "high_cholesterol",
+        "High Cholesterol"
+      ]
+    },
+    "digestive_issues": {
+      "name": "Digestive Issues",
+      "description": "Easily digestible foods, avoid spicy/oily food, small frequent meals",
+      "key": "digestive_issues",
+      "adjustment_label": "Adjusted for digestive issues",
+      "aliases": [
+        "digestive_issues",
+        "Digestive Issues"
+      ]
+    },
+    "kidney_disease": {
+      "name": "Kidney Disease",
+      "description": "Low potassium, low phosphorus, controlled protein intake",
+      "key": "kidney_disease",
+      "adjustment_label": "Adjusted for kidney disease",
+      "aliases": [
+        "kidney_disease",
+        "Kidney Disease"
+      ]
+    },
+    "anemia": {
+      "name": "Anemia",
+      "description": "Iron-rich foods, vitamin C to aid absorption, avoid tea/coffee with meals",
+      "key": "anemia",
+      "adjustment_label": "Adjusted for anemia",
+      "aliases": [
+        "anemia",
+        "Anemia"
+      ]
+    },
+    "thyroid": {
+      "name": "Thyroid Disorder",
+      "description": "Iodine balance, selenium-rich foods, limit goitrogenic foods raw",
+      "key": "thyroid",
+      "adjustment_label": "Adjusted for thyroid disorder",
+      "aliases": [
+        "thyroid",
+        "Thyroid Disorder"
+      ]
+    }
+  },
+  "modifiers": {
+    "none": {
+      "carbs": 1,
+      "protein": 1,
+      "fat": 1
+    },
+    "diabetic": {
+      "carbs": 0.8,
+      "protein": 1.15,
+      "fat": 1
+    },
+    "hypertension": {
+      "carbs": 1,
+      "protein": 1,
+      "fat": 0.9
+    },
+    "heart_disease": {
+      "carbs": 1.05,
+      "protein": 1,
+      "fat": 0.8
+    },
+    "high_cholesterol": {
+      "carbs": 1.05,
+      "protein": 1.1,
+      "fat": 0.75
+    },
+    "digestive_issues": {
+      "carbs": 1,
+      "protein": 0.9,
+      "fat": 0.85
+    },
+    "kidney_disease": {
+      "carbs": 1.15,
+      "protein": 0.6,
+      "fat": 1
+    },
+    "anemia": {
+      "carbs": 1,
+      "protein": 1.1,
+      "fat": 0.9
+    },
+    "thyroid": {
+      "carbs": 1,
+      "protein": 1.05,
+      "fat": 1
+    }
+  }
+}

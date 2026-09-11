@@ -1,27 +1,9 @@
-export interface Macros {
-  calories: number
-  protein_g: number
-  carbs_g: number
-  fat_g: number
-}
+import type { components } from './generated/api'
+import { nutritionPolicy } from './generated/nutritionPolicy'
 
-export interface FoodDetection {
-  food_label: string
-  display_name: string
-  confidence: number
-  bounding_box: [number, number, number, number]
-  macros: Macros | null
-  macros_unit: string
-  nutrition_source: string | null
-  nutrition_not_found?: boolean
-}
-
-export interface FoodAnalysis {
-  detections: FoodDetection[]
-  img_width: number | null
-  img_height: number | null
-  food_not_found: boolean
-}
+export type Macros = components['schemas']['Macros']
+export type FoodDetection = components['schemas']['FoodDetection']
+export type FoodAnalysis = components['schemas']['FoodAnalysis']
 
 export interface MealItem {
   id: string
@@ -46,7 +28,7 @@ export function sameItems(left: MealItem[] | undefined, right: MealItem[]): bool
 }
 
 export const STORAGE_KEY = 'food-recognition.journal'
-export const GOALS = ['Weight Loss', 'Muscle Gain', 'Maintenance', 'Endurance']
+export const GOALS: string[] = Object.values(nutritionPolicy.goals).map(goal => goal.name)
 export const DEFAULT_PREFERENCES: Preferences = { goal: 'Maintenance', calories: 2000 }
 export const emptyJournal = (): Journal => ({ version: 1, meals: [], preferences: { ...DEFAULT_PREFERENCES } })
 
