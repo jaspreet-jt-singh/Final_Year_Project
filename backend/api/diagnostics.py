@@ -5,6 +5,20 @@ from backend.services.container import Services, get_services
 router = APIRouter()
 
 
+@router.get("/api")
+async def api_info():
+    return {
+        "message": "AI Food Recognition API",
+        "status": "running",
+        "endpoints": {
+            "health": "/api/health",
+            "analyze_food": "/api/analyze-food",
+            "calculate_macros": "/api/user/calculate-macros",
+            "recommendations": "/api/recommendations",
+        },
+    }
+
+
 @router.get("/api/health", response_model=HealthResponse)
 async def health_check(services: Services = Depends(get_services)):
     return {
