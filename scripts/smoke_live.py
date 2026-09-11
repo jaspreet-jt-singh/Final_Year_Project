@@ -39,7 +39,7 @@ def main():
             return
         home = client.get("/")
         home.raise_for_status()
-        assert "Upload Food Image" in home.text, "Homepage is not the exported app"
+        assert "Know your plate." in home.text and "Meal journal" in home.text, "Homepage is not the exported app"
         assets = set(re.findall(r'(?:src|href)="([^\"]+\.js[^\"]*)"', home.text))
         for asset in assets:
             assert asset.startswith("/") and not asset.startswith("//")

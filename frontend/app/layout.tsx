@@ -6,7 +6,7 @@ const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
   title: 'AI Based Food Recognition with Nutrition Aware Recommendations',
-  description: 'AI Based Food Recognition with Nutrition Aware Recommendations',
+  description: 'Scan your food, review portion estimates, and keep a private daily meal journal with nutrition-aware recommendations.',
 }
 
 export default function RootLayout({
