@@ -28,7 +28,7 @@ class VisionService:
 
     async def initialize(self):
         try:
-            model_path_env = os.getenv("YOLO_MODEL_PATH", "models/yolo11s_indian.pt")
+            model_path_env = os.getenv("YOLO_MODEL_PATH", "results_after_discontinuation/yolo11s_indian_food_best.pt")
             if not model_path_env.strip():
                 raise ValueError("YOLO_MODEL_PATH is empty in .env")
 
@@ -73,7 +73,7 @@ class VisionService:
             img       = Image.open(io.BytesIO(image_content)).convert('RGB')
 
             # iou=0.45 matches notebook
-            results    = self.model.predict(img, verbose=False, conf=conf, iou=iou, imgsz=640)
+            results    = self.model.predict(img, verbose=False, conf=conf, iou=iou, imgsz=640, device="cpu")
             detections = results[0].boxes
             logger.info(f"Found {len(detections)} detections above {conf} confidence")
 

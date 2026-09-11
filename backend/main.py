@@ -5,6 +5,7 @@ FastAPI Backend for AI Food Recognition
 from fastapi import FastAPI, File, UploadFile, HTTPException, Request, Body
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import JSONResponse
+from fastapi.staticfiles import StaticFiles
 from pydantic import BaseModel
 from slowapi import Limiter, _rate_limit_exceeded_handler
 from slowapi.util import get_remote_address
@@ -14,16 +15,28 @@ import os
 import asyncio
 import concurrent.futures
 import re
+import math
 from functools import partial
 from pathlib import Path
 import logging
+import sys
+import tempfile
 from dotenv import load_dotenv
 
 load_dotenv()
 
-from services.vision_service import VisionService
-from services.nutrition_service import NutritionService
-from services.recommendation_service import RecommendationService
+if not __package__:
+    sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
+
+if os.getenv("VERCEL") or os.getenv("APP_ENV") == "production":
+    for key in ("YOLO_CONFIG_DIR", "MPLCONFIGDIR", "XDG_CACHE_HOME"):
+        os.environ.setdefault(key, str(Path(tempfile.gettempdir()) / "food-recognition" / key.lower()))
+for key in ("OMP_NUM_THREADS", "MKL_NUM_THREADS", "OPENBLAS_NUM_THREADS"):
+    os.environ.setdefault(key, "1")
+
+from backend.services.inference_runtime import InferenceRuntime, InferenceBusy, InvalidImage, MAX_UPLOAD_BYTES
+from backend.services.nutrition_service import NutritionService
+from backend.services.recommendation_service import RecommendationService
 
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
@@ -40,7 +53,7 @@ app = FastAPI(
 app.add_middleware(
     CORSMiddleware,
     allow_origins=["http://localhost:3000", "http://127.0.0.1:3000"],
-    allow_credentials=True,
+    allow_credentials=False,
     allow_methods=["GET", "POST", "PUT", "DELETE", "OPTIONS"],
     allow_headers=["*"],
     expose_headers=["*"],
@@ -56,32 +69,25 @@ async def rate_limit_exception_handler(request: Request, exc: RateLimitExceeded)
         status_code=429,
         content={
             "error": "Rate limit exceeded",
-            "message": f"Too many requests. Limit is {os.getenv('RATE_LIMIT_PER_MINUTE', '30')} per minute.",
+            "message": "Too many requests. Please wait a minute and retry.",
             "retry_after": 60
-        }
+        },
+        headers={"Retry-After": "60"}
     )
 
-vision_service       = None
+inference = InferenceRuntime()
 nutrition_service    = None
 recommendation_service = None
-executor             = concurrent.futures.ThreadPoolExecutor(max_workers=2)
 
 
 @app.on_event("startup")
 async def startup_event():
-    global vision_service, nutrition_service, recommendation_service
+    global nutrition_service, recommendation_service
     logger.info("Starting AI Food Recognition API...")
     try:
         nutrition_service = NutritionService()
         await nutrition_service.initialize()
         logger.info("Nutrition service initialized")
-
-        vision_service = VisionService()
-        await vision_service.initialize()
-        logger.info("Vision service initialized")
-
-        await vision_service.warmup()
-        logger.info("Model warm-up completed")
 
         recommendation_service = RecommendationService()
         logger.info("Recommendation service initialized")
@@ -96,7 +102,9 @@ async def startup_event():
 async def health_check():
     return {
         "status": "ok",
-        "model_loaded": vision_service is not None,
+        "model_loaded": inference.status == "ready",
+        "model_status": inference.status,
+        "model_available": inference.model_available,
         "description": "AI Food Recognition API"
     }
 
@@ -143,7 +151,7 @@ async def validate_nutrition():
 
 
 @app.post("/api/analyze-food")
-@limiter.limit(f"{os.getenv('RATE_LIMIT_PER_MINUTE', '30')}/minute")
+@limiter.limit(f"{os.getenv('RATE_LIMIT_PER_MINUTE', '10')}/minute")
 async def analyze_food(request: Request, file: UploadFile = File(...)):
     """
     Analyze uploaded food image and return nutrition information.
@@ -152,24 +160,22 @@ async def analyze_food(request: Request, file: UploadFile = File(...)):
     logger.info(f"Received file upload request: {file.filename if file else 'No file'}")
     logger.info(f"File content type: {file.content_type if file else 'No file'}")
 
-    if not vision_service or not nutrition_service:
+    if not nutrition_service:
         raise HTTPException(status_code=503, detail="Services not initialized. Check /api/health")
 
     if not file.content_type or not file.content_type.startswith("image/"):
         raise HTTPException(status_code=400, detail="File must be an image")
 
-    content = await file.read()
+    content = await file.read(MAX_UPLOAD_BYTES + 1)
+    await file.close()
     if len(content) == 0:
         raise HTTPException(status_code=400, detail="Empty file received")
-    if len(content) > 10 * 1024 * 1024:
-        raise HTTPException(status_code=400, detail="File size must be less than 10MB")
+    if len(content) > MAX_UPLOAD_BYTES:
+        raise HTTPException(status_code=413, detail="File size must be less than 4 MiB")
 
     try:
         # FIX: pass iou=0.45 to match notebook exactly, using partial
-        detection_result = await asyncio.get_event_loop().run_in_executor(
-            executor,
-            partial(vision_service.analyze_image, content, conf=0.25, iou=0.45)
-        )
+        detection_result = await inference.analyze(content)
 
         # FIX: return HTTP 200 with empty result instead of 404
         if not detection_result:
@@ -230,6 +236,10 @@ async def analyze_food(request: Request, file: UploadFile = File(...)):
         
         return JSONResponse(content=result)
 
+    except InvalidImage as e:
+        raise HTTPException(status_code=400, detail=str(e)) from e
+    except InferenceBusy as e:
+        raise HTTPException(status_code=503, detail=str(e), headers={"Retry-After": "10"}) from e
     except HTTPException:
         raise
     except Exception as e:
@@ -301,6 +311,7 @@ async def get_available_health_conditions():
 # ============== Phase 3: AI Recommendations ==============
 
 @app.post("/api/recommendations")
+@limiter.limit("5/minute")
 async def get_recommendations(request: Request):
     """
     Get AI-powered dietary recommendations based on scanned food, user goal, and health condition.
@@ -323,9 +334,31 @@ async def get_recommendations(request: Request):
     except Exception:
         raise HTTPException(status_code=400, detail="Invalid JSON body")
     
+    if not isinstance(body, dict):
+        raise HTTPException(status_code=400, detail="JSON body must be an object")
     detected_foods = body.get("detected_foods", [])
     user_goal = body.get("user_goal", "Maintenance")
     health_condition = body.get("health_condition", "none")
+
+    if not isinstance(detected_foods, list) or len(detected_foods) > 10:
+        raise HTTPException(status_code=400, detail="Provide at most ten detected foods")
+    if not all(isinstance(value, str) and len(value) <= 100 for value in (user_goal, health_condition)):
+        raise HTTPException(status_code=400, detail="Invalid goal or health condition")
+    for food in detected_foods:
+        if not isinstance(food, dict) or not isinstance(food.get("food_label"), str) or len(food["food_label"]) > 100:
+            raise HTTPException(status_code=400, detail="Invalid food label")
+        food["food_label"] = re.sub(r"[^a-zA-Z0-9 _-]", "", food["food_label"])
+        display_name = food.get("display_name", food["food_label"])
+        if not isinstance(display_name, str) or len(display_name) > 100:
+            raise HTTPException(status_code=400, detail="Invalid food display name")
+        food["display_name"] = re.sub(r"[^a-zA-Z0-9 _-]", "", display_name)
+        macros = food.get("macros")
+        if macros is not None:
+            if not isinstance(macros, dict) or any(
+                not isinstance(value, (int, float)) or not math.isfinite(value) or value < 0 or value > 10000
+                for value in macros.values()
+            ):
+                raise HTTPException(status_code=400, detail="Invalid nutrition values")
     
     if not detected_foods:
         raise HTTPException(status_code=400, detail="No detected foods provided")
@@ -341,7 +374,7 @@ async def get_recommendations(request: Request):
         raise HTTPException(status_code=500, detail="Failed to generate recommendations")
 
 
-@app.get("/")
+@app.get("/api")
 async def root():
     return {
         "message": "AI Food Recognition API",
@@ -355,5 +388,8 @@ async def root():
     }
 
 
+if os.getenv("VERCEL") or (Path(__file__).resolve().parents[1] / "web").is_dir():
+    app.mount("/", StaticFiles(directory=str(Path(__file__).resolve().parents[1] / "web"), html=True, check_dir=False), name="frontend")
+
 if __name__ == "__main__":
-    uvicorn.run("main:app", host="0.0.0.0", port=8000, reload=True, log_level="info")
+    uvicorn.run("backend.main:app", host="0.0.0.0", port=8000, reload=True, log_level="info")

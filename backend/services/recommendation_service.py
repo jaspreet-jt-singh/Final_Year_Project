@@ -5,6 +5,7 @@ Supports health conditions (diabetic, hypertension, etc.) for personalized advic
 
 import os
 import logging
+import asyncio
 from typing import Optional
 from dotenv import load_dotenv
 
@@ -107,8 +108,10 @@ class RecommendationService:
     
     def __init__(self):
         self.groq_api_key = os.getenv("GROQ_API_KEY", "")
+        self.groq_model = os.getenv("GROQ_MODEL", "openai/gpt-oss-20b")
         self.openai_api_key = os.getenv("OPENAI_API_KEY", "")
-        self.ollama_host = os.getenv("OLLAMA_HOST", "http://localhost:11434")
+        self.ollama_host = os.getenv("OLLAMA_HOST", "")
+        self.production = os.getenv("APP_ENV") == "production" or bool(os.getenv("VERCEL"))
     
     def _resolve_condition_key(self, condition: str) -> str:
         """
@@ -264,7 +267,7 @@ class RecommendationService:
                 logger.warning(f"Groq failed: {e}, trying next provider")
         
         # Try OpenAI
-        if self.openai_api_key:
+        if self.openai_api_key and not self.production:
             try:
                 recommendation = await self._call_openai(prompt)
                 if recommendation:
@@ -274,7 +277,7 @@ class RecommendationService:
         
         # Try Ollama (local)
         try:
-            recommendation = await self._call_ollama(prompt)
+            recommendation = await self._call_ollama(prompt) if self.ollama_host and not self.production else None
             if recommendation:
                 return {"recommendations": recommendation, "source": "ollama", "health_condition": condition_key}
         except Exception as e:
@@ -290,11 +293,12 @@ class RecommendationService:
     async def _call_groq(self, prompt: str) -> Optional[list]:
         """Call Groq API for recommendations."""
         try:
-            from groq import Groq
-            client = Groq(api_key=self.groq_api_key)
+            from groq import AsyncGroq
+            client = AsyncGroq(api_key=self.groq_api_key, timeout=20.0, max_retries=0)
             
-            response = client.chat.completions.create(
-                model="llama-3.1-8b-instant",
+            async with client:
+                response = await asyncio.wait_for(client.chat.completions.create(
+                model=self.groq_model,
                 messages=[
                     {
                         "role": "system",
@@ -306,8 +310,9 @@ class RecommendationService:
                     }
                 ],
                 temperature=0.7,
-                max_tokens=300
-            )
+                    reasoning_effort="low",
+                    max_completion_tokens=1024
+                ), timeout=20.0)
             
             content = response.choices[0].message.content.strip()
             return self._parse_recommendations(content)

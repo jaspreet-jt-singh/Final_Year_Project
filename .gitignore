@@ -28,3 +28,10 @@ Thumbs.db
 tests/
 screenshots
 presentations
+# Generated deployment/build artifacts
+.deployment/
+.vercel/
+public/
+web/
+frontend/out/
+frontend/*.tsbuildinfo

@@ -4,6 +4,7 @@ import React, { useState, useEffect } from 'react'
 import { CheckCircle, AlertCircle, TrendingUp, Activity, Zap, Sparkles, Loader2, Plus, Minus } from 'lucide-react'
 import NutritionLabel from './NutritionLabel'
 import ImageOverlay from './ImageOverlay'
+import { apiFetch } from '@/lib/api'
 
 interface FoodDetection {
   food_label: string
@@ -40,6 +41,7 @@ interface ResultsPanelProps {
 export default function ResultsPanel({ analysis, imageUrl, isLoading, userGoal = 'Maintenance', healthCondition = 'None', onNutritionChange }: ResultsPanelProps) {
   // Phase 3: AI Recommendations state
   const [recommendations, setRecommendations] = useState<string[]>([])
+  const [recommendationError, setRecommendationError] = useState('')
   const [isLoadingRecommendations, setIsLoadingRecommendations] = useState(false)
   const [recommendationSource, setRecommendationSource] = useState<string>('')
   // Serving multipliers for each detected food
@@ -83,27 +85,25 @@ export default function ResultsPanel({ analysis, imageUrl, isLoading, userGoal =
       return next
     })
   }
-  // Fetch AI recommendations when analysis is complete
+  // Cancel stale advice when the scan, goal, or condition changes.
   useEffect(() => {
-    if (analysis && analysis.detections && analysis.detections.length > 0 && !isLoading) {
-      fetchRecommendations()
-    }
-  }, [analysis, isLoading, healthCondition])
-
-  const fetchRecommendations = async () => {
-    if (!analysis || !analysis.detections || analysis.detections.length === 0) return
+    if (!analysis || analysis.detections.length === 0 || isLoading) return
+    const controller = new AbortController()
+    const fetchRecommendations = async () => {
     
     setIsLoadingRecommendations(true)
     setRecommendations([])
+    setRecommendationError('')
     
     try {
-      const response = await fetch('http://localhost:8000/api/recommendations', {
+      const response = await apiFetch('/api/recommendations', {
+        signal: controller.signal,
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
         body: JSON.stringify({
-          detected_foods: analysis.detections,
+          detected_foods: analysis.detections.slice(0, 10),
           user_goal: userGoal,
           health_condition: healthCondition
         })
@@ -115,11 +115,16 @@ export default function ResultsPanel({ analysis, imageUrl, isLoading, userGoal =
         setRecommendationSource(data.source || 'unknown')
       }
     } catch (err) {
+      if (controller.signal.aborted) return
+      setRecommendationError(err instanceof Error ? err.message : 'Could not load recommendations.')
       console.error('Failed to fetch recommendations:', err)
     } finally {
-      setIsLoadingRecommendations(false)
+      if (!controller.signal.aborted) setIsLoadingRecommendations(false)
     }
-  }
+    }
+    void fetchRecommendations()
+    return () => controller.abort()
+  }, [analysis, isLoading, userGoal, healthCondition])
 
   if (isLoading) {
     return (
@@ -305,7 +310,7 @@ export default function ResultsPanel({ analysis, imageUrl, isLoading, userGoal =
           </div>
         ) : (
           <div className="text-center py-6 text-gray-500">
-            <p>Unable to generate recommendations at this time.</p>
+            <p role="alert">{recommendationError || 'Unable to generate recommendations at this time.'}</p>
             <p className="text-sm mt-1">Your goal: {userGoal}{healthCondition !== 'None' ? ` • ${healthCondition}` : ''}</p>
           </div>
         )}

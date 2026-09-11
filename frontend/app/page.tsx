@@ -2,6 +2,7 @@
 
 import React, { useState, useCallback, useEffect } from 'react'
 import ImageUpload from '@/components/ImageUpload'
+import { apiFetch } from '@/lib/api'
 import NutritionLabel from '@/components/NutritionLabel'
 import ResultsPanel from '@/components/ResultsPanel'
 import { Brain, Utensils, Target, Flame, ArrowDown, Camera, RotateCcw, Info, Heart } from 'lucide-react'
@@ -145,7 +146,7 @@ export default function Home() {
 
   const calculateMacros = useCallback(async (goal: string, calories: number, healthCondition: string = 'None') => {
     try {
-      const response = await fetch('http://localhost:8000/api/user/calculate-macros', {
+      const response = await apiFetch('/api/user/calculate-macros', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ goal, target_calories: calories, health_condition: healthCondition })
@@ -155,7 +156,8 @@ export default function Home() {
         setMacroGoal(data)
         return
       }
-    } catch {
+    } catch (err) {
+      setError(`${err instanceof Error ? err.message : 'Server unavailable'}. Using local macro estimates.`)
       // Backend unavailable — use local calculation
     }
     setMacroGoal(calculateLocalMacros(goal, calories, healthCondition))
@@ -165,7 +167,7 @@ export default function Home() {
     const fetchInitialData = async () => {
       try {
         // Fetch goals
-        const goalsRes = await fetch('http://localhost:8000/api/user/goals')
+        const goalsRes = await apiFetch('/api/user/goals')
         if (goalsRes.ok) {
           const goalsData = await goalsRes.json()
           if (goalsData.goals && goalsData.goals.length > 0) {
@@ -173,14 +175,15 @@ export default function Home() {
           }
         }
         // Fetch health conditions
-        const healthRes = await fetch('http://localhost:8000/api/user/health-conditions')
+        const healthRes = await apiFetch('/api/user/health-conditions')
         if (healthRes.ok) {
           const healthData = await healthRes.json()
           if (healthData.health_conditions && healthData.health_conditions.length > 0) {
             setHealthConditionOptions(healthData.health_conditions)
           }
         }
-      } catch {
+      } catch (err) {
+        setError(`${err instanceof Error ? err.message : 'Server unavailable'}. Using saved goal options.`)
         console.warn('Backend not running — using hardcoded options')
       }
     }
@@ -247,15 +250,10 @@ export default function Home() {
       const formData = new FormData()
       formData.append('file', file)
 
-      const controller = new AbortController()
-      const timeout = setTimeout(() => controller.abort(), 30000)
-
-      const response = await fetch('http://localhost:8000/api/analyze-food', {
+      const response = await apiFetch('/api/analyze-food', {
         method: 'POST',
         body  : formData,
-        signal: controller.signal,
-      })
-      clearTimeout(timeout)
+      }, 120000)
 
       let result: FoodAnalysis
       try {
@@ -294,9 +292,9 @@ export default function Home() {
       console.error('Error analyzing food:', err)
       let errorMessage = ''
       if (err?.name === 'AbortError') {
-        errorMessage = 'Request timed out — make sure the backend is running:\n\ncd backend\npython main.py'
+        errorMessage = 'Analysis took too long. Please wait a moment and try again.'
       } else if (err instanceof TypeError && err.message.includes('fetch')) {
-        errorMessage = 'Cannot connect to backend — please start the server:\n\ncd backend\npython main.py'
+        errorMessage = 'Could not connect to the analyzer. Please check your connection and try again.'
       } else if (err instanceof Error) {
         errorMessage = err.message
       } else {

@@ -15,7 +15,7 @@ import sys
 
 # Add parent directory to path for imports
 sys.path.insert(0, str(Path(__file__).parent.parent))
-from utils.food_normalizer import normalize_food_name, get_food_variations, find_best_match
+from backend.utils.food_normalizer import normalize_food_name, get_food_variations, find_best_match
 
 logger = logging.getLogger(__name__)
 
