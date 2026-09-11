@@ -227,6 +227,10 @@ export interface components {
             macros_unit: "per_100g";
             /** Nutrition Source */
             nutrition_source: string | null;
+            /** Nutrition Source Url */
+            nutrition_source_url?: string | null;
+            /** Nutrition Mapping Note */
+            nutrition_mapping_note?: string | null;
             /** Nutrition Not Found */
             nutrition_not_found?: boolean | null;
         };
@@ -326,6 +330,7 @@ export interface components {
             food_label: string;
             /** Display Name */
             display_name?: string | null;
+            /** @description Database estimates per 100 g, not consumed portions. */
             macros?: components["schemas"]["Macros"] | null;
         };
         /** RecommendationRequest */

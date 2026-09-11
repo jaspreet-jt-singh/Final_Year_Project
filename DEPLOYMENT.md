@@ -143,3 +143,11 @@ without credentials or live AI calls. The isolated release branch intentionally
 contains no CI workflow; publish it only after source checks and preview smoke
 tests pass. Operational logs contain allowlisted event metadata and generated
 request IDs, not request bodies, health selections, prompts, or API keys.
+
+## Publication-readiness release
+
+Release generation now refuses a dirty source tree and only includes tracked allowlisted files. Commit the source changes, wait for that exact commit's GitHub quality checks, prepare the release, and verify its deployment before publishing. The manifest identifies the clean source commit and hashes of included files. Preserve the previous production deployment for rollback.
+
+The September provenance update adds optional source URL and mapping-caution response fields; successful endpoint paths and existing required fields are unchanged. New scans preserve actual database source labels. Existing version-1 journal records keep their saved source labels without migration. Recommendation prompts explicitly mark calories per 100 g and do not imply consumed quantities.
+
+Research scripts, evidence, manuscripts, source datasets and provenance working documents are excluded from hosting. Run `python scripts/test_publication.py` in addition to the other gates; the full dataset audit is a separate local research operation. Publishing an application does not validate the manuscript's detector/mapping/medical claims.

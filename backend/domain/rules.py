@@ -81,10 +81,10 @@ class NutritionRules:
         """
         food_descriptions = []
         for food in detected_foods:
-            display_name = food.get("display_name", food.get("food_label", "Unknown"))
-            calories = "Unknown"
-            if food.get("macros"):
-                calories = f"{round(food['macros'].get('calories', 0))} kcal"
+            display_name = food.get("display_name") or food.get("food_label", "Unknown")
+            calories = "Nutrition unavailable; do not treat as zero"
+            if food.get("macros") and food["macros"].get("calories") is not None:
+                calories = f"{round(food['macros']['calories'])} kcal per 100 g (database estimate)"
             food_descriptions.append(f"- {display_name} ({calories})")
 
         foods_str = "\n".join(food_descriptions)
@@ -94,7 +94,7 @@ class NutritionRules:
         condition_guidance = ""
         if health_condition != "none":
             condition_guidance = (
-                f"\n\nThe user has the following health condition: {condition_info['name']}. "
+                f"\n\nThe user selected this health context: {condition_info['name']}. "
                 f"Dietary consideration: {condition_info['description']}. "
                 f"Please ensure your recommendations are compatible with this condition."
             )
@@ -103,6 +103,12 @@ class NutritionRules:
             f"The user just scanned the following food item(s) and their goal is '{user_goal}'."
             f"{condition_guidance}"
             f"\n\nScanned foods:\n{foods_str}"
+            f"\n\nAll nutrition values above are per 100 g, NOT the amount eaten. "
+            f"Selected portion weights and today's saved meals are not provided. "
+            f"A scan does not establish consumption. Do not calculate consumed or remaining calories, "
+            f"infer portion sizes, or claim to know sodium, sugar, or other nutrients not supplied. "
+            f"Database matches may be approximate. Give general food-choice guidance, not a diagnosis, "
+            f"treatment plan, or assurance that a food is medically suitable."
             f"\n\nGive me exactly 3 simple bullet points of advice for what else they should eat today "
             f"to balance this meal out and stay on track with their goal and health needs. "
             f"Keep it realistic to Indian or global food options. "

@@ -7,6 +7,7 @@ const object = (value: unknown): value is Record<string, unknown> => !!value && 
 const finite = (value: unknown): value is number => typeof value === 'number' && Number.isFinite(value) && value >= 0
 const strings = (value: unknown): value is string[] => Array.isArray(value) && value.every(item => typeof item === 'string' && item.trim().length > 0)
 const macros = (value: unknown) => object(value) && ['calories', 'protein_g', 'carbs_g', 'fat_g'].every(key => finite(value[key]))
+const optionalText = (value: unknown) => value === undefined || value === null || typeof value === 'string'
 
 async function json<T>(path: string, options: RequestInit, validate: (data: unknown) => boolean, timeout?: number): Promise<T> {
   const response = await apiFetch(path, options, timeout)
@@ -25,7 +26,7 @@ export function analyzeFood(file: File, signal?: AbortSignal) {
   return json<Schemas['FoodAnalysis']>('/api/analyze-food', { method: 'POST', body, signal }, value => object(value) && typeof value.food_not_found === 'boolean' &&
     Array.isArray(value.detections) && (value.detections.length === 0 || (finite(value.img_width) && value.img_width > 0 && finite(value.img_height) && value.img_height > 0)) &&
     value.detections.every(food => object(food) && typeof food.food_label === 'string' && typeof food.display_name === 'string' && finite(food.confidence) && food.confidence <= 1 &&
-      Array.isArray(food.bounding_box) && food.bounding_box.length === 4 && food.bounding_box.every(finite) && (food.macros === null || macros(food.macros)) && food.macros_unit === 'per_100g' && (food.nutrition_source === null || typeof food.nutrition_source === 'string')), 120000)
+      Array.isArray(food.bounding_box) && food.bounding_box.length === 4 && food.bounding_box.every(finite) && (food.macros === null || macros(food.macros)) && food.macros_unit === 'per_100g' && (food.nutrition_source === null || typeof food.nutrition_source === 'string') && optionalText(food.nutrition_source_url) && optionalText(food.nutrition_mapping_note)), 120000)
 }
 
 export function recommendations(body: Schemas['RecommendationRequest'], signal?: AbortSignal) {

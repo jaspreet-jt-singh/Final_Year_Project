@@ -1,6 +1,6 @@
 """
 Nutrition Service for Food Data Lookup - Version 2 with Normalized Matching
-SQLite database lookup with INDB data only
+Read-only SQLite lookup with preserved nutrition provenance.
 """
 
 import re
@@ -174,6 +174,13 @@ class NutritionService:
 
         if row:
             name, calories, protein, carbs, fat, source, source_url = row
+            mapping = self._yolo_mappings.get(original_label)
+            if mapping and mapping["match_score"] is not None and mapping["match_score"] >= 0.9:
+                mapping_note = "Precomputed database match; nutritional equivalence is not independently validated."
+            elif mapping:
+                mapping_note = "Approximate or substitute database match; review required."
+            else:
+                mapping_note = "Automatic name match; review required."
             return {
                 "food_label": original_label,
                 "display_name": name,  # Return the ACTUAL database food name
@@ -187,6 +194,7 @@ class NutritionService:
                 "macros_unit": "per_100g",
                 "nutrition_source": source or "INDB",
                 "nutrition_source_url": source_url or None,
+                "nutrition_mapping_note": mapping_note,
                 "food_not_found": False,
             }
         return None

@@ -4,6 +4,7 @@ import { Check, Save } from 'lucide-react'
 import RecommendationPanel from './RecommendationPanel'
 import { FoodAnalysis, MealDraft, totalNutrition } from '@/lib/meals'
 import MealItems, { NutritionTotals } from './MealItems'
+import { sourceUrl } from '@/lib/sourceUrl'
 
 interface ResultsPanelProps {
   analysis: FoodAnalysis
@@ -36,6 +37,17 @@ export default function ResultsPanel({ analysis, imageUrl, draft, onChange, onSa
       <p className="muted text-xs mt-3">Confidence describes the model prediction, not nutrition accuracy.</p>
     </details>}
     <MealItems items={draft.items} onChange={items => onChange({ ...draft, items })} prefix="scan" />
+    <details className="panel compact">
+      <summary>Nutrition sources & matching limitations</summary>
+      <p className="muted text-sm mt-3">Recipes and preparation vary. Database matches are estimates, not a measurement of this photographed meal. Existing saved meals retain their original source labels.</p>
+      <ul className="space-y-3 mt-3 text-sm">{analysis.detections.map((food, index) => {
+        const href = sourceUrl(food.nutrition_source_url)
+        return <li key={index}><p className="font-semibold">{food.display_name}</p>
+          <p>Source: {food.nutrition_source || 'Unavailable'}{href && <> · <a className="text-button" href={href} target="_blank" rel="noopener noreferrer" referrerPolicy="no-referrer">View source</a></>}</p>
+          <p className="muted">{food.nutrition_mapping_note || 'Mapping details unavailable; do not assume an exact recipe match.'}</p>
+        </li>
+      })}</ul>
+    </details>
     <div className="panel meal-total">
       <p className="eyebrow mb-3">This meal · estimated totals</p>
       <NutritionTotals totals={totals} label="Current meal totals" />
