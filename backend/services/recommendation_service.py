@@ -108,6 +108,7 @@ class RecommendationService:
     
     def __init__(self):
         self.groq_api_key = os.getenv("GROQ_API_KEY", "")
+        self.groq_model = os.getenv("GROQ_MODEL", "openai/gpt-oss-20b")
         self.openai_api_key = os.getenv("OPENAI_API_KEY", "")
         self.ollama_host = os.getenv("OLLAMA_HOST", "")
         self.production = os.getenv("APP_ENV") == "production" or bool(os.getenv("VERCEL"))
@@ -297,7 +298,7 @@ class RecommendationService:
             
             async with client:
                 response = await asyncio.wait_for(client.chat.completions.create(
-                model="llama-3.1-8b-instant",
+                model=self.groq_model,
                 messages=[
                     {
                         "role": "system",
@@ -309,7 +310,8 @@ class RecommendationService:
                     }
                 ],
                 temperature=0.7,
-                    max_tokens=300
+                    reasoning_effort="low",
+                    max_completion_tokens=1024
                 ), timeout=20.0)
             
             content = response.choices[0].message.content.strip()

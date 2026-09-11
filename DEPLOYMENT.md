@@ -16,6 +16,8 @@ release requirement, not something the local Windows checks establish.
   - `YOLO_MODEL_PATH=results_after_discontinuation/yolo11s_indian_food_best.pt`
   - `RATE_LIMIT_PER_MINUTE=10`
   - `GROQ_API_KEY`: enter privately as a backend environment variable.
+  - `GROQ_MODEL=openai/gpt-oss-20b`: available to the existing key on Groq;
+    the former Llama model is no longer available to this account.
 - Leave `NEXT_PUBLIC_API_BASE_URL` unset so the website uses same-origin APIs.
 - Use Groq's free tier. Do not configure a paid provider or upgrade Vercel.
 
