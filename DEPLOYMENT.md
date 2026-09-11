@@ -38,6 +38,7 @@ From the repository root on Windows:
 npm.cmd --prefix frontend run lint
 npm.cmd --prefix frontend run build
 npm.cmd --prefix frontend run typecheck
+node --test scripts/test_meals.mjs
 .\.venv\Scripts\python.exe scripts/prepare_vercel_release.py --commit
 ```
 
@@ -88,3 +89,24 @@ For local development, start `python -m uvicorn backend.main:app --reload` from
 the repository root, and `npm.cmd --prefix frontend run dev` in another terminal.
 The frontend uses localhost:8000 only in development. Existing local `.env`
 settings are preserved. Runtime tests do not invoke Groq or paid services.
+
+## Meal journal and interface checks
+
+The journal uses the versioned `food-recognition.journal` localStorage key.
+Only explicitly saved meals count toward daily totals. Photo data and health
+selections are never persisted; goals and calorie preferences are. There is no
+account, remote database, or cross-device sync. Unsupported or damaged stored
+records are left untouched and saving pauses while photo analysis remains usable.
+Nutrition is scaled from per-100-g records; unknown values make totals incomplete.
+Saved meals retain the calendar date at saving even if portions are edited later.
+
+Serve `frontend/out` on localhost:4173 after building, then run
+`node scripts/test_frontend.mjs` and `node scripts/test_journal_browser.mjs`.
+These use the existing local Playwright installation under
+`.deployment/browser-tools/node_modules` and Microsoft Edge. Tests mock APIs;
+they cover upload errors, alignment, portion calculations, journal persistence,
+deletion/undo, midnight rollover, privacy, storage failures, and mobile layout.
+`node scripts/test_live_browser.mjs <candidate-url> --protected` verifies a real
+preview scan, guidance, portion editing, save, and reload before promotion.
+The public URL can be tested without `--protected`. Test meals remain confined
+to the disposable test browser; they are not sent to a meal-storage service.
