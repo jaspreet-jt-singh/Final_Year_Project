@@ -1,0 +1,36 @@
+[project]
+name = "food-recognition-web"
+version = "0.1.0"
+requires-python = ">=3.12,<3.13"
+dependencies = [
+  "fastapi==0.135.3",
+  "uvicorn==0.43.0",
+  "slowapi>=0.1.9,<0.2",
+  "python-multipart>=0.0.22,<0.1",
+  "torch==2.6.0+cpu",
+  "torchvision==0.21.0+cpu",
+  "ultralytics-opencv-headless==8.4.33",
+  "pillow==12.2.0",
+  "numpy==2.4.4",
+  "aiosqlite>=0.22,<0.23",
+  "python-dotenv>=1.2,<2",
+  "groq==1.1.2",
+]
+
+[tool.vercel]
+entrypoint = "backend.main:app"
+
+[tool.vercel.scripts]
+build = "python scripts/build_frontend.py"
+
+[tool.uv]
+environments = ["sys_platform == 'linux' and platform_machine == 'x86_64'"]
+
+[[tool.uv.index]]
+name = "pytorch-cpu"
+url = "https://download.pytorch.org/whl/cpu"
+explicit = true
+
+[tool.uv.sources]
+torch = { index = "pytorch-cpu" }
+torchvision = { index = "pytorch-cpu" }

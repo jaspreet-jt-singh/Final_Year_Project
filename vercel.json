@@ -1,0 +1,14 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "framework": "fastapi",
+  "regions": ["bom1"],
+  "buildCommand": "python scripts/build_frontend.py",
+  "functions": {
+    "backend/main.py": {
+      "maxDuration": 120,
+      "excludeFiles": "{frontend/**,public/**,tests/**,scripts/**,.git/**,.venv/**,.deployment/**,docx/**,images/**,notebooks/**,models/**,Project_Report/**,Research_Paper_Conference/**,Research_Paper_Journal/**,results_before_discontinuation/**,merge_results/**}"
+    }
+  },
+  "rewrites": [{ "source": "/", "destination": "/index.html" }],
+  "headers": [{ "source": "/api/:path*", "headers": [{ "key": "Cache-Control", "value": "no-store" }] }]
+}
