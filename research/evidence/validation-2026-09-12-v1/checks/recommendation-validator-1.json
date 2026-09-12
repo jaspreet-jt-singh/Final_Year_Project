@@ -1,0 +1,34 @@
+{
+  "schema_version": 1,
+  "check": "recommendation-validator",
+  "attempt": 1,
+  "started_at_utc": "2026-09-12T05:49:30.184610+00:00",
+  "duration_seconds": 1.391,
+  "exit_code": 0,
+  "status": "passed",
+  "command": [
+    "python.exe",
+    "scripts/test_recommendation_evidence.py"
+  ],
+  "inputs": [
+    {
+      "path": "scripts/test_recommendation_evidence.py",
+      "sha256": "dfc68d543e725a9cefc34e168b260356581d11cd130deea28f730f026bc0c323"
+    },
+    {
+      "path": "pyproject.toml",
+      "sha256": "70f46a51785a6a13dce64e979610a701d6eaf72fa5ba56bd9c007f97b61d43f5"
+    },
+    {
+      "path": "uv.lock",
+      "sha256": "5d77a5d5474baf012f9117875ed2b975f2751aac4cd1018ffa645990131b434f"
+    },
+    {
+      "path": "frontend/package-lock.json",
+      "sha256": "81c57cbf48762774a828fba268482447dc241413a86cfebd1d868fc2edc76f40"
+    }
+  ],
+  "local_log": ".deployment/research/validation-2026-09-12-v1/checks/recommendation-validator-1.log",
+  "log_sha256": "f3324f6d5ae3896887cb83beb443b758696c60f93a5bdbcf84b12fe743b2261c",
+  "network_policy": "Provider credentials disabled; mocked suites only. No scientific/clinical approval implied."
+}

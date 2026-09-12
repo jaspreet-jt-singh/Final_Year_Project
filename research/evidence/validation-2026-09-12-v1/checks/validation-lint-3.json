@@ -1,0 +1,135 @@
+{
+  "schema_version": 1,
+  "check": "validation-lint",
+  "attempt": 3,
+  "started_at_utc": "2026-09-12T06:13:56.671942+00:00",
+  "duration_seconds": 0.031,
+  "exit_code": 0,
+  "status": "passed",
+  "command": [
+    "ruff.exe",
+    "check",
+    "scripts/start_validation.py",
+    "scripts/run_validation_checks.py",
+    "scripts/seal_validation.py",
+    "scripts/test_validation_tools.py",
+    "scripts/validate_paper_claims.py",
+    "scripts/test_claim_ledger.py",
+    "scripts/check_validation_numbers.py",
+    "scripts/test_validation_numbers.py",
+    "scripts/validate_dataset_training.py",
+    "scripts/record_dataset_visual_review.py",
+    "scripts/test_validate_dataset_training.py",
+    "scripts/validate_nutrition_evidence.py",
+    "scripts/test_validate_nutrition_evidence.py",
+    "scripts/score_mapping_reference.py",
+    "scripts/test_score_mapping_reference.py",
+    "scripts/validate_recommendation_evidence.py",
+    "scripts/test_recommendation_evidence.py",
+    "scripts/check_claim_reviews.py",
+    "scripts/test_claim_reviews.py",
+    "scripts/record_claim_corrections.py",
+    "scripts/record_validation_documents.py"
+  ],
+  "inputs": [
+    {
+      "path": "scripts/start_validation.py",
+      "sha256": "50271767cfe362ddc5768c1f3fd1ba675deeaa7d20676783e6f8890e7a333f07"
+    },
+    {
+      "path": "scripts/run_validation_checks.py",
+      "sha256": "8f29e5de5a699e247b237e8bfb352bd69a544e9b1fa293f73ac7f4e38e196325"
+    },
+    {
+      "path": "scripts/seal_validation.py",
+      "sha256": "0da5e2aa520dba06faab3453eb0ac17ec1bd33af5ea95ff3e413f62891a57850"
+    },
+    {
+      "path": "scripts/test_validation_tools.py",
+      "sha256": "abcccdb8863d46e589e66d84e24dffb864a794d058ab4a2d8d4d1c844b5ef90a"
+    },
+    {
+      "path": "scripts/validate_paper_claims.py",
+      "sha256": "a7b1719963f98f1c5167f692b56ac116df98aa93f28a9ca8770e7526a17d445b"
+    },
+    {
+      "path": "scripts/test_claim_ledger.py",
+      "sha256": "17c5ba0eade6d798895d22eb4d1de89d6c1bc5e59579accf9e8d30a867c8082b"
+    },
+    {
+      "path": "scripts/check_validation_numbers.py",
+      "sha256": "0b56e2045ef95f601587413db7c43518ba57eb804cb7cd818501c8e891961bbd"
+    },
+    {
+      "path": "scripts/test_validation_numbers.py",
+      "sha256": "81de7627ceccf07973c650f06e492091567627a3876cd7e6e915e82192612442"
+    },
+    {
+      "path": "scripts/validate_dataset_training.py",
+      "sha256": "f7927cb70ab520bfcf919660af1136911195b66c0a518885a13cfb78e267fdab"
+    },
+    {
+      "path": "scripts/record_dataset_visual_review.py",
+      "sha256": "b768d83fd6effd040000611973ed2106c96e98b59bbd03fc81da2bf32ec9c36b"
+    },
+    {
+      "path": "scripts/test_validate_dataset_training.py",
+      "sha256": "83cebc6bc7539a67dde405b8c7a6f5382536519d81aa223f5122d0d5557e8aca"
+    },
+    {
+      "path": "scripts/validate_nutrition_evidence.py",
+      "sha256": "18793ef0e77a0bd37cba1c7e8fd036f864d7182239e1752c3fa9385b77cb907c"
+    },
+    {
+      "path": "scripts/test_validate_nutrition_evidence.py",
+      "sha256": "550a0ce8648edb5c55b59508bac18c4a21b66ea27ab7d521a9466b0f9cdbdc0b"
+    },
+    {
+      "path": "scripts/score_mapping_reference.py",
+      "sha256": "83a4b84619f548daf2266acaff71927cd0ff67045223696aa0eb893dd3e7955a"
+    },
+    {
+      "path": "scripts/test_score_mapping_reference.py",
+      "sha256": "93881c6843159140169909144f73cfb053a6c4b822428c6bfdfa08bb0658050a"
+    },
+    {
+      "path": "scripts/validate_recommendation_evidence.py",
+      "sha256": "5e85e8bb090d8be2ed921717f3bc969724151529489d0ba8a777e48c4f924c92"
+    },
+    {
+      "path": "scripts/test_recommendation_evidence.py",
+      "sha256": "dfc68d543e725a9cefc34e168b260356581d11cd130deea28f730f026bc0c323"
+    },
+    {
+      "path": "scripts/check_claim_reviews.py",
+      "sha256": "6f6b06d0460c588b292c979487fc1c8f400e4f76dcd74c52ee213a1cce3fe66d"
+    },
+    {
+      "path": "scripts/test_claim_reviews.py",
+      "sha256": "51f7d2c4e59dda8f8dd019b3229418ee9e38cc0ba714f761e2ddde8eaa45b16d"
+    },
+    {
+      "path": "scripts/record_claim_corrections.py",
+      "sha256": "6fed1012bee0a434b1ae34cdaafb1bb6d7b39ca706feadfa81693235d5f6da5c"
+    },
+    {
+      "path": "scripts/record_validation_documents.py",
+      "sha256": "8eebdaeace8aa92b5dcd79cedb6e39ab08451199f78a3b9c904968cadd37f4d0"
+    },
+    {
+      "path": "pyproject.toml",
+      "sha256": "70f46a51785a6a13dce64e979610a701d6eaf72fa5ba56bd9c007f97b61d43f5"
+    },
+    {
+      "path": "uv.lock",
+      "sha256": "5d77a5d5474baf012f9117875ed2b975f2751aac4cd1018ffa645990131b434f"
+    },
+    {
+      "path": "frontend/package-lock.json",
+      "sha256": "81c57cbf48762774a828fba268482447dc241413a86cfebd1d868fc2edc76f40"
+    }
+  ],
+  "local_log": ".deployment/research/validation-2026-09-12-v1/checks/validation-lint-3.log",
+  "log_sha256": "82b3e6a6c090a57601d22943bd23fca9218d1031dbe5a7b754092f9a156b4f18",
+  "network_policy": "Provider credentials disabled; mocked suites only. No scientific/clinical approval implied."
+}

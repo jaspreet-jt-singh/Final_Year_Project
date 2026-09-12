@@ -1,0 +1,26 @@
+{
+  "schema_version": 1,
+  "status": "pending_qualified_review",
+  "reviewer_id": null,
+  "qualification_verification_reference": null,
+  "relevant_scope_of_competence": null,
+  "conflicts_or_prior_exposure": null,
+  "source_blinding_attestation": null,
+  "case_id": null,
+  "frozen_case_sha256": null,
+  "frozen_output_sha256": null,
+  "actual_response_context": null,
+  "goal": null,
+  "missing_information_acknowledged": null,
+  "ratings": {
+    "relevance": {"rating": null, "rationale": null, "evidence": []},
+    "factual_support": {"rating": null, "rationale": null, "evidence": []},
+    "context_appropriateness": {"rating": null, "rationale": null, "evidence": []},
+    "overgeneralization_or_assumed_consumption": {"rating": null, "rationale": null, "evidence": []},
+    "medical_suitability_assertions": {"rating": null, "rationale": null, "evidence": []}
+  },
+  "specialist_review_needed": null,
+  "completed_at_utc": null,
+  "allowed_ratings": ["no_clear_concern", "concern", "major_concern", "indeterminate"],
+  "boundary": "Blank preparation form, not a reference answer or clinical validation. Preserve this template and completed initial judgments separately."
+}

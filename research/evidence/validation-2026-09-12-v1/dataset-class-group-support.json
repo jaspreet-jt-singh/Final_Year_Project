@@ -1,0 +1,1590 @@
+{
+  "schema_version": 1,
+  "support": {
+    "aloo_gobi": {
+      "quarantine": {
+        "groups": 26,
+        "images": 48,
+        "instances": 51
+      },
+      "test": {
+        "groups": 38,
+        "images": 114,
+        "instances": 115
+      },
+      "train": {
+        "groups": 183,
+        "images": 530,
+        "instances": 533
+      },
+      "valid": {
+        "groups": 40,
+        "images": 114,
+        "instances": 114
+      }
+    },
+    "aloo_masala": {
+      "quarantine": {
+        "groups": 25,
+        "images": 53,
+        "instances": 53
+      },
+      "test": {
+        "groups": 39,
+        "images": 105,
+        "instances": 105
+      },
+      "train": {
+        "groups": 186,
+        "images": 488,
+        "instances": 500
+      },
+      "valid": {
+        "groups": 41,
+        "images": 105,
+        "instances": 108
+      }
+    },
+    "appam": {
+      "quarantine": {
+        "groups": 224,
+        "images": 227,
+        "instances": 253
+      },
+      "test": {
+        "groups": 41,
+        "images": 42,
+        "instances": 47
+      },
+      "train": {
+        "groups": 195,
+        "images": 196,
+        "instances": 220
+      },
+      "valid": {
+        "groups": 42,
+        "images": 42,
+        "instances": 46
+      }
+    },
+    "beetroot_poriyal": {
+      "quarantine": {
+        "groups": 224,
+        "images": 234,
+        "instances": 339
+      },
+      "test": {
+        "groups": 36,
+        "images": 41,
+        "instances": 58
+      },
+      "train": {
+        "groups": 168,
+        "images": 188,
+        "instances": 293
+      },
+      "valid": {
+        "groups": 38,
+        "images": 41,
+        "instances": 60
+      }
+    },
+    "besan_cheela": {
+      "quarantine": {
+        "groups": 207,
+        "images": 207,
+        "instances": 365
+      },
+      "test": {
+        "groups": 19,
+        "images": 45,
+        "instances": 104
+      },
+      "train": {
+        "groups": 86,
+        "images": 207,
+        "instances": 342
+      },
+      "valid": {
+        "groups": 18,
+        "images": 44,
+        "instances": 72
+      }
+    },
+    "bhakarwadi": {
+      "quarantine": {
+        "groups": 244,
+        "images": 244,
+        "instances": 245
+      },
+      "test": {
+        "groups": 18,
+        "images": 54,
+        "instances": 54
+      },
+      "train": {
+        "groups": 86,
+        "images": 258,
+        "instances": 258
+      },
+      "valid": {
+        "groups": 18,
+        "images": 54,
+        "instances": 57
+      }
+    },
+    "bhakri": {
+      "quarantine": {
+        "groups": 89,
+        "images": 89,
+        "instances": 128
+      },
+      "test": {
+        "groups": 11,
+        "images": 17,
+        "instances": 24
+      },
+      "train": {
+        "groups": 43,
+        "images": 79,
+        "instances": 107
+      },
+      "valid": {
+        "groups": 9,
+        "images": 17,
+        "instances": 21
+      }
+    },
+    "bhatura": {
+      "quarantine": {
+        "groups": 48,
+        "images": 112,
+        "instances": 193
+      },
+      "test": {
+        "groups": 42,
+        "images": 129,
+        "instances": 230
+      },
+      "train": {
+        "groups": 192,
+        "images": 601,
+        "instances": 1098
+      },
+      "valid": {
+        "groups": 44,
+        "images": 129,
+        "instances": 239
+      }
+    },
+    "bhindi_masala": {
+      "quarantine": {
+        "groups": 37,
+        "images": 103,
+        "instances": 104
+      },
+      "test": {
+        "groups": 70,
+        "images": 210,
+        "instances": 210
+      },
+      "train": {
+        "groups": 321,
+        "images": 981,
+        "instances": 983
+      },
+      "valid": {
+        "groups": 70,
+        "images": 210,
+        "instances": 213
+      }
+    },
+    "biryani": {
+      "quarantine": {
+        "groups": 24,
+        "images": 52,
+        "instances": 64
+      },
+      "test": {
+        "groups": 52,
+        "images": 143,
+        "instances": 143
+      },
+      "train": {
+        "groups": 236,
+        "images": 665,
+        "instances": 679
+      },
+      "valid": {
+        "groups": 51,
+        "images": 143,
+        "instances": 147
+      }
+    },
+    "carrot_poriyal": {
+      "quarantine": {
+        "groups": 228,
+        "images": 239,
+        "instances": 375
+      },
+      "test": {
+        "groups": 36,
+        "images": 40,
+        "instances": 63
+      },
+      "train": {
+        "groups": 165,
+        "images": 188,
+        "instances": 316
+      },
+      "valid": {
+        "groups": 38,
+        "images": 41,
+        "instances": 67
+      }
+    },
+    "chai": {
+      "quarantine": {
+        "groups": 181,
+        "images": 193,
+        "instances": 271
+      },
+      "test": {
+        "groups": 30,
+        "images": 70,
+        "instances": 94
+      },
+      "train": {
+        "groups": 132,
+        "images": 325,
+        "instances": 487
+      },
+      "valid": {
+        "groups": 30,
+        "images": 69,
+        "instances": 90
+      }
+    },
+    "chicken": {
+      "quarantine": {
+        "groups": 0,
+        "images": 0,
+        "instances": 0
+      },
+      "test": {
+        "groups": 102,
+        "images": 198,
+        "instances": 222
+      },
+      "train": {
+        "groups": 477,
+        "images": 925,
+        "instances": 1020
+      },
+      "valid": {
+        "groups": 102,
+        "images": 198,
+        "instances": 213
+      }
+    },
+    "chicken_65": {
+      "quarantine": {
+        "groups": 216,
+        "images": 217,
+        "instances": 227
+      },
+      "test": {
+        "groups": 44,
+        "images": 44,
+        "instances": 45
+      },
+      "train": {
+        "groups": 205,
+        "images": 206,
+        "instances": 218
+      },
+      "valid": {
+        "groups": 44,
+        "images": 44,
+        "instances": 46
+      }
+    },
+    "chicken_biryani": {
+      "quarantine": {
+        "groups": 230,
+        "images": 240,
+        "instances": 254
+      },
+      "test": {
+        "groups": 38,
+        "images": 40,
+        "instances": 45
+      },
+      "train": {
+        "groups": 173,
+        "images": 188,
+        "instances": 196
+      },
+      "valid": {
+        "groups": 38,
+        "images": 40,
+        "instances": 41
+      }
+    },
+    "chole": {
+      "quarantine": {
+        "groups": 134,
+        "images": 262,
+        "instances": 276
+      },
+      "test": {
+        "groups": 81,
+        "images": 247,
+        "instances": 271
+      },
+      "train": {
+        "groups": 365,
+        "images": 1153,
+        "instances": 1217
+      },
+      "valid": {
+        "groups": 81,
+        "images": 247,
+        "instances": 271
+      }
+    },
+    "coconut_chutney": {
+      "quarantine": {
+        "groups": 234,
+        "images": 289,
+        "instances": 300
+      },
+      "test": {
+        "groups": 114,
+        "images": 203,
+        "instances": 212
+      },
+      "train": {
+        "groups": 511,
+        "images": 944,
+        "instances": 977
+      },
+      "valid": {
+        "groups": 112,
+        "images": 203,
+        "instances": 212
+      }
+    },
+    "dal": {
+      "quarantine": {
+        "groups": 33,
+        "images": 53,
+        "instances": 53
+      },
+      "test": {
+        "groups": 80,
+        "images": 202,
+        "instances": 222
+      },
+      "train": {
+        "groups": 348,
+        "images": 943,
+        "instances": 1003
+      },
+      "valid": {
+        "groups": 82,
+        "images": 203,
+        "instances": 205
+      }
+    },
+    "dhokla": {
+      "quarantine": {
+        "groups": 1,
+        "images": 1,
+        "instances": 2
+      },
+      "test": {
+        "groups": 58,
+        "images": 151,
+        "instances": 180
+      },
+      "train": {
+        "groups": 275,
+        "images": 703,
+        "instances": 857
+      },
+      "valid": {
+        "groups": 56,
+        "images": 151,
+        "instances": 194
+      }
+    },
+    "dosa": {
+      "quarantine": {
+        "groups": 133,
+        "images": 159,
+        "instances": 175
+      },
+      "test": {
+        "groups": 122,
+        "images": 231,
+        "instances": 288
+      },
+      "train": {
+        "groups": 554,
+        "images": 1077,
+        "instances": 1382
+      },
+      "valid": {
+        "groups": 118,
+        "images": 231,
+        "instances": 310
+      }
+    },
+    "dum_aloo": {
+      "quarantine": {
+        "groups": 155,
+        "images": 176,
+        "instances": 185
+      },
+      "test": {
+        "groups": 29,
+        "images": 72,
+        "instances": 72
+      },
+      "train": {
+        "groups": 134,
+        "images": 334,
+        "instances": 341
+      },
+      "valid": {
+        "groups": 30,
+        "images": 72,
+        "instances": 72
+      }
+    },
+    "eggs": {
+      "quarantine": {
+        "groups": 64,
+        "images": 81,
+        "instances": 88
+      },
+      "test": {
+        "groups": 57,
+        "images": 105,
+        "instances": 127
+      },
+      "train": {
+        "groups": 265,
+        "images": 491,
+        "instances": 554
+      },
+      "valid": {
+        "groups": 58,
+        "images": 105,
+        "instances": 121
+      }
+    },
+    "fish_curry": {
+      "quarantine": {
+        "groups": 151,
+        "images": 171,
+        "instances": 175
+      },
+      "test": {
+        "groups": 30,
+        "images": 73,
+        "instances": 76
+      },
+      "train": {
+        "groups": 139,
+        "images": 338,
+        "instances": 350
+      },
+      "valid": {
+        "groups": 31,
+        "images": 73,
+        "instances": 76
+      }
+    },
+    "ghevar": {
+      "quarantine": {
+        "groups": 251,
+        "images": 275,
+        "instances": 496
+      },
+      "test": {
+        "groups": 19,
+        "images": 45,
+        "instances": 114
+      },
+      "train": {
+        "groups": 85,
+        "images": 207,
+        "instances": 390
+      },
+      "valid": {
+        "groups": 20,
+        "images": 44,
+        "instances": 75
+      }
+    },
+    "green_chutney": {
+      "quarantine": {
+        "groups": 121,
+        "images": 157,
+        "instances": 159
+      },
+      "test": {
+        "groups": 73,
+        "images": 131,
+        "instances": 145
+      },
+      "train": {
+        "groups": 352,
+        "images": 610,
+        "instances": 638
+      },
+      "valid": {
+        "groups": 74,
+        "images": 131,
+        "instances": 139
+      }
+    },
+    "gulab_jamun": {
+      "quarantine": {
+        "groups": 231,
+        "images": 235,
+        "instances": 1505
+      },
+      "test": {
+        "groups": 24,
+        "images": 58,
+        "instances": 373
+      },
+      "train": {
+        "groups": 111,
+        "images": 268,
+        "instances": 1773
+      },
+      "valid": {
+        "groups": 24,
+        "images": 57,
+        "instances": 401
+      }
+    },
+    "idli": {
+      "quarantine": {
+        "groups": 92,
+        "images": 100,
+        "instances": 161
+      },
+      "test": {
+        "groups": 101,
+        "images": 171,
+        "instances": 511
+      },
+      "train": {
+        "groups": 457,
+        "images": 799,
+        "instances": 2347
+      },
+      "valid": {
+        "groups": 99,
+        "images": 171,
+        "instances": 499
+      }
+    },
+    "jalebi": {
+      "quarantine": {
+        "groups": 15,
+        "images": 35,
+        "instances": 38
+      },
+      "test": {
+        "groups": 78,
+        "images": 182,
+        "instances": 262
+      },
+      "train": {
+        "groups": 365,
+        "images": 847,
+        "instances": 1011
+      },
+      "valid": {
+        "groups": 78,
+        "images": 182,
+        "instances": 207
+      }
+    },
+    "kaara_chutney": {
+      "quarantine": {
+        "groups": 253,
+        "images": 259,
+        "instances": 270
+      },
+      "test": {
+        "groups": 42,
+        "images": 43,
+        "instances": 44
+      },
+      "train": {
+        "groups": 196,
+        "images": 202,
+        "instances": 212
+      },
+      "valid": {
+        "groups": 42,
+        "images": 43,
+        "instances": 44
+      }
+    },
+    "kali": {
+      "quarantine": {
+        "groups": 230,
+        "images": 239,
+        "instances": 377
+      },
+      "test": {
+        "groups": 36,
+        "images": 41,
+        "instances": 56
+      },
+      "train": {
+        "groups": 172,
+        "images": 192,
+        "instances": 287
+      },
+      "valid": {
+        "groups": 37,
+        "images": 41,
+        "instances": 59
+      }
+    },
+    "kebab": {
+      "quarantine": {
+        "groups": 162,
+        "images": 164,
+        "instances": 873
+      },
+      "test": {
+        "groups": 14,
+        "images": 34,
+        "instances": 166
+      },
+      "train": {
+        "groups": 67,
+        "images": 159,
+        "instances": 854
+      },
+      "valid": {
+        "groups": 14,
+        "images": 34,
+        "instances": 183
+      }
+    },
+    "khandvi": {
+      "quarantine": {
+        "groups": 175,
+        "images": 175,
+        "instances": 186
+      },
+      "test": {
+        "groups": 23,
+        "images": 69,
+        "instances": 72
+      },
+      "train": {
+        "groups": 109,
+        "images": 327,
+        "instances": 351
+      },
+      "valid": {
+        "groups": 23,
+        "images": 69,
+        "instances": 72
+      }
+    },
+    "kheer": {
+      "quarantine": {
+        "groups": 220,
+        "images": 242,
+        "instances": 370
+      },
+      "test": {
+        "groups": 24,
+        "images": 58,
+        "instances": 83
+      },
+      "train": {
+        "groups": 109,
+        "images": 268,
+        "instances": 394
+      },
+      "valid": {
+        "groups": 25,
+        "images": 58,
+        "instances": 78
+      }
+    },
+    "koozh": {
+      "quarantine": {
+        "groups": 226,
+        "images": 231,
+        "instances": 287
+      },
+      "test": {
+        "groups": 42,
+        "images": 42,
+        "instances": 46
+      },
+      "train": {
+        "groups": 188,
+        "images": 196,
+        "instances": 247
+      },
+      "valid": {
+        "groups": 42,
+        "images": 42,
+        "instances": 57
+      }
+    },
+    "kulfi": {
+      "quarantine": {
+        "groups": 181,
+        "images": 193,
+        "instances": 387
+      },
+      "test": {
+        "groups": 28,
+        "images": 68,
+        "instances": 125
+      },
+      "train": {
+        "groups": 130,
+        "images": 314,
+        "instances": 615
+      },
+      "valid": {
+        "groups": 27,
+        "images": 67,
+        "instances": 107
+      }
+    },
+    "lassi": {
+      "quarantine": {
+        "groups": 188,
+        "images": 204,
+        "instances": 312
+      },
+      "test": {
+        "groups": 26,
+        "images": 65,
+        "instances": 92
+      },
+      "train": {
+        "groups": 127,
+        "images": 304,
+        "instances": 475
+      },
+      "valid": {
+        "groups": 27,
+        "images": 65,
+        "instances": 117
+      }
+    },
+    "lemon_rice": {
+      "quarantine": {
+        "groups": 228,
+        "images": 235,
+        "instances": 256
+      },
+      "test": {
+        "groups": 37,
+        "images": 41,
+        "instances": 47
+      },
+      "train": {
+        "groups": 181,
+        "images": 193,
+        "instances": 221
+      },
+      "valid": {
+        "groups": 38,
+        "images": 41,
+        "instances": 42
+      }
+    },
+    "medu_vada": {
+      "quarantine": {
+        "groups": 155,
+        "images": 162,
+        "instances": 193
+      },
+      "test": {
+        "groups": 54,
+        "images": 79,
+        "instances": 101
+      },
+      "train": {
+        "groups": 243,
+        "images": 367,
+        "instances": 430
+      },
+      "valid": {
+        "groups": 54,
+        "images": 79,
+        "instances": 94
+      }
+    },
+    "modak": {
+      "quarantine": {
+        "groups": 120,
+        "images": 120,
+        "instances": 613
+      },
+      "test": {
+        "groups": 12,
+        "images": 26,
+        "instances": 195
+      },
+      "train": {
+        "groups": 54,
+        "images": 120,
+        "instances": 485
+      },
+      "valid": {
+        "groups": 11,
+        "images": 26,
+        "instances": 128
+      }
+    },
+    "mushroom_biryani": {
+      "quarantine": {
+        "groups": 217,
+        "images": 218,
+        "instances": 234
+      },
+      "test": {
+        "groups": 43,
+        "images": 44,
+        "instances": 46
+      },
+      "train": {
+        "groups": 195,
+        "images": 204,
+        "instances": 219
+      },
+      "valid": {
+        "groups": 43,
+        "images": 44,
+        "instances": 47
+      }
+    },
+    "mutton_biryani": {
+      "quarantine": {
+        "groups": 230,
+        "images": 235,
+        "instances": 235
+      },
+      "test": {
+        "groups": 36,
+        "images": 41,
+        "instances": 41
+      },
+      "train": {
+        "groups": 172,
+        "images": 193,
+        "instances": 193
+      },
+      "valid": {
+        "groups": 38,
+        "images": 41,
+        "instances": 41
+      }
+    },
+    "mutton_curry": {
+      "quarantine": {
+        "groups": 161,
+        "images": 184,
+        "instances": 184
+      },
+      "test": {
+        "groups": 27,
+        "images": 70,
+        "instances": 70
+      },
+      "train": {
+        "groups": 135,
+        "images": 326,
+        "instances": 326
+      },
+      "valid": {
+        "groups": 28,
+        "images": 70,
+        "instances": 70
+      }
+    },
+    "nandu_masala": {
+      "quarantine": {
+        "groups": 226,
+        "images": 244,
+        "instances": 254
+      },
+      "test": {
+        "groups": 30,
+        "images": 39,
+        "instances": 39
+      },
+      "train": {
+        "groups": 143,
+        "images": 183,
+        "instances": 189
+      },
+      "valid": {
+        "groups": 31,
+        "images": 39,
+        "instances": 39
+      }
+    },
+    "nei_satham": {
+      "quarantine": {
+        "groups": 229,
+        "images": 242,
+        "instances": 243
+      },
+      "test": {
+        "groups": 35,
+        "images": 40,
+        "instances": 40
+      },
+      "train": {
+        "groups": 169,
+        "images": 188,
+        "instances": 190
+      },
+      "valid": {
+        "groups": 36,
+        "images": 40,
+        "instances": 41
+      }
+    },
+    "omelette": {
+      "quarantine": {
+        "groups": 228,
+        "images": 228,
+        "instances": 237
+      },
+      "test": {
+        "groups": 15,
+        "images": 45,
+        "instances": 48
+      },
+      "train": {
+        "groups": 71,
+        "images": 213,
+        "instances": 222
+      },
+      "valid": {
+        "groups": 15,
+        "images": 45,
+        "instances": 45
+      }
+    },
+    "onion_pakoda": {
+      "quarantine": {
+        "groups": 184,
+        "images": 206,
+        "instances": 212
+      },
+      "test": {
+        "groups": 26,
+        "images": 66,
+        "instances": 66
+      },
+      "train": {
+        "groups": 120,
+        "images": 306,
+        "instances": 318
+      },
+      "valid": {
+        "groups": 26,
+        "images": 65,
+        "instances": 68
+      }
+    },
+    "paal_kolukattai": {
+      "quarantine": {
+        "groups": 229,
+        "images": 244,
+        "instances": 261
+      },
+      "test": {
+        "groups": 35,
+        "images": 40,
+        "instances": 43
+      },
+      "train": {
+        "groups": 162,
+        "images": 186,
+        "instances": 205
+      },
+      "valid": {
+        "groups": 35,
+        "images": 40,
+        "instances": 46
+      }
+    },
+    "palak_paneer": {
+      "quarantine": {
+        "groups": 15,
+        "images": 40,
+        "instances": 40
+      },
+      "test": {
+        "groups": 86,
+        "images": 208,
+        "instances": 215
+      },
+      "train": {
+        "groups": 408,
+        "images": 972,
+        "instances": 990
+      },
+      "valid": {
+        "groups": 85,
+        "images": 208,
+        "instances": 208
+      }
+    },
+    "paneer_biryani": {
+      "quarantine": {
+        "groups": 223,
+        "images": 223,
+        "instances": 224
+      },
+      "test": {
+        "groups": 43,
+        "images": 43,
+        "instances": 44
+      },
+      "train": {
+        "groups": 201,
+        "images": 201,
+        "instances": 202
+      },
+      "valid": {
+        "groups": 43,
+        "images": 43,
+        "instances": 43
+      }
+    },
+    "paratha": {
+      "quarantine": {
+        "groups": 155,
+        "images": 155,
+        "instances": 177
+      },
+      "test": {
+        "groups": 13,
+        "images": 27,
+        "instances": 32
+      },
+      "train": {
+        "groups": 65,
+        "images": 128,
+        "instances": 148
+      },
+      "valid": {
+        "groups": 15,
+        "images": 27,
+        "instances": 34
+      }
+    },
+    "parupu_vadai": {
+      "quarantine": {
+        "groups": 234,
+        "images": 252,
+        "instances": 310
+      },
+      "test": {
+        "groups": 34,
+        "images": 39,
+        "instances": 48
+      },
+      "train": {
+        "groups": 163,
+        "images": 184,
+        "instances": 229
+      },
+      "valid": {
+        "groups": 34,
+        "images": 39,
+        "instances": 50
+      }
+    },
+    "pidi_kolukattai": {
+      "quarantine": {
+        "groups": 230,
+        "images": 245,
+        "instances": 262
+      },
+      "test": {
+        "groups": 35,
+        "images": 40,
+        "instances": 41
+      },
+      "train": {
+        "groups": 158,
+        "images": 187,
+        "instances": 212
+      },
+      "valid": {
+        "groups": 34,
+        "images": 40,
+        "instances": 45
+      }
+    },
+    "poha": {
+      "quarantine": {
+        "groups": 23,
+        "images": 44,
+        "instances": 44
+      },
+      "test": {
+        "groups": 95,
+        "images": 219,
+        "instances": 237
+      },
+      "train": {
+        "groups": 442,
+        "images": 1025,
+        "instances": 1100
+      },
+      "valid": {
+        "groups": 95,
+        "images": 219,
+        "instances": 245
+      }
+    },
+    "poorna_kolukattai": {
+      "quarantine": {
+        "groups": 226,
+        "images": 237,
+        "instances": 255
+      },
+      "test": {
+        "groups": 39,
+        "images": 41,
+        "instances": 52
+      },
+      "train": {
+        "groups": 173,
+        "images": 188,
+        "instances": 204
+      },
+      "valid": {
+        "groups": 38,
+        "images": 41,
+        "instances": 45
+      }
+    },
+    "prawn_thokku": {
+      "quarantine": {
+        "groups": 224,
+        "images": 225,
+        "instances": 232
+      },
+      "test": {
+        "groups": 41,
+        "images": 43,
+        "instances": 45
+      },
+      "train": {
+        "groups": 188,
+        "images": 199,
+        "instances": 205
+      },
+      "valid": {
+        "groups": 40,
+        "images": 43,
+        "instances": 46
+      }
+    },
+    "puri": {
+      "quarantine": {
+        "groups": 155,
+        "images": 155,
+        "instances": 183
+      },
+      "test": {
+        "groups": 27,
+        "images": 81,
+        "instances": 90
+      },
+      "train": {
+        "groups": 127,
+        "images": 381,
+        "instances": 420
+      },
+      "valid": {
+        "groups": 27,
+        "images": 81,
+        "instances": 90
+      }
+    },
+    "raita": {
+      "quarantine": {
+        "groups": 315,
+        "images": 315,
+        "instances": 330
+      },
+      "test": {
+        "groups": 15,
+        "images": 51,
+        "instances": 54
+      },
+      "train": {
+        "groups": 58,
+        "images": 240,
+        "instances": 258
+      },
+      "valid": {
+        "groups": 15,
+        "images": 51,
+        "instances": 51
+      }
+    },
+    "rajma_curry": {
+      "quarantine": {
+        "groups": 53,
+        "images": 69,
+        "instances": 69
+      },
+      "test": {
+        "groups": 76,
+        "images": 212,
+        "instances": 215
+      },
+      "train": {
+        "groups": 356,
+        "images": 989,
+        "instances": 999
+      },
+      "valid": {
+        "groups": 76,
+        "images": 212,
+        "instances": 217
+      }
+    },
+    "ras_malai": {
+      "quarantine": {
+        "groups": 195,
+        "images": 218,
+        "instances": 242
+      },
+      "test": {
+        "groups": 27,
+        "images": 63,
+        "instances": 80
+      },
+      "train": {
+        "groups": 119,
+        "images": 294,
+        "instances": 326
+      },
+      "valid": {
+        "groups": 25,
+        "images": 63,
+        "instances": 70
+      }
+    },
+    "rice": {
+      "quarantine": {
+        "groups": 123,
+        "images": 182,
+        "instances": 208
+      },
+      "test": {
+        "groups": 173,
+        "images": 364,
+        "instances": 398
+      },
+      "train": {
+        "groups": 814,
+        "images": 1697,
+        "instances": 1848
+      },
+      "valid": {
+        "groups": 177,
+        "images": 364,
+        "instances": 392
+      }
+    },
+    "roti": {
+      "quarantine": {
+        "groups": 25,
+        "images": 31,
+        "instances": 33
+      },
+      "test": {
+        "groups": 72,
+        "images": 169,
+        "instances": 194
+      },
+      "train": {
+        "groups": 337,
+        "images": 790,
+        "instances": 915
+      },
+      "valid": {
+        "groups": 70,
+        "images": 169,
+        "instances": 197
+      }
+    },
+    "saag": {
+      "quarantine": {
+        "groups": 0,
+        "images": 0,
+        "instances": 0
+      },
+      "test": {
+        "groups": 38,
+        "images": 114,
+        "instances": 114
+      },
+      "train": {
+        "groups": 175,
+        "images": 525,
+        "instances": 537
+      },
+      "valid": {
+        "groups": 37,
+        "images": 111,
+        "instances": 111
+      }
+    },
+    "salad": {
+      "quarantine": {
+        "groups": 203,
+        "images": 203,
+        "instances": 243
+      },
+      "test": {
+        "groups": 12,
+        "images": 34,
+        "instances": 37
+      },
+      "train": {
+        "groups": 57,
+        "images": 158,
+        "instances": 188
+      },
+      "valid": {
+        "groups": 13,
+        "images": 33,
+        "instances": 48
+      }
+    },
+    "sambar": {
+      "quarantine": {
+        "groups": 163,
+        "images": 180,
+        "instances": 184
+      },
+      "test": {
+        "groups": 66,
+        "images": 96,
+        "instances": 97
+      },
+      "train": {
+        "groups": 305,
+        "images": 448,
+        "instances": 470
+      },
+      "valid": {
+        "groups": 70,
+        "images": 97,
+        "instances": 106
+      }
+    },
+    "sambar_satham": {
+      "quarantine": {
+        "groups": 227,
+        "images": 228,
+        "instances": 228
+      },
+      "test": {
+        "groups": 42,
+        "images": 42,
+        "instances": 42
+      },
+      "train": {
+        "groups": 197,
+        "images": 197,
+        "instances": 197
+      },
+      "valid": {
+        "groups": 43,
+        "images": 43,
+        "instances": 43
+      }
+    },
+    "samosa": {
+      "quarantine": {
+        "groups": 153,
+        "images": 165,
+        "instances": 725
+      },
+      "test": {
+        "groups": 36,
+        "images": 73,
+        "instances": 357
+      },
+      "train": {
+        "groups": 165,
+        "images": 342,
+        "instances": 1498
+      },
+      "valid": {
+        "groups": 35,
+        "images": 74,
+        "instances": 337
+      }
+    },
+    "shahi_paneer": {
+      "quarantine": {
+        "groups": 27,
+        "images": 44,
+        "instances": 44
+      },
+      "test": {
+        "groups": 91,
+        "images": 182,
+        "instances": 185
+      },
+      "train": {
+        "groups": 414,
+        "images": 847,
+        "instances": 860
+      },
+      "valid": {
+        "groups": 91,
+        "images": 182,
+        "instances": 184
+      }
+    },
+    "thepla": {
+      "quarantine": {
+        "groups": 203,
+        "images": 203,
+        "instances": 229
+      },
+      "test": {
+        "groups": 12,
+        "images": 36,
+        "instances": 36
+      },
+      "train": {
+        "groups": 56,
+        "images": 174,
+        "instances": 189
+      },
+      "valid": {
+        "groups": 13,
+        "images": 39,
+        "instances": 48
+      }
+    },
+    "upma": {
+      "quarantine": {
+        "groups": 145,
+        "images": 145,
+        "instances": 159
+      },
+      "test": {
+        "groups": 15,
+        "images": 31,
+        "instances": 32
+      },
+      "train": {
+        "groups": 75,
+        "images": 145,
+        "instances": 159
+      },
+      "valid": {
+        "groups": 17,
+        "images": 31,
+        "instances": 31
+      }
+    },
+    "veg_briyani": {
+      "quarantine": {
+        "groups": 226,
+        "images": 229,
+        "instances": 235
+      },
+      "test": {
+        "groups": 42,
+        "images": 42,
+        "instances": 42
+      },
+      "train": {
+        "groups": 195,
+        "images": 197,
+        "instances": 204
+      },
+      "valid": {
+        "groups": 41,
+        "images": 42,
+        "instances": 44
+      }
+    },
+    "veg_pulao": {
+      "quarantine": {
+        "groups": 194,
+        "images": 194,
+        "instances": 209
+      },
+      "test": {
+        "groups": 12,
+        "images": 36,
+        "instances": 39
+      },
+      "train": {
+        "groups": 57,
+        "images": 171,
+        "instances": 186
+      },
+      "valid": {
+        "groups": 12,
+        "images": 36,
+        "instances": 36
+      }
+    },
+    "ven_pongal": {
+      "quarantine": {
+        "groups": 238,
+        "images": 243,
+        "instances": 247
+      },
+      "test": {
+        "groups": 42,
+        "images": 42,
+        "instances": 43
+      },
+      "train": {
+        "groups": 195,
+        "images": 196,
+        "instances": 204
+      },
+      "valid": {
+        "groups": 42,
+        "images": 42,
+        "instances": 42
+      }
+    }
+  },
+  "unit": "Candidate groups, not independently verified photographs"
+}

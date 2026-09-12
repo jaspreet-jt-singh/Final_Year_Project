@@ -1,0 +1,34 @@
+{
+  "schema_version": 1,
+  "review_date": "2026-09-12",
+  "purpose": "Supervisor review of existing source and recorded evidence; not a new detector evaluation or clinical validation.",
+  "inspected_source_commit": "0a4edfa92818945ccd7f16b023299c847c745f0d",
+  "source_commit_scope": "Base checkout inspected before the uncommitted manuscript and development-only review-tool edits; not the commit containing the revised manuscripts.",
+  "files": [
+    {
+      "path": "notebooks/final_version_training.ipynb",
+      "sha256": "9f927f3a2bba8d9b512af94b62c4581810571f41c02aae5b08c623cb6f4184fd",
+      "role": "Historical validation/test output, one-based notebook cells 8 and 9; no evaluated-checkpoint hash recorded at execution time."
+    },
+    {
+      "path": "research/evidence/audit.json",
+      "sha256": "b606425695b69a625f5a0a3e9b9584958e9dc4bbe4b68301bac47f06c63b479e",
+      "role": "Recorded dataset census, strict annotation checks, exact overlap, mapping availability and artifact fingerprints."
+    },
+    {
+      "path": "research/evidence/grouped-split-v1.json",
+      "sha256": "bd919da4a91c40cecf95ccec211fec1bae2e55e587a7faa7f81ac140e6bd347f",
+      "role": "Recorded review-only candidate grouping and partition assignment; no retraining or independent benchmark validation."
+    },
+    {
+      "path": "research/evidence/nutrition-provenance.json",
+      "sha256": "cb4a7b6dd3fb0ea65bc75f4711d2bdf9a156c1da90b40836a47da0a9d8c4d0a4",
+      "role": "Pinned INDB workbook identity; not a license grant or clinical correctness assessment."
+    }
+  ],
+  "limitations": [
+    "This records hashes read during manuscript review, not an execution-time record of the historical experiments.",
+    "Full split manifests and source inventories remain local and are not packaged with either PDF.",
+    "Authors, affiliations, contributions, disclosures and reuse permissions require owner/supervisor confirmation."
+  ]
+}

@@ -1,0 +1,53 @@
+{
+  "schema_version": 1,
+  "run_id": "validation-2026-09-12-v1",
+  "source_commit": "0a4edfa92818945ccd7f16b023299c847c745f0d",
+  "baseline_sha256": "f2ce75cc2424134b44022b0ee9208c59ce5c78f896fa98a6346b840f61e91397",
+  "input_sha256": {
+    "data/INDB.xlsx": "65f91911de09ebdb4b80c4a3dc3ff372a35420e05444239d8df8a42e8b5b9ecf",
+    "data/nutrition.db": "3bdfb92fafd21b70dd20ade7edb06d78f20fe59f283a0e61f844b5e181aa317a",
+    "data/food_dataset/data.yaml": "65802a243a46f4974cd183de5fe2ac503c85210bb0d30ef5c3c52919b974ff3d",
+    "backend/scripts/merge_db.py": "6a64228196c05e8de34507b7936fb44829cf87b822a5e4c760b301bf7e1c193f",
+    "backend/utils/food_normalizer.py": "7f6197e75f8caeec61ed677097e12cbf2b7b40a5d7f6b459d396e10598f8cbc2",
+    "backend/config/food_aliases.json": "946315e9446619b386ae2c0170b745b919135c07f7a2027adb08946ea30f78fa",
+    "backend/services/nutrition_service.py": "f314a1134cdfd7b9a684b4db0b94d1bc7ee61916a37ca62abf196af2af52741d",
+    "backend/domain/nutrition_policy.json": "1af598ce13ab2db17936ab2fbf922fa2997dd8d842e7cd7c625b718b158fe912",
+    "backend/domain/rules.py": "187e4e5942bd47ce3ae4d7d4c7a899b0d57e7ff5d5e1094210361dca0e840bc4",
+    "frontend/lib/goals.ts": "159d1ba595b5c4259d02544d82c82b0e710268a8d24d8674543d59b6b6d5b663",
+    "frontend/lib/meals.ts": "5395c9842f815ba5db48cd7357e9ee394b8002f39e296d160813f9f6661a48b3",
+    "frontend/lib/generated/nutritionPolicy.ts": "1bf02e699bed4cce796d1b34f7557d65e80166592cc9798945a84b1d9870e428",
+    "frontend/package-lock.json": "81c57cbf48762774a828fba268482447dc241413a86cfebd1d868fc2edc76f40",
+    "tests/contracts/macro-fixtures.json": "ba535ca13e8914b4c19acc154051bc819926a43bcbdd461f139c39d9d3cf86f1",
+    "research/evidence/nutrition-provenance.json": "cb4a7b6dd3fb0ea65bc75f4711d2bdf9a156c1da90b40836a47da0a9d8c4d0a4"
+  },
+  "created_at_utc": "2026-09-12T05:34:12.479522+00:00",
+  "script_sha256": "18793ef0e77a0bd37cba1c7e8fd036f864d7182239e1752c3fa9385b77cb907c",
+  "clinical_validity_established": false,
+  "oracle": "Independent exact rational arithmetic from frozen decimal policy values; ties-to-even integer rounding.",
+  "frontend_oracle_script_sha256": "ca2a2f18dd94692504252befe45ee7a214a4b2f95017b918052db914531d7b96",
+  "backend_goal_cases": 162036,
+  "backend_goal_discrepancies": 0,
+  "backend_fixture_cases": 216,
+  "backend_fixture_discrepancies": 0,
+  "frontend": {
+    "goal_cases": 162036,
+    "fixture_cases": 216,
+    "portion_cases": 2880,
+    "portion_numeric_comparisons": 11520,
+    "max_portion_absolute_error": 9.094947017729282e-13,
+    "absolute_tolerance": 1e-09,
+    "relative_tolerance": 1e-12,
+    "invariant_checks": 8,
+    "goal_difference_count": 0,
+    "fixture_difference_count": 0,
+    "portion_difference_count": 0
+  },
+  "status": "automated_checks_passed",
+  "limitations": [
+    "Tests verify implementation arithmetic, not clinical appropriateness of goal weights or condition modifiers.",
+    "UI calorie sweep covers 500 through 5000 inclusive; API currently accepts positive integers below 500 too.",
+    "Nutrient values remain database estimates and portions remain user estimates."
+  ],
+  "local_detail_sha256": "c75acf467759e42253c1d00f5042f0efb5252b44d0092fa24b847d46a3c2bfe3",
+  "local_detail_path": ".deployment/research/validation-2026-09-12-v1/arithmetic-details.json"
+}

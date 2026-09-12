@@ -1,0 +1,296 @@
+{
+  "candidate_pairs_before_cap": 16,
+  "eligible_pair_comparisons": 1360132,
+  "queue": [
+    {
+      "candidate_splits": [
+        "test",
+        "train"
+      ],
+      "distance": 0,
+      "expert_adjudication": "pending",
+      "group_ids": [
+        "8da54ab858eb74b4e12fbe922082eb1b365aea7878668a1b85c44fac184aee53",
+        "ebf0451a070dbbe8477d880884d9529a35700e913215fc4a3c73fda2a32adeb0"
+      ],
+      "left": "test/images/test2711-carrot_poriyal.jpg",
+      "right": "train/images/train27105-carrot_poriyal.jpg",
+      "source_sha256": [
+        "21fb9be4a361db873cd26fdc25579ec8b9e32f21987a02c4651c148e46b6668d",
+        "cbf2dc9e0a40ac65a7366d667abd474dbb679bad4f9f7834b4459d38dae2b47a"
+      ]
+    },
+    {
+      "candidate_splits": [
+        "valid",
+        "test"
+      ],
+      "distance": 0,
+      "expert_adjudication": "pending",
+      "group_ids": [
+        "7a2d62e54bfc97d074c8b29df5767e78c635e64bcb7192b6914758a6aa2763b5",
+        "40798db408e378a7f24e5104e4a3bcbcfaeb463ceb7572cc3c3c92e5e1f584b6"
+      ],
+      "left": "test/images/test2768-veg_briyani.jpg",
+      "right": "train/images/train15894-veg_briyani.jpg",
+      "source_sha256": [
+        "42ca2f4b79d361ea7b4281f8b294a22718cedc3807d15296c746f88485965673",
+        "41b1415d842614cb2430dfeaa6f6f9dfa61c2eb575a7775a6a3ab5810d51865e"
+      ]
+    },
+    {
+      "candidate_splits": [
+        "train",
+        "test"
+      ],
+      "distance": 0,
+      "expert_adjudication": "pending",
+      "group_ids": [
+        "bf5a204567a02c4445e7d6a6f97779c756a11fdd6981f52d9d71731ece2a9613",
+        "fca7627f5d7f332830c8b5f72d9e3fcd38ac8cc8ce22de9d25d2317259a0d34e"
+      ],
+      "left": "test/images/test2992-kali.jpg",
+      "right": "train/images/train2997-kali.jpg",
+      "source_sha256": [
+        "af251cbc669e00c60ee5f156bf233663458b70a2d6c3b3ecbd6bed52c3bb02ca",
+        "7e39a98f6fd0bea7032c9b55e4136aa63e68a32eb0a7cfdf1b01aed9ef218f0e"
+      ]
+    },
+    {
+      "candidate_splits": [
+        "valid",
+        "test"
+      ],
+      "distance": 0,
+      "expert_adjudication": "pending",
+      "group_ids": [
+        "6dfec0e9921fd5b8316ced24891b235b60b0da1b95ce81488e52ecd9cd9b38e6",
+        "eab425c0453bee1558f1d8cf8c9a359d9ba3c14592bff99c2dfbccd231480699"
+      ],
+      "left": "test/images/test3037-thepla.jpg",
+      "right": "train/images/train13644-thepla.jpg",
+      "source_sha256": [
+        "48c8010c5576d92c551438c49f78c0e55e92ab1634cb6a41665a935ab5fe7fd4",
+        "696f3c87c32c486ccca426463bf010b421d65a9b45536d765c9320d5fba4ef2e"
+      ]
+    },
+    {
+      "candidate_splits": [
+        "train",
+        "valid"
+      ],
+      "distance": 0,
+      "expert_adjudication": "pending",
+      "group_ids": [
+        "21ad4feb600a5410c85f3c019c87dc5508db0abc47e6ef806e278196839e69a6",
+        "eaa814285639a26607f37335fd37fde83f23465f35e72d8129419f35a8c149ba"
+      ],
+      "left": "test/images/test3061-carrot_poriyal.jpg",
+      "right": "train/images/train7818-carrot_poriyal.jpg",
+      "source_sha256": [
+        "430baedb70180092e4bb665dc16884588cac2a7da161e38e91635ef2d6c46ee8",
+        "ac1da80a9527bb3784087d60bf8eedd0b566bf9a9b09b64eccb8b1db8d1aaad8"
+      ]
+    },
+    {
+      "candidate_splits": [
+        "test",
+        "valid"
+      ],
+      "distance": 0,
+      "expert_adjudication": "pending",
+      "group_ids": [
+        "2071b7ed58fac2cd82b69ed000932505596ede026094d3c12f5133ba4730a398",
+        "120b30fdb3f0a69107eead8da77b76d4a9090d3ec329e1c67d3ac91a480d146e"
+      ],
+      "left": "test/images/test4074-veg_pulao.jpg",
+      "right": "train/images/train6747-veg_pulao.jpg",
+      "source_sha256": [
+        "0bb13dd31266369c939ef8d8efb58cfea71231b0a8fe21d9e658c3b6ea8464a1",
+        "797a9ad8e8766e761176a5b186fc3cf5e59f47c6e8c02cbb7c95b70750e4dc4b"
+      ]
+    },
+    {
+      "candidate_splits": [
+        "train",
+        "test"
+      ],
+      "distance": 0,
+      "expert_adjudication": "pending",
+      "group_ids": [
+        "1ca56f5c722fd12aa3801e095127d187f927e51408ed23c6b7ca7fe545a8849f",
+        "9bad12789154a8f97cab47ebbfb842510454a2d5b6b7401a5a1bb5de856fd146"
+      ],
+      "left": "train/images/train11960-mushroom_biryani.jpg",
+      "right": "train/images/train12112-mutton_biryani.jpg",
+      "source_sha256": [
+        "fd76f5d2d84a19ad2634d03427f5d62f8810cda99f842c36251bd93c9704e9c4",
+        "26bb79f66af984aa2eb24bd5501698f6366357aa7c72e1dd0b68f131c1966b41"
+      ]
+    },
+    {
+      "candidate_splits": [
+        "train",
+        "test"
+      ],
+      "distance": 0,
+      "expert_adjudication": "pending",
+      "group_ids": [
+        "4a11a17018681e7a15e68f44adaddf5ce9461c00c9dd9cd166e187732dbf0209",
+        "4eb66491eec75c78052e6622bf73f190483166690f2a4a85d08859daf86148ed"
+      ],
+      "left": "train/images/train18926-koozh.jpg",
+      "right": "train/images/train2018-koozh.jpg",
+      "source_sha256": [
+        "93383b798bed5be80ae69dbf1c8a9483297a8b882b8b4efdb200834533a34a58",
+        "1bb0714b1c6ba1c214dfab5d233d484d55d69b5ac8a6e39163dc84fe9de3923c"
+      ]
+    },
+    {
+      "candidate_splits": [
+        "test",
+        "valid"
+      ],
+      "distance": 0,
+      "expert_adjudication": "pending",
+      "group_ids": [
+        "0de09a7274759ba6a8a5c872cb4d0c5bd3ea34c80720d15aa2405f2678a540f1",
+        "55da732c90b70476885eb4d490104c0f4f511f1ed5b8b7ea6c691f0ca3f84c0e"
+      ],
+      "left": "train/images/train19681-mushroom_biryani.jpg",
+      "right": "train/images/train21812-mushroom_biryani.jpg",
+      "source_sha256": [
+        "5cb239fb13e88a459aa156c9d1347f31660f7c18adc9c5fff0a49f9138164907",
+        "72b300d4064c8592128ca9e9ac3a6a500d8597018a0af915d6afa6bddc8ad166"
+      ]
+    },
+    {
+      "candidate_splits": [
+        "test",
+        "valid"
+      ],
+      "distance": 0,
+      "expert_adjudication": "pending",
+      "group_ids": [
+        "f56dd1953ad610e7ab5e73e53fcd4f80deb94bd8e160964f4d2bde52818c3415",
+        "14b2ebc3fe264a0d08791ecab453ec7af5d3288933fb50f6dbab812ede313e28"
+      ],
+      "left": "train/images/train20610-poorna_kolukattai.jpg",
+      "right": "train/images/train2608-poorna_kolukattai.jpg",
+      "source_sha256": [
+        "5362424ee312e937c95286a7113767f7627aaaafe62942af9ff9cc6fa9e7a656",
+        "0e70338e21a03f1895900bce96332ed5428b4d275bacbc7dcb96df22046f483d"
+      ]
+    },
+    {
+      "candidate_splits": [
+        "test",
+        "valid"
+      ],
+      "distance": 1,
+      "expert_adjudication": "pending",
+      "group_ids": [
+        "68e424181c30020dade14ffc1f7706747d0a6d660c27db14094e93920f1695a2",
+        "830fb309bfcd9bda88ce04678781c5c867f9e8a707469e70bba9c82e0b02d9cb"
+      ],
+      "left": "test/images/test2910-chicken_biryani.jpg",
+      "right": "train/images/train25832-chicken_biryani.jpg",
+      "source_sha256": [
+        "3addaa5a3abb3c846fed437160bf5fd6830ebfcbea9fc70118389a6e6f2c24d2",
+        "f5e791cc483821c4adc661cf457a6b3acfbceafe65354429242118adf805d1e2"
+      ]
+    },
+    {
+      "candidate_splits": [
+        "train",
+        "valid"
+      ],
+      "distance": 1,
+      "expert_adjudication": "pending",
+      "group_ids": [
+        "bf5a204567a02c4445e7d6a6f97779c756a11fdd6981f52d9d71731ece2a9613",
+        "e90007485086b5e6143fb32769ab13ff9de669ad6ae4e3966edda4a91d8292e6"
+      ],
+      "left": "test/images/test2992-kali.jpg",
+      "right": "train/images/train2226-kali.jpg",
+      "source_sha256": [
+        "af251cbc669e00c60ee5f156bf233663458b70a2d6c3b3ecbd6bed52c3bb02ca",
+        "a81f72145a4446e22bdcd38cdb4204d6d89dcd90f6498471abd89dae2d4a77fd"
+      ]
+    },
+    {
+      "candidate_splits": [
+        "valid",
+        "test"
+      ],
+      "distance": 1,
+      "expert_adjudication": "pending",
+      "group_ids": [
+        "f23d31aeaf87449ddadf9271f1bae43c322426b44efbc9f870d70ab9c326335a",
+        "eab425c0453bee1558f1d8cf8c9a359d9ba3c14592bff99c2dfbccd231480699"
+      ],
+      "left": "test/images/test3522-thepla.jpg",
+      "right": "train/images/train13644-thepla.jpg",
+      "source_sha256": [
+        "d0dcfaa6a68e7af21f7b1d51c7cce9e56bc1e7c32c1bc9d265ec25cefc4b18f7",
+        "696f3c87c32c486ccca426463bf010b421d65a9b45536d765c9320d5fba4ef2e"
+      ]
+    },
+    {
+      "candidate_splits": [
+        "test",
+        "valid"
+      ],
+      "distance": 1,
+      "expert_adjudication": "pending",
+      "group_ids": [
+        "e2034646ff7653d8cc48ae664157ca6944180359788fb55fa2bbd52a435296e0",
+        "7e56f71a1dc2f47e12b8351f8616ef2c496035ba8ffc1e59864a66f5f5b52678"
+      ],
+      "left": "train/images/train1910-veg_briyani.jpg",
+      "right": "valid/images/valid5340-veg_briyani.jpg",
+      "source_sha256": [
+        "b17a88dd97735db1fd5f93218da1a018d807910ecc3a50fb568048fcc1507902",
+        "108898a2717806d0cda3394d0df3791f26dea253861b126e2e2696f5a49eb6c5"
+      ]
+    },
+    {
+      "candidate_splits": [
+        "test",
+        "valid"
+      ],
+      "distance": 1,
+      "expert_adjudication": "pending",
+      "group_ids": [
+        "33941dc0faae60611b83bb08d86cd43834b2289a1d57e2f7274c5ab1a0b966c3",
+        "cc48d9eb722a94793a52512db235f585ae7892a0db08f71c5982da439a887a3f"
+      ],
+      "left": "train/images/train21065-ven_pongal.jpg",
+      "right": "train/images/train6668-ven_pongal.jpg",
+      "source_sha256": [
+        "c2d575424ea21ca61e7c30a9d034106eb1980637f63ba79fc14e927c5955b699",
+        "a4b8861c24560eb38005808fd7b2c379f59551a05415f873bc07c4c4ebd2104f"
+      ]
+    },
+    {
+      "candidate_splits": [
+        "valid",
+        "test"
+      ],
+      "distance": 1,
+      "expert_adjudication": "pending",
+      "group_ids": [
+        "e90007485086b5e6143fb32769ab13ff9de669ad6ae4e3966edda4a91d8292e6",
+        "fca7627f5d7f332830c8b5f72d9e3fcd38ac8cc8ce22de9d25d2317259a0d34e"
+      ],
+      "left": "train/images/train2226-kali.jpg",
+      "right": "train/images/train2997-kali.jpg",
+      "source_sha256": [
+        "a81f72145a4446e22bdcd38cdb4204d6d89dcd90f6498471abd89dae2d4a77fd",
+        "7e39a98f6fd0bea7032c9b55e4136aa63e68a32eb0a7cfdf1b01aed9ef218f0e"
+      ]
+    }
+  ],
+  "queue_truncated": false,
+  "schema_version": 1
+}

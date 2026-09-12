@@ -1,31 +1,38 @@
-# IEEE Transactions Initial Review Draft
+# Full Supervisor-Review Draft
 
-**Submission blocked (2026-09-12):** the new full dataset audit found 138 identical-image groups spanning splits and 65 annotation-flagged images. Read `../research/READINESS.md` before using historical performance claims. No target journal has been selected. The source and rebuilt PDF include an audit notice.
+This is the primary review manuscript for **AI-Based Food Recognition with Nutrition-Aware Recommendations: A System and Reproducibility Audit**.
 
-This folder contains an IEEE Transactions-style initial-review LaTeX manuscript for:
+Start with [the PDF](main.pdf), [supervisor review notes](../research/SUPERVISOR_REVIEW.md), and [research readiness](../research/READINESS.md). The manuscript separates completed application/audit work, historical detector observations, and proposed independent evaluation. It is prepared for supervisor feedback, not approved for external submission.
 
-**AI-Based Food Recognition with Nutrition-Aware Recommendations**
+The [conference-style companion](../Research_Paper_Conference/main.pdf) is a shorter presentation of the same study, not a separate experiment or an independently publishable second contribution. No venue has been selected.
 
-## Build
+## Files and layout
 
-Preferred from the repository root: `python scripts/build_papers.py --refresh-pdfs`. This isolates build artifacts and refreshes both PDFs only after successful compilation. MiKTeX automatic package installation is disabled.
+- [main.tex](main.tex): primary manuscript source, using a one-column, 12-point IEEEtran review layout with 1.5-spaced text and actual `lineno` line numbering.
+- [main.pdf](main.pdf): compiled review copy.
+- [bibliography/references.bib](bibliography/references.bib): focused, checked references shared with the short companion.
+- [generated/evidence.tex](generated/evidence.tex): tracked numeric macros generated from recorded audit evidence; do not edit by hand.
+- `figures/`: preserved historical assets, not used by the current manuscript. Its workflow diagram is drawn directly in LaTeX.
+- [JOURNAL_SUBMISSION_GUIDE.md](JOURNAL_SUBMISSION_GUIDE.md): review and submission-preparation gates.
 
-Run from this folder:
+This layout is a local review choice, not a claim of compliance with a particular journal's requirements.
+
+## Check and build
+
+From the repository root:
 
 ```bash
-pdflatex main.tex
-bibtex main
-pdflatex main.tex
-pdflatex main.tex
+python scripts/generate_paper_evidence.py --check
+python scripts/check_manuscripts.py
+python scripts/build_papers.py --refresh-pdfs
 ```
 
-## Files
+The first command checks generated-number drift without rewriting files. The second checks manuscript structure and reference consistency; neither validates scientific claims, reviewer independence, clinical suitability, or permissions.
 
-- `main.tex`: initial-review manuscript source using `IEEEtran` 12-point, one-column, double-spaced draft mode with line numbers
-- `bibliography/references.bib`: BibTeX references for food recognition, Indian-food datasets, nutrition databases, recommendation systems, and implementation frameworks
-- `figures/`: standalone figure assets used by the journal manuscript
-- `JOURNAL_SUBMISSION_GUIDE.md`: IEEE journal formatting, review-readiness, and pre-submission checklist
+Building requires an installed TeX distribution, `pdflatex`, `bibtex`, and the packages used by the sources. The script does not install them; MiKTeX automatic package installation is disabled. Build artifacts are isolated under `.deployment/research/`. Both tracked PDFs are refreshed only after both documents compile successfully. Omit `--refresh-pdfs` to build without replacing the tracked PDFs.
 
-## Before Submission
+## Before external submission
 
-Update author email details, ORCID details if required, target-journal page/figure requirements, exact source dataset URLs and access dates, and detector-family benchmark/ablation rows before journal submission.
+The INDB workbook's identity and source citation are verified; this does not establish nutrient correctness or all reuse permissions. A candidate grouped partition does not independently evaluate the existing checkpoint, and lookup availability is not mapping accuracy.
+
+Use the [supervisor review notes](../research/SUPERVISOR_REVIEW.md) to agree the paper's claim scope and evaluation protocol. Independent evaluation/review, asset rights, author details, disclosures, and venue-specific requirements still need the decisions described in [the submission guide](JOURNAL_SUBMISSION_GUIDE.md).

@@ -1,0 +1,52 @@
+{
+  "schema_version": 1,
+  "run_id": "validation-2026-09-12-v1",
+  "started_at_utc": "2026-09-12T05:44:10.881Z",
+  "completed_at_utc": "2026-09-12T05:44:17.624Z",
+  "checks": [
+    {
+      "command": ".venv/Scripts/python.exe scripts/test_recommendation_evidence.py",
+      "duration_seconds": 3.2473554,
+      "exit_code": 0,
+      "output": ".....\r\n----------------------------------------------------------------------\r\nRan 5 tests in 1.160s\r\n\r\nOK\r\n",
+      "status": "pass"
+    },
+    {
+      "command": ".venv/Scripts/python.exe -m ruff check scripts/validate_recommendation_evidence.py scripts/test_recommendation_evidence.py",
+      "duration_seconds": 0.7249807,
+      "exit_code": 0,
+      "output": "All checks passed!\n",
+      "status": "pass"
+    },
+    {
+      "command": "node --check scripts/test_validation_browser.mjs",
+      "duration_seconds": 0.4268026,
+      "exit_code": 0,
+      "output": "",
+      "status": "pass"
+    }
+  ],
+  "inputs": [
+    {
+      "path": "scripts/validate_recommendation_evidence.py",
+      "sha256": "5e85e8bb090d8be2ed921717f3bc969724151529489d0ba8a777e48c4f924c92"
+    },
+    {
+      "path": "scripts/test_recommendation_evidence.py",
+      "sha256": "dfc68d543e725a9cefc34e168b260356581d11cd130deea28f730f026bc0c323"
+    },
+    {
+      "path": "scripts/test_validation_browser.mjs",
+      "sha256": "6836578c82d753a7d4f1ef5092d5ce331f1c04038d178cd96fff5bf9ab6bb9b7"
+    }
+  ],
+  "boundaries": {
+    "live_provider_calls": 0,
+    "scientific_or_clinical_approval": false
+  },
+  "earlier_environment_attempt": {
+    "command": "python scripts/test_recommendation_evidence.py",
+    "exit_code": 1,
+    "reason": "Shell python resolved to an unrelated Miniconda environment without pydantic; rerun explicitly uses existing project .venv, with no dependency installation."
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "schema_version": 1,
+  "check": "claim-reviews",
+  "attempt": 1,
+  "started_at_utc": "2026-09-12T06:13:56.713571+00:00",
+  "duration_seconds": 0.14,
+  "exit_code": 0,
+  "status": "passed",
+  "command": [
+    "python.exe",
+    "scripts/check_claim_reviews.py",
+    "--check"
+  ],
+  "inputs": [
+    {
+      "path": "scripts/check_claim_reviews.py",
+      "sha256": "6f6b06d0460c588b292c979487fc1c8f400e4f76dcd74c52ee213a1cce3fe66d"
+    },
+    {
+      "path": "pyproject.toml",
+      "sha256": "70f46a51785a6a13dce64e979610a701d6eaf72fa5ba56bd9c007f97b61d43f5"
+    },
+    {
+      "path": "uv.lock",
+      "sha256": "5d77a5d5474baf012f9117875ed2b975f2751aac4cd1018ffa645990131b434f"
+    },
+    {
+      "path": "frontend/package-lock.json",
+      "sha256": "81c57cbf48762774a828fba268482447dc241413a86cfebd1d868fc2edc76f40"
+    }
+  ],
+  "local_log": ".deployment/research/validation-2026-09-12-v1/checks/claim-reviews-1.log",
+  "log_sha256": "40ec7914953f3ffff9c4a31edd6cd75b111c597620c39a8b9667006875ef98ac",
+  "network_policy": "Provider credentials disabled; mocked suites only. No scientific/clinical approval implied."
+}

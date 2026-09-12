@@ -1,0 +1,131 @@
+{
+  "accepted_instances": {
+    "test": 8868,
+    "train": 56287,
+    "valid": 8805
+  },
+  "additional_box_edge_check": {
+    "images": 3346,
+    "interpretation": "Additional geometric review flags, not automatically invalid annotations.",
+    "lines": 3794,
+    "tolerance": 1e-06
+  },
+  "command": [
+    "G:\\Projects\\Final_Year_Project\\.venv\\Scripts\\python.exe",
+    "G:\\Projects\\Final_Year_Project\\scripts\\validate_dataset_training.py",
+    "--run-id",
+    "validation-2026-09-12-v1",
+    "--phase",
+    "inspect"
+  ],
+  "details": [
+    {
+      "path": "research/evidence/validation-2026-09-12-v1/dataset-flagged-records.json",
+      "sha256": "a61ffbca7e44124a904d6cdc8a9b65ed1b464c5dc2be6b36ecaff5b254978a4f"
+    },
+    {
+      "path": "research/evidence/validation-2026-09-12-v1/dataset-class-group-support.json",
+      "sha256": "a7cff0535d395e77fbf17ac21ae00d26399702c1bb25e61e0be69150c57ca74c"
+    },
+    {
+      "path": ".deployment/research/validation-2026-09-12-v1/label-conflicts.json",
+      "sha256": "9da108f03e0ba12d34cee8b9bd1f4601465c0505e4974ec9c012ed7979cb2c9d"
+    },
+    {
+      "path": ".deployment/research/validation-2026-09-12-v1/extra-edge-flags.json",
+      "sha256": "527438b6bbd80187b5a2a095c2319a30522ea31c66714a9fb137fb205934d608"
+    },
+    {
+      "path": ".deployment/research/validation-2026-09-12-v1/independent-duplicates.json",
+      "sha256": "b39887ccf7334cd2a1ad11f082df8f66e663343bffcae64e63bfa401afd568cf"
+    }
+  ],
+  "direct_label_conflict_images": 209,
+  "direct_label_conflict_pixel_groups": 104,
+  "duplicates": {
+    "pixel_sha256": {
+      "groups": 138,
+      "images": 276,
+      "pairs": {
+        "train:test": {
+          "groups": 56,
+          "images": 112
+        },
+        "train:valid": {
+          "groups": 63,
+          "images": 126
+        },
+        "valid:test": {
+          "groups": 19,
+          "images": 38
+        }
+      }
+    },
+    "sha256": {
+      "groups": 138,
+      "images": 276,
+      "pairs": {
+        "train:test": {
+          "groups": 56,
+          "images": 112
+        },
+        "train:valid": {
+          "groups": 63,
+          "images": 126
+        },
+        "valid:test": {
+          "groups": 19,
+          "images": 38
+        }
+      }
+    }
+  },
+  "duration_seconds": 299.172,
+  "environment": {
+    "executable": "G:\\Projects\\Final_Year_Project\\.venv\\Scripts\\python.exe",
+    "pillow": "12.2.0",
+    "platform": "Windows-11-10.0.26200-SP0",
+    "python": "3.12.7 | packaged by Anaconda, Inc. | (main, Oct  4 2024, 13:17:27) [MSC v.1929 64 bit (AMD64)]",
+    "pyyaml": "6.0.3"
+  },
+  "exit_code": 0,
+  "flagged_images": 65,
+  "flagged_images_by_split": {
+    "test": 7,
+    "train": 51,
+    "valid": 7
+  },
+  "flagged_images_without_accepted_instances": 47,
+  "invalid_line_reasons": {
+    "zero_height": 20,
+    "zero_width": 45
+  },
+  "label_conflict_classifications": {
+    "different_boxes_same_class_multiset": 69,
+    "different_class_or_instance_multiset": 35
+  },
+  "limitations": [
+    "No images/labels were repaired, removed, or reassigned in the live dataset.",
+    "Candidate groups and conflicts require expert adjudication; no semantic correctness rate is inferred.",
+    "Numerically different annotation sets may be different boxes, class labels or incomplete annotation, not necessarily wrong food names.",
+    "No independent checkpoint accuracy or clinical validity established."
+  ],
+  "minimum_candidate_groups_per_class": {
+    "test": 11,
+    "train": 43,
+    "valid": 9
+  },
+  "old_artifact_comparison": {
+    "assignments_equal": true,
+    "dataset_fingerprint_equal": true,
+    "source_inventory_equal": true
+  },
+  "records": 48693,
+  "run_id": "validation-2026-09-12-v1",
+  "schema_version": 1,
+  "scope": "Offline read-only dataset/model access; generated evidence only; not independent scientific validation.",
+  "script_sha256_at_start": "4e2ec0c90309e9164188955ce208970072ce6c9e380be69ba324561d829b00ec",
+  "source_commit": "0a4edfa92818945ccd7f16b023299c847c745f0d",
+  "started_utc": "2026-09-12T05:42:05.099048+00:00",
+  "status": "passed_automated_checks_expert_review_pending"
+}

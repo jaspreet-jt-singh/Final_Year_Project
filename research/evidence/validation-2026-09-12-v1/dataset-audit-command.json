@@ -1,0 +1,42 @@
+{
+  "artifacts": [
+    {
+      "bytes": 43068,
+      "path": ".deployment/research/validation-2026-09-12-v1/audit.json",
+      "sha256": "de798a299fc3482ba6bf1f8ccc38ee70a266510c13ac5c06cfee8a89d6a17465"
+    },
+    {
+      "bytes": 18152806,
+      "path": ".deployment/research/validation-2026-09-12-v1/split-manifest.jsonl",
+      "sha256": "1e507eb78a40cb5b1dfa35a7d1def2f79aade7d84dbcfa18c2664ca08230eaad"
+    }
+  ],
+  "child_script_sha256": "c67804949692df903a680319e49e9cd3e3b14851f2675b790da6787e3c6fcb2b",
+  "command": [
+    "G:\\Projects\\Final_Year_Project\\.venv\\Scripts\\python.exe",
+    "G:\\Projects\\Final_Year_Project\\scripts\\audit_publication.py",
+    "--output",
+    "G:\\Projects\\Final_Year_Project\\.deployment\\research\\validation-2026-09-12-v1\\audit.json",
+    "--manifest",
+    "G:\\Projects\\Final_Year_Project\\.deployment\\research\\validation-2026-09-12-v1\\split-manifest.jsonl"
+  ],
+  "cwd": "G:\\Projects\\Final_Year_Project",
+  "duration_seconds": 409.937,
+  "environment": {
+    "executable": "G:\\Projects\\Final_Year_Project\\.venv\\Scripts\\python.exe",
+    "pillow": "12.2.0",
+    "platform": "Windows-11-10.0.26200-SP0",
+    "python": "3.12.7 | packaged by Anaconda, Inc. | (main, Oct  4 2024, 13:17:27) [MSC v.1929 64 bit (AMD64)]",
+    "pyyaml": "6.0.3"
+  },
+  "exit_code": 0,
+  "finished_utc": "2026-09-12T05:31:08.533574+00:00",
+  "output": "Audited 5000/48693 images\nAudited 10000/48693 images\nAudited 15000/48693 images\nAudited 20000/48693 images\nAudited 25000/48693 images\nAudited 30000/48693 images\nAudited 35000/48693 images\nAudited 40000/48693 images\nAudited 45000/48693 images\n{\n  \"report\": \"G:\\\\Projects\\\\Final_Year_Project\\\\.deployment\\\\research\\\\validation-2026-09-12-v1\\\\audit.json\",\n  \"images\": 48693,\n  \"cross_split_byte_groups\": 138,\n  \"cross_split_pixel_groups\": 138,\n  \"nutrition_coverage\": {\n    \"normalized_exact\": 19,\n    \"automatic_without_precomputed\": 55,\n    \"current_mapping\": 72\n  }\n}\n",
+  "run_id": "validation-2026-09-12-v1",
+  "schema_version": 1,
+  "scope": "Offline read-only dataset/model access; generated evidence only; not independent scientific validation.",
+  "script_sha256_at_start": "6c9d64aee3e2c4868ce7b6bf6a8861e3ee45f20f1b4ae3e6ca58575bcd9df16a",
+  "source_commit": "0a4edfa92818945ccd7f16b023299c847c745f0d",
+  "started_utc": "2026-09-12T05:24:18.413081+00:00",
+  "status": "passed"
+}

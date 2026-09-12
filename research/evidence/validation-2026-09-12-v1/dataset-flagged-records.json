@@ -1,0 +1,2343 @@
+{
+  "records": [
+    {
+      "accepted_instances": 0,
+      "annotations": [
+        {
+          "accepted_by_range_checks": false,
+          "box_edges_outside_frame_tolerance_1e_6": true,
+          "class": 60,
+          "coordinates": [
+            0.63197,
+            0.0,
+            0.0,
+            0.307501
+          ],
+          "issues": [
+            "zero_width"
+          ],
+          "line": 1,
+          "raw": "60 0.631970 0.000000 0.000000 0.307501"
+        }
+      ],
+      "dimensions": [
+        640,
+        640
+      ],
+      "expert_semantic_review": "pending",
+      "path": "test/images/test0213-roti.jpg",
+      "sha256": "af4760fe38b55d5af23b42e0e6778b3bc651dd49f1b3eb27a3d69a781689a2be"
+    },
+    {
+      "accepted_instances": 1,
+      "annotations": [
+        {
+          "accepted_by_range_checks": false,
+          "box_edges_outside_frame_tolerance_1e_6": false,
+          "class": 53,
+          "coordinates": [
+            0.328525,
+            0.406848,
+            0.0,
+            0.463531
+          ],
+          "issues": [
+            "zero_width"
+          ],
+          "line": 1,
+          "raw": "53 0.328525 0.406848 0.000000 0.463531"
+        },
+        {
+          "accepted_by_range_checks": true,
+          "box_edges_outside_frame_tolerance_1e_6": true,
+          "class": 53,
+          "coordinates": [
+            0.932592,
+            0.365169,
+            0.465407,
+            0.23513
+          ],
+          "issues": [],
+          "line": 2,
+          "raw": "53 0.932592 0.365169 0.465407 0.235130"
+        }
+      ],
+      "dimensions": [
+        640,
+        640
+      ],
+      "expert_semantic_review": "pending",
+      "path": "test/images/test0463-poorna_kolukattai.jpg",
+      "sha256": "2c75f842d406e493418342612511145268ecc401b810383ae39a52c01b172dcf"
+    },
+    {
+      "accepted_instances": 0,
+      "annotations": [
+        {
+          "accepted_by_range_checks": false,
+          "box_edges_outside_frame_tolerance_1e_6": true,
+          "class": 3,
+          "coordinates": [
+            0.918621,
+            0.695849,
+            0.620575,
+            0.0
+          ],
+          "issues": [
+            "zero_height"
+          ],
+          "line": 1,
+          "raw": "3 0.918621 0.695849 0.620575 0.000000"
+        }
+      ],
+      "dimensions": [
+        640,
+        640
+      ],
+      "expert_semantic_review": "pending",
+      "path": "test/images/test1916-beetroot_poriyal.jpg",
+      "sha256": "5c42a83b2de1a6a16ea30bc8bb6f83993a63b3539a053c9365b14f7937531078"
+    },
+    {
+      "accepted_instances": 0,
+      "annotations": [
+        {
+          "accepted_by_range_checks": false,
+          "box_edges_outside_frame_tolerance_1e_6": true,
+          "class": 59,
+          "coordinates": [
+            0.240557,
+            0.0,
+            0.0,
+            0.349165
+          ],
+          "issues": [
+            "zero_width"
+          ],
+          "line": 1,
+          "raw": "59 0.240557 0.000000 0.000000 0.349165"
+        }
+      ],
+      "dimensions": [
+        640,
+        640
+      ],
+      "expert_semantic_review": "pending",
+      "path": "test/images/test2472-rice.jpg",
+      "sha256": "baf24f499fa75da42f6004bbbe31a09e863204481029df3037c67fa6eb19b3ff"
+    },
+    {
+      "accepted_instances": 0,
+      "annotations": [
+        {
+          "accepted_by_range_checks": false,
+          "box_edges_outside_frame_tolerance_1e_6": true,
+          "class": 14,
+          "coordinates": [
+            0.282381,
+            0.0,
+            0.0,
+            0.602284
+          ],
+          "issues": [
+            "zero_width"
+          ],
+          "line": 1,
+          "raw": "14 0.282381 0.000000 0.000000 0.602284"
+        }
+      ],
+      "dimensions": [
+        640,
+        640
+      ],
+      "expert_semantic_review": "pending",
+      "path": "test/images/test2758-chicken_biryani.jpg",
+      "sha256": "e60d0f3d27c9fd8f0b34a240bb7287b59f96e5b18fd322d7e45a48d124544558"
+    },
+    {
+      "accepted_instances": 1,
+      "annotations": [
+        {
+          "accepted_by_range_checks": true,
+          "box_edges_outside_frame_tolerance_1e_6": true,
+          "class": 60,
+          "coordinates": [
+            0.430583,
+            0.0,
+            0.419895,
+            0.046858
+          ],
+          "issues": [],
+          "line": 1,
+          "raw": "60 0.430583 0.000000 0.419895 0.046858"
+        },
+        {
+          "accepted_by_range_checks": false,
+          "box_edges_outside_frame_tolerance_1e_6": true,
+          "class": 60,
+          "coordinates": [
+            0.125057,
+            0.0,
+            0.0,
+            0.461017
+          ],
+          "issues": [
+            "zero_width"
+          ],
+          "line": 2,
+          "raw": "60 0.125057 0.000000 0.000000 0.461017"
+        }
+      ],
+      "dimensions": [
+        640,
+        640
+      ],
+      "expert_semantic_review": "pending",
+      "path": "test/images/test3985-roti.jpg",
+      "sha256": "35282799cd476b50ccecaac161e7b20a17f4864e5aace7144edc982086e1d893"
+    },
+    {
+      "accepted_instances": 2,
+      "annotations": [
+        {
+          "accepted_by_range_checks": false,
+          "box_edges_outside_frame_tolerance_1e_6": false,
+          "class": 14,
+          "coordinates": [
+            0.669368,
+            0.325381,
+            0.543604,
+            0.0
+          ],
+          "issues": [
+            "zero_height"
+          ],
+          "line": 1,
+          "raw": "14 0.669368 0.325381 0.543604 0.000000"
+        },
+        {
+          "accepted_by_range_checks": true,
+          "box_edges_outside_frame_tolerance_1e_6": false,
+          "class": 14,
+          "coordinates": [
+            0.114786,
+            0.433522,
+            0.052574,
+            0.656922
+          ],
+          "issues": [],
+          "line": 2,
+          "raw": "14 0.114786 0.433522 0.052574 0.656922"
+        },
+        {
+          "accepted_by_range_checks": true,
+          "box_edges_outside_frame_tolerance_1e_6": true,
+          "class": 14,
+          "coordinates": [
+            0.690246,
+            0.330158,
+            0.669368,
+            0.325381
+          ],
+          "issues": [],
+          "line": 3,
+          "raw": "14 0.690246 0.330158 0.669368 0.325381"
+        }
+      ],
+      "dimensions": [
+        640,
+        640
+      ],
+      "expert_semantic_review": "pending",
+      "path": "test/images/test4658-chicken_biryani.jpg",
+      "sha256": "1ba24f2274d742905a57dc6f931de6ae9144ba361e5ef8f52aeec530b84e73fa"
+    },
+    {
+      "accepted_instances": 0,
+      "annotations": [
+        {
+          "accepted_by_range_checks": false,
+          "box_edges_outside_frame_tolerance_1e_6": true,
+          "class": 37,
+          "coordinates": [
+            0.588426,
+            0.0,
+            0.0,
+            0.779945
+          ],
+          "issues": [
+            "zero_width"
+          ],
+          "line": 1,
+          "raw": "37 0.588426 0.000000 0.000000 0.779945"
+        }
+      ],
+      "dimensions": [
+        640,
+        640
+      ],
+      "expert_semantic_review": "pending",
+      "path": "train/images/train0460-medu_vada.jpg",
+      "sha256": "d35b69784e65e7b3e3fe59046f12feb46368f3c5bef0e339e93bfbef0932f6de"
+    },
+    {
+      "accepted_instances": 0,
+      "annotations": [
+        {
+          "accepted_by_range_checks": false,
+          "box_edges_outside_frame_tolerance_1e_6": true,
+          "class": 60,
+          "coordinates": [
+            0.553248,
+            0.0,
+            0.0,
+            0.426943
+          ],
+          "issues": [
+            "zero_width"
+          ],
+          "line": 1,
+          "raw": "60 0.553248 0.000000 0.000000 0.426943"
+        }
+      ],
+      "dimensions": [
+        640,
+        640
+      ],
+      "expert_semantic_review": "pending",
+      "path": "train/images/train10771-roti.jpg",
+      "sha256": "19bc2b6c5a165008492ff9147d68db26d6bc72ec08bab141113100423bebb9f0"
+    },
+    {
+      "accepted_instances": 0,
+      "annotations": [
+        {
+          "accepted_by_range_checks": false,
+          "box_edges_outside_frame_tolerance_1e_6": true,
+          "class": 21,
+          "coordinates": [
+            0.0,
+            0.0,
+            0.0,
+            0.992951
+          ],
+          "issues": [
+            "zero_width"
+          ],
+          "line": 1,
+          "raw": "21 0.000000 0.000000 0.000000 0.992951"
+        }
+      ],
+      "dimensions": [
+        640,
+        640
+      ],
+      "expert_semantic_review": "pending",
+      "path": "train/images/train10842-eggs.jpg",
+      "sha256": "0ad3689f261c890435224b316eeb0cd1d242b7da9fa9d378aaac6e5e7f9ebadb"
+    },
+    {
+      "accepted_instances": 0,
+      "annotations": [
+        {
+          "accepted_by_range_checks": false,
+          "box_edges_outside_frame_tolerance_1e_6": true,
+          "class": 10,
+          "coordinates": [
+            0.364524,
+            0.0,
+            0.0,
+            0.549547
+          ],
+          "issues": [
+            "zero_width"
+          ],
+          "line": 1,
+          "raw": "10 0.364524 0.000000 0.000000 0.549547"
+        }
+      ],
+      "dimensions": [
+        640,
+        640
+      ],
+      "expert_semantic_review": "pending",
+      "path": "train/images/train11010-carrot_poriyal.jpg",
+      "sha256": "b089b57f698e576317c9bfaa8aca198f00784cbb077550ebcc4e873b3f2bf85c"
+    },
+    {
+      "accepted_instances": 0,
+      "annotations": [
+        {
+          "accepted_by_range_checks": false,
+          "box_edges_outside_frame_tolerance_1e_6": true,
+          "class": 59,
+          "coordinates": [
+            0.018982,
+            0.0,
+            0.0,
+            0.51609
+          ],
+          "issues": [
+            "zero_width"
+          ],
+          "line": 1,
+          "raw": "59 0.018982 0.000000 0.000000 0.516090"
+        }
+      ],
+      "dimensions": [
+        640,
+        640
+      ],
+      "expert_semantic_review": "pending",
+      "path": "train/images/train1116-rice.jpg",
+      "sha256": "eceeb32fa58cbc0543a7be7ebce1de74c0c5e2f1441cca1e7183c17a8ef185d0"
+    },
+    {
+      "accepted_instances": 3,
+      "annotations": [
+        {
+          "accepted_by_range_checks": false,
+          "box_edges_outside_frame_tolerance_1e_6": false,
+          "class": 19,
+          "coordinates": [
+            1.0,
+            0.386633,
+            0.0,
+            0.208802
+          ],
+          "issues": [
+            "zero_width"
+          ],
+          "line": 1,
+          "raw": "19 1.000000 0.386633 0.000000 0.208802"
+        },
+        {
+          "accepted_by_range_checks": true,
+          "box_edges_outside_frame_tolerance_1e_6": false,
+          "class": 28,
+          "coordinates": [
+            0.283594,
+            0.19375,
+            0.308594,
+            0.182812
+          ],
+          "issues": [],
+          "line": 2,
+          "raw": "28 0.283594 0.193750 0.308594 0.182812"
+        },
+        {
+          "accepted_by_range_checks": true,
+          "box_edges_outside_frame_tolerance_1e_6": false,
+          "class": 16,
+          "coordinates": [
+            0.867969,
+            0.284375,
+            0.257812,
+            0.200781
+          ],
+          "issues": [],
+          "line": 3,
+          "raw": "16 0.867969 0.284375 0.257812 0.200781"
+        },
+        {
+          "accepted_by_range_checks": true,
+          "box_edges_outside_frame_tolerance_1e_6": false,
+          "class": 63,
+          "coordinates": [
+            0.089063,
+            0.828906,
+            0.178125,
+            0.208594
+          ],
+          "issues": [],
+          "line": 4,
+          "raw": "63 0.089063 0.828906 0.178125 0.208594"
+        }
+      ],
+      "dimensions": [
+        640,
+        640
+      ],
+      "expert_semantic_review": "pending",
+      "path": "train/images/train11420-coconut_chutney.jpg",
+      "sha256": "5222162561c979316e90bbad5bbb16dc32a030e6a1793e4969f7fcace49a2f3c"
+    },
+    {
+      "accepted_instances": 0,
+      "annotations": [
+        {
+          "accepted_by_range_checks": false,
+          "box_edges_outside_frame_tolerance_1e_6": true,
+          "class": 3,
+          "coordinates": [
+            1.0,
+            0.154424,
+            0.864407,
+            0.0
+          ],
+          "issues": [
+            "zero_height"
+          ],
+          "line": 1,
+          "raw": "3 1.000000 0.154424 0.864407 0.000000"
+        }
+      ],
+      "dimensions": [
+        640,
+        640
+      ],
+      "expert_semantic_review": "pending",
+      "path": "train/images/train12329-beetroot_poriyal.jpg",
+      "sha256": "16209814e72e72bf41d2e52f46444e88bad5dd30ae2ee7e723351837b518d7d9"
+    },
+    {
+      "accepted_instances": 0,
+      "annotations": [
+        {
+          "accepted_by_range_checks": false,
+          "box_edges_outside_frame_tolerance_1e_6": true,
+          "class": 60,
+          "coordinates": [
+            0.277603,
+            0.0,
+            0.0,
+            0.311091
+          ],
+          "issues": [
+            "zero_width"
+          ],
+          "line": 1,
+          "raw": "60 0.277603 0.000000 0.000000 0.311091"
+        }
+      ],
+      "dimensions": [
+        640,
+        640
+      ],
+      "expert_semantic_review": "pending",
+      "path": "train/images/train13295-roti.jpg",
+      "sha256": "443cb8e2928cfc6544e2a27bfd4f7920853374c37c13e0c1671c3168d8216f0d"
+    },
+    {
+      "accepted_instances": 0,
+      "annotations": [
+        {
+          "accepted_by_range_checks": false,
+          "box_edges_outside_frame_tolerance_1e_6": true,
+          "class": 59,
+          "coordinates": [
+            0.26168,
+            0.0,
+            0.0,
+            0.324834
+          ],
+          "issues": [
+            "zero_width"
+          ],
+          "line": 1,
+          "raw": "59 0.261680 0.000000 0.000000 0.324834"
+        }
+      ],
+      "dimensions": [
+        640,
+        640
+      ],
+      "expert_semantic_review": "pending",
+      "path": "train/images/train13511-rice.jpg",
+      "sha256": "96c2f375a698f97e61e8c33cf2de8b41a14401966e226422277d80c650697577"
+    },
+    {
+      "accepted_instances": 0,
+      "annotations": [
+        {
+          "accepted_by_range_checks": false,
+          "box_edges_outside_frame_tolerance_1e_6": true,
+          "class": 59,
+          "coordinates": [
+            0.169342,
+            0.0,
+            0.0,
+            0.40069
+          ],
+          "issues": [
+            "zero_width"
+          ],
+          "line": 1,
+          "raw": "59 0.169342 0.000000 0.000000 0.400690"
+        }
+      ],
+      "dimensions": [
+        640,
+        640
+      ],
+      "expert_semantic_review": "pending",
+      "path": "train/images/train1467-rice.jpg",
+      "sha256": "56d347a484d1f2b868bdc3e8eedbbab39f0d6eda1dde9b432fdf0c969389f59e"
+    },
+    {
+      "accepted_instances": 2,
+      "annotations": [
+        {
+          "accepted_by_range_checks": false,
+          "box_edges_outside_frame_tolerance_1e_6": false,
+          "class": 19,
+          "coordinates": [
+            0.990196,
+            0.436204,
+            0.0,
+            0.033778
+          ],
+          "issues": [
+            "zero_width"
+          ],
+          "line": 1,
+          "raw": "19 0.990196 0.436204 0.000000 0.033778"
+        },
+        {
+          "accepted_by_range_checks": true,
+          "box_edges_outside_frame_tolerance_1e_6": true,
+          "class": 16,
+          "coordinates": [
+            0.916875,
+            0.758077,
+            0.945759,
+            0.66027
+          ],
+          "issues": [],
+          "line": 2,
+          "raw": "16 0.916875 0.758077 0.945759 0.660270"
+        },
+        {
+          "accepted_by_range_checks": true,
+          "box_edges_outside_frame_tolerance_1e_6": true,
+          "class": 63,
+          "coordinates": [
+            0.772454,
+            0.829209,
+            0.763567,
+            0.733181
+          ],
+          "issues": [],
+          "line": 3,
+          "raw": "63 0.772454 0.829209 0.763567 0.733181"
+        }
+      ],
+      "dimensions": [
+        640,
+        640
+      ],
+      "expert_semantic_review": "pending",
+      "path": "train/images/train14719-coconut_chutney.jpg",
+      "sha256": "071acc985bf5b35d0fcf1e3007d600ef5a96d521c161c180724d261a6d5df1da"
+    },
+    {
+      "accepted_instances": 0,
+      "annotations": [
+        {
+          "accepted_by_range_checks": false,
+          "box_edges_outside_frame_tolerance_1e_6": true,
+          "class": 42,
+          "coordinates": [
+            0.991392,
+            0.024558,
+            0.077542,
+            0.0
+          ],
+          "issues": [
+            "zero_height"
+          ],
+          "line": 1,
+          "raw": "42 0.991392 0.024558 0.077542 0.000000"
+        }
+      ],
+      "dimensions": [
+        640,
+        640
+      ],
+      "expert_semantic_review": "pending",
+      "path": "train/images/train14854-nandu_masala.jpg",
+      "sha256": "68855c4b701bec93ae31f5cad28cec4445eea876cd8d8f3b5bbce4d1f1d60f7b"
+    },
+    {
+      "accepted_instances": 0,
+      "annotations": [
+        {
+          "accepted_by_range_checks": false,
+          "box_edges_outside_frame_tolerance_1e_6": true,
+          "class": 59,
+          "coordinates": [
+            0.201738,
+            0.0,
+            0.0,
+            0.376168
+          ],
+          "issues": [
+            "zero_width"
+          ],
+          "line": 1,
+          "raw": "59 0.201738 0.000000 0.000000 0.376168"
+        }
+      ],
+      "dimensions": [
+        640,
+        640
+      ],
+      "expert_semantic_review": "pending",
+      "path": "train/images/train15440-rice.jpg",
+      "sha256": "ad27999fefed5cea42d6f4dbf88f2ce386e000f9da9dff2237dfb6eb2680fd59"
+    },
+    {
+      "accepted_instances": 0,
+      "annotations": [
+        {
+          "accepted_by_range_checks": false,
+          "box_edges_outside_frame_tolerance_1e_6": true,
+          "class": 60,
+          "coordinates": [
+            0.366025,
+            0.0,
+            0.0,
+            0.211325
+          ],
+          "issues": [
+            "zero_width"
+          ],
+          "line": 1,
+          "raw": "60 0.366025 0.000000 0.000000 0.211325"
+        }
+      ],
+      "dimensions": [
+        640,
+        640
+      ],
+      "expert_semantic_review": "pending",
+      "path": "train/images/train16670-roti.jpg",
+      "sha256": "779ae9a6c294f095f26cf9bdc169fce617d1bba5658ae8f15115a7af944950e5"
+    },
+    {
+      "accepted_instances": 0,
+      "annotations": [
+        {
+          "accepted_by_range_checks": false,
+          "box_edges_outside_frame_tolerance_1e_6": true,
+          "class": 2,
+          "coordinates": [
+            0.00193,
+            0.0,
+            0.0,
+            0.665642
+          ],
+          "issues": [
+            "zero_width"
+          ],
+          "line": 1,
+          "raw": "2 0.001930 0.000000 0.000000 0.665642"
+        }
+      ],
+      "dimensions": [
+        640,
+        640
+      ],
+      "expert_semantic_review": "pending",
+      "path": "train/images/train17222-appam.jpg",
+      "sha256": "cc4d43d0b112a077b7f8970ef24d444ec1b50308dbe0c2feae96f58c4136dcd1"
+    },
+    {
+      "accepted_instances": 0,
+      "annotations": [
+        {
+          "accepted_by_range_checks": false,
+          "box_edges_outside_frame_tolerance_1e_6": true,
+          "class": 53,
+          "coordinates": [
+            0.028036,
+            0.276613,
+            0.0,
+            0.773922
+          ],
+          "issues": [
+            "zero_width"
+          ],
+          "line": 1,
+          "raw": "53 0.028036 0.276613 0.000000 0.773922"
+        }
+      ],
+      "dimensions": [
+        640,
+        640
+      ],
+      "expert_semantic_review": "pending",
+      "path": "train/images/train17878-poorna_kolukattai.jpg",
+      "sha256": "1616ae0014489800cc5a605d3518a6389451f43df238b9404bc3320326a75b6d"
+    },
+    {
+      "accepted_instances": 0,
+      "annotations": [
+        {
+          "accepted_by_range_checks": false,
+          "box_edges_outside_frame_tolerance_1e_6": false,
+          "class": 19,
+          "coordinates": [
+            0.721005,
+            0.891992,
+            0.286077,
+            0.0
+          ],
+          "issues": [
+            "zero_height"
+          ],
+          "line": 1,
+          "raw": "19 0.721005 0.891992 0.286077 0.000000"
+        }
+      ],
+      "dimensions": [
+        640,
+        640
+      ],
+      "expert_semantic_review": "pending",
+      "path": "train/images/train19562-dosa.jpg",
+      "sha256": "4700861f21adeb31f6de44cdc54a9b12974d6ed5897142833e8940d06b4398cf"
+    },
+    {
+      "accepted_instances": 0,
+      "annotations": [
+        {
+          "accepted_by_range_checks": false,
+          "box_edges_outside_frame_tolerance_1e_6": true,
+          "class": 3,
+          "coordinates": [
+            1.0,
+            0.252722,
+            0.546573,
+            0.0
+          ],
+          "issues": [
+            "zero_height"
+          ],
+          "line": 1,
+          "raw": "3 1.000000 0.252722 0.546573 0.000000"
+        }
+      ],
+      "dimensions": [
+        640,
+        640
+      ],
+      "expert_semantic_review": "pending",
+      "path": "train/images/train20505-beetroot_poriyal.jpg",
+      "sha256": "fc4700784878317af610a1d9cecaee89959312866c69b60c422aaa070ecc0e47"
+    },
+    {
+      "accepted_instances": 0,
+      "annotations": [
+        {
+          "accepted_by_range_checks": false,
+          "box_edges_outside_frame_tolerance_1e_6": true,
+          "class": 2,
+          "coordinates": [
+            0.991764,
+            0.004981,
+            0.084923,
+            0.0
+          ],
+          "issues": [
+            "zero_height"
+          ],
+          "line": 1,
+          "raw": "2 0.991764 0.004981 0.084923 0.000000"
+        }
+      ],
+      "dimensions": [
+        640,
+        640
+      ],
+      "expert_semantic_review": "pending",
+      "path": "train/images/train21567-appam.jpg",
+      "sha256": "93a5eb6bb12d24f50ba1fefdcff5e8a8e232f439a7efc10495b48ebefb932f11"
+    },
+    {
+      "accepted_instances": 0,
+      "annotations": [
+        {
+          "accepted_by_range_checks": false,
+          "box_edges_outside_frame_tolerance_1e_6": true,
+          "class": 59,
+          "coordinates": [
+            0.264855,
+            0.0,
+            0.0,
+            0.331137
+          ],
+          "issues": [
+            "zero_width"
+          ],
+          "line": 1,
+          "raw": "59 0.264855 0.000000 0.000000 0.331137"
+        }
+      ],
+      "dimensions": [
+        640,
+        640
+      ],
+      "expert_semantic_review": "pending",
+      "path": "train/images/train21934-rice.jpg",
+      "sha256": "d9e4ffc707765b605b5e7705fd1d0f9206d4bf1c84c14ea98283a8b18e51b24a"
+    },
+    {
+      "accepted_instances": 2,
+      "annotations": [
+        {
+          "accepted_by_range_checks": false,
+          "box_edges_outside_frame_tolerance_1e_6": false,
+          "class": 19,
+          "coordinates": [
+            0.153762,
+            0.269799,
+            0.0,
+            0.298176
+          ],
+          "issues": [
+            "zero_width"
+          ],
+          "line": 1,
+          "raw": "19 0.153762 0.269799 0.000000 0.298176"
+        },
+        {
+          "accepted_by_range_checks": true,
+          "box_edges_outside_frame_tolerance_1e_6": false,
+          "class": 26,
+          "coordinates": [
+            0.438606,
+            0.167442,
+            0.233569,
+            0.327532
+          ],
+          "issues": [],
+          "line": 2,
+          "raw": "26 0.438606 0.167442 0.233569 0.327532"
+        },
+        {
+          "accepted_by_range_checks": true,
+          "box_edges_outside_frame_tolerance_1e_6": true,
+          "class": 28,
+          "coordinates": [
+            0.91195,
+            0.595331,
+            0.788378,
+            0.571839
+          ],
+          "issues": [],
+          "line": 3,
+          "raw": "28 0.911950 0.595331 0.788378 0.571839"
+        }
+      ],
+      "dimensions": [
+        640,
+        640
+      ],
+      "expert_semantic_review": "pending",
+      "path": "train/images/train24133-dosa.jpg",
+      "sha256": "3b860b90c7c8ee05d87574961355aebaf720fb49e139b302f6feb069ae50c981"
+    },
+    {
+      "accepted_instances": 2,
+      "annotations": [
+        {
+          "accepted_by_range_checks": true,
+          "box_edges_outside_frame_tolerance_1e_6": true,
+          "class": 19,
+          "coordinates": [
+            0.922218,
+            0.222213,
+            0.853285,
+            0.148019
+          ],
+          "issues": [],
+          "line": 1,
+          "raw": "19 0.922218 0.222213 0.853285 0.148019"
+        },
+        {
+          "accepted_by_range_checks": false,
+          "box_edges_outside_frame_tolerance_1e_6": false,
+          "class": 28,
+          "coordinates": [
+            0.099769,
+            0.363536,
+            0.0,
+            0.395333
+          ],
+          "issues": [
+            "zero_width"
+          ],
+          "line": 2,
+          "raw": "28 0.099769 0.363536 0.000000 0.395333"
+        },
+        {
+          "accepted_by_range_checks": true,
+          "box_edges_outside_frame_tolerance_1e_6": false,
+          "class": 16,
+          "coordinates": [
+            0.402839,
+            0.252244,
+            0.286365,
+            0.201015
+          ],
+          "issues": [],
+          "line": 3,
+          "raw": "16 0.402839 0.252244 0.286365 0.201015"
+        }
+      ],
+      "dimensions": [
+        640,
+        640
+      ],
+      "expert_semantic_review": "pending",
+      "path": "train/images/train24316-coconut_chutney.jpg",
+      "sha256": "1ab66b021dbb5f310d9255e6ab57e755abebba3f459193bc44cd697f26a9f076"
+    },
+    {
+      "accepted_instances": 2,
+      "annotations": [
+        {
+          "accepted_by_range_checks": true,
+          "box_edges_outside_frame_tolerance_1e_6": true,
+          "class": 59,
+          "coordinates": [
+            1.0,
+            0.449101,
+            0.887305,
+            0.102211
+          ],
+          "issues": [],
+          "line": 1,
+          "raw": "59 1.000000 0.449101 0.887305 0.102211"
+        },
+        {
+          "accepted_by_range_checks": true,
+          "box_edges_outside_frame_tolerance_1e_6": true,
+          "class": 59,
+          "coordinates": [
+            0.523557,
+            1.0,
+            0.579408,
+            0.92089
+          ],
+          "issues": [],
+          "line": 2,
+          "raw": "59 0.523557 1.000000 0.579408 0.920890"
+        },
+        {
+          "accepted_by_range_checks": false,
+          "box_edges_outside_frame_tolerance_1e_6": true,
+          "class": 59,
+          "coordinates": [
+            0.434049,
+            0.0,
+            0.0,
+            0.151877
+          ],
+          "issues": [
+            "zero_width"
+          ],
+          "line": 3,
+          "raw": "59 0.434049 0.000000 0.000000 0.151877"
+        }
+      ],
+      "dimensions": [
+        640,
+        640
+      ],
+      "expert_semantic_review": "pending",
+      "path": "train/images/train24354-rice.jpg",
+      "sha256": "7f7254032c1c50aaf4a3460d84d985cd96f7de73f3df437f6a33f93d16b14012"
+    },
+    {
+      "accepted_instances": 2,
+      "annotations": [
+        {
+          "accepted_by_range_checks": true,
+          "box_edges_outside_frame_tolerance_1e_6": true,
+          "class": 28,
+          "coordinates": [
+            0.895427,
+            0.885973,
+            1.0,
+            0.748559
+          ],
+          "issues": [],
+          "line": 1,
+          "raw": "28 0.895427 0.885973 1.000000 0.748559"
+        },
+        {
+          "accepted_by_range_checks": true,
+          "box_edges_outside_frame_tolerance_1e_6": true,
+          "class": 24,
+          "coordinates": [
+            0.895427,
+            0.101902,
+            0.760996,
+            0.055019
+          ],
+          "issues": [],
+          "line": 2,
+          "raw": "24 0.895427 0.101902 0.760996 0.055019"
+        },
+        {
+          "accepted_by_range_checks": false,
+          "box_edges_outside_frame_tolerance_1e_6": true,
+          "class": 19,
+          "coordinates": [
+            0.006957,
+            0.331465,
+            0.0,
+            0.746942
+          ],
+          "issues": [
+            "zero_width"
+          ],
+          "line": 3,
+          "raw": "19 0.006957 0.331465 0.000000 0.746942"
+        }
+      ],
+      "dimensions": [
+        640,
+        640
+      ],
+      "expert_semantic_review": "pending",
+      "path": "train/images/train26817-dosa.jpg",
+      "sha256": "ae7872a5c8d528c63f2ba1ac860a3ebf29baf5c2c67713d4482233c24dbc6f60"
+    },
+    {
+      "accepted_instances": 0,
+      "annotations": [
+        {
+          "accepted_by_range_checks": false,
+          "box_edges_outside_frame_tolerance_1e_6": true,
+          "class": 59,
+          "coordinates": [
+            0.86491,
+            0.0,
+            0.0,
+            0.02847
+          ],
+          "issues": [
+            "zero_width"
+          ],
+          "line": 1,
+          "raw": "59 0.864910 0.000000 0.000000 0.028470"
+        }
+      ],
+      "dimensions": [
+        640,
+        640
+      ],
+      "expert_semantic_review": "pending",
+      "path": "train/images/train27689-rice.jpg",
+      "sha256": "513e7356617192c7263ab8ea3558a812c5640aaebaf389506f0ce28a27447b96"
+    },
+    {
+      "accepted_instances": 0,
+      "annotations": [
+        {
+          "accepted_by_range_checks": false,
+          "box_edges_outside_frame_tolerance_1e_6": true,
+          "class": 2,
+          "coordinates": [
+            0.00193,
+            0.0,
+            0.0,
+            0.665642
+          ],
+          "issues": [
+            "zero_width"
+          ],
+          "line": 1,
+          "raw": "2 0.001930 0.000000 0.000000 0.665642"
+        }
+      ],
+      "dimensions": [
+        640,
+        640
+      ],
+      "expert_semantic_review": "pending",
+      "path": "train/images/train27836-appam.jpg",
+      "sha256": "4d6edd535ae6a3bb997fba2925696a89767c4d208c7e5c4fce4eec24383cf55b"
+    },
+    {
+      "accepted_instances": 0,
+      "annotations": [
+        {
+          "accepted_by_range_checks": false,
+          "box_edges_outside_frame_tolerance_1e_6": true,
+          "class": 2,
+          "coordinates": [
+            0.991764,
+            0.004981,
+            0.084923,
+            0.0
+          ],
+          "issues": [
+            "zero_height"
+          ],
+          "line": 1,
+          "raw": "2 0.991764 0.004981 0.084923 0.000000"
+        }
+      ],
+      "dimensions": [
+        640,
+        640
+      ],
+      "expert_semantic_review": "pending",
+      "path": "train/images/train27907-appam.jpg",
+      "sha256": "c1c7f45088eaa9998246205770cf2bb2133cd074612d51047676496416fdd2b5"
+    },
+    {
+      "accepted_instances": 0,
+      "annotations": [
+        {
+          "accepted_by_range_checks": false,
+          "box_edges_outside_frame_tolerance_1e_6": true,
+          "class": 3,
+          "coordinates": [
+            0.0,
+            0.252722,
+            0.546573,
+            0.0
+          ],
+          "issues": [
+            "zero_height"
+          ],
+          "line": 1,
+          "raw": "3 0.000000 0.252722 0.546573 0.000000"
+        }
+      ],
+      "dimensions": [
+        640,
+        640
+      ],
+      "expert_semantic_review": "pending",
+      "path": "train/images/train28061-beetroot_poriyal.jpg",
+      "sha256": "3fd0d22e08255c326e63559f7ed99c3a2e055cd617b514e1f0af491af85b9ce0"
+    },
+    {
+      "accepted_instances": 0,
+      "annotations": [
+        {
+          "accepted_by_range_checks": false,
+          "box_edges_outside_frame_tolerance_1e_6": true,
+          "class": 3,
+          "coordinates": [
+            0.0,
+            0.449177,
+            0.825913,
+            0.0
+          ],
+          "issues": [
+            "zero_height"
+          ],
+          "line": 1,
+          "raw": "3 0.000000 0.449177 0.825913 0.000000"
+        }
+      ],
+      "dimensions": [
+        640,
+        640
+      ],
+      "expert_semantic_review": "pending",
+      "path": "train/images/train28105-beetroot_poriyal.jpg",
+      "sha256": "32ce4f8ddd14d438127acbcc6e9f16e78c9d51f2a16e0d9405499b93b870612f"
+    },
+    {
+      "accepted_instances": 0,
+      "annotations": [
+        {
+          "accepted_by_range_checks": false,
+          "box_edges_outside_frame_tolerance_1e_6": true,
+          "class": 3,
+          "coordinates": [
+            0.0,
+            0.154424,
+            0.864407,
+            0.0
+          ],
+          "issues": [
+            "zero_height"
+          ],
+          "line": 1,
+          "raw": "3 0.000000 0.154424 0.864407 0.000000"
+        }
+      ],
+      "dimensions": [
+        640,
+        640
+      ],
+      "expert_semantic_review": "pending",
+      "path": "train/images/train28115-beetroot_poriyal.jpg",
+      "sha256": "7d046ee103fe61964aea480456b413490fcd7192c2c23f1550815c2145fe116b"
+    },
+    {
+      "accepted_instances": 0,
+      "annotations": [
+        {
+          "accepted_by_range_checks": false,
+          "box_edges_outside_frame_tolerance_1e_6": true,
+          "class": 10,
+          "coordinates": [
+            0.635476,
+            0.0,
+            0.0,
+            0.549547
+          ],
+          "issues": [
+            "zero_width"
+          ],
+          "line": 1,
+          "raw": "10 0.635476 0.000000 0.000000 0.549547"
+        }
+      ],
+      "dimensions": [
+        640,
+        640
+      ],
+      "expert_semantic_review": "pending",
+      "path": "train/images/train28773-carrot_poriyal.jpg",
+      "sha256": "b3a0297abec0beb54e7fed5bc51a5dcc1a00ba3653f9691b525c9be05a6ce7fb"
+    },
+    {
+      "accepted_instances": 0,
+      "annotations": [
+        {
+          "accepted_by_range_checks": false,
+          "box_edges_outside_frame_tolerance_1e_6": true,
+          "class": 19,
+          "coordinates": [
+            0.218056,
+            0.0,
+            0.0,
+            0.332728
+          ],
+          "issues": [
+            "zero_width"
+          ],
+          "line": 1,
+          "raw": "19 0.218056 0.000000 0.000000 0.332728"
+        }
+      ],
+      "dimensions": [
+        640,
+        640
+      ],
+      "expert_semantic_review": "pending",
+      "path": "train/images/train2900-dosa.jpg",
+      "sha256": "552a534f864d0d581dbe6bb81ea0901eb5d32f87aaab92aed60e40cb54615feb"
+    },
+    {
+      "accepted_instances": 2,
+      "annotations": [
+        {
+          "accepted_by_range_checks": true,
+          "box_edges_outside_frame_tolerance_1e_6": true,
+          "class": 28,
+          "coordinates": [
+            0.895427,
+            0.885973,
+            1.0,
+            0.748559
+          ],
+          "issues": [],
+          "line": 1,
+          "raw": "28 0.895427 0.885973 1.000000 0.748559"
+        },
+        {
+          "accepted_by_range_checks": true,
+          "box_edges_outside_frame_tolerance_1e_6": true,
+          "class": 24,
+          "coordinates": [
+            0.895427,
+            0.101902,
+            0.760996,
+            0.055019
+          ],
+          "issues": [],
+          "line": 2,
+          "raw": "24 0.895427 0.101902 0.760996 0.055019"
+        },
+        {
+          "accepted_by_range_checks": false,
+          "box_edges_outside_frame_tolerance_1e_6": true,
+          "class": 19,
+          "coordinates": [
+            0.006957,
+            0.331465,
+            0.0,
+            0.746942
+          ],
+          "issues": [
+            "zero_width"
+          ],
+          "line": 3,
+          "raw": "19 0.006957 0.331465 0.000000 0.746942"
+        }
+      ],
+      "dimensions": [
+        640,
+        640
+      ],
+      "expert_semantic_review": "pending",
+      "path": "train/images/train30254-dosa.jpg",
+      "sha256": "36ee5c486d1c8e1938f9a7b27bf9b3cf180348478e8616d35cade6274e5714d6"
+    },
+    {
+      "accepted_instances": 3,
+      "annotations": [
+        {
+          "accepted_by_range_checks": false,
+          "box_edges_outside_frame_tolerance_1e_6": false,
+          "class": 19,
+          "coordinates": [
+            0.0,
+            0.386633,
+            0.0,
+            0.208802
+          ],
+          "issues": [
+            "zero_width"
+          ],
+          "line": 1,
+          "raw": "19 0.000000 0.386633 0.000000 0.208802"
+        },
+        {
+          "accepted_by_range_checks": true,
+          "box_edges_outside_frame_tolerance_1e_6": false,
+          "class": 28,
+          "coordinates": [
+            0.716406,
+            0.19375,
+            0.308594,
+            0.182812
+          ],
+          "issues": [],
+          "line": 2,
+          "raw": "28 0.716406 0.193750 0.308594 0.182812"
+        },
+        {
+          "accepted_by_range_checks": true,
+          "box_edges_outside_frame_tolerance_1e_6": false,
+          "class": 16,
+          "coordinates": [
+            0.132031,
+            0.284375,
+            0.257812,
+            0.200781
+          ],
+          "issues": [],
+          "line": 3,
+          "raw": "16 0.132031 0.284375 0.257812 0.200781"
+        },
+        {
+          "accepted_by_range_checks": true,
+          "box_edges_outside_frame_tolerance_1e_6": false,
+          "class": 63,
+          "coordinates": [
+            0.910937,
+            0.828906,
+            0.178125,
+            0.208594
+          ],
+          "issues": [],
+          "line": 4,
+          "raw": "63 0.910937 0.828906 0.178125 0.208594"
+        }
+      ],
+      "dimensions": [
+        640,
+        640
+      ],
+      "expert_semantic_review": "pending",
+      "path": "train/images/train30335-coconut_chutney.jpg",
+      "sha256": "8243ca0a37b40181d49f29ed02aa214f85bb048a79d9bf1411c7c3c4d0859f97"
+    },
+    {
+      "accepted_instances": 2,
+      "annotations": [
+        {
+          "accepted_by_range_checks": true,
+          "box_edges_outside_frame_tolerance_1e_6": true,
+          "class": 19,
+          "coordinates": [
+            0.077782,
+            0.222213,
+            0.853285,
+            0.148019
+          ],
+          "issues": [],
+          "line": 1,
+          "raw": "19 0.077782 0.222213 0.853285 0.148019"
+        },
+        {
+          "accepted_by_range_checks": false,
+          "box_edges_outside_frame_tolerance_1e_6": false,
+          "class": 28,
+          "coordinates": [
+            0.900231,
+            0.363536,
+            0.0,
+            0.395333
+          ],
+          "issues": [
+            "zero_width"
+          ],
+          "line": 2,
+          "raw": "28 0.900231 0.363536 0.000000 0.395333"
+        },
+        {
+          "accepted_by_range_checks": true,
+          "box_edges_outside_frame_tolerance_1e_6": false,
+          "class": 16,
+          "coordinates": [
+            0.597161,
+            0.252244,
+            0.286365,
+            0.201015
+          ],
+          "issues": [],
+          "line": 3,
+          "raw": "16 0.597161 0.252244 0.286365 0.201015"
+        }
+      ],
+      "dimensions": [
+        640,
+        640
+      ],
+      "expert_semantic_review": "pending",
+      "path": "train/images/train30343-coconut_chutney.jpg",
+      "sha256": "8be87069c82fc9d3e460033fb804a5e9e0b840e2736bcfa55e3ef6753882275b"
+    },
+    {
+      "accepted_instances": 3,
+      "annotations": [
+        {
+          "accepted_by_range_checks": true,
+          "box_edges_outside_frame_tolerance_1e_6": true,
+          "class": 19,
+          "coordinates": [
+            0.062094,
+            0.808405,
+            0.260968,
+            0.983808
+          ],
+          "issues": [],
+          "line": 1,
+          "raw": "19 0.062094 0.808405 0.260968 0.983808"
+        },
+        {
+          "accepted_by_range_checks": false,
+          "box_edges_outside_frame_tolerance_1e_6": false,
+          "class": 24,
+          "coordinates": [
+            0.009644,
+            0.283848,
+            0.0,
+            0.37469
+          ],
+          "issues": [
+            "zero_width"
+          ],
+          "line": 2,
+          "raw": "24 0.009644 0.283848 0.000000 0.374690"
+        },
+        {
+          "accepted_by_range_checks": true,
+          "box_edges_outside_frame_tolerance_1e_6": false,
+          "class": 28,
+          "coordinates": [
+            0.494809,
+            0.216003,
+            0.300306,
+            0.224277
+          ],
+          "issues": [],
+          "line": 3,
+          "raw": "28 0.494809 0.216003 0.300306 0.224277"
+        },
+        {
+          "accepted_by_range_checks": true,
+          "box_edges_outside_frame_tolerance_1e_6": true,
+          "class": 63,
+          "coordinates": [
+            0.951564,
+            0.181254,
+            0.763617,
+            0.154778
+          ],
+          "issues": [],
+          "line": 4,
+          "raw": "63 0.951564 0.181254 0.763617 0.154778"
+        }
+      ],
+      "dimensions": [
+        640,
+        640
+      ],
+      "expert_semantic_review": "pending",
+      "path": "train/images/train30368-dosa.jpg",
+      "sha256": "7a17b92a80f2ff2984722cbd918bd9222bb551325fc79032244159dc29356cef"
+    },
+    {
+      "accepted_instances": 2,
+      "annotations": [
+        {
+          "accepted_by_range_checks": false,
+          "box_edges_outside_frame_tolerance_1e_6": false,
+          "class": 19,
+          "coordinates": [
+            0.153762,
+            0.269799,
+            0.0,
+            0.298176
+          ],
+          "issues": [
+            "zero_width"
+          ],
+          "line": 1,
+          "raw": "19 0.153762 0.269799 0.000000 0.298176"
+        },
+        {
+          "accepted_by_range_checks": true,
+          "box_edges_outside_frame_tolerance_1e_6": false,
+          "class": 26,
+          "coordinates": [
+            0.438606,
+            0.167442,
+            0.233569,
+            0.327532
+          ],
+          "issues": [],
+          "line": 2,
+          "raw": "26 0.438606 0.167442 0.233569 0.327532"
+        },
+        {
+          "accepted_by_range_checks": true,
+          "box_edges_outside_frame_tolerance_1e_6": true,
+          "class": 28,
+          "coordinates": [
+            0.91195,
+            0.595331,
+            0.788378,
+            0.571839
+          ],
+          "issues": [],
+          "line": 3,
+          "raw": "28 0.911950 0.595331 0.788378 0.571839"
+        }
+      ],
+      "dimensions": [
+        640,
+        640
+      ],
+      "expert_semantic_review": "pending",
+      "path": "train/images/train30378-dosa.jpg",
+      "sha256": "4854261229f64d84bddfc28608c569a1ec43fe331df92bc4a0138c95401ab0fb"
+    },
+    {
+      "accepted_instances": 0,
+      "annotations": [
+        {
+          "accepted_by_range_checks": false,
+          "box_edges_outside_frame_tolerance_1e_6": true,
+          "class": 42,
+          "coordinates": [
+            0.991392,
+            0.024558,
+            0.077542,
+            0.0
+          ],
+          "issues": [
+            "zero_height"
+          ],
+          "line": 1,
+          "raw": "42 0.991392 0.024558 0.077542 0.000000"
+        }
+      ],
+      "dimensions": [
+        640,
+        640
+      ],
+      "expert_semantic_review": "pending",
+      "path": "train/images/train32902-nandu_masala.jpg",
+      "sha256": "3d12d7d7f7532b62c0ba7438276d683640f11dcfe6a080544ac49aa3b7255955"
+    },
+    {
+      "accepted_instances": 0,
+      "annotations": [
+        {
+          "accepted_by_range_checks": false,
+          "box_edges_outside_frame_tolerance_1e_6": true,
+          "class": 42,
+          "coordinates": [
+            0.861453,
+            0.349225,
+            0.776928,
+            0.0
+          ],
+          "issues": [
+            "zero_height"
+          ],
+          "line": 1,
+          "raw": "42 0.861453 0.349225 0.776928 0.000000"
+        }
+      ],
+      "dimensions": [
+        640,
+        640
+      ],
+      "expert_semantic_review": "pending",
+      "path": "train/images/train32929-nandu_masala.jpg",
+      "sha256": "6650917b32ff1e8dac3d9e3b3dc4f71872f9793de104e3e5bec728dc0cc5f8d1"
+    },
+    {
+      "accepted_instances": 0,
+      "annotations": [
+        {
+          "accepted_by_range_checks": false,
+          "box_edges_outside_frame_tolerance_1e_6": true,
+          "class": 59,
+          "coordinates": [
+            0.431374,
+            0.0,
+            0.0,
+            0.146713
+          ],
+          "issues": [
+            "zero_width"
+          ],
+          "line": 1,
+          "raw": "59 0.431374 0.000000 0.000000 0.146713"
+        }
+      ],
+      "dimensions": [
+        640,
+        640
+      ],
+      "expert_semantic_review": "pending",
+      "path": "train/images/train3443-rice.jpg",
+      "sha256": "10627f5ae3d1d6d99ad78ffb7480a901e76cff20828e58f3586b929aba03f63d"
+    },
+    {
+      "accepted_instances": 0,
+      "annotations": [
+        {
+          "accepted_by_range_checks": false,
+          "box_edges_outside_frame_tolerance_1e_6": true,
+          "class": 53,
+          "coordinates": [
+            0.983597,
+            0.122796,
+            0.327033,
+            0.0
+          ],
+          "issues": [
+            "zero_height"
+          ],
+          "line": 1,
+          "raw": "53 0.983597 0.122796 0.327033 0.000000"
+        }
+      ],
+      "dimensions": [
+        640,
+        640
+      ],
+      "expert_semantic_review": "pending",
+      "path": "train/images/train34625-poorna_kolukattai.jpg",
+      "sha256": "21b0e208e5d68513396a0d7edc256dfc88c8fca10cf49130b9ac74d75fc0a275"
+    },
+    {
+      "accepted_instances": 0,
+      "annotations": [
+        {
+          "accepted_by_range_checks": false,
+          "box_edges_outside_frame_tolerance_1e_6": true,
+          "class": 53,
+          "coordinates": [
+            0.971964,
+            0.276613,
+            0.0,
+            0.773922
+          ],
+          "issues": [
+            "zero_width"
+          ],
+          "line": 1,
+          "raw": "53 0.971964 0.276613 0.000000 0.773922"
+        }
+      ],
+      "dimensions": [
+        640,
+        640
+      ],
+      "expert_semantic_review": "pending",
+      "path": "train/images/train34678-poorna_kolukattai.jpg",
+      "sha256": "ba4f7cfcb4d5dd54d566c3b22ed69f7de3449de4862ad705378467d38673aaae"
+    },
+    {
+      "accepted_instances": 0,
+      "annotations": [
+        {
+          "accepted_by_range_checks": false,
+          "box_edges_outside_frame_tolerance_1e_6": true,
+          "class": 42,
+          "coordinates": [
+            0.861453,
+            0.349225,
+            0.776928,
+            0.0
+          ],
+          "issues": [
+            "zero_height"
+          ],
+          "line": 1,
+          "raw": "42 0.861453 0.349225 0.776928 0.000000"
+        }
+      ],
+      "dimensions": [
+        640,
+        640
+      ],
+      "expert_semantic_review": "pending",
+      "path": "train/images/train5055-nandu_masala.jpg",
+      "sha256": "51a961368f7aaf4fca364492651835891a4e1ffa62cec90bea74fc4c334b31e7"
+    },
+    {
+      "accepted_instances": 0,
+      "annotations": [
+        {
+          "accepted_by_range_checks": false,
+          "box_edges_outside_frame_tolerance_1e_6": true,
+          "class": 53,
+          "coordinates": [
+            0.983597,
+            0.122796,
+            0.327033,
+            0.0
+          ],
+          "issues": [
+            "zero_height"
+          ],
+          "line": 1,
+          "raw": "53 0.983597 0.122796 0.327033 0.000000"
+        }
+      ],
+      "dimensions": [
+        640,
+        640
+      ],
+      "expert_semantic_review": "pending",
+      "path": "train/images/train6279-poorna_kolukattai.jpg",
+      "sha256": "6a2b0c42919be8821dce3011f09736bfad7633989df22ece722756e7c0003ed5"
+    },
+    {
+      "accepted_instances": 0,
+      "annotations": [
+        {
+          "accepted_by_range_checks": false,
+          "box_edges_outside_frame_tolerance_1e_6": true,
+          "class": 60,
+          "coordinates": [
+            0.318015,
+            0.0,
+            0.0,
+            0.266846
+          ],
+          "issues": [
+            "zero_width"
+          ],
+          "line": 1,
+          "raw": "60 0.318015 0.000000 0.000000 0.266846"
+        }
+      ],
+      "dimensions": [
+        640,
+        640
+      ],
+      "expert_semantic_review": "pending",
+      "path": "train/images/train6305-roti.jpg",
+      "sha256": "4c7e9750bab3640f57f6db1b5eb4bd6b60ff6e583f065a64dda844395fe045dc"
+    },
+    {
+      "accepted_instances": 3,
+      "annotations": [
+        {
+          "accepted_by_range_checks": true,
+          "box_edges_outside_frame_tolerance_1e_6": true,
+          "class": 19,
+          "coordinates": [
+            0.062094,
+            0.808405,
+            0.260968,
+            0.983808
+          ],
+          "issues": [],
+          "line": 1,
+          "raw": "19 0.062094 0.808405 0.260968 0.983808"
+        },
+        {
+          "accepted_by_range_checks": false,
+          "box_edges_outside_frame_tolerance_1e_6": false,
+          "class": 24,
+          "coordinates": [
+            0.009644,
+            0.283848,
+            0.0,
+            0.37469
+          ],
+          "issues": [
+            "zero_width"
+          ],
+          "line": 2,
+          "raw": "24 0.009644 0.283848 0.000000 0.374690"
+        },
+        {
+          "accepted_by_range_checks": true,
+          "box_edges_outside_frame_tolerance_1e_6": false,
+          "class": 28,
+          "coordinates": [
+            0.494809,
+            0.216003,
+            0.300306,
+            0.224277
+          ],
+          "issues": [],
+          "line": 3,
+          "raw": "28 0.494809 0.216003 0.300306 0.224277"
+        },
+        {
+          "accepted_by_range_checks": true,
+          "box_edges_outside_frame_tolerance_1e_6": true,
+          "class": 63,
+          "coordinates": [
+            0.951564,
+            0.181254,
+            0.763617,
+            0.154778
+          ],
+          "issues": [],
+          "line": 4,
+          "raw": "63 0.951564 0.181254 0.763617 0.154778"
+        }
+      ],
+      "dimensions": [
+        640,
+        640
+      ],
+      "expert_semantic_review": "pending",
+      "path": "train/images/train7487-dosa.jpg",
+      "sha256": "e9197ee27b275412872fc1d748862b47917f0cade7252596e9081deaa347c100"
+    },
+    {
+      "accepted_instances": 2,
+      "annotations": [
+        {
+          "accepted_by_range_checks": false,
+          "box_edges_outside_frame_tolerance_1e_6": true,
+          "class": 19,
+          "coordinates": [
+            0.408194,
+            0.05069,
+            0.0,
+            0.599001
+          ],
+          "issues": [
+            "zero_width"
+          ],
+          "line": 1,
+          "raw": "19 0.408194 0.050690 0.000000 0.599001"
+        },
+        {
+          "accepted_by_range_checks": true,
+          "box_edges_outside_frame_tolerance_1e_6": true,
+          "class": 63,
+          "coordinates": [
+            1.0,
+            0.432696,
+            0.946376,
+            0.353661
+          ],
+          "issues": [],
+          "line": 2,
+          "raw": "63 1.000000 0.432696 0.946376 0.353661"
+        },
+        {
+          "accepted_by_range_checks": true,
+          "box_edges_outside_frame_tolerance_1e_6": true,
+          "class": 63,
+          "coordinates": [
+            0.882189,
+            0.126433,
+            0.762456,
+            0.078682
+          ],
+          "issues": [],
+          "line": 3,
+          "raw": "63 0.882189 0.126433 0.762456 0.078682"
+        }
+      ],
+      "dimensions": [
+        640,
+        640
+      ],
+      "expert_semantic_review": "pending",
+      "path": "train/images/train8418-sambar.jpg",
+      "sha256": "54a76e03b60f3ccf3c3b1e1ffb9c85e6752ef20665c4cf2cc7c680ff8302f7cc"
+    },
+    {
+      "accepted_instances": 0,
+      "annotations": [
+        {
+          "accepted_by_range_checks": false,
+          "box_edges_outside_frame_tolerance_1e_6": true,
+          "class": 3,
+          "coordinates": [
+            1.0,
+            0.449177,
+            0.825913,
+            0.0
+          ],
+          "issues": [
+            "zero_height"
+          ],
+          "line": 1,
+          "raw": "3 1.000000 0.449177 0.825913 0.000000"
+        }
+      ],
+      "dimensions": [
+        640,
+        640
+      ],
+      "expert_semantic_review": "pending",
+      "path": "train/images/train8464-beetroot_poriyal.jpg",
+      "sha256": "b41cc50fe48595670066589e9ae15b96f65179579d1777ff47a79534f9a97057"
+    },
+    {
+      "accepted_instances": 0,
+      "annotations": [
+        {
+          "accepted_by_range_checks": false,
+          "box_edges_outside_frame_tolerance_1e_6": true,
+          "class": 59,
+          "coordinates": [
+            0.394962,
+            0.0,
+            0.0,
+            0.185511
+          ],
+          "issues": [
+            "zero_width"
+          ],
+          "line": 1,
+          "raw": "59 0.394962 0.000000 0.000000 0.185511"
+        }
+      ],
+      "dimensions": [
+        640,
+        640
+      ],
+      "expert_semantic_review": "pending",
+      "path": "train/images/train8977-rice.jpg",
+      "sha256": "8b46fa61009a9e7a65017c4e7194e65ea06c7050dee138fed341a44cd1ead41b"
+    },
+    {
+      "accepted_instances": 0,
+      "annotations": [
+        {
+          "accepted_by_range_checks": false,
+          "box_edges_outside_frame_tolerance_1e_6": true,
+          "class": 59,
+          "coordinates": [
+            0.23018,
+            0.0,
+            0.0,
+            0.392757
+          ],
+          "issues": [
+            "zero_width"
+          ],
+          "line": 1,
+          "raw": "59 0.230180 0.000000 0.000000 0.392757"
+        }
+      ],
+      "dimensions": [
+        640,
+        640
+      ],
+      "expert_semantic_review": "pending",
+      "path": "train/images/train9820-rice.jpg",
+      "sha256": "d12d0d113dedb366914281b364c554a6a70f8eccf2f9875baf90961091a7846d"
+    },
+    {
+      "accepted_instances": 0,
+      "annotations": [
+        {
+          "accepted_by_range_checks": false,
+          "box_edges_outside_frame_tolerance_1e_6": true,
+          "class": 60,
+          "coordinates": [
+            0.346021,
+            0.0,
+            0.0,
+            0.266808
+          ],
+          "issues": [
+            "zero_width"
+          ],
+          "line": 1,
+          "raw": "60 0.346021 0.000000 0.000000 0.266808"
+        }
+      ],
+      "dimensions": [
+        640,
+        640
+      ],
+      "expert_semantic_review": "pending",
+      "path": "train/images/train9901-roti.jpg",
+      "sha256": "434f0f4e42ed6d667eddaf120a763a8097531f46b68142a0058ae93abc2ae89d"
+    },
+    {
+      "accepted_instances": 0,
+      "annotations": [
+        {
+          "accepted_by_range_checks": false,
+          "box_edges_outside_frame_tolerance_1e_6": true,
+          "class": 40,
+          "coordinates": [
+            0.757196,
+            0.246274,
+            0.627231,
+            0.0
+          ],
+          "issues": [
+            "zero_height"
+          ],
+          "line": 1,
+          "raw": "40 0.757196 0.246274 0.627231 0.000000"
+        }
+      ],
+      "dimensions": [
+        640,
+        640
+      ],
+      "expert_semantic_review": "pending",
+      "path": "valid/images/valid0310-mutton_biryani.jpg",
+      "sha256": "aea0bd987a0ad9ad99aba5106c80d460ca559ed48abf48d6d4245627cfa9fdef"
+    },
+    {
+      "accepted_instances": 0,
+      "annotations": [
+        {
+          "accepted_by_range_checks": false,
+          "box_edges_outside_frame_tolerance_1e_6": true,
+          "class": 14,
+          "coordinates": [
+            0.974586,
+            0.401757,
+            0.828182,
+            0.0
+          ],
+          "issues": [
+            "zero_height"
+          ],
+          "line": 1,
+          "raw": "14 0.974586 0.401757 0.828182 0.000000"
+        }
+      ],
+      "dimensions": [
+        640,
+        640
+      ],
+      "expert_semantic_review": "pending",
+      "path": "valid/images/valid2002-chicken_biryani.jpg",
+      "sha256": "5043f165800c2b37c9898654d1a8d0f27cc9a94be95dd220bfcb6519253cc971"
+    },
+    {
+      "accepted_instances": 0,
+      "annotations": [
+        {
+          "accepted_by_range_checks": false,
+          "box_edges_outside_frame_tolerance_1e_6": false,
+          "class": 50,
+          "coordinates": [
+            1.0,
+            0.068414,
+            0.0,
+            0.08375
+          ],
+          "issues": [
+            "zero_width"
+          ],
+          "line": 1,
+          "raw": "50 1.000000 0.068414 0.000000 0.083750"
+        }
+      ],
+      "dimensions": [
+        640,
+        640
+      ],
+      "expert_semantic_review": "pending",
+      "path": "valid/images/valid2465-parupu_vadai.jpg",
+      "sha256": "1ab4675d246a58d18a8c1f4d4754bb03f2a6a1a6dde379041c07c2247a6246bc"
+    },
+    {
+      "accepted_instances": 1,
+      "annotations": [
+        {
+          "accepted_by_range_checks": false,
+          "box_edges_outside_frame_tolerance_1e_6": true,
+          "class": 19,
+          "coordinates": [
+            0.074515,
+            0.073429,
+            0.0,
+            0.258373
+          ],
+          "issues": [
+            "zero_width"
+          ],
+          "line": 1,
+          "raw": "19 0.074515 0.073429 0.000000 0.258373"
+        },
+        {
+          "accepted_by_range_checks": true,
+          "box_edges_outside_frame_tolerance_1e_6": true,
+          "class": 16,
+          "coordinates": [
+            0.001638,
+            0.502001,
+            0.008748,
+            0.866554
+          ],
+          "issues": [],
+          "line": 2,
+          "raw": "16 0.001638 0.502001 0.008748 0.866554"
+        }
+      ],
+      "dimensions": [
+        640,
+        640
+      ],
+      "expert_semantic_review": "pending",
+      "path": "valid/images/valid3235-coconut_chutney.jpg",
+      "sha256": "61197a25cdc670b18ae9d9e381277a70779cde7446e9cd6d7cc946720cb0192d"
+    },
+    {
+      "accepted_instances": 2,
+      "annotations": [
+        {
+          "accepted_by_range_checks": true,
+          "box_edges_outside_frame_tolerance_1e_6": true,
+          "class": 19,
+          "coordinates": [
+            0.620967,
+            1.0,
+            0.90734,
+            0.884544
+          ],
+          "issues": [],
+          "line": 1,
+          "raw": "19 0.620967 1.000000 0.907340 0.884544"
+        },
+        {
+          "accepted_by_range_checks": false,
+          "box_edges_outside_frame_tolerance_1e_6": false,
+          "class": 28,
+          "coordinates": [
+            0.589368,
+            0.026395,
+            0.398025,
+            0.0
+          ],
+          "issues": [
+            "zero_height"
+          ],
+          "line": 2,
+          "raw": "28 0.589368 0.026395 0.398025 0.000000"
+        },
+        {
+          "accepted_by_range_checks": true,
+          "box_edges_outside_frame_tolerance_1e_6": true,
+          "class": 24,
+          "coordinates": [
+            0.964614,
+            0.21417,
+            1.0,
+            0.126424
+          ],
+          "issues": [],
+          "line": 3,
+          "raw": "24 0.964614 0.214170 1.000000 0.126424"
+        }
+      ],
+      "dimensions": [
+        640,
+        640
+      ],
+      "expert_semantic_review": "pending",
+      "path": "valid/images/valid4534-dosa.jpg",
+      "sha256": "5340d8595a7a3508ebab6b0b5c44cb19a4852eb52661db27894af243035eaab9"
+    },
+    {
+      "accepted_instances": 0,
+      "annotations": [
+        {
+          "accepted_by_range_checks": false,
+          "box_edges_outside_frame_tolerance_1e_6": true,
+          "class": 10,
+          "coordinates": [
+            0.251985,
+            0.0,
+            0.0,
+            0.134283
+          ],
+          "issues": [
+            "zero_width"
+          ],
+          "line": 1,
+          "raw": "10 0.251985 0.000000 0.000000 0.134283"
+        }
+      ],
+      "dimensions": [
+        640,
+        640
+      ],
+      "expert_semantic_review": "pending",
+      "path": "valid/images/valid4749-carrot_poriyal.jpg",
+      "sha256": "3fb3a9a6f58ca131819ca9fb59841823563cdfc0c3ff71198ee2e4e8953239b3"
+    },
+    {
+      "accepted_instances": 0,
+      "annotations": [
+        {
+          "accepted_by_range_checks": false,
+          "box_edges_outside_frame_tolerance_1e_6": true,
+          "class": 42,
+          "coordinates": [
+            0.156406,
+            0.0,
+            0.0,
+            0.465994
+          ],
+          "issues": [
+            "zero_width"
+          ],
+          "line": 1,
+          "raw": "42 0.156406 0.000000 0.000000 0.465994"
+        }
+      ],
+      "dimensions": [
+        640,
+        640
+      ],
+      "expert_semantic_review": "pending",
+      "path": "valid/images/valid4805-nandu_masala.jpg",
+      "sha256": "1a88e33a4a05719d9e6e33ae0287ecef8893d7ab4132a0f1a731ef1b64826063"
+    }
+  ],
+  "schema_version": 1
+}

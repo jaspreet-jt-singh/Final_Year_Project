@@ -1,0 +1,34 @@
+{
+  "schema_version": 1,
+  "check": "backend-architecture",
+  "attempt": 1,
+  "started_at_utc": "2026-09-12T05:24:07.624430+00:00",
+  "duration_seconds": 1.547,
+  "exit_code": 0,
+  "status": "passed",
+  "command": [
+    "python.exe",
+    "scripts/test_architecture.py"
+  ],
+  "inputs": [
+    {
+      "path": "scripts/test_architecture.py",
+      "sha256": "1712c2b7c73d5dfae4a93a87be486e227674a478d9412aecc0d9d1ee0fdc1ee8"
+    },
+    {
+      "path": "pyproject.toml",
+      "sha256": "70f46a51785a6a13dce64e979610a701d6eaf72fa5ba56bd9c007f97b61d43f5"
+    },
+    {
+      "path": "uv.lock",
+      "sha256": "5d77a5d5474baf012f9117875ed2b975f2751aac4cd1018ffa645990131b434f"
+    },
+    {
+      "path": "frontend/package-lock.json",
+      "sha256": "81c57cbf48762774a828fba268482447dc241413a86cfebd1d868fc2edc76f40"
+    }
+  ],
+  "local_log": ".deployment/research/validation-2026-09-12-v1/checks/backend-architecture-1.log",
+  "log_sha256": "eac76a4d8c96334343df43b46d00ffb0e3ccb596c366cb814a92a1ba44406eb3",
+  "network_policy": "Provider credentials disabled; mocked suites only. No scientific/clinical approval implied."
+}

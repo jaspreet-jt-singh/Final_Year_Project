@@ -1,0 +1,2462 @@
+{
+  "schema_version": 1,
+  "ledger_path": "research/evidence/validation-2026-09-12-v1/claims.json",
+  "ledger_sha256": "347ff7ac35d6e831845437e5a0491a8f658d848a48c9d0ffd45b4b8020a0fd81",
+  "reviewer_role": "AI-assisted source-and-artifact reviewer; not a qualified nutrition, medical, legal, annotation or independent human-study reviewer.",
+  "reviewed_at_date": "2026-09-12",
+  "review_scope": {
+    "zero_based_start": 440,
+    "zero_based_end": 634,
+    "one_based_start": 441,
+    "one_based_end": 635,
+    "occurrences": 195,
+    "paper": "Conference"
+  },
+  "review_method": "Each assigned literal occurrence was manually read in three consecutive index slices, considered with its surrounding paper context, and compared with source code and recorded evidence. Dispositions and individual rationales were authored per unit, not copied from automatic claim-set categories. Symbol/header/container units are explicitly treated as contextual or overlapping units rather than independent experiments.",
+  "review_boundaries": [
+    "The receipt binds the unchanged original index, not the separately corrected final index.",
+    "Reproduced identifies numerical/implementation observations supported by this team's recorded checks; this reviewer did not independently rerun every dataset or provider experiment.",
+    "Primary-source claims were reviewed against the detailed recorded citation checks; this reviewer did not newly fetch every cited source.",
+    "No live providers, training, production changes, clinical judgments, human-participant assessment or submission approval were performed.",
+    "Current source-revision public availability was not verified; the parent's exact-revision fetch failed.",
+    "Two local historical grouping summaries were inspected and had equal inventory/assignment hashes; complete historical environment records remain unavailable."
+  ],
+  "claims": [
+    {
+      "occurrence_id": "C-35-3",
+      "reviewed_text_sha256": "8b9b3b5c3efd3a9d57919c3947085c7ac223e1eec29373376dfdbda19ebe5e5f",
+      "disposition": "Supported with limitations",
+      "rationale": "The stated contribution is an application/audit case study; neither a new architecture nor completed clinical validation is presented.",
+      "evidence": [
+        "Research_Paper_Journal/main.tex",
+        "research/evidence/validation-2026-09-12-v1/nutrition-validation.json",
+        "research/evidence/validation-2026-09-12-v1/recommendations.json"
+      ],
+      "limitation": "This is a scope restriction, not evidence that recommendations are safe.",
+      "required_correction": ""
+    },
+    {
+      "occurrence_id": "C-38-1",
+      "reviewed_text_sha256": "4c9a84b42e318eeb244afb04b0f02f505ed8637844df3c085f43d7125a98022e",
+      "disposition": "Supported with limitations",
+      "rationale": "The cited survey's recorded scope includes the listed food-computing tasks.",
+      "evidence": [
+        "research/evidence/validation-2026-09-12-v1/citation-review.json"
+      ],
+      "limitation": "Review relies on the recorded primary-author-record check; its direct PDF fetch failed.",
+      "required_correction": ""
+    },
+    {
+      "occurrence_id": "C-38-2",
+      "reviewed_text_sha256": "b616d1c54db4352f9be58b1b712eed6b97fea00b8a80f8c9630f41df8768e074",
+      "disposition": "Supported with limitations",
+      "rationale": "Recorded ICCV/author evidence describes a food diary linking recognition and nutrient lookup before this project.",
+      "evidence": [
+        "research/evidence/validation-2026-09-12-v1/citation-review.json"
+      ],
+      "limitation": "This supports prior existence, not an exhaustive novelty search; retrieval was cached.",
+      "required_correction": ""
+    },
+    {
+      "occurrence_id": "C-38-3",
+      "reviewed_text_sha256": "6d91c2d4b9341c1e728b1e8f84b6eba6b40714193cdf4851c832657282b027a9",
+      "disposition": "Supported with limitations",
+      "rationale": "Primary full-text/author-PDF checks support regional detection and the Thali recognition/weight/nutrition scope.",
+      "evidence": [
+        "research/evidence/validation-2026-09-12-v1/citation-review.json"
+      ],
+      "limitation": "No numerical comparison or superiority claim follows across different settings.",
+      "required_correction": ""
+    },
+    {
+      "occurrence_id": "C-38-4",
+      "reviewed_text_sha256": "2e19cf64b55162b82c6d962f1099712cc51f41f20c24f10c4018c4f631970caf",
+      "disposition": "Supported with limitations",
+      "rationale": "The cited studies did not use this exact merged export, fixed checkpoint, and evaluation protocol.",
+      "evidence": [
+        "research/evidence/validation-2026-09-12-v1/citation-review.json",
+        "research/evidence/validation-2026-09-12-v1/training-results.json"
+      ],
+      "limitation": "Not a matched-baseline experiment; this is a justified comparability limitation.",
+      "required_correction": ""
+    },
+    {
+      "occurrence_id": "C-40-1",
+      "reviewed_text_sha256": "2912223bc26a09a264569ce1695c38a3d4e7c529591fad129661c4e354b2cd15",
+      "disposition": "Supported with limitations",
+      "rationale": "Nutrition 5 k's recorded source describes component weights and nutritional annotations.",
+      "evidence": [
+        "research/evidence/validation-2026-09-12-v1/citation-review.json"
+      ],
+      "limitation": "The source check used cached primary records; no Nutrition 5 k experiment was run here.",
+      "required_correction": ""
+    },
+    {
+      "occurrence_id": "C-40-2",
+      "reviewed_text_sha256": "da0d6a754693a2a91d50b968b3aba6300524b8d9b63f46aa2a4e115583662b71",
+      "disposition": "Supported with limitations",
+      "rationale": "Meal arithmetic uses user-entered grams and stored per-100-g values, with no independent weighed-meal outcome dataset.",
+      "evidence": [
+        "frontend/lib/meals.ts",
+        "research/evidence/validation-2026-09-12-v1/arithmetic-validation.json"
+      ],
+      "limitation": "Software arithmetic agreement is not nutrient-measurement accuracy.",
+      "required_correction": ""
+    },
+    {
+      "occurrence_id": "C-40-3",
+      "reviewed_text_sha256": "15019bfe7f40912bf3b57131ce0336e8835fdabacc89c2c5fff4d6c79799a14b",
+      "disposition": "Supported with limitations",
+      "rationale": "The INDB record supports recipe composition, while label lookup supplies no observed recipe identity.",
+      "evidence": [
+        "research/evidence/validation-2026-09-12-v1/citation-review.json",
+        "research/evidence/validation-2026-09-12-v1/nutrition-validation.json",
+        "backend/services/nutrition_service.py"
+      ],
+      "limitation": "Workbook source consistency cannot establish equivalence to a photographed preparation.",
+      "required_correction": ""
+    },
+    {
+      "occurrence_id": "C-40-4",
+      "reviewed_text_sha256": "885400c8bd1442b2970fdb0df05d5a361db671f04220d0b75b1852c0538e6f52",
+      "disposition": "Supported with limitations",
+      "rationale": "The recorded corrigendum concerns missing IFCT author/source attribution, not a correction of this application's estimates.",
+      "evidence": [
+        "research/evidence/validation-2026-09-12-v1/citation-review.json"
+      ],
+      "limitation": "Primary correction retrieval was cached, with direct-access failures disclosed.",
+      "required_correction": ""
+    },
+    {
+      "occurrence_id": "C-42-1",
+      "reviewed_text_sha256": "a2bf1f26de85f4ddc3b3ba5b3754fe600b047cf1865d93b00be9089d71fc9879",
+      "disposition": "Supported with limitations",
+      "rationale": "The cited leakage article supports the methodological warning about non-independent evaluation.",
+      "evidence": [
+        "research/evidence/validation-2026-09-12-v1/citation-review.json"
+      ],
+      "limitation": "No effect size or failure probability is transferred to this project.",
+      "required_correction": ""
+    },
+    {
+      "occurrence_id": "C-42-2",
+      "reviewed_text_sha256": "f6bb333efe0bdb57c81b0b0f7e0ed5d93ab75fd68f65789f649fb0db7917abd9",
+      "disposition": "Supported with limitations",
+      "rationale": "The recorded near-duplicate study distinguishes broader candidate retrieval/review from exact equality.",
+      "evidence": [
+        "research/evidence/validation-2026-09-12-v1/citation-review.json",
+        "research/evidence/validation-2026-09-12-v1/dataset-perceptual-review.json"
+      ],
+      "limitation": "This project's bounded screen is not comprehensive transformed-copy detection.",
+      "required_correction": ""
+    },
+    {
+      "occurrence_id": "C-42-3",
+      "reviewed_text_sha256": "df5c42ea50cead1ca2d8c31f241c8acdad10d299f958192039fe953bed98549b",
+      "disposition": "Supported with limitations",
+      "rationale": "Audit/grouping code uses exact identities and filename-family links while explicitly retaining unresolved lineage.",
+      "evidence": [
+        "research/evidence/audit.json",
+        "research/evidence/grouped-split-v1.json",
+        "research/evidence/validation-2026-09-12-v1/dataset-inspection.json"
+      ],
+      "limitation": "Heuristic ancestry can both miss and merge relationships.",
+      "required_correction": ""
+    },
+    {
+      "occurrence_id": "C-42-4",
+      "reviewed_text_sha256": "50000d8e81f5da76eafba4ae5c01a838f990e81c86a3e02b98a6b70f66d41990",
+      "disposition": "Supported with limitations",
+      "rationale": "The surrounding text does not transfer another dataset's numerical leakage effect.",
+      "evidence": [
+        "Research_Paper_Conference/main.tex",
+        "research/evidence/validation-2026-09-12-v1/citation-review.json"
+      ],
+      "limitation": "A delimitation of interpretation, not a measured zero effect.",
+      "required_correction": ""
+    },
+    {
+      "occurrence_id": "C-44-1",
+      "reviewed_text_sha256": "be7281d6d0d963f74689a7cbb552556bab3f433db288fc36f08b271d0ae21a69",
+      "disposition": "Supported with limitations",
+      "rationale": "The versioned FKG.in source check supports structural, semantic, and source-fidelity validation of extracted recipes.",
+      "evidence": [
+        "research/evidence/validation-2026-09-12-v1/citation-review.json"
+      ],
+      "limitation": "It is an explicitly identified preprint, not peer-reviewed clinical evidence.",
+      "required_correction": ""
+    },
+    {
+      "occurrence_id": "C-44-2",
+      "reviewed_text_sha256": "57392e3b4b6e6521b55a0d6ba826d823b971f0ba2f2ef305e1ad599560221eda",
+      "disposition": "Supported with limitations",
+      "rationale": "Knowledge-graph recipe curation does not furnish independent acceptable-row judgments for this fixed mapping problem.",
+      "evidence": [
+        "research/evidence/validation-2026-09-12-v1/citation-review.json",
+        "research/evidence/validation-2026-09-12-v1/nutrition-validation.json"
+      ],
+      "limitation": "Relevance is contextual only; no shared evaluation protocol is demonstrated.",
+      "required_correction": ""
+    },
+    {
+      "occurrence_id": "C-48-1",
+      "reviewed_text_sha256": "564031c43be8274ce9e77a3fe550e1b62a96437cb6dd04086feccc1186051ee5",
+      "disposition": "Supported with limitations",
+      "rationale": "Production configuration and application sources implement FastAPI with a static Next.js frontend and an existing YOLO 11 s checkpoint.",
+      "evidence": [
+        "pyproject.toml",
+        "frontend/package.json",
+        "research/evidence/validation-2026-09-12-v1/training-results.json",
+        "research/evidence/validation-2026-09-12-v1/deployment-evidence.json"
+      ],
+      "limitation": "Current source configuration is distinct from a newly measured live deployment.",
+      "required_correction": ""
+    },
+    {
+      "occurrence_id": "C-48-2",
+      "reviewed_text_sha256": "fa000fed7c7107ea8e212008a9927709cc24d18afddbb02aa07f7020faac7a52",
+      "disposition": "Supported with limitations",
+      "rationale": "The inspected inference path pins CPU execution, imgsz 640, confidence 0.25, and IoU 0.45.",
+      "evidence": [
+        "backend/services/vision_service.py",
+        "backend/services/inference_runtime.py",
+        "backend/settings.py"
+      ],
+      "limitation": "These operating thresholds are not independently evaluated detector performance.",
+      "required_correction": ""
+    },
+    {
+      "occurrence_id": "C-48-3",
+      "reviewed_text_sha256": "6d45aa96b33cf32801a57521b3559d93ba6fa1fbf60c165dbd1c8224f5b90dd8",
+      "disposition": "Supported with limitations",
+      "rationale": "Legacy override keys use names absent from the current lower-snake-case checkpoint vocabulary.",
+      "evidence": [
+        "backend/services/vision_service.py",
+        "backend/services/inference_runtime.py",
+        "research/evidence/audit.json"
+      ],
+      "limitation": "The conclusion applies to the current frozen vocabulary; future checkpoints could differ.",
+      "required_correction": ""
+    },
+    {
+      "occurrence_id": "C-48-4",
+      "reviewed_text_sha256": "3cdb2b716575a7fdc324d4bc44d4081aa41ff87433dc680cfb9aef84c3df7cff",
+      "disposition": "Supported with limitations",
+      "rationale": "No calibration experiment connects detector confidence to correct nutrient composition.",
+      "evidence": [
+        "backend/services/vision_service.py",
+        "backend/services/inference_runtime.py",
+        "research/evidence/validation-2026-09-12-v1/nutrition-validation.json"
+      ],
+      "limitation": "Neither class confidence nor a database match is nutritional certainty.",
+      "required_correction": ""
+    },
+    {
+      "occurrence_id": "C-50-1",
+      "reviewed_text_sha256": "2dc3943f985db450df94f54e2f086948fc48b30e93ca6f12de56086eb37325b9",
+      "disposition": "Supported with limitations",
+      "rationale": "Browser preparation re-encodes an oriented image with longest-side and encoded-size bounds before analysis.",
+      "evidence": [
+        "frontend/lib/prepareImage.ts",
+        "research/evidence/validation-2026-09-12-v1/checks/browser-1.json"
+      ],
+      "limitation": "Supported for accepted browser-decodable images and tested rotations, not every camera format.",
+      "required_correction": ""
+    },
+    {
+      "occurrence_id": "C-50-2",
+      "reviewed_text_sha256": "d713b936f65d3fb317582b9ebbfa62e0d53a81aefcbb8c5c4bd85d934f3dac3e",
+      "disposition": "Supported with limitations",
+      "rationale": "The scan path passes the prepared upload image to both the preview and the request.",
+      "evidence": [
+        "frontend/lib/prepareImage.ts",
+        "frontend/lib/useFoodScan.ts",
+        "research/evidence/validation-2026-09-12-v1/checks/browser-1.json"
+      ],
+      "limitation": "Coordinate alignment is an implementation property, not a correct-box guarantee.",
+      "required_correction": ""
+    },
+    {
+      "occurrence_id": "C-50-3",
+      "reviewed_text_sha256": "cc7a450fe8af681010db95035cf46edc573fbe372a30d839d813425e631887ed",
+      "disposition": "Supported with limitations",
+      "rationale": "Server upload/decode validation enforces supported formats, a 4 MiB byte cap and 25-million-pixel decoded bound.",
+      "evidence": [
+        "backend/services/vision_service.py",
+        "backend/services/inference_runtime.py",
+        "backend/settings.py",
+        "research/evidence/validation-2026-09-12-v1/checks/backend-architecture-1.json",
+        "research/evidence/validation-2026-09-12-v1/checks/backend-deployment-1.json"
+      ],
+      "limitation": "These bounds are not a comprehensive resource-exhaustion benchmark.",
+      "required_correction": ""
+    },
+    {
+      "occurrence_id": "C-50-4",
+      "reviewed_text_sha256": "132dd4347e46f48c86e25ffdcdd44725bffdaeeb4fbef37c1826fcb9facef978",
+      "disposition": "Supported with limitations",
+      "rationale": "analyzeFood supplies a 120000 ms HTTP budget in the typed endpoint wrapper.",
+      "evidence": [
+        "frontend/lib/endpoints.ts",
+        "frontend/lib/api.ts"
+      ],
+      "limitation": "Client timeout does not terminate a server worker already executing inference.",
+      "required_correction": ""
+    },
+    {
+      "occurrence_id": "C-50-5",
+      "reviewed_text_sha256": "fa048953e684c07cc2c6b75741e8eac9dfe7a73bcf6bddb43ca20124c575c41f",
+      "disposition": "Supported with limitations",
+      "rationale": "No accuracy measurement follows from input validation or coordinate-system consistency alone.",
+      "evidence": [
+        "research/evidence/validation-2026-09-12-v1/checks/browser-1.json",
+        "research/evidence/validation-2026-09-12-v1/training-results.json"
+      ],
+      "limitation": "A correct upload pipeline can still produce wrong detections.",
+      "required_correction": ""
+    },
+    {
+      "occurrence_id": "C-51-1",
+      "reviewed_text_sha256": "e7e365545914f3f377f9e1876b92e1172e28058fb7cbc42b202b2f1ea73ad079",
+      "disposition": "Supported with limitations",
+      "rationale": "The diagram correctly separates explicit journal saving from advice requests, and separates request fields from Groq's name/energy subset.",
+      "evidence": [
+        "frontend/lib/meals.ts",
+        "frontend/lib/useRecommendations.ts",
+        "backend/domain/recommendations.py",
+        "frontend/lib/useFoodScan.ts"
+      ],
+      "limitation": "The layout is conceptual; advice can begin automatically after analysis and does not require completing gram review.",
+      "required_correction": ""
+    },
+    {
+      "occurrence_id": "C-51-2",
+      "reviewed_text_sha256": "5771b2814bc0ab2cf10089bbd3eafba114b5f51cfb0b02b94805897ed258100b",
+      "disposition": "Supported with limitations",
+      "rationale": "Saving is explicit; recommendation payload construction omits selected grams/history, and prompt construction retains food names and energy.",
+      "evidence": [
+        "frontend/lib/meals.ts",
+        "frontend/lib/useRecommendations.ts",
+        "backend/domain/recommendations.py"
+      ],
+      "limitation": "Per-100-g values may be unavailable; the caption does not establish advice correctness.",
+      "required_correction": ""
+    },
+    {
+      "occurrence_id": "C-77-1",
+      "reviewed_text_sha256": "0c526a58f0c73bb50b1796579fa1a1c0605c33956dd2d9f2027b4d4843800d88",
+      "disposition": "Reproduced",
+      "rationale": "The read-only reconciliation reports 1010 food rows, 103 mappings and 72 canonical classes, with current mapping coverage 72.",
+      "evidence": [
+        "research/evidence/validation-2026-09-12-v1/nutrition-validation.json",
+        "research/evidence/audit.json"
+      ],
+      "limitation": "Counts and row availability are not correct-match judgments.",
+      "required_correction": ""
+    },
+    {
+      "occurrence_id": "C-77-2",
+      "reviewed_text_sha256": "9acd8f9ef6ec9d101f4095620727503afa4f0d66bf393feab145abf23274ef1e",
+      "disposition": "Supported with limitations",
+      "rationale": "The pinned workbook identity is rechecked against the previously recorded upstream SHA-256.",
+      "evidence": [
+        "research/evidence/validation-2026-09-12-v1/citation-review.json",
+        "research/evidence/nutrition-provenance.json",
+        "research/evidence/validation-2026-09-12-v1/nutrition-validation.json"
+      ],
+      "limitation": "This pass did not freshly download the upstream bytes; direct blob access failed.",
+      "required_correction": ""
+    },
+    {
+      "occurrence_id": "C-77-3",
+      "reviewed_text_sha256": "94a42463961b357028a2d382e67f447e097df2eeb947f68bf44a80d209f5b281",
+      "disposition": "Supported with limitations",
+      "rationale": "The five builder literals and citation records identify exactly these product/recipe supplements.",
+      "evidence": [
+        "backend/scripts/merge_db.py",
+        "research/evidence/validation-2026-09-12-v1/citation-review.json",
+        "research/evidence/validation-2026-09-12-v1/nutrition-validation.json"
+      ],
+      "limitation": "Nandu Kari is a selected approximation for nandu_masala; cached source retrieval is distinguished.",
+      "required_correction": "",
+      "index_annotation": "Index primary ARITHMETIC is imprecise; NUTRITION/CITATIONS are the direct supporting subjects."
+    },
+    {
+      "occurrence_id": "C-77-4",
+      "reviewed_text_sha256": "a980c6fa58e3ee0ffc90ca051e4297fda1f45f6c2ac899a2fba5ffccc2c8bde9",
+      "disposition": "Supported with limitations",
+      "rationale": "Hash equality and nutrient transcription do not prove dish equivalence or grant redistribution rights.",
+      "evidence": [
+        "research/evidence/validation-2026-09-12-v1/citation-review.json",
+        "research/evidence/nutrition-provenance.json",
+        "research/evidence/validation-2026-09-12-v1/nutrition-validation.json"
+      ],
+      "limitation": "Rights and recipe equivalence require separate decisions.",
+      "required_correction": "",
+      "index_annotation": "Prefer NUTRITION/APPROVAL rather than ARITHMETIC for evidence navigation."
+    },
+    {
+      "occurrence_id": "C-79-1",
+      "reviewed_text_sha256": "c7566c2ccd31faeb4e9a6812df1404f2581aa9eeb37292f43767391980f43c48",
+      "disposition": "Supported with limitations",
+      "rationale": "Offline mapping construction checks manual mappings before the normalized/variation helper and applies the 0.78 outer score gate.",
+      "evidence": [
+        "backend/scripts/merge_db.py",
+        "backend/utils/food_normalizer.py"
+      ],
+      "limitation": "The threshold measures containment-length scoring, not clinical appropriateness.",
+      "required_correction": ""
+    },
+    {
+      "occurrence_id": "C-79-2",
+      "reviewed_text_sha256": "6caf70ca71e4a504168e08403f0d545fb64230716f57e51569d010fde1d3629b",
+      "disposition": "Supported with limitations",
+      "rationale": "NutritionService's lookup sequence is precomputed mapping, normalized equality, scored containment, ungated variation containment, then helper.",
+      "evidence": [
+        "backend/services/nutrition_service.py",
+        "backend/utils/food_normalizer.py"
+      ],
+      "limitation": "The process is bounded-name matching; failed lookups and ambiguities remain possible.",
+      "required_correction": ""
+    },
+    {
+      "occurrence_id": "C-79-3",
+      "reviewed_text_sha256": "b34c17581b64f4944dd72f0eefa748d6a07a4c404a40acbcbabdb2cc51cb06c3",
+      "disposition": "Supported with limitations",
+      "rationale": "find_best_match uses exact equality and substring length-ratio tests; the unused SequenceMatcher method is not on this path.",
+      "evidence": [
+        "backend/utils/food_normalizer.py",
+        "backend/services/nutrition_service.py"
+      ],
+      "limitation": "Do not describe this helper as semantic or edit-distance matching.",
+      "required_correction": "",
+      "index_annotation": "Primary ARITHMETIC should be NUTRITION for this implementation claim."
+    },
+    {
+      "occurrence_id": "C-79-4",
+      "reviewed_text_sha256": "0d544bd7779f67b3ec941d666a22c8e95e746471847c27a8bb90ecf42b9e0b32",
+      "disposition": "Reproduced",
+      "rationale": "The code returns the first variation containment hit without a score gate; eight fixed-seed runs expose changing ambiguous method/label pairs.",
+      "evidence": [
+        "backend/services/nutrition_service.py",
+        "backend/utils/food_normalizer.py",
+        "research/evidence/validation-2026-09-12-v1/nutrition-validation.json"
+      ],
+      "limitation": "The observed instability is not a measured wrong-match rate.",
+      "required_correction": "",
+      "index_annotation": "Primary ARITHMETIC should be NUTRITION/MAPPING."
+    },
+    {
+      "occurrence_id": "C-79-5",
+      "reviewed_text_sha256": "d39b8e7738e3b9b1c1afe3cc5f19942aaca1a50fa9a8e68c8088ea3dba07f42a",
+      "disposition": "Supported with limitations",
+      "rationale": "The final service gate is >=0.4, but find_best_match only emits containment candidates at >=0.5.",
+      "evidence": [
+        "backend/services/nutrition_service.py",
+        "backend/utils/food_normalizer.py"
+      ],
+      "limitation": "Exact matches still return score 1; no implication about recipe quality.",
+      "required_correction": "",
+      "index_annotation": "Primary ARITHMETIC should be NUTRITION."
+    },
+    {
+      "occurrence_id": "C-79-6",
+      "reviewed_text_sha256": "ab945dcad4c238020334c0161e6af75c760f5a3577669a08905cfd1f078d5e36",
+      "disposition": "Reproduced",
+      "rationale": "Precomputed canonical entries are returned before fallback matching, and current canonical selections remained stable in the fixed-seed runs.",
+      "evidence": [
+        "backend/services/nutrition_service.py",
+        "research/evidence/validation-2026-09-12-v1/nutrition-validation.json"
+      ],
+      "limitation": "A later database or vocabulary change would require rechecking this property.",
+      "required_correction": "",
+      "index_annotation": "Primary ARITHMETIC should be NUTRITION/MAPPING."
+    },
+    {
+      "occurrence_id": "C-79-7",
+      "reviewed_text_sha256": "6914909f0bcedff68f11ac09053c2468bb58165a0677b96a0e3e4d17239d47d3",
+      "disposition": "Supported with limitations",
+      "rationale": "Observed fallback order dependence rejects blanket determinism, and no independent clinical judgment establishes conservative matching.",
+      "evidence": [
+        "research/evidence/validation-2026-09-12-v1/nutrition-validation.json",
+        "backend/services/nutrition_service.py"
+      ],
+      "limitation": "Current canonical stability does not make every arbitrary-label lookup deterministic.",
+      "required_correction": "",
+      "index_annotation": "Primary ARITHMETIC is too narrow; NUTRITION and clinical-evidence limitations are material."
+    },
+    {
+      "occurrence_id": "C-81-1",
+      "reviewed_text_sha256": "8595643fc6c2082c1e0d91539d3aad4298c23c0ee76f4297d8386ac50b3eb393",
+      "disposition": "Supported with limitations",
+      "rationale": "The notation defines included detections and the subset with an available nutrition row, matching the implemented inclusion/missingness distinction.",
+      "evidence": [
+        "frontend/lib/meals.ts",
+        "Research_Paper_Conference/main.tex"
+      ],
+      "limitation": "A mathematical definition, not an empirical mapping-correctness claim.",
+      "required_correction": ""
+    },
+    {
+      "occurrence_id": "C-81-2",
+      "reviewed_text_sha256": "5876b9d89002c97a3dc9dc4f0328522913e91d4f0cfdd203333afa4e60925666",
+      "disposition": "Supported with limitations",
+      "rationale": "Database nutrition is expressed as a four-component per-100-g vector, matching the stored macro shape.",
+      "evidence": [
+        "frontend/lib/meals.ts",
+        "backend/services/nutrition_service.py"
+      ],
+      "limitation": "The vector represents database estimates, not measurements of the image.",
+      "required_correction": ""
+    },
+    {
+      "occurrence_id": "C-81-3",
+      "reviewed_text_sha256": "22d6bb7e25fe481cad2f28ee5e92021249f30cf44a3d7383c3b2bf8ec5cad3d0",
+      "disposition": "Supported with limitations",
+      "rationale": "This sentence introduces the following gram-scaled sum; it must be read with its display equation.",
+      "evidence": [
+        "frontend/lib/meals.ts",
+        "Research_Paper_Conference/main.tex"
+      ],
+      "limitation": "The indexed sentence is a fragment preceding an equation, not a standalone claim.",
+      "required_correction": ""
+    },
+    {
+      "occurrence_id": "C-81-4",
+      "reviewed_text_sha256": "bdcbec933df8c43a65c86cc98a0360185b718f4fc37c0f85a04d04da6dfaa586",
+      "disposition": "Supported with limitations",
+      "rationale": "I_m denotes included detections in the immediately preceding definition.",
+      "evidence": [
+        "Research_Paper_Conference/main.tex",
+        "frontend/lib/meals.ts"
+      ],
+      "limitation": "A notation fragment; do not count as an independent empirical result.",
+      "required_correction": ""
+    },
+    {
+      "occurrence_id": "C-81-5",
+      "reviewed_text_sha256": "cc09daba676fcefcfb20c1e9e42db1b746b5953e04532813493b40fb4841c60e",
+      "disposition": "Supported with limitations",
+      "rationale": "m labels the current meal draft in the surrounding definition.",
+      "evidence": [
+        "Research_Paper_Conference/main.tex",
+        "frontend/lib/meals.ts"
+      ],
+      "limitation": "A notation fragment, not a testable numerical assertion.",
+      "required_correction": ""
+    },
+    {
+      "occurrence_id": "C-81-6",
+      "reviewed_text_sha256": "fbaf88bc9f227f465d4b12accac6824d8bfe0fda0419e00bdcf8cf13680e9278",
+      "disposition": "Supported with limitations",
+      "rationale": "mu(c) is the described class-to-database-row lookup abstraction.",
+      "evidence": [
+        "Research_Paper_Conference/main.tex",
+        "backend/services/nutrition_service.py"
+      ],
+      "limitation": "It does not imply the chosen row is semantically correct.",
+      "required_correction": ""
+    },
+    {
+      "occurrence_id": "C-81-7",
+      "reviewed_text_sha256": "9e2130e7160045afdd68efad337d83cc977985302b2e321495a74dbfb7458bd1",
+      "disposition": "Supported with limitations",
+      "rationale": "Bottom denotes unavailable nutrition lookup in the immediately preceding definition.",
+      "evidence": [
+        "Research_Paper_Conference/main.tex",
+        "frontend/lib/meals.ts"
+      ],
+      "limitation": "A notation fragment; it is not a numeric zero.",
+      "required_correction": ""
+    },
+    {
+      "occurrence_id": "C-81-8",
+      "reviewed_text_sha256": "c47ab53b604c29e01a68c14b54e42a5c4387160f73c49be4092b6f0f387426db",
+      "disposition": "Supported with limitations",
+      "rationale": "K_m filters included detections to those with an available row, matching the implementation's known-item branch.",
+      "evidence": [
+        "Research_Paper_Conference/main.tex",
+        "frontend/lib/meals.ts"
+      ],
+      "limitation": "The set definition does not validate recipe equivalence.",
+      "required_correction": ""
+    },
+    {
+      "occurrence_id": "C-81-9",
+      "reviewed_text_sha256": "a945eb40d4763afe1636e2c113fc706b87d2df12c5a28eeb93cd37188c1bf88f",
+      "disposition": "Supported with limitations",
+      "rationale": "The vector symbol refers to database per-100-g calories/protein/carbohydrate/fat values.",
+      "evidence": [
+        "Research_Paper_Conference/main.tex",
+        "frontend/lib/meals.ts"
+      ],
+      "limitation": "An explicitly defined symbol, not a new measurement.",
+      "required_correction": ""
+    },
+    {
+      "occurrence_id": "C-81-10",
+      "reviewed_text_sha256": "d8dbedff0405b6fa96bb1d4429116376226a7f71832391d473b8a95b85f1ea40",
+      "disposition": "Supported with limitations",
+      "rationale": "w_q denotes user-estimated grams for a retained detection.",
+      "evidence": [
+        "Research_Paper_Conference/main.tex",
+        "frontend/lib/meals.ts"
+      ],
+      "limitation": "No image-derived weight estimation is claimed.",
+      "required_correction": ""
+    },
+    {
+      "occurrence_id": "C-82-1",
+      "reviewed_text_sha256": "bd187d81a6e6de5c61fbf73cf56d54cc3897f8f0379c9538dedf9ccb9e6ca11f",
+      "disposition": "Reproduced",
+      "rationale": "totalNutrition sums grams/100 times available per-100-g macros for included items and independently flags missing included nutrition.",
+      "evidence": [
+        "frontend/lib/meals.ts",
+        "research/evidence/validation-2026-09-12-v1/arithmetic-validation.json"
+      ],
+      "limitation": "Equation describes known subtotal and incompleteness only; it does not assign values to unknown foods.",
+      "required_correction": ""
+    },
+    {
+      "occurrence_id": "C-86-1",
+      "reviewed_text_sha256": "87483e4e69112379c023fb7ffdb77e5c1899cb799a75fc175fdfdd3f1854cd26",
+      "disposition": "Supported with limitations",
+      "rationale": "The summation index is restricted to K_m, and code skips an included item's null per 100 g value.",
+      "evidence": [
+        "frontend/lib/meals.ts",
+        "Research_Paper_Conference/main.tex"
+      ],
+      "limitation": "A consequence of the defined known-item set, not evidence of correct matching.",
+      "required_correction": ""
+    },
+    {
+      "occurrence_id": "C-86-2",
+      "reviewed_text_sha256": "b3c4cd97c9a6271d533092ed39d453405e52535a81caaf9381896eaac2b1b78e",
+      "disposition": "Reproduced",
+      "rationale": "The missing-nutrition branch sets incomplete=true and continues without incrementing known nutrient values.",
+      "evidence": [
+        "frontend/lib/meals.ts",
+        "research/evidence/validation-2026-09-12-v1/arithmetic-validation.json",
+        "research/evidence/validation-2026-09-12-v1/checks/frontend-unit-1.json"
+      ],
+      "limitation": "Displayed numeric values are a known subtotal; unknown food content is not inferred to be zero.",
+      "required_correction": ""
+    },
+    {
+      "occurrence_id": "C-86-3",
+      "reviewed_text_sha256": "8efb581eba067c6c4b7efc2d21310f3dfb5f84fe517f19aba2d7d878a978da65",
+      "disposition": "Reproduced",
+      "rationale": "Draft creation defaults to 100 g, and UI/storage validation restricts grams to 25..1000 in 25 g increments.",
+      "evidence": [
+        "frontend/lib/meals.ts",
+        "research/evidence/validation-2026-09-12-v1/arithmetic-validation.json"
+      ],
+      "limitation": "Portions remain user assumptions rather than measured weights.",
+      "required_correction": ""
+    },
+    {
+      "occurrence_id": "C-86-4",
+      "reviewed_text_sha256": "faff188ddb90821f3b7c26b1d2798659879e1cd6869f9d5fda2527fa8524cd7a",
+      "disposition": "Supported with limitations",
+      "rationale": "The included flag removes items from arithmetic; the current interface does not implement relabeling.",
+      "evidence": [
+        "frontend/lib/meals.ts",
+        "frontend/lib/useFoodScan.ts",
+        "research/evidence/validation-2026-09-12-v1/checks/frontend-unit-1.json"
+      ],
+      "limitation": "Exclusion does not guarantee a user identifies every incorrect detection.",
+      "required_correction": ""
+    },
+    {
+      "occurrence_id": "C-88-1",
+      "reviewed_text_sha256": "4eb143593cc4b391eedc65adca452013d7b734ec25ab09500294266ed62190b5",
+      "disposition": "Reproduced",
+      "rationale": "Daily summary uses saved meals filtered by localDate; a scan draft alone does not contribute.",
+      "evidence": [
+        "frontend/lib/meals.ts",
+        "frontend/lib/useJournal.ts",
+        "research/evidence/validation-2026-09-12-v1/browser-extended-attempt4.json"
+      ],
+      "limitation": "The date records the user's local calendar date, not verified consumption time.",
+      "required_correction": ""
+    },
+    {
+      "occurrence_id": "C-88-2",
+      "reviewed_text_sha256": "9a1575c1ce25e701e6c950a9a9abf94302f06ba92c1ee85b122c79e66dc69177",
+      "disposition": "Reproduced",
+      "rationale": "saveDraft upserts by draft ID and preserves existing savedAt/localDate on edits.",
+      "evidence": [
+        "frontend/lib/meals.ts",
+        "research/evidence/validation-2026-09-12-v1/checks/frontend-unit-1.json"
+      ],
+      "limitation": "This prevents repeated-click duplication within this journal operation, not all multi-tab races.",
+      "required_correction": ""
+    },
+    {
+      "occurrence_id": "C-88-3",
+      "reviewed_text_sha256": "a42266162cc8deed3fc59a7356dc8a4b6aed27d9a55c01278d9170eb70c7521b",
+      "disposition": "Supported with limitations",
+      "rationale": "Starting a scan creates a new draft identity, distinct from a previously saved draft.",
+      "evidence": [
+        "frontend/lib/useFoodScan.ts",
+        "frontend/lib/meals.ts",
+        "research/evidence/validation-2026-09-12-v1/browser-extended-attempt4.json"
+      ],
+      "limitation": "A new scan is not automatically a new saved meal.",
+      "required_correction": ""
+    },
+    {
+      "occurrence_id": "C-88-4",
+      "reviewed_text_sha256": "e3a87a49f0d28b13a164260279a3785f122dbf50022747a3e2cb2c42dcdef698",
+      "disposition": "Supported with limitations",
+      "rationale": "useJournal schedules refresh after local midnight and on focus and visibility changes.",
+      "evidence": [
+        "frontend/lib/useJournal.ts",
+        "research/evidence/validation-2026-09-12-v1/checks/frontend-unit-1.json",
+        "research/evidence/validation-2026-09-12-v1/checks/browser-1.json"
+      ],
+      "limitation": "Browser suspension may delay timers; focus/visibility provides catch-up.",
+      "required_correction": ""
+    },
+    {
+      "occurrence_id": "C-88-5",
+      "reviewed_text_sha256": "092dbb732502c8ea9480d80509fc3ce03fcc4d491969cf779889d40d61c911b1",
+      "disposition": "Supported with limitations",
+      "rationale": "Version-1 serialization retains item nutrition/weights and preferences while dropping photos, health context, boxes and confidence.",
+      "evidence": [
+        "frontend/lib/meals.ts",
+        "frontend/lib/journalStorage.ts",
+        "research/evidence/validation-2026-09-12-v1/browser-extended-attempt4.json"
+      ],
+      "limitation": "Stored draft item records include excluded items with included=false; 'selected food records' should not imply only included foods are retained.",
+      "required_correction": "Clarify that saved draft item records include both included and excluded detections with inclusion flags; only included items contribute to totals."
+    },
+    {
+      "occurrence_id": "C-88-6",
+      "reviewed_text_sha256": "eb5ca2a6c37cd3b1c9f441df9efc7a5a47c6dd61fc492c108631c380ce20a90f",
+      "disposition": "Supported with limitations",
+      "rationale": "Journal serialization omits image/detector/provenance fields needed for a full scientific observation archive.",
+      "evidence": [
+        "frontend/lib/meals.ts",
+        "frontend/lib/journalStorage.ts"
+      ],
+      "limitation": "It is a browser diary format, not an experimental audit dataset.",
+      "required_correction": "",
+      "index_annotation": "Primary ARITHMETIC should be JOURNAL/ACCESS."
+    },
+    {
+      "occurrence_id": "C-88-7",
+      "reviewed_text_sha256": "5dad2945ec90d02e8ad12b1f11a9369c221d547a51faf0541ff2d6b4e9a7bd78",
+      "disposition": "Supported with limitations",
+      "rationale": "Invalid stored formats block writes, storage exceptions are surfaced, and scanning is independent of journal persistence.",
+      "evidence": [
+        "frontend/lib/useJournal.ts",
+        "frontend/lib/journalStorage.ts",
+        "research/evidence/validation-2026-09-12-v1/checks/browser-1.json"
+      ],
+      "limitation": "Existing data protection is application behavior, not a guarantee against browser clearing or external edits.",
+      "required_correction": ""
+    },
+    {
+      "occurrence_id": "C-91-1",
+      "reviewed_text_sha256": "c5bb4aea49eb835528361fb9a45abc0b2a9bf1646cf016e31afdc5d0e9d4d893",
+      "disposition": "Supported with limitations",
+      "rationale": "The recommendation hook sends up to ten included detection records plus goal and normalized session-only condition.",
+      "evidence": [
+        "frontend/lib/useRecommendations.ts",
+        "backend/api/schemas.py"
+      ],
+      "limitation": "Per-100-g macros are nullable for missing nutrition; the request does not assert all selected foods have known values.",
+      "required_correction": ""
+    },
+    {
+      "occurrence_id": "C-91-2",
+      "reviewed_text_sha256": "124b9d8ad202274091b0340438a31d4e74e2e80cc97dd43dae19805ac376fce5",
+      "disposition": "Supported with limitations",
+      "rationale": "Prompt construction extracts display names/labels and rounded calorie estimates per 100 g, not numeric protein/carbs/fat.",
+      "evidence": [
+        "backend/domain/recommendations.py",
+        "research/evidence/validation-2026-09-12-v1/recommendations.json"
+      ],
+      "limitation": "Other nutrient fields present in transport records are not forwarded numerically to Groq.",
+      "required_correction": ""
+    },
+    {
+      "occurrence_id": "C-91-3",
+      "reviewed_text_sha256": "61e52f0219e20d22b7af07bb9ef9676ed1bda953d8dd1d83be7c4ac73b7565f5",
+      "disposition": "Supported with limitations",
+      "rationale": "Neither recommendation payload construction nor prompt construction uses gram edits, calorie targets, daily totals or journal history.",
+      "evidence": [
+        "frontend/lib/useRecommendations.ts",
+        "backend/domain/recommendations.py"
+      ],
+      "limitation": "Advice is not consumption-aware or target-remaining-aware.",
+      "required_correction": ""
+    },
+    {
+      "occurrence_id": "C-91-4",
+      "reviewed_text_sha256": "c57adfa7b4a6e670c6dc6ac516851253b19e9ea2286b4cc5836ec28f6381f4e6",
+      "disposition": "Reproduced",
+      "rationale": "Goal rules normalize macro weights and round outputs; independent oracles verify implementation arithmetic.",
+      "evidence": [
+        "backend/domain/rules.py",
+        "research/evidence/validation-2026-09-12-v1/arithmetic-validation.json"
+      ],
+      "limitation": "The policy modifiers are inherited rules, not validated clinical prescriptions.",
+      "required_correction": ""
+    },
+    {
+      "occurrence_id": "C-93-1",
+      "reviewed_text_sha256": "b8a15354942db1b0ef3bdeb07fe713e010e9a5aa6a0656f9be879ebbe80e3ed5",
+      "disposition": "Supported with limitations",
+      "rationale": "Production service selection uses AsyncGroq with the configured 20-second timeout and max_retries=0, then local fallback.",
+      "evidence": [
+        "backend/services/providers.py",
+        "backend/services/recommendation_service.py",
+        "backend/settings.py",
+        "research/evidence/validation-2026-09-12-v1/recommendations.json"
+      ],
+      "limitation": "This is the configured production sequence, not live-provider reliability evidence.",
+      "required_correction": ""
+    },
+    {
+      "occurrence_id": "C-93-2",
+      "reviewed_text_sha256": "8c453b60669ce3644b06b5fef312e23c8b2f423e5108fd97fcaf1cefa9fbd305",
+      "disposition": "Reproduced",
+      "rationale": "Fallback templates use the first two names; non-general condition templates override goal templates and ignore numeric macros.",
+      "evidence": [
+        "backend/domain/recommendations.py",
+        "research/evidence/validation-2026-09-12-v1/recommendations.json"
+      ],
+      "limitation": "Template output is not individualized nutrient optimization.",
+      "required_correction": ""
+    },
+    {
+      "occurrence_id": "C-93-3",
+      "reviewed_text_sha256": "4425979e31292ce85342c1db1b7ae703948e8b38acaa9ca6a14f9e2391a3441e",
+      "disposition": "Supported with limitations",
+      "rationale": "Recorded fallback strings include consumption-assuming and suitability wording; structural prompt checks do not establish medical safety.",
+      "evidence": [
+        "backend/domain/recommendations.py",
+        "research/evidence/validation-2026-09-12-v1/recommendations.json"
+      ],
+      "limitation": "Qualified content review remains outstanding.",
+      "required_correction": ""
+    },
+    {
+      "occurrence_id": "C-95-1",
+      "reviewed_text_sha256": "31c8e212f712fea9aab16f07cc6b7b89089327b73cb4fcf3915533ab26c549d0",
+      "disposition": "Reproduced",
+      "rationale": "The hook derives loading state immediately on key changes, aborts superseded work, and gates state updates on cancellation.",
+      "evidence": [
+        "frontend/lib/useRecommendations.ts",
+        "frontend/lib/endpoints.ts",
+        "research/evidence/validation-2026-09-12-v1/browser-extended-attempt4.json"
+      ],
+      "limitation": "Tested scenarios include deliberately late responses; this does not establish behavior under every browser failure.",
+      "required_correction": ""
+    },
+    {
+      "occurrence_id": "C-95-2",
+      "reviewed_text_sha256": "f0527fc865e8a3218d390bbdfa3aaa9e6262dd52eb0ab85fba2b9958116c9184",
+      "disposition": "Reproduced",
+      "rationale": "Response validation requires matching health_condition; only successful state exposes recommendation content and its context label.",
+      "evidence": [
+        "frontend/lib/useRecommendations.ts",
+        "frontend/lib/endpoints.ts",
+        "research/evidence/validation-2026-09-12-v1/browser-extended-attempt4.json"
+      ],
+      "limitation": "Matching the context key is not validating the advice's medical content.",
+      "required_correction": ""
+    },
+    {
+      "occurrence_id": "C-95-3",
+      "reviewed_text_sha256": "7ed366f00528276154e0d5ccc590ed17285f5191c2777a8d63fda7370f3aab73",
+      "disposition": "Supported with limitations",
+      "rationale": "The echoed response key provides transport/context consistency only.",
+      "evidence": [
+        "frontend/lib/endpoints.ts",
+        "research/evidence/validation-2026-09-12-v1/recommendations.json"
+      ],
+      "limitation": "No expert judgment is encoded by the badge.",
+      "required_correction": ""
+    },
+    {
+      "occurrence_id": "C-99-1",
+      "reviewed_text_sha256": "6b22f1746e3fff654f7747424d4645861d2a6689f1f749c8cec035ee09a25c56",
+      "disposition": "Reproduced",
+      "rationale": "Five locally indexed source exports sum to 40797 records, with the named versions recorded in source metadata.",
+      "evidence": [
+        "research/evidence/validation-2026-09-12-v1/dataset-sources.json",
+        "research/evidence/grouped-split-v1.json"
+      ],
+      "limitation": "These are local export records, not 40797 unique original photos or verified rights.",
+      "required_correction": ""
+    },
+    {
+      "occurrence_id": "C-99-2",
+      "reviewed_text_sha256": "a42054bd7759cf44286df27d729d0624a40364923b05b8a8042b504094d9b8fc",
+      "disposition": "Supported with limitations",
+      "rationale": "Grouping records declared URLs/versions and source YAML hashes from local export metadata.",
+      "evidence": [
+        "research/evidence/validation-2026-09-12-v1/dataset-sources.json",
+        "research/evidence/grouped-split-v1.json",
+        "research/evidence/validation-2026-09-12-v1/citation-review.json"
+      ],
+      "limitation": "Several live source-version pages were unavailable during citation review.",
+      "required_correction": ""
+    },
+    {
+      "occurrence_id": "C-99-3",
+      "reviewed_text_sha256": "a2da502f1bf7f7a498d7ceaa95637a5e54f0ee588c27f6ac809e6a63c0913392",
+      "disposition": "Supported with limitations",
+      "rationale": "The historical builder workflow pooled source inputs before resplitting and applied further training augmentation.",
+      "evidence": [
+        "scripts/build_master_dataset.py",
+        "research/evidence/grouped-split-v1.json"
+      ],
+      "limitation": "This describes archived construction logic, not an independent source-aware split.",
+      "required_correction": ""
+    },
+    {
+      "occurrence_id": "C-99-4",
+      "reviewed_text_sha256": "2092963a7bf4ddb48412512537c721bf436aba5cc280d258e584643066783ba4",
+      "disposition": "Supported with limitations",
+      "rationale": "Local augmentation/family metadata supports preexisting variants; final audit proportions differ from the declared 70/15/15 target.",
+      "evidence": [
+        "research/evidence/validation-2026-09-12-v1/dataset-sources.json",
+        "research/evidence/grouped-split-v1.json",
+        "research/evidence/audit.json"
+      ],
+      "limitation": "Source-family identity remains heuristic; nominal target ratios are not final image proportions.",
+      "required_correction": ""
+    },
+    {
+      "occurrence_id": "C-101-1",
+      "reviewed_text_sha256": "c19a29105ce5cc954a43085628a36500f26cb153b9b2169cd707d72e179f3bb7",
+      "disposition": "Supported with limitations",
+      "rationale": "The audit implementation records byte/label hashes, dimensions, accepted classes and flags, plus EXIF-oriented RGB pixel hashes without resize.",
+      "evidence": [
+        "scripts/audit_publication.py",
+        "research/evidence/audit.json",
+        "research/evidence/validation-2026-09-12-v1/dataset-inspection.json"
+      ],
+      "limitation": "Pixel equality is normalized equality under this procedure, not universal perceptual identity.",
+      "required_correction": ""
+    },
+    {
+      "occurrence_id": "C-101-2",
+      "reviewed_text_sha256": "483ae6f744f2e6377516e6245a838c078536c11d6ca1d52687e4035825032289",
+      "disposition": "Reproduced",
+      "rationale": "Both audit and fresh inspection retain separate byte and oriented-pixel duplicate group counters.",
+      "evidence": [
+        "research/evidence/audit.json",
+        "research/evidence/validation-2026-09-12-v1/dataset-inspection.json"
+      ],
+      "limitation": "Equality of reported counters does not eliminate other near duplicates.",
+      "required_correction": ""
+    },
+    {
+      "occurrence_id": "C-101-3",
+      "reviewed_text_sha256": "d7a14238a2721ded9a0ea5b9b31bb578913a3ea8138d58af308be15b63a0197d",
+      "disposition": "Supported with limitations",
+      "rationale": "Exact identity tests cannot detect all recompression, crops, rotations or other transformed relationships.",
+      "evidence": [
+        "research/evidence/validation-2026-09-12-v1/dataset-perceptual-review.json",
+        "scripts/audit_publication.py"
+      ],
+      "limitation": "The bounded perceptual screen also misses several synthetic transform probes.",
+      "required_correction": ""
+    },
+    {
+      "occurrence_id": "C-103-1",
+      "reviewed_text_sha256": "4cd0a76be0cc5c19ab07db1bda2e2fb85cb21a90d7450a29794a09b5ca456bd1",
+      "disposition": "Supported with limitations",
+      "rationale": "The strict row parser checks field count, integer class index, finite coordinates and the stated center/size ranges.",
+      "evidence": [
+        "scripts/audit_publication.py",
+        "research/evidence/validation-2026-09-12-v1/dataset-inspection.json"
+      ],
+      "limitation": "Box-edge validity and semantic annotation correctness are separate checks.",
+      "required_correction": ""
+    },
+    {
+      "occurrence_id": "C-103-2",
+      "reviewed_text_sha256": "4ac7c48111bc36ecfe80fb2b5096b2148eacf11a1e1a38192f8b16978ac438c2",
+      "disposition": "Supported with limitations",
+      "rationale": "The listed checks inspect numeric syntax/ranges without determining whether a food label or object extent is correct.",
+      "evidence": [
+        "scripts/audit_publication.py",
+        "research/evidence/validation-2026-09-12-v1/dataset-inspection.json"
+      ],
+      "limitation": "AI-assisted visual inspection is not qualified semantic adjudication.",
+      "required_correction": ""
+    },
+    {
+      "occurrence_id": "C-103-3",
+      "reviewed_text_sha256": "767c7c165b5ae3b06b94e3666a2cac2b7dc34d24f1bd928d704220595a313d9a",
+      "disposition": "Supported with limitations",
+      "rationale": "Center and positive-size range checks alone do not ensure all edges are inside the image or all objects are annotated.",
+      "evidence": [
+        "scripts/audit_publication.py",
+        "research/evidence/validation-2026-09-12-v1/dataset-inspection.json"
+      ],
+      "limitation": "The later edge check adds flags but still does not establish object completeness.",
+      "required_correction": ""
+    },
+    {
+      "occurrence_id": "C-103-4",
+      "reviewed_text_sha256": "399a43a7e6c8aa8594e8c838cd37684c660cb7f17ec99fc657726fa517d4bc76",
+      "disposition": "Supported with limitations",
+      "rationale": "A rejected annotation row supplies no evidence that its image contains no food;47 flagged images had zero accepted instances.",
+      "evidence": [
+        "research/evidence/validation-2026-09-12-v1/dataset-inspection.json",
+        "research/evidence/validation-2026-09-12-v1/dataset-visual-review.json"
+      ],
+      "limitation": "No verified negative-image evaluation set is established.",
+      "required_correction": ""
+    },
+    {
+      "occurrence_id": "C-103-5",
+      "reviewed_text_sha256": "9c0b45e05ab5d1a2f549d5432805530eb0db8a3b8cf29b3fb9f29e367f65fffa",
+      "disposition": "Supported with limitations",
+      "rationale": "The interval is the stated inclusive range for center coordinates in the strict parser.",
+      "evidence": [
+        "scripts/audit_publication.py",
+        "Research_Paper_Conference/main.tex"
+      ],
+      "limitation": "Notation fragment dependent on the enclosing sentence.",
+      "required_correction": ""
+    },
+    {
+      "occurrence_id": "C-103-6",
+      "reviewed_text_sha256": "a33b00fe1e93fa6641ca98a0ad688ff67b8abf6677ddbc356371efc827eef68c",
+      "disposition": "Supported with limitations",
+      "rationale": "The interval excludes zero for width/height while allowing one.",
+      "evidence": [
+        "scripts/audit_publication.py",
+        "Research_Paper_Conference/main.tex"
+      ],
+      "limitation": "Notation fragment; edges can still extend outside the image.",
+      "required_correction": ""
+    },
+    {
+      "occurrence_id": "C-106-1",
+      "reviewed_text_sha256": "f9df548ff99570062d3e72f7126b6b0ba63c4528fd21959e7a19399ff2a51324",
+      "disposition": "Supported with limitations",
+      "rationale": "Recovery verifies saved-record hashes and class ordering against current export inputs before grouping.",
+      "evidence": [
+        "scripts/prepare_research_split.py",
+        "research/evidence/validation-2026-09-12-v1/dataset-grouped-command.json"
+      ],
+      "limitation": "This guards stale inputs; it does not validate annotation meaning.",
+      "required_correction": ""
+    },
+    {
+      "occurrence_id": "C-106-2",
+      "reviewed_text_sha256": "dc572b16ace938246a16d322a599a4f86a2f5cf707d8f541d186aeb8ccf4b974",
+      "disposition": "Supported with limitations",
+      "rationale": "Source indexing hashes bytes and extracts the prefix before the earliest Roboflow marker; source-pixel hashes are not an additional source index.",
+      "evidence": [
+        "scripts/prepare_research_split.py",
+        "research/evidence/grouped-split-v1.json"
+      ],
+      "limitation": "Cross-source transformed images can remain unlinked.",
+      "required_correction": ""
+    },
+    {
+      "occurrence_id": "C-106-3",
+      "reviewed_text_sha256": "0323c5accf8bd1eccfbc25e50e93a400d6500d4e763ae57f7b949ce2b371b36c",
+      "disposition": "Supported with limitations",
+      "rationale": "Union-find uses byte, exported-pixel and family-key links, including source-only intermediaries.",
+      "evidence": [
+        "scripts/prepare_research_split.py",
+        "research/evidence/grouped-split-v1.json"
+      ],
+      "limitation": "A component is a construction-level relationship, not necessarily one independently verified original photograph.",
+      "required_correction": ""
+    },
+    {
+      "occurrence_id": "C-108-1",
+      "reviewed_text_sha256": "08de5677a7efbda4e14442c8185a479cd13e2d798a6bfe7e80e0082e54e3a5f3",
+      "disposition": "Supported with limitations",
+      "rationale": "The grouping implementation propagates the listed unresolved/invalid/empty/conflict reasons to whole components.",
+      "evidence": [
+        "scripts/prepare_research_split.py",
+        "research/evidence/grouped-split-v1.json"
+      ],
+      "limitation": "Quarantine reason image totals overlap and include propagation beyond individually flagged records.",
+      "required_correction": ""
+    },
+    {
+      "occurrence_id": "C-108-2",
+      "reviewed_text_sha256": "17ead39c5fc63c61a963a3dd01f6133ce35ec5bec3783c90db14931bc3a281fe",
+      "disposition": "Supported with limitations",
+      "rationale": "Raw label-byte inequality can in principle reflect ordering or numeric formatting rather than semantic difference.",
+      "evidence": [
+        "scripts/prepare_research_split.py",
+        "research/evidence/validation-2026-09-12-v1/dataset-inspection.json"
+      ],
+      "limitation": "In this run, all 104 directly inspected identical-pixel conflicts had numeric differences; do not imply observed formatting-only cases.",
+      "required_correction": "Clarify that formatting/order is a generic limitation of byte tests, while no formatting-only case was found in the 104 direct groups."
+    },
+    {
+      "occurrence_id": "C-108-3",
+      "reviewed_text_sha256": "74fcdd38cf73665b3a139f1bf62b12be8eea1f0fc64addcf089bbdd597a21234",
+      "disposition": "Supported with limitations",
+      "rationale": "Recovery writes manifests/reports and assignments; it does not delete or move input images.",
+      "evidence": [
+        "scripts/prepare_research_split.py",
+        "research/evidence/validation-2026-09-12-v1/dataset-inspection.json"
+      ],
+      "limitation": "This assertion is scoped to the audited preparation workflow, not all possible manual repository operations.",
+      "required_correction": ""
+    },
+    {
+      "occurrence_id": "C-110-1",
+      "reviewed_text_sha256": "b1d11c0be43f54c3899331987b0c6c225906f76d1f1acb819f0d3f849bbcabad",
+      "disposition": "Supported with limitations",
+      "rationale": "The candidate assignment algorithm greedily balances eligible image and per-class image counts toward 70/15/15 ratios.",
+      "evidence": [
+        "scripts/prepare_research_split.py",
+        "research/evidence/grouped-split-v1.json"
+      ],
+      "limitation": "A heuristic balancing objective does not establish representative evaluation data.",
+      "required_correction": ""
+    },
+    {
+      "occurrence_id": "C-110-2",
+      "reviewed_text_sha256": "70fbe70d2e55fc616ccdb301c4e473d6b93e3a2ed4ac597ab6d6b29fff528aa6",
+      "disposition": "Supported with limitations",
+      "rationale": "The saved grouping configuration fixes seed 42 and uses seeded hash ordering for ties.",
+      "evidence": [
+        "scripts/prepare_research_split.py",
+        "research/evidence/grouped-split-v1.json"
+      ],
+      "limitation": "Repeatability is demonstrated in the recorded environment, not across all possible implementations.",
+      "required_correction": ""
+    },
+    {
+      "occurrence_id": "C-110-3",
+      "reviewed_text_sha256": "94e79138fb918e7e4801585931f2b701d50e7df9dd54d1c9acf4b0001b3564b4",
+      "disposition": "Reproduced",
+      "rationale": "Output validation checks that each component has one assignment and candidate split component sets are disjoint.",
+      "evidence": [
+        "research/evidence/grouped-split-v1.json",
+        "research/evidence/validation-2026-09-12-v1/dataset-grouped-command.json",
+        "research/evidence/validation-2026-09-12-v1/dataset-inspection.json"
+      ],
+      "limitation": "Disjoint known components are not proof of disjoint unknown ancestry.",
+      "required_correction": ""
+    },
+    {
+      "occurrence_id": "C-110-4",
+      "reviewed_text_sha256": "f5ee3b2793a3e04785e7bc4b084d279a410a846cd03dc5aa67cb622898bad3f3",
+      "disposition": "Supported with limitations",
+      "rationale": "The group-separation assertion verifies construction invariants, while naming heuristics retain unresolved relationships.",
+      "evidence": [
+        "research/evidence/grouped-split-v1.json",
+        "research/evidence/validation-2026-09-12-v1/dataset-perceptual-review.json"
+      ],
+      "limitation": "Avoid equating successful assertion checks with complete provenance recovery.",
+      "required_correction": ""
+    },
+    {
+      "occurrence_id": "C-110-5",
+      "reviewed_text_sha256": "e2fe835f91b0e3d6f3321bb73a6c37825c1b5e75e7df3570f6f0cbf266b1c3f4",
+      "disposition": "Supported with limitations",
+      "rationale": "A checkpoint already developed with the original export cannot gain a fresh independent test set by repartitioning those same records.",
+      "evidence": [
+        "research/evidence/validation-2026-09-12-v1/training-results.json",
+        "research/evidence/validation-2026-09-12-v1/dataset-inspection.json"
+      ],
+      "limitation": "Independent evaluation would require a separately justified untouched or retrained protocol.",
+      "required_correction": ""
+    },
+    {
+      "occurrence_id": "C-113-1",
+      "reviewed_text_sha256": "397f88176814fb28ab2fc35f2bd9a0a28c822df74e63a7d3802989e2709bdb83",
+      "disposition": "Reproduced",
+      "rationale": "The audit and new nutrition pass compare exactly these three lookup configurations over the same 72 canonical labels and frozen database.",
+      "evidence": [
+        "research/evidence/validation-2026-09-12-v1/nutrition-validation.json",
+        "research/evidence/audit.json"
+      ],
+      "limitation": "This is an availability census, not independently judged recipe matching.",
+      "required_correction": ""
+    },
+    {
+      "occurrence_id": "C-113-2",
+      "reviewed_text_sha256": "16ac56b344c2758da819661ac058d76a279df6521d6cd71e42bf22181c3b21c9",
+      "disposition": "Supported with limitations",
+      "rationale": "The reported availability denominator is the fixed canonical label count and the numerator counts returned rows.",
+      "evidence": [
+        "research/evidence/validation-2026-09-12-v1/nutrition-validation.json",
+        "research/evidence/audit.json"
+      ],
+      "limitation": "Returned rows can still be incorrect or approximate.",
+      "required_correction": ""
+    },
+    {
+      "occurrence_id": "C-113-3",
+      "reviewed_text_sha256": "44c359bd88acc7bc074a5c9af9b6286db5740d79fb77577ee2c7de923745c828",
+      "disposition": "Supported with limitations",
+      "rationale": "Lookup/reconciliation opens SQLite read-only and creates no independent nutrient-composition truth set.",
+      "evidence": [
+        "backend/services/nutrition_service.py",
+        "research/evidence/validation-2026-09-12-v1/nutrition-validation.json"
+      ],
+      "limitation": "Source transcription checks do not supply weighed-meal references.",
+      "required_correction": ""
+    },
+    {
+      "occurrence_id": "C-115-1",
+      "reviewed_text_sha256": "1660299e04d2574cacfb50ce70b99d73c90ed755372b042979128303175d6391",
+      "disposition": "Supported with limitations",
+      "rationale": "The recorded unit/contract/browser suites exercise the listed journal, arithmetic, storage, upload and request-state behaviors.",
+      "evidence": [
+        "research/evidence/validation-2026-09-12-v1/checks/frontend-unit-1.json",
+        "research/evidence/validation-2026-09-12-v1/checks/browser-1.json",
+        "research/evidence/validation-2026-09-12-v1/checks/backend-architecture-1.json",
+        "research/evidence/validation-2026-09-12-v1/checks/backend-deployment-1.json",
+        "research/evidence/validation-2026-09-12-v1/browser-extended-attempt4.json"
+      ],
+      "limitation": "Designed mocked cases do not exhaust browser/platform behavior or establish scientific outcomes.",
+      "required_correction": ""
+    },
+    {
+      "occurrence_id": "C-115-2",
+      "reviewed_text_sha256": "53a1e5700c2d9e1aebef5ca79d1bc3eabd686cdfb23c5897fb6315d2c11b0bff",
+      "disposition": "Supported with limitations",
+      "rationale": "Browser suites include desktop and 360-pixel layouts plus keyboard interaction.",
+      "evidence": [
+        "research/evidence/validation-2026-09-12-v1/checks/browser-1.json",
+        "research/evidence/validation-2026-09-12-v1/browser-extended-attempt4.json"
+      ],
+      "limitation": "Coverage is scenario-based, not a representative accessibility/usability study.",
+      "required_correction": ""
+    },
+    {
+      "occurrence_id": "C-115-3",
+      "reviewed_text_sha256": "5e78d5a725b150843b406bdb1c9f35cc789a7650d8fe9d0ca9b15bfcb12f020c",
+      "disposition": "Supported with limitations",
+      "rationale": "The named test suites measure implementation assertions, not user benefit, clinical quality or independent detector accuracy.",
+      "evidence": [
+        "research/evidence/validation-2026-09-12-v1/checks/browser-1.json",
+        "research/evidence/validation-2026-09-12-v1/recommendations.json",
+        "research/evidence/validation-2026-09-12-v1/training-results.json"
+      ],
+      "limitation": "Absence of those studies must remain explicit.",
+      "required_correction": ""
+    },
+    {
+      "occurrence_id": "C-119-1",
+      "reviewed_text_sha256": "8f9645f7a3d912bf8df2d9f4f4e22ab4e5e2eec0470cfdb1f082dddfcf1395d3",
+      "disposition": "Reproduced",
+      "rationale": "The fresh census reports 48693 exported file records; duplicate and lineage evidence shows records cannot be equated with independent originals.",
+      "evidence": [
+        "research/evidence/validation-2026-09-12-v1/dataset-inspection.json",
+        "research/evidence/audit.json"
+      ],
+      "limitation": "The unique-original-photo count is not established.",
+      "required_correction": ""
+    },
+    {
+      "occurrence_id": "C-119-2",
+      "reviewed_text_sha256": "d37b3f41341dbb8afb6f20fc9d32ea416f1b2fab4aff31e1f884d1474f30e6ca",
+      "disposition": "Supported with limitations",
+      "rationale": "The table separates image counts from accepted-instance counts and strict flagged-image counts.",
+      "evidence": [
+        "research/evidence/audit.json",
+        "research/evidence/validation-2026-09-12-v1/dataset-inspection.json",
+        "research/evidence/validation-2026-09-12-v1/numeric-checks.json"
+      ],
+      "limitation": "A table-definition statement, not a distinct empirical observation.",
+      "required_correction": ""
+    },
+    {
+      "occurrence_id": "C-120-1",
+      "reviewed_text_sha256": "6942e01c85f60268d412588a2b5ffb9f95ba2c1b0814a7c55431024efde146d9",
+      "disposition": "Reproduced",
+      "rationale": "All three image/accepted-instance/flagged cells match the fresh audit and generated macro values.",
+      "evidence": [
+        "research/evidence/audit.json",
+        "research/evidence/validation-2026-09-12-v1/dataset-inspection.json",
+        "research/evidence/validation-2026-09-12-v1/numeric-checks.json"
+      ],
+      "limitation": "Strict flags are syntax/range findings, not total semantic annotation error.",
+      "required_correction": ""
+    },
+    {
+      "occurrence_id": "C-120-2",
+      "reviewed_text_sha256": "9f681cd5860bbf679784c9234669d4005e73263e5b68bbb546046838fcee6017",
+      "disposition": "Supported with limitations",
+      "rationale": "The caption accurately scopes the table to an archived-export census under strict checks.",
+      "evidence": [
+        "research/evidence/audit.json",
+        "research/evidence/validation-2026-09-12-v1/dataset-inspection.json"
+      ],
+      "limitation": "Not a clean-benchmark or original-photo census.",
+      "required_correction": ""
+    },
+    {
+      "occurrence_id": "C-120-3",
+      "reviewed_text_sha256": "a6cbca68e3f859d8723edc4f81aa6f5c23997de13218650f27137714f3a099d5",
+      "disposition": "Supported with limitations",
+      "rationale": "Column labels correctly distinguish records, accepted instances and flagged images.",
+      "evidence": [
+        "research/evidence/audit.json",
+        "Research_Paper_Conference/main.tex"
+      ],
+      "limitation": "A table header, not an independent empirical claim.",
+      "required_correction": ""
+    },
+    {
+      "occurrence_id": "C-120-4",
+      "reviewed_text_sha256": "d6c25edd3f5d8c2b1d290aebe30eecc39184fe2edd5206820b2f5fcadcdf6de3",
+      "disposition": "Reproduced",
+      "rationale": "Training reports 36852 images,56287 accepted instances and 51 flagged images.",
+      "evidence": [
+        "research/evidence/audit.json",
+        "research/evidence/validation-2026-09-12-v1/dataset-inspection.json",
+        "research/evidence/validation-2026-09-12-v1/numeric-checks.json"
+      ],
+      "limitation": "Training augmentation and duplicate records are retained.",
+      "required_correction": ""
+    },
+    {
+      "occurrence_id": "C-120-5",
+      "reviewed_text_sha256": "524d583c0f5d89fcd82b4e298b2b211b31d2b84ba29e3ef1c3a73cf26b3fd6ee",
+      "disposition": "Reproduced",
+      "rationale": "Validation reports 5922 images,8805 accepted instances and 7 flagged images.",
+      "evidence": [
+        "research/evidence/audit.json",
+        "research/evidence/validation-2026-09-12-v1/dataset-inspection.json",
+        "research/evidence/validation-2026-09-12-v1/numeric-checks.json"
+      ],
+      "limitation": "These accepted-instance counts differ from archived evaluator counts.",
+      "required_correction": ""
+    },
+    {
+      "occurrence_id": "C-120-6",
+      "reviewed_text_sha256": "8dc6b36e898b263869023485dd35cdce12af332206f798d918ccc5651e791b72",
+      "disposition": "Reproduced",
+      "rationale": "Test reports 5919 images,8868 accepted instances and 7 flagged images.",
+      "evidence": [
+        "research/evidence/audit.json",
+        "research/evidence/validation-2026-09-12-v1/dataset-inspection.json",
+        "research/evidence/validation-2026-09-12-v1/numeric-checks.json"
+      ],
+      "limitation": "The partition has exact overlap and is not independently clean.",
+      "required_correction": ""
+    },
+    {
+      "occurrence_id": "C-134-1",
+      "reviewed_text_sha256": "36b701a2b638bf45269b855668d5be3b97e3d1a0760870a5b30594f704f0115d",
+      "disposition": "Reproduced",
+      "rationale": "Fresh byte/pixel aggregation reproduces 138 crossing groups and 276 records, with pair counts 63/56/19.",
+      "evidence": [
+        "research/evidence/audit.json",
+        "research/evidence/validation-2026-09-12-v1/dataset-inspection.json",
+        "research/evidence/validation-2026-09-12-v1/numeric-checks.json"
+      ],
+      "limitation": "No numerical leakage-inflation estimate follows from these counts.",
+      "required_correction": ""
+    },
+    {
+      "occurrence_id": "C-134-2",
+      "reviewed_text_sha256": "cdca27fd23f7c5a621c9bcbfaaf417a0a4dd6bc64a56f15c0527d0fb5dfbcf24",
+      "disposition": "Supported with limitations",
+      "rationale": "No matched clean-vs-contaminated detector experiment estimates score inflation.",
+      "evidence": [
+        "research/evidence/validation-2026-09-12-v1/training-results.json",
+        "research/evidence/validation-2026-09-12-v1/dataset-inspection.json"
+      ],
+      "limitation": "Unknown does not mean zero.",
+      "required_correction": ""
+    },
+    {
+      "occurrence_id": "C-134-3",
+      "reviewed_text_sha256": "cc2ef1b99972e9baaddfe21b72d5956ec9c838ca5d6399dd62e83d770ef6af93",
+      "disposition": "Reproduced",
+      "rationale": "The strict audit and separate annotation read agree on 65 flagged images with zero-area rows.",
+      "evidence": [
+        "research/evidence/audit.json",
+        "research/evidence/validation-2026-09-12-v1/dataset-inspection.json"
+      ],
+      "limitation": "Additional edge or semantic issues are outside the original strict flag definition.",
+      "required_correction": ""
+    },
+    {
+      "occurrence_id": "C-134-4",
+      "reviewed_text_sha256": "f6f20ce1a33013c1e6440c9436663619facfc7d785cff4e4baa28c30161b1c89",
+      "disposition": "Historical only",
+      "rationale": "Archived evaluator instances 8812/8875 exceed strict 8805/8868 by seven per split.",
+      "evidence": [
+        "research/evidence/validation-2026-09-12-v1/training-results.json",
+        "research/evidence/audit.json",
+        "research/evidence/validation-2026-09-12-v1/numeric-checks.json"
+      ],
+      "limitation": "Only the count difference is established; the archived evaluator's exact acceptance path is not independently reconstructed.",
+      "required_correction": "",
+      "index_annotation": "DATASET tagging needs direct HISTORY/training-results evidence for the archived half."
+    },
+    {
+      "occurrence_id": "C-137-1",
+      "reviewed_text_sha256": "0b1808b76801f674fa70afdaf33019f7a5d115344581486d0f024f2d874c4197",
+      "disposition": "Reproduced",
+      "rationale": "Reproduced grouping reports 23933 export-containing components and 5548 candidate family groups spanning old splits.",
+      "evidence": [
+        "research/evidence/grouped-split-v1.json",
+        "research/evidence/validation-2026-09-12-v1/dataset-grouped-command.json",
+        "research/evidence/validation-2026-09-12-v1/dataset-inspection.json"
+      ],
+      "limitation": "These broad links are not 5548 confirmed duplicate-original groups.",
+      "required_correction": ""
+    },
+    {
+      "occurrence_id": "C-137-2",
+      "reviewed_text_sha256": "dba6347d3f1635a96dce605bcb9d75971c1bd17e11d130d700547fbe16170209",
+      "disposition": "Supported with limitations",
+      "rationale": "Filename and transitive links are not all visually confirmed family identities.",
+      "evidence": [
+        "research/evidence/grouped-split-v1.json",
+        "research/evidence/validation-2026-09-12-v1/dataset-perceptual-review.json"
+      ],
+      "limitation": "AI visual inspection covered flagged originals, not every candidate family.",
+      "required_correction": ""
+    },
+    {
+      "occurrence_id": "C-138-1",
+      "reviewed_text_sha256": "e56ac795b40e628e3e2e25344291f5b49d8a438354e15606b8b9520cd4f578c1",
+      "disposition": "Reproduced",
+      "rationale": "Candidate group/image counts match saved assignments, and each eligible split contains all 72 canonical labels.",
+      "evidence": [
+        "research/evidence/grouped-split-v1.json",
+        "research/evidence/validation-2026-09-12-v1/numeric-checks.json",
+        "research/evidence/validation-2026-09-12-v1/dataset-class-group-support.json"
+      ],
+      "limitation": "No independent adequacy or corrected-benchmark conclusion is supported.",
+      "required_correction": ""
+    },
+    {
+      "occurrence_id": "C-138-2",
+      "reviewed_text_sha256": "eb7cac8af758443bf41b92c0b39e4f2beb4f9979826a4bdd48f4426bbd47fcab",
+      "disposition": "Supported with limitations",
+      "rationale": "The caption correctly distinguishes full label representation from unproved sample independence/adequacy.",
+      "evidence": [
+        "research/evidence/grouped-split-v1.json",
+        "research/evidence/validation-2026-09-12-v1/dataset-class-group-support.json"
+      ],
+      "limitation": "Some classes have few candidate groups despite many image records.",
+      "required_correction": ""
+    },
+    {
+      "occurrence_id": "C-138-3",
+      "reviewed_text_sha256": "380d52e2aa8f9911cf29bf5cf716106a6275ad0ce707bd8c9913de095b432479",
+      "disposition": "Supported with limitations",
+      "rationale": "The header correctly names assignment status, component count and image-record count.",
+      "evidence": [
+        "research/evidence/grouped-split-v1.json",
+        "Research_Paper_Conference/main.tex"
+      ],
+      "limitation": "A table header, not an additional result.",
+      "required_correction": ""
+    },
+    {
+      "occurrence_id": "C-138-4",
+      "reviewed_text_sha256": "7c6f55f3d4fa33ff81823beffbe780a503005a448eeadd1330712c9b033d512d",
+      "disposition": "Reproduced",
+      "rationale": "Candidate training contains 10251 groups and 26384 images.",
+      "evidence": [
+        "research/evidence/grouped-split-v1.json",
+        "research/evidence/validation-2026-09-12-v1/numeric-checks.json"
+      ],
+      "limitation": "Review-only assignment; not data used for a newly trained model.",
+      "required_correction": ""
+    },
+    {
+      "occurrence_id": "C-138-5",
+      "reviewed_text_sha256": "ede24c5718958f17b3421c33900a9b5aeb58090f77b451c8128a0b2093e7cbdd",
+      "disposition": "Reproduced",
+      "rationale": "Candidate validation contains 2203 groups and 5655 images.",
+      "evidence": [
+        "research/evidence/grouped-split-v1.json",
+        "research/evidence/validation-2026-09-12-v1/numeric-checks.json"
+      ],
+      "limitation": "Known-group separation does not ensure unknown-family separation.",
+      "required_correction": ""
+    },
+    {
+      "occurrence_id": "C-138-6",
+      "reviewed_text_sha256": "30dee2dde53879b34531a57b720d563fea6e9ba5057531b227a506c0c3d05a95",
+      "disposition": "Reproduced",
+      "rationale": "Candidate test contains 2205 groups and 5652 images.",
+      "evidence": [
+        "research/evidence/grouped-split-v1.json",
+        "research/evidence/validation-2026-09-12-v1/numeric-checks.json"
+      ],
+      "limitation": "Not an independent test of the already-developed checkpoint.",
+      "required_correction": ""
+    },
+    {
+      "occurrence_id": "C-138-7",
+      "reviewed_text_sha256": "2bc272983118675bcc1c5629d2fd18b4c89b1d04f2ebde9dae0607c6bcddc6a3",
+      "disposition": "Reproduced",
+      "rationale": "Whole-group quarantine contains 9274 groups and 11002 images.",
+      "evidence": [
+        "research/evidence/grouped-split-v1.json",
+        "research/evidence/validation-2026-09-12-v1/numeric-checks.json"
+      ],
+      "limitation": "Quarantine is review status, not a count of proven bad photographs.",
+      "required_correction": ""
+    },
+    {
+      "occurrence_id": "C-153-1",
+      "reviewed_text_sha256": "b2c66684ea85b698bff9b3a9796c3ca7a7f90a7b63a9afead1f30590734d25fa",
+      "disposition": "Reproduced",
+      "rationale": "Eligible images 37691 minus within-split unique-pixel totals 37500 gives 191 excess records.",
+      "evidence": [
+        "research/evidence/grouped-split-v1.json",
+        "research/evidence/validation-2026-09-12-v1/numeric-checks.json"
+      ],
+      "limitation": "Distinct pixels still need not be independent original scenes.",
+      "required_correction": ""
+    },
+    {
+      "occurrence_id": "C-153-2",
+      "reviewed_text_sha256": "96b3c311e0227f693da26e41da2cbf00a17a51dd3b22da577dc91bf8f9c2c5df",
+      "disposition": "Reproduced",
+      "rationale": "The saved grouping result propagates quarantine to 11002 records at component level.",
+      "evidence": [
+        "research/evidence/grouped-split-v1.json",
+        "research/evidence/validation-2026-09-12-v1/dataset-inspection.json"
+      ],
+      "limitation": "Not all affected images have their own strict annotation flag.",
+      "required_correction": ""
+    },
+    {
+      "occurrence_id": "C-153-3",
+      "reviewed_text_sha256": "1902d981e4c1767f8bc663b3b4b57c7272e6df844e85a2994593daf63eabf299",
+      "disposition": "Reproduced",
+      "rationale": "Nonexclusive propagated counts 9127/1455/542/424 match the grouped report.",
+      "evidence": [
+        "research/evidence/grouped-split-v1.json",
+        "research/evidence/validation-2026-09-12-v1/numeric-checks.json"
+      ],
+      "limitation": "The 1455 conflict-related count is propagated and distinct from 209 directly conflicting-pixel images.",
+      "required_correction": ""
+    },
+    {
+      "occurrence_id": "C-153-4",
+      "reviewed_text_sha256": "92e67f093526749feaec8de5c88101fa6477b4c31dc21c94e26de0c08bb7e095",
+      "disposition": "Supported with limitations",
+      "rationale": "A group-level reason can quarantine otherwise unflagged members, and reasons overlap.",
+      "evidence": [
+        "research/evidence/grouped-split-v1.json",
+        "research/evidence/validation-2026-09-12-v1/dataset-inspection.json"
+      ],
+      "limitation": "Do not sum the reason counts or call them independent error counts.",
+      "required_correction": ""
+    },
+    {
+      "occurrence_id": "C-155-1",
+      "reviewed_text_sha256": "e28ab6b8fb580326c4cf8c46b84f376c4a87f50ba302d5cb9ca311e06d3dfc78",
+      "disposition": "Supported with limitations",
+      "rationale": "Recorded old grouping outputs share inventory/assignment hashes while the rerun adds input/class validation.",
+      "evidence": [
+        "research/evidence/grouped-split-v1.json",
+        "research/READINESS.md",
+        "scripts/prepare_research_split.py"
+      ],
+      "limitation": "Same-environment output identity is documented; complete historical execution provenance is not.",
+      "required_correction": ""
+    },
+    {
+      "occurrence_id": "C-155-2",
+      "reviewed_text_sha256": "003ff0b3649a901329c532cc2ef4f78e122599527098bc5406cf58a6dcb4e840",
+      "disposition": "Supported with limitations",
+      "rationale": "Matching output hashes in the same workflow supports repeatability, not independent replication.",
+      "evidence": [
+        "research/evidence/grouped-split-v1.json",
+        "research/READINESS.md"
+      ],
+      "limitation": "No cross-platform or independent-team reproduction is claimed.",
+      "required_correction": ""
+    },
+    {
+      "occurrence_id": "C-155-3",
+      "reviewed_text_sha256": "9e9cc9551d53ee9b734ebe1e3dd7fb2270368408a663a6122803d24529180347",
+      "disposition": "Awaiting qualified review/approval",
+      "rationale": "Unresolved transformed copies, family collisions and source augmentation require qualified review beyond the implemented linkage.",
+      "evidence": [
+        "research/evidence/validation-2026-09-12-v1/dataset-perceptual-review.json",
+        "research/evidence/grouped-split-v1.json"
+      ],
+      "limitation": "This review does not adjudicate all remaining image relationships.",
+      "required_correction": ""
+    },
+    {
+      "occurrence_id": "C-155-4",
+      "reviewed_text_sha256": "b6b48716d81f9139c1c75c7e1d0755d91b4e91e97afeb7939b087fad4cd6300a",
+      "disposition": "Supported with limitations",
+      "rationale": "Frozen run boundaries and training evidence show analysis/review only, with no new candidate-split detector training.",
+      "evidence": [
+        "research/evidence/validation-2026-09-12-v1/baseline.json",
+        "research/evidence/validation-2026-09-12-v1/training-results.json",
+        "research/evidence/validation-2026-09-12-v1/dataset-inspection.json"
+      ],
+      "limitation": "This is a report of the bounded review activity, not proof of all historical developer actions.",
+      "required_correction": ""
+    },
+    {
+      "occurrence_id": "C-158-1",
+      "reviewed_text_sha256": "e32488be0a9552bab05d1e31a1a808445201b86e7bdd8f82246412a75d83759c",
+      "disposition": "Reproduced",
+      "rationale": "The table's 19/72,55/72 and 72/72 availability values and 26.39/76.39/100.00 percentages match audit and reconciliation.",
+      "evidence": [
+        "research/evidence/validation-2026-09-12-v1/nutrition-validation.json",
+        "research/evidence/audit.json",
+        "research/evidence/validation-2026-09-12-v1/numeric-checks.json"
+      ],
+      "limitation": "No correct-match judgment or clinical assessment is implied.",
+      "required_correction": ""
+    },
+    {
+      "occurrence_id": "C-158-2",
+      "reviewed_text_sha256": "4600f73c0c4afedab3631c7f65d3fd81febe6e53d3951e7878ba70652db122e0",
+      "disposition": "Supported with limitations",
+      "rationale": "The caption accurately labels measured row availability rather than matching accuracy.",
+      "evidence": [
+        "research/evidence/validation-2026-09-12-v1/nutrition-validation.json",
+        "Research_Paper_Conference/main.tex"
+      ],
+      "limitation": "A scope qualifier on the table's census counts.",
+      "required_correction": ""
+    },
+    {
+      "occurrence_id": "C-158-3",
+      "reviewed_text_sha256": "16520225fd8b8876ed386c4764107e5e41f9caf6d9ace65c247f808884943abf",
+      "disposition": "Supported with limitations",
+      "rationale": "The table header describes availability counts and percentages, not accuracy metrics.",
+      "evidence": [
+        "research/evidence/validation-2026-09-12-v1/nutrition-validation.json",
+        "Research_Paper_Conference/main.tex"
+      ],
+      "limitation": "A header/index unit rather than a separate empirical result.",
+      "required_correction": ""
+    },
+    {
+      "occurrence_id": "C-158-4",
+      "reviewed_text_sha256": "74a3baf7657b4a62c223c761b24e6fc3dc7711c997aa1f1416651767ef78dc49",
+      "disposition": "Reproduced",
+      "rationale": "Normalized exact matching returns 19 of 72 rows, rounded to 26.39 percent.",
+      "evidence": [
+        "research/evidence/validation-2026-09-12-v1/nutrition-validation.json",
+        "research/evidence/audit.json",
+        "research/evidence/validation-2026-09-12-v1/numeric-checks.json"
+      ],
+      "limitation": "Agreement of normalized names does not itself establish recipe equivalence.",
+      "required_correction": ""
+    },
+    {
+      "occurrence_id": "C-158-5",
+      "reviewed_text_sha256": "91c9dc180a9d182391b31761a431147903d051673d168335376063def5387f5d",
+      "disposition": "Reproduced",
+      "rationale": "Automatic lookup without precomputed entries returns 55 of 72 rows, rounded to 76.39 percent.",
+      "evidence": [
+        "research/evidence/validation-2026-09-12-v1/nutrition-validation.json",
+        "research/evidence/audit.json",
+        "research/evidence/validation-2026-09-12-v1/numeric-checks.json"
+      ],
+      "limitation": "Some automatic selections are hash-seed-dependent; availability is not stable semantic correctness.",
+      "required_correction": ""
+    },
+    {
+      "occurrence_id": "C-158-6",
+      "reviewed_text_sha256": "9075d7870b90664fa345bfffd5629ab7fc321f83495caac9c8f1c904bbe31801",
+      "disposition": "Reproduced",
+      "rationale": "The current mapping layer returns 72 of 72 rows, or 100 percent availability.",
+      "evidence": [
+        "research/evidence/validation-2026-09-12-v1/nutrition-validation.json",
+        "research/evidence/audit.json",
+        "research/evidence/validation-2026-09-12-v1/numeric-checks.json"
+      ],
+      "limitation": "Complete coverage is not 100 percent correct mapping.",
+      "required_correction": ""
+    },
+    {
+      "occurrence_id": "C-172-1",
+      "reviewed_text_sha256": "30250cb28d65db5b9c58e3437cfbd5d13ca7ce1a55467e426334b399ed25de87",
+      "disposition": "Reproduced",
+      "rationale": "All 72 canonical labels return rows; blank independent reference packets provide no completed judgments about their correctness.",
+      "evidence": [
+        "research/evidence/validation-2026-09-12-v1/nutrition-validation.json",
+        "research/review/validation-2026-09-12-v1/README.md",
+        "research/review/validation-2026-09-12-v1/packet.json",
+        "scripts/score_mapping_reference.py"
+      ],
+      "limitation": "The first clause is reproduced coverage; the second explicitly states an evidence gap.",
+      "required_correction": ""
+    },
+    {
+      "occurrence_id": "C-172-2",
+      "reviewed_text_sha256": "c671890f29f80dfe369ab465507ad2ef212b689ca67811793c3ca443eec4dd03",
+      "disposition": "Supported with limitations",
+      "rationale": "The legacy audit lists 21 lower/missing-score review candidates; scores are developer/heuristic metadata rather than expert validation.",
+      "evidence": [
+        "research/evidence/audit.json",
+        "backend/services/nutrition_service.py"
+      ],
+      "limitation": "The 21 flags are not an estimated wrong-match count and do not bound errors among unflagged rows.",
+      "required_correction": ""
+    },
+    {
+      "occurrence_id": "C-172-3",
+      "reviewed_text_sha256": "734ffe6d0cb4f4b66de34109e0e6bf443aa93fd9c4bf99c2f24b75ab0663a12c",
+      "disposition": "Supported with limitations",
+      "rationale": "The denominator is the complete fixed 72-label vocabulary used for this census, not a sample of unseen food names.",
+      "evidence": [
+        "research/evidence/validation-2026-09-12-v1/nutrition-validation.json",
+        "research/evidence/audit.json"
+      ],
+      "limitation": "No population-generalization estimate or confidence interval is warranted from coverage alone.",
+      "required_correction": ""
+    },
+    {
+      "occurrence_id": "C-172-4",
+      "reviewed_text_sha256": "c01df9d474f235b17cc52cf529921bd8e273fe1b7baac884f475a15e3dac0d48",
+      "disposition": "Supported with limitations",
+      "rationale": "The recorded comparison contains exact/automatic/current matching only, without either named removal ablation.",
+      "evidence": [
+        "research/evidence/validation-2026-09-12-v1/nutrition-validation.json",
+        "research/evidence/audit.json"
+      ],
+      "limitation": "Absence of an ablation is not evidence those components have no effect.",
+      "required_correction": ""
+    },
+    {
+      "occurrence_id": "C-175-1",
+      "reviewed_text_sha256": "8554cdcae5d7948795eb484b5dfe14d1dd0a92b198d319d3edc9b0671dc46b1a",
+      "disposition": "Supported with limitations",
+      "rationale": "Recorded backend/frontend suites and corrected mocked-browser runs pass saved-only totals and response-context matching cases.",
+      "evidence": [
+        "research/evidence/validation-2026-09-12-v1/checks/backend-architecture-1.json",
+        "research/evidence/validation-2026-09-12-v1/checks/backend-deployment-1.json",
+        "research/evidence/validation-2026-09-12-v1/checks/frontend-unit-1.json",
+        "research/evidence/validation-2026-09-12-v1/checks/browser-1.json",
+        "research/evidence/validation-2026-09-12-v1/browser-extended-attempt4.json"
+      ],
+      "limitation": "Earlier failed harness attempts are retained; this is not a new live deployment test.",
+      "required_correction": ""
+    },
+    {
+      "occurrence_id": "C-175-2",
+      "reviewed_text_sha256": "2dfaed7d285396ea7e73f0841c6416812a5c471f13026773ab20926fac474f6d",
+      "disposition": "Supported with limitations",
+      "rationale": "Assertions validate intended software behavior in their fixtures, not user logging burden or recommendation quality.",
+      "evidence": [
+        "research/evidence/validation-2026-09-12-v1/checks/browser-1.json",
+        "research/evidence/validation-2026-09-12-v1/recommendations.json"
+      ],
+      "limitation": "No representative user study or qualified advice-content evaluation is supplied.",
+      "required_correction": ""
+    },
+    {
+      "occurrence_id": "C-175-3",
+      "reviewed_text_sha256": "2a7c7721379f6954fca0b7b3c3be479245857bedf1f3117953dfcda5f366bc63",
+      "disposition": "Supported with limitations",
+      "rationale": "Serialized journal shape omits photos/health selections, and upload processing does not deliberately persist image data.",
+      "evidence": [
+        "frontend/lib/meals.ts",
+        "frontend/lib/journalStorage.ts",
+        "backend/services/vision_service.py",
+        "backend/services/inference_runtime.py",
+        "research/evidence/validation-2026-09-12-v1/deployment-evidence.json"
+      ],
+      "limitation": "Application-level nonretention does not establish third-party retention policy or legal compliance.",
+      "required_correction": ""
+    },
+    {
+      "occurrence_id": "C-177-1",
+      "reviewed_text_sha256": "dc693b42944e8cd0b0a1889c3c1fbe1408724a4b798c06c59b6dd9561aea7754",
+      "disposition": "Supported with limitations",
+      "rationale": "InferenceRuntime uses one executor worker and a capacity limit allowing one additional pending analysis.",
+      "evidence": [
+        "backend/services/vision_service.py",
+        "backend/services/inference_runtime.py",
+        "research/evidence/validation-2026-09-12-v1/checks/backend-architecture-1.json",
+        "research/evidence/validation-2026-09-12-v1/checks/backend-deployment-1.json"
+      ],
+      "limitation": "Cancellation/timeout does not necessarily stop a running worker.",
+      "required_correction": "",
+      "index_annotation": "Primary TESTS needs INFERENCE/source evidence for the capacity claim."
+    },
+    {
+      "occurrence_id": "C-177-2",
+      "reviewed_text_sha256": "14948d334815eae7936322005836b9d5b10a1c3709b1f378b278e0a037f07436",
+      "disposition": "Supported with limitations",
+      "rationale": "Recommendation admission caps active operations at two with immediate busy rejection rather than an extra waiting queue.",
+      "evidence": [
+        "backend/services/recommendation_service.py",
+        "research/evidence/validation-2026-09-12-v1/recommendations.json",
+        "backend/settings.py"
+      ],
+      "limitation": "The limit is per instance, not global across scaled functions.",
+      "required_correction": "",
+      "index_annotation": "Primary TESTS needs ADVICE/operational source evidence."
+    },
+    {
+      "occurrence_id": "C-177-3",
+      "reviewed_text_sha256": "6ca7d5b245e8743b79fecc4c8d89429da9ea1c4b271cb37cf29ff8018703c9c7",
+      "disposition": "Supported with limitations",
+      "rationale": "Application limits reside in per-instance state and therefore cannot be global account-spend controls.",
+      "evidence": [
+        "backend/application.py",
+        "backend/settings.py",
+        "research/evidence/validation-2026-09-12-v1/deployment-evidence.json"
+      ],
+      "limitation": "Distributed scaling and provider-side quotas are outside these local limiters.",
+      "required_correction": ""
+    },
+    {
+      "occurrence_id": "C-177-4",
+      "reviewed_text_sha256": "783b526e18341a53fcb67b3a81aced6ae5f945a734ac14e9638506089aa5b270",
+      "disposition": "Supported with limitations",
+      "rationale": "Readiness describes model operational state and deployment criteria are acceptance thresholds, not measured latency distributions or guarantees.",
+      "evidence": [
+        "research/evidence/validation-2026-09-12-v1/deployment-evidence.json",
+        "backend/services/vision_service.py",
+        "backend/services/inference_runtime.py"
+      ],
+      "limitation": "No new public-preview size/memory/cold-start verification was performed in this review.",
+      "required_correction": ""
+    },
+    {
+      "occurrence_id": "C-180-1",
+      "reviewed_text_sha256": "e623f94ab8bcb6779e1a2251a529fdc9f29482097bb2fc65167abe032807b51b",
+      "disposition": "Reproduced",
+      "rationale": "Fresh inspection compares the dataset fingerprint, source-inventory hash and assignment hash to saved outputs and reports equality.",
+      "evidence": [
+        "research/evidence/validation-2026-09-12-v1/dataset-inspection.json",
+        "research/evidence/validation-2026-09-12-v1/dataset-grouped-command.json"
+      ],
+      "limitation": "'All earlier identities' must be read as these recorded comparison fields, not every possible provenance property.",
+      "required_correction": "",
+      "index_annotation": "Initial generic VALIDATION evidence omitted the directly relevant dataset-inspection/grouping reports."
+    },
+    {
+      "occurrence_id": "C-180-2",
+      "reviewed_text_sha256": "dc5557ea99d88518fbd57a5d95ed2cbd2fa0350451c96c996990d5e33d956a77",
+      "disposition": "Reproduced",
+      "rationale": "Separate annotation aggregation reports 65 flags split 45 zero-width/20 zero-height;65 originals have AI visual review records.",
+      "evidence": [
+        "research/evidence/validation-2026-09-12-v1/dataset-inspection.json",
+        "research/evidence/validation-2026-09-12-v1/dataset-visual-review.json"
+      ],
+      "limitation": "Visual review is not qualified annotation approval and does not establish every class/box is correct.",
+      "required_correction": "",
+      "index_annotation": "Direct evidence is dataset-inspection.json and dataset-visual-review.json, not the generic nutrition-focused set."
+    },
+    {
+      "occurrence_id": "C-180-3",
+      "reviewed_text_sha256": "57862cc899ec0637e163b918a81c2e7141f92dcb8c5c97d4fb0e12ba6a7a894e",
+      "disposition": "Reproduced",
+      "rationale": "The 104 direct identical-pixel conflict groups partition into 69 same-class box differences and 35 class/instance-multiset differences.",
+      "evidence": [
+        "research/evidence/validation-2026-09-12-v1/dataset-inspection.json"
+      ],
+      "limitation": "Numerical inequality does not identify which annotation set is semantically correct.",
+      "required_correction": ""
+    },
+    {
+      "occurrence_id": "C-180-4",
+      "reviewed_text_sha256": "d7bd39b319e43f2b43eb18928dd3afe4ec0609ac237e1194fd75a560d6f66cdf",
+      "disposition": "Reproduced",
+      "rationale": "The additional edge test reports 3794 flagged rows in 3346 images at tolerance 1 e-6.",
+      "evidence": [
+        "research/evidence/validation-2026-09-12-v1/dataset-inspection.json"
+      ],
+      "limitation": "These are review flags and can include intended/truncated edge objects; they are not automatically invalid.",
+      "required_correction": ""
+    },
+    {
+      "occurrence_id": "C-180-5",
+      "reviewed_text_sha256": "22a45232842df919c3bb1ef7f6c8da092d79f0d78ef724f66750e39cafc7f5bf",
+      "disposition": "Reproduced",
+      "rationale": "Per-class group support minima are 43 training,9 validation and 11 test, independently derived from the support table.",
+      "evidence": [
+        "research/evidence/validation-2026-09-12-v1/dataset-class-group-support.json",
+        "research/evidence/validation-2026-09-12-v1/dataset-inspection.json"
+      ],
+      "limitation": "These remain heuristic candidate groups, not confirmed independent sampling units.",
+      "required_correction": ""
+    },
+    {
+      "occurrence_id": "C-180-6",
+      "reviewed_text_sha256": "cdf3094bcd887129daf0aa04d8777105b8b0dd2a8296b7a1040f806a6e6ab119",
+      "disposition": "Reproduced",
+      "rationale": "The perceptual report samples 2020 records, queues 16 cross-candidate-partition pairs, and misses each tested crop/mirror/rotation probe.",
+      "evidence": [
+        "research/evidence/validation-2026-09-12-v1/dataset-perceptual-review.json",
+        "research/evidence/validation-2026-09-12-v1/dataset-perceptual-queue.json"
+      ],
+      "limitation": "No expert pair adjudication, real-world sensitivity or precision estimate is established.",
+      "required_correction": ""
+    },
+    {
+      "occurrence_id": "C-180-7",
+      "reviewed_text_sha256": "a6ba9aeeeab3b50a07e61ff5f2b964e96e902bb00337ba7cf99044db21f1ec3d",
+      "disposition": "Supported with limitations",
+      "rationale": "The results explicitly leave family identities, annotations and evaluation independence unresolved.",
+      "evidence": [
+        "research/evidence/validation-2026-09-12-v1/dataset-inspection.json",
+        "research/evidence/validation-2026-09-12-v1/dataset-perceptual-review.json"
+      ],
+      "limitation": "Construction checks do not approve a replacement benchmark.",
+      "required_correction": ""
+    },
+    {
+      "occurrence_id": "C-182-1",
+      "reviewed_text_sha256": "4a2553ed0b3f2b9fce023290bd3f2f1e29101447ac52f7bae399725a42f36bc2",
+      "disposition": "Reproduced",
+      "rationale": "Independent XLSX/import reconciliation matches 1010 database rows and 4040 numeric fields within the stated tolerance.",
+      "evidence": [
+        "research/evidence/validation-2026-09-12-v1/nutrition-validation.json",
+        "research/evidence/validation-2026-09-12-v1/citation-review.json"
+      ],
+      "limitation": "Workbook identity and literal/source consistency do not establish photographed-meal composition.",
+      "required_correction": ""
+    },
+    {
+      "occurrence_id": "C-182-2",
+      "reviewed_text_sha256": "891b80fe1c6e38fcb27f6d15a0ccebfe128b905025574b245dcee96aaf4de64c",
+      "disposition": "Reproduced",
+      "rationale": "Recorded rational oracles report 162036 goal cases for each implementation and 2880 actual-frontend portion cases without discrepancies.",
+      "evidence": [
+        "research/evidence/validation-2026-09-12-v1/arithmetic-validation.json"
+      ],
+      "limitation": "Floating-point portion comparisons use declared tolerances; inherited goal/health policy is not clinically validated.",
+      "required_correction": ""
+    },
+    {
+      "occurrence_id": "C-182-3",
+      "reviewed_text_sha256": "5aaeecc60805f0c0f1049dc6e19516a4fa9b95f96bc82fae80a90a38f195d471",
+      "disposition": "Reproduced",
+      "rationale": "Eight seeds over 181 labels in two methods produce 30 changing method/label pairs, with zero changing current-canonical pairs.",
+      "evidence": [
+        "research/evidence/validation-2026-09-12-v1/nutrition-validation.json"
+      ],
+      "limitation": "The 30 units are not 30 wrong canonical classes; current arbitrary-label fallback can still vary.",
+      "required_correction": ""
+    },
+    {
+      "occurrence_id": "C-182-4",
+      "reviewed_text_sha256": "6b09f5ea7694b260fe19a6953b7f3983d485a260a19849a360b68066e551e57b",
+      "disposition": "Reproduced",
+      "rationale": "Recommendation matrix totals 216, adapter cases 16, and final corrected browser matrix covers 36 goal/context combinations plus forced late responses.",
+      "evidence": [
+        "research/evidence/validation-2026-09-12-v1/recommendations.json",
+        "research/evidence/validation-2026-09-12-v1/browser-extended-attempt4.json"
+      ],
+      "limitation": "Provider/browser calls are mocked and cannot establish live advice quality or production timing.",
+      "required_correction": ""
+    },
+    {
+      "occurrence_id": "C-182-5",
+      "reviewed_text_sha256": "c52dfca23d32b8097bb23f5f696fcbcdfe1ac6460f10f8e1d6cfda1ff79dbd5c",
+      "disposition": "Supported with limitations",
+      "rationale": "The reported observations concern source transcription and implementation, while reference forms and clinical assessments remain incomplete.",
+      "evidence": [
+        "research/evidence/validation-2026-09-12-v1/nutrition-validation.json",
+        "research/evidence/validation-2026-09-12-v1/arithmetic-validation.json",
+        "research/evidence/validation-2026-09-12-v1/recommendations.json",
+        "research/review/validation-2026-09-12-v1/README.md",
+        "research/review/validation-2026-09-12-v1/packet.json"
+      ],
+      "limitation": "No independent recipe-equivalence or medical judgment is implied.",
+      "required_correction": ""
+    },
+    {
+      "occurrence_id": "C-182-6",
+      "reviewed_text_sha256": "b764acabbf6ce4ae6eaf337e8b7ad70135d84a55040c5d741fc7f6987456902f",
+      "disposition": "Supported with limitations",
+      "rationale": "Run environment records Windows/Python 3.12.7; production locks target Linux, and retained browser attempts record harness failures.",
+      "evidence": [
+        "research/evidence/validation-2026-09-12-v1/baseline.json",
+        "pyproject.toml",
+        "research/evidence/validation-2026-09-12-v1/browser-extended-attempt4.json",
+        "research/evidence/validation-2026-09-12-v1/browser-extended.json",
+        "research/evidence/validation-2026-09-12-v1/browser-extended-attempt2.json"
+      ],
+      "limitation": "Passing a corrected local harness is not locked-Linux production revalidation.",
+      "required_correction": ""
+    },
+    {
+      "occurrence_id": "C-185-1",
+      "reviewed_text_sha256": "10c0ee8836c59567df660e08b36555150e63b096dc86b63938ef2e0ce9125206",
+      "disposition": "Supported with limitations",
+      "rationale": "Exact cross-partition overlap is directly observed, while no new clean-versus-old detector accuracy experiment is recorded.",
+      "evidence": [
+        "research/evidence/validation-2026-09-12-v1/dataset-inspection.json",
+        "research/evidence/validation-2026-09-12-v1/training-results.json"
+      ],
+      "limitation": "The comparative word 'strongest' is an interpretation; the underlying overlap is measured.",
+      "required_correction": ""
+    },
+    {
+      "occurrence_id": "C-185-2",
+      "reviewed_text_sha256": "ab9267037928074484cbcc9504e9782673d42bf098e641fa5cae5fec523c1e7b",
+      "disposition": "Supported with limitations",
+      "rationale": "Exact hashes cannot recover all transforms, filename heuristics can overmerge, and broader family annotation conflicts remain unadjudicated.",
+      "evidence": [
+        "research/evidence/grouped-split-v1.json",
+        "research/evidence/validation-2026-09-12-v1/dataset-perceptual-review.json",
+        "research/evidence/validation-2026-09-12-v1/dataset-inspection.json"
+      ],
+      "limitation": "The observed 104 direct conflicts do not resolve all propagated family-level cases.",
+      "required_correction": ""
+    },
+    {
+      "occurrence_id": "C-185-3",
+      "reviewed_text_sha256": "f3b976ab89ec19c94756ff287724899903d65814bf3b9b2a5a0613813b8623c4",
+      "disposition": "Supported with limitations",
+      "rationale": "The candidate protocol enforces separation of known groups but lacks a certificate that all related photographs share those groups.",
+      "evidence": [
+        "scripts/prepare_research_split.py",
+        "research/evidence/validation-2026-09-12-v1/dataset-perceptual-review.json"
+      ],
+      "limitation": "Necessary within the chosen protocol is not a universal sufficient-independence criterion.",
+      "required_correction": ""
+    },
+    {
+      "occurrence_id": "C-185-4",
+      "reviewed_text_sha256": "4ea66e3b4ea58c937df840ab336ed44d07ab5e3f3ba828fed6f7939eabb980bf",
+      "disposition": "Supported with limitations",
+      "rationale": "Recorded work contains no verified-negative performance experiment, expert semantic error rate or leakage effect-size experiment.",
+      "evidence": [
+        "research/evidence/validation-2026-09-12-v1/dataset-inspection.json",
+        "research/evidence/validation-2026-09-12-v1/training-results.json",
+        "research/evidence/validation-2026-09-12-v1/dataset-visual-review.json"
+      ],
+      "limitation": "AI review of 65 flagged images does not fill these evidence gaps.",
+      "required_correction": ""
+    },
+    {
+      "occurrence_id": "C-187-1",
+      "reviewed_text_sha256": "172b5ada550a13ab86e7405d35279b952ba0554dcb135781edd0bf9128d097ce",
+      "disposition": "Supported with limitations",
+      "rationale": "User portions and label-to-row lookup do not observe actual recipe ingredients, preparation or mass.",
+      "evidence": [
+        "frontend/lib/meals.ts",
+        "backend/services/nutrition_service.py",
+        "research/evidence/validation-2026-09-12-v1/nutrition-validation.json"
+      ],
+      "limitation": "No independent meal-composition references exist for an accuracy claim.",
+      "required_correction": ""
+    },
+    {
+      "occurrence_id": "C-187-2",
+      "reviewed_text_sha256": "5d244106a62fa65d1361e92f6092318cbe7943237929aed3b0c9860659ca9a52",
+      "disposition": "Supported with limitations",
+      "rationale": "Prompt fields are limited and fallback strings include unreviewed consumption/suitability statements.",
+      "evidence": [
+        "backend/domain/recommendations.py",
+        "research/evidence/validation-2026-09-12-v1/recommendations.json"
+      ],
+      "limitation": "No qualified advice-content evaluation is complete.",
+      "required_correction": ""
+    },
+    {
+      "occurrence_id": "C-187-3",
+      "reviewed_text_sha256": "4b3d98ccc33e0a9aead0edf19b66ea214f0c09e712cbd62569b984275598acba",
+      "disposition": "Supported with limitations",
+      "rationale": "Context matching and repeatable arithmetic provide software correctness evidence only, not clinical personalization validity.",
+      "evidence": [
+        "research/evidence/validation-2026-09-12-v1/arithmetic-validation.json",
+        "research/evidence/validation-2026-09-12-v1/recommendations.json",
+        "frontend/lib/endpoints.ts"
+      ],
+      "limitation": "This is a required scope restriction, not an assessment that advice is safe.",
+      "required_correction": ""
+    },
+    {
+      "occurrence_id": "C-187-4",
+      "reviewed_text_sha256": "c642730c5dc3202fe49acbc6ad070d004a9cf869271cc4a0b07d6f29fd0be4fd",
+      "disposition": "Supported with limitations",
+      "rationale": "The recorded validation comprises code/artifact/mock tests, not participant outcomes.",
+      "evidence": [
+        "research/evidence/validation-2026-09-12-v1/baseline.json",
+        "research/evidence/validation-2026-09-12-v1/checks/browser-1.json",
+        "research/evidence/validation-2026-09-12-v1/recommendations.json"
+      ],
+      "limitation": "The statement is scoped to this project review; it is not a claim that no related user studies exist anywhere.",
+      "required_correction": ""
+    },
+    {
+      "occurrence_id": "C-189-1",
+      "reviewed_text_sha256": "359b635d7129d0f1bd16a5983094e821bc00dccb5c71f799142968c97c84c697",
+      "disposition": "Proposed",
+      "rationale": "The sentence prescribes future review, a frozen manifest and a justified retraining or untouched-data protocol.",
+      "evidence": [
+        "research/evidence/grouped-split-v1.json",
+        "research/evidence/validation-2026-09-12-v1/training-results.json"
+      ],
+      "limitation": "No new data collection, retraining or rights permission is authorized or completed by this statement.",
+      "required_correction": ""
+    },
+    {
+      "occurrence_id": "C-189-2",
+      "reviewed_text_sha256": "0751060b9ed8c6eadbeec9e4b89f8b3849cbcf79a9f97dd00a49ac9edd783839",
+      "disposition": "Proposed",
+      "rationale": "Recording model/data/environment/selection provenance is a prospective requirement for a future evaluation.",
+      "evidence": [
+        "research/evidence/validation-2026-09-12-v1/training-results.json"
+      ],
+      "limitation": "It does not assert that missing historical provenance has already been recovered.",
+      "required_correction": "",
+      "index_annotation": "Index primary LIMITS should be PROPOSED; the sentence is an imperative protocol step."
+    },
+    {
+      "occurrence_id": "C-189-3",
+      "reviewed_text_sha256": "b35651b484da949890133ed7e352d2173b5764240b41825b631e14c313dc1142",
+      "disposition": "Proposed",
+      "rationale": "Matched baselines and dependency-aware uncertainty are requirements for future comparative claims.",
+      "evidence": [
+        "research/evidence/validation-2026-09-12-v1/training-results.json",
+        "research/evidence/grouped-split-v1.json"
+      ],
+      "limitation": "No such comparison or interval is reported as completed.",
+      "required_correction": "",
+      "index_annotation": "Index primary LIMITS should be PROPOSED for this prospective evaluation instruction."
+    },
+    {
+      "occurrence_id": "C-191-1",
+      "reviewed_text_sha256": "a1cbb7ae0a410c8dc5dd8be13db30e598630e6d7c2cdb65ef60e4c297a090704",
+      "disposition": "Proposed",
+      "rationale": "The sentence sets a future frozen-output/database and qualified blinded-reference protocol.",
+      "evidence": [
+        "research/review/validation-2026-09-12-v1/README.md",
+        "research/review/validation-2026-09-12-v1/packet.json",
+        "scripts/score_mapping_reference.py"
+      ],
+      "limitation": "Existing mapping outputs must not be mistaken for independent reviewer judgments.",
+      "required_correction": ""
+    },
+    {
+      "occurrence_id": "C-191-2",
+      "reviewed_text_sha256": "834345f085262f6981cd4c4b954041c0ce8ce92ffec3bee231614ce420cccd92",
+      "disposition": "Proposed",
+      "rationale": "Acceptable recipes, approximations and indeterminate/unsupported cases require a prespecified reference policy.",
+      "evidence": [
+        "research/review/validation-2026-09-12-v1/README.md",
+        "research/review/validation-2026-09-12-v1/packet.json",
+        "scripts/score_mapping_reference.py"
+      ],
+      "limitation": "The instruction is not evidence that qualified reviewers have agreed on those definitions.",
+      "required_correction": "",
+      "index_annotation": "Index primary LIMITS should be PROPOSED."
+    },
+    {
+      "occurrence_id": "C-191-3",
+      "reviewed_text_sha256": "7fa3aa8203961a52d97be5d2a1bd34c9bd98a78a9adb155d7d84624aaf333182",
+      "disposition": "Supported with limitations",
+      "rationale": "The implemented v 2 format keeps two initial reviews and separate hash-bound adjudication, with indeterminate cases excluded from the scorable denominator.",
+      "evidence": [
+        "scripts/score_mapping_reference.py",
+        "scripts/test_score_mapping_reference.py",
+        "research/review/validation-2026-09-12-v1/README.md",
+        "research/review/validation-2026-09-12-v1/packet.json"
+      ],
+      "limitation": "Forms are blank; field/attestation validation does not prove real blinding, expertise or independence.",
+      "required_correction": ""
+    },
+    {
+      "occurrence_id": "C-191-4",
+      "reviewed_text_sha256": "d347110c903d2551995ff64f17ee46bbd53b01d2a45c9f0e36d5f5e42032b66f",
+      "disposition": "Proposed",
+      "rationale": "The requested future report separates correct/wrong matches from correct abstention and missed supported cases.",
+      "evidence": [
+        "scripts/score_mapping_reference.py",
+        "research/review/validation-2026-09-12-v1/README.md",
+        "research/review/validation-2026-09-12-v1/packet.json"
+      ],
+      "limitation": "No completed independent scoring outcomes are available.",
+      "required_correction": "",
+      "index_annotation": "Index primary LIMITS should be PROPOSED."
+    },
+    {
+      "occurrence_id": "C-191-5",
+      "reviewed_text_sha256": "c537235b677c6a1875ea72b817873ed27665d8e6c6a26a7cc54f8f2462423b43",
+      "disposition": "Supported with limitations",
+      "rationale": "Current templates contain pending/blank judgments, and scorer checks can only validate form structure and stated attestations.",
+      "evidence": [
+        "research/review/validation-2026-09-12-v1/README.md",
+        "research/review/validation-2026-09-12-v1/packet.json",
+        "scripts/score_mapping_reference.py",
+        "scripts/test_score_mapping_reference.py"
+      ],
+      "limitation": "Qualified human expertise and actual independence cannot be certified programmatically.",
+      "required_correction": ""
+    },
+    {
+      "occurrence_id": "C-191-6",
+      "reviewed_text_sha256": "0eb8c5195fb5398d30ecdb18a5ecd8dcb091384e093d026d6bbb9a7dfe7462b4",
+      "disposition": "Awaiting qualified review/approval",
+      "rationale": "Advice appropriateness and user benefits require separate assessment and relevant institutional-review decisions.",
+      "evidence": [
+        "research/evidence/validation-2026-09-12-v1/recommendations.json",
+        "research/review/validation-2026-09-12-v1/README.md",
+        "research/review/validation-2026-09-12-v1/packet.json"
+      ],
+      "limitation": "This AI artifact review supplies neither medical endorsement nor ethics approval.",
+      "required_correction": ""
+    },
+    {
+      "occurrence_id": "C-194-1",
+      "reviewed_text_sha256": "1ecfcf0d325d94d2b9cf93464f607e1bb1504a6fa5130669068ccfb49684f28c",
+      "disposition": "Supported with limitations",
+      "rationale": "Current components implement detection presentation, database estimates, gram review, explicit saved history and keyed advice context.",
+      "evidence": [
+        "frontend/lib/useFoodScan.ts",
+        "frontend/lib/meals.ts",
+        "frontend/lib/useRecommendations.ts",
+        "research/evidence/validation-2026-09-12-v1/browser-extended-attempt4.json"
+      ],
+      "limitation": "Inspectability is an interface/design property, not measured usability benefit.",
+      "required_correction": ""
+    },
+    {
+      "occurrence_id": "C-194-2",
+      "reviewed_text_sha256": "1d2d16b8dc8f4a124ce05fa46aacccb50d3058987d014246651d3452dff3c9fd",
+      "disposition": "Reproduced",
+      "rationale": "Audit reproduces 138 exact cross-partition groups and 65 flagged images; grouping records broader heuristic links and quarantine.",
+      "evidence": [
+        "research/evidence/validation-2026-09-12-v1/dataset-inspection.json",
+        "research/evidence/grouped-split-v1.json"
+      ],
+      "limitation": "Broader candidate relationships are not all confirmed shared-original identities.",
+      "required_correction": ""
+    },
+    {
+      "occurrence_id": "C-194-3",
+      "reviewed_text_sha256": "6d86ff0b3708e922862e980358ba99c219222c9993d3225ea8455a7121077559",
+      "disposition": "Reproduced",
+      "rationale": "The current mapping layer returns a row for each of 72 canonical labels, with no completed independent reference judgments.",
+      "evidence": [
+        "research/evidence/validation-2026-09-12-v1/nutrition-validation.json",
+        "research/review/validation-2026-09-12-v1/README.md",
+        "research/review/validation-2026-09-12-v1/packet.json"
+      ],
+      "limitation": "Coverage must not be called matching accuracy.",
+      "required_correction": ""
+    },
+    {
+      "occurrence_id": "C-194-4",
+      "reviewed_text_sha256": "0eec8953bf43005dd280d3b5860385771a496bb28d35aba276caafda4d8399df",
+      "disposition": "Awaiting qualified review/approval",
+      "rationale": "Reviewed evaluation and author/rights decisions remain outstanding rather than being resolved by extra interface features.",
+      "evidence": [
+        "research/review/validation-2026-09-12-v1/README.md",
+        "research/review/validation-2026-09-12-v1/packet.json",
+        "research/evidence/validation-2026-09-12-v1/citation-review.json",
+        "research/evidence/validation-2026-09-12-v1/training-results.json"
+      ],
+      "limitation": "Priority is an editorial recommendation; approvals belong to the relevant people.",
+      "required_correction": ""
+    },
+    {
+      "occurrence_id": "C-197-1",
+      "reviewed_text_sha256": "b8f6c15f7f2dc60141e5b1664e72f5f7865d41bef48251065eef7d12f3204992",
+      "disposition": "Supported with limitations",
+      "rationale": "The accompanying journal draft contains detailed methods, runtime caveats and prospective evaluation sections.",
+      "evidence": [
+        "Research_Paper_Journal/main.tex"
+      ],
+      "limitation": "This is a document-content assertion, not external supervisor approval.",
+      "required_correction": ""
+    },
+    {
+      "occurrence_id": "C-197-2",
+      "reviewed_text_sha256": "034854ddc4a5f7f686f3545d3022c350a76115e197df8eacc386bdfd5e1cfeff",
+      "disposition": "Unsupported or contradicted",
+      "rationale": "The baseline establishes a local revision identity, but does not verify current public availability of that exact GitHub revision.",
+      "evidence": [
+        "research/evidence/validation-2026-09-12-v1/baseline.json"
+      ],
+      "limitation": "Parent's exact-revision primary web fetch failed; this review cannot assert current public access.",
+      "required_correction": "Replace the availability assertion with a local-checkout revision/repository reference and explicitly state current public access was not verified."
+    },
+    {
+      "occurrence_id": "C-197-3",
+      "reviewed_text_sha256": "9396a1d54676d2a2a7c30d3aea8d298b49c03aec6f2a14d6de6e0ead33c61b76",
+      "disposition": "Supported with limitations",
+      "rationale": "Full manifests are local ignored artifacts, whereas the tracked paper and aggregate summaries do not include them.",
+      "evidence": [
+        ".gitignore",
+        "research/READINESS.md",
+        "research/evidence/validation-2026-09-12-v1/baseline.json"
+      ],
+      "limitation": "The claim concerns current packaging; future approved artifact distribution requires separate action.",
+      "required_correction": ""
+    },
+    {
+      "occurrence_id": "C-197-4",
+      "reviewed_text_sha256": "59762fd89de37056dcee99ec9823a617bee0a5e683d0c38601b38ad37ed71ade",
+      "disposition": "Supported with limitations",
+      "rationale": "The baseline distinguishes the base commit from new working-copy validation tooling and reports.",
+      "evidence": [
+        "research/evidence/validation-2026-09-12-v1/baseline.json"
+      ],
+      "limitation": "The supplement must actually accompany the reviewed copy; it is not silently part of the linked historical revision.",
+      "required_correction": ""
+    },
+    {
+      "occurrence_id": "C-197-5",
+      "reviewed_text_sha256": "688de69e73d85cbb983e33557b011b3b4f1368a7d86c9b671b40fa94fd1c61d0",
+      "disposition": "Awaiting qualified review/approval",
+      "rationale": "Attribution alone does not constitute permission for every dataset, model or derived database artifact.",
+      "evidence": [
+        "research/evidence/validation-2026-09-12-v1/citation-review.json",
+        "research/READINESS.md"
+      ],
+      "limitation": "Actual reuse/redistribution decisions require the relevant owners and qualified advice where needed.",
+      "required_correction": ""
+    },
+    {
+      "occurrence_id": "C-201-1",
+      "reviewed_text_sha256": "bbdee515218cff6cb8b01173d11c243a130b687866b67730af6a86aaed021192",
+      "disposition": "Supported with limitations",
+      "rationale": "The review workflow explicitly uses AI-assisted inspection, citation checking and editorial support.",
+      "evidence": [
+        "research/evidence/validation-2026-09-12-v1/baseline.json",
+        "research/evidence/validation-2026-09-12-v1/citation-review.json",
+        "research/evidence/validation-2026-09-12-v1/dataset-visual-review.json"
+      ],
+      "limitation": "AI assistance does not remove author responsibility or substitute for expert review.",
+      "required_correction": ""
+    },
+    {
+      "occurrence_id": "C-201-2",
+      "reviewed_text_sha256": "a49defec139d55ce1ef2ae3ba409f2f4f2a94b6409e046bb7206d2487dd621db",
+      "disposition": "Awaiting qualified review/approval",
+      "rationale": "The listed authorship, funding, conflicts and permission confirmations are responsibilities for the authors before submission.",
+      "evidence": [
+        "Research_Paper_Journal/main.tex",
+        "research/evidence/validation-2026-09-12-v1/citation-review.json"
+      ],
+      "limitation": "No authorship consent, permission grant or submission authorization is provided by this receipt.",
+      "required_correction": ""
+    },
+    {
+      "occurrence_id": "C-201-3",
+      "reviewed_text_sha256": "040c459c3846b096aac4c9fd3bb2dae4d1cfe72fca8faa9b93d216f02a1d3fba",
+      "disposition": "Supported with limitations",
+      "rationale": "Frozen run boundaries and reports document artifact/code/mock evaluation without clinical experiments, participants or new detector training.",
+      "evidence": [
+        "research/evidence/validation-2026-09-12-v1/baseline.json",
+        "research/evidence/validation-2026-09-12-v1/training-results.json",
+        "research/evidence/validation-2026-09-12-v1/recommendations.json"
+      ],
+      "limitation": "Scoped to this validation review, not all earlier project activity.",
+      "required_correction": ""
+    },
+    {
+      "occurrence_id": "C-205-1",
+      "reviewed_text_sha256": "0d006841edaec27cad70b677b5ad18195c77ebdab97541629b2126e5f3a7046b",
+      "disposition": "Historical only",
+      "rationale": "Archived notebook outputs round to validation/test mAP 50 .830/.820 and mAP 50:95 .692/.680; strict audit establishes overlap.",
+      "evidence": [
+        "research/evidence/validation-2026-09-12-v1/training-results.json",
+        "research/evidence/audit.json",
+        "research/evidence/validation-2026-09-12-v1/numeric-checks.json"
+      ],
+      "limitation": "These are transcribed historical observations, not a new independent evaluation.",
+      "required_correction": ""
+    },
+    {
+      "occurrence_id": "C-205-2",
+      "reviewed_text_sha256": "d813c29e8bc428b900e1a8d588dd57262cfc8c77da6fdac24b4f3bb1089cb273",
+      "disposition": "Historical only",
+      "rationale": "The notebook output records Ultralytics 8.4.60, Python 3.12.13, Torch 2.10.0+cu 128 and TeslaT 4.",
+      "evidence": [
+        "research/evidence/validation-2026-09-12-v1/training-results.json",
+        "research/evidence/validation-2026-09-12-v1/numeric-checks.json"
+      ],
+      "limitation": "These logged packages/hardware are not the production CPU configuration or a complete locked environment.",
+      "required_correction": ""
+    },
+    {
+      "occurrence_id": "C-205-3",
+      "reviewed_text_sha256": "fc3995d589f352e0b9080fd5e7dec48cfb04390a19dc413b5222ada55a8572db",
+      "disposition": "Historical only",
+      "rationale": "Archived calls omit explicit confidence/NMS overrides and report approximately 11 ms/image GPU inference.",
+      "evidence": [
+        "research/evidence/validation-2026-09-12-v1/training-results.json",
+        "research/evidence/validation-2026-09-12-v1/numeric-checks.json"
+      ],
+      "limitation": "No claim that the historical defaults match production 0.25/0.45 or that 11 ms is website latency.",
+      "required_correction": ""
+    },
+    {
+      "occurrence_id": "C-205-4",
+      "reviewed_text_sha256": "316e0dc9c4abec01c1566920bc0c7b4c2cebc9d8313085991c061024db7ddcbd",
+      "disposition": "Historical only",
+      "rationale": "The inspected notebook outputs do not contain a hash of the evaluated checkpoint at execution time.",
+      "evidence": [
+        "research/evidence/validation-2026-09-12-v1/training-results.json"
+      ],
+      "limitation": "Current file equality cannot retrospectively establish immutable evaluation-time identity.",
+      "required_correction": ""
+    },
+    {
+      "occurrence_id": "C-205-5",
+      "reviewed_text_sha256": "a18d544a23cb96b2e033b0f908813603615ae99e9c12ae09c4dd2fa47fe91f66",
+      "disposition": "Historical only",
+      "rationale": "The surrounding appendix explicitly limits the archived outputs to traceability rather than clean held-out generalization.",
+      "evidence": [
+        "research/evidence/validation-2026-09-12-v1/training-results.json",
+        "Research_Paper_Conference/main.tex"
+      ],
+      "limitation": "This is an interpretation boundary on historical scores.",
+      "required_correction": ""
+    },
+    {
+      "occurrence_id": "C-205-6",
+      "reviewed_text_sha256": "2e4fca14a5d1f355663ec73456302a4076179f8c37e2877e70242614e68dcc13",
+      "disposition": "Supported with limitations",
+      "rationale": "The journal appendix names final_version_training.ipynb and distinguishes result-merge.ipynb's older checkpoint outputs.",
+      "evidence": [
+        "Research_Paper_Journal/main.tex",
+        "research/evidence/validation-2026-09-12-v1/training-results.json"
+      ],
+      "limitation": "Documentary cross-reference, not an additional historical performance result.",
+      "required_correction": "",
+      "index_annotation": "Although located in HISTORY, this sentence concerns present document content."
+    },
+    {
+      "occurrence_id": "C-205-7",
+      "reviewed_text_sha256": "8fbaf945136f5f87d9a0837f1ab08c62899bb7334d6cdc70cdf46db549b8e25e",
+      "disposition": "Historical only",
+      "rationale": "The inline subscript belongs to the historical mAP 50 metric in the enclosing sentence.",
+      "evidence": [
+        "research/evidence/validation-2026-09-12-v1/training-results.json",
+        "Research_Paper_Conference/main.tex"
+      ],
+      "limitation": "Parser-extracted notation fragment; it is not a standalone empirical claim.",
+      "required_correction": ""
+    },
+    {
+      "occurrence_id": "C-205-8",
+      "reviewed_text_sha256": "d53ee46017af696f7b05934ee0d2c1f32e7a7fdca0ac7fac09ef99968140dcc6",
+      "disposition": "Historical only",
+      "rationale": "The inline 50:95 subscript labels the historical averaged-IoU mAP metric in the enclosing sentence.",
+      "evidence": [
+        "research/evidence/validation-2026-09-12-v1/training-results.json",
+        "Research_Paper_Conference/main.tex"
+      ],
+      "limitation": "Notation fragment; no additional score or protocol evidence is supplied by the fragment alone.",
+      "required_correction": ""
+    }
+  ]
+}

@@ -41,3 +41,17 @@ public/
 web/
 frontend/out/
 frontend/*.tsbuildinfo
+
+# Generated LaTeX intermediates; retain manuscript sources, bibliographies and PDFs.
+*.aux
+*.bbl
+*.blg
+*.lof
+*.lot
+*.toc
+*.fls
+*.fdb_latexmk
+*.synctex.gz
+Project_Report/*.out
+Research_Paper_Conference/*.out
+Research_Paper_Journal/*.out

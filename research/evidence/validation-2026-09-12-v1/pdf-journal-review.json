@@ -1,0 +1,140 @@
+{
+  "schema_version": 1,
+  "run_id": "validation-2026-09-12-v1",
+  "reviewed_utc": "2026-09-12T05:56:56Z",
+  "reviewer": "AI artifact/layout reviewer; not qualified nutrition, clinical or scholarly approval",
+  "pdf": {
+    "path": "Research_Paper_Journal/main.pdf",
+    "sha256": "0d4a73464d1daa3ec1d8711006a226ca9edbe38c1cde851c0a035153ba73e726",
+    "bytes": 263939,
+    "pages": 18
+  },
+  "method": "Every supplied final page render was opened individually with view_image at original resolution (850 by 1100 pixels). Inspected layout, text boundaries, captions, display equations, visible reference numbering and appendices. No collage, image alteration, inference or manuscript edits.",
+  "render_directory": ".deployment/research/validation-2026-09-12-v1/pdf-review",
+  "status": "all_18_pages_visually_reviewed_no_blocking_layout_defect_observed",
+  "blocking_findings": [],
+  "minor_findings": [
+    {
+      "pages": [17, 18],
+      "category": "bibliography_pagination",
+      "observation": "Reference 12 continues with a single final line at the top of page 18 before reference 13. It remains legible, numbered and complete.",
+      "suggestion": "Optional final typesetting polish: keep that entry together if the eventual venue style permits. Not a correctness or clipping defect."
+    }
+  ],
+  "page_reviews": [
+    {
+      "page": 1,
+      "render": "journal-01.png",
+      "observation": "Title, author block, abstract, index terms, review-copy purpose and affiliation fit within margins. Review-draft header and page number visible. No text overlap or clipping observed.",
+      "result": "pass_visual_layout"
+    },
+    {
+      "page": 2,
+      "render": "journal-02.png",
+      "observation": "Introduction, monospace food examples and four numbered research questions are legible. Related-work heading has following text; inline citation numbers render normally.",
+      "result": "pass_visual_layout"
+    },
+    {
+      "page": 3,
+      "render": "journal-03.png",
+      "observation": "Related-work paragraphs and application-scope subsection fit cleanly. Citations, numerical model size and inference parameters render without missing-glyph or margin problems.",
+      "result": "pass_visual_layout"
+    },
+    {
+      "page": 4,
+      "render": "journal-04.png",
+      "observation": "Figure 1 branches, arrowheads, box text and caption are visible without collisions. Caption distinguishes saved meals from advice. Continued scope and nutrition-lookup subsection remain legible below the float.",
+      "result": "pass_visual_layout"
+    },
+    {
+      "page": 5,
+      "render": "journal-05.png",
+      "observation": "Lookup explanation and portion-estimate subsection are legible. Equations 1 through 3 have visible set notation, fraction, vector, indicator and equation numbers; none overlap text or extend beyond the page.",
+      "result": "pass_visual_layout"
+    },
+    {
+      "page": 6,
+      "render": "journal-06.png",
+      "observation": "Equation 4 daily sums/flags and equations 5 through 6 goal arithmetic fit within text width with separate equation numbers. Storage and health-context prose remain readable; paragraph continuation at page end is normal.",
+      "result": "pass_visual_layout"
+    },
+    {
+      "page": 7,
+      "render": "journal-07.png",
+      "observation": "Table I caption, five source rows and image total are readable and aligned. Continued advice discussion and audit-method headings do not collide with the float. Line numbers remain outside the text block.",
+      "result": "pass_visual_layout"
+    },
+    {
+      "page": 8,
+      "render": "journal-08.png",
+      "observation": "Annotation, candidate-lineage and assignment subsections are legible. Monospace source-family marker wraps within the paragraph. Equation 7 set-disjointness notation and number are visible without clipping.",
+      "result": "pass_visual_layout"
+    },
+    {
+      "page": 9,
+      "render": "journal-09.png",
+      "observation": "Lookup availability equation 8 and surrounding limitation text are legible. Software-verification and results headings render normally. Duplicate-file examples appear as two distinct readable monospace lines.",
+      "result": "pass_visual_layout"
+    },
+    {
+      "page": 10,
+      "render": "journal-10.png",
+      "observation": "Tables II and III retain complete captions, aligned columns and readable wrapping. Census rows and flags are visible. RQ2 continuation fits beneath the tables without crowding or missing content.",
+      "result": "pass_visual_layout"
+    },
+    {
+      "page": 11,
+      "render": "journal-11.png",
+      "observation": "Tables IV and V, captions, fraction denominators and availability percentages are legible. Repeatability limitations and RQ3/RQ4 prose follow cleanly. No unresolved printed table reference observed.",
+      "result": "pass_visual_layout"
+    },
+    {
+      "page": 12,
+      "render": "journal-12.png",
+      "observation": "Runtime-limit continuation and validation-follow-up subsection are legible. Dense new counts, tolerances, cross-partition comparisons and crop/mirror/rotation qualifications remain within margins with correctly rendered superscripts.",
+      "result": "pass_visual_layout"
+    },
+    {
+      "page": 13,
+      "render": "journal-13.png",
+      "observation": "Validation results continue normally into interpretation and threats to validity. Mathematical tolerances, numbered quantities and heading are readable; no overlapping or clipped paragraphs observed.",
+      "result": "pass_visual_layout"
+    },
+    {
+      "page": 14,
+      "render": "journal-14.png",
+      "observation": "Prospective-evaluation heading and independent-mapping/detection subsections are legible. Inline set subscripts render correctly. Proposed-work wording remains visibly separated from completed results.",
+      "result": "pass_visual_layout"
+    },
+    {
+      "page": 15,
+      "render": "journal-15.png",
+      "observation": "Advice evaluation, conclusion, artifact-access statement and author-confirmation sections fit within margins. Long repository-directory fragments wrap legibly; final confirmation paragraph is complete on this page.",
+      "result": "pass_visual_layout"
+    },
+    {
+      "page": 16,
+      "render": "journal-16.png",
+      "observation": "Table VI historical metrics has a complete limitation caption, aligned values and readable subscripts. Appendices A and B are distinctly headed. Notebook paths, epoch ranges, versions and historical-evidence caveats are legible.",
+      "result": "pass_visual_layout"
+    },
+    {
+      "page": 17,
+      "render": "journal-17.png",
+      "observation": "Table VII artifact names and hash prefixes are readable. References begin in order with normal hanging indentation; long URLs wrap within margins. Reference 12 continues onto the next page.",
+      "result": "pass_with_minor_pagination_note"
+    },
+    {
+      "page": 18,
+      "render": "journal-18.png",
+      "observation": "Reference 12's final line and references 13 through 22 remain visible and legible. The last citation is complete with no clipped URL or missing footer content. Remaining lower-page whitespace is ordinary end-of-bibliography space.",
+      "result": "pass_with_minor_pagination_note"
+    }
+  ],
+  "limitations": [
+    "This receipt records AI visual layout QA, not per-claim scholarly evidence adjudication.",
+    "Visible citation numbers were checked for rendering, not for source validity or external link availability.",
+    "No clinical safety, nutrition correctness, qualified annotation review, asset permission or venue readiness is approved.",
+    "The receipt applies only to the exact PDF hash above; a rebuild or edit requires fresh identity checks and relevant page review."
+  ]
+}

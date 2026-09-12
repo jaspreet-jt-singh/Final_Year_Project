@@ -1,0 +1,37 @@
+{
+  "schema_version": 1,
+  "check": "claims",
+  "attempt": 1,
+  "started_at_utc": "2026-09-12T05:58:36.806195+00:00",
+  "duration_seconds": 0.453,
+  "exit_code": 0,
+  "status": "passed",
+  "command": [
+    "python.exe",
+    "scripts/validate_paper_claims.py",
+    "--run-id",
+    "validation-2026-09-12-v1",
+    "--check"
+  ],
+  "inputs": [
+    {
+      "path": "scripts/validate_paper_claims.py",
+      "sha256": "98a4ebd4fc7f972c8d3465e3a06464fa0fde59dd34014b11fb56037b46e0047b"
+    },
+    {
+      "path": "pyproject.toml",
+      "sha256": "70f46a51785a6a13dce64e979610a701d6eaf72fa5ba56bd9c007f97b61d43f5"
+    },
+    {
+      "path": "uv.lock",
+      "sha256": "5d77a5d5474baf012f9117875ed2b975f2751aac4cd1018ffa645990131b434f"
+    },
+    {
+      "path": "frontend/package-lock.json",
+      "sha256": "81c57cbf48762774a828fba268482447dc241413a86cfebd1d868fc2edc76f40"
+    }
+  ],
+  "local_log": ".deployment/research/validation-2026-09-12-v1/checks/claims-1.log",
+  "log_sha256": "f08c91b66a5fb0528308a1c72c424c55d80ced7a5af1505c008213b60efab31b",
+  "network_policy": "Provider credentials disabled; mocked suites only. No scientific/clinical approval implied."
+}

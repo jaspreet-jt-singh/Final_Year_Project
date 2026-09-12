@@ -1,0 +1,593 @@
+{
+  "schema_version": 2,
+  "packet_sha256": "8c71503150b85ccd2b06bfc624a8154184f46b97060250c7fdce868a762e642b",
+  "database_sha256": "3bdfb92fafd21b70dd20ade7edb06d78f20fe59f283a0e61f844b5e181aa317a",
+  "class_names_sha256": "65802a243a46f4974cd183de5fe2ac503c85210bb0d30ef5c3c52919b974ff3d",
+  "workbook_sha256": "65f91911de09ebdb4b80c4a3dc3ff372a35420e05444239d8df8a42e8b5b9ecf",
+  "catalog_sha256": "2a5335b99ac7e2cfd66ec24916431c44cc7f6f9318bb118cd36a407339db14f6",
+  "reviewer": {
+    "id": "",
+    "qualifications": "",
+    "completed_at": "",
+    "independent_of_mapping_authors": false,
+    "blinded_to_predictions_until_complete": false
+  },
+  "rows": [
+    {
+      "class": "aloo_gobi",
+      "status": "pending",
+      "class_definition": "",
+      "acceptable_database_names": [],
+      "evidence": [],
+      "rationale": ""
+    },
+    {
+      "class": "aloo_masala",
+      "status": "pending",
+      "class_definition": "",
+      "acceptable_database_names": [],
+      "evidence": [],
+      "rationale": ""
+    },
+    {
+      "class": "appam",
+      "status": "pending",
+      "class_definition": "",
+      "acceptable_database_names": [],
+      "evidence": [],
+      "rationale": ""
+    },
+    {
+      "class": "beetroot_poriyal",
+      "status": "pending",
+      "class_definition": "",
+      "acceptable_database_names": [],
+      "evidence": [],
+      "rationale": ""
+    },
+    {
+      "class": "besan_cheela",
+      "status": "pending",
+      "class_definition": "",
+      "acceptable_database_names": [],
+      "evidence": [],
+      "rationale": ""
+    },
+    {
+      "class": "bhakarwadi",
+      "status": "pending",
+      "class_definition": "",
+      "acceptable_database_names": [],
+      "evidence": [],
+      "rationale": ""
+    },
+    {
+      "class": "bhakri",
+      "status": "pending",
+      "class_definition": "",
+      "acceptable_database_names": [],
+      "evidence": [],
+      "rationale": ""
+    },
+    {
+      "class": "bhatura",
+      "status": "pending",
+      "class_definition": "",
+      "acceptable_database_names": [],
+      "evidence": [],
+      "rationale": ""
+    },
+    {
+      "class": "bhindi_masala",
+      "status": "pending",
+      "class_definition": "",
+      "acceptable_database_names": [],
+      "evidence": [],
+      "rationale": ""
+    },
+    {
+      "class": "biryani",
+      "status": "pending",
+      "class_definition": "",
+      "acceptable_database_names": [],
+      "evidence": [],
+      "rationale": ""
+    },
+    {
+      "class": "carrot_poriyal",
+      "status": "pending",
+      "class_definition": "",
+      "acceptable_database_names": [],
+      "evidence": [],
+      "rationale": ""
+    },
+    {
+      "class": "chai",
+      "status": "pending",
+      "class_definition": "",
+      "acceptable_database_names": [],
+      "evidence": [],
+      "rationale": ""
+    },
+    {
+      "class": "chicken",
+      "status": "pending",
+      "class_definition": "",
+      "acceptable_database_names": [],
+      "evidence": [],
+      "rationale": ""
+    },
+    {
+      "class": "chicken_65",
+      "status": "pending",
+      "class_definition": "",
+      "acceptable_database_names": [],
+      "evidence": [],
+      "rationale": ""
+    },
+    {
+      "class": "chicken_biryani",
+      "status": "pending",
+      "class_definition": "",
+      "acceptable_database_names": [],
+      "evidence": [],
+      "rationale": ""
+    },
+    {
+      "class": "chole",
+      "status": "pending",
+      "class_definition": "",
+      "acceptable_database_names": [],
+      "evidence": [],
+      "rationale": ""
+    },
+    {
+      "class": "coconut_chutney",
+      "status": "pending",
+      "class_definition": "",
+      "acceptable_database_names": [],
+      "evidence": [],
+      "rationale": ""
+    },
+    {
+      "class": "dal",
+      "status": "pending",
+      "class_definition": "",
+      "acceptable_database_names": [],
+      "evidence": [],
+      "rationale": ""
+    },
+    {
+      "class": "dhokla",
+      "status": "pending",
+      "class_definition": "",
+      "acceptable_database_names": [],
+      "evidence": [],
+      "rationale": ""
+    },
+    {
+      "class": "dosa",
+      "status": "pending",
+      "class_definition": "",
+      "acceptable_database_names": [],
+      "evidence": [],
+      "rationale": ""
+    },
+    {
+      "class": "dum_aloo",
+      "status": "pending",
+      "class_definition": "",
+      "acceptable_database_names": [],
+      "evidence": [],
+      "rationale": ""
+    },
+    {
+      "class": "eggs",
+      "status": "pending",
+      "class_definition": "",
+      "acceptable_database_names": [],
+      "evidence": [],
+      "rationale": ""
+    },
+    {
+      "class": "fish_curry",
+      "status": "pending",
+      "class_definition": "",
+      "acceptable_database_names": [],
+      "evidence": [],
+      "rationale": ""
+    },
+    {
+      "class": "ghevar",
+      "status": "pending",
+      "class_definition": "",
+      "acceptable_database_names": [],
+      "evidence": [],
+      "rationale": ""
+    },
+    {
+      "class": "green_chutney",
+      "status": "pending",
+      "class_definition": "",
+      "acceptable_database_names": [],
+      "evidence": [],
+      "rationale": ""
+    },
+    {
+      "class": "gulab_jamun",
+      "status": "pending",
+      "class_definition": "",
+      "acceptable_database_names": [],
+      "evidence": [],
+      "rationale": ""
+    },
+    {
+      "class": "idli",
+      "status": "pending",
+      "class_definition": "",
+      "acceptable_database_names": [],
+      "evidence": [],
+      "rationale": ""
+    },
+    {
+      "class": "jalebi",
+      "status": "pending",
+      "class_definition": "",
+      "acceptable_database_names": [],
+      "evidence": [],
+      "rationale": ""
+    },
+    {
+      "class": "kaara_chutney",
+      "status": "pending",
+      "class_definition": "",
+      "acceptable_database_names": [],
+      "evidence": [],
+      "rationale": ""
+    },
+    {
+      "class": "kali",
+      "status": "pending",
+      "class_definition": "",
+      "acceptable_database_names": [],
+      "evidence": [],
+      "rationale": ""
+    },
+    {
+      "class": "kebab",
+      "status": "pending",
+      "class_definition": "",
+      "acceptable_database_names": [],
+      "evidence": [],
+      "rationale": ""
+    },
+    {
+      "class": "khandvi",
+      "status": "pending",
+      "class_definition": "",
+      "acceptable_database_names": [],
+      "evidence": [],
+      "rationale": ""
+    },
+    {
+      "class": "kheer",
+      "status": "pending",
+      "class_definition": "",
+      "acceptable_database_names": [],
+      "evidence": [],
+      "rationale": ""
+    },
+    {
+      "class": "koozh",
+      "status": "pending",
+      "class_definition": "",
+      "acceptable_database_names": [],
+      "evidence": [],
+      "rationale": ""
+    },
+    {
+      "class": "kulfi",
+      "status": "pending",
+      "class_definition": "",
+      "acceptable_database_names": [],
+      "evidence": [],
+      "rationale": ""
+    },
+    {
+      "class": "lassi",
+      "status": "pending",
+      "class_definition": "",
+      "acceptable_database_names": [],
+      "evidence": [],
+      "rationale": ""
+    },
+    {
+      "class": "lemon_rice",
+      "status": "pending",
+      "class_definition": "",
+      "acceptable_database_names": [],
+      "evidence": [],
+      "rationale": ""
+    },
+    {
+      "class": "medu_vada",
+      "status": "pending",
+      "class_definition": "",
+      "acceptable_database_names": [],
+      "evidence": [],
+      "rationale": ""
+    },
+    {
+      "class": "modak",
+      "status": "pending",
+      "class_definition": "",
+      "acceptable_database_names": [],
+      "evidence": [],
+      "rationale": ""
+    },
+    {
+      "class": "mushroom_biryani",
+      "status": "pending",
+      "class_definition": "",
+      "acceptable_database_names": [],
+      "evidence": [],
+      "rationale": ""
+    },
+    {
+      "class": "mutton_biryani",
+      "status": "pending",
+      "class_definition": "",
+      "acceptable_database_names": [],
+      "evidence": [],
+      "rationale": ""
+    },
+    {
+      "class": "mutton_curry",
+      "status": "pending",
+      "class_definition": "",
+      "acceptable_database_names": [],
+      "evidence": [],
+      "rationale": ""
+    },
+    {
+      "class": "nandu_masala",
+      "status": "pending",
+      "class_definition": "",
+      "acceptable_database_names": [],
+      "evidence": [],
+      "rationale": ""
+    },
+    {
+      "class": "nei_satham",
+      "status": "pending",
+      "class_definition": "",
+      "acceptable_database_names": [],
+      "evidence": [],
+      "rationale": ""
+    },
+    {
+      "class": "omelette",
+      "status": "pending",
+      "class_definition": "",
+      "acceptable_database_names": [],
+      "evidence": [],
+      "rationale": ""
+    },
+    {
+      "class": "onion_pakoda",
+      "status": "pending",
+      "class_definition": "",
+      "acceptable_database_names": [],
+      "evidence": [],
+      "rationale": ""
+    },
+    {
+      "class": "paal_kolukattai",
+      "status": "pending",
+      "class_definition": "",
+      "acceptable_database_names": [],
+      "evidence": [],
+      "rationale": ""
+    },
+    {
+      "class": "palak_paneer",
+      "status": "pending",
+      "class_definition": "",
+      "acceptable_database_names": [],
+      "evidence": [],
+      "rationale": ""
+    },
+    {
+      "class": "paneer_biryani",
+      "status": "pending",
+      "class_definition": "",
+      "acceptable_database_names": [],
+      "evidence": [],
+      "rationale": ""
+    },
+    {
+      "class": "paratha",
+      "status": "pending",
+      "class_definition": "",
+      "acceptable_database_names": [],
+      "evidence": [],
+      "rationale": ""
+    },
+    {
+      "class": "parupu_vadai",
+      "status": "pending",
+      "class_definition": "",
+      "acceptable_database_names": [],
+      "evidence": [],
+      "rationale": ""
+    },
+    {
+      "class": "pidi_kolukattai",
+      "status": "pending",
+      "class_definition": "",
+      "acceptable_database_names": [],
+      "evidence": [],
+      "rationale": ""
+    },
+    {
+      "class": "poha",
+      "status": "pending",
+      "class_definition": "",
+      "acceptable_database_names": [],
+      "evidence": [],
+      "rationale": ""
+    },
+    {
+      "class": "poorna_kolukattai",
+      "status": "pending",
+      "class_definition": "",
+      "acceptable_database_names": [],
+      "evidence": [],
+      "rationale": ""
+    },
+    {
+      "class": "prawn_thokku",
+      "status": "pending",
+      "class_definition": "",
+      "acceptable_database_names": [],
+      "evidence": [],
+      "rationale": ""
+    },
+    {
+      "class": "puri",
+      "status": "pending",
+      "class_definition": "",
+      "acceptable_database_names": [],
+      "evidence": [],
+      "rationale": ""
+    },
+    {
+      "class": "raita",
+      "status": "pending",
+      "class_definition": "",
+      "acceptable_database_names": [],
+      "evidence": [],
+      "rationale": ""
+    },
+    {
+      "class": "rajma_curry",
+      "status": "pending",
+      "class_definition": "",
+      "acceptable_database_names": [],
+      "evidence": [],
+      "rationale": ""
+    },
+    {
+      "class": "ras_malai",
+      "status": "pending",
+      "class_definition": "",
+      "acceptable_database_names": [],
+      "evidence": [],
+      "rationale": ""
+    },
+    {
+      "class": "rice",
+      "status": "pending",
+      "class_definition": "",
+      "acceptable_database_names": [],
+      "evidence": [],
+      "rationale": ""
+    },
+    {
+      "class": "roti",
+      "status": "pending",
+      "class_definition": "",
+      "acceptable_database_names": [],
+      "evidence": [],
+      "rationale": ""
+    },
+    {
+      "class": "saag",
+      "status": "pending",
+      "class_definition": "",
+      "acceptable_database_names": [],
+      "evidence": [],
+      "rationale": ""
+    },
+    {
+      "class": "salad",
+      "status": "pending",
+      "class_definition": "",
+      "acceptable_database_names": [],
+      "evidence": [],
+      "rationale": ""
+    },
+    {
+      "class": "sambar",
+      "status": "pending",
+      "class_definition": "",
+      "acceptable_database_names": [],
+      "evidence": [],
+      "rationale": ""
+    },
+    {
+      "class": "sambar_satham",
+      "status": "pending",
+      "class_definition": "",
+      "acceptable_database_names": [],
+      "evidence": [],
+      "rationale": ""
+    },
+    {
+      "class": "samosa",
+      "status": "pending",
+      "class_definition": "",
+      "acceptable_database_names": [],
+      "evidence": [],
+      "rationale": ""
+    },
+    {
+      "class": "shahi_paneer",
+      "status": "pending",
+      "class_definition": "",
+      "acceptable_database_names": [],
+      "evidence": [],
+      "rationale": ""
+    },
+    {
+      "class": "thepla",
+      "status": "pending",
+      "class_definition": "",
+      "acceptable_database_names": [],
+      "evidence": [],
+      "rationale": ""
+    },
+    {
+      "class": "upma",
+      "status": "pending",
+      "class_definition": "",
+      "acceptable_database_names": [],
+      "evidence": [],
+      "rationale": ""
+    },
+    {
+      "class": "veg_briyani",
+      "status": "pending",
+      "class_definition": "",
+      "acceptable_database_names": [],
+      "evidence": [],
+      "rationale": ""
+    },
+    {
+      "class": "veg_pulao",
+      "status": "pending",
+      "class_definition": "",
+      "acceptable_database_names": [],
+      "evidence": [],
+      "rationale": ""
+    },
+    {
+      "class": "ven_pongal",
+      "status": "pending",
+      "class_definition": "",
+      "acceptable_database_names": [],
+      "evidence": [],
+      "rationale": ""
+    }
+  ]
+}

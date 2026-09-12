@@ -1,0 +1,35 @@
+{
+  "schema_version": 1,
+  "check": "paper-numbers",
+  "attempt": 2,
+  "started_at_utc": "2026-09-12T05:55:35.750188+00:00",
+  "duration_seconds": 0.125,
+  "exit_code": 0,
+  "status": "passed",
+  "command": [
+    "python.exe",
+    "scripts/generate_paper_evidence.py",
+    "--check"
+  ],
+  "inputs": [
+    {
+      "path": "scripts/generate_paper_evidence.py",
+      "sha256": "532cf6266c617b176e7ce888ab30670422c168bc15c7f51d2f51f933cf98c467"
+    },
+    {
+      "path": "pyproject.toml",
+      "sha256": "70f46a51785a6a13dce64e979610a701d6eaf72fa5ba56bd9c007f97b61d43f5"
+    },
+    {
+      "path": "uv.lock",
+      "sha256": "5d77a5d5474baf012f9117875ed2b975f2751aac4cd1018ffa645990131b434f"
+    },
+    {
+      "path": "frontend/package-lock.json",
+      "sha256": "81c57cbf48762774a828fba268482447dc241413a86cfebd1d868fc2edc76f40"
+    }
+  ],
+  "local_log": ".deployment/research/validation-2026-09-12-v1/checks/paper-numbers-2.log",
+  "log_sha256": "06af5fa8fd8c27a82019187ac6d930893d3c5b4196cad55a3bd104f172074487",
+  "network_policy": "Provider credentials disabled; mocked suites only. No scientific/clinical approval implied."
+}

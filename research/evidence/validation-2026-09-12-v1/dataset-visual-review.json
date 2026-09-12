@@ -1,0 +1,2243 @@
+{
+  "command": [
+    "G:\\Projects\\Final_Year_Project\\.venv\\Scripts\\python.exe",
+    "G:\\Projects\\Final_Year_Project\\scripts\\record_dataset_visual_review.py"
+  ],
+  "conclusion": "Food is visibly present in all 65 flagged images; an invalid box is not evidence of a negative scene.",
+  "environment": {
+    "executable": "G:\\Projects\\Final_Year_Project\\.venv\\Scripts\\python.exe",
+    "pillow": "12.2.0",
+    "platform": "Windows-11-10.0.26200-SP0",
+    "python": "3.12.7 | packaged by Anaconda, Inc. | (main, Oct  4 2024, 13:17:27) [MSC v.1929 64 bit (AMD64)]",
+    "pyyaml": "6.0.3"
+  },
+  "exit_code": 0,
+  "limitations": [
+    "This is a descriptive review, not a semantic annotation correctness rate or recipe confirmation.",
+    "Existing boxes were read numerically but no corrected boxes or labels were drawn or saved.",
+    "Visual stretching, overlays and repeated-looking scenes are observational flags, not verified augmentation lineage.",
+    "No clinical judgment, image reuse permission or test independence is established.",
+    "Original files were viewed individually; initial unsupported low-detail and truncated batches were re-viewed successfully before counting."
+  ],
+  "recording_duration_seconds_not_visual_review_duration": 1.078,
+  "records": [
+    {
+      "annotation_records": [
+        {
+          "accepted_by_range_checks": false,
+          "box_edges_outside_frame_tolerance_1e_6": true,
+          "class": 60,
+          "coordinates": [
+            0.63197,
+            0.0,
+            0.0,
+            0.307501
+          ],
+          "issues": [
+            "zero_width"
+          ],
+          "line": 1,
+          "raw": "60 0.631970 0.000000 0.000000 0.307501"
+        }
+      ],
+      "expert_class_and_box_adjudication": "pending",
+      "food_visually_present": true,
+      "label_sha256": "b73675dd23903a07ef9b0fe02fc89fdc1fd3e6ffbd591af3d695eed36c0ce14b",
+      "observation": "Puffed browned flatbread over a flame; rotated black corners.",
+      "path": "test/images/test0213-roti.jpg",
+      "sha256": "af4760fe38b55d5af23b42e0e6778b3bc651dd49f1b3eb27a3d69a781689a2be"
+    },
+    {
+      "annotation_records": [
+        {
+          "accepted_by_range_checks": false,
+          "box_edges_outside_frame_tolerance_1e_6": false,
+          "class": 53,
+          "coordinates": [
+            0.328525,
+            0.406848,
+            0.0,
+            0.463531
+          ],
+          "issues": [
+            "zero_width"
+          ],
+          "line": 1,
+          "raw": "53 0.328525 0.406848 0.000000 0.463531"
+        },
+        {
+          "accepted_by_range_checks": true,
+          "box_edges_outside_frame_tolerance_1e_6": true,
+          "class": 53,
+          "coordinates": [
+            0.932592,
+            0.365169,
+            0.465407,
+            0.23513
+          ],
+          "issues": [],
+          "line": 2,
+          "raw": "53 0.932592 0.365169 0.465407 0.235130"
+        }
+      ],
+      "expert_class_and_box_adjudication": "pending",
+      "food_visually_present": true,
+      "label_sha256": "d38c5b0d72093dbb1ba73b0c20f8223839ce753eda037f42c97518aa15d937f2",
+      "observation": "White dumpling-like items on tray; hand and text overlay.",
+      "path": "test/images/test0463-poorna_kolukattai.jpg",
+      "sha256": "2c75f842d406e493418342612511145268ecc401b810383ae39a52c01b172dcf"
+    },
+    {
+      "annotation_records": [
+        {
+          "accepted_by_range_checks": false,
+          "box_edges_outside_frame_tolerance_1e_6": true,
+          "class": 3,
+          "coordinates": [
+            0.918621,
+            0.695849,
+            0.620575,
+            0.0
+          ],
+          "issues": [
+            "zero_height"
+          ],
+          "line": 1,
+          "raw": "3 0.918621 0.695849 0.620575 0.000000"
+        }
+      ],
+      "expert_class_and_box_adjudication": "pending",
+      "food_visually_present": true,
+      "label_sha256": "98f396696877fed0aa768bb571de084700d4bbcb743b45a04a5cd66efac9e1f3",
+      "observation": "Chopped red food with green garnish.",
+      "path": "test/images/test1916-beetroot_poriyal.jpg",
+      "sha256": "5c42a83b2de1a6a16ea30bc8bb6f83993a63b3539a053c9365b14f7937531078"
+    },
+    {
+      "annotation_records": [
+        {
+          "accepted_by_range_checks": false,
+          "box_edges_outside_frame_tolerance_1e_6": true,
+          "class": 59,
+          "coordinates": [
+            0.240557,
+            0.0,
+            0.0,
+            0.349165
+          ],
+          "issues": [
+            "zero_width"
+          ],
+          "line": 1,
+          "raw": "59 0.240557 0.000000 0.000000 0.349165"
+        }
+      ],
+      "expert_class_and_box_adjudication": "pending",
+      "food_visually_present": true,
+      "label_sha256": "1659988c618542931d3efe1b3609584614bd5906461416804a12896f7cd17965",
+      "observation": "White grains in blue bowl; rotated black borders.",
+      "path": "test/images/test2472-rice.jpg",
+      "sha256": "baf24f499fa75da42f6004bbbe31a09e863204481029df3037c67fa6eb19b3ff"
+    },
+    {
+      "annotation_records": [
+        {
+          "accepted_by_range_checks": false,
+          "box_edges_outside_frame_tolerance_1e_6": true,
+          "class": 14,
+          "coordinates": [
+            0.282381,
+            0.0,
+            0.0,
+            0.602284
+          ],
+          "issues": [
+            "zero_width"
+          ],
+          "line": 1,
+          "raw": "14 0.282381 0.000000 0.000000 0.602284"
+        }
+      ],
+      "expert_class_and_box_adjudication": "pending",
+      "food_visually_present": true,
+      "label_sha256": "a7d7c1ae51fafa7e20bb7718d6196d289424eae8fbbd229356c330999e221dfd",
+      "observation": "Rice with large browned pieces in a dish.",
+      "path": "test/images/test2758-chicken_biryani.jpg",
+      "sha256": "e60d0f3d27c9fd8f0b34a240bb7287b59f96e5b18fd322d7e45a48d124544558"
+    },
+    {
+      "annotation_records": [
+        {
+          "accepted_by_range_checks": true,
+          "box_edges_outside_frame_tolerance_1e_6": true,
+          "class": 60,
+          "coordinates": [
+            0.430583,
+            0.0,
+            0.419895,
+            0.046858
+          ],
+          "issues": [],
+          "line": 1,
+          "raw": "60 0.430583 0.000000 0.419895 0.046858"
+        },
+        {
+          "accepted_by_range_checks": false,
+          "box_edges_outside_frame_tolerance_1e_6": true,
+          "class": 60,
+          "coordinates": [
+            0.125057,
+            0.0,
+            0.0,
+            0.461017
+          ],
+          "issues": [
+            "zero_width"
+          ],
+          "line": 2,
+          "raw": "60 0.125057 0.000000 0.000000 0.461017"
+        }
+      ],
+      "expert_class_and_box_adjudication": "pending",
+      "food_visually_present": true,
+      "label_sha256": "95d6ccaccd3e3e01680449ec05d99260e0639337e20d897dae9f9f9d5f4dcda9",
+      "observation": "Triangular folded flatbreads on white plate; rotated borders.",
+      "path": "test/images/test3985-roti.jpg",
+      "sha256": "35282799cd476b50ccecaac161e7b20a17f4864e5aace7144edc982086e1d893"
+    },
+    {
+      "annotation_records": [
+        {
+          "accepted_by_range_checks": false,
+          "box_edges_outside_frame_tolerance_1e_6": false,
+          "class": 14,
+          "coordinates": [
+            0.669368,
+            0.325381,
+            0.543604,
+            0.0
+          ],
+          "issues": [
+            "zero_height"
+          ],
+          "line": 1,
+          "raw": "14 0.669368 0.325381 0.543604 0.000000"
+        },
+        {
+          "accepted_by_range_checks": true,
+          "box_edges_outside_frame_tolerance_1e_6": false,
+          "class": 14,
+          "coordinates": [
+            0.114786,
+            0.433522,
+            0.052574,
+            0.656922
+          ],
+          "issues": [],
+          "line": 2,
+          "raw": "14 0.114786 0.433522 0.052574 0.656922"
+        },
+        {
+          "accepted_by_range_checks": true,
+          "box_edges_outside_frame_tolerance_1e_6": true,
+          "class": 14,
+          "coordinates": [
+            0.690246,
+            0.330158,
+            0.669368,
+            0.325381
+          ],
+          "issues": [],
+          "line": 3,
+          "raw": "14 0.690246 0.330158 0.669368 0.325381"
+        }
+      ],
+      "expert_class_and_box_adjudication": "pending",
+      "food_visually_present": true,
+      "label_sha256": "d60d2e6e41344077a300bed184aa10801df19513ff1840de47d8b8424d8a7fed",
+      "observation": "Rice and browned pieces; large title and watermark.",
+      "path": "test/images/test4658-chicken_biryani.jpg",
+      "sha256": "1ba24f2274d742905a57dc6f931de6ae9144ba361e5ef8f52aeec530b84e73fa"
+    },
+    {
+      "annotation_records": [
+        {
+          "accepted_by_range_checks": false,
+          "box_edges_outside_frame_tolerance_1e_6": true,
+          "class": 37,
+          "coordinates": [
+            0.588426,
+            0.0,
+            0.0,
+            0.779945
+          ],
+          "issues": [
+            "zero_width"
+          ],
+          "line": 1,
+          "raw": "37 0.588426 0.000000 0.000000 0.779945"
+        }
+      ],
+      "expert_class_and_box_adjudication": "pending",
+      "food_visually_present": true,
+      "label_sha256": "3f1f7026a8ba2f97281e34b15da65f4b1ec9219d518e922e4216b991d35f06b1",
+      "observation": "Several golden fried ring-shaped items on platter.",
+      "path": "train/images/train0460-medu_vada.jpg",
+      "sha256": "d35b69784e65e7b3e3fe59046f12feb46368f3c5bef0e339e93bfbef0932f6de"
+    },
+    {
+      "annotation_records": [
+        {
+          "accepted_by_range_checks": false,
+          "box_edges_outside_frame_tolerance_1e_6": true,
+          "class": 60,
+          "coordinates": [
+            0.553248,
+            0.0,
+            0.0,
+            0.426943
+          ],
+          "issues": [
+            "zero_width"
+          ],
+          "line": 1,
+          "raw": "60 0.553248 0.000000 0.000000 0.426943"
+        }
+      ],
+      "expert_class_and_box_adjudication": "pending",
+      "food_visually_present": true,
+      "label_sha256": "5894e9e541edba5a7d5745e2fb74b5593f430456a5dd4b85bcc20c392b23d678",
+      "observation": "Folded flatbreads; rotated black borders.",
+      "path": "train/images/train10771-roti.jpg",
+      "sha256": "19bc2b6c5a165008492ff9147d68db26d6bc72ec08bab141113100423bebb9f0"
+    },
+    {
+      "annotation_records": [
+        {
+          "accepted_by_range_checks": false,
+          "box_edges_outside_frame_tolerance_1e_6": true,
+          "class": 21,
+          "coordinates": [
+            0.0,
+            0.0,
+            0.0,
+            0.992951
+          ],
+          "issues": [
+            "zero_width"
+          ],
+          "line": 1,
+          "raw": "21 0.000000 0.000000 0.000000 0.992951"
+        }
+      ],
+      "expert_class_and_box_adjudication": "pending",
+      "food_visually_present": true,
+      "label_sha256": "db8ea30f9d51e6682c22e0d59563c8bae9e5df50a6a97fdd31763acffb8e7aa8",
+      "observation": "Many halved egg-like items on black plate.",
+      "path": "train/images/train10842-eggs.jpg",
+      "sha256": "0ad3689f261c890435224b316eeb0cd1d242b7da9fa9d378aaac6e5e7f9ebadb"
+    },
+    {
+      "annotation_records": [
+        {
+          "accepted_by_range_checks": false,
+          "box_edges_outside_frame_tolerance_1e_6": true,
+          "class": 10,
+          "coordinates": [
+            0.364524,
+            0.0,
+            0.0,
+            0.549547
+          ],
+          "issues": [
+            "zero_width"
+          ],
+          "line": 1,
+          "raw": "10 0.364524 0.000000 0.000000 0.549547"
+        }
+      ],
+      "expert_class_and_box_adjudication": "pending",
+      "food_visually_present": true,
+      "label_sha256": "b7a5e525736df310b6ed2bf2e02243d653f093dc549980e41dbecfb06826b5f5",
+      "observation": "Orange chopped or shredded food in white bowl; coarse pixels.",
+      "path": "train/images/train11010-carrot_poriyal.jpg",
+      "sha256": "b089b57f698e576317c9bfaa8aca198f00784cbb077550ebcc4e873b3f2bf85c"
+    },
+    {
+      "annotation_records": [
+        {
+          "accepted_by_range_checks": false,
+          "box_edges_outside_frame_tolerance_1e_6": true,
+          "class": 59,
+          "coordinates": [
+            0.018982,
+            0.0,
+            0.0,
+            0.51609
+          ],
+          "issues": [
+            "zero_width"
+          ],
+          "line": 1,
+          "raw": "59 0.018982 0.000000 0.000000 0.516090"
+        }
+      ],
+      "expert_class_and_box_adjudication": "pending",
+      "food_visually_present": true,
+      "label_sha256": "9b96cf0f5eb9ed892c2eb2464b591a088f8d16b7b22e881e3b1e2a66b46e029c",
+      "observation": "White grains and metal spoon; rotated border.",
+      "path": "train/images/train1116-rice.jpg",
+      "sha256": "eceeb32fa58cbc0543a7be7ebce1de74c0c5e2f1441cca1e7183c17a8ef185d0"
+    },
+    {
+      "annotation_records": [
+        {
+          "accepted_by_range_checks": false,
+          "box_edges_outside_frame_tolerance_1e_6": false,
+          "class": 19,
+          "coordinates": [
+            1.0,
+            0.386633,
+            0.0,
+            0.208802
+          ],
+          "issues": [
+            "zero_width"
+          ],
+          "line": 1,
+          "raw": "19 1.000000 0.386633 0.000000 0.208802"
+        },
+        {
+          "accepted_by_range_checks": true,
+          "box_edges_outside_frame_tolerance_1e_6": false,
+          "class": 28,
+          "coordinates": [
+            0.283594,
+            0.19375,
+            0.308594,
+            0.182812
+          ],
+          "issues": [],
+          "line": 2,
+          "raw": "28 0.283594 0.193750 0.308594 0.182812"
+        },
+        {
+          "accepted_by_range_checks": true,
+          "box_edges_outside_frame_tolerance_1e_6": false,
+          "class": 16,
+          "coordinates": [
+            0.867969,
+            0.284375,
+            0.257812,
+            0.200781
+          ],
+          "issues": [],
+          "line": 3,
+          "raw": "16 0.867969 0.284375 0.257812 0.200781"
+        },
+        {
+          "accepted_by_range_checks": true,
+          "box_edges_outside_frame_tolerance_1e_6": false,
+          "class": 63,
+          "coordinates": [
+            0.089063,
+            0.828906,
+            0.178125,
+            0.208594
+          ],
+          "issues": [],
+          "line": 4,
+          "raw": "63 0.089063 0.828906 0.178125 0.208594"
+        }
+      ],
+      "expert_class_and_box_adjudication": "pending",
+      "food_visually_present": true,
+      "label_sha256": "b85c49315a083ba7f26e3cbcac87f13a55374d9f5a13da0627a3b2ec449e7cdf",
+      "observation": "Elongated crepe-like item with several sauces; mixed meal.",
+      "path": "train/images/train11420-coconut_chutney.jpg",
+      "sha256": "5222162561c979316e90bbad5bbb16dc32a030e6a1793e4969f7fcace49a2f3c"
+    },
+    {
+      "annotation_records": [
+        {
+          "accepted_by_range_checks": false,
+          "box_edges_outside_frame_tolerance_1e_6": true,
+          "class": 3,
+          "coordinates": [
+            1.0,
+            0.154424,
+            0.864407,
+            0.0
+          ],
+          "issues": [
+            "zero_height"
+          ],
+          "line": 1,
+          "raw": "3 1.000000 0.154424 0.864407 0.000000"
+        }
+      ],
+      "expert_class_and_box_adjudication": "pending",
+      "food_visually_present": true,
+      "label_sha256": "6c2f82f0d9d2147c31724846476788f40b2e06199bbc1ee6be56f7255c65569e",
+      "observation": "Red chopped food in white tray; stretched or rotated appearance.",
+      "path": "train/images/train12329-beetroot_poriyal.jpg",
+      "sha256": "16209814e72e72bf41d2e52f46444e88bad5dd30ae2ee7e723351837b518d7d9"
+    },
+    {
+      "annotation_records": [
+        {
+          "accepted_by_range_checks": false,
+          "box_edges_outside_frame_tolerance_1e_6": true,
+          "class": 60,
+          "coordinates": [
+            0.277603,
+            0.0,
+            0.0,
+            0.311091
+          ],
+          "issues": [
+            "zero_width"
+          ],
+          "line": 1,
+          "raw": "60 0.277603 0.000000 0.000000 0.311091"
+        }
+      ],
+      "expert_class_and_box_adjudication": "pending",
+      "food_visually_present": true,
+      "label_sha256": "cd833839e0ad63e511a53f034e07206d6eb39795bc86c8803e2167d415859551",
+      "observation": "Browned round flatbread; rotated black borders.",
+      "path": "train/images/train13295-roti.jpg",
+      "sha256": "443cb8e2928cfc6544e2a27bfd4f7920853374c37c13e0c1671c3168d8216f0d"
+    },
+    {
+      "annotation_records": [
+        {
+          "accepted_by_range_checks": false,
+          "box_edges_outside_frame_tolerance_1e_6": true,
+          "class": 59,
+          "coordinates": [
+            0.26168,
+            0.0,
+            0.0,
+            0.324834
+          ],
+          "issues": [
+            "zero_width"
+          ],
+          "line": 1,
+          "raw": "59 0.261680 0.000000 0.000000 0.324834"
+        }
+      ],
+      "expert_class_and_box_adjudication": "pending",
+      "food_visually_present": true,
+      "label_sha256": "6df63a90d59ee6ba32870719ee3fc04bc598e265c957d13942478bb7124fbc3a",
+      "observation": "White grains in brown bowl; rotated border.",
+      "path": "train/images/train13511-rice.jpg",
+      "sha256": "96c2f375a698f97e61e8c33cf2de8b41a14401966e226422277d80c650697577"
+    },
+    {
+      "annotation_records": [
+        {
+          "accepted_by_range_checks": false,
+          "box_edges_outside_frame_tolerance_1e_6": true,
+          "class": 59,
+          "coordinates": [
+            0.169342,
+            0.0,
+            0.0,
+            0.40069
+          ],
+          "issues": [
+            "zero_width"
+          ],
+          "line": 1,
+          "raw": "59 0.169342 0.000000 0.000000 0.400690"
+        }
+      ],
+      "expert_class_and_box_adjudication": "pending",
+      "food_visually_present": true,
+      "label_sha256": "06c5fa26904c8a9bf2b81c03eb4312b418a504787d9ec036bd2a3148f8263c3e",
+      "observation": "Close-up white grains; rotated black borders.",
+      "path": "train/images/train1467-rice.jpg",
+      "sha256": "56d347a484d1f2b868bdc3e8eedbbab39f0d6eda1dde9b432fdf0c969389f59e"
+    },
+    {
+      "annotation_records": [
+        {
+          "accepted_by_range_checks": false,
+          "box_edges_outside_frame_tolerance_1e_6": false,
+          "class": 19,
+          "coordinates": [
+            0.990196,
+            0.436204,
+            0.0,
+            0.033778
+          ],
+          "issues": [
+            "zero_width"
+          ],
+          "line": 1,
+          "raw": "19 0.990196 0.436204 0.000000 0.033778"
+        },
+        {
+          "accepted_by_range_checks": true,
+          "box_edges_outside_frame_tolerance_1e_6": true,
+          "class": 16,
+          "coordinates": [
+            0.916875,
+            0.758077,
+            0.945759,
+            0.66027
+          ],
+          "issues": [],
+          "line": 2,
+          "raw": "16 0.916875 0.758077 0.945759 0.660270"
+        },
+        {
+          "accepted_by_range_checks": true,
+          "box_edges_outside_frame_tolerance_1e_6": true,
+          "class": 63,
+          "coordinates": [
+            0.772454,
+            0.829209,
+            0.763567,
+            0.733181
+          ],
+          "issues": [],
+          "line": 3,
+          "raw": "63 0.772454 0.829209 0.763567 0.733181"
+        }
+      ],
+      "expert_class_and_box_adjudication": "pending",
+      "food_visually_present": true,
+      "label_sha256": "27cbc7cf4deef357091fde78a796e605ab66c0774663a7321a5637cdad06f38e",
+      "observation": "Triangular crepe-like item with pale topping and multiple sauces; watermark.",
+      "path": "train/images/train14719-coconut_chutney.jpg",
+      "sha256": "071acc985bf5b35d0fcf1e3007d600ef5a96d521c161c180724d261a6d5df1da"
+    },
+    {
+      "annotation_records": [
+        {
+          "accepted_by_range_checks": false,
+          "box_edges_outside_frame_tolerance_1e_6": true,
+          "class": 42,
+          "coordinates": [
+            0.991392,
+            0.024558,
+            0.077542,
+            0.0
+          ],
+          "issues": [
+            "zero_height"
+          ],
+          "line": 1,
+          "raw": "42 0.991392 0.024558 0.077542 0.000000"
+        }
+      ],
+      "expert_class_and_box_adjudication": "pending",
+      "food_visually_present": true,
+      "label_sha256": "5de9ce5ff349dfc06f54dc23d2ab356db9da93d020a3ed3d34f7085b64346be7",
+      "observation": "Claw-like pieces in sauce; watermark.",
+      "path": "train/images/train14854-nandu_masala.jpg",
+      "sha256": "68855c4b701bec93ae31f5cad28cec4445eea876cd8d8f3b5bbce4d1f1d60f7b"
+    },
+    {
+      "annotation_records": [
+        {
+          "accepted_by_range_checks": false,
+          "box_edges_outside_frame_tolerance_1e_6": true,
+          "class": 59,
+          "coordinates": [
+            0.201738,
+            0.0,
+            0.0,
+            0.376168
+          ],
+          "issues": [
+            "zero_width"
+          ],
+          "line": 1,
+          "raw": "59 0.201738 0.000000 0.000000 0.376168"
+        }
+      ],
+      "expert_class_and_box_adjudication": "pending",
+      "food_visually_present": true,
+      "label_sha256": "77a4c888249a7583d99a93069430dc7598a8517030145a7b9733b6e8621c6b88",
+      "observation": "White grains on wooden spoon and in pot; rotated borders.",
+      "path": "train/images/train15440-rice.jpg",
+      "sha256": "ad27999fefed5cea42d6f4dbf88f2ce386e000f9da9dff2237dfb6eb2680fd59"
+    },
+    {
+      "annotation_records": [
+        {
+          "accepted_by_range_checks": false,
+          "box_edges_outside_frame_tolerance_1e_6": true,
+          "class": 60,
+          "coordinates": [
+            0.366025,
+            0.0,
+            0.0,
+            0.211325
+          ],
+          "issues": [
+            "zero_width"
+          ],
+          "line": 1,
+          "raw": "60 0.366025 0.000000 0.000000 0.211325"
+        }
+      ],
+      "expert_class_and_box_adjudication": "pending",
+      "food_visually_present": true,
+      "label_sha256": "714361027559f217f4a0599dfab59c50f70cfb5986f63ba3a11cb16dbd1687b9",
+      "observation": "Browned round flatbread; rotated black corners.",
+      "path": "train/images/train16670-roti.jpg",
+      "sha256": "779ae9a6c294f095f26cf9bdc169fce617d1bba5658ae8f15115a7af944950e5"
+    },
+    {
+      "annotation_records": [
+        {
+          "accepted_by_range_checks": false,
+          "box_edges_outside_frame_tolerance_1e_6": true,
+          "class": 2,
+          "coordinates": [
+            0.00193,
+            0.0,
+            0.0,
+            0.665642
+          ],
+          "issues": [
+            "zero_width"
+          ],
+          "line": 1,
+          "raw": "2 0.001930 0.000000 0.000000 0.665642"
+        }
+      ],
+      "expert_class_and_box_adjudication": "pending",
+      "food_visually_present": true,
+      "label_sha256": "14f5c8b255b85d203ba06403b5153471e952c5d9e9367ef21005bd9246ca8835",
+      "observation": "Two bowl-shaped crepe-like items and sauce; coarse pixels.",
+      "path": "train/images/train17222-appam.jpg",
+      "sha256": "cc4d43d0b112a077b7f8970ef24d444ec1b50308dbe0c2feae96f58c4136dcd1"
+    },
+    {
+      "annotation_records": [
+        {
+          "accepted_by_range_checks": false,
+          "box_edges_outside_frame_tolerance_1e_6": true,
+          "class": 53,
+          "coordinates": [
+            0.028036,
+            0.276613,
+            0.0,
+            0.773922
+          ],
+          "issues": [
+            "zero_width"
+          ],
+          "line": 1,
+          "raw": "53 0.028036 0.276613 0.000000 0.773922"
+        }
+      ],
+      "expert_class_and_box_adjudication": "pending",
+      "food_visually_present": true,
+      "label_sha256": "51ccb1d92bc75a06c0551efe9fb697a24aa58a8c8558c4d79d7454ad51fe3e5e",
+      "observation": "Composite of white filled dumpling-like items and halves; black bars.",
+      "path": "train/images/train17878-poorna_kolukattai.jpg",
+      "sha256": "1616ae0014489800cc5a605d3518a6389451f43df238b9404bc3320326a75b6d"
+    },
+    {
+      "annotation_records": [
+        {
+          "accepted_by_range_checks": false,
+          "box_edges_outside_frame_tolerance_1e_6": false,
+          "class": 19,
+          "coordinates": [
+            0.721005,
+            0.891992,
+            0.286077,
+            0.0
+          ],
+          "issues": [
+            "zero_height"
+          ],
+          "line": 1,
+          "raw": "19 0.721005 0.891992 0.286077 0.000000"
+        }
+      ],
+      "expert_class_and_box_adjudication": "pending",
+      "food_visually_present": true,
+      "label_sha256": "05c220648482730d971645e66cc0fed25114fe21629307a2217a985faececd89",
+      "observation": "Folded golden crepe-like item with two sauces.",
+      "path": "train/images/train19562-dosa.jpg",
+      "sha256": "4700861f21adeb31f6de44cdc54a9b12974d6ed5897142833e8940d06b4398cf"
+    },
+    {
+      "annotation_records": [
+        {
+          "accepted_by_range_checks": false,
+          "box_edges_outside_frame_tolerance_1e_6": true,
+          "class": 3,
+          "coordinates": [
+            1.0,
+            0.252722,
+            0.546573,
+            0.0
+          ],
+          "issues": [
+            "zero_height"
+          ],
+          "line": 1,
+          "raw": "3 1.000000 0.252722 0.546573 0.000000"
+        }
+      ],
+      "expert_class_and_box_adjudication": "pending",
+      "food_visually_present": true,
+      "label_sha256": "d326816d2280b47b8de0bda8b20497a30728e42b87b83885918d9f04f101f285",
+      "observation": "Diced red food and herbs; coarse or stretched appearance.",
+      "path": "train/images/train20505-beetroot_poriyal.jpg",
+      "sha256": "fc4700784878317af610a1d9cecaee89959312866c69b60c422aaa070ecc0e47"
+    },
+    {
+      "annotation_records": [
+        {
+          "accepted_by_range_checks": false,
+          "box_edges_outside_frame_tolerance_1e_6": true,
+          "class": 2,
+          "coordinates": [
+            0.991764,
+            0.004981,
+            0.084923,
+            0.0
+          ],
+          "issues": [
+            "zero_height"
+          ],
+          "line": 1,
+          "raw": "2 0.991764 0.004981 0.084923 0.000000"
+        }
+      ],
+      "expert_class_and_box_adjudication": "pending",
+      "food_visually_present": true,
+      "label_sha256": "48e4bd3b2cf56fc404f61ae3812925ee7c846a1bc009115fdc1869c5c0651cee",
+      "observation": "Pale porous crepe-like items.",
+      "path": "train/images/train21567-appam.jpg",
+      "sha256": "93a5eb6bb12d24f50ba1fefdcff5e8a8e232f439a7efc10495b48ebefb932f11"
+    },
+    {
+      "annotation_records": [
+        {
+          "accepted_by_range_checks": false,
+          "box_edges_outside_frame_tolerance_1e_6": true,
+          "class": 59,
+          "coordinates": [
+            0.264855,
+            0.0,
+            0.0,
+            0.331137
+          ],
+          "issues": [
+            "zero_width"
+          ],
+          "line": 1,
+          "raw": "59 0.264855 0.000000 0.000000 0.331137"
+        }
+      ],
+      "expert_class_and_box_adjudication": "pending",
+      "food_visually_present": true,
+      "label_sha256": "d92efa6869493a40709509ead9bd407e753f7ff52a5947b49e47a86d5f527cdd",
+      "observation": "White grains in white bowl; rotated borders.",
+      "path": "train/images/train21934-rice.jpg",
+      "sha256": "d9e4ffc707765b605b5e7705fd1d0f9206d4bf1c84c14ea98283a8b18e51b24a"
+    },
+    {
+      "annotation_records": [
+        {
+          "accepted_by_range_checks": false,
+          "box_edges_outside_frame_tolerance_1e_6": false,
+          "class": 19,
+          "coordinates": [
+            0.153762,
+            0.269799,
+            0.0,
+            0.298176
+          ],
+          "issues": [
+            "zero_width"
+          ],
+          "line": 1,
+          "raw": "19 0.153762 0.269799 0.000000 0.298176"
+        },
+        {
+          "accepted_by_range_checks": true,
+          "box_edges_outside_frame_tolerance_1e_6": false,
+          "class": 26,
+          "coordinates": [
+            0.438606,
+            0.167442,
+            0.233569,
+            0.327532
+          ],
+          "issues": [],
+          "line": 2,
+          "raw": "26 0.438606 0.167442 0.233569 0.327532"
+        },
+        {
+          "accepted_by_range_checks": true,
+          "box_edges_outside_frame_tolerance_1e_6": true,
+          "class": 28,
+          "coordinates": [
+            0.91195,
+            0.595331,
+            0.788378,
+            0.571839
+          ],
+          "issues": [],
+          "line": 3,
+          "raw": "28 0.911950 0.595331 0.788378 0.571839"
+        }
+      ],
+      "expert_class_and_box_adjudication": "pending",
+      "food_visually_present": true,
+      "label_sha256": "1c2cdd2b46fb2a14d9a462675005a3b1e2eae71fd427f557f197bdb199cef9e6",
+      "observation": "Mixed plate with rolled crepe-like item, white cakes, sauces and title.",
+      "path": "train/images/train24133-dosa.jpg",
+      "sha256": "3b860b90c7c8ee05d87574961355aebaf720fb49e139b302f6feb069ae50c981"
+    },
+    {
+      "annotation_records": [
+        {
+          "accepted_by_range_checks": true,
+          "box_edges_outside_frame_tolerance_1e_6": true,
+          "class": 19,
+          "coordinates": [
+            0.922218,
+            0.222213,
+            0.853285,
+            0.148019
+          ],
+          "issues": [],
+          "line": 1,
+          "raw": "19 0.922218 0.222213 0.853285 0.148019"
+        },
+        {
+          "accepted_by_range_checks": false,
+          "box_edges_outside_frame_tolerance_1e_6": false,
+          "class": 28,
+          "coordinates": [
+            0.099769,
+            0.363536,
+            0.0,
+            0.395333
+          ],
+          "issues": [
+            "zero_width"
+          ],
+          "line": 2,
+          "raw": "28 0.099769 0.363536 0.000000 0.395333"
+        },
+        {
+          "accepted_by_range_checks": true,
+          "box_edges_outside_frame_tolerance_1e_6": false,
+          "class": 16,
+          "coordinates": [
+            0.402839,
+            0.252244,
+            0.286365,
+            0.201015
+          ],
+          "issues": [],
+          "line": 3,
+          "raw": "16 0.402839 0.252244 0.286365 0.201015"
+        }
+      ],
+      "expert_class_and_box_adjudication": "pending",
+      "food_visually_present": true,
+      "label_sha256": "30cf358e9d183cfa7086fe4d97a3cef47e96b652eaa8967a558401d72ab52a1b",
+      "observation": "Folded crepe-like item with pale pat, yellow side and white/red sauces.",
+      "path": "train/images/train24316-coconut_chutney.jpg",
+      "sha256": "1ab66b021dbb5f310d9255e6ab57e755abebba3f459193bc44cd697f26a9f076"
+    },
+    {
+      "annotation_records": [
+        {
+          "accepted_by_range_checks": true,
+          "box_edges_outside_frame_tolerance_1e_6": true,
+          "class": 59,
+          "coordinates": [
+            1.0,
+            0.449101,
+            0.887305,
+            0.102211
+          ],
+          "issues": [],
+          "line": 1,
+          "raw": "59 1.000000 0.449101 0.887305 0.102211"
+        },
+        {
+          "accepted_by_range_checks": true,
+          "box_edges_outside_frame_tolerance_1e_6": true,
+          "class": 59,
+          "coordinates": [
+            0.523557,
+            1.0,
+            0.579408,
+            0.92089
+          ],
+          "issues": [],
+          "line": 2,
+          "raw": "59 0.523557 1.000000 0.579408 0.920890"
+        },
+        {
+          "accepted_by_range_checks": false,
+          "box_edges_outside_frame_tolerance_1e_6": true,
+          "class": 59,
+          "coordinates": [
+            0.434049,
+            0.0,
+            0.0,
+            0.151877
+          ],
+          "issues": [
+            "zero_width"
+          ],
+          "line": 3,
+          "raw": "59 0.434049 0.000000 0.000000 0.151877"
+        }
+      ],
+      "expert_class_and_box_adjudication": "pending",
+      "food_visually_present": true,
+      "label_sha256": "55c2261c399777f139ac8e1d49c2c329e7eda2c57030b6bf7b69bf835059a040",
+      "observation": "Three pots of brown and white grains; rotated borders.",
+      "path": "train/images/train24354-rice.jpg",
+      "sha256": "7f7254032c1c50aaf4a3460d84d985cd96f7de73f3df437f6a33f93d16b14012"
+    },
+    {
+      "annotation_records": [
+        {
+          "accepted_by_range_checks": true,
+          "box_edges_outside_frame_tolerance_1e_6": true,
+          "class": 28,
+          "coordinates": [
+            0.895427,
+            0.885973,
+            1.0,
+            0.748559
+          ],
+          "issues": [],
+          "line": 1,
+          "raw": "28 0.895427 0.885973 1.000000 0.748559"
+        },
+        {
+          "accepted_by_range_checks": true,
+          "box_edges_outside_frame_tolerance_1e_6": true,
+          "class": 24,
+          "coordinates": [
+            0.895427,
+            0.101902,
+            0.760996,
+            0.055019
+          ],
+          "issues": [],
+          "line": 2,
+          "raw": "24 0.895427 0.101902 0.760996 0.055019"
+        },
+        {
+          "accepted_by_range_checks": false,
+          "box_edges_outside_frame_tolerance_1e_6": true,
+          "class": 19,
+          "coordinates": [
+            0.006957,
+            0.331465,
+            0.0,
+            0.746942
+          ],
+          "issues": [
+            "zero_width"
+          ],
+          "line": 3,
+          "raw": "19 0.006957 0.331465 0.000000 0.746942"
+        }
+      ],
+      "expert_class_and_box_adjudication": "pending",
+      "food_visually_present": true,
+      "label_sha256": "7eed5782d4dec78c87421b19a3a7de7fc575a6a4185118324d183724e571b52f",
+      "observation": "Folded browned crepe-like items with green and orange sauces.",
+      "path": "train/images/train26817-dosa.jpg",
+      "sha256": "ae7872a5c8d528c63f2ba1ac860a3ebf29baf5c2c67713d4482233c24dbc6f60"
+    },
+    {
+      "annotation_records": [
+        {
+          "accepted_by_range_checks": false,
+          "box_edges_outside_frame_tolerance_1e_6": true,
+          "class": 59,
+          "coordinates": [
+            0.86491,
+            0.0,
+            0.0,
+            0.02847
+          ],
+          "issues": [
+            "zero_width"
+          ],
+          "line": 1,
+          "raw": "59 0.864910 0.000000 0.000000 0.028470"
+        }
+      ],
+      "expert_class_and_box_adjudication": "pending",
+      "food_visually_present": true,
+      "label_sha256": "8123cf909daac18e9c7cfad7c01d512006117398d9a8e9b95de5add7f57a155b",
+      "observation": "White grains and wooden spoon; slightly rotated view.",
+      "path": "train/images/train27689-rice.jpg",
+      "sha256": "513e7356617192c7263ab8ea3558a812c5640aaebaf389506f0ce28a27447b96"
+    },
+    {
+      "annotation_records": [
+        {
+          "accepted_by_range_checks": false,
+          "box_edges_outside_frame_tolerance_1e_6": true,
+          "class": 2,
+          "coordinates": [
+            0.00193,
+            0.0,
+            0.0,
+            0.665642
+          ],
+          "issues": [
+            "zero_width"
+          ],
+          "line": 1,
+          "raw": "2 0.001930 0.000000 0.000000 0.665642"
+        }
+      ],
+      "expert_class_and_box_adjudication": "pending",
+      "food_visually_present": true,
+      "label_sha256": "14f5c8b255b85d203ba06403b5153471e952c5d9e9367ef21005bd9246ca8835",
+      "observation": "Two bowl-shaped browned crepe-like items and a bowl of sauce; coarse pixels.",
+      "path": "train/images/train27836-appam.jpg",
+      "sha256": "4d6edd535ae6a3bb997fba2925696a89767c4d208c7e5c4fce4eec24383cf55b"
+    },
+    {
+      "annotation_records": [
+        {
+          "accepted_by_range_checks": false,
+          "box_edges_outside_frame_tolerance_1e_6": true,
+          "class": 2,
+          "coordinates": [
+            0.991764,
+            0.004981,
+            0.084923,
+            0.0
+          ],
+          "issues": [
+            "zero_height"
+          ],
+          "line": 1,
+          "raw": "2 0.991764 0.004981 0.084923 0.000000"
+        }
+      ],
+      "expert_class_and_box_adjudication": "pending",
+      "food_visually_present": true,
+      "label_sha256": "48e4bd3b2cf56fc404f61ae3812925ee7c846a1bc009115fdc1869c5c0651cee",
+      "observation": "Several pale porous crepe-like items on green surface.",
+      "path": "train/images/train27907-appam.jpg",
+      "sha256": "c1c7f45088eaa9998246205770cf2bb2133cd074612d51047676496416fdd2b5"
+    },
+    {
+      "annotation_records": [
+        {
+          "accepted_by_range_checks": false,
+          "box_edges_outside_frame_tolerance_1e_6": true,
+          "class": 3,
+          "coordinates": [
+            0.0,
+            0.252722,
+            0.546573,
+            0.0
+          ],
+          "issues": [
+            "zero_height"
+          ],
+          "line": 1,
+          "raw": "3 0.000000 0.252722 0.546573 0.000000"
+        }
+      ],
+      "expert_class_and_box_adjudication": "pending",
+      "food_visually_present": true,
+      "label_sha256": "7695ea4e7fc4f96b9bbb0a66201fea61571fde1b226b400959cb66bc53bf2237",
+      "observation": "Chopped red pieces with green garnish; stretched or coarse appearance.",
+      "path": "train/images/train28061-beetroot_poriyal.jpg",
+      "sha256": "3fd0d22e08255c326e63559f7ed99c3a2e055cd617b514e1f0af491af85b9ce0"
+    },
+    {
+      "annotation_records": [
+        {
+          "accepted_by_range_checks": false,
+          "box_edges_outside_frame_tolerance_1e_6": true,
+          "class": 3,
+          "coordinates": [
+            0.0,
+            0.449177,
+            0.825913,
+            0.0
+          ],
+          "issues": [
+            "zero_height"
+          ],
+          "line": 1,
+          "raw": "3 0.000000 0.449177 0.825913 0.000000"
+        }
+      ],
+      "expert_class_and_box_adjudication": "pending",
+      "food_visually_present": true,
+      "label_sha256": "e2b2458f20a57ee8dd020dd5f448ce24d24ebc17311099174e79f928d501ea0f",
+      "observation": "Close-up red chopped food and small green pieces; pronounced vertical stretching.",
+      "path": "train/images/train28105-beetroot_poriyal.jpg",
+      "sha256": "32ce4f8ddd14d438127acbcc6e9f16e78c9d51f2a16e0d9405499b93b870612f"
+    },
+    {
+      "annotation_records": [
+        {
+          "accepted_by_range_checks": false,
+          "box_edges_outside_frame_tolerance_1e_6": true,
+          "class": 3,
+          "coordinates": [
+            0.0,
+            0.154424,
+            0.864407,
+            0.0
+          ],
+          "issues": [
+            "zero_height"
+          ],
+          "line": 1,
+          "raw": "3 0.000000 0.154424 0.864407 0.000000"
+        }
+      ],
+      "expert_class_and_box_adjudication": "pending",
+      "food_visually_present": true,
+      "label_sha256": "96e5485c35c84ac706a7f1006288f83fbd6f6fec109bf6fabcf91f5e67523ceb",
+      "observation": "Red shredded food in white dish; stretched appearance.",
+      "path": "train/images/train28115-beetroot_poriyal.jpg",
+      "sha256": "7d046ee103fe61964aea480456b413490fcd7192c2c23f1550815c2145fe116b"
+    },
+    {
+      "annotation_records": [
+        {
+          "accepted_by_range_checks": false,
+          "box_edges_outside_frame_tolerance_1e_6": true,
+          "class": 10,
+          "coordinates": [
+            0.635476,
+            0.0,
+            0.0,
+            0.549547
+          ],
+          "issues": [
+            "zero_width"
+          ],
+          "line": 1,
+          "raw": "10 0.635476 0.000000 0.000000 0.549547"
+        }
+      ],
+      "expert_class_and_box_adjudication": "pending",
+      "food_visually_present": true,
+      "label_sha256": "f552e86c2b680f3e05e2779417a71949570b44c18fb8d2ee08cdf9930a985cd6",
+      "observation": "Orange and yellow chopped pieces in white bowl; coarse stretched appearance.",
+      "path": "train/images/train28773-carrot_poriyal.jpg",
+      "sha256": "b3a0297abec0beb54e7fed5bc51a5dcc1a00ba3653f9691b525c9be05a6ce7fb"
+    },
+    {
+      "annotation_records": [
+        {
+          "accepted_by_range_checks": false,
+          "box_edges_outside_frame_tolerance_1e_6": true,
+          "class": 19,
+          "coordinates": [
+            0.218056,
+            0.0,
+            0.0,
+            0.332728
+          ],
+          "issues": [
+            "zero_width"
+          ],
+          "line": 1,
+          "raw": "19 0.218056 0.000000 0.000000 0.332728"
+        }
+      ],
+      "expert_class_and_box_adjudication": "pending",
+      "food_visually_present": true,
+      "label_sha256": "955c2329a525c57d61fe362fa9d50e5fbfeec3a1e5dc3a5ebb7e6847df532f48",
+      "observation": "Two overlapping golden folded crepe-like items on white plate.",
+      "path": "train/images/train2900-dosa.jpg",
+      "sha256": "552a534f864d0d581dbe6bb81ea0901eb5d32f87aaab92aed60e40cb54615feb"
+    },
+    {
+      "annotation_records": [
+        {
+          "accepted_by_range_checks": true,
+          "box_edges_outside_frame_tolerance_1e_6": true,
+          "class": 28,
+          "coordinates": [
+            0.895427,
+            0.885973,
+            1.0,
+            0.748559
+          ],
+          "issues": [],
+          "line": 1,
+          "raw": "28 0.895427 0.885973 1.000000 0.748559"
+        },
+        {
+          "accepted_by_range_checks": true,
+          "box_edges_outside_frame_tolerance_1e_6": true,
+          "class": 24,
+          "coordinates": [
+            0.895427,
+            0.101902,
+            0.760996,
+            0.055019
+          ],
+          "issues": [],
+          "line": 2,
+          "raw": "24 0.895427 0.101902 0.760996 0.055019"
+        },
+        {
+          "accepted_by_range_checks": false,
+          "box_edges_outside_frame_tolerance_1e_6": true,
+          "class": 19,
+          "coordinates": [
+            0.006957,
+            0.331465,
+            0.0,
+            0.746942
+          ],
+          "issues": [
+            "zero_width"
+          ],
+          "line": 3,
+          "raw": "19 0.006957 0.331465 0.000000 0.746942"
+        }
+      ],
+      "expert_class_and_box_adjudication": "pending",
+      "food_visually_present": true,
+      "label_sha256": "7eed5782d4dec78c87421b19a3a7de7fc575a6a4185118324d183724e571b52f",
+      "observation": "Golden rolled crepe-like item with separate green and orange sauces.",
+      "path": "train/images/train30254-dosa.jpg",
+      "sha256": "36ee5c486d1c8e1938f9a7b27bf9b3cf180348478e8616d35cade6274e5714d6"
+    },
+    {
+      "annotation_records": [
+        {
+          "accepted_by_range_checks": false,
+          "box_edges_outside_frame_tolerance_1e_6": false,
+          "class": 19,
+          "coordinates": [
+            0.0,
+            0.386633,
+            0.0,
+            0.208802
+          ],
+          "issues": [
+            "zero_width"
+          ],
+          "line": 1,
+          "raw": "19 0.000000 0.386633 0.000000 0.208802"
+        },
+        {
+          "accepted_by_range_checks": true,
+          "box_edges_outside_frame_tolerance_1e_6": false,
+          "class": 28,
+          "coordinates": [
+            0.716406,
+            0.19375,
+            0.308594,
+            0.182812
+          ],
+          "issues": [],
+          "line": 2,
+          "raw": "28 0.716406 0.193750 0.308594 0.182812"
+        },
+        {
+          "accepted_by_range_checks": true,
+          "box_edges_outside_frame_tolerance_1e_6": false,
+          "class": 16,
+          "coordinates": [
+            0.132031,
+            0.284375,
+            0.257812,
+            0.200781
+          ],
+          "issues": [],
+          "line": 3,
+          "raw": "16 0.132031 0.284375 0.257812 0.200781"
+        },
+        {
+          "accepted_by_range_checks": true,
+          "box_edges_outside_frame_tolerance_1e_6": false,
+          "class": 63,
+          "coordinates": [
+            0.910937,
+            0.828906,
+            0.178125,
+            0.208594
+          ],
+          "issues": [],
+          "line": 4,
+          "raw": "63 0.910937 0.828906 0.178125 0.208594"
+        }
+      ],
+      "expert_class_and_box_adjudication": "pending",
+      "food_visually_present": true,
+      "label_sha256": "92f4aeafdd40c936d1eff7971dda7ddb8acaca109baa76ff56a8ed674a848018",
+      "observation": "Long rolled crepe-like item and three colored sauces; black background.",
+      "path": "train/images/train30335-coconut_chutney.jpg",
+      "sha256": "8243ca0a37b40181d49f29ed02aa214f85bb048a79d9bf1411c7c3c4d0859f97"
+    },
+    {
+      "annotation_records": [
+        {
+          "accepted_by_range_checks": true,
+          "box_edges_outside_frame_tolerance_1e_6": true,
+          "class": 19,
+          "coordinates": [
+            0.077782,
+            0.222213,
+            0.853285,
+            0.148019
+          ],
+          "issues": [],
+          "line": 1,
+          "raw": "19 0.077782 0.222213 0.853285 0.148019"
+        },
+        {
+          "accepted_by_range_checks": false,
+          "box_edges_outside_frame_tolerance_1e_6": false,
+          "class": 28,
+          "coordinates": [
+            0.900231,
+            0.363536,
+            0.0,
+            0.395333
+          ],
+          "issues": [
+            "zero_width"
+          ],
+          "line": 2,
+          "raw": "28 0.900231 0.363536 0.000000 0.395333"
+        },
+        {
+          "accepted_by_range_checks": true,
+          "box_edges_outside_frame_tolerance_1e_6": false,
+          "class": 16,
+          "coordinates": [
+            0.597161,
+            0.252244,
+            0.286365,
+            0.201015
+          ],
+          "issues": [],
+          "line": 3,
+          "raw": "16 0.597161 0.252244 0.286365 0.201015"
+        }
+      ],
+      "expert_class_and_box_adjudication": "pending",
+      "food_visually_present": true,
+      "label_sha256": "8e971749c58ecb8696427f911eca7d04c57e690711d110cebc2ec1a1f94a56af",
+      "observation": "Folded crepe-like item with pale pat, yellow side and white/red sauces.",
+      "path": "train/images/train30343-coconut_chutney.jpg",
+      "sha256": "8be87069c82fc9d3e460033fb804a5e9e0b840e2736bcfa55e3ef6753882275b"
+    },
+    {
+      "annotation_records": [
+        {
+          "accepted_by_range_checks": true,
+          "box_edges_outside_frame_tolerance_1e_6": true,
+          "class": 19,
+          "coordinates": [
+            0.062094,
+            0.808405,
+            0.260968,
+            0.983808
+          ],
+          "issues": [],
+          "line": 1,
+          "raw": "19 0.062094 0.808405 0.260968 0.983808"
+        },
+        {
+          "accepted_by_range_checks": false,
+          "box_edges_outside_frame_tolerance_1e_6": false,
+          "class": 24,
+          "coordinates": [
+            0.009644,
+            0.283848,
+            0.0,
+            0.37469
+          ],
+          "issues": [
+            "zero_width"
+          ],
+          "line": 2,
+          "raw": "24 0.009644 0.283848 0.000000 0.374690"
+        },
+        {
+          "accepted_by_range_checks": true,
+          "box_edges_outside_frame_tolerance_1e_6": false,
+          "class": 28,
+          "coordinates": [
+            0.494809,
+            0.216003,
+            0.300306,
+            0.224277
+          ],
+          "issues": [],
+          "line": 3,
+          "raw": "28 0.494809 0.216003 0.300306 0.224277"
+        },
+        {
+          "accepted_by_range_checks": true,
+          "box_edges_outside_frame_tolerance_1e_6": true,
+          "class": 63,
+          "coordinates": [
+            0.951564,
+            0.181254,
+            0.763617,
+            0.154778
+          ],
+          "issues": [],
+          "line": 4,
+          "raw": "63 0.951564 0.181254 0.763617 0.154778"
+        }
+      ],
+      "expert_class_and_box_adjudication": "pending",
+      "food_visually_present": true,
+      "label_sha256": "67e4d2e170122d087d8c401c2d626804667a5c3bfc645a3e7302a600c8f382e0",
+      "observation": "Browned crepe-like item on green leaf with several sides behind; dim scene.",
+      "path": "train/images/train30368-dosa.jpg",
+      "sha256": "7a17b92a80f2ff2984722cbd918bd9222bb551325fc79032244159dc29356cef"
+    },
+    {
+      "annotation_records": [
+        {
+          "accepted_by_range_checks": false,
+          "box_edges_outside_frame_tolerance_1e_6": false,
+          "class": 19,
+          "coordinates": [
+            0.153762,
+            0.269799,
+            0.0,
+            0.298176
+          ],
+          "issues": [
+            "zero_width"
+          ],
+          "line": 1,
+          "raw": "19 0.153762 0.269799 0.000000 0.298176"
+        },
+        {
+          "accepted_by_range_checks": true,
+          "box_edges_outside_frame_tolerance_1e_6": false,
+          "class": 26,
+          "coordinates": [
+            0.438606,
+            0.167442,
+            0.233569,
+            0.327532
+          ],
+          "issues": [],
+          "line": 2,
+          "raw": "26 0.438606 0.167442 0.233569 0.327532"
+        },
+        {
+          "accepted_by_range_checks": true,
+          "box_edges_outside_frame_tolerance_1e_6": true,
+          "class": 28,
+          "coordinates": [
+            0.91195,
+            0.595331,
+            0.788378,
+            0.571839
+          ],
+          "issues": [],
+          "line": 3,
+          "raw": "28 0.911950 0.595331 0.788378 0.571839"
+        }
+      ],
+      "expert_class_and_box_adjudication": "pending",
+      "food_visually_present": true,
+      "label_sha256": "1c2cdd2b46fb2a14d9a462675005a3b1e2eae71fd427f557f197bdb199cef9e6",
+      "observation": "Mixed plate with rolled crepe-like item, white cakes and sauces; title overlay.",
+      "path": "train/images/train30378-dosa.jpg",
+      "sha256": "4854261229f64d84bddfc28608c569a1ec43fe331df92bc4a0138c95401ab0fb"
+    },
+    {
+      "annotation_records": [
+        {
+          "accepted_by_range_checks": false,
+          "box_edges_outside_frame_tolerance_1e_6": true,
+          "class": 42,
+          "coordinates": [
+            0.991392,
+            0.024558,
+            0.077542,
+            0.0
+          ],
+          "issues": [
+            "zero_height"
+          ],
+          "line": 1,
+          "raw": "42 0.991392 0.024558 0.077542 0.000000"
+        }
+      ],
+      "expert_class_and_box_adjudication": "pending",
+      "food_visually_present": true,
+      "label_sha256": "5de9ce5ff349dfc06f54dc23d2ab356db9da93d020a3ed3d34f7085b64346be7",
+      "observation": "Shell and claw-like pieces in sauce; watermark.",
+      "path": "train/images/train32902-nandu_masala.jpg",
+      "sha256": "3d12d7d7f7532b62c0ba7438276d683640f11dcfe6a080544ac49aa3b7255955"
+    },
+    {
+      "annotation_records": [
+        {
+          "accepted_by_range_checks": false,
+          "box_edges_outside_frame_tolerance_1e_6": true,
+          "class": 42,
+          "coordinates": [
+            0.861453,
+            0.349225,
+            0.776928,
+            0.0
+          ],
+          "issues": [
+            "zero_height"
+          ],
+          "line": 1,
+          "raw": "42 0.861453 0.349225 0.776928 0.000000"
+        }
+      ],
+      "expert_class_and_box_adjudication": "pending",
+      "food_visually_present": true,
+      "label_sha256": "e8414708891eb05a79286defef28d65d925cddc701cd67d88f117cff8142da82",
+      "observation": "Shell and claw-like pieces in white bowl; text overlay and stretched appearance.",
+      "path": "train/images/train32929-nandu_masala.jpg",
+      "sha256": "6650917b32ff1e8dac3d9e3b3dc4f71872f9793de104e3e5bec728dc0cc5f8d1"
+    },
+    {
+      "annotation_records": [
+        {
+          "accepted_by_range_checks": false,
+          "box_edges_outside_frame_tolerance_1e_6": true,
+          "class": 59,
+          "coordinates": [
+            0.431374,
+            0.0,
+            0.0,
+            0.146713
+          ],
+          "issues": [
+            "zero_width"
+          ],
+          "line": 1,
+          "raw": "59 0.431374 0.000000 0.000000 0.146713"
+        }
+      ],
+      "expert_class_and_box_adjudication": "pending",
+      "food_visually_present": true,
+      "label_sha256": "3797e3bb6b2bc07cdf20a6513f784974808c2d4b742378e8522c48a938f6e4b2",
+      "observation": "White grains with metal spoon; rotated black borders.",
+      "path": "train/images/train3443-rice.jpg",
+      "sha256": "10627f5ae3d1d6d99ad78ffb7480a901e76cff20828e58f3586b929aba03f63d"
+    },
+    {
+      "annotation_records": [
+        {
+          "accepted_by_range_checks": false,
+          "box_edges_outside_frame_tolerance_1e_6": true,
+          "class": 53,
+          "coordinates": [
+            0.983597,
+            0.122796,
+            0.327033,
+            0.0
+          ],
+          "issues": [
+            "zero_height"
+          ],
+          "line": 1,
+          "raw": "53 0.983597 0.122796 0.327033 0.000000"
+        }
+      ],
+      "expert_class_and_box_adjudication": "pending",
+      "food_visually_present": true,
+      "label_sha256": "08891dffb016a2a905710d1c0c0122a4081d6557393b245b3474a59df2a74298",
+      "observation": "White filled dumpling-like items on dark tray; watermark.",
+      "path": "train/images/train34625-poorna_kolukattai.jpg",
+      "sha256": "21b0e208e5d68513396a0d7edc256dfc88c8fca10cf49130b9ac74d75fc0a275"
+    },
+    {
+      "annotation_records": [
+        {
+          "accepted_by_range_checks": false,
+          "box_edges_outside_frame_tolerance_1e_6": true,
+          "class": 53,
+          "coordinates": [
+            0.971964,
+            0.276613,
+            0.0,
+            0.773922
+          ],
+          "issues": [
+            "zero_width"
+          ],
+          "line": 1,
+          "raw": "53 0.971964 0.276613 0.000000 0.773922"
+        }
+      ],
+      "expert_class_and_box_adjudication": "pending",
+      "food_visually_present": true,
+      "label_sha256": "3d8aa55f6b136e302ea05436b081a4758279e744d8807ee8add9a2d74ae1101c",
+      "observation": "Composite of white filled dumpling-like items and halves; black bars.",
+      "path": "train/images/train34678-poorna_kolukattai.jpg",
+      "sha256": "ba4f7cfcb4d5dd54d566c3b22ed69f7de3449de4862ad705378467d38673aaae"
+    },
+    {
+      "annotation_records": [
+        {
+          "accepted_by_range_checks": false,
+          "box_edges_outside_frame_tolerance_1e_6": true,
+          "class": 42,
+          "coordinates": [
+            0.861453,
+            0.349225,
+            0.776928,
+            0.0
+          ],
+          "issues": [
+            "zero_height"
+          ],
+          "line": 1,
+          "raw": "42 0.861453 0.349225 0.776928 0.000000"
+        }
+      ],
+      "expert_class_and_box_adjudication": "pending",
+      "food_visually_present": true,
+      "label_sha256": "e8414708891eb05a79286defef28d65d925cddc701cd67d88f117cff8142da82",
+      "observation": "Shell and claw-like pieces in white bowl; text overlay and stretched appearance.",
+      "path": "train/images/train5055-nandu_masala.jpg",
+      "sha256": "51a961368f7aaf4fca364492651835891a4e1ffa62cec90bea74fc4c334b31e7"
+    },
+    {
+      "annotation_records": [
+        {
+          "accepted_by_range_checks": false,
+          "box_edges_outside_frame_tolerance_1e_6": true,
+          "class": 53,
+          "coordinates": [
+            0.983597,
+            0.122796,
+            0.327033,
+            0.0
+          ],
+          "issues": [
+            "zero_height"
+          ],
+          "line": 1,
+          "raw": "53 0.983597 0.122796 0.327033 0.000000"
+        }
+      ],
+      "expert_class_and_box_adjudication": "pending",
+      "food_visually_present": true,
+      "label_sha256": "08891dffb016a2a905710d1c0c0122a4081d6557393b245b3474a59df2a74298",
+      "observation": "White filled dumpling-like items on dark tray; watermark.",
+      "path": "train/images/train6279-poorna_kolukattai.jpg",
+      "sha256": "6a2b0c42919be8821dce3011f09736bfad7633989df22ece722756e7c0003ed5"
+    },
+    {
+      "annotation_records": [
+        {
+          "accepted_by_range_checks": false,
+          "box_edges_outside_frame_tolerance_1e_6": true,
+          "class": 60,
+          "coordinates": [
+            0.318015,
+            0.0,
+            0.0,
+            0.266846
+          ],
+          "issues": [
+            "zero_width"
+          ],
+          "line": 1,
+          "raw": "60 0.318015 0.000000 0.000000 0.266846"
+        }
+      ],
+      "expert_class_and_box_adjudication": "pending",
+      "food_visually_present": true,
+      "label_sha256": "8db247659cfda54a56c25fa21a1d661d0de6c956ea267cbac0f2e63bcdee87cb",
+      "observation": "Stacked flatbreads; rotated black corners.",
+      "path": "train/images/train6305-roti.jpg",
+      "sha256": "4c7e9750bab3640f57f6db1b5eb4bd6b60ff6e583f065a64dda844395fe045dc"
+    },
+    {
+      "annotation_records": [
+        {
+          "accepted_by_range_checks": true,
+          "box_edges_outside_frame_tolerance_1e_6": true,
+          "class": 19,
+          "coordinates": [
+            0.062094,
+            0.808405,
+            0.260968,
+            0.983808
+          ],
+          "issues": [],
+          "line": 1,
+          "raw": "19 0.062094 0.808405 0.260968 0.983808"
+        },
+        {
+          "accepted_by_range_checks": false,
+          "box_edges_outside_frame_tolerance_1e_6": false,
+          "class": 24,
+          "coordinates": [
+            0.009644,
+            0.283848,
+            0.0,
+            0.37469
+          ],
+          "issues": [
+            "zero_width"
+          ],
+          "line": 2,
+          "raw": "24 0.009644 0.283848 0.000000 0.374690"
+        },
+        {
+          "accepted_by_range_checks": true,
+          "box_edges_outside_frame_tolerance_1e_6": false,
+          "class": 28,
+          "coordinates": [
+            0.494809,
+            0.216003,
+            0.300306,
+            0.224277
+          ],
+          "issues": [],
+          "line": 3,
+          "raw": "28 0.494809 0.216003 0.300306 0.224277"
+        },
+        {
+          "accepted_by_range_checks": true,
+          "box_edges_outside_frame_tolerance_1e_6": true,
+          "class": 63,
+          "coordinates": [
+            0.951564,
+            0.181254,
+            0.763617,
+            0.154778
+          ],
+          "issues": [],
+          "line": 4,
+          "raw": "63 0.951564 0.181254 0.763617 0.154778"
+        }
+      ],
+      "expert_class_and_box_adjudication": "pending",
+      "food_visually_present": true,
+      "label_sha256": "67e4d2e170122d087d8c401c2d626804667a5c3bfc645a3e7302a600c8f382e0",
+      "observation": "Browned crepe-like item on green leaf with several sides behind; dim scene.",
+      "path": "train/images/train7487-dosa.jpg",
+      "sha256": "e9197ee27b275412872fc1d748862b47917f0cade7252596e9081deaa347c100"
+    },
+    {
+      "annotation_records": [
+        {
+          "accepted_by_range_checks": false,
+          "box_edges_outside_frame_tolerance_1e_6": true,
+          "class": 19,
+          "coordinates": [
+            0.408194,
+            0.05069,
+            0.0,
+            0.599001
+          ],
+          "issues": [
+            "zero_width"
+          ],
+          "line": 1,
+          "raw": "19 0.408194 0.050690 0.000000 0.599001"
+        },
+        {
+          "accepted_by_range_checks": true,
+          "box_edges_outside_frame_tolerance_1e_6": true,
+          "class": 63,
+          "coordinates": [
+            1.0,
+            0.432696,
+            0.946376,
+            0.353661
+          ],
+          "issues": [],
+          "line": 2,
+          "raw": "63 1.000000 0.432696 0.946376 0.353661"
+        },
+        {
+          "accepted_by_range_checks": true,
+          "box_edges_outside_frame_tolerance_1e_6": true,
+          "class": 63,
+          "coordinates": [
+            0.882189,
+            0.126433,
+            0.762456,
+            0.078682
+          ],
+          "issues": [],
+          "line": 3,
+          "raw": "63 0.882189 0.126433 0.762456 0.078682"
+        }
+      ],
+      "expert_class_and_box_adjudication": "pending",
+      "food_visually_present": true,
+      "label_sha256": "0b4b5b82def76e601a5e30cd42c7e05713f7a6a8fd4bbd1dd437b3b0a9e70220",
+      "observation": "Triangular browned crepe-like item and two bowls of sauce; watermark.",
+      "path": "train/images/train8418-sambar.jpg",
+      "sha256": "54a76e03b60f3ccf3c3b1e1ffb9c85e6752ef20665c4cf2cc7c680ff8302f7cc"
+    },
+    {
+      "annotation_records": [
+        {
+          "accepted_by_range_checks": false,
+          "box_edges_outside_frame_tolerance_1e_6": true,
+          "class": 3,
+          "coordinates": [
+            1.0,
+            0.449177,
+            0.825913,
+            0.0
+          ],
+          "issues": [
+            "zero_height"
+          ],
+          "line": 1,
+          "raw": "3 1.000000 0.449177 0.825913 0.000000"
+        }
+      ],
+      "expert_class_and_box_adjudication": "pending",
+      "food_visually_present": true,
+      "label_sha256": "dd584cb9082ae4b282195f5dd8e023ebeb571bcf87bd9b7ac0716a1ae8f7eceb",
+      "observation": "Close-up red chopped food and small green pieces; pronounced vertical stretching.",
+      "path": "train/images/train8464-beetroot_poriyal.jpg",
+      "sha256": "b41cc50fe48595670066589e9ae15b96f65179579d1777ff47a79534f9a97057"
+    },
+    {
+      "annotation_records": [
+        {
+          "accepted_by_range_checks": false,
+          "box_edges_outside_frame_tolerance_1e_6": true,
+          "class": 59,
+          "coordinates": [
+            0.394962,
+            0.0,
+            0.0,
+            0.185511
+          ],
+          "issues": [
+            "zero_width"
+          ],
+          "line": 1,
+          "raw": "59 0.394962 0.000000 0.000000 0.185511"
+        }
+      ],
+      "expert_class_and_box_adjudication": "pending",
+      "food_visually_present": true,
+      "label_sha256": "6db1fdd9828d1a80e0ed2cddcdd1c7ba83d06fa978279cff4e31e2574813bf26",
+      "observation": "Close-up white grains; rotated black corners.",
+      "path": "train/images/train8977-rice.jpg",
+      "sha256": "8b46fa61009a9e7a65017c4e7194e65ea06c7050dee138fed341a44cd1ead41b"
+    },
+    {
+      "annotation_records": [
+        {
+          "accepted_by_range_checks": false,
+          "box_edges_outside_frame_tolerance_1e_6": true,
+          "class": 59,
+          "coordinates": [
+            0.23018,
+            0.0,
+            0.0,
+            0.392757
+          ],
+          "issues": [
+            "zero_width"
+          ],
+          "line": 1,
+          "raw": "59 0.230180 0.000000 0.000000 0.392757"
+        }
+      ],
+      "expert_class_and_box_adjudication": "pending",
+      "food_visually_present": true,
+      "label_sha256": "654b5ef6219d8e596980ec36638f08eab27b072a3d20d6cb4df8b1eb7d5ece67",
+      "observation": "White grains on blue plate with fork; rotated black corners.",
+      "path": "train/images/train9820-rice.jpg",
+      "sha256": "d12d0d113dedb366914281b364c554a6a70f8eccf2f9875baf90961091a7846d"
+    },
+    {
+      "annotation_records": [
+        {
+          "accepted_by_range_checks": false,
+          "box_edges_outside_frame_tolerance_1e_6": true,
+          "class": 60,
+          "coordinates": [
+            0.346021,
+            0.0,
+            0.0,
+            0.266808
+          ],
+          "issues": [
+            "zero_width"
+          ],
+          "line": 1,
+          "raw": "60 0.346021 0.000000 0.000000 0.266808"
+        }
+      ],
+      "expert_class_and_box_adjudication": "pending",
+      "food_visually_present": true,
+      "label_sha256": "0a4f30006534bd188f2e1affd95035d91ebf0a2b4f2c4bcff325d905dbe0ea58",
+      "observation": "Puffed flatbread on wire rack; rotated black corners.",
+      "path": "train/images/train9901-roti.jpg",
+      "sha256": "434f0f4e42ed6d667eddaf120a763a8097531f46b68142a0058ae93abc2ae89d"
+    },
+    {
+      "annotation_records": [
+        {
+          "accepted_by_range_checks": false,
+          "box_edges_outside_frame_tolerance_1e_6": true,
+          "class": 40,
+          "coordinates": [
+            0.757196,
+            0.246274,
+            0.627231,
+            0.0
+          ],
+          "issues": [
+            "zero_height"
+          ],
+          "line": 1,
+          "raw": "40 0.757196 0.246274 0.627231 0.000000"
+        }
+      ],
+      "expert_class_and_box_adjudication": "pending",
+      "food_visually_present": true,
+      "label_sha256": "f6152d900834443c41df04e32151af9cfcfffd154dc821718c93fce070129fa1",
+      "observation": "Rice and large browned pieces in metal pot; coarse pixels.",
+      "path": "valid/images/valid0310-mutton_biryani.jpg",
+      "sha256": "aea0bd987a0ad9ad99aba5106c80d460ca559ed48abf48d6d4245627cfa9fdef"
+    },
+    {
+      "annotation_records": [
+        {
+          "accepted_by_range_checks": false,
+          "box_edges_outside_frame_tolerance_1e_6": true,
+          "class": 14,
+          "coordinates": [
+            0.974586,
+            0.401757,
+            0.828182,
+            0.0
+          ],
+          "issues": [
+            "zero_height"
+          ],
+          "line": 1,
+          "raw": "14 0.974586 0.401757 0.828182 0.000000"
+        }
+      ],
+      "expert_class_and_box_adjudication": "pending",
+      "food_visually_present": true,
+      "label_sha256": "cf9a6a7f870b67f4231e554ee192cbd5f0fe871371d5019e797d38740a1f54cc",
+      "observation": "Rice and large pieces; person inset, large title and watermark.",
+      "path": "valid/images/valid2002-chicken_biryani.jpg",
+      "sha256": "5043f165800c2b37c9898654d1a8d0f27cc9a94be95dd220bfcb6519253cc971"
+    },
+    {
+      "annotation_records": [
+        {
+          "accepted_by_range_checks": false,
+          "box_edges_outside_frame_tolerance_1e_6": false,
+          "class": 50,
+          "coordinates": [
+            1.0,
+            0.068414,
+            0.0,
+            0.08375
+          ],
+          "issues": [
+            "zero_width"
+          ],
+          "line": 1,
+          "raw": "50 1.000000 0.068414 0.000000 0.083750"
+        }
+      ],
+      "expert_class_and_box_adjudication": "pending",
+      "food_visually_present": true,
+      "label_sha256": "b612ae1e6cc69c14db2881d74f9df93c55d1e65fec6ff87a202edc58bdcd963f",
+      "observation": "Golden coarse-textured oval fried items with green pieces on plate.",
+      "path": "valid/images/valid2465-parupu_vadai.jpg",
+      "sha256": "1ab4675d246a58d18a8c1f4d4754bb03f2a6a1a6dde379041c07c2247a6246bc"
+    },
+    {
+      "annotation_records": [
+        {
+          "accepted_by_range_checks": false,
+          "box_edges_outside_frame_tolerance_1e_6": true,
+          "class": 19,
+          "coordinates": [
+            0.074515,
+            0.073429,
+            0.0,
+            0.258373
+          ],
+          "issues": [
+            "zero_width"
+          ],
+          "line": 1,
+          "raw": "19 0.074515 0.073429 0.000000 0.258373"
+        },
+        {
+          "accepted_by_range_checks": true,
+          "box_edges_outside_frame_tolerance_1e_6": true,
+          "class": 16,
+          "coordinates": [
+            0.001638,
+            0.502001,
+            0.008748,
+            0.866554
+          ],
+          "issues": [],
+          "line": 2,
+          "raw": "16 0.001638 0.502001 0.008748 0.866554"
+        }
+      ],
+      "expert_class_and_box_adjudication": "pending",
+      "food_visually_present": true,
+      "label_sha256": "bc356d3d2aab3133cf91120c207330599918e83dc437e502b5621f60f7489ba1",
+      "observation": "Browned rolled crepe-like item, pale pat and green sauce.",
+      "path": "valid/images/valid3235-coconut_chutney.jpg",
+      "sha256": "61197a25cdc670b18ae9d9e381277a70779cde7446e9cd6d7cc946720cb0192d"
+    },
+    {
+      "annotation_records": [
+        {
+          "accepted_by_range_checks": true,
+          "box_edges_outside_frame_tolerance_1e_6": true,
+          "class": 19,
+          "coordinates": [
+            0.620967,
+            1.0,
+            0.90734,
+            0.884544
+          ],
+          "issues": [],
+          "line": 1,
+          "raw": "19 0.620967 1.000000 0.907340 0.884544"
+        },
+        {
+          "accepted_by_range_checks": false,
+          "box_edges_outside_frame_tolerance_1e_6": false,
+          "class": 28,
+          "coordinates": [
+            0.589368,
+            0.026395,
+            0.398025,
+            0.0
+          ],
+          "issues": [
+            "zero_height"
+          ],
+          "line": 2,
+          "raw": "28 0.589368 0.026395 0.398025 0.000000"
+        },
+        {
+          "accepted_by_range_checks": true,
+          "box_edges_outside_frame_tolerance_1e_6": true,
+          "class": 24,
+          "coordinates": [
+            0.964614,
+            0.21417,
+            1.0,
+            0.126424
+          ],
+          "issues": [],
+          "line": 3,
+          "raw": "24 0.964614 0.214170 1.000000 0.126424"
+        }
+      ],
+      "expert_class_and_box_adjudication": "pending",
+      "food_visually_present": true,
+      "label_sha256": "7e1b474a6ace3c8bffda3174472b1dd095a08a463adef5d1d7023db7568ef9c3",
+      "observation": "Two folded golden crepe-like items and separate green/red sauces.",
+      "path": "valid/images/valid4534-dosa.jpg",
+      "sha256": "5340d8595a7a3508ebab6b0b5c44cb19a4852eb52661db27894af243035eaab9"
+    },
+    {
+      "annotation_records": [
+        {
+          "accepted_by_range_checks": false,
+          "box_edges_outside_frame_tolerance_1e_6": true,
+          "class": 10,
+          "coordinates": [
+            0.251985,
+            0.0,
+            0.0,
+            0.134283
+          ],
+          "issues": [
+            "zero_width"
+          ],
+          "line": 1,
+          "raw": "10 0.251985 0.000000 0.000000 0.134283"
+        }
+      ],
+      "expert_class_and_box_adjudication": "pending",
+      "food_visually_present": true,
+      "label_sha256": "c28e9a4252487da7620a97b0aafb3cbe596d476e14fb712ce524789f12431f8d",
+      "observation": "Orange chopped pieces with green pieces; stretched coarse appearance.",
+      "path": "valid/images/valid4749-carrot_poriyal.jpg",
+      "sha256": "3fb3a9a6f58ca131819ca9fb59841823563cdfc0c3ff71198ee2e4e8953239b3"
+    },
+    {
+      "annotation_records": [
+        {
+          "accepted_by_range_checks": false,
+          "box_edges_outside_frame_tolerance_1e_6": true,
+          "class": 42,
+          "coordinates": [
+            0.156406,
+            0.0,
+            0.0,
+            0.465994
+          ],
+          "issues": [
+            "zero_width"
+          ],
+          "line": 1,
+          "raw": "42 0.156406 0.000000 0.000000 0.465994"
+        }
+      ],
+      "expert_class_and_box_adjudication": "pending",
+      "food_visually_present": true,
+      "label_sha256": "9221e4466494376d810bf27cc6ac39e594e28fc0bc51ae7cf68cc65d78ac16ae",
+      "observation": "Shell and claw-like pieces and green garnish in white dish.",
+      "path": "valid/images/valid4805-nandu_masala.jpg",
+      "sha256": "1a88e33a4a05719d9e6e33ae0287ecef8893d7ab4132a0f1a731ef1b64826063"
+    }
+  ],
+  "review_date": "2026-09-12",
+  "reviewed_original_images": 65,
+  "reviewer_type": "AI assistant, not independent qualified human annotator",
+  "run_id": "validation-2026-09-12-v1",
+  "schema_version": 1,
+  "scope": "Offline read-only dataset/model access; generated evidence only; not independent scientific validation.",
+  "script_sha256_at_start": "4e2ec0c90309e9164188955ce208970072ce6c9e380be69ba324561d829b00ec",
+  "source_commit": "0a4edfa92818945ccd7f16b023299c847c745f0d",
+  "started_utc": "2026-09-12T05:41:39.754374+00:00",
+  "status": "ai_original_image_inspection_complete_expert_review_pending"
+}

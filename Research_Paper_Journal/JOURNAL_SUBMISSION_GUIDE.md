@@ -1,75 +1,68 @@
-# IEEE Journal Submission Guide
+# Supervisor Review and Submission Preparation
 
-> September 2026 audit supersedes earlier readiness claims below: 138 duplicate-image groups span partitions; 65 images have strict annotation flags. Resolve the independent-evaluation, mapping-review and permissions gates in `../research/READINESS.md`. The journal bibliography already contains an INDB-related article, but the local workbook's exact provenance remains unconfirmed. No target journal is selected.
+The current manuscripts are supervisor-review drafts of **AI-Based Food Recognition with Nutrition-Aware Recommendations: A System and Reproducibility Audit**. They are not approved external submissions, and no venue has been selected.
 
-This note records the journal-writing guidance used to revise `main.tex` and lists the remaining items to complete before external submission.
+Use [SUPERVISOR_REVIEW.md](../research/SUPERVISOR_REVIEW.md) for the review package and requested decisions, and [READINESS.md](../research/READINESS.md) for recorded evidence and remaining gates.
 
-## Current Draft Mode
+## Which version to review
 
-The current manuscript is formatted for an IEEE Transactions initial review phase:
+[The full draft](main.pdf) is the primary manuscript. It uses a one-column, 12-point IEEEtran layout, 1.5-spaced text, and real `lineno` line numbering for review. [The short companion](../Research_Paper_Conference/main.pdf) presents the same study in a compact conference-style layout.
 
-- Single-column layout.
-- 12-point IEEEtran draft class.
-- Double-spaced body text.
-- Running sequential line numbers in the left margin.
-- Figures and tables placed inline near first mention using review-friendly float placement.
-- Target review length: 30-45 pages in this draft format, which typically compresses substantially when converted to final two-column journal layout.
+These are alternative presentations, not independent studies. Do not treat their different layouts or lengths as evidence of distinct contributions. Decide with the supervisors which version and article type to develop for one external submission; assess any later reuse or extension against the selected venue's policies.
 
-## IEEE Journal Prerequisites
+The use of IEEEtran does not select an IEEE venue or establish universal journal formatting requirements. Page limits, abstract length, anonymization, article type, references, figures, supplementary files, and final templates must be checked against the actual venue once selected.
 
-- Use an IEEE journal article template. This folder uses `IEEEtran` in initial-review draft mode.
-- Select one target journal before submission and check that journal's `Information for Authors`, aims and scope, article type, page limits, overlength charges, and required files.
-- Submit the article to only one publication at a time.
-- Confirm the corresponding author, author affiliations, country, email address, and ORCID requirements.
-- Disclose funding and any prior conference presentation when applicable. If a conference version is later accepted, the journal version must be meaningfully extended and the prior presentation must be disclosed according to the target journal's policy.
-- Verify authorship, citation ethics, originality, permissions for reused figures/data, and dataset/license restrictions.
-- Prepare all source files, bibliography, figures, trained-model or supplementary files, and a clear data/code availability statement.
+## What the drafts establish
 
-## Format Applied
+The completed work documents the implemented application, an export-integrity audit, candidate source-family reconstruction with quarantine, and a lookup-availability comparison. It separates these observations from archived detector metrics and proposed experiments.
 
-- Title is concise and descriptive; avoid vague words such as "new" or "novel".
-- Abstract is one paragraph and within the IEEE journal range of 150-250 words.
-- Abbreviations are defined on first use in the abstract and body where practical.
-- Keywords are compressed to five focused terms for discoverability.
-- The paper follows the journal flow: introduction, related work, methodology/system, results, discussion, limitations, conclusion, acknowledgments, and references.
-- Tables use IEEE-style captions and white page background by default.
-- Figures are embedded as manuscript figures; final submission should use target-journal-approved formats and resolution.
+The INDB workbook is byte-identical to the original authors' pinned public artifact. Its publication and citation correction are identified. Five supplemental nutrient records have source attribution and checked per-100-g transcription. None of these checks establishes that every photographed recipe matches its database row, that entered grams were consumed, or that the advice is clinically appropriate.
 
-## Detail vs. Compression
+The historical partitions contain exact overlap; the broader filename-family links are heuristic. Reassignment cannot retrospectively make the existing checkpoint's evaluation independent. Availability for all current labels is not mapping accuracy.
 
-- Keep the main paper focused on the contribution, reproducible method, key quantitative results, and reviewer-relevant validation.
-- Move excessive screenshots, full per-class results, extra prediction grids, and raw logs to supplementary material unless the target journal asks for them in the manuscript.
-- Do not over-compress methodology. Reviewers should be able to understand dataset construction, split rules, training protocol, model selection, and evaluation metrics without reading the code first.
-- Do compress implementation narration. Framework lists and frontend details should support the research claim, not dominate the paper.
-- Page limits are journal-specific. For initial review, this draft targets readability first: single-column, double-spaced, line-numbered text with enough depth for reviewers to inspect the full project lifecycle.
+## Supervisor decisions and evidence gates
 
-## Initial Review Readiness
+1. Agree the research claim and article scope. A reproducibility case study should be assessed on its documented methods, findings, and limitations, not presented as a new detector or clinical intervention.
+2. Approve the next independent-evaluation protocol. Before making new detector-generalization claims, review group links, representative selection, quarantined records, annotations, and source permissions; freeze the evaluation design and record the checkpoint, environment, and selection rules. Appropriately retrained models or genuinely untouched external data are needed for the proposed independent evaluation.
+3. Arrange qualified nutrition-mapping review. Freeze the database and predictions, define acceptable recipe equivalence and ambiguous/unsupported labels, retain independent initial judgments, and document adjudication. Do not copy developer mappings into the reference set or substitute lookup coverage for correctness.
+4. Assess advice separately. Context-label consistency is a software property. Clinical appropriateness, unsupported assertions, inherited fallback wording, and user benefit require their own qualified review or study design before those benefits are claimed.
+5. Match experiments to claims. Matched model baselines, augmentation ablations, nutrient-error measurements, or user studies are required when their corresponding comparative or outcome claims are made; they are not already completed evidence.
 
-Before submission, check the manuscript as an editor or reviewer would:
+## Rights, authors, and disclosures
 
-- Scope: the work fits the selected journal's aims.
-- Novelty: the contribution is clearly different from ordinary food classification or object detection.
-- Validity: dataset creation, training protocol, model selection, and test evaluation are reproducible.
-- Data: counts, metrics, mapping coverage, and nutrition sources are reported accurately.
-- Clarity: abstract, introduction, figures, tables, and conclusion tell the same technical story.
-- Compliance: ethics, originality, references, permissions, and target-journal file rules are satisfied.
-- Advancement: the paper explains why conservative nutrition mapping improves regional food-recognition systems.
-- Proof: detector metrics, held-out testing, nutrition coverage, macro verification, and clearly marked benchmark/ablation requirements are present.
+Confirm dataset, checkpoint, derived-database, and any reused figure permissions with the relevant owners and institutional guidance. Export-level license labels and source URLs do not by themselves resolve the image-rights caveats recorded in some source READMEs. No new license or blanket permission is granted by these drafts.
 
-## Remaining Before External Submission
+Confirm the author list/order, affiliations, corresponding author and contact details, contributions, acknowledgments, funding, and competing interests. Add identifiers such as ORCID only when verified and required. Do not invent missing declarations or describe an institutional review as approved when it has not occurred.
 
-- Replace `[student email]` with real author email details.
-- Replace placeholder INDB and dataset bibliography entries with citable public records or official source documentation.
-- Select the exact IEEE journal and verify article type, page limit, figure format, and any supplementary-material rules.
-- Run same-split detector-family benchmarks and augmentation ablations before claiming complete Transactions-level proof.
-- Add ORCID details if required by the submission system.
-- Confirm whether the journal requires author biographies or photos.
-- Run a final proofread for English, citation balance, figure readability, and table overflow.
+The drafts disclose AI-assisted inspection and editing. Authors must verify the resulting text, references, calculations, and provenance, and adapt the disclosure to the selected venue's requirements. Any proposed participant or clinical study needs its own consent, data-handling, and institutional-review assessment; none is claimed as completed here.
 
-## Official IEEE Sources Consulted
+## Artifact package
 
-- IEEE Author Center Journals, "Structure Your Article": https://journals.ieeeauthorcenter.ieee.org/create-your-ieee-journal-article/create-the-text-of-your-article/structure-your-article/
-- IEEE Author Center Journals, "Checklist for Creating Your Article": https://journals.ieeeauthorcenter.ieee.org/create-your-ieee-journal-article/authoring-tools-and-templates/checklist-for-creating-your-article/
-- IEEE Author Center Journals, "The IEEE Article Submission Process": https://journals.ieeeauthorcenter.ieee.org/submit-your-article-for-peer-review/the-ieee-article-submission-process/
-- IEEE Author Center Journals, "About the Peer Review Process": https://journals.ieeeauthorcenter.ieee.org/submit-your-article-for-peer-review/about-the-peer-review-process/
-- IEEE Editorial Style Manual for Authors: https://journals.ieeeauthorcenter.ieee.org/wp-content/uploads/sites/7/IEEE-Editorial-Style-Manual-for-Authors.pdf
+Keep the manuscript sources, PDFs, focused bibliography, tracked generated numeric files, and the relevant audit reports together. The public source revision and full hashes in the evidence identify the inspected artifacts.
+
+The full per-image and grouped-assignment manifests remain under `.deployment/research/` locally; a public repository checkout or PDF does not include them. Determine what may be supplied for artifact review and package permitted materials explicitly. State access restrictions honestly rather than promising unrestricted reproducibility.
+
+Historical assets in `figures/` are preserved but unused by the current drafts. Do not reintroduce old screenshots or evaluation plots as current evidence without checking their origin, meaning, and permissions.
+
+## Reproducible checks and PDF refresh
+
+From the repository root:
+
+```bash
+python scripts/generate_paper_evidence.py --check
+python scripts/check_manuscripts.py
+python scripts/build_papers.py --refresh-pdfs
+```
+
+- The generated-evidence check reads recorded audit reports and detects drift in tracked numeric macros. It does not regenerate evidence or validate its scientific interpretation.
+- The manuscript checker checks literal structure, citations, references, and related consistency constraints. It is not peer review, clinical validation, authorship verification, or permission approval.
+- Building requires installed `pdflatex`, `bibtex`, and the packages referenced by the sources. No TeX/package installer is invoked, and MiKTeX automatic package installation is disabled.
+- Intermediate files are isolated under `.deployment/research/`. The refresh option replaces both tracked PDFs only after both documents compile successfully. Without the option, tracked PDFs remain unchanged.
+
+After building, inspect both PDFs for clipped text, unreadable labels, broken links, unresolved citations, float placement, and consistency between abstract, methods, results, and conclusion. Automated success is not a substitute for reading the output.
+
+## Final external-submission gate
+
+Select a venue only after agreeing the contribution and evidence status with the supervisors. Check its current official scope, article types, review model, required files, author/disclosure rules, reuse policy, and any mandatory costs before committing to submission.
+
+Complete the agreed evidence and approval gates, update the availability statement, apply the venue's actual template, obtain every author's final approval, and submit only the approved version. No claim of acceptance, cost-free publication, or venue readiness is made by this guide.

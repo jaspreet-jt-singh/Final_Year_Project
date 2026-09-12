@@ -1,0 +1,51 @@
+{
+  "artifacts": [
+    {
+      "bytes": 27601938,
+      "path": ".deployment/research/validation-2026-09-12-v1/grouped/assignments.jsonl",
+      "sha256": "54fa9cc4cea5f94119725c2afced5c48ad7e6bc9d10a41e91eec21a5ac7a0d69"
+    },
+    {
+      "bytes": 11355458,
+      "path": ".deployment/research/validation-2026-09-12-v1/grouped/source-inventory.json",
+      "sha256": "5ed7e46ae7cc6b0058d29acb40df664e2d8b0b89224379506e595ed1059797fe"
+    },
+    {
+      "bytes": 12145,
+      "path": ".deployment/research/validation-2026-09-12-v1/grouped/summary.json",
+      "sha256": "71ca272dad189cfe3ef6753b949bc694b924954e1ae3807486d39c0685d9021a"
+    }
+  ],
+  "child_script_sha256": "8c2ce990e5266588dccbea1c0d0fbc3a3bcad864ee775b5d6b039575b2c07da8",
+  "command": [
+    "G:\\Projects\\Final_Year_Project\\.venv\\Scripts\\python.exe",
+    "G:\\Projects\\Final_Year_Project\\scripts\\prepare_research_split.py",
+    "--audit",
+    "G:\\Projects\\Final_Year_Project\\.deployment\\research\\validation-2026-09-12-v1\\audit.json",
+    "--manifest",
+    "G:\\Projects\\Final_Year_Project\\.deployment\\research\\validation-2026-09-12-v1\\split-manifest.jsonl",
+    "--output",
+    "G:\\Projects\\Final_Year_Project\\.deployment\\research\\validation-2026-09-12-v1\\grouped",
+    "--seed",
+    "42"
+  ],
+  "cwd": "G:\\Projects\\Final_Year_Project",
+  "duration_seconds": 577.64,
+  "environment": {
+    "executable": "G:\\Projects\\Final_Year_Project\\.venv\\Scripts\\python.exe",
+    "pillow": "12.2.0",
+    "platform": "Windows-11-10.0.26200-SP0",
+    "python": "3.12.7 | packaged by Anaconda, Inc. | (main, Oct  4 2024, 13:17:27) [MSC v.1929 64 bit (AMD64)]",
+    "pyyaml": "6.0.3"
+  },
+  "exit_code": 0,
+  "finished_utc": "2026-09-12T05:41:07.360699+00:00",
+  "output": "Verified export 5000/48693\nVerified export 10000/48693\nVerified export 15000/48693\nVerified export 20000/48693\nVerified export 25000/48693\nVerified export 30000/48693\nVerified export 35000/48693\nVerified export 40000/48693\nVerified export 45000/48693\nIndexed Indian food detection.v1i.yolov11: 9053 images\nIndexed indian food.v6i.yolov11: 8406 images\nIndexed Indian_food.v2-indianfood-7.yolov11: 1949 images\nIndexed indianfoodnet_yolo: 13036 images\nIndexed south indian food detection.v19i.yolov11: 8353 images\n{\n  \"status\": \"review_only_not_a_benchmark\",\n  \"total_groups\": 23933,\n  \"quarantined_images\": 11002,\n  \"source_family_groups_spanning_old_splits\": 5548\n}\nReview-only artifacts: G:\\Projects\\Final_Year_Project\\.deployment\\research\\validation-2026-09-12-v1\\grouped\n",
+  "run_id": "validation-2026-09-12-v1",
+  "schema_version": 1,
+  "scope": "Offline read-only dataset/model access; generated evidence only; not independent scientific validation.",
+  "script_sha256_at_start": "2bb5c4f355aaa3ab85d8e368303ed95d16466ccf6755a51ead69a12ac7a7d040",
+  "source_commit": "0a4edfa92818945ccd7f16b023299c847c745f0d",
+  "started_utc": "2026-09-12T05:31:29.566144+00:00",
+  "status": "passed"
+}

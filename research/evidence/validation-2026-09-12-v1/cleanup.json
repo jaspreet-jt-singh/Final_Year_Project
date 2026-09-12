@@ -1,0 +1,25 @@
+{
+  "schema_version": 1,
+  "date": "2026-09-12",
+  "authorization": "User requested removal of unnecessary files/folders during the audit.",
+  "method": "PowerShell-only: explicit allowlisted absolute paths resolved inside G:/Projects/Final_Year_Project; each checked git-ignored, containing no tracked files or reparse points before Remove-Item -LiteralPath -Recurse -Force; absence checked immediately afterward.",
+  "removed": [
+    {"path":".ruff_cache","files":15,"bytes":3251},
+    {"path":"scripts/__pycache__","files":19,"bytes":400260},
+    {"path":"tests/__pycache__","files":1,"bytes":9209},
+    {"path":"backend/__pycache__","files":4,"bytes":13395},
+    {"path":"backend/api/__pycache__","files":5,"bytes":20005},
+    {"path":"backend/domain/__pycache__","files":3,"bytes":14746},
+    {"path":"backend/scripts/__pycache__","files":1,"bytes":23052},
+    {"path":"backend/services/__pycache__","files":6,"bytes":41122},
+    {"path":"backend/utils/__pycache__","files":2,"bytes":4991},
+    {"path":"frontend/.next","files":274,"bytes":101557858},
+    {"path":"frontend/tsconfig.tsbuildinfo","files":1,"bytes":99397},
+    {"path":".deployment/browser-tools","files":184,"bytes":18551932}
+  ],
+  "total_removed_files": 515,
+  "total_removed_bytes": 120739218,
+  "recovery": "Ruff/Python caches regenerate automatically; npm --prefix frontend run build regenerates Next build/type output. The unused legacy browser-tools package is unnecessary: current scripts use the locked frontend Playwright dependency, restorable with npm ci --prefix frontend. These were deleted directly, not moved to Trash; no unique research data was removed. Later checks can regenerate small caches.",
+  "preserved": ["datasets and original annotations","models/checkpoints","historical results","all baseline backups","new validation evidence and full local manifests","paper sources/PDFs","frontend/out used by browser checks","locked frontend dependencies","release/rollback directories"],
+  "duplicate_created_this_run": "Redundant claims-initial.json copy removed using apply_patch; identical original remains claims.json. Intermediate formatting-only generated indexes were moved to ignored pre-claim-corrections backups, not discarded."
+}

@@ -1,0 +1,181 @@
+{
+  "schema_version": 1,
+  "run_id": "validation-2026-09-12-v1",
+  "initial_ledger_sha256": "347ff7ac35d6e831845437e5a0491a8f658d848a48c9d0ffd45b4b8020a0fd81",
+  "final_ledger_sha256": "ed3f615cf51f2f38dbd713350b919af93346595cd2468c6c948a4d36e834c3d1",
+  "reviewer_role": "AI artifact reviewer; corrections based on code, recorded results and explicitly failed source access.",
+  "public_access_probe": {
+    "url": "https://github.com/jaspreet-jt-singh/Final_Year_Project/tree/0a4edfa92818945ccd7f16b023299c847c745f0d",
+    "date": "2026-09-12",
+    "method": "Primary GitHub page via web open",
+    "result": "Failed to fetch: Cache miss; access not established."
+  },
+  "unchanged_literal_units": 624,
+  "corrections": [
+    {
+      "occurrence_id": "J-69-1",
+      "before": "The application serves a static Next.js frontend and a FastAPI backend at one website address.",
+      "after": "The application is configured to serve a static Next.js frontend and a FastAPI backend at one website address.",
+      "before_text_sha256": "ef57500dfeaf9ce17cc1ea4dec6ec560541de4b8925bdd0d9d4a63cb7c655352",
+      "after_text_sha256": "80c4a14e54298912f4f7c9effdf4dcba516bf4d2a4580522f4b364ca2467fb5f",
+      "disposition": "Supported with limitations",
+      "rationale": "The inspected configuration/current checkpoint identifies an implementation artifact, not a verified live deployment.",
+      "evidence": {
+        "path": "vercel.json",
+        "sha256": "204dd1ba2c0d37dbb82cb32efe09c481efedb4624a7786fa645ee76151154670"
+      },
+      "limitation": "Artifact/source-access statement only; no independent nutritional or clinical approval.",
+      "resolution": "Corrected in both manuscripts where applicable; initial evidence index and pre-correction PDFs retained."
+    },
+    {
+      "occurrence_id": "J-69-4",
+      "before": "The deployed checkpoint contains \\AuditClasses{} class names and occupies 19,211,162 bytes (approximately 18.32 MiB); this is not the Python bundle size or process memory.",
+      "after": "The current production checkpoint contains \\AuditClasses{} class names and occupies 19,211,162 bytes (approximately 18.32 MiB); this is not the Python bundle size or process memory.",
+      "before_text_sha256": "44ff4a7ef838efcbc67bd02ef3e5973b3e73099d75581ce69721fd226107d23c",
+      "after_text_sha256": "5099f63995c2eaab7e37cb4d34dc2bb38ea5ef61f7448b5877b06d31e089efa2",
+      "disposition": "Supported with limitations",
+      "rationale": "The inspected configuration/current checkpoint identifies an implementation artifact, not a verified live deployment.",
+      "evidence": {
+        "path": "research/evidence/validation-2026-09-12-v1/baseline.json",
+        "sha256": "f2ce75cc2424134b44022b0ee9208c59ce5c78f896fa98a6346b840f61e91397"
+      },
+      "limitation": "Artifact/source-access statement only; no independent nutritional or clinical approval.",
+      "resolution": "Corrected in both manuscripts where applicable; initial evidence index and pre-correction PDFs retained."
+    },
+    {
+      "occurrence_id": "J-130-5",
+      "before": "Displaying excess above a goal does not change the consumed subtotal.",
+      "after": "Displaying excess above a goal does not change the saved known subtotal.",
+      "before_text_sha256": "774faa35d9a6bbbf884cfdc080703ea715f2f205d5b619e54821e09f93d98747",
+      "after_text_sha256": "7129a69794875475df84b3fa56ea207333c1b7f4dfc5ba480fec3cfcf95fba4a",
+      "disposition": "Supported with limitations",
+      "rationale": "The arithmetic is the saved known subtotal, not independently measured consumption.",
+      "evidence": {
+        "path": "frontend/lib/meals.ts",
+        "sha256": "5395c9842f815ba5db48cd7357e9ee394b8002f39e296d160813f9f6661a48b3"
+      },
+      "limitation": "Artifact/source-access statement only; no independent nutritional or clinical approval.",
+      "resolution": "Corrected in both manuscripts where applicable; initial evidence index and pre-correction PDFs retained."
+    },
+    {
+      "occurrence_id": "J-207-3",
+      "before": "Its saved outputs describe the audited run; fallback order and unrecorded hash-seed details limit cross-process reproducibility of particular ambiguous selections.",
+      "after": "The earlier availability run did not record its hash seed; the follow-up separately records eight fixed seeds and confirms order-sensitive ambiguous selections.",
+      "before_text_sha256": "53c38bfc74bb63befb7bb8b5dda552bfe12d6babe2c8f029424a374a7ab7b8b3",
+      "after_text_sha256": "52d9723311ffd20a044e4a9768e94b31251a9a3a562b0f8dc9f2d96e2d23e079",
+      "disposition": "Supported with limitations",
+      "rationale": "The older availability receipt omitted a hash seed; the new eight-seed sweep records all seeds explicitly.",
+      "evidence": {
+        "path": "research/evidence/validation-2026-09-12-v1/nutrition-validation.json",
+        "sha256": "f34552215b47d09edda0dc8a3c10c6238d98a2dec1730f66011022a14fafd9ee"
+      },
+      "limitation": "Artifact/source-access statement only; no independent nutritional or clinical approval.",
+      "resolution": "Corrected in both manuscripts where applicable; initial evidence index and pre-correction PDFs retained."
+    },
+    {
+      "occurrence_id": "J-132-1",
+      "before": "Version-1 browser storage contains selected food names/labels, grams, inclusion flags, per-100-g values, source labels, timestamps, local dates, and goal/calorie preferences.",
+      "after": "Version-1 browser storage contains draft food names/labels (including excluded items), grams, inclusion flags, per-100-g values, source labels, timestamps, local dates, and goal/calorie preferences.",
+      "before_text_sha256": "821b5038c820ff592f4fc3bc3b47b0a3ec702757256bd7357055702f325f88a3",
+      "after_text_sha256": "f82389707c37bc72f03b57e9ea41564af47e4c2257b0b815ff8fea2096f44feb",
+      "disposition": "Supported with limitations",
+      "rationale": "saveDraft retains all draft items with included flags; exclusion affects totals, not removal from stored records.",
+      "evidence": {
+        "path": "frontend/lib/meals.ts",
+        "sha256": "5395c9842f815ba5db48cd7357e9ee394b8002f39e296d160813f9f6661a48b3"
+      },
+      "limitation": "Artifact/source-access statement only; no independent nutritional or clinical approval.",
+      "resolution": "Corrected in both manuscripts where applicable; initial evidence index and pre-correction PDFs retained."
+    },
+    {
+      "occurrence_id": "C-88-5",
+      "before": "Version-1 browser history retains selected food records and goal preferences, but no photos, health selections, boxes or confidence.",
+      "after": "Version-1 browser history retains draft food records including excluded items with their inclusion flags, plus goal preferences, but no photos, health selections, boxes or confidence.",
+      "before_text_sha256": "092dbb732502c8ea9480d80509fc3ce03fcc4d491969cf779889d40d61c911b1",
+      "after_text_sha256": "b755734aea1b78d2eec79c9ae03a07b460773f906624e8e5299a05a18821220b",
+      "disposition": "Supported with limitations",
+      "rationale": "saveDraft retains all draft items with included flags; exclusion affects totals, not removal from stored records.",
+      "evidence": {
+        "path": "frontend/lib/meals.ts",
+        "sha256": "5395c9842f815ba5db48cd7357e9ee394b8002f39e296d160813f9f6661a48b3"
+      },
+      "limitation": "Artifact/source-access statement only; no independent nutritional or clinical approval.",
+      "resolution": "Corrected in both manuscripts where applicable; initial evidence index and pre-correction PDFs retained."
+    },
+    {
+      "occurrence_id": "J-190-2",
+      "before": "The last condition can reflect annotation ordering or numeric formatting rather than semantic conflict.",
+      "after": "Byte inequality alone cannot distinguish formatting from numeric changes; the follow-up finds none of the direct conflicts to be formatting/order-only.",
+      "before_text_sha256": "90ef6ef5d9119a48b2e22fbc24e4e68112fdc557406e2e688107757bf84d7ef4",
+      "after_text_sha256": "5b24b40cd2abcbe6701ce4299d98e87f09995db8599648fed36cab8a5c17dd2b",
+      "disposition": "Supported with limitations",
+      "rationale": "The generic byte-inequality limitation must be distinguished from this run: zero direct groups were formatting/order-only.",
+      "evidence": {
+        "path": "research/evidence/validation-2026-09-12-v1/dataset-inspection.json",
+        "sha256": "20ba2ea57e3659a84990a9b9f85689be45fd43c7673084e20212c8f659e369a3"
+      },
+      "limitation": "Artifact/source-access statement only; no independent nutritional or clinical approval.",
+      "resolution": "Corrected in both manuscripts where applicable; initial evidence index and pre-correction PDFs retained."
+    },
+    {
+      "occurrence_id": "C-108-2",
+      "before": "Label-byte conflicts can result from ordering or rounding, not necessarily semantic disagreement.",
+      "after": "Byte inequality alone cannot distinguish formatting from numeric changes; the follow-up finds none of the direct conflicts to be formatting/order-only.",
+      "before_text_sha256": "17ead39c5fc63c61a963a3dd01f6133ce35ec5bec3783c90db14931bc3a281fe",
+      "after_text_sha256": "5b24b40cd2abcbe6701ce4299d98e87f09995db8599648fed36cab8a5c17dd2b",
+      "disposition": "Supported with limitations",
+      "rationale": "The generic byte-inequality limitation must be distinguished from this run: zero direct groups were formatting/order-only.",
+      "evidence": {
+        "path": "research/evidence/validation-2026-09-12-v1/dataset-inspection.json",
+        "sha256": "20ba2ea57e3659a84990a9b9f85689be45fd43c7673084e20212c8f659e369a3"
+      },
+      "limitation": "Artifact/source-access statement only; no independent nutritional or clinical approval.",
+      "resolution": "Corrected in both manuscripts where applicable; initial evidence index and pre-correction PDFs retained."
+    },
+    {
+      "occurrence_id": "J-331-2",
+      "before": "Tracked tools and aggregate evidence are public, but the large full manifests are local artifacts and source access depends on provider permissions.",
+      "after": "Tools and aggregate evidence are present in the inspected checkout, but current public access was not verified; large full manifests are local artifacts and source access depends on provider permissions.",
+      "before_text_sha256": "e87794ee5f7fbe5d3c1eadd61d84d5983c2a9108c5208f328b4e9b6d09592ffb",
+      "after_text_sha256": "301a0e551ee9e28c9b948f2231144a4de4045eac9cb1139a545eabdd6159cc75",
+      "disposition": "Supported with limitations",
+      "rationale": "The checkout commit is verified locally; the exact public revision URL fetch failed with a cache miss. A failed fetch does not prove public unavailability or establish public availability.",
+      "evidence": {
+        "path": "research/evidence/validation-2026-09-12-v1/baseline.json",
+        "sha256": "f2ce75cc2424134b44022b0ee9208c59ce5c78f896fa98a6346b840f61e91397"
+      },
+      "limitation": "Artifact/source-access statement only; no independent nutritional or clinical approval.",
+      "resolution": "Corrected in both manuscripts where applicable; initial evidence index and pre-correction PDFs retained."
+    },
+    {
+      "occurrence_id": "J-353-1",
+      "before": "The audited application and preparation tools are available at\n\\href{https://github.com/jaspreet-jt-singh/Final_Year_Project/tree/0a4edfa92818945ccd7f16b023299c847c745f0d}{source revision 0a4edfa}.",
+      "after": "The local audited checkout is identified by this repository reference, whose current public accessibility was not verified:\n\\href{https://github.com/jaspreet-jt-singh/Final_Year_Project/tree/0a4edfa92818945ccd7f16b023299c847c745f0d}{source revision 0a4edfa}.",
+      "before_text_sha256": "536f514490323251272e588a7990a0b12eab78c7be90700d4ae26a521f4ec65b",
+      "after_text_sha256": "37b8b713f4cacae76ae2e1427e25413ce4d4f86ab58c37311a0211313506769b",
+      "disposition": "Supported with limitations",
+      "rationale": "The checkout commit is verified locally; the exact public revision URL fetch failed with a cache miss. A failed fetch does not prove public unavailability or establish public availability.",
+      "evidence": {
+        "path": "research/evidence/validation-2026-09-12-v1/baseline.json",
+        "sha256": "f2ce75cc2424134b44022b0ee9208c59ce5c78f896fa98a6346b840f61e91397"
+      },
+      "limitation": "Artifact/source-access statement only; no independent nutritional or clinical approval.",
+      "resolution": "Corrected in both manuscripts where applicable; initial evidence index and pre-correction PDFs retained."
+    },
+    {
+      "occurrence_id": "C-197-2",
+      "before": "The audited implementation and tracked evidence are available at\n\\href{https://github.com/jaspreet-jt-singh/Final_Year_Project/tree/0a4edfa92818945ccd7f16b023299c847c745f0d}{source revision 0a4edfa}.",
+      "after": "The local audited checkout is identified by this repository reference, whose current public accessibility was not verified:\n\\href{https://github.com/jaspreet-jt-singh/Final_Year_Project/tree/0a4edfa92818945ccd7f16b023299c847c745f0d}{source revision 0a4edfa}.",
+      "before_text_sha256": "034854ddc4a5f7f686f3545d3022c350a76115e197df8eacc386bdfd5e1cfeff",
+      "after_text_sha256": "37b8b713f4cacae76ae2e1427e25413ce4d4f86ab58c37311a0211313506769b",
+      "disposition": "Supported with limitations",
+      "rationale": "The checkout commit is verified locally; the exact public revision URL fetch failed with a cache miss. A failed fetch does not prove public unavailability or establish public availability.",
+      "evidence": {
+        "path": "research/evidence/validation-2026-09-12-v1/baseline.json",
+        "sha256": "f2ce75cc2424134b44022b0ee9208c59ce5c78f896fa98a6346b840f61e91397"
+      },
+      "limitation": "Artifact/source-access statement only; no independent nutritional or clinical approval.",
+      "resolution": "Corrected in both manuscripts where applicable; initial evidence index and pre-correction PDFs retained."
+    }
+  ]
+}

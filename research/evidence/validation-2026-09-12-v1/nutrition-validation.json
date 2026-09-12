@@ -1,0 +1,187 @@
+{
+  "schema_version": 1,
+  "run_id": "validation-2026-09-12-v1",
+  "source_commit": "0a4edfa92818945ccd7f16b023299c847c745f0d",
+  "baseline_sha256": "f2ce75cc2424134b44022b0ee9208c59ce5c78f896fa98a6346b840f61e91397",
+  "input_sha256": {
+    "data/INDB.xlsx": "65f91911de09ebdb4b80c4a3dc3ff372a35420e05444239d8df8a42e8b5b9ecf",
+    "data/nutrition.db": "3bdfb92fafd21b70dd20ade7edb06d78f20fe59f283a0e61f844b5e181aa317a",
+    "data/food_dataset/data.yaml": "65802a243a46f4974cd183de5fe2ac503c85210bb0d30ef5c3c52919b974ff3d",
+    "backend/scripts/merge_db.py": "6a64228196c05e8de34507b7936fb44829cf87b822a5e4c760b301bf7e1c193f",
+    "backend/utils/food_normalizer.py": "7f6197e75f8caeec61ed677097e12cbf2b7b40a5d7f6b459d396e10598f8cbc2",
+    "backend/config/food_aliases.json": "946315e9446619b386ae2c0170b745b919135c07f7a2027adb08946ea30f78fa",
+    "backend/services/nutrition_service.py": "f314a1134cdfd7b9a684b4db0b94d1bc7ee61916a37ca62abf196af2af52741d",
+    "backend/domain/nutrition_policy.json": "1af598ce13ab2db17936ab2fbf922fa2997dd8d842e7cd7c625b718b158fe912",
+    "backend/domain/rules.py": "187e4e5942bd47ce3ae4d7d4c7a899b0d57e7ff5d5e1094210361dca0e840bc4",
+    "frontend/lib/goals.ts": "159d1ba595b5c4259d02544d82c82b0e710268a8d24d8674543d59b6b6d5b663",
+    "frontend/lib/meals.ts": "5395c9842f815ba5db48cd7357e9ee394b8002f39e296d160813f9f6661a48b3",
+    "frontend/lib/generated/nutritionPolicy.ts": "1bf02e699bed4cce796d1b34f7557d65e80166592cc9798945a84b1d9870e428",
+    "frontend/package-lock.json": "81c57cbf48762774a828fba268482447dc241413a86cfebd1d868fc2edc76f40",
+    "tests/contracts/macro-fixtures.json": "ba535ca13e8914b4c19acc154051bc819926a43bcbdd461f139c39d9d3cf86f1",
+    "research/evidence/nutrition-provenance.json": "cb4a7b6dd3fb0ea65bc75f4711d2bdf9a156c1da90b40836a47da0a9d8c4d0a4"
+  },
+  "created_at_utc": "2026-09-12T05:34:12.479522+00:00",
+  "script_sha256": "18793ef0e77a0bd37cba1c7e8fd036f864d7182239e1752c3fa9385b77cb907c",
+  "clinical_validity_established": false,
+  "workbook_rows": 1014,
+  "imported_workbook_rows": 1005,
+  "omitted_workbook_rows": 9,
+  "omissions_by_reason": {
+    "duplicate_normalized_name": 9
+  },
+  "supplemental_rows": 5,
+  "expected_database_rows": 1010,
+  "actual_database_rows": 1010,
+  "integrity_check": [
+    "ok"
+  ],
+  "reconciliation_difference_count": 0,
+  "numeric_fields_compared": 4040,
+  "numeric_absolute_tolerance": 1e-09,
+  "invalid_macro_rows": 0,
+  "normalized_name_collisions": {},
+  "mapping_rows": 103,
+  "canonical_classes": 72,
+  "dangling_mapping_targets": [],
+  "coverage_not_accuracy": {
+    "normalized_exact": 19,
+    "automatic_without_precomputed": 55,
+    "current_mapping": 72
+  },
+  "hash_seed_checks": {
+    "seeds": [
+      0,
+      1,
+      7,
+      42,
+      97,
+      123,
+      321,
+      999
+    ],
+    "labels_per_run": 181,
+    "methods": 2,
+    "changing_method_label_pairs": 30,
+    "changing_canonical_pairs": 6,
+    "changing_current_canonical_pairs": 0,
+    "examples": [
+      {
+        "label": "aloo gobi",
+        "method": "current_mapping",
+        "matched_names": [
+          "Cauliflower parantha/paratha (Phoolgobhi ka parantha/paratha)",
+          "Dum aloo",
+          "Gobi 65",
+          "Pea potato sandwich (toasted) (Matar aloo ka sandwich)"
+        ]
+      },
+      {
+        "label": "annam",
+        "method": "current_mapping",
+        "matched_names": [
+          "Rice flakes (Chiwda/Aval)",
+          "Soyabean namak paras"
+        ]
+      },
+      {
+        "label": "fritter",
+        "method": "current_mapping",
+        "matched_names": [
+          "Jackfruit fritters (Ponsa mulik/Kathal ka pakora)",
+          "Potato pakora/pakoda (Aloo pakoda)"
+        ]
+      },
+      {
+        "label": "gobi paneer",
+        "method": "current_mapping",
+        "matched_names": [
+          "Cauliflower parantha/paratha (Phoolgobhi ka parantha/paratha)",
+          "Cottage cheese pie",
+          "Gobi 65",
+          "Paneer pea sandwich (toasted) (Paneer matar ka sandwich)"
+        ]
+      },
+      {
+        "label": "lamb",
+        "method": "current_mapping",
+        "matched_names": [
+          "Indian lamb and egg curry (Nargisi kofta)",
+          "Mutton biryani/biriyani"
+        ]
+      },
+      {
+        "label": "maach",
+        "method": "current_mapping",
+        "matched_names": [
+          "Fish curry (Machli curry)",
+          "Maa chaane ki dal"
+        ]
+      },
+      {
+        "label": "paneer chutney",
+        "method": "current_mapping",
+        "matched_names": [
+          "Cottage cheese pie",
+          "Paneer pea sandwich (toasted) (Paneer matar ka sandwich)",
+          "Saunth/Sonth chutney with tamarind/imli"
+        ]
+      },
+      {
+        "label": "payasam",
+        "method": "current_mapping",
+        "matched_names": [
+          "Apple sago payasam (Seb aur sabudana ki kheer)",
+          "Rice kheer (Chawal ki kheer)"
+        ]
+      },
+      {
+        "label": "red rice",
+        "method": "current_mapping",
+        "matched_names": [
+          "Rice flakes (Chiwda/Aval)",
+          "Soyabean namak paras"
+        ]
+      },
+      {
+        "label": "AlooGobi",
+        "method": "automatic_without_precomputed",
+        "matched_names": [
+          "Cauliflower parantha/paratha (Phoolgobhi ka parantha/paratha)",
+          "Dum aloo",
+          "Gobi 65",
+          "Pea potato sandwich (toasted) (Matar aloo ka sandwich)"
+        ]
+      },
+      {
+        "label": "AlooMasala",
+        "method": "automatic_without_precomputed",
+        "matched_names": [
+          "Dum aloo",
+          "Pea potato sandwich (toasted) (Matar aloo ka sandwich)"
+        ]
+      },
+      {
+        "label": "MuttonCurry",
+        "method": "automatic_without_precomputed",
+        "matched_names": [
+          "Indian lamb and egg curry (Nargisi kofta)",
+          "Mutton biryani/biriyani"
+        ]
+      }
+    ]
+  },
+  "energy_residuals": {
+    "rows": 1010,
+    "min_kcal": -173.08722305297852,
+    "max_kcal": 26.386123657226562,
+    "interpretation": "Descriptive 4/4/9 residuals only; no correctness threshold or clinical conclusion."
+  },
+  "status": "discrepancies_found",
+  "limitations": [
+    "Supplemental literals are reconciled to the builder, not independently verified against live source pages.",
+    "Mapping coverage and stable behavior do not establish recipe equivalence or clinical correctness.",
+    "Hash-seed checks characterize eight executions; no unobserved-case determinism guarantee."
+  ],
+  "local_detail_sha256": "ba80157c4a2dacaf6684ab526c4dde71e9bc3b6664400c592cde5d898b5bdaec",
+  "local_detail_path": ".deployment/research/validation-2026-09-12-v1/nutrition-details.json"
+}

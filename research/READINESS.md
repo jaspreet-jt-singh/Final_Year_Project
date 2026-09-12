@@ -1,8 +1,10 @@
 # Publication readiness — 2026-09-12
 
+Latest evidence: [VALIDATION_REPORT.md](VALIDATION_REPORT.md) documents the subsequent full existing-evidence audit, corrected papers, new findings, command receipts and explicit remaining gates. The independent all-72 mapping review now has a [blank version-2 packet](review/validation-2026-09-12-v1/README.md) preserving indeterminate cases. Historical evidence and the original review format remain unchanged.
+
 ## Decision
 
-The application can remain an educational demo. The manuscripts are **not ready for external submission**. More UI features will not resolve the experimental-validity and provenance gaps below. The production model, dataset, nutrition rows and clinical rules have not been changed. No retraining, paper submission, paid compute or publication fee has been incurred.
+The application can remain an educational demo. The manuscripts are **ready for supervisor feedback, not external submission**. Use the [supervisor review package](SUPERVISOR_REVIEW.md), with the full manuscript as primary and the conference-style manuscript as its short companion. More UI features will not resolve the experimental-validity and provenance gaps below. The production model, dataset, nutrition rows and clinical rules have not been changed. No retraining, paper submission, paid compute or publication fee has been incurred.
 
 ## Measured evidence
 
@@ -33,7 +35,7 @@ Historical test mAP50 of approximately 0.820 is retained as a previously reporte
 
 [Grouped candidate evidence](evidence/grouped-split-v1.json) records the parameters and hashes. The full local source inventory and assignments are in `.deployment/research/grouped-v1-verified/`; `grouped-v1/` preserves the first run. Reproduction must use a fresh `--output` path. These local artifacts are not included in website releases.
 
-Two independent full reads produced identical source-inventory and assignment SHA-256 hashes. The verified run also checks class-name ordering against the audit. The report's source commit identifies the base checkout and its script hash identifies the exact preparation code, added in this change. Ten synthetic research-tool tests pass, as do backend, frontend and browser regressions; both revised PDFs compile. These checks establish software reproducibility, not independent benchmark validity.
+Two full reads in the same environment produced identical source-inventory and assignment SHA-256 hashes. The verified run also checks class-name ordering against the audit. This is same-environment output repeatability, not independent replication; the reports do not record a complete historical execution environment. The report's source commit identifies the base checkout and its script hash identifies the preparation code at that run. Ten synthetic research-tool tests pass. Backend, frontend and browser checks passed for the prior application revision; they are not new clinical or benchmark evidence from this paper-editing pass. Both revised PDFs compile, and offline manuscript/evidence checks have been added.
 
 | Candidate partition | Images | Groups | Classes represented |
 | --- | ---: | ---: | ---: |
@@ -46,7 +48,7 @@ There are **5,548 candidate source-family groups spanning the old partitions**. 
 
 The INDB workbook provenance gap is resolved: it is byte-identical to the authors' pinned public artifact. [Provenance evidence](evidence/nutrition-provenance.json) and an offline/online checker now exist. Reuse terms still need owner review; no clinical correctness is inferred from identity.
 
-Both paper abstracts and conclusions now describe an application/evidence audit rather than claim clean detector generalization or safe mappings. Runtime descriptions distinguish the offline mapping threshold from the more permissive preserved runtime fallbacks, gram estimates from measurements, and recommendation inputs from journal totals.
+Both manuscripts have been rewritten as an application/evidence audit rather than a claim of clean detector generalization or safe mappings. Runtime descriptions distinguish the offline mapping threshold from the more permissive preserved runtime fallbacks, gram estimates from measurements, and recommendation inputs from journal totals. Matching uses normalized names and containment, not the unused edit-distance helper. Set-derived alias ordering can make ambiguous fallbacks vary across processes, although current canonical precomputed mappings bypass that ambiguity.
 
 ### Work still requiring evidence or approval
 
@@ -60,11 +62,11 @@ Hypothesis: **a provenance-preserving reviewed mapping layer reduces inappropria
 
 ## Submission gate
 
-- Both LaTeX drafts receive a blocking audit notice and updated application description; historical tables/figures remain historical. Rebuild PDFs with the notice before circulation.
+- Both LaTeX drafts are now coherent supervisor-review copies with an explicit evidence scope and proposed next protocol. Historical detector scores are confined to appendices; historical figure assets remain on disk but are not included in the new PDFs. Generated numerical audit macros are checked for drift.
 - Remove unsupported claims of independent originals. Resolve annotation flags and explain strict-audit/evaluator count differences.
 - The INDB placeholder has been replaced with the verified, pinned workbook citation. Resolve its reuse terms separately; artifact identity is not a license grant.
 - Historical `VERIFIED` mapping labels describe heuristic checks, not clinical or recipe equivalence. Retain the 21 review flags.
-- Runtime descriptions now reflect grams, saved-only daily totals, session-only health context and Groq-to-local fallback. Historical screenshots remain explicitly historical; replace them after choosing the final submission scope. Advice receives per-100-g values, not portion weights/history or calorie targets.
+- Runtime descriptions reflect grams, saved-only daily totals, session-only health context and Groq-to-local fallback. The recommendation endpoint receives included per-100-g macro records; Groq sees only food names and rounded energy. Neither receives portion weights, history, or calorie targets. Local templates ignore numeric nutrients and some retain consumption/suitability assumptions; context labels do not establish medical quality.
 - Confirm authors, email/ORCID, affiliations and consent. Follow the chosen publisher's AI-assistance disclosure rules, describing actual assistance without inventing author contributions.
 - Resolve [asset rights](../THIRD_PARTY_NOTICES.md), finish evidence, and then choose a [venue](VENUES.md) with the supervisors. None has been selected or contacted.
 

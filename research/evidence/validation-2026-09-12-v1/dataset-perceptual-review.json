@@ -1,0 +1,101 @@
+{
+  "artifacts": [
+    {
+      "path": ".deployment/research/validation-2026-09-12-v1/grouped/assignments.jsonl",
+      "sha256": "54fa9cc4cea5f94119725c2afced5c48ad7e6bc9d10a41e91eec21a5ac7a0d69"
+    },
+    {
+      "path": ".deployment/research/validation-2026-09-12-v1/perceptual-sample.json",
+      "sha256": "02c2ecd971c808880b859de99a2d6d0701e1ad2923b9cc87867da95bed01c68e"
+    },
+    {
+      "path": ".deployment/research/validation-2026-09-12-v1/perceptual-calibration.json",
+      "sha256": "3a2d076d5903ec596a853ff05308031a5db4ee4077568e3b93fc7197a77ff3d6"
+    },
+    {
+      "path": "research/evidence/validation-2026-09-12-v1/dataset-perceptual-queue.json",
+      "sha256": "74449ad67b23ddfefd68c0a8038b44bd28c9d58ba3b8905136627498d2221283"
+    }
+  ],
+  "calibration_probe_summary": {
+    "crop_10_percent_each_edge": {
+      "count": 12,
+      "maximum": 30,
+      "minimum": 15,
+      "within_threshold": 0
+    },
+    "horizontal_mirror": {
+      "count": 12,
+      "maximum": 41,
+      "minimum": 10,
+      "within_threshold": 0
+    },
+    "jpeg_quality_35": {
+      "count": 12,
+      "maximum": 3,
+      "minimum": 0,
+      "within_threshold": 12
+    },
+    "resize_48_square": {
+      "count": 12,
+      "maximum": 1,
+      "minimum": 0,
+      "within_threshold": 12
+    },
+    "rotate_10_degrees_black_fill": {
+      "count": 12,
+      "maximum": 20,
+      "minimum": 12,
+      "within_threshold": 0
+    }
+  },
+  "candidate_pairs_before_cap": 16,
+  "command": [
+    "G:\\Projects\\Final_Year_Project\\.venv\\Scripts\\python.exe",
+    "G:\\Projects\\Final_Year_Project\\scripts\\validate_dataset_training.py",
+    "--phase",
+    "perceptual",
+    "--run-id",
+    "validation-2026-09-12-v1"
+  ],
+  "duration_seconds": 26.484,
+  "eligible_images_in_candidate_partitions": 37691,
+  "eligible_pair_comparisons": 1360132,
+  "environment": {
+    "executable": "G:\\Projects\\Final_Year_Project\\.venv\\Scripts\\python.exe",
+    "pillow": "12.2.0",
+    "platform": "Windows-11-10.0.26200-SP0",
+    "python": "3.12.7 | packaged by Anaconda, Inc. | (main, Oct  4 2024, 13:17:27) [MSC v.1929 64 bit (AMD64)]",
+    "pyyaml": "6.0.3"
+  },
+  "exit_code": 0,
+  "failures": [],
+  "limitations": [
+    "Bounded sample only; this is not a full-corpus perceptual census or independence certification.",
+    "Threshold 6 is a provisional screening choice, not calibrated against an expert-labeled positive/negative set.",
+    "Transform probes use 12 deterministic original images and known synthetic lineage; no transformed files were retained.",
+    "Probe recovery is not sensitivity on real near-duplicates; no verified negatives or precision/recall estimate exists.",
+    "Crops, rotations, collages, overlays, mirroring and source-family ambiguity can escape this screen; unrelated images can collide.",
+    "Cross-candidate-split pairs exclude equal known pixel identities and equal candidate groups, but unlinked source families may remain.",
+    "All queued pair identities and food annotations need qualified human adjudication. No dataset repair or detector run was performed."
+  ],
+  "method": "64-bit horizontal dHash, EXIF-normalized luminance, 9x8 Lanczos, Hamming distance <= 6",
+  "queue_cap": 200,
+  "queue_truncated": false,
+  "run_id": "validation-2026-09-12-v1",
+  "sample_by_candidate_split": {
+    "test": 674,
+    "train": 672,
+    "valid": 674
+  },
+  "sample_policy": "Seed 42 SHA256(path) rank: up to 10 distinct candidate groups per class and split; deduplicate selected paths.",
+  "schema_version": 1,
+  "scope": "Offline read-only dataset/model access; generated evidence only; not independent scientific validation.",
+  "script_sha256_at_start": "4e2ec0c90309e9164188955ce208970072ce6c9e380be69ba324561d829b00ec",
+  "selected_images": 2020,
+  "source_commit": "0a4edfa92818945ccd7f16b023299c847c745f0d",
+  "started_utc": "2026-09-12T05:42:05.460061+00:00",
+  "status": "candidate_review_pending",
+  "successfully_hashed_images": 2020,
+  "threshold": 6
+}

@@ -1,0 +1,60 @@
+{
+  "artifacts": [
+    {
+      "path": "scripts/validate_dataset_training.py",
+      "sha256": "f7927cb70ab520bfcf919660af1136911195b66c0a518885a13cfb78e267fdab"
+    },
+    {
+      "path": "scripts/test_validate_dataset_training.py",
+      "sha256": "83cebc6bc7539a67dde405b8c7a6f5382536519d81aa223f5122d0d5557e8aca"
+    },
+    {
+      "path": "scripts/record_dataset_visual_review.py",
+      "sha256": "b768d83fd6effd040000611973ed2106c96e98b59bbd03fc81da2bf32ec9c36b"
+    }
+  ],
+  "duration_seconds": 0.468,
+  "environment": {
+    "executable": "G:\\Projects\\Final_Year_Project\\.venv\\Scripts\\python.exe",
+    "pillow": "12.2.0",
+    "platform": "Windows-11-10.0.26200-SP0",
+    "python": "3.12.7 | packaged by Anaconda, Inc. | (main, Oct  4 2024, 13:17:27) [MSC v.1929 64 bit (AMD64)]",
+    "pyyaml": "6.0.3"
+  },
+  "exit_code": 0,
+  "limitations": [
+    "Passing tests check these offline helper rules, not dataset semantics, independent detector accuracy or publication approval."
+  ],
+  "results": [
+    {
+      "command": [
+        "G:\\Projects\\Final_Year_Project\\.venv\\Scripts\\python.exe",
+        "scripts/test_validate_dataset_training.py"
+      ],
+      "duration_seconds": 0.328,
+      "exit_code": 0,
+      "output": "................\n----------------------------------------------------------------------\nRan 16 tests in 0.037s\n\nOK\n"
+    },
+    {
+      "command": [
+        "G:\\Projects\\Final_Year_Project\\.venv\\Scripts\\python.exe",
+        "-m",
+        "ruff",
+        "check",
+        "scripts/validate_dataset_training.py",
+        "scripts/test_validate_dataset_training.py",
+        "scripts/record_dataset_visual_review.py"
+      ],
+      "duration_seconds": 0.14,
+      "exit_code": 0,
+      "output": "All checks passed!\n"
+    }
+  ],
+  "run_id": "validation-2026-09-12-v1",
+  "schema_version": 1,
+  "scope": "Offline read-only dataset/model access; generated evidence only; not independent scientific validation.",
+  "script_sha256_at_start": "f7927cb70ab520bfcf919660af1136911195b66c0a518885a13cfb78e267fdab",
+  "source_commit": "0a4edfa92818945ccd7f16b023299c847c745f0d",
+  "started_utc": "2026-09-12T05:49:10.398226+00:00",
+  "status": "passed_synthetic_tests_and_lint"
+}

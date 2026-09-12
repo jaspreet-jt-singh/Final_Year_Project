@@ -1,0 +1,86 @@
+{
+  "schema_version": 1,
+  "run_id": "validation-2026-09-12-v1",
+  "reviewed_at_utc": "2026-09-12T05:40:07.330Z",
+  "command": "$auditInference = Get-Content .deployment/inference-verification.json -Raw | ConvertFrom-Json; $auditFiles = @('.deployment/inference-verification.json', 'scripts/verify_inference.py', 'DEPLOYMENT.md'); $auditIdentity = foreach ($auditFile in $auditFiles) { [pscustomobject]@{path=$auditFile;sha256=(Get-FileHash -Algorithm SHA256 -LiteralPath $auditFile).Hash.ToLower();bytes=(Get-Item -LiteralPath $auditFile).Length} }; [pscustomobject]@{inputs=@($auditIdentity);historical_cpu=@{baseline_seconds=$auditInference.baseline.seconds;baseline_peak_mib=$auditInference.baseline.peak_mib;deployment_seconds=$auditInference.deployment.seconds;deployment_peak_mib=$auditInference.deployment.peak_mib;exact_parity=$auditInference.parity;cases=$auditInference.baseline.results.Count;top_level_fields=@($auditInference.PSObject.Properties.Name)}} | ConvertTo-Json -Depth 6",
+  "command_duration_seconds": 0.6796514,
+  "inputs": [
+    {
+      "path": ".deployment/inference-verification.json",
+      "sha256": "97bd3b99b62884ece28956d4d443f19c00547876715e6aec3a66dc53865e50b8",
+      "bytes": 3577
+    },
+    {
+      "path": "scripts/verify_inference.py",
+      "sha256": "8ebb9c2dacbca2157c1a81c2865a697b0eaaae1f37a44d111012ccf2b6ab095c",
+      "bytes": 4746
+    },
+    {
+      "path": "DEPLOYMENT.md",
+      "sha256": "ca5f19f54e17988e7279e8214e3999edf33564d2b72c341444ad76a54c870927",
+      "bytes": 9671
+    }
+  ],
+  "historical_cpu": {
+    "exact_parity": true,
+    "cases": 4,
+    "baseline_seconds": 17.67,
+    "baseline_peak_mib": 660.3,
+    "deployment_seconds": 6.38,
+    "top_level_fields": [
+      "baseline",
+      "deployment",
+      "parity"
+    ],
+    "deployment_peak_mib": 670
+  },
+  "inspection_scope": "Bounded read-only inspection of existing local inference JSON, its current producer, deployment instructions, and two release manifests already readable during this turn; no live URL/provider calls or deployment changes.",
+  "historical_inference_limitations": [
+    "Receipt has no execution date, source commit, checkpoint/image hashes, dependency versions, host OS/runtime identity, command, sampling trace, or cloud deployment ID.",
+    "'deployment.seconds' is the producer's local worker elapsed time across imports/initialization and four samples, not a measured Vercel cold HTTP analysis request.",
+    "Current producer samples process RSS every 20 ms and reports one observed peak; this does not establish memory below a threshold under deployed concurrency.",
+    "Two supplied validation images plus a stitched composite and blank image test small-sample output parity, not detector accuracy, independent evaluation or real multi-dish generalization.",
+    "The historical JSON has no bundle size, cloud logs, preview/source linkage, health-context interaction, journal reload, or Groq outcome evidence.",
+    "Current producer reads baseline code from mutable HEAD and writes a fixed historical receipt path; it was inspected, not rerun or treated as a frozen-baseline validation."
+  ],
+  "release_manifests_observed": [
+    {
+      "path": ".deployment/release-mz22iyk7/release-manifest.json",
+      "source_commit": "80f33d25a9a3a9ac80e9ddec81eb85b6d6686eb1",
+      "model_sha256": "935a1b34365bb949b75a7256facbc0ffa81629dd96ee1d0ac40260a4715a0827",
+      "interpretation": "Read yielded source commit and per-file hashes. A later metadata/hash read was denied; manifest digest and deployed status not verified."
+    },
+    {
+      "path": ".deployment/release-d8pa69le/release-manifest.json",
+      "source_commit": "80f33d25a9a3a9ac80e9ddec81eb85b6d6686eb1",
+      "model_sha256": "935a1b34365bb949b75a7256facbc0ffa81629dd96ee1d0ac40260a4715a0827",
+      "interpretation": "Read yielded source commit and per-file hashes. A later metadata/hash read was denied; manifest digest and deployed status not verified."
+    }
+  ],
+  "frozen_baseline_source_commit": "0a4edfa92818945ccd7f16b023299c847c745f0d",
+  "access_limitations": [
+    ".deployment/release-naehkb4_/release-manifest.json read denied; no escalation or permission changes attempted.",
+    "Release file hash/metadata access was unavailable after earlier text reads; no source identity was fabricated."
+  ],
+  "current_acceptance": {
+    "status": "not_established",
+    "python_bundle_below_5gb": "not established by inspected artifacts",
+    "peak_memory_below_1_6gb": "not established on current Vercel candidate",
+    "cold_analysis_below_120_seconds": "not established on current Vercel candidate",
+    "real_scan_recommendations_and_journal_workflow": "not reverified live in this offline run"
+  },
+  "required_next_evidence": [
+    "An authorized candidate deployment ID tied to a clean source commit and runtime/checkpoint hashes.",
+    "Actual Python bundle size and Linux installed-wheel identity from that candidate.",
+    "Timestamped cold HTTP analysis timing and observed peak memory with explicit units, measurement method and concurrency setting.",
+    "Preview real scan, context switching, fallback/error behavior and journal reload results; retain previous deployment for rollback."
+  ],
+  "boundaries": {
+    "live_http_calls": 0,
+    "provider_calls": 0,
+    "private_environment_read": false,
+    "release_manifest_generated": false,
+    "published": false,
+    "clinical_validation": false
+  }
+}

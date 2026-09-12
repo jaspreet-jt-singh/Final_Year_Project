@@ -1,0 +1,1606 @@
+{
+  "schema_version": 1,
+  "run_id": "validation-2026-09-12-v1",
+  "sealed_at_utc": "2026-09-12T06:14:19.005641+00:00",
+  "source_commit": "0a4edfa92818945ccd7f16b023299c847c745f0d",
+  "current_commit": "0a4edfa92818945ccd7f16b023299c847c745f0d",
+  "identity_note": "Uncommitted documents and tooling are identified by content hashes, not by the base commit alone.",
+  "command": [
+    "python",
+    "scripts/seal_validation.py",
+    "--run-id",
+    "validation-2026-09-12-v1"
+  ],
+  "baseline_sha256": "f2ce75cc2424134b44022b0ee9208c59ce5c78f896fa98a6346b840f61e91397",
+  "protected_inputs": [
+    {
+      "path": "backend/api/analysis.py",
+      "sha256": "16b70e24b390d4cc24a5687b1424212d04e974dd95ed1ca62d6fae0d4ae26d6e",
+      "unchanged": true
+    },
+    {
+      "path": "backend/api/diagnostics.py",
+      "sha256": "3c1b7ea5baf68300dc6d605ff3f2ce0c2667ad47741247392195c34010bf3631",
+      "unchanged": true
+    },
+    {
+      "path": "backend/api/goals.py",
+      "sha256": "fc7a45dcad5fe0efe93fe9be2fbb44f679608cce622bd1f64b10c9474304c6ca",
+      "unchanged": true
+    },
+    {
+      "path": "backend/api/recommendations.py",
+      "sha256": "93296296cae56abf3334a1a60907c711406aec84034f72b5bffa60b398dddf9c",
+      "unchanged": true
+    },
+    {
+      "path": "backend/api/schemas.py",
+      "sha256": "e223e240c4b2d95432ca98e18a86bc43d144ec420336a3e48f119e7d865b2a4a",
+      "unchanged": true
+    },
+    {
+      "path": "backend/application.py",
+      "sha256": "7c5370761af57dd803b379f87db8038502d6bd05d00691b55e49127c0ae3aa41",
+      "unchanged": true
+    },
+    {
+      "path": "backend/config/food_aliases.json",
+      "sha256": "946315e9446619b386ae2c0170b745b919135c07f7a2027adb08946ea30f78fa",
+      "unchanged": true
+    },
+    {
+      "path": "backend/domain/nutrition_policy.json",
+      "sha256": "1af598ce13ab2db17936ab2fbf922fa2997dd8d842e7cd7c625b718b158fe912",
+      "unchanged": true
+    },
+    {
+      "path": "backend/domain/policy.py",
+      "sha256": "63ea939b0f2f048f3d8f8686f84d7e5eb1ace76133c8f6d29737abb83671fc62",
+      "unchanged": true
+    },
+    {
+      "path": "backend/domain/recommendations.py",
+      "sha256": "82d92c87af4fcaa750b45f190f1b195f0adaa2fd775e454eea6f72f7c25926d3",
+      "unchanged": true
+    },
+    {
+      "path": "backend/domain/rules.py",
+      "sha256": "187e4e5942bd47ce3ae4d7d4c7a899b0d57e7ff5d5e1094210361dca0e840bc4",
+      "unchanged": true
+    },
+    {
+      "path": "backend/main.py",
+      "sha256": "2db487258f52d935ea4798bea1766ce4a04d78b9980b4a8d24b6e511fea54a88",
+      "unchanged": true
+    },
+    {
+      "path": "backend/observability.py",
+      "sha256": "ed2d7ff0cf69a154892ff3a1e05f7c72fbcdf9b63e934631391adaefecf05931",
+      "unchanged": true
+    },
+    {
+      "path": "backend/scripts/merge_db.py",
+      "sha256": "6a64228196c05e8de34507b7936fb44829cf87b822a5e4c760b301bf7e1c193f",
+      "unchanged": true
+    },
+    {
+      "path": "backend/services/container.py",
+      "sha256": "f42b0a27507f62a84cc3df7f431bf7e36fddb1097ecc14a6f0c27d58bdcccb5a",
+      "unchanged": true
+    },
+    {
+      "path": "backend/services/inference_runtime.py",
+      "sha256": "ac2e184e73c1a8d7763218c3ccb36081a4e0f2439f896c4c2fa0d744718d54f5",
+      "unchanged": true
+    },
+    {
+      "path": "backend/services/nutrition_service.py",
+      "sha256": "f314a1134cdfd7b9a684b4db0b94d1bc7ee61916a37ca62abf196af2af52741d",
+      "unchanged": true
+    },
+    {
+      "path": "backend/services/providers.py",
+      "sha256": "28a44288504eb8a1e970e3b1d09d696a0b5256db592cd99316f4771e8204de71",
+      "unchanged": true
+    },
+    {
+      "path": "backend/services/recommendation_service.py",
+      "sha256": "b2e82ccf80064bab6094cd12ec4b52596b559515766909617eabad3754ee9520",
+      "unchanged": true
+    },
+    {
+      "path": "backend/services/vision_service.py",
+      "sha256": "85d80092420303475f5c2f029f3ebb337847a770f3e635b8b672449523d763dd",
+      "unchanged": true
+    },
+    {
+      "path": "backend/settings.py",
+      "sha256": "55992c9509eb8f85f59840922d946853375a3b1baaf737e6d92a966701398476",
+      "unchanged": true
+    },
+    {
+      "path": "backend/utils/__init__.py",
+      "sha256": "2ad84a91113a96ac49940007df1b5a1863dbcf30eae43bc2ef76f3b4706f02a3",
+      "unchanged": true
+    },
+    {
+      "path": "backend/utils/food_normalizer.py",
+      "sha256": "7f6197e75f8caeec61ed677097e12cbf2b7b40a5d7f6b459d396e10598f8cbc2",
+      "unchanged": true
+    },
+    {
+      "path": "data/food_dataset/data.yaml",
+      "sha256": "65802a243a46f4974cd183de5fe2ac503c85210bb0d30ef5c3c52919b974ff3d",
+      "unchanged": true
+    },
+    {
+      "path": "data/INDB.xlsx",
+      "sha256": "65f91911de09ebdb4b80c4a3dc3ff372a35420e05444239d8df8a42e8b5b9ecf",
+      "unchanged": true
+    },
+    {
+      "path": "data/nutrition.db",
+      "sha256": "3bdfb92fafd21b70dd20ade7edb06d78f20fe59f283a0e61f844b5e181aa317a",
+      "unchanged": true
+    },
+    {
+      "path": "frontend/app/layout.tsx",
+      "sha256": "98b17280253fdf682fdedb40042e6274313fbb63a1f11e6d6133d69391676da4",
+      "unchanged": true
+    },
+    {
+      "path": "frontend/app/page.tsx",
+      "sha256": "08b62fdb681da258c78072e72ff822a43c62d52b2855763627897ac36670f8b8",
+      "unchanged": true
+    },
+    {
+      "path": "frontend/components/DailySummary.tsx",
+      "sha256": "541b7716acabab36d8da08b9d189f9f8e4a674c38edffdce026f1ce2e1b0e22e",
+      "unchanged": true
+    },
+    {
+      "path": "frontend/components/GoalSettings.tsx",
+      "sha256": "cb6432734efd74547f75b155b96d1bcb8ce665d9dafbcf5bd186cfec41e866ad",
+      "unchanged": true
+    },
+    {
+      "path": "frontend/components/ImageOverlay.tsx",
+      "sha256": "6afea1a17a79c2ed2f29d61bf32c9312aef5a9ecf18c1f0e783edd5eb8c4dfc0",
+      "unchanged": true
+    },
+    {
+      "path": "frontend/components/ImageUpload.tsx",
+      "sha256": "0c9f511bd933bb8fbf36f0848ccdd93b32c16c65c0dd73ec17878e580737ae7e",
+      "unchanged": true
+    },
+    {
+      "path": "frontend/components/MealHistory.tsx",
+      "sha256": "417b7c1d466d1eecbaac4af301138e3be70e1c93275c19e72f4d915c58ada99f",
+      "unchanged": true
+    },
+    {
+      "path": "frontend/components/MealItems.tsx",
+      "sha256": "b366cb486a67cc38ad97aa8a48adadada5d5d88ec237eee51dc675e295141232",
+      "unchanged": true
+    },
+    {
+      "path": "frontend/components/NutritionLabel.tsx",
+      "sha256": "4c5bf54a73596c5b4330ebce582288ff5dc58d51c11a2591393c2c8db9849de0",
+      "unchanged": true
+    },
+    {
+      "path": "frontend/components/RecommendationPanel.tsx",
+      "sha256": "7e8a2d7432671b5f9320304e282c828ff31e26f48fc7c9b48b9287fabe26a58c",
+      "unchanged": true
+    },
+    {
+      "path": "frontend/components/ResultsPanel.tsx",
+      "sha256": "4d842ff41be33ff5e7dd93edc1357614ba9f80766b2383d7019ebbf773f49a3f",
+      "unchanged": true
+    },
+    {
+      "path": "frontend/eslint.config.mjs",
+      "sha256": "7afe08e4dfd4d5380c01217caf7ace7023d343018c0c300fb7f7fe45ae15d2cd",
+      "unchanged": true
+    },
+    {
+      "path": "frontend/lib/api.ts",
+      "sha256": "4daed552c52f57f44bb133273c6fd37303cd3ff8a8cfe6b905354842b4206062",
+      "unchanged": true
+    },
+    {
+      "path": "frontend/lib/endpoints.ts",
+      "sha256": "64400d7020b50b96d72487f2c251f5a19c99b19a3698880a6ab75b29e4431cc2",
+      "unchanged": true
+    },
+    {
+      "path": "frontend/lib/generated/api.d.ts",
+      "sha256": "d01d7ae64b2174407180b1cbf1a1d42ede2afd016858ead6dd281a5b44541d70",
+      "unchanged": true
+    },
+    {
+      "path": "frontend/lib/generated/nutritionPolicy.ts",
+      "sha256": "1bf02e699bed4cce796d1b34f7557d65e80166592cc9798945a84b1d9870e428",
+      "unchanged": true
+    },
+    {
+      "path": "frontend/lib/goals.ts",
+      "sha256": "159d1ba595b5c4259d02544d82c82b0e710268a8d24d8674543d59b6b6d5b663",
+      "unchanged": true
+    },
+    {
+      "path": "frontend/lib/journalStorage.ts",
+      "sha256": "d1770499f1037cc17e0668c94a4ed3346f570e3caef079405cee4e96cd2132c9",
+      "unchanged": true
+    },
+    {
+      "path": "frontend/lib/meals.ts",
+      "sha256": "5395c9842f815ba5db48cd7357e9ee394b8002f39e296d160813f9f6661a48b3",
+      "unchanged": true
+    },
+    {
+      "path": "frontend/lib/prepareImage.ts",
+      "sha256": "6293adb8cc114da28443db643376e6313789d22b41230afe277713f741ebc602",
+      "unchanged": true
+    },
+    {
+      "path": "frontend/lib/sourceUrl.ts",
+      "sha256": "a80aa305d98c16cc742aec5741ee86626e94d1e2eb2ff59abe33e8a5726097c1",
+      "unchanged": true
+    },
+    {
+      "path": "frontend/lib/useFoodScan.ts",
+      "sha256": "fb79b6949199595c36e36f050c7e30025d13283d5d047e4527a0f600ace47d50",
+      "unchanged": true
+    },
+    {
+      "path": "frontend/lib/useGoalSettings.ts",
+      "sha256": "fa6a0d54d800aef1b7d2fa5ef3dcfc1a5f83a907eeeed94d52bfcdd1e20bea39",
+      "unchanged": true
+    },
+    {
+      "path": "frontend/lib/useJournal.ts",
+      "sha256": "2ec3642995dd494043d91bcb1424d76efbd4758db531431a48521dae524cee4f",
+      "unchanged": true
+    },
+    {
+      "path": "frontend/lib/useMealJournal.ts",
+      "sha256": "a8ad7e9479337dc389489a3a3401b51ba7208cca164115a8fc7c05e8df15b401",
+      "unchanged": true
+    },
+    {
+      "path": "frontend/lib/useRecommendations.ts",
+      "sha256": "37a37dd12cf31653d52dc3642059044b64a59f7d8cec6ddedd1c6cdac0fdad9f",
+      "unchanged": true
+    },
+    {
+      "path": "frontend/next-env.d.ts",
+      "sha256": "1862ac4bbbc5192d4bf562161df66ea547ed3e67173100656ab606ae9797db2b",
+      "unchanged": true
+    },
+    {
+      "path": "frontend/package-lock.json",
+      "sha256": "81c57cbf48762774a828fba268482447dc241413a86cfebd1d868fc2edc76f40",
+      "unchanged": true
+    },
+    {
+      "path": "frontend/package.json",
+      "sha256": "79ea282a28c1c441d2f53dc92aa3fb38ea5bc6b899337cdddb002c56915e71fc",
+      "unchanged": true
+    },
+    {
+      "path": "frontend/README.md",
+      "sha256": "454b6678eb0af0b6f39aab66e8fc1790011764a50a023a41804c68170493d799",
+      "unchanged": true
+    },
+    {
+      "path": "frontend/tsconfig.json",
+      "sha256": "e4529350a62baa7de1178386da92ab938796a2cc7cd35c70e0ede36cedca77c2",
+      "unchanged": true
+    },
+    {
+      "path": "merge_results/merged_results_1_to_100.csv",
+      "sha256": "a8d22abeb5547501df1692fe4a09dbfd4a4722d4ca0ae15ff6ee40a7be5aa5e4",
+      "unchanged": true
+    },
+    {
+      "path": "merge_results/test_validation_metrics/predictions.json",
+      "sha256": "8c21ffb98b42da20276550019e836f63149bbd541cabbf7938d939bf48543bcc",
+      "unchanged": true
+    },
+    {
+      "path": "merge_results/valid_validation_metrics/predictions (1).json",
+      "sha256": "e5df9c2de79f4f431ca1cdaa2a2060deb2d8d9fd5ecdffcf26dd15a5e4cafdf4",
+      "unchanged": true
+    },
+    {
+      "path": "notebooks/final_version_training.ipynb",
+      "sha256": "9f927f3a2bba8d9b512af94b62c4581810571f41c02aae5b08c623cb6f4184fd",
+      "unchanged": true
+    },
+    {
+      "path": "notebooks/initial_version_training.ipynb",
+      "sha256": "fbea8aed8d9095ccfac98a7c061bbf51d3a8d8febc4f943899c258aeb855837d",
+      "unchanged": true
+    },
+    {
+      "path": "notebooks/result-merge.ipynb",
+      "sha256": "014facd4c23cc0faacbc991052e114ee18f7fc2f779e06f9abca6514e11bc5ca",
+      "unchanged": true
+    },
+    {
+      "path": "package.json",
+      "sha256": "938fdd14fb82e49bfdd53c603761c0f48981fb7bab39019b2db71b3c9590b802",
+      "unchanged": true
+    },
+    {
+      "path": "pyproject.toml",
+      "sha256": "70f46a51785a6a13dce64e979610a701d6eaf72fa5ba56bd9c007f97b61d43f5",
+      "unchanged": true
+    },
+    {
+      "path": "requirements.txt",
+      "sha256": "9a97e4703feacdd043954d834bd2d43cac8ca4be27f39b1c7641964bd3ceebb9",
+      "unchanged": true
+    },
+    {
+      "path": "results_after_discontinuation/data.yaml",
+      "sha256": "b40b48635fe37907271701c0391da4b5a273d21e20bc34fb190c52544b601f39",
+      "unchanged": true
+    },
+    {
+      "path": "results_after_discontinuation/last.pt",
+      "sha256": "b385af5bf0c767935180116969e7f7e17dc8679b3ccaf156b38523856c19d804",
+      "unchanged": true
+    },
+    {
+      "path": "results_after_discontinuation/runs/yolo11s_indian_food/args.yaml",
+      "sha256": "5b79370187983eaff5986b022e607275bf387751398b9972a5db2bee7373b655",
+      "unchanged": true
+    },
+    {
+      "path": "results_after_discontinuation/runs/yolo11s_indian_food/results.csv",
+      "sha256": "35a882b2461d4b5145faeda34a4f7b96ed260356c4bbd2efdbf188a2b9190373",
+      "unchanged": true
+    },
+    {
+      "path": "results_after_discontinuation/runs/yolo11s_indian_food/weights/best.pt",
+      "sha256": "935a1b34365bb949b75a7256facbc0ffa81629dd96ee1d0ac40260a4715a0827",
+      "unchanged": true
+    },
+    {
+      "path": "results_after_discontinuation/runs/yolo11s_indian_food/weights/epoch60.pt",
+      "sha256": "701835323e6471624063ea2bea14d3c032b5dd4b9e8b8e1c1edc2161214a3921",
+      "unchanged": true
+    },
+    {
+      "path": "results_after_discontinuation/runs/yolo11s_indian_food/weights/epoch70.pt",
+      "sha256": "27a27b0b122d0c1761d0226dca8a243e92a566665fc94a3461821e33532ff280",
+      "unchanged": true
+    },
+    {
+      "path": "results_after_discontinuation/runs/yolo11s_indian_food/weights/epoch80.pt",
+      "sha256": "29568a693b0a345d49bcd8d41f602ab416820eecf9c1865b632869f1f4627d60",
+      "unchanged": true
+    },
+    {
+      "path": "results_after_discontinuation/runs/yolo11s_indian_food/weights/epoch90.pt",
+      "sha256": "3c9067b31c52d64361af932bb39c83d8bc4993c46c7ac5d8500ad7b5917287b4",
+      "unchanged": true
+    },
+    {
+      "path": "results_after_discontinuation/runs/yolo11s_indian_food/weights/last.pt",
+      "sha256": "b385af5bf0c767935180116969e7f7e17dc8679b3ccaf156b38523856c19d804",
+      "unchanged": true
+    },
+    {
+      "path": "results_after_discontinuation/yolo11s_indian_food_best.pt",
+      "sha256": "935a1b34365bb949b75a7256facbc0ffa81629dd96ee1d0ac40260a4715a0827",
+      "unchanged": true
+    },
+    {
+      "path": "results_after_discontinuation/yolo11s_indian_food_last.pt",
+      "sha256": "b385af5bf0c767935180116969e7f7e17dc8679b3ccaf156b38523856c19d804",
+      "unchanged": true
+    },
+    {
+      "path": "results_after_discontinuation/yolo26n.pt",
+      "sha256": "9b09cc8bf347f0fc8a5f7657480587f25db09b34bf33b0652110fb03a8ad4fef",
+      "unchanged": true
+    },
+    {
+      "path": "results_before_discontinuation/data.yaml",
+      "sha256": "b40b48635fe37907271701c0391da4b5a273d21e20bc34fb190c52544b601f39",
+      "unchanged": true
+    },
+    {
+      "path": "results_before_discontinuation/runs/yolo11s_indian_food/args.yaml",
+      "sha256": "59061c7b431c4511be529a1c1e46d5ed3d127da5c29283d5c54601ea16626b77",
+      "unchanged": true
+    },
+    {
+      "path": "results_before_discontinuation/runs/yolo11s_indian_food/results.csv",
+      "sha256": "06619f55cef7f3f1305803efdca17b9a4eff0b05d49314bbe848bf56590c5bd8",
+      "unchanged": true
+    },
+    {
+      "path": "results_before_discontinuation/runs/yolo11s_indian_food/weights/best.pt",
+      "sha256": "8ab933442078c108ff40435dad203408f41bfead044a80538809fbad0037b89b",
+      "unchanged": true
+    },
+    {
+      "path": "results_before_discontinuation/runs/yolo11s_indian_food/weights/epoch0.pt",
+      "sha256": "be459a266e4e7ac6febb76ca47978f98fb353cd501db49a87cefa9bc57ca2495",
+      "unchanged": true
+    },
+    {
+      "path": "results_before_discontinuation/runs/yolo11s_indian_food/weights/epoch10.pt",
+      "sha256": "2ed0729ad29e096c07fff961c64cb7b524011d9fbbdbfe00c9f0f8c44c282fdd",
+      "unchanged": true
+    },
+    {
+      "path": "results_before_discontinuation/runs/yolo11s_indian_food/weights/epoch20.pt",
+      "sha256": "c6efdf77f0daf709b685f9047aa367519591b87388d74767656f0467f10087a4",
+      "unchanged": true
+    },
+    {
+      "path": "results_before_discontinuation/runs/yolo11s_indian_food/weights/epoch30.pt",
+      "sha256": "894bfb8d8b614e23485a1e7d15f56253703ac9b8861bd4f33db033bbdacb10d6",
+      "unchanged": true
+    },
+    {
+      "path": "results_before_discontinuation/runs/yolo11s_indian_food/weights/epoch40.pt",
+      "sha256": "aba1a68feec43ce7f9dd2cd89c1e13711321fac132ac40254c40e574a97240f4",
+      "unchanged": true
+    },
+    {
+      "path": "results_before_discontinuation/runs/yolo11s_indian_food/weights/epoch50.pt",
+      "sha256": "8e45e23d13cdb6f0723857d3b1eb9d185cd38ed6199474dabe07e3d465151e02",
+      "unchanged": true
+    },
+    {
+      "path": "results_before_discontinuation/runs/yolo11s_indian_food/weights/last.pt",
+      "sha256": "8ab933442078c108ff40435dad203408f41bfead044a80538809fbad0037b89b",
+      "unchanged": true
+    },
+    {
+      "path": "results_before_discontinuation/yolo11s.pt",
+      "sha256": "85a76fe86dd8afe384648546b56a7a78580c7cb7b404fc595f97969322d502d5",
+      "unchanged": true
+    },
+    {
+      "path": "results_before_discontinuation/yolo26n.pt",
+      "sha256": "9b09cc8bf347f0fc8a5f7657480587f25db09b34bf33b0652110fb03a8ad4fef",
+      "unchanged": true
+    },
+    {
+      "path": "tests/contracts/macro-fixtures.json",
+      "sha256": "ba535ca13e8914b4c19acc154051bc819926a43bcbdd461f139c39d9d3cf86f1",
+      "unchanged": true
+    },
+    {
+      "path": "tests/contracts/openapi.json",
+      "sha256": "c3a164b891a258817b43fa0dbafa7c81b32c52fe7dcf844ee28ca36083fa062d",
+      "unchanged": true
+    },
+    {
+      "path": "THIRD_PARTY_NOTICES.md",
+      "sha256": "5707e1b2036a8739075f04726b4c3be04b02787ea853db526b37657ca998afbc",
+      "unchanged": true
+    },
+    {
+      "path": "uv.lock",
+      "sha256": "5d77a5d5474baf012f9117875ed2b975f2751aac4cd1018ffa645990131b434f",
+      "unchanged": true
+    },
+    {
+      "path": "vercel.json",
+      "sha256": "204dd1ba2c0d37dbb82cb32efe09c481efedb4624a7786fa645ee76151154670",
+      "unchanged": true
+    }
+  ],
+  "verified_local_backups": [
+    {
+      "path": "research/evidence/audit.json",
+      "snapshot_matches": true
+    },
+    {
+      "path": "research/evidence/grouped-split-v1.json",
+      "snapshot_matches": true
+    },
+    {
+      "path": "research/evidence/manuscript-review.json",
+      "snapshot_matches": true
+    },
+    {
+      "path": "research/evidence/nutrition-provenance.json",
+      "snapshot_matches": true
+    },
+    {
+      "path": "research/mapping_review.csv",
+      "snapshot_matches": true
+    },
+    {
+      "path": "research/READINESS.md",
+      "snapshot_matches": true
+    },
+    {
+      "path": "research/SUPERVISOR_REVIEW.md",
+      "snapshot_matches": true
+    },
+    {
+      "path": "research/VENUES.md",
+      "snapshot_matches": true
+    },
+    {
+      "path": "Research_Paper_Conference/bibliography/references.bib",
+      "snapshot_matches": true
+    },
+    {
+      "path": "Research_Paper_Conference/generated/evidence.tex",
+      "snapshot_matches": true
+    },
+    {
+      "path": "Research_Paper_Conference/main.pdf",
+      "snapshot_matches": true
+    },
+    {
+      "path": "Research_Paper_Conference/main.tex",
+      "snapshot_matches": true
+    },
+    {
+      "path": "Research_Paper_Conference/README.md",
+      "snapshot_matches": true
+    },
+    {
+      "path": "Research_Paper_Journal/bibliography/references.bib",
+      "snapshot_matches": true
+    },
+    {
+      "path": "Research_Paper_Journal/generated/evidence.tex",
+      "snapshot_matches": true
+    },
+    {
+      "path": "Research_Paper_Journal/JOURNAL_SUBMISSION_GUIDE.md",
+      "snapshot_matches": true
+    },
+    {
+      "path": "Research_Paper_Journal/main.pdf",
+      "snapshot_matches": true
+    },
+    {
+      "path": "Research_Paper_Journal/main.tex",
+      "snapshot_matches": true
+    },
+    {
+      "path": "Research_Paper_Journal/README.md",
+      "snapshot_matches": true
+    },
+    {
+      "path": "scripts/audit_publication.py",
+      "snapshot_matches": true
+    },
+    {
+      "path": "scripts/browser_support.mjs",
+      "snapshot_matches": true
+    },
+    {
+      "path": "scripts/build_frontend.py",
+      "snapshot_matches": true
+    },
+    {
+      "path": "scripts/build_master_dataset.py",
+      "snapshot_matches": true
+    },
+    {
+      "path": "scripts/build_papers.py",
+      "snapshot_matches": true
+    },
+    {
+      "path": "scripts/check_manuscripts.py",
+      "snapshot_matches": true
+    },
+    {
+      "path": "scripts/configure_vercel.py",
+      "snapshot_matches": true
+    },
+    {
+      "path": "scripts/evaluate_mapping_review.py",
+      "snapshot_matches": true
+    },
+    {
+      "path": "scripts/generate_contracts.py",
+      "snapshot_matches": true
+    },
+    {
+      "path": "scripts/generate_paper_evidence.py",
+      "snapshot_matches": true
+    },
+    {
+      "path": "scripts/prepare_research_split.py",
+      "snapshot_matches": true
+    },
+    {
+      "path": "scripts/prepare_vercel_release.py",
+      "snapshot_matches": true
+    },
+    {
+      "path": "scripts/run_browser_tests.mjs",
+      "snapshot_matches": true
+    },
+    {
+      "path": "scripts/smoke_live.py",
+      "snapshot_matches": true
+    },
+    {
+      "path": "scripts/start_validation.py",
+      "snapshot_matches": true
+    },
+    {
+      "path": "scripts/test_api.mjs",
+      "snapshot_matches": true
+    },
+    {
+      "path": "scripts/test_architecture.py",
+      "snapshot_matches": true
+    },
+    {
+      "path": "scripts/test_contracts.mjs",
+      "snapshot_matches": true
+    },
+    {
+      "path": "scripts/test_deployment.py",
+      "snapshot_matches": true
+    },
+    {
+      "path": "scripts/test_frontend.mjs",
+      "snapshot_matches": true
+    },
+    {
+      "path": "scripts/test_health_browser.mjs",
+      "snapshot_matches": true
+    },
+    {
+      "path": "scripts/test_journal_browser.mjs",
+      "snapshot_matches": true
+    },
+    {
+      "path": "scripts/test_live_browser.mjs",
+      "snapshot_matches": true
+    },
+    {
+      "path": "scripts/test_manuscripts.py",
+      "snapshot_matches": true
+    },
+    {
+      "path": "scripts/test_meals.mjs",
+      "snapshot_matches": true
+    },
+    {
+      "path": "scripts/test_paper_evidence.py",
+      "snapshot_matches": true
+    },
+    {
+      "path": "scripts/test_publication.py",
+      "snapshot_matches": true
+    },
+    {
+      "path": "scripts/verify_food_classes_with_images.py",
+      "snapshot_matches": true
+    },
+    {
+      "path": "scripts/verify_inference.py",
+      "snapshot_matches": true
+    },
+    {
+      "path": "scripts/verify_nutrition_provenance.py",
+      "snapshot_matches": true
+    },
+    {
+      "path": "scripts/verify_yolo_class_macros.py",
+      "snapshot_matches": true
+    }
+  ],
+  "latest_offline_checks": {
+    "arithmetic-oracle": {
+      "attempt": 1,
+      "status": "passed"
+    },
+    "backend-architecture": {
+      "attempt": 1,
+      "status": "passed"
+    },
+    "backend-deployment": {
+      "attempt": 1,
+      "status": "passed"
+    },
+    "backend-lint": {
+      "attempt": 1,
+      "status": "passed"
+    },
+    "browser": {
+      "attempt": 2,
+      "status": "passed"
+    },
+    "claim-review-validator": {
+      "attempt": 1,
+      "status": "passed"
+    },
+    "claim-reviews": {
+      "attempt": 1,
+      "status": "passed"
+    },
+    "claim-validator": {
+      "attempt": 2,
+      "status": "passed"
+    },
+    "claims": {
+      "attempt": 3,
+      "status": "passed"
+    },
+    "contracts": {
+      "attempt": 1,
+      "status": "passed"
+    },
+    "dataset-validator": {
+      "attempt": 1,
+      "status": "passed"
+    },
+    "frontend-build": {
+      "attempt": 1,
+      "status": "passed"
+    },
+    "frontend-lint": {
+      "attempt": 1,
+      "status": "passed"
+    },
+    "frontend-types": {
+      "attempt": 1,
+      "status": "passed"
+    },
+    "frontend-unit": {
+      "attempt": 1,
+      "status": "passed"
+    },
+    "manuscript-tests": {
+      "attempt": 3,
+      "status": "passed"
+    },
+    "manuscripts": {
+      "attempt": 3,
+      "status": "passed"
+    },
+    "mapping-reference": {
+      "attempt": 1,
+      "status": "passed"
+    },
+    "number-validator": {
+      "attempt": 1,
+      "status": "passed"
+    },
+    "nutrition-validator": {
+      "attempt": 1,
+      "status": "passed"
+    },
+    "paper-numbers": {
+      "attempt": 2,
+      "status": "passed"
+    },
+    "paper-tests": {
+      "attempt": 1,
+      "status": "passed"
+    },
+    "pdf-freshness": {
+      "attempt": 1,
+      "status": "passed"
+    },
+    "provenance": {
+      "attempt": 1,
+      "status": "passed"
+    },
+    "recommendation-validator": {
+      "attempt": 1,
+      "status": "passed"
+    },
+    "research-tools": {
+      "attempt": 1,
+      "status": "passed"
+    },
+    "validation-lint": {
+      "attempt": 3,
+      "status": "passed"
+    },
+    "validation-numbers": {
+      "attempt": 3,
+      "status": "passed"
+    },
+    "validation-tools": {
+      "attempt": 3,
+      "status": "passed"
+    }
+  },
+  "artifacts": [
+    {
+      "path": ".github/workflows/quality.yml",
+      "sha256": "34f6348770f0885dc2e7f8ad331f39eee45f559b9b3941c1d2adc4a14f04bba5",
+      "bytes": 4195
+    },
+    {
+      "path": "research/evidence/validation-2026-09-12-v1/arithmetic-validation.json",
+      "sha256": "f62ee95bd287704c8fd28906d34a71d6d05fac3205a7ec73a2cdad12172ccf75",
+      "bytes": 3317
+    },
+    {
+      "path": "research/evidence/validation-2026-09-12-v1/baseline.json",
+      "sha256": "f2ce75cc2424134b44022b0ee9208c59ce5c78f896fa98a6346b840f61e91397",
+      "bytes": 32362
+    },
+    {
+      "path": "research/evidence/validation-2026-09-12-v1/browser-extended-attempt2.json",
+      "sha256": "e4a258eeb067242d772a108ceaf234dcbbe5656f537728fb3146a4dcdf015f0b",
+      "bytes": 33256
+    },
+    {
+      "path": "research/evidence/validation-2026-09-12-v1/browser-extended-attempt3.json",
+      "sha256": "d4f31dbeca4dcecff0cb5a21fa43cc511cbb2f34aabb615ab6902be8a65b4f1b",
+      "bytes": 19306
+    },
+    {
+      "path": "research/evidence/validation-2026-09-12-v1/browser-extended-attempt4.json",
+      "sha256": "1dc0e3c0934a436467fad1be9a84d42767b71dc7d28bd34c9983c046f9241313",
+      "bytes": 19388
+    },
+    {
+      "path": "research/evidence/validation-2026-09-12-v1/browser-extended.json",
+      "sha256": "9faa454c8ea2b36a3ec9d893ad89c37238c8d0ed3c11f0b075f392e77d389f54",
+      "bytes": 9817
+    },
+    {
+      "path": "research/evidence/validation-2026-09-12-v1/checks/arithmetic-oracle-1.json",
+      "sha256": "17bdf5534003d2e894b1d311fbc17dda0d894b8ca05595f41a2e027777d49918",
+      "bytes": 1359
+    },
+    {
+      "path": "research/evidence/validation-2026-09-12-v1/checks/backend-architecture-1.json",
+      "sha256": "ec230c3ce32f1000cc909d478b05ca401baf6ba1cd82f2a581cda7d0738967ff",
+      "bytes": 1121
+    },
+    {
+      "path": "research/evidence/validation-2026-09-12-v1/checks/backend-deployment-1.json",
+      "sha256": "284fd70c43f3b7da9a3517f94d438d5bca31d40ea6ecb85a3cd206c2ac005306",
+      "bytes": 1111
+    },
+    {
+      "path": "research/evidence/validation-2026-09-12-v1/checks/backend-lint-1.json",
+      "sha256": "13e9b7cd0358d5310bef762eecf5d18f832fb09aaf1ecd1006b446710647aaa1",
+      "bytes": 953
+    },
+    {
+      "path": "research/evidence/validation-2026-09-12-v1/checks/browser-1.json",
+      "sha256": "d77c414c8e5d9349ad61842520fb46dab397c58b194682e78fcd7b03bd0b31f2",
+      "bytes": 978
+    },
+    {
+      "path": "research/evidence/validation-2026-09-12-v1/checks/browser-2.json",
+      "sha256": "76a00494ff6c455be1c02cc05b611da77d4ee62a5c94a1be1d41ec6e1ed3bb6c",
+      "bytes": 978
+    },
+    {
+      "path": "research/evidence/validation-2026-09-12-v1/checks/claim-review-validator-1.json",
+      "sha256": "294355cd71531450fdda5b2cef84f41c8e8d8d3754c14279eee820bbea935887",
+      "bytes": 1127
+    },
+    {
+      "path": "research/evidence/validation-2026-09-12-v1/checks/claim-reviews-1.json",
+      "sha256": "65e5deac55c19037918319e5c7fd447fe5ad305a6b03e9d722ffcdffd9b538c8",
+      "bytes": 1125
+    },
+    {
+      "path": "research/evidence/validation-2026-09-12-v1/checks/claim-validator-1.json",
+      "sha256": "6cd924b08eb45d137e18b54e60ae07621ccc1a0860a4b19207eb1cbd7b9a6ff3",
+      "bytes": 1111
+    },
+    {
+      "path": "research/evidence/validation-2026-09-12-v1/checks/claim-validator-2.json",
+      "sha256": "e3dd331fa73c1f7f19b5d3988470dc411ded333744f92eee80ef02884e81b04f",
+      "bytes": 1111
+    },
+    {
+      "path": "research/evidence/validation-2026-09-12-v1/checks/claims-1.json",
+      "sha256": "d97abb0248a42b6c30f3a3d082daae975b493dc3188d041627347430addf73dc",
+      "bytes": 1164
+    },
+    {
+      "path": "research/evidence/validation-2026-09-12-v1/checks/claims-2.json",
+      "sha256": "c78c8adf78c6821c0b94c6f6797f64c76eb9b90e0bf3c70c557451b472656b9b",
+      "bytes": 1208
+    },
+    {
+      "path": "research/evidence/validation-2026-09-12-v1/checks/claims-3.json",
+      "sha256": "11cfbf72cb9a76dc5eb8515454ef94dff4662843fc885b1115ace0bb72a1049e",
+      "bytes": 1210
+    },
+    {
+      "path": "research/evidence/validation-2026-09-12-v1/checks/contracts-1.json",
+      "sha256": "0656e75a36371e557b390ef8ae177d78702cff97fd1cecb5720add685e9756d9",
+      "bytes": 1116
+    },
+    {
+      "path": "research/evidence/validation-2026-09-12-v1/checks/dataset-validator-1.json",
+      "sha256": "3e0ea5af5bf7bfda080bf5981eb1d9cbb042930870a5aff9cc56a748b11af461",
+      "bytes": 1141
+    },
+    {
+      "path": "research/evidence/validation-2026-09-12-v1/checks/frontend-build-1.json",
+      "sha256": "7673210646bc4a40c7ff7f82f0589a7cf42a8dde29ff3ba92e4b2550b1288c8a",
+      "bytes": 984
+    },
+    {
+      "path": "research/evidence/validation-2026-09-12-v1/checks/frontend-lint-1.json",
+      "sha256": "7779f185d0b833d56a21d0540ee46b80cc0314d7be9c3e553e034f33aee86839",
+      "bytes": 982
+    },
+    {
+      "path": "research/evidence/validation-2026-09-12-v1/checks/frontend-types-1.json",
+      "sha256": "e41c101a8adfc5882ec4fd64302d6bf976ffd74f54e29005f64e03dbf0cb0314",
+      "bytes": 988
+    },
+    {
+      "path": "research/evidence/validation-2026-09-12-v1/checks/frontend-unit-1.json",
+      "sha256": "2cbb1fc5e4e869ce959692785147d99d4f639ee1d02b9022c453c9f9c14e046e",
+      "bytes": 985
+    },
+    {
+      "path": "research/evidence/validation-2026-09-12-v1/checks/manuscript-tests-1.json",
+      "sha256": "dbffd91208fcb9add2c601a90f60cfdb95b1a3471b1de50aa6b9ec18dca74a7b",
+      "bytes": 1111
+    },
+    {
+      "path": "research/evidence/validation-2026-09-12-v1/checks/manuscript-tests-2.json",
+      "sha256": "16ca497b4ab4f8169ac6c9b9cf9285253c63c927ba882f917f06d914c3cbaaf7",
+      "bytes": 1111
+    },
+    {
+      "path": "research/evidence/validation-2026-09-12-v1/checks/manuscript-tests-3.json",
+      "sha256": "d953ea959b124f177cabdc6706243459dbd77ed04ed2a0ef683bad67d1eff7f0",
+      "bytes": 1111
+    },
+    {
+      "path": "research/evidence/validation-2026-09-12-v1/checks/manuscripts-1.json",
+      "sha256": "dd8c1762706a9a767c99c429bedfb099809d0709819ee3b28502590e82e9b218",
+      "bytes": 1103
+    },
+    {
+      "path": "research/evidence/validation-2026-09-12-v1/checks/manuscripts-2.json",
+      "sha256": "a4e8fe6c7963478d320919b8bf329b5e58eba78adf0d37bcb4a6b819cd5b15f3",
+      "bytes": 1103
+    },
+    {
+      "path": "research/evidence/validation-2026-09-12-v1/checks/manuscripts-3.json",
+      "sha256": "040eb99b656f7da510a3a69e022f177eb2e6714afc1b1760d108bbec2fd97f52",
+      "bytes": 1103
+    },
+    {
+      "path": "research/evidence/validation-2026-09-12-v1/checks/mapping-reference-1.json",
+      "sha256": "aef2a51e14421735fbd3babb096862db2565783dcc3bb182b984aa6cc01ebe95",
+      "bytes": 1137
+    },
+    {
+      "path": "research/evidence/validation-2026-09-12-v1/checks/number-validator-1.json",
+      "sha256": "7a0eb204d34842eaf311817422eb8a8e2f0ad3cbdec37fecc643fa9abaae6061",
+      "bytes": 1125
+    },
+    {
+      "path": "research/evidence/validation-2026-09-12-v1/checks/nutrition-validator-1.json",
+      "sha256": "234800fc77ccf584e56c7a99a185345f6d59763794957c7f5304f12ce4037cd2",
+      "bytes": 1149
+    },
+    {
+      "path": "research/evidence/validation-2026-09-12-v1/checks/paper-numbers-1.json",
+      "sha256": "076d2cfdc97ac7c60acfba8c4b4d6aecace1688e8e79adfd51138aa8f35a32a0",
+      "bytes": 1134
+    },
+    {
+      "path": "research/evidence/validation-2026-09-12-v1/checks/paper-numbers-2.json",
+      "sha256": "fdfbe43984b245c18563be149bdc96135b2e2a17cbd954ff7c2067dd9b5621ac",
+      "bytes": 1134
+    },
+    {
+      "path": "research/evidence/validation-2026-09-12-v1/checks/paper-tests-1.json",
+      "sha256": "ead8b6e2f2e72b56efbb5c5be9788f2bdf40fab6c9f6d099f0465924478cd4ca",
+      "bytes": 1107
+    },
+    {
+      "path": "research/evidence/validation-2026-09-12-v1/checks/pdf-freshness-1.json",
+      "sha256": "1e6e039074f7a69cf23af319db27fd93a26648b657710d13e76bc7d8d87564d2",
+      "bytes": 1142
+    },
+    {
+      "path": "research/evidence/validation-2026-09-12-v1/checks/provenance-1.json",
+      "sha256": "1987732f73ccccb803bb5627a58ceb529b764964e8f9c83452f0b913e9e8a675",
+      "bytes": 1121
+    },
+    {
+      "path": "research/evidence/validation-2026-09-12-v1/checks/recommendation-validator-1.json",
+      "sha256": "ce0fb132316136e47f68a5433dbcff1786b28272cffee202e2bfba119368f58e",
+      "bytes": 1151
+    },
+    {
+      "path": "research/evidence/validation-2026-09-12-v1/checks/research-tools-1.json",
+      "sha256": "f171395d506348bc5bb27f365bc7e9df8e50d84c1aa15d64211532ed6e51b1c2",
+      "bytes": 1107
+    },
+    {
+      "path": "research/evidence/validation-2026-09-12-v1/checks/validation-lint-1.json",
+      "sha256": "387678b90f3a21dba56a04cc0222ac32c5f834129951c4b820d5c3552e3cf6d1",
+      "bytes": 4214
+    },
+    {
+      "path": "research/evidence/validation-2026-09-12-v1/checks/validation-lint-2.json",
+      "sha256": "25eb38817d24b45dce57a2e147fbd2b7dcba8d89ff8b94bcbff4a874ad828e4c",
+      "bytes": 4966
+    },
+    {
+      "path": "research/evidence/validation-2026-09-12-v1/checks/validation-lint-3.json",
+      "sha256": "e15a2c26afe06eb5b269d96c2aa6c4c80aa06dcddf62162428f8d175cbf1677d",
+      "bytes": 4966
+    },
+    {
+      "path": "research/evidence/validation-2026-09-12-v1/checks/validation-numbers-1.json",
+      "sha256": "d43b9eba3882623e8d0657ce5ca3d8ceb6600336f2e86f932994053fa19494c6",
+      "bytes": 1146
+    },
+    {
+      "path": "research/evidence/validation-2026-09-12-v1/checks/validation-numbers-2.json",
+      "sha256": "6d7453dd7919fc2365c4e53dc84f65bc941397f24692c2bd517d4fc7c397081f",
+      "bytes": 1146
+    },
+    {
+      "path": "research/evidence/validation-2026-09-12-v1/checks/validation-numbers-3.json",
+      "sha256": "13df2e87ddd19f6236daab9bfd21d41d9e4cd877694e519ee62e4f530fee4ffe",
+      "bytes": 1146
+    },
+    {
+      "path": "research/evidence/validation-2026-09-12-v1/checks/validation-tools-1.json",
+      "sha256": "2fbd6d8fc370836e3fb637dba07d140b5848ef48f458b4e7bf0b7e381a0140a1",
+      "bytes": 1121
+    },
+    {
+      "path": "research/evidence/validation-2026-09-12-v1/checks/validation-tools-2.json",
+      "sha256": "3f03d7ac9228ebd42e03352ff9ff8de5347c1e54d653ec93bba5f9e5ff9897ae",
+      "bytes": 1121
+    },
+    {
+      "path": "research/evidence/validation-2026-09-12-v1/checks/validation-tools-3.json",
+      "sha256": "d2364bf751aca728a215bcc28ea1dc58c8aa10f14fdac6294e92dd3c54ef5574",
+      "bytes": 1121
+    },
+    {
+      "path": "research/evidence/validation-2026-09-12-v1/citation-review.json",
+      "sha256": "9175701b0451e749369b4b423885f4a7d229b2235b1bd123aae7fc675651d8b5",
+      "bytes": 9593
+    },
+    {
+      "path": "research/evidence/validation-2026-09-12-v1/claim-corrections.json",
+      "sha256": "360f92d611eb43f85087f9c00896733503f621dea8a592e30241bebadf04686d",
+      "bytes": 14116
+    },
+    {
+      "path": "research/evidence/validation-2026-09-12-v1/claim-review-001-220.json",
+      "sha256": "73b99d949a43d08471a0296e5d5b17f284b384fc55c73ce94c715f4091d2c5ea",
+      "bytes": 209191
+    },
+    {
+      "path": "research/evidence/validation-2026-09-12-v1/claim-review-221-440.json",
+      "sha256": "baf997245deae6f8e5635b4012735190700a7617d11454c268be84fcc67f46a5",
+      "bytes": 132648
+    },
+    {
+      "path": "research/evidence/validation-2026-09-12-v1/claim-review-441-635.json",
+      "sha256": "93a777dd227396053cf224fa4bd513696e8c4d4d1d8defbcec6a8680eed3db9f",
+      "bytes": 126830
+    },
+    {
+      "path": "research/evidence/validation-2026-09-12-v1/claim-review-coverage.json",
+      "sha256": "593a457c0dd7fdd983d34d6c8b53b3b1d54186fec0d073164a6eacaad7894f89",
+      "bytes": 169746
+    },
+    {
+      "path": "research/evidence/validation-2026-09-12-v1/claims-final.json",
+      "sha256": "ed3f615cf51f2f38dbd713350b919af93346595cd2468c6c948a4d36e834c3d1",
+      "bytes": 1154740
+    },
+    {
+      "path": "research/evidence/validation-2026-09-12-v1/claims.json",
+      "sha256": "347ff7ac35d6e831845437e5a0491a8f658d848a48c9d0ffd45b4b8020a0fd81",
+      "bytes": 1154138
+    },
+    {
+      "path": "research/evidence/validation-2026-09-12-v1/cleanup.json",
+      "sha256": "deb0ba6398c7344b4a61d71bc388956f3d4e9877f321183f9ccd592193389348",
+      "bytes": 2231
+    },
+    {
+      "path": "research/evidence/validation-2026-09-12-v1/dataset-audit-command.json",
+      "sha256": "62fd85a905db32c415a77ef4aff748c70199ff3d06b2eee72f1ff328e90b08e0",
+      "bytes": 2425
+    },
+    {
+      "path": "research/evidence/validation-2026-09-12-v1/dataset-class-group-support.json",
+      "sha256": "a7cff0535d395e77fbf17ac21ae00d26399702c1bb25e61e0be69150c57ca74c",
+      "bytes": 29745
+    },
+    {
+      "path": "research/evidence/validation-2026-09-12-v1/dataset-flagged-records.json",
+      "sha256": "a61ffbca7e44124a904d6cdc8a9b65ed1b464c5dc2be6b36ecaff5b254978a4f",
+      "bytes": 60510
+    },
+    {
+      "path": "research/evidence/validation-2026-09-12-v1/dataset-grouped-command.json",
+      "sha256": "8140bca089c5cdf2a4b03948886d4335448e7f88ae41b0145a0979eddb10b056",
+      "bytes": 2987
+    },
+    {
+      "path": "research/evidence/validation-2026-09-12-v1/dataset-inspection.json",
+      "sha256": "20ba2ea57e3659a84990a9b9f85689be45fd43c7673084e20212c8f659e369a3",
+      "bytes": 4136
+    },
+    {
+      "path": "research/evidence/validation-2026-09-12-v1/dataset-perceptual-queue.json",
+      "sha256": "74449ad67b23ddfefd68c0a8038b44bd28c9d58ba3b8905136627498d2221283",
+      "bytes": 10049
+    },
+    {
+      "path": "research/evidence/validation-2026-09-12-v1/dataset-perceptual-review.json",
+      "sha256": "a90a79435d88fd5ef045d33981a53da8ef6bfe0e52e0632cf51dd633a62ee811",
+      "bytes": 3982
+    },
+    {
+      "path": "research/evidence/validation-2026-09-12-v1/dataset-sources.json",
+      "sha256": "9128c1f7c7f7a6c0b65826fdd02fcc34a3e9bb12184174512eda2eb757296e76",
+      "bytes": 6940
+    },
+    {
+      "path": "research/evidence/validation-2026-09-12-v1/dataset-training-checks.json",
+      "sha256": "6742b08d9bfea27f73937dc6452ac50f14e37e1e469fb498008bb0d604f7b698",
+      "bytes": 2217
+    },
+    {
+      "path": "research/evidence/validation-2026-09-12-v1/dataset-visual-review.json",
+      "sha256": "5393c08cae2ede3f8606feab27d00a184094449a26ca49fbbadc89926a443dd9",
+      "bytes": 71585
+    },
+    {
+      "path": "research/evidence/validation-2026-09-12-v1/deployment-evidence.json",
+      "sha256": "d715728327f1d3df16d5575ada4f5ef73ddf7350f02300152c080e32f0a07a49",
+      "bytes": 5438
+    },
+    {
+      "path": "research/evidence/validation-2026-09-12-v1/findings.json",
+      "sha256": "4a4585663529163419b7aff185715af67bddfbe20ea33f9fbd11c216c06948c2",
+      "bytes": 8275
+    },
+    {
+      "path": "research/evidence/validation-2026-09-12-v1/numeric-checks.json",
+      "sha256": "4ba065580933ae2b37f13f6b323e837957e6e60f217888e5bb8cd656acbd36c9",
+      "bytes": 63911
+    },
+    {
+      "path": "research/evidence/validation-2026-09-12-v1/nutrition-validation.json",
+      "sha256": "f34552215b47d09edda0dc8a3c10c6238d98a2dec1730f66011022a14fafd9ee",
+      "bytes": 6679
+    },
+    {
+      "path": "research/evidence/validation-2026-09-12-v1/pdf-journal-final-review.json",
+      "sha256": "01cc9f7f071e6661b7fe06ccc281b6d04bfe9f9af75c6b6fd0d4eeb3f28d26b0",
+      "bytes": 7882
+    },
+    {
+      "path": "research/evidence/validation-2026-09-12-v1/pdf-journal-review.json",
+      "sha256": "4fe4563865b69ed7b3b80b06e09d0ed0e3953186c562a579eb3056762653806f",
+      "bytes": 7800
+    },
+    {
+      "path": "research/evidence/validation-2026-09-12-v1/pdf-review.json",
+      "sha256": "18c8a62bb58c6d89ee20b6d6088ed204987bc1bfe2c09ce0309a015d93cbb2f7",
+      "bytes": 11234
+    },
+    {
+      "path": "research/evidence/validation-2026-09-12-v1/recommendation-validator-checks.json",
+      "sha256": "cb40917f7a5a5fa6efe622a324f0d7a3f6cf1fc8c0e79c99d7c7b4007399474c",
+      "bytes": 1835
+    },
+    {
+      "path": "research/evidence/validation-2026-09-12-v1/recommendations.json",
+      "sha256": "3f21f8de93f98b42c750bbf89ec2ef8993321773b890df98b5332dbac645d7b9",
+      "bytes": 295491
+    },
+    {
+      "path": "research/evidence/validation-2026-09-12-v1/training-results.json",
+      "sha256": "55c44f5be22d1b42fc8ca3a9d88663d81db174fa72450fab0617263bf8ba7e1f",
+      "bytes": 19101
+    },
+    {
+      "path": "research/READINESS.md",
+      "sha256": "6d72f02145ca07be96da9752ca21f2ab85134e7810e9f80d71a1f3a591fbc69d",
+      "bytes": 11208
+    },
+    {
+      "path": "research/review/validation-2026-09-12-v1/adjudication-v2.template.json",
+      "sha256": "9e1a89db541af87a1309c8c7c0207cc4be02db2faac6a6e4671700444dc5e916",
+      "bytes": 429
+    },
+    {
+      "path": "research/review/validation-2026-09-12-v1/packet.json",
+      "sha256": "8c71503150b85ccd2b06bfc624a8154184f46b97060250c7fdce868a762e642b",
+      "bytes": 2746
+    },
+    {
+      "path": "research/review/validation-2026-09-12-v1/README.md",
+      "sha256": "2a0df36de038322989d3a83c0167f3d46cf46394e261344a1d1cebd70b8789ab",
+      "bytes": 5538
+    },
+    {
+      "path": "research/review/validation-2026-09-12-v1/recommendation-review.template.json",
+      "sha256": "95b83f8b9c1837af3448dfb958c596dbdc17673d1bd0e2711145d0293a353ff4",
+      "bytes": 1180
+    },
+    {
+      "path": "research/review/validation-2026-09-12-v1/RECOMMENDATION_RUBRIC.md",
+      "sha256": "411d80955c5dea8b7e698951f2bfc62f0daa343ce3d5279115613bcb178b2529",
+      "bytes": 4100
+    },
+    {
+      "path": "research/review/validation-2026-09-12-v1/reference-a-v2.template.json",
+      "sha256": "74b34c6eca29147e635be09e852dc29956e1ef7db8ad0d2aabfbb5018f76424e",
+      "bytes": 13681
+    },
+    {
+      "path": "research/review/validation-2026-09-12-v1/reference-b-v2.template.json",
+      "sha256": "74b34c6eca29147e635be09e852dc29956e1ef7db8ad0d2aabfbb5018f76424e",
+      "bytes": 13681
+    },
+    {
+      "path": "research/SUPERVISOR_REVIEW.md",
+      "sha256": "3a379a2f1ba8108598e826d268f18d9ad7deca8e6e19a571359526195520d1f6",
+      "bytes": 14830
+    },
+    {
+      "path": "research/VALIDATION_PROTOCOLS.md",
+      "sha256": "93b1e399f560d90e9c0821061abe43c007c9d5e449b43db1014f24d180486f1c",
+      "bytes": 8821
+    },
+    {
+      "path": "research/VALIDATION_REPORT.md",
+      "sha256": "b79f59964044855841bb797c1fe2392990c197cd6ecd015086823072dc7d94d0",
+      "bytes": 14070
+    },
+    {
+      "path": "Research_Paper_Conference/bibliography/references.bib",
+      "sha256": "2708fcebd270331d8ff6e33afc5abcd39879b765fe5ed9ec9896910fc724c9e2",
+      "bytes": 8630
+    },
+    {
+      "path": "Research_Paper_Conference/generated/evidence.tex",
+      "sha256": "d2de5e9ffbf75a091c183b84f0b72ea014ca4480945fe8c77c22b55e6b1e7462",
+      "bytes": 2296
+    },
+    {
+      "path": "Research_Paper_Conference/main.pdf",
+      "sha256": "39f0a6f809164224121c909a0ca526f8a89b7ddf2e64816555292f5ca76e58fe",
+      "bytes": 222319
+    },
+    {
+      "path": "Research_Paper_Conference/main.tex",
+      "sha256": "e21de549017724cfd44652f5787352ab42ec6ee757c60b2e7fe18989ee021d53",
+      "bytes": 26018
+    },
+    {
+      "path": "Research_Paper_Conference/README.md",
+      "sha256": "3b50186f0b89df376bbd5e427f9784928f3fc598d56432b5ba3e1203f7848aa0",
+      "bytes": 2792
+    },
+    {
+      "path": "Research_Paper_Journal/bibliography/references.bib",
+      "sha256": "2708fcebd270331d8ff6e33afc5abcd39879b765fe5ed9ec9896910fc724c9e2",
+      "bytes": 8630
+    },
+    {
+      "path": "Research_Paper_Journal/generated/evidence.tex",
+      "sha256": "d2de5e9ffbf75a091c183b84f0b72ea014ca4480945fe8c77c22b55e6b1e7462",
+      "bytes": 2296
+    },
+    {
+      "path": "Research_Paper_Journal/JOURNAL_SUBMISSION_GUIDE.md",
+      "sha256": "b87ad6cb91d7a225f61adec72a2e4979af692193f130e01f709295b7e65f70df",
+      "bytes": 7547
+    },
+    {
+      "path": "Research_Paper_Journal/main.pdf",
+      "sha256": "d9174e239f74a9abdc96cc76867f68bcea2708af60a0dc36f5db9061678fbcc9",
+      "bytes": 264235
+    },
+    {
+      "path": "Research_Paper_Journal/main.tex",
+      "sha256": "3d5575caf1ed4eb3697898a6e890de507a4f9ca9c968ac0edf081db90852a4f9",
+      "bytes": 48137
+    },
+    {
+      "path": "Research_Paper_Journal/README.md",
+      "sha256": "116d51ee866b93630b806297a7f1a8c802dabda59a2f6e6b56c037a0080ea98a",
+      "bytes": 3040
+    },
+    {
+      "path": "scripts/audit_publication.py",
+      "sha256": "c67804949692df903a680319e49e9cd3e3b14851f2675b790da6787e3c6fcb2b",
+      "bytes": 11448
+    },
+    {
+      "path": "scripts/browser_support.mjs",
+      "sha256": "a247ff2709bf2e79944d4e1d6499d98606d80dfde596465a25b0344a4457e9e6",
+      "bytes": 716
+    },
+    {
+      "path": "scripts/build_frontend.py",
+      "sha256": "ec129ef2e869d51ad7f6188d12b5624eead679b0264657621b263a6dac1f280d",
+      "bytes": 804
+    },
+    {
+      "path": "scripts/build_master_dataset.py",
+      "sha256": "7d6e9871179dd19d0dae074f2e6a2a2131da327c41d5ed525866e0470970566f",
+      "bytes": 18689
+    },
+    {
+      "path": "scripts/build_papers.py",
+      "sha256": "4ebcb373b22053fa7d7899b656e60de768fc6578dd28aa245eb3a414a05bdd1a",
+      "bytes": 1976
+    },
+    {
+      "path": "scripts/check_claim_reviews.py",
+      "sha256": "6f6b06d0460c588b292c979487fc1c8f400e4f76dcd74c52ee213a1cce3fe66d",
+      "bytes": 5302
+    },
+    {
+      "path": "scripts/check_manuscripts.py",
+      "sha256": "2360c9ef69182863a00c7bef02f46aa5f2a899af7e93a7ed7145af62644d4e62",
+      "bytes": 10515
+    },
+    {
+      "path": "scripts/check_validation_numbers.py",
+      "sha256": "0b56e2045ef95f601587413db7c43518ba57eb804cb7cd818501c8e891961bbd",
+      "bytes": 36101
+    },
+    {
+      "path": "scripts/configure_vercel.py",
+      "sha256": "7c68eae82e50fd3ccf208fecded3fd4fd023aea9476e60ae896d56fe17bbff98",
+      "bytes": 1513
+    },
+    {
+      "path": "scripts/evaluate_mapping_review.py",
+      "sha256": "1e6233d072bdfb91d1de0b080ca49f0648fad166a7ddc5e864e006158fbbad39",
+      "bytes": 4009
+    },
+    {
+      "path": "scripts/generate_contracts.py",
+      "sha256": "346253d6b6e441b641ecc0bba4e1ef31f9ac479857f4d913a561b830eeadd23d",
+      "bytes": 2386
+    },
+    {
+      "path": "scripts/generate_paper_evidence.py",
+      "sha256": "532cf6266c617b176e7ce888ab30670422c168bc15c7f51d2f51f933cf98c467",
+      "bytes": 9254
+    },
+    {
+      "path": "scripts/prepare_research_split.py",
+      "sha256": "8c2ce990e5266588dccbea1c0d0fbc3a3bcad864ee775b5d6b039575b2c07da8",
+      "bytes": 16059
+    },
+    {
+      "path": "scripts/prepare_vercel_release.py",
+      "sha256": "322c619f02425f78c80039a65d7f855e0d9f4b67432230b1526bbb62e6388df7",
+      "bytes": 4825
+    },
+    {
+      "path": "scripts/record_claim_corrections.py",
+      "sha256": "6fed1012bee0a434b1ae34cdaafb1bb6d7b39ca706feadfa81693235d5f6da5c",
+      "bytes": 4399
+    },
+    {
+      "path": "scripts/record_dataset_visual_review.py",
+      "sha256": "b768d83fd6effd040000611973ed2106c96e98b59bbd03fc81da2bf32ec9c36b",
+      "bytes": 9130
+    },
+    {
+      "path": "scripts/record_validation_documents.py",
+      "sha256": "8eebdaeace8aa92b5dcd79cedb6e39ab08451199f78a3b9c904968cadd37f4d0",
+      "bytes": 4870
+    },
+    {
+      "path": "scripts/run_browser_tests.mjs",
+      "sha256": "e3bcd6d9c1164dec4c1aa2dbaa2099e2c9a0dd0feca9845ccb911c82b84b638f",
+      "bytes": 1616
+    },
+    {
+      "path": "scripts/run_validation_checks.py",
+      "sha256": "8f29e5de5a699e247b237e8bfb352bd69a544e9b1fa293f73ac7f4e38e196325",
+      "bytes": 6708
+    },
+    {
+      "path": "scripts/score_mapping_reference.py",
+      "sha256": "83a4b84619f548daf2266acaff71927cd0ff67045223696aa0eb893dd3e7955a",
+      "bytes": 13471
+    },
+    {
+      "path": "scripts/seal_validation.py",
+      "sha256": "0da5e2aa520dba06faab3453eb0ac17ec1bd33af5ea95ff3e413f62891a57850",
+      "bytes": 6327
+    },
+    {
+      "path": "scripts/smoke_live.py",
+      "sha256": "f2fe7afec3ac167d871d1f9677fdf049ad0c1fcc74ef4671bf6dd3fba021886c",
+      "bytes": 6371
+    },
+    {
+      "path": "scripts/start_validation.py",
+      "sha256": "50271767cfe362ddc5768c1f3fd1ba675deeaa7d20676783e6f8890e7a333f07",
+      "bytes": 5224
+    },
+    {
+      "path": "scripts/test_api.mjs",
+      "sha256": "0b2efef6469afe9bfc6bcff01037437c55b8374af2704dd40625663fee4a38d6",
+      "bytes": 1683
+    },
+    {
+      "path": "scripts/test_architecture.py",
+      "sha256": "1712c2b7c73d5dfae4a93a87be486e227674a478d9412aecc0d9d1ee0fdc1ee8",
+      "bytes": 9132
+    },
+    {
+      "path": "scripts/test_claim_ledger.py",
+      "sha256": "17c5ba0eade6d798895d22eb4d1de89d6c1bc5e59579accf9e8d30a867c8082b",
+      "bytes": 6561
+    },
+    {
+      "path": "scripts/test_claim_reviews.py",
+      "sha256": "51f7d2c4e59dda8f8dd019b3229418ee9e38cc0ba714f761e2ddde8eaa45b16d",
+      "bytes": 2916
+    },
+    {
+      "path": "scripts/test_contracts.mjs",
+      "sha256": "d0b6b489a31c22849604dc8f1cf335db9fe5f8113e7ea7bac61912936bbfe244",
+      "bytes": 3028
+    },
+    {
+      "path": "scripts/test_deployment.py",
+      "sha256": "1e0b98b7088a5568135cb4307a015be748dc2bcf4e5623ea5c805dec7ec1fa2d",
+      "bytes": 7497
+    },
+    {
+      "path": "scripts/test_frontend.mjs",
+      "sha256": "fdaf92a57189f54cb21d6253812c3681d596f2c22c39088c0f5908039b7735f0",
+      "bytes": 4101
+    },
+    {
+      "path": "scripts/test_health_browser.mjs",
+      "sha256": "2d4176d461826d99d82847770e0bd14bf721066eed2e59474cb48d0b8d380606",
+      "bytes": 5482
+    },
+    {
+      "path": "scripts/test_journal_browser.mjs",
+      "sha256": "f3bcea8e562d7bf9e0330f68b06ddeb86ec18e03eb33bb36c3752dfc8a15603e",
+      "bytes": 10294
+    },
+    {
+      "path": "scripts/test_live_browser.mjs",
+      "sha256": "9288d36852d1f134ec68bd625e60786bc78b22776cc34d23cee374fa20e3f3c6",
+      "bytes": 3223
+    },
+    {
+      "path": "scripts/test_manuscripts.py",
+      "sha256": "5825f695246d9bc306b1fd524b432a5e0bfc902349f0dc1c69e952760eab3a07",
+      "bytes": 10616
+    },
+    {
+      "path": "scripts/test_meals.mjs",
+      "sha256": "5a204a9648e4a9bce74aff1b77fd6adf8812a59110993e5d0521e1cff77edaf2",
+      "bytes": 3625
+    },
+    {
+      "path": "scripts/test_nutrition_oracle.mjs",
+      "sha256": "ca2a2f18dd94692504252befe45ee7a214a4b2f95017b918052db914531d7b96",
+      "bytes": 5682
+    },
+    {
+      "path": "scripts/test_paper_evidence.py",
+      "sha256": "c00878a11aa17d0d6b3acf8085d4e2d4f180d65ce3fa616f8a0dcfd0cd0f9524",
+      "bytes": 7574
+    },
+    {
+      "path": "scripts/test_publication.py",
+      "sha256": "90b8b9e8c96ddcf335cd4eb1e46a88331408abcaf2097d90a1582875776de7ea",
+      "bytes": 9006
+    },
+    {
+      "path": "scripts/test_recommendation_evidence.py",
+      "sha256": "dfc68d543e725a9cefc34e168b260356581d11cd130deea28f730f026bc0c323",
+      "bytes": 2613
+    },
+    {
+      "path": "scripts/test_score_mapping_reference.py",
+      "sha256": "93881c6843159140169909144f73cfb053a6c4b822428c6bfdfa08bb0658050a",
+      "bytes": 8466
+    },
+    {
+      "path": "scripts/test_validate_dataset_training.py",
+      "sha256": "83cebc6bc7539a67dde405b8c7a6f5382536519d81aa223f5122d0d5557e8aca",
+      "bytes": 9711
+    },
+    {
+      "path": "scripts/test_validate_nutrition_evidence.py",
+      "sha256": "550a0ce8648edb5c55b59508bac18c4a21b66ea27ab7d521a9466b0f9cdbdc0b",
+      "bytes": 5234
+    },
+    {
+      "path": "scripts/test_validation_browser.mjs",
+      "sha256": "c6a55739cbefc5119e9e7275863f25ddcb14013503e65a96dfc8264673055d44",
+      "bytes": 24089
+    },
+    {
+      "path": "scripts/test_validation_numbers.py",
+      "sha256": "81de7627ceccf07973c650f06e492091567627a3876cd7e6e915e82192612442",
+      "bytes": 5195
+    },
+    {
+      "path": "scripts/test_validation_tools.py",
+      "sha256": "abcccdb8863d46e589e66d84e24dffb864a794d058ab4a2d8d4d1c844b5ef90a",
+      "bytes": 3484
+    },
+    {
+      "path": "scripts/validate_dataset_training.py",
+      "sha256": "f7927cb70ab520bfcf919660af1136911195b66c0a518885a13cfb78e267fdab",
+      "bytes": 38526
+    },
+    {
+      "path": "scripts/validate_nutrition_evidence.py",
+      "sha256": "18793ef0e77a0bd37cba1c7e8fd036f864d7182239e1752c3fa9385b77cb907c",
+      "bytes": 22570
+    },
+    {
+      "path": "scripts/validate_paper_claims.py",
+      "sha256": "a7b1719963f98f1c5167f692b56ac116df98aa93f28a9ca8770e7526a17d445b",
+      "bytes": 28898
+    },
+    {
+      "path": "scripts/validate_recommendation_evidence.py",
+      "sha256": "5e85e8bb090d8be2ed921717f3bc969724151529489d0ba8a777e48c4f924c92",
+      "bytes": 22096
+    },
+    {
+      "path": "scripts/verify_food_classes_with_images.py",
+      "sha256": "2500e62e1862d2deccb125adf17dafe116eea950cf92051c1ea7bcfd34d438ba",
+      "bytes": 16731
+    },
+    {
+      "path": "scripts/verify_inference.py",
+      "sha256": "8ebb9c2dacbca2157c1a81c2865a697b0eaaae1f37a44d111012ccf2b6ab095c",
+      "bytes": 4746
+    },
+    {
+      "path": "scripts/verify_nutrition_provenance.py",
+      "sha256": "15c49c94ca0fbee1027099d426f1def491e8261db58a1d994f00de9694f3a258",
+      "bytes": 2238
+    },
+    {
+      "path": "scripts/verify_yolo_class_macros.py",
+      "sha256": "5dc1445e36b4ed2fefd80d5280e3504c089e4b67c14b29c4a249362d5ac6a3db",
+      "bytes": 11510
+    }
+  ],
+  "decisions": {
+    "supervisor_review": "Ready with recorded limitations and unresolved findings.",
+    "scientific_scope": "Only the explicitly bounded audit-case-study claims are supported; see claim dispositions.",
+    "external_submission": "Not approved: author/rights decisions, independent review and venue assessment remain.",
+    "new_experiments": "Protocols prepared only; separate approval required."
+  },
+  "boundary": "Hash integrity and passing software checks do not establish mapping correctness, independent detector accuracy or clinical effectiveness."
+}

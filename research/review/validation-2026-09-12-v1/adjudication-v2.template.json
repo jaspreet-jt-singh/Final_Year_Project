@@ -1,0 +1,13 @@
+{
+  "schema_version": 2,
+  "packet_sha256": "8c71503150b85ccd2b06bfc624a8154184f46b97060250c7fdce868a762e642b",
+  "review_a_sha256": "",
+  "review_b_sha256": "",
+  "adjudicator": {
+    "id": "",
+    "qualifications": "",
+    "completed_at": ""
+  },
+  "rows": [],
+  "instructions": "After both references are frozen, add exactly one resolved row for each disagreement. Use the reference row format; indeterminate is permitted."
+}

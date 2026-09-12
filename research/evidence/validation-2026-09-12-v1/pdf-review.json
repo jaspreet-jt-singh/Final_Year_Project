@@ -1,0 +1,218 @@
+{
+  "schema_version": 1,
+  "run_id": "validation-2026-09-12-v1",
+  "reviewed_at_utc": "2026-09-12T06:13:56.521351+00:00",
+  "reviewer_role": "AI-assisted visual artifact/layout review, not qualified scholarly or nutrition approval.",
+  "build_command": [
+    "python",
+    "scripts/build_papers.py",
+    "--refresh-pdfs"
+  ],
+  "render_command_template": "pdftoppm -r 100 -png <paper>/main.pdf <ignored-final-render-prefix>",
+  "render_location": ".deployment/research/validation-2026-09-12-v1/pdf-review",
+  "method": "Every final rendered page opened individually via view_image; layout, equations, captions, diagrams, references and appendices checked. No collage or generated replacement figures.",
+  "documents": [
+    {
+      "kind": "Journal",
+      "pdf": {
+        "path": "Research_Paper_Journal/main.pdf",
+        "sha256": "d9174e239f74a9abdc96cc76867f68bcea2708af60a0dc36f5db9061678fbcc9",
+        "bytes": 264235,
+        "pages": 18
+      },
+      "sources": [
+        {
+          "path": "Research_Paper_Journal/main.tex",
+          "sha256": "3d5575caf1ed4eb3697898a6e890de507a4f9ca9c968ac0edf081db90852a4f9"
+        },
+        {
+          "path": "Research_Paper_Journal/bibliography/references.bib",
+          "sha256": "2708fcebd270331d8ff6e33afc5abcd39879b765fe5ed9ec9896910fc724c9e2"
+        },
+        {
+          "path": "Research_Paper_Journal/generated/evidence.tex",
+          "sha256": "d2de5e9ffbf75a091c183b84f0b72ea014ca4480945fe8c77c22b55e6b1e7462"
+        }
+      ],
+      "build_log": {
+        "path": ".deployment/research/journal/main.log",
+        "sha256": "55d01b8ccddeeef1147d5070a287b7337ddebee25ca66136db458e8852091b42",
+        "engine": "This is pdfTeX, Version 3.141592653-2.6-1.40.28 (MiKTeX 25.12) (preloaded format=pdflatex 2026.6.6)  12 SEP 2026 11:38"
+      },
+      "page_reviews": [
+        {
+          "page": 1,
+          "render": "final-journal-01.png",
+          "observation": "Title, author block, abstract, index terms, review-copy purpose and affiliation fit within margins. Review-draft header and page number visible. No text overlap or clipping observed.",
+          "result": "pass_visual_layout"
+        },
+        {
+          "page": 2,
+          "render": "final-journal-02.png",
+          "observation": "Introduction, monospace food examples and four numbered research questions are legible. Related-work heading has following text; inline citation numbers render normally.",
+          "result": "pass_visual_layout"
+        },
+        {
+          "page": 3,
+          "render": "final-journal-03.png",
+          "observation": "Related work and revised application-configuration/production-checkpoint wording are legible and within margins. The continuation into page 4 is normal; no clipping or overlapping citation text observed.",
+          "result": "pass_visual_layout"
+        },
+        {
+          "page": 4,
+          "render": "final-journal-04.png",
+          "observation": "Figure 1 branches, arrowheads, box text and caption are visible without collisions. Caption distinguishes saved meals from advice. Continued scope and nutrition-lookup subsection remain legible below the float.",
+          "result": "pass_visual_layout"
+        },
+        {
+          "page": 5,
+          "render": "final-journal-05.png",
+          "observation": "Lookup explanation and portion-estimate subsection are legible. Equations 1 through 3 have visible set notation, fraction, vector, indicator and equation numbers; none overlap text or extend beyond the page.",
+          "result": "pass_visual_layout"
+        },
+        {
+          "page": 6,
+          "render": "final-journal-06.png",
+          "observation": "Equations 4 through 6 and numbers remain clear. Corrected saved-journal wording explicitly includes excluded items and their flags; the paragraph wraps within margins. Health-context and calorie-boundary text is legible.",
+          "result": "pass_visual_layout"
+        },
+        {
+          "page": 7,
+          "render": "final-journal-07.png",
+          "observation": "Table I caption, five source rows and image total are readable and aligned. Continued advice discussion and audit-method headings do not collide with the float. Line numbers remain outside the text block.",
+          "result": "pass_visual_layout"
+        },
+        {
+          "page": 8,
+          "render": "final-journal-08.png",
+          "observation": "Revised explanation distinguishes label-byte inequality from the observed absence of formatting-only direct conflicts. Subsection headings, monospace family marker and equation 7 remain legible with no margin overflow.",
+          "result": "pass_visual_layout"
+        },
+        {
+          "page": 9,
+          "render": "final-journal-09.png",
+          "observation": "The earlier unrecorded hash seed and the later fixed-seed follow-up are visibly distinguished. Equation 8, software section, results heading and duplicate-file examples remain complete and legible.",
+          "result": "pass_visual_layout"
+        },
+        {
+          "page": 10,
+          "render": "final-journal-10.png",
+          "observation": "Tables II and III retain complete captions, aligned columns and readable wrapping. Census rows and flags are visible. RQ2 continuation fits beneath the tables without crowding or missing content.",
+          "result": "pass_visual_layout"
+        },
+        {
+          "page": 11,
+          "render": "final-journal-11.png",
+          "observation": "Tables IV and V, captions, fraction denominators and availability percentages are legible. Repeatability limitations and RQ3/RQ4 prose follow cleanly. No unresolved printed table reference observed.",
+          "result": "pass_visual_layout"
+        },
+        {
+          "page": 12,
+          "render": "final-journal-12.png",
+          "observation": "Runtime-limit continuation and validation-follow-up subsection are legible. Dense new counts, tolerances, cross-partition comparisons and crop/mirror/rotation qualifications remain within margins with correctly rendered superscripts.",
+          "result": "pass_visual_layout"
+        },
+        {
+          "page": 13,
+          "render": "final-journal-13.png",
+          "observation": "Validation results continue normally into interpretation and threats to validity. Mathematical tolerances, numbered quantities and heading are readable; no overlapping or clipped paragraphs observed.",
+          "result": "pass_visual_layout"
+        },
+        {
+          "page": 14,
+          "render": "final-journal-14.png",
+          "observation": "Corrected public-access limitation appears at the top of the page and wraps normally. Proposed mapping/detection subsections and inline reference-set notation remain clearly separated from completed evidence.",
+          "result": "pass_visual_layout"
+        },
+        {
+          "page": 15,
+          "render": "final-journal-15.png",
+          "observation": "Conclusion and revised local-checkout/public-access statement are legible. Repository paths wrap within the text block. Author-confirmation paragraph continues for two lines on page 16 rather than being clipped.",
+          "result": "pass_visual_layout"
+        },
+        {
+          "page": 16,
+          "render": "final-journal-16.png",
+          "observation": "Table VI historical values/caption remain complete. The two-line author-confirmation continuation precedes Appendix A; Appendix A is legible and complete. Appendix B starts with sufficient following text and continues onto page 17.",
+          "result": "pass_visual_layout"
+        },
+        {
+          "page": 17,
+          "render": "final-journal-17.png",
+          "observation": "Table VII hash prefixes and caption are readable. Appendix B's upload-retention continuation and hash explanation are complete. References 1 through 11 fit normally with wrapping URLs and no unresolved citation glyphs.",
+          "result": "pass_visual_layout"
+        },
+        {
+          "page": 18,
+          "render": "final-journal-18.png",
+          "observation": "Reference 12 now starts and ends on this page as a complete entry. References 13 through 22 and their URLs are legible and within margins; no dangling one-line bibliography continuation remains.",
+          "result": "pass_visual_layout"
+        }
+      ]
+    },
+    {
+      "kind": "Conference",
+      "pdf": {
+        "path": "Research_Paper_Conference/main.pdf",
+        "sha256": "39f0a6f809164224121c909a0ca526f8a89b7ddf2e64816555292f5ca76e58fe",
+        "bytes": 222319,
+        "pages": 5
+      },
+      "sources": [
+        {
+          "path": "Research_Paper_Conference/main.tex",
+          "sha256": "e21de549017724cfd44652f5787352ab42ec6ee757c60b2e7fe18989ee021d53"
+        },
+        {
+          "path": "Research_Paper_Conference/bibliography/references.bib",
+          "sha256": "2708fcebd270331d8ff6e33afc5abcd39879b765fe5ed9ec9896910fc724c9e2"
+        },
+        {
+          "path": "Research_Paper_Conference/generated/evidence.tex",
+          "sha256": "d2de5e9ffbf75a091c183b84f0b72ea014ca4480945fe8c77c22b55e6b1e7462"
+        }
+      ],
+      "build_log": {
+        "path": ".deployment/research/conference/main.log",
+        "sha256": "b94bcc5cdccd205819084bd51ecf1d52d0943e4ded8647cfd67e7b7246c53d21",
+        "engine": "This is pdfTeX, Version 3.141592653-2.6-1.40.28 (MiKTeX 25.12) (preloaded format=pdflatex 2026.6.6)  12 SEP 2026 11:38"
+      },
+      "page_reviews": [
+        {
+          "page": 1,
+          "observation": "Title, authors, abstract, keywords, scope and opening related work legible; columns fit margins.",
+          "result": "pass_visual_layout",
+          "render": "final-conference-1.png"
+        },
+        {
+          "page": 2,
+          "observation": "Workflow branches/caption, equations 1-2, gram/missingness/storage and context text legible without overlap; excluded-item clarification visible.",
+          "result": "pass_visual_layout",
+          "render": "final-conference-2.png"
+        },
+        {
+          "page": 3,
+          "observation": "Tables I-II and source/grouping/result text aligned; direct label-conflict clarification fits columns.",
+          "result": "pass_visual_layout",
+          "render": "final-conference-3.png"
+        },
+        {
+          "page": 4,
+          "observation": "Table III, validation follow-up, limitations, conclusion and narrowed repository availability statement legible.",
+          "result": "pass_visual_layout",
+          "render": "final-conference-4.png"
+        },
+        {
+          "page": 5,
+          "observation": "Disclosure, historical appendix and all 22 bibliography entries complete and readable; URL wrapping remains within columns.",
+          "result": "pass_visual_layout",
+          "render": "final-conference-5.png"
+        }
+      ]
+    }
+  ],
+  "total_pages_reviewed": 23,
+  "minor_findings": [],
+  "build_attempt_note": "One intermediate journal build had an overfull inline path. Original documents/indexes preserved locally; final emergency-stretch formatting removed overflow without changing substantive claim units.",
+  "status": "all_pages_reviewed_no_blocking_layout_defect_observed"
+}

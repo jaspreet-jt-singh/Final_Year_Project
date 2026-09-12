@@ -1,0 +1,2315 @@
+{
+  "schema_version": 1,
+  "run_id": "validation-2026-09-12-v1",
+  "status": "pass",
+  "checker_sha256": "0b56e2045ef95f601587413db7c43518ba57eb804cb7cd818501c8e891961bbd",
+  "scope": "Named hardcoded table/paragraph numbers and source consistency only; not exhaustive TeX parsing, experiment replication, clinical validation, or verification of ignored artifacts.",
+  "input_sha256": {
+    "Research_Paper_Journal/main.tex": "7bd4c103479724bdf1d48da90a24351f32dce30a08e040fed7600f3fe855d6d1",
+    "Research_Paper_Conference/main.tex": "d6e5a3d2b4665de7cc7e532d0c5d8cd3b43d1d894fae0d530ccc8b21ce531fd1",
+    "research/evidence/audit.json": "b606425695b69a625f5a0a3e9b9584958e9dc4bbe4b68301bac47f06c63b479e",
+    "research/evidence/grouped-split-v1.json": "bd919da4a91c40cecf95ccec211fec1bae2e55e587a7faa7f81ac140e6bd347f",
+    "research/evidence/validation-2026-09-12-v1/baseline.json": "f2ce75cc2424134b44022b0ee9208c59ce5c78f896fa98a6346b840f61e91397",
+    "research/evidence/validation-2026-09-12-v1/training-results.json": "55c44f5be22d1b42fc8ca3a9d88663d81db174fa72450fab0617263bf8ba7e1f",
+    "research/evidence/validation-2026-09-12-v1/nutrition-validation.json": "f34552215b47d09edda0dc8a3c10c6238d98a2dec1730f66011022a14fafd9ee",
+    "research/evidence/validation-2026-09-12-v1/arithmetic-validation.json": "f62ee95bd287704c8fd28906d34a71d6d05fac3205a7ec73a2cdad12172ccf75",
+    "research/evidence/validation-2026-09-12-v1/recommendations.json": "3f21f8de93f98b42c750bbf89ec2ef8993321773b890df98b5332dbac645d7b9",
+    "research/evidence/validation-2026-09-12-v1/citation-review.json": "9175701b0451e749369b4b423885f4a7d229b2235b1bd123aae7fc675651d8b5",
+    "research/evidence/validation-2026-09-12-v1/browser-extended-attempt3.json": "d4f31dbeca4dcecff0cb5a21fa43cc511cbb2f34aabb615ab6902be8a65b4f1b",
+    "backend/domain/nutrition_policy.json": "1af598ce13ab2db17936ab2fbf922fa2997dd8d842e7cd7c625b718b158fe912",
+    "tests/contracts/macro-fixtures.json": "ba535ca13e8914b4c19acc154051bc819926a43bcbdd461f139c39d9d3cf86f1",
+    "frontend/package.json": "79ea282a28c1c441d2f53dc92aa3fb38ea5bc6b899337cdddb002c56915e71fc",
+    "pyproject.toml": "70f46a51785a6a13dce64e979610a701d6eaf72fa5ba56bd9c007f97b61d43f5",
+    "backend/scripts/merge_db.py": "6a64228196c05e8de34507b7936fb44829cf87b822a5e4c760b301bf7e1c193f",
+    "research/evidence/validation-2026-09-12-v1/dataset-sources.json": "9128c1f7c7f7a6c0b65826fdd02fcc34a3e9bb12184174512eda2eb757296e76",
+    "research/evidence/validation-2026-09-12-v1/dataset-inspection.json": "20ba2ea57e3659a84990a9b9f85689be45fd43c7673084e20212c8f659e369a3",
+    "research/evidence/validation-2026-09-12-v1/dataset-perceptual-review.json": "a90a79435d88fd5ef045d33981a53da8ef6bfe0e52e0632cf51dd633a62ee811",
+    "research/evidence/validation-2026-09-12-v1/dataset-perceptual-queue.json": "74449ad67b23ddfefd68c0a8038b44bd28c9d58ba3b8905136627498d2221283",
+    "research/evidence/validation-2026-09-12-v1/dataset-class-group-support.json": "a7cff0535d395e77fbf17ac21ae00d26399702c1bb25e61e0be69150c57ca74c",
+    "research/evidence/validation-2026-09-12-v1/dataset-visual-review.json": "5393c08cae2ede3f8606feab27d00a184094449a26ca49fbbadc89926a443dd9"
+  },
+  "summary": {
+    "checks": 234,
+    "failed": 0
+  },
+  "checks": [
+    {
+      "id": "journal.strict_flags.train",
+      "observed": 51,
+      "expected": 51,
+      "source": "audit.json: strict issue_images",
+      "status": "pass"
+    },
+    {
+      "id": "journal.strict_flags.valid",
+      "observed": 7,
+      "expected": 7,
+      "source": "audit.json: strict issue_images",
+      "status": "pass"
+    },
+    {
+      "id": "journal.strict_flags.test",
+      "observed": 7,
+      "expected": 7,
+      "source": "audit.json: strict issue_images",
+      "status": "pass"
+    },
+    {
+      "id": "conference.strict_flags.train",
+      "observed": 51,
+      "expected": 51,
+      "source": "audit.json: strict issue_images",
+      "status": "pass"
+    },
+    {
+      "id": "conference.strict_flags.valid",
+      "observed": 7,
+      "expected": 7,
+      "source": "audit.json: strict issue_images",
+      "status": "pass"
+    },
+    {
+      "id": "conference.strict_flags.test",
+      "observed": 7,
+      "expected": 7,
+      "source": "audit.json: strict issue_images",
+      "status": "pass"
+    },
+    {
+      "id": "duplicates.byte_equals_pixels.cross_split_groups",
+      "observed": 138,
+      "expected": 138,
+      "source": "audit.json: both duplicate counters",
+      "status": "pass"
+    },
+    {
+      "id": "duplicates.byte_equals_pixels.affected_images",
+      "observed": 276,
+      "expected": 276,
+      "source": "audit.json: both duplicate counters",
+      "status": "pass"
+    },
+    {
+      "id": "duplicates.byte_equals_pixels.pairs",
+      "observed": {
+        "train:valid": {
+          "shared_groups": 63,
+          "affected_images": 126
+        },
+        "train:test": {
+          "shared_groups": 56,
+          "affected_images": 112
+        },
+        "valid:test": {
+          "shared_groups": 19,
+          "affected_images": 38
+        }
+      },
+      "expected": {
+        "train:valid": {
+          "shared_groups": 63,
+          "affected_images": 126
+        },
+        "train:test": {
+          "shared_groups": 56,
+          "affected_images": 112
+        },
+        "valid:test": {
+          "shared_groups": 19,
+          "affected_images": 38
+        }
+      },
+      "source": "audit.json: both duplicate counters",
+      "status": "pass"
+    },
+    {
+      "id": "candidate.class_presence.test",
+      "observed": [
+        "aloo_gobi",
+        "aloo_masala",
+        "appam",
+        "beetroot_poriyal",
+        "besan_cheela",
+        "bhakarwadi",
+        "bhakri",
+        "bhatura",
+        "bhindi_masala",
+        "biryani",
+        "carrot_poriyal",
+        "chai",
+        "chicken",
+        "chicken_65",
+        "chicken_biryani",
+        "chole",
+        "coconut_chutney",
+        "dal",
+        "dhokla",
+        "dosa",
+        "dum_aloo",
+        "eggs",
+        "fish_curry",
+        "ghevar",
+        "green_chutney",
+        "gulab_jamun",
+        "idli",
+        "jalebi",
+        "kaara_chutney",
+        "kali",
+        "kebab",
+        "khandvi",
+        "kheer",
+        "koozh",
+        "kulfi",
+        "lassi",
+        "lemon_rice",
+        "medu_vada",
+        "modak",
+        "mushroom_biryani",
+        "mutton_biryani",
+        "mutton_curry",
+        "nandu_masala",
+        "nei_satham",
+        "omelette",
+        "onion_pakoda",
+        "paal_kolukattai",
+        "palak_paneer",
+        "paneer_biryani",
+        "paratha",
+        "parupu_vadai",
+        "pidi_kolukattai",
+        "poha",
+        "poorna_kolukattai",
+        "prawn_thokku",
+        "puri",
+        "raita",
+        "rajma_curry",
+        "ras_malai",
+        "rice",
+        "roti",
+        "saag",
+        "salad",
+        "sambar",
+        "sambar_satham",
+        "samosa",
+        "shahi_paneer",
+        "thepla",
+        "upma",
+        "veg_briyani",
+        "veg_pulao",
+        "ven_pongal"
+      ],
+      "expected": [
+        "aloo_gobi",
+        "aloo_masala",
+        "appam",
+        "beetroot_poriyal",
+        "besan_cheela",
+        "bhakarwadi",
+        "bhakri",
+        "bhatura",
+        "bhindi_masala",
+        "biryani",
+        "carrot_poriyal",
+        "chai",
+        "chicken",
+        "chicken_65",
+        "chicken_biryani",
+        "chole",
+        "coconut_chutney",
+        "dal",
+        "dhokla",
+        "dosa",
+        "dum_aloo",
+        "eggs",
+        "fish_curry",
+        "ghevar",
+        "green_chutney",
+        "gulab_jamun",
+        "idli",
+        "jalebi",
+        "kaara_chutney",
+        "kali",
+        "kebab",
+        "khandvi",
+        "kheer",
+        "koozh",
+        "kulfi",
+        "lassi",
+        "lemon_rice",
+        "medu_vada",
+        "modak",
+        "mushroom_biryani",
+        "mutton_biryani",
+        "mutton_curry",
+        "nandu_masala",
+        "nei_satham",
+        "omelette",
+        "onion_pakoda",
+        "paal_kolukattai",
+        "palak_paneer",
+        "paneer_biryani",
+        "paratha",
+        "parupu_vadai",
+        "pidi_kolukattai",
+        "poha",
+        "poorna_kolukattai",
+        "prawn_thokku",
+        "puri",
+        "raita",
+        "rajma_curry",
+        "ras_malai",
+        "rice",
+        "roti",
+        "saag",
+        "salad",
+        "sambar",
+        "sambar_satham",
+        "samosa",
+        "shahi_paneer",
+        "thepla",
+        "upma",
+        "veg_briyani",
+        "veg_pulao",
+        "ven_pongal"
+      ],
+      "source": "grouped-split-v1.json",
+      "status": "pass"
+    },
+    {
+      "id": "candidate.no_missing_classes.test",
+      "observed": [],
+      "expected": [],
+      "source": "grouped-split-v1.json",
+      "status": "pass"
+    },
+    {
+      "id": "candidate.positive_support.test",
+      "observed": true,
+      "expected": true,
+      "source": "grouped-split-v1.json",
+      "status": "pass"
+    },
+    {
+      "id": "candidate.class_presence.train",
+      "observed": [
+        "aloo_gobi",
+        "aloo_masala",
+        "appam",
+        "beetroot_poriyal",
+        "besan_cheela",
+        "bhakarwadi",
+        "bhakri",
+        "bhatura",
+        "bhindi_masala",
+        "biryani",
+        "carrot_poriyal",
+        "chai",
+        "chicken",
+        "chicken_65",
+        "chicken_biryani",
+        "chole",
+        "coconut_chutney",
+        "dal",
+        "dhokla",
+        "dosa",
+        "dum_aloo",
+        "eggs",
+        "fish_curry",
+        "ghevar",
+        "green_chutney",
+        "gulab_jamun",
+        "idli",
+        "jalebi",
+        "kaara_chutney",
+        "kali",
+        "kebab",
+        "khandvi",
+        "kheer",
+        "koozh",
+        "kulfi",
+        "lassi",
+        "lemon_rice",
+        "medu_vada",
+        "modak",
+        "mushroom_biryani",
+        "mutton_biryani",
+        "mutton_curry",
+        "nandu_masala",
+        "nei_satham",
+        "omelette",
+        "onion_pakoda",
+        "paal_kolukattai",
+        "palak_paneer",
+        "paneer_biryani",
+        "paratha",
+        "parupu_vadai",
+        "pidi_kolukattai",
+        "poha",
+        "poorna_kolukattai",
+        "prawn_thokku",
+        "puri",
+        "raita",
+        "rajma_curry",
+        "ras_malai",
+        "rice",
+        "roti",
+        "saag",
+        "salad",
+        "sambar",
+        "sambar_satham",
+        "samosa",
+        "shahi_paneer",
+        "thepla",
+        "upma",
+        "veg_briyani",
+        "veg_pulao",
+        "ven_pongal"
+      ],
+      "expected": [
+        "aloo_gobi",
+        "aloo_masala",
+        "appam",
+        "beetroot_poriyal",
+        "besan_cheela",
+        "bhakarwadi",
+        "bhakri",
+        "bhatura",
+        "bhindi_masala",
+        "biryani",
+        "carrot_poriyal",
+        "chai",
+        "chicken",
+        "chicken_65",
+        "chicken_biryani",
+        "chole",
+        "coconut_chutney",
+        "dal",
+        "dhokla",
+        "dosa",
+        "dum_aloo",
+        "eggs",
+        "fish_curry",
+        "ghevar",
+        "green_chutney",
+        "gulab_jamun",
+        "idli",
+        "jalebi",
+        "kaara_chutney",
+        "kali",
+        "kebab",
+        "khandvi",
+        "kheer",
+        "koozh",
+        "kulfi",
+        "lassi",
+        "lemon_rice",
+        "medu_vada",
+        "modak",
+        "mushroom_biryani",
+        "mutton_biryani",
+        "mutton_curry",
+        "nandu_masala",
+        "nei_satham",
+        "omelette",
+        "onion_pakoda",
+        "paal_kolukattai",
+        "palak_paneer",
+        "paneer_biryani",
+        "paratha",
+        "parupu_vadai",
+        "pidi_kolukattai",
+        "poha",
+        "poorna_kolukattai",
+        "prawn_thokku",
+        "puri",
+        "raita",
+        "rajma_curry",
+        "ras_malai",
+        "rice",
+        "roti",
+        "saag",
+        "salad",
+        "sambar",
+        "sambar_satham",
+        "samosa",
+        "shahi_paneer",
+        "thepla",
+        "upma",
+        "veg_briyani",
+        "veg_pulao",
+        "ven_pongal"
+      ],
+      "source": "grouped-split-v1.json",
+      "status": "pass"
+    },
+    {
+      "id": "candidate.no_missing_classes.train",
+      "observed": [],
+      "expected": [],
+      "source": "grouped-split-v1.json",
+      "status": "pass"
+    },
+    {
+      "id": "candidate.positive_support.train",
+      "observed": true,
+      "expected": true,
+      "source": "grouped-split-v1.json",
+      "status": "pass"
+    },
+    {
+      "id": "candidate.class_presence.valid",
+      "observed": [
+        "aloo_gobi",
+        "aloo_masala",
+        "appam",
+        "beetroot_poriyal",
+        "besan_cheela",
+        "bhakarwadi",
+        "bhakri",
+        "bhatura",
+        "bhindi_masala",
+        "biryani",
+        "carrot_poriyal",
+        "chai",
+        "chicken",
+        "chicken_65",
+        "chicken_biryani",
+        "chole",
+        "coconut_chutney",
+        "dal",
+        "dhokla",
+        "dosa",
+        "dum_aloo",
+        "eggs",
+        "fish_curry",
+        "ghevar",
+        "green_chutney",
+        "gulab_jamun",
+        "idli",
+        "jalebi",
+        "kaara_chutney",
+        "kali",
+        "kebab",
+        "khandvi",
+        "kheer",
+        "koozh",
+        "kulfi",
+        "lassi",
+        "lemon_rice",
+        "medu_vada",
+        "modak",
+        "mushroom_biryani",
+        "mutton_biryani",
+        "mutton_curry",
+        "nandu_masala",
+        "nei_satham",
+        "omelette",
+        "onion_pakoda",
+        "paal_kolukattai",
+        "palak_paneer",
+        "paneer_biryani",
+        "paratha",
+        "parupu_vadai",
+        "pidi_kolukattai",
+        "poha",
+        "poorna_kolukattai",
+        "prawn_thokku",
+        "puri",
+        "raita",
+        "rajma_curry",
+        "ras_malai",
+        "rice",
+        "roti",
+        "saag",
+        "salad",
+        "sambar",
+        "sambar_satham",
+        "samosa",
+        "shahi_paneer",
+        "thepla",
+        "upma",
+        "veg_briyani",
+        "veg_pulao",
+        "ven_pongal"
+      ],
+      "expected": [
+        "aloo_gobi",
+        "aloo_masala",
+        "appam",
+        "beetroot_poriyal",
+        "besan_cheela",
+        "bhakarwadi",
+        "bhakri",
+        "bhatura",
+        "bhindi_masala",
+        "biryani",
+        "carrot_poriyal",
+        "chai",
+        "chicken",
+        "chicken_65",
+        "chicken_biryani",
+        "chole",
+        "coconut_chutney",
+        "dal",
+        "dhokla",
+        "dosa",
+        "dum_aloo",
+        "eggs",
+        "fish_curry",
+        "ghevar",
+        "green_chutney",
+        "gulab_jamun",
+        "idli",
+        "jalebi",
+        "kaara_chutney",
+        "kali",
+        "kebab",
+        "khandvi",
+        "kheer",
+        "koozh",
+        "kulfi",
+        "lassi",
+        "lemon_rice",
+        "medu_vada",
+        "modak",
+        "mushroom_biryani",
+        "mutton_biryani",
+        "mutton_curry",
+        "nandu_masala",
+        "nei_satham",
+        "omelette",
+        "onion_pakoda",
+        "paal_kolukattai",
+        "palak_paneer",
+        "paneer_biryani",
+        "paratha",
+        "parupu_vadai",
+        "pidi_kolukattai",
+        "poha",
+        "poorna_kolukattai",
+        "prawn_thokku",
+        "puri",
+        "raita",
+        "rajma_curry",
+        "ras_malai",
+        "rice",
+        "roti",
+        "saag",
+        "salad",
+        "sambar",
+        "sambar_satham",
+        "samosa",
+        "shahi_paneer",
+        "thepla",
+        "upma",
+        "veg_briyani",
+        "veg_pulao",
+        "ven_pongal"
+      ],
+      "source": "grouped-split-v1.json",
+      "status": "pass"
+    },
+    {
+      "id": "candidate.no_missing_classes.valid",
+      "observed": [],
+      "expected": [],
+      "source": "grouped-split-v1.json",
+      "status": "pass"
+    },
+    {
+      "id": "candidate.positive_support.valid",
+      "observed": true,
+      "expected": true,
+      "source": "grouped-split-v1.json",
+      "status": "pass"
+    },
+    {
+      "id": "journal.candidate.minimum_support",
+      "observed": 17,
+      "expected": 17,
+      "source": "grouped-split-v1.json: minimum valid/test per-class image count",
+      "status": "pass"
+    },
+    {
+      "id": "journal.source.source_project_z0tql",
+      "observed": [
+        17,
+        9053
+      ],
+      "expected": [
+        17,
+        9053
+      ],
+      "source": "dataset-sources.json / grouped-split-v1.json",
+      "status": "pass"
+    },
+    {
+      "id": "source.yaml_identity.source_project_z0tql",
+      "observed": "6686dc0fba02e9bb3303edf58eaaab240ec0905845dcd81df80c7f10b76e3790",
+      "expected": "6686dc0fba02e9bb3303edf58eaaab240ec0905845dcd81df80c7f10b76e3790",
+      "source": "dataset-sources.json / grouped-split-v1.json",
+      "status": "pass"
+    },
+    {
+      "id": "source.image_count.source_project_z0tql",
+      "observed": 9053,
+      "expected": 9053,
+      "source": "dataset-sources.json / grouped-split-v1.json",
+      "status": "pass"
+    },
+    {
+      "id": "source.class_count.source_project_z0tql",
+      "observed": 17,
+      "expected": 17,
+      "source": "dataset-sources.json",
+      "status": "pass"
+    },
+    {
+      "id": "journal.source.source_microplastics",
+      "observed": [
+        29,
+        8406
+      ],
+      "expected": [
+        29,
+        8406
+      ],
+      "source": "dataset-sources.json / grouped-split-v1.json",
+      "status": "pass"
+    },
+    {
+      "id": "source.yaml_identity.source_microplastics",
+      "observed": "1ac2987a6b75e733efbcb7fe79c419523dbd8f1592d6bd541881729050508811",
+      "expected": "1ac2987a6b75e733efbcb7fe79c419523dbd8f1592d6bd541881729050508811",
+      "source": "dataset-sources.json / grouped-split-v1.json",
+      "status": "pass"
+    },
+    {
+      "id": "source.image_count.source_microplastics",
+      "observed": 8406,
+      "expected": 8406,
+      "source": "dataset-sources.json / grouped-split-v1.json",
+      "status": "pass"
+    },
+    {
+      "id": "source.class_count.source_microplastics",
+      "observed": 29,
+      "expected": 29,
+      "source": "dataset-sources.json",
+      "status": "pass"
+    },
+    {
+      "id": "journal.source.source_indianfood7",
+      "observed": [
+        7,
+        1949
+      ],
+      "expected": [
+        7,
+        1949
+      ],
+      "source": "dataset-sources.json / grouped-split-v1.json",
+      "status": "pass"
+    },
+    {
+      "id": "source.yaml_identity.source_indianfood7",
+      "observed": "76b68d9b016bf64dfa89358efc572940efe5b32e5b8f8026cb52858d883dfd38",
+      "expected": "76b68d9b016bf64dfa89358efc572940efe5b32e5b8f8026cb52858d883dfd38",
+      "source": "dataset-sources.json / grouped-split-v1.json",
+      "status": "pass"
+    },
+    {
+      "id": "source.image_count.source_indianfood7",
+      "observed": 1949,
+      "expected": 1949,
+      "source": "dataset-sources.json / grouped-split-v1.json",
+      "status": "pass"
+    },
+    {
+      "id": "source.class_count.source_indianfood7",
+      "observed": 7,
+      "expected": 7,
+      "source": "dataset-sources.json",
+      "status": "pass"
+    },
+    {
+      "id": "journal.source.source_indianfoodnet",
+      "observed": [
+        30,
+        13036
+      ],
+      "expected": [
+        30,
+        13036
+      ],
+      "source": "dataset-sources.json / grouped-split-v1.json",
+      "status": "pass"
+    },
+    {
+      "id": "source.yaml_identity.source_indianfoodnet",
+      "observed": "c25c8935bc914ff5e9216c567224c2a649bf3439d18bcb60bbc8bb59707fc193",
+      "expected": "c25c8935bc914ff5e9216c567224c2a649bf3439d18bcb60bbc8bb59707fc193",
+      "source": "dataset-sources.json / grouped-split-v1.json",
+      "status": "pass"
+    },
+    {
+      "id": "source.image_count.source_indianfoodnet",
+      "observed": 13036,
+      "expected": 13036,
+      "source": "dataset-sources.json / grouped-split-v1.json",
+      "status": "pass"
+    },
+    {
+      "id": "source.class_count.source_indianfoodnet",
+      "observed": 30,
+      "expected": 30,
+      "source": "dataset-sources.json",
+      "status": "pass"
+    },
+    {
+      "id": "journal.source.source_south_indian",
+      "observed": [
+        31,
+        8353
+      ],
+      "expected": [
+        31,
+        8353
+      ],
+      "source": "dataset-sources.json / grouped-split-v1.json",
+      "status": "pass"
+    },
+    {
+      "id": "source.yaml_identity.source_south_indian",
+      "observed": "e3d87cd057fcd51a100f42fb99378c4e2e11a06e6537acc2b858b64ab6cf6750",
+      "expected": "e3d87cd057fcd51a100f42fb99378c4e2e11a06e6537acc2b858b64ab6cf6750",
+      "source": "dataset-sources.json / grouped-split-v1.json",
+      "status": "pass"
+    },
+    {
+      "id": "source.image_count.source_south_indian",
+      "observed": 8353,
+      "expected": 8353,
+      "source": "dataset-sources.json / grouped-split-v1.json",
+      "status": "pass"
+    },
+    {
+      "id": "source.class_count.source_south_indian",
+      "observed": 31,
+      "expected": 31,
+      "source": "dataset-sources.json",
+      "status": "pass"
+    },
+    {
+      "id": "journal.historical.val",
+      "observed": [
+        "0.847",
+        "0.807",
+        "0.830",
+        "0.692"
+      ],
+      "expected": [
+        "0.847",
+        "0.807",
+        "0.830",
+        "0.692"
+      ],
+      "source": "training-results.json: archived console and printed metrics, not a new evaluation",
+      "status": "pass"
+    },
+    {
+      "id": "journal.historical.test",
+      "observed": [
+        "0.842",
+        "0.801",
+        "0.820",
+        "0.680"
+      ],
+      "expected": [
+        "0.842",
+        "0.801",
+        "0.820",
+        "0.680"
+      ],
+      "source": "training-results.json: archived console and printed metrics, not a new evaluation",
+      "status": "pass"
+    },
+    {
+      "id": "conference.historical.mAP50",
+      "observed": "0.830/0.820",
+      "expected": "0.830/0.820",
+      "source": "training-results.json",
+      "status": "pass"
+    },
+    {
+      "id": "conference.historical.mAP50-95",
+      "observed": "0.692/0.680",
+      "expected": "0.692/0.680",
+      "source": "training-results.json",
+      "status": "pass"
+    },
+    {
+      "id": "historical.environment_consistency.journal.Ultralytics",
+      "observed": 1,
+      "expected": 1,
+      "source": "training-results.json: both evaluation environments",
+      "status": "pass"
+    },
+    {
+      "id": "journal.historical.environment.Ultralytics",
+      "observed": "8.4.60",
+      "expected": "8.4.60",
+      "source": "training-results.json",
+      "status": "pass"
+    },
+    {
+      "id": "historical.environment_consistency.journal.Python",
+      "observed": 1,
+      "expected": 1,
+      "source": "training-results.json: both evaluation environments",
+      "status": "pass"
+    },
+    {
+      "id": "journal.historical.environment.Python",
+      "observed": "3.12.13",
+      "expected": "3.12.13",
+      "source": "training-results.json",
+      "status": "pass"
+    },
+    {
+      "id": "historical.environment_consistency.journal.Torch",
+      "observed": 1,
+      "expected": 1,
+      "source": "training-results.json: both evaluation environments",
+      "status": "pass"
+    },
+    {
+      "id": "journal.historical.environment.Torch",
+      "observed": "2.10.0+cu128",
+      "expected": "2.10.0+cu128",
+      "source": "training-results.json",
+      "status": "pass"
+    },
+    {
+      "id": "historical.timing_consistency.journal",
+      "observed": 1,
+      "expected": 1,
+      "source": "training-results.json",
+      "status": "pass"
+    },
+    {
+      "id": "journal.historical.gpu_inference_ms",
+      "observed": 11.0,
+      "expected": 11.0,
+      "source": "training-results.json: archived GPU timing only",
+      "status": "pass"
+    },
+    {
+      "id": "historical.environment_consistency.conference.Ultralytics",
+      "observed": 1,
+      "expected": 1,
+      "source": "training-results.json: both evaluation environments",
+      "status": "pass"
+    },
+    {
+      "id": "conference.historical.environment.Ultralytics",
+      "observed": "8.4.60",
+      "expected": "8.4.60",
+      "source": "training-results.json",
+      "status": "pass"
+    },
+    {
+      "id": "historical.environment_consistency.conference.Python",
+      "observed": 1,
+      "expected": 1,
+      "source": "training-results.json: both evaluation environments",
+      "status": "pass"
+    },
+    {
+      "id": "conference.historical.environment.Python",
+      "observed": "3.12.13",
+      "expected": "3.12.13",
+      "source": "training-results.json",
+      "status": "pass"
+    },
+    {
+      "id": "historical.environment_consistency.conference.Torch",
+      "observed": 1,
+      "expected": 1,
+      "source": "training-results.json: both evaluation environments",
+      "status": "pass"
+    },
+    {
+      "id": "conference.historical.environment.Torch",
+      "observed": "2.10.0+cu128",
+      "expected": "2.10.0+cu128",
+      "source": "training-results.json",
+      "status": "pass"
+    },
+    {
+      "id": "historical.timing_consistency.conference",
+      "observed": 1,
+      "expected": 1,
+      "source": "training-results.json",
+      "status": "pass"
+    },
+    {
+      "id": "conference.historical.gpu_inference_ms",
+      "observed": 11.0,
+      "expected": 11.0,
+      "source": "training-results.json: archived GPU timing only",
+      "status": "pass"
+    },
+    {
+      "id": "journal.historical.gpu_memory",
+      "observed": 14913,
+      "expected": 14913,
+      "source": "training-results.json",
+      "status": "pass"
+    },
+    {
+      "id": "journal.historical.notebook_cells",
+      "observed": [
+        8,
+        9
+      ],
+      "expected": [
+        8,
+        9
+      ],
+      "source": "training-results.json",
+      "status": "pass"
+    },
+    {
+      "id": "historical.strict_instance_delta.valid",
+      "observed": 7,
+      "expected": 7,
+      "source": "training-results.json / audit.json; both drafts describe seven additional rows",
+      "status": "pass"
+    },
+    {
+      "id": "historical.strict_instance_delta.test",
+      "observed": 7,
+      "expected": 7,
+      "source": "training-results.json / audit.json; both drafts describe seven additional rows",
+      "status": "pass"
+    },
+    {
+      "id": "journal.training.best_validation_map50",
+      "observed": [
+        "0.83379",
+        "78"
+      ],
+      "expected": [
+        "0.83379",
+        "78"
+      ],
+      "source": "training-results.json: reconstruction",
+      "status": "pass"
+    },
+    {
+      "id": "journal.training.best_validation_map50_95",
+      "observed": [
+        "0.69226",
+        "97"
+      ],
+      "expected": [
+        "0.69226",
+        "97"
+      ],
+      "source": "training-results.json: reconstruction",
+      "status": "pass"
+    },
+    {
+      "id": "journal.training.epochs",
+      "observed": 100,
+      "expected": 100,
+      "source": "training-results.json",
+      "status": "pass"
+    },
+    {
+      "id": "frozen_source.backend/scripts/merge_db.py",
+      "observed": "6a64228196c05e8de34507b7936fb44829cf87b822a5e4c760b301bf7e1c193f",
+      "expected": "6a64228196c05e8de34507b7936fb44829cf87b822a5e4c760b301bf7e1c193f",
+      "source": "baseline.json: pinned runtime sources, not uncommitted manuscripts",
+      "status": "pass"
+    },
+    {
+      "id": "frozen_source.backend/domain/nutrition_policy.json",
+      "observed": "1af598ce13ab2db17936ab2fbf922fa2997dd8d842e7cd7c625b718b158fe912",
+      "expected": "1af598ce13ab2db17936ab2fbf922fa2997dd8d842e7cd7c625b718b158fe912",
+      "source": "baseline.json: pinned runtime sources, not uncommitted manuscripts",
+      "status": "pass"
+    },
+    {
+      "id": "frozen_source.pyproject.toml",
+      "observed": "70f46a51785a6a13dce64e979610a701d6eaf72fa5ba56bd9c007f97b61d43f5",
+      "expected": "70f46a51785a6a13dce64e979610a701d6eaf72fa5ba56bd9c007f97b61d43f5",
+      "source": "baseline.json: pinned runtime sources, not uncommitted manuscripts",
+      "status": "pass"
+    },
+    {
+      "id": "frozen_source.frontend/package.json",
+      "observed": "79ea282a28c1c441d2f53dc92aa3fb38ea5bc6b899337cdddb002c56915e71fc",
+      "expected": "79ea282a28c1c441d2f53dc92aa3fb38ea5bc6b899337cdddb002c56915e71fc",
+      "source": "baseline.json: pinned runtime sources, not uncommitted manuscripts",
+      "status": "pass"
+    },
+    {
+      "id": "checkpoint.baseline_equals_training",
+      "observed": {
+        "bytes": 19211162,
+        "path": "results_after_discontinuation/yolo11s_indian_food_best.pt",
+        "sha256": "935a1b34365bb949b75a7256facbc0ffa81629dd96ee1d0ac40260a4715a0827"
+      },
+      "expected": {
+        "path": "results_after_discontinuation/yolo11s_indian_food_best.pt",
+        "sha256": "935a1b34365bb949b75a7256facbc0ffa81629dd96ee1d0ac40260a4715a0827",
+        "bytes": 19211162
+      },
+      "source": "baseline.json / training-results.json: current-file identity only",
+      "status": "pass"
+    },
+    {
+      "id": "journal.checkpoint.bytes",
+      "observed": 19211162,
+      "expected": 19211162,
+      "source": "baseline.json",
+      "status": "pass"
+    },
+    {
+      "id": "journal.checkpoint.mib",
+      "observed": "18.32",
+      "expected": "18.32",
+      "source": "baseline.json",
+      "status": "pass"
+    },
+    {
+      "id": "journal.hash.Deployed checkpoint",
+      "observed": [
+        "\\code{935a1b34365b}"
+      ],
+      "expected": [
+        "\\code{935a1b34365b}"
+      ],
+      "source": "baseline.json / training-results.json / grouped-split-v1.json",
+      "status": "pass"
+    },
+    {
+      "id": "journal.hash.Nutrition SQLite database",
+      "observed": [
+        "\\code{3bdfb92fafd2}"
+      ],
+      "expected": [
+        "\\code{3bdfb92fafd2}"
+      ],
+      "source": "baseline.json / training-results.json / grouped-split-v1.json",
+      "status": "pass"
+    },
+    {
+      "id": "journal.hash.Original INDB workbook",
+      "observed": [
+        "\\code{65f91911de09}"
+      ],
+      "expected": [
+        "\\code{65f91911de09}"
+      ],
+      "source": "baseline.json / training-results.json / grouped-split-v1.json",
+      "status": "pass"
+    },
+    {
+      "id": "journal.hash.Candidate assignments",
+      "observed": [
+        "\\code{54fa9cc4cea5}"
+      ],
+      "expected": [
+        "\\code{54fa9cc4cea5}"
+      ],
+      "source": "baseline.json / training-results.json / grouped-split-v1.json",
+      "status": "pass"
+    },
+    {
+      "id": "journal.hash.Historical final-training notebook",
+      "observed": [
+        "\\code{9f927f3a2bba}"
+      ],
+      "expected": [
+        "\\code{9f927f3a2bba}"
+      ],
+      "source": "baseline.json / training-results.json / grouped-split-v1.json",
+      "status": "pass"
+    },
+    {
+      "id": "journal.production.Python",
+      "observed": "3.12",
+      "expected": "3.12",
+      "source": "pyproject.toml",
+      "status": "pass"
+    },
+    {
+      "id": "journal.production.torch",
+      "observed": "2.6.0",
+      "expected": "2.6.0",
+      "source": "pyproject.toml",
+      "status": "pass"
+    },
+    {
+      "id": "journal.production.torchvision",
+      "observed": "0.21.0",
+      "expected": "0.21.0",
+      "source": "pyproject.toml",
+      "status": "pass"
+    },
+    {
+      "id": "journal.production.ultralytics-opencv-headless",
+      "observed": "8.4.33",
+      "expected": "8.4.33",
+      "source": "pyproject.toml",
+      "status": "pass"
+    },
+    {
+      "id": "production.torch_cpu_build",
+      "observed": true,
+      "expected": true,
+      "source": "pyproject.toml",
+      "status": "pass"
+    },
+    {
+      "id": "production.torchvision_cpu_build",
+      "observed": true,
+      "expected": true,
+      "source": "pyproject.toml",
+      "status": "pass"
+    },
+    {
+      "id": "journal.production.next",
+      "observed": "16.3.4",
+      "expected": "16.3.4",
+      "source": "frontend/package.json",
+      "status": "pass"
+    },
+    {
+      "id": "journal.production.react",
+      "observed": "19.2.8",
+      "expected": "19.2.8",
+      "source": "frontend/package.json",
+      "status": "pass"
+    },
+    {
+      "id": "production.react_dom",
+      "observed": "19.2.8",
+      "expected": "19.2.8",
+      "source": "frontend/package.json",
+      "status": "pass"
+    },
+    {
+      "id": "supplements.source_count",
+      "observed": 5,
+      "expected": 5,
+      "source": "citation-review.json",
+      "status": "pass"
+    },
+    {
+      "id": "supplements.builder_count",
+      "observed": 5,
+      "expected": 5,
+      "source": "backend/scripts/merge_db.py",
+      "status": "pass"
+    },
+    {
+      "id": "supplements.unique_source_urls",
+      "observed": 5,
+      "expected": 5,
+      "source": "citation-review.json",
+      "status": "pass"
+    },
+    {
+      "id": "supplements.url_sets",
+      "observed": [
+        "https://clearcals.com/recipes/ghevar/",
+        "https://clearcals.com/recipes/jalebi/",
+        "https://clearcals.com/recipes/khandvi/",
+        "https://clearcals.com/recipes/nandu-kari/",
+        "https://www.fatsecret.co.in/calories-nutrition/evolve/bhakarwadi/100g"
+      ],
+      "expected": [
+        "https://clearcals.com/recipes/ghevar/",
+        "https://clearcals.com/recipes/jalebi/",
+        "https://clearcals.com/recipes/khandvi/",
+        "https://clearcals.com/recipes/nandu-kari/",
+        "https://www.fatsecret.co.in/calories-nutrition/evolve/bhakarwadi/100g"
+      ],
+      "source": "citation-review.json / builder AST",
+      "status": "pass"
+    },
+    {
+      "id": "supplements.Bhakarwadi.calories",
+      "observed": 510.0,
+      "expected": 510.0,
+      "source": "fatsecret_bhakarwadi_2026: primary_source_values_checked",
+      "status": "pass"
+    },
+    {
+      "id": "supplements.Bhakarwadi.protein_g",
+      "observed": 10.76,
+      "expected": 10.76,
+      "source": "fatsecret_bhakarwadi_2026: primary_source_values_checked",
+      "status": "pass"
+    },
+    {
+      "id": "supplements.Bhakarwadi.carbs_g",
+      "observed": 57.03,
+      "expected": 57.03,
+      "source": "fatsecret_bhakarwadi_2026: primary_source_values_checked",
+      "status": "pass"
+    },
+    {
+      "id": "supplements.Bhakarwadi.fat_g",
+      "observed": 26.55,
+      "expected": 26.55,
+      "source": "fatsecret_bhakarwadi_2026: primary_source_values_checked",
+      "status": "pass"
+    },
+    {
+      "id": "supplements.Bhakarwadi.units",
+      "observed": true,
+      "expected": true,
+      "source": "builder source_notes; numeric citation fields are explicitly per_100g",
+      "status": "pass"
+    },
+    {
+      "id": "supplements.Ghevar.calories",
+      "observed": 351.2,
+      "expected": 351.2,
+      "source": "clearcals_ghevar_2026: primary_source_values_checked",
+      "status": "pass"
+    },
+    {
+      "id": "supplements.Ghevar.protein_g",
+      "observed": 3.5,
+      "expected": 3.5,
+      "source": "clearcals_ghevar_2026: primary_source_values_checked",
+      "status": "pass"
+    },
+    {
+      "id": "supplements.Ghevar.carbs_g",
+      "observed": 39.6,
+      "expected": 39.6,
+      "source": "clearcals_ghevar_2026: primary_source_values_checked",
+      "status": "pass"
+    },
+    {
+      "id": "supplements.Ghevar.fat_g",
+      "observed": 19.9,
+      "expected": 19.9,
+      "source": "clearcals_ghevar_2026: primary_source_values_checked",
+      "status": "pass"
+    },
+    {
+      "id": "supplements.Ghevar.units",
+      "observed": true,
+      "expected": true,
+      "source": "builder source_notes; numeric citation fields are explicitly per_100g",
+      "status": "pass"
+    },
+    {
+      "id": "supplements.Jalebi.calories",
+      "observed": 316.8,
+      "expected": 316.8,
+      "source": "clearcals_jalebi_2026: primary_source_values_checked",
+      "status": "pass"
+    },
+    {
+      "id": "supplements.Jalebi.protein_g",
+      "observed": 3.4,
+      "expected": 3.4,
+      "source": "clearcals_jalebi_2026: primary_source_values_checked",
+      "status": "pass"
+    },
+    {
+      "id": "supplements.Jalebi.carbs_g",
+      "observed": 44.6,
+      "expected": 44.6,
+      "source": "clearcals_jalebi_2026: primary_source_values_checked",
+      "status": "pass"
+    },
+    {
+      "id": "supplements.Jalebi.fat_g",
+      "observed": 13.8,
+      "expected": 13.8,
+      "source": "clearcals_jalebi_2026: primary_source_values_checked",
+      "status": "pass"
+    },
+    {
+      "id": "supplements.Jalebi.units",
+      "observed": true,
+      "expected": true,
+      "source": "builder source_notes; numeric citation fields are explicitly per_100g",
+      "status": "pass"
+    },
+    {
+      "id": "supplements.Khandvi.calories",
+      "observed": 232.7,
+      "expected": 232.7,
+      "source": "clearcals_khandvi_2026: primary_source_values_checked",
+      "status": "pass"
+    },
+    {
+      "id": "supplements.Khandvi.protein_g",
+      "observed": 9.3,
+      "expected": 9.3,
+      "source": "clearcals_khandvi_2026: primary_source_values_checked",
+      "status": "pass"
+    },
+    {
+      "id": "supplements.Khandvi.carbs_g",
+      "observed": 21.7,
+      "expected": 21.7,
+      "source": "clearcals_khandvi_2026: primary_source_values_checked",
+      "status": "pass"
+    },
+    {
+      "id": "supplements.Khandvi.fat_g",
+      "observed": 12.1,
+      "expected": 12.1,
+      "source": "clearcals_khandvi_2026: primary_source_values_checked",
+      "status": "pass"
+    },
+    {
+      "id": "supplements.Khandvi.units",
+      "observed": true,
+      "expected": true,
+      "source": "builder source_notes; numeric citation fields are explicitly per_100g",
+      "status": "pass"
+    },
+    {
+      "id": "supplements.Nandu Kari (Crab masala).calories",
+      "observed": 128.1,
+      "expected": 128.1,
+      "source": "clearcals_nandu_kari_2026: primary_source_values_retrieved_via_search_cache",
+      "status": "pass"
+    },
+    {
+      "id": "supplements.Nandu Kari (Crab masala).protein_g",
+      "observed": 7.0,
+      "expected": 7.0,
+      "source": "clearcals_nandu_kari_2026: primary_source_values_retrieved_via_search_cache",
+      "status": "pass"
+    },
+    {
+      "id": "supplements.Nandu Kari (Crab masala).carbs_g",
+      "observed": 7.0,
+      "expected": 7.0,
+      "source": "clearcals_nandu_kari_2026: primary_source_values_retrieved_via_search_cache",
+      "status": "pass"
+    },
+    {
+      "id": "supplements.Nandu Kari (Crab masala).fat_g",
+      "observed": 8.0,
+      "expected": 8.0,
+      "source": "clearcals_nandu_kari_2026: primary_source_values_retrieved_via_search_cache",
+      "status": "pass"
+    },
+    {
+      "id": "supplements.Nandu Kari (Crab masala).units",
+      "observed": true,
+      "expected": true,
+      "source": "builder source_notes; numeric citation fields are explicitly per_100g",
+      "status": "pass"
+    },
+    {
+      "id": "arithmetic.fixture_count",
+      "observed": 216,
+      "expected": 216,
+      "source": "tests/contracts/macro-fixtures.json / arithmetic-validation.json",
+      "status": "pass"
+    },
+    {
+      "id": "followup.consistency.workbook_accounting",
+      "observed": 1014,
+      "expected": 1014,
+      "source": "nutrition-validation.json / arithmetic-validation.json; 40 steps from 25..1000 g",
+      "status": "pass"
+    },
+    {
+      "id": "followup.consistency.database_accounting",
+      "observed": 1010,
+      "expected": 1010,
+      "source": "nutrition-validation.json / arithmetic-validation.json; 40 steps from 25..1000 g",
+      "status": "pass"
+    },
+    {
+      "id": "followup.consistency.nutrient_field_accounting",
+      "observed": 4040,
+      "expected": 4040,
+      "source": "nutrition-validation.json / arithmetic-validation.json; 40 steps from 25..1000 g",
+      "status": "pass"
+    },
+    {
+      "id": "followup.consistency.portion_case_product",
+      "observed": 2880,
+      "expected": 2880,
+      "source": "nutrition-validation.json / arithmetic-validation.json; 40 steps from 25..1000 g",
+      "status": "pass"
+    },
+    {
+      "id": "followup.consistency.portion_field_product",
+      "observed": 11520,
+      "expected": 11520,
+      "source": "nutrition-validation.json / arithmetic-validation.json; 40 steps from 25..1000 g",
+      "status": "pass"
+    },
+    {
+      "id": "followup.consistency.fixture_parity_count",
+      "observed": 216,
+      "expected": 216,
+      "source": "nutrition-validation.json / arithmetic-validation.json; 40 steps from 25..1000 g",
+      "status": "pass"
+    },
+    {
+      "id": "followup.consistency.unique_hash_seeds",
+      "observed": 8,
+      "expected": 8,
+      "source": "nutrition-validation.json / arithmetic-validation.json; 40 steps from 25..1000 g",
+      "status": "pass"
+    },
+    {
+      "id": "journal.followup.database_rows",
+      "observed": 1010,
+      "expected": 1010,
+      "source": "nutrition-validation.json",
+      "status": "pass"
+    },
+    {
+      "id": "journal.followup.nutrient_fields",
+      "observed": 4040,
+      "expected": 4040,
+      "source": "nutrition-validation.json",
+      "status": "pass"
+    },
+    {
+      "id": "journal.followup.goal_cases",
+      "observed": 162036,
+      "expected": 162036,
+      "source": "arithmetic-validation.json: backend and frontend case totals",
+      "status": "pass"
+    },
+    {
+      "id": "journal.followup.portion_cases",
+      "observed": 2880,
+      "expected": 2880,
+      "source": "arithmetic-validation.json",
+      "status": "pass"
+    },
+    {
+      "id": "journal.followup.hash_seeds",
+      "observed": 8,
+      "expected": 8,
+      "source": "nutrition-validation.json",
+      "status": "pass"
+    },
+    {
+      "id": "journal.followup.hash_labels",
+      "observed": 181,
+      "expected": 181,
+      "source": "nutrition-validation.json",
+      "status": "pass"
+    },
+    {
+      "id": "journal.followup.hash_modes",
+      "observed": 2,
+      "expected": 2,
+      "source": "nutrition-validation.json",
+      "status": "pass"
+    },
+    {
+      "id": "journal.followup.unstable_pairs",
+      "observed": 30,
+      "expected": 30,
+      "source": "nutrition-validation.json: changing method/label pairs, not wrong classes",
+      "status": "pass"
+    },
+    {
+      "id": "journal.followup.recommendation_cases",
+      "observed": 216,
+      "expected": 216,
+      "source": "recommendations.json: matrix",
+      "status": "pass"
+    },
+    {
+      "id": "journal.followup.provider_cases",
+      "observed": 16,
+      "expected": 16,
+      "source": "recommendations.json: provider_adapter",
+      "status": "pass"
+    },
+    {
+      "id": "journal.followup.browser_combinations",
+      "observed": 36,
+      "expected": 36,
+      "source": "browser-extended-attempt3.json",
+      "status": "pass"
+    },
+    {
+      "id": "conference.followup.database_rows",
+      "observed": 1010,
+      "expected": 1010,
+      "source": "nutrition-validation.json",
+      "status": "pass"
+    },
+    {
+      "id": "conference.followup.nutrient_fields",
+      "observed": 4040,
+      "expected": 4040,
+      "source": "nutrition-validation.json",
+      "status": "pass"
+    },
+    {
+      "id": "conference.followup.goal_cases",
+      "observed": 162036,
+      "expected": 162036,
+      "source": "arithmetic-validation.json: backend and frontend case totals",
+      "status": "pass"
+    },
+    {
+      "id": "conference.followup.portion_cases",
+      "observed": 2880,
+      "expected": 2880,
+      "source": "arithmetic-validation.json",
+      "status": "pass"
+    },
+    {
+      "id": "conference.followup.hash_seeds",
+      "observed": 8,
+      "expected": 8,
+      "source": "nutrition-validation.json",
+      "status": "pass"
+    },
+    {
+      "id": "conference.followup.hash_labels",
+      "observed": 181,
+      "expected": 181,
+      "source": "nutrition-validation.json",
+      "status": "pass"
+    },
+    {
+      "id": "conference.followup.hash_modes",
+      "observed": 2,
+      "expected": 2,
+      "source": "nutrition-validation.json",
+      "status": "pass"
+    },
+    {
+      "id": "conference.followup.unstable_pairs",
+      "observed": 30,
+      "expected": 30,
+      "source": "nutrition-validation.json: changing method/label pairs, not wrong classes",
+      "status": "pass"
+    },
+    {
+      "id": "conference.followup.recommendation_cases",
+      "observed": 216,
+      "expected": 216,
+      "source": "recommendations.json: matrix",
+      "status": "pass"
+    },
+    {
+      "id": "conference.followup.provider_cases",
+      "observed": 16,
+      "expected": 16,
+      "source": "recommendations.json: provider_adapter",
+      "status": "pass"
+    },
+    {
+      "id": "conference.followup.browser_combinations",
+      "observed": 36,
+      "expected": 36,
+      "source": "browser-extended-attempt3.json",
+      "status": "pass"
+    },
+    {
+      "id": "journal.followup.workbook_rows",
+      "observed": 1014,
+      "expected": 1014,
+      "source": "nutrition-validation.json",
+      "status": "pass"
+    },
+    {
+      "id": "journal.followup.omitted_workbook_rows",
+      "observed": 9,
+      "expected": 9,
+      "source": "nutrition-validation.json",
+      "status": "pass"
+    },
+    {
+      "id": "journal.followup.imported_workbook_rows",
+      "observed": 1005,
+      "expected": 1005,
+      "source": "nutrition-validation.json",
+      "status": "pass"
+    },
+    {
+      "id": "journal.followup.supplemental_rows",
+      "observed": 5,
+      "expected": 5,
+      "source": "nutrition-validation.json",
+      "status": "pass"
+    },
+    {
+      "id": "journal.followup.portion_fields",
+      "observed": 11520,
+      "expected": 11520,
+      "source": "arithmetic-validation.json",
+      "status": "pass"
+    },
+    {
+      "id": "journal.followup.canonical_unstable_pairs",
+      "observed": 6,
+      "expected": 6,
+      "source": "nutrition-validation.json",
+      "status": "pass"
+    },
+    {
+      "id": "journal.followup.goals",
+      "observed": 4,
+      "expected": 4,
+      "source": "backend/domain/nutrition_policy.json",
+      "status": "pass"
+    },
+    {
+      "id": "journal.followup.contexts",
+      "observed": 9,
+      "expected": 9,
+      "source": "backend/domain/nutrition_policy.json",
+      "status": "pass"
+    },
+    {
+      "id": "followup.same_goal_case_counts",
+      "observed": 162036,
+      "expected": 162036,
+      "source": "arithmetic-validation.json",
+      "status": "pass"
+    },
+    {
+      "id": "followup.goal_sweep_product",
+      "observed": 162036,
+      "expected": 162036,
+      "source": "policy dimensions / declared inclusive 500..5000 sweep",
+      "status": "pass"
+    },
+    {
+      "id": "journal.followup.minimum_calories",
+      "observed": 500,
+      "expected": 500,
+      "source": "arithmetic-validation.json: limitations declare 500..5000 inclusive",
+      "status": "pass"
+    },
+    {
+      "id": "journal.followup.maximum_calories",
+      "observed": 5000,
+      "expected": 5000,
+      "source": "arithmetic-validation.json: limitations declare 500..5000 inclusive",
+      "status": "pass"
+    },
+    {
+      "id": "followup.backend_goal_discrepancies",
+      "observed": 0,
+      "expected": 0,
+      "source": "arithmetic-validation.json",
+      "status": "pass"
+    },
+    {
+      "id": "followup.backend_fixture_discrepancies",
+      "observed": 0,
+      "expected": 0,
+      "source": "arithmetic-validation.json",
+      "status": "pass"
+    },
+    {
+      "id": "followup.frontend.goal_difference_count",
+      "observed": 0,
+      "expected": 0,
+      "source": "arithmetic-validation.json",
+      "status": "pass"
+    },
+    {
+      "id": "followup.frontend.fixture_difference_count",
+      "observed": 0,
+      "expected": 0,
+      "source": "arithmetic-validation.json",
+      "status": "pass"
+    },
+    {
+      "id": "followup.frontend.portion_difference_count",
+      "observed": 0,
+      "expected": 0,
+      "source": "arithmetic-validation.json",
+      "status": "pass"
+    },
+    {
+      "id": "followup.current_canonical_stable",
+      "observed": 0,
+      "expected": 0,
+      "source": "nutrition-validation.json",
+      "status": "pass"
+    },
+    {
+      "id": "followup.numeric_reconciliation",
+      "observed": 0,
+      "expected": 0,
+      "source": "nutrition-validation.json",
+      "status": "pass"
+    },
+    {
+      "id": "followup.reported_tolerance",
+      "observed": 1e-09,
+      "expected": 1e-09,
+      "source": "journal followup absolute tolerance 10^-9",
+      "status": "pass"
+    },
+    {
+      "id": "journal.followup.tolerance_exponent",
+      "observed": 9,
+      "expected": 9,
+      "source": "nutrition-validation.json",
+      "status": "pass"
+    },
+    {
+      "id": "journal.followup.error_exponent",
+      "observed": 12,
+      "expected": 12,
+      "source": "arithmetic-validation.json",
+      "status": "pass"
+    },
+    {
+      "id": "followup.portion_error_bound",
+      "observed": true,
+      "expected": true,
+      "source": "journal followup deviation below 10^-12",
+      "status": "pass"
+    },
+    {
+      "id": "recommendations.matrix.actual_cases",
+      "observed": 216,
+      "expected": 216,
+      "source": "recommendations.json",
+      "status": "pass"
+    },
+    {
+      "id": "recommendations.matrix.all_passed",
+      "observed": 216,
+      "expected": 216,
+      "source": "recommendations.json",
+      "status": "pass"
+    },
+    {
+      "id": "recommendations.provider_adapter.actual_cases",
+      "observed": 16,
+      "expected": 16,
+      "source": "recommendations.json",
+      "status": "pass"
+    },
+    {
+      "id": "recommendations.provider_adapter.all_passed",
+      "observed": 16,
+      "expected": 16,
+      "source": "recommendations.json",
+      "status": "pass"
+    },
+    {
+      "id": "browser.actual_matrix_cases",
+      "observed": 36,
+      "expected": 36,
+      "source": "browser-extended-attempt3.json",
+      "status": "pass"
+    },
+    {
+      "id": "journal.dataset_followup.strict_flags",
+      "observed": 65,
+      "expected": 65,
+      "source": "dataset-inspection.json / dataset-perceptual-review.json",
+      "status": "pass"
+    },
+    {
+      "id": "journal.dataset_followup.zero_width",
+      "observed": 45,
+      "expected": 45,
+      "source": "dataset-inspection.json / dataset-perceptual-review.json",
+      "status": "pass"
+    },
+    {
+      "id": "journal.dataset_followup.zero_height",
+      "observed": 20,
+      "expected": 20,
+      "source": "dataset-inspection.json / dataset-perceptual-review.json",
+      "status": "pass"
+    },
+    {
+      "id": "journal.dataset_followup.direct_conflict_groups",
+      "observed": 104,
+      "expected": 104,
+      "source": "dataset-inspection.json / dataset-perceptual-review.json",
+      "status": "pass"
+    },
+    {
+      "id": "journal.dataset_followup.edge_rows",
+      "observed": 3794,
+      "expected": 3794,
+      "source": "dataset-inspection.json / dataset-perceptual-review.json",
+      "status": "pass"
+    },
+    {
+      "id": "journal.dataset_followup.edge_images",
+      "observed": 3346,
+      "expected": 3346,
+      "source": "dataset-inspection.json / dataset-perceptual-review.json",
+      "status": "pass"
+    },
+    {
+      "id": "journal.dataset_followup.perceptual_sample",
+      "observed": 2020,
+      "expected": 2020,
+      "source": "dataset-inspection.json / dataset-perceptual-review.json",
+      "status": "pass"
+    },
+    {
+      "id": "journal.dataset_followup.perceptual_candidates",
+      "observed": 16,
+      "expected": 16,
+      "source": "dataset-inspection.json / dataset-perceptual-review.json",
+      "status": "pass"
+    },
+    {
+      "id": "journal.dataset_followup.minimum_groups",
+      "observed": "43/9/11",
+      "expected": "43/9/11",
+      "source": "dataset-inspection.json",
+      "status": "pass"
+    },
+    {
+      "id": "conference.dataset_followup.strict_flags",
+      "observed": 65,
+      "expected": 65,
+      "source": "dataset-inspection.json / dataset-perceptual-review.json",
+      "status": "pass"
+    },
+    {
+      "id": "conference.dataset_followup.zero_width",
+      "observed": 45,
+      "expected": 45,
+      "source": "dataset-inspection.json / dataset-perceptual-review.json",
+      "status": "pass"
+    },
+    {
+      "id": "conference.dataset_followup.zero_height",
+      "observed": 20,
+      "expected": 20,
+      "source": "dataset-inspection.json / dataset-perceptual-review.json",
+      "status": "pass"
+    },
+    {
+      "id": "conference.dataset_followup.direct_conflict_groups",
+      "observed": 104,
+      "expected": 104,
+      "source": "dataset-inspection.json / dataset-perceptual-review.json",
+      "status": "pass"
+    },
+    {
+      "id": "conference.dataset_followup.edge_rows",
+      "observed": 3794,
+      "expected": 3794,
+      "source": "dataset-inspection.json / dataset-perceptual-review.json",
+      "status": "pass"
+    },
+    {
+      "id": "conference.dataset_followup.edge_images",
+      "observed": 3346,
+      "expected": 3346,
+      "source": "dataset-inspection.json / dataset-perceptual-review.json",
+      "status": "pass"
+    },
+    {
+      "id": "conference.dataset_followup.perceptual_sample",
+      "observed": 2020,
+      "expected": 2020,
+      "source": "dataset-inspection.json / dataset-perceptual-review.json",
+      "status": "pass"
+    },
+    {
+      "id": "conference.dataset_followup.perceptual_candidates",
+      "observed": 16,
+      "expected": 16,
+      "source": "dataset-inspection.json / dataset-perceptual-review.json",
+      "status": "pass"
+    },
+    {
+      "id": "conference.dataset_followup.minimum_groups",
+      "observed": "43/9/11",
+      "expected": "43/9/11",
+      "source": "dataset-inspection.json",
+      "status": "pass"
+    },
+    {
+      "id": "journal.dataset_followup.records",
+      "observed": 48693,
+      "expected": 48693,
+      "source": "dataset-inspection.json / dataset-perceptual-review.json / dataset-visual-review.json",
+      "status": "pass"
+    },
+    {
+      "id": "journal.dataset_followup.empty_flagged",
+      "observed": 47,
+      "expected": 47,
+      "source": "dataset-inspection.json / dataset-perceptual-review.json / dataset-visual-review.json",
+      "status": "pass"
+    },
+    {
+      "id": "journal.dataset_followup.visual_originals",
+      "observed": 65,
+      "expected": 65,
+      "source": "dataset-inspection.json / dataset-perceptual-review.json / dataset-visual-review.json",
+      "status": "pass"
+    },
+    {
+      "id": "journal.dataset_followup.conflict_images",
+      "observed": 209,
+      "expected": 209,
+      "source": "dataset-inspection.json / dataset-perceptual-review.json / dataset-visual-review.json",
+      "status": "pass"
+    },
+    {
+      "id": "journal.dataset_followup.different_boxes",
+      "observed": 69,
+      "expected": 69,
+      "source": "dataset-inspection.json / dataset-perceptual-review.json / dataset-visual-review.json",
+      "status": "pass"
+    },
+    {
+      "id": "journal.dataset_followup.different_classes",
+      "observed": 35,
+      "expected": 35,
+      "source": "dataset-inspection.json / dataset-perceptual-review.json / dataset-visual-review.json",
+      "status": "pass"
+    },
+    {
+      "id": "journal.dataset_followup.pair_comparisons",
+      "observed": 1360132,
+      "expected": 1360132,
+      "source": "dataset-inspection.json / dataset-perceptual-review.json / dataset-visual-review.json",
+      "status": "pass"
+    },
+    {
+      "id": "journal.dataset_followup.perceptual_threshold",
+      "observed": 6,
+      "expected": 6,
+      "source": "dataset-inspection.json / dataset-perceptual-review.json / dataset-visual-review.json",
+      "status": "pass"
+    },
+    {
+      "id": "journal.dataset_followup.edge_tolerance",
+      "observed": 6,
+      "expected": 6,
+      "source": "dataset-inspection.json / dataset-perceptual-review.json / dataset-visual-review.json",
+      "status": "pass"
+    },
+    {
+      "id": "dataset.edge_tolerance",
+      "observed": 1e-06,
+      "expected": 1e-06,
+      "source": "journal declared tolerance",
+      "status": "pass"
+    },
+    {
+      "id": "journal.dataset_followup.probe_originals",
+      "observed": 12,
+      "expected": 12,
+      "source": "dataset-perceptual-review.json: count per transform, not total across transforms",
+      "status": "pass"
+    },
+    {
+      "id": "journal.dataset_followup.detected_probes",
+      "observed": 12,
+      "expected": 12,
+      "source": "dataset-perceptual-review.json: JPEG and resizing separately",
+      "status": "pass"
+    },
+    {
+      "id": "dataset.fresh_records",
+      "observed": 48693,
+      "expected": 48693,
+      "source": "dataset-inspection.json / audit.json",
+      "status": "pass"
+    },
+    {
+      "id": "dataset.fresh_flags.train",
+      "observed": 51,
+      "expected": 51,
+      "source": "dataset-inspection.json / audit.json",
+      "status": "pass"
+    },
+    {
+      "id": "dataset.fresh_instances.train",
+      "observed": 56287,
+      "expected": 56287,
+      "source": "dataset-inspection.json / audit.json",
+      "status": "pass"
+    },
+    {
+      "id": "dataset.group_support_minimum.train",
+      "observed": 43,
+      "expected": 43,
+      "source": "dataset-class-group-support.json / dataset-inspection.json",
+      "status": "pass"
+    },
+    {
+      "id": "dataset.fresh_flags.valid",
+      "observed": 7,
+      "expected": 7,
+      "source": "dataset-inspection.json / audit.json",
+      "status": "pass"
+    },
+    {
+      "id": "dataset.fresh_instances.valid",
+      "observed": 8805,
+      "expected": 8805,
+      "source": "dataset-inspection.json / audit.json",
+      "status": "pass"
+    },
+    {
+      "id": "dataset.group_support_minimum.valid",
+      "observed": 9,
+      "expected": 9,
+      "source": "dataset-class-group-support.json / dataset-inspection.json",
+      "status": "pass"
+    },
+    {
+      "id": "dataset.fresh_flags.test",
+      "observed": 7,
+      "expected": 7,
+      "source": "dataset-inspection.json / audit.json",
+      "status": "pass"
+    },
+    {
+      "id": "dataset.fresh_instances.test",
+      "observed": 8868,
+      "expected": 8868,
+      "source": "dataset-inspection.json / audit.json",
+      "status": "pass"
+    },
+    {
+      "id": "dataset.group_support_minimum.test",
+      "observed": 11,
+      "expected": 11,
+      "source": "dataset-class-group-support.json / dataset-inspection.json",
+      "status": "pass"
+    },
+    {
+      "id": "dataset.fresh_duplicates.sha256",
+      "observed": {
+        "groups": 138,
+        "images": 276,
+        "pairs": {
+          "train:test": {
+            "groups": 56,
+            "images": 112
+          },
+          "train:valid": {
+            "groups": 63,
+            "images": 126
+          },
+          "valid:test": {
+            "groups": 19,
+            "images": 38
+          }
+        }
+      },
+      "expected": {
+        "groups": 138,
+        "images": 276,
+        "pairs": {
+          "train:valid": {
+            "groups": 63,
+            "images": 126
+          },
+          "train:test": {
+            "groups": 56,
+            "images": 112
+          },
+          "valid:test": {
+            "groups": 19,
+            "images": 38
+          }
+        }
+      },
+      "source": "dataset-inspection.json / audit.json",
+      "status": "pass"
+    },
+    {
+      "id": "dataset.fresh_duplicates.pixel_sha256",
+      "observed": {
+        "groups": 138,
+        "images": 276,
+        "pairs": {
+          "train:test": {
+            "groups": 56,
+            "images": 112
+          },
+          "train:valid": {
+            "groups": 63,
+            "images": 126
+          },
+          "valid:test": {
+            "groups": 19,
+            "images": 38
+          }
+        }
+      },
+      "expected": {
+        "groups": 138,
+        "images": 276,
+        "pairs": {
+          "train:valid": {
+            "groups": 63,
+            "images": 126
+          },
+          "train:test": {
+            "groups": 56,
+            "images": 112
+          },
+          "valid:test": {
+            "groups": 19,
+            "images": 38
+          }
+        }
+      },
+      "source": "dataset-inspection.json / audit.json",
+      "status": "pass"
+    },
+    {
+      "id": "dataset.fresh_output_repeatability",
+      "observed": true,
+      "expected": true,
+      "source": "dataset-inspection.json: reported fresh hashes compared with previous artifacts",
+      "status": "pass"
+    },
+    {
+      "id": "dataset.conflict_categories_account_for_groups",
+      "observed": 104,
+      "expected": 104,
+      "source": "dataset-inspection.json: numeric differences, not formatting-only",
+      "status": "pass"
+    },
+    {
+      "id": "dataset.original_visual_records",
+      "observed": 65,
+      "expected": 65,
+      "source": "dataset-visual-review.json: AI review record count, not expert approval",
+      "status": "pass"
+    },
+    {
+      "id": "perceptual.sample_total",
+      "observed": 2020,
+      "expected": 2020,
+      "source": "dataset-perceptual-review.json",
+      "status": "pass"
+    },
+    {
+      "id": "perceptual.hashed_total",
+      "observed": 2020,
+      "expected": 2020,
+      "source": "dataset-perceptual-review.json",
+      "status": "pass"
+    },
+    {
+      "id": "perceptual.queue_count",
+      "observed": 16,
+      "expected": 16,
+      "source": "dataset-perceptual-queue.json / dataset-perceptual-review.json",
+      "status": "pass"
+    },
+    {
+      "id": "perceptual.queue_comparisons",
+      "observed": 1360132,
+      "expected": 1360132,
+      "source": "dataset-perceptual-queue.json / dataset-perceptual-review.json",
+      "status": "pass"
+    },
+    {
+      "id": "perceptual.no_truncation",
+      "observed": false,
+      "expected": false,
+      "source": "dataset-perceptual-review.json",
+      "status": "pass"
+    },
+    {
+      "id": "perceptual.probe.crop_10_percent_each_edge",
+      "observed": 0,
+      "expected": 0,
+      "source": "dataset-perceptual-review.json; synthetic probes, not real-world sensitivity",
+      "status": "pass"
+    },
+    {
+      "id": "perceptual.probe_count.crop_10_percent_each_edge",
+      "observed": 12,
+      "expected": 12,
+      "source": "journal followup: twelve original probes per transformation",
+      "status": "pass"
+    },
+    {
+      "id": "perceptual.probe.horizontal_mirror",
+      "observed": 0,
+      "expected": 0,
+      "source": "dataset-perceptual-review.json; synthetic probes, not real-world sensitivity",
+      "status": "pass"
+    },
+    {
+      "id": "perceptual.probe_count.horizontal_mirror",
+      "observed": 12,
+      "expected": 12,
+      "source": "journal followup: twelve original probes per transformation",
+      "status": "pass"
+    },
+    {
+      "id": "perceptual.probe.jpeg_quality_35",
+      "observed": 12,
+      "expected": 12,
+      "source": "dataset-perceptual-review.json; synthetic probes, not real-world sensitivity",
+      "status": "pass"
+    },
+    {
+      "id": "perceptual.probe_count.jpeg_quality_35",
+      "observed": 12,
+      "expected": 12,
+      "source": "journal followup: twelve original probes per transformation",
+      "status": "pass"
+    },
+    {
+      "id": "perceptual.probe.resize_48_square",
+      "observed": 12,
+      "expected": 12,
+      "source": "dataset-perceptual-review.json; synthetic probes, not real-world sensitivity",
+      "status": "pass"
+    },
+    {
+      "id": "perceptual.probe_count.resize_48_square",
+      "observed": 12,
+      "expected": 12,
+      "source": "journal followup: twelve original probes per transformation",
+      "status": "pass"
+    },
+    {
+      "id": "perceptual.probe.rotate_10_degrees_black_fill",
+      "observed": 0,
+      "expected": 0,
+      "source": "dataset-perceptual-review.json; synthetic probes, not real-world sensitivity",
+      "status": "pass"
+    },
+    {
+      "id": "perceptual.probe_count.rotate_10_degrees_black_fill",
+      "observed": 12,
+      "expected": 12,
+      "source": "journal followup: twelve original probes per transformation",
+      "status": "pass"
+    }
+  ]
+}

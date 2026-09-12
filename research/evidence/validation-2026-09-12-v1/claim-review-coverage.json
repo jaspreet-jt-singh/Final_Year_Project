@@ -1,0 +1,3898 @@
+{
+  "schema_version": 1,
+  "run_id": "validation-2026-09-12-v1",
+  "ledger_sha256": "347ff7ac35d6e831845437e5a0491a8f658d848a48c9d0ffd45b4b8020a0fd81",
+  "final_ledger_sha256": "ed3f615cf51f2f38dbd713350b919af93346595cd2468c6c948a4d36e834c3d1",
+  "review_receipts": [
+    {
+      "path": "research/evidence/validation-2026-09-12-v1/claim-review-001-220.json",
+      "sha256": "73b99d949a43d08471a0296e5d5b17f284b384fc55c73ce94c715f4091d2c5ea"
+    },
+    {
+      "path": "research/evidence/validation-2026-09-12-v1/claim-review-221-440.json",
+      "sha256": "baf997245deae6f8e5635b4012735190700a7617d11454c268be84fcc67f46a5"
+    },
+    {
+      "path": "research/evidence/validation-2026-09-12-v1/claim-review-441-635.json",
+      "sha256": "93a777dd227396053cf224fa4bd513696e8c4d4d1d8defbcec6a8680eed3db9f"
+    }
+  ],
+  "indexed_units": 635,
+  "reviewed_units": 635,
+  "dispositions": {
+    "Awaiting qualified review/approval": 15,
+    "Historical only": 25,
+    "Proposed": 24,
+    "Reproduced": 146,
+    "Supported with limitations": 422,
+    "Unsupported or contradicted": 3
+  },
+  "final_dispositions": {
+    "Awaiting qualified review/approval": 15,
+    "Historical only": 25,
+    "Proposed": 24,
+    "Reproduced": 146,
+    "Supported with limitations": 425
+  },
+  "final_reviews": [
+    {
+      "occurrence_id": "J-26-1",
+      "disposition": "Supported with limitations",
+      "rationale": "The domain separation matches the implemented detection, lookup, portion and saved-journal paths.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "J-26-2",
+      "disposition": "Supported with limitations",
+      "rationale": "The manuscripts and audit receipts document an educational application and an artifact audit.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "J-26-3",
+      "disposition": "Supported with limitations",
+      "rationale": "The component composition agrees with the reviewed frontend hooks, nutrition adapter and provider flow.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "J-26-4",
+      "disposition": "Reproduced",
+      "rationale": "Fresh census reproduces 48,693 exported records, 72 classes, 138 crossing exact-identity groups and 65 flagged images.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "J-26-5",
+      "disposition": "Reproduced",
+      "rationale": "Recorded assignment reproduction preserves 5,548 source-family groups crossing old partitions.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "J-26-6",
+      "disposition": "Supported with limitations",
+      "rationale": "Candidate summary quarantines 11,002 records and retains class presence; the independence caveat is essential.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "J-26-7",
+      "disposition": "Reproduced",
+      "rationale": "Fixed-database checks reproduce availability of 19, 55 and 72 out of 72 classes.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "J-26-8",
+      "disposition": "Supported with limitations",
+      "rationale": "The counted outcome is row presence; no reference correctness labels enter the comparison.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "J-26-9",
+      "disposition": "Supported with limitations",
+      "rationale": "Fingerprint-bearing reports, recovery tooling and the source description exist.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "J-26-10",
+      "disposition": "Supported with limitations",
+      "rationale": "No new architecture, weighing experiment, user study or clinical intervention is documented in this audit.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "J-26-11",
+      "disposition": "Awaiting qualified review/approval",
+      "rationale": "The listed independent evaluation, expert mapping and rights decisions are not completed in the supplied evidence.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "J-29-1",
+      "disposition": "Supported with limitations",
+      "rationale": "The keyword list reflects the actual recognition, database, overlap and software-verification subjects.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "J-34-1",
+      "disposition": "Supported with limitations",
+      "rationale": "The visible review-copy notice and companion guide identify supervisor review rather than submission.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "J-34-2",
+      "disposition": "Supported with limitations",
+      "rationale": "Current structure separates implemented methods, archived metrics and prospective evaluation.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "J-34-3",
+      "disposition": "Awaiting qualified review/approval",
+      "rationale": "No completed author-consent, asset-rights or approved next-protocol documentation is supplied.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "J-34-4",
+      "disposition": "Supported with limitations",
+      "rationale": "Both drafts share the abstract, core artifact numbers and study questions while differing in detail.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "J-39-1",
+      "disposition": "Supported with limitations",
+      "rationale": "The implemented diary requires quantity, mapping and save state beyond object naming.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "J-39-2",
+      "disposition": "Supported with limitations",
+      "rationale": "Per-item row data, grams, inclusion flags and explicit saving implement the named distinctions.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "J-39-3",
+      "disposition": "Supported with limitations",
+      "rationale": "Correct multiplication can coexist with an incorrect recipe match or assumed quantity.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "J-39-4",
+      "disposition": "Supported with limitations",
+      "rationale": "Detection, mapping, quantities and advice use different inputs and reference requirements.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "J-41-1",
+      "disposition": "Supported with limitations",
+      "rationale": "The canonical vocabulary and mapping artifacts show why label-to-recipe interpretation matters.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "J-41-2",
+      "disposition": "Supported with limitations",
+      "rationale": "The three examples are class labels, not measured ingredient vectors.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "J-41-3",
+      "disposition": "Supported with limitations",
+      "rationale": "The alias and manual-mapping machinery recognizes that names and recipes are not one-to-one.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "J-41-4",
+      "disposition": "Supported with limitations",
+      "rationale": "The database row is selected by a developer/name-matching operation without a photographed-meal reference.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "J-43-1",
+      "disposition": "Supported with limitations",
+      "rationale": "The title and evidence scope consistently identify the existing application as the case studied.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "J-43-2",
+      "disposition": "Supported with limitations",
+      "rationale": "Frozen-runtime identities and this run's read-only checks support preservation during the validation pass.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "J-43-3",
+      "disposition": "Supported with limitations",
+      "rationale": "The work inspects existing artifacts and produces no new detector training.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "J-43-4",
+      "disposition": "Supported with limitations",
+      "rationale": "Kapoor and Narayanan support separating executable pipelines from valid independent evaluation.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "J-45-1",
+      "disposition": "Supported with limitations",
+      "rationale": "Four explicit research-question items follow this lead-in.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "J-46-1",
+      "disposition": "Supported with limitations",
+      "rationale": "RQ1 is answered by observable identities, partition membership and strict annotation flags.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "J-46-2",
+      "disposition": "Supported with limitations",
+      "rationale": "RQ2 appropriately asks what grouping establishes and leaves unresolved.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "J-46-3",
+      "disposition": "Supported with limitations",
+      "rationale": "RQ3 matches the implemented three-method availability comparison.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "J-46-4",
+      "disposition": "Supported with limitations",
+      "rationale": "RQ4 matches the separation between tested software invariants and unvalidated advice/usability claims.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "J-52-1",
+      "disposition": "Supported with limitations",
+      "rationale": "The claimed artifact description, full census, recovery tools and reference-review protocol are present.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "J-52-2",
+      "disposition": "Supported with limitations",
+      "rationale": "Prior integrated systems are acknowledged and no clinical trial is provided.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "J-55-1",
+      "disposition": "Supported with limitations",
+      "rationale": "The reviewed Min source describes multiple food-computing tasks beyond recognition.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "J-55-2",
+      "disposition": "Supported with limitations",
+      "rationale": "The reviewed Im2Calories primary records describe a food diary with recognition and nutrient estimation.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "J-55-3",
+      "disposition": "Supported with limitations",
+      "rationale": "The preceding integrated prior system defeats a claim that recognition plus nutrition lookup alone is new.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "J-57-1",
+      "disposition": "Supported with limitations",
+      "rationale": "The verified IndianFoodNet paper evaluates Indian-food detection with deep-learning/YOLO variants.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "J-57-2",
+      "disposition": "Supported with limitations",
+      "rationale": "The verified Indian Thali author PDF includes segmentation, recognition, weight prediction and nutrition integration.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "J-57-3",
+      "disposition": "Supported with limitations",
+      "rationale": "The primary studies' regional tasks are relevant while their datasets/protocols differ from this export.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "J-57-4",
+      "disposition": "Supported with limitations",
+      "rationale": "The drafts do not present these studies' scores as direct comparator rows for this checkpoint.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "J-59-1",
+      "disposition": "Supported with limitations",
+      "rationale": "The Nutrition5k primary material supplies measured component-weight and nutrition supervision.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "J-59-2",
+      "disposition": "Supported with limitations",
+      "rationale": "The app multiplies stored per-100-g values by selected grams rather than obtaining measured component weights.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "J-59-3",
+      "disposition": "Supported with limitations",
+      "rationale": "No independent recipe/quantity reference exists for the photographed meals, so totals remain assumption-based estimates.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "J-61-1",
+      "disposition": "Supported with limitations",
+      "rationale": "The INDB publication and local import reconciliation identify the database's principal composition source.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "J-61-2",
+      "disposition": "Supported with limitations",
+      "rationale": "A fixed recipe-composition calculation does not observe preparation differences in a user photograph.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "J-61-3",
+      "disposition": "Supported with limitations",
+      "rationale": "The recorded corrigendum concerns missing food-composition-source attribution, not this app's database mappings.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "J-61-4",
+      "disposition": "Supported with limitations",
+      "rationale": "Workbook provenance and recipe-match correctness are distinct tests with different reference needs.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "J-63-1",
+      "disposition": "Supported with limitations",
+      "rationale": "Exact filenames are only one identity clue; the cited leakage and near-duplicate work addresses broader relations.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "J-63-2",
+      "disposition": "Supported with limitations",
+      "rationale": "Kapoor and Narayanan's reviewed primary text discusses leakage and non-independence in ML-based science.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "J-63-3",
+      "disposition": "Supported with limitations",
+      "rationale": "The reviewed Barz/Denzler primary paper uses near-duplicate candidate search and manual examination.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "J-63-4",
+      "disposition": "Supported with limitations",
+      "rationale": "The implementation combines exact hashes with explicit filename-family heuristics and records unresolved relations.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "J-63-5",
+      "disposition": "Supported with limitations",
+      "rationale": "Neither draft imports another dataset's measured contamination effect as this detector's effect size.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "J-65-1",
+      "disposition": "Supported with limitations",
+      "rationale": "The pinned FKG.in v2 preprint separates structural, semantic and source-fidelity checks of LLM-extracted recipe knowledge.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "J-65-2",
+      "disposition": "Supported with limitations",
+      "rationale": "The source's distinct validation layers support the limited conceptual analogy.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "J-65-3",
+      "disposition": "Supported with limitations",
+      "rationale": "Knowledge-graph curation differs from this fixed-label row lookup, and no matched clinical comparison is supplied.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "J-69-1",
+      "disposition": "Supported with limitations",
+      "rationale": "The inspected configuration/current checkpoint identifies an implementation artifact, not a verified live deployment.",
+      "corrected_after_initial_review": true
+    },
+    {
+      "occurrence_id": "J-69-2",
+      "disposition": "Supported with limitations",
+      "rationale": "The production configuration selects native Python hosting and CPU inference.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "J-69-3",
+      "disposition": "Supported with limitations",
+      "rationale": "Official Ultralytics documentation identifies YOLO11 as existing software.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "J-69-4",
+      "disposition": "Supported with limitations",
+      "rationale": "The inspected configuration/current checkpoint identifies an implementation artifact, not a verified live deployment.",
+      "corrected_after_initial_review": true
+    },
+    {
+      "occurrence_id": "J-71-1",
+      "disposition": "Supported with limitations",
+      "rationale": "VisionService.predict explicitly receives imgsz=640, conf=0.25, iou=0.45 and CPU device.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "J-71-2",
+      "disposition": "Supported with limitations",
+      "rationale": "Valid boxes are sorted by confidence and xyxy coordinates are converted to pixel integers for the decoded image.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "J-71-3",
+      "disposition": "Supported with limitations",
+      "rationale": "Legacy override keys use CamelCase names unlike the lower-snake-case canonical class names.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "J-71-4",
+      "disposition": "Supported with limitations",
+      "rationale": "Detection confidence is produced by the vision model; no nutrition-correctness calibration procedure exists.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "J-71-5",
+      "disposition": "Historical only",
+      "rationale": "Archived evaluation did not explicitly set the application's operating thresholds and used another recorded environment.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "J-73-1",
+      "disposition": "Supported with limitations",
+      "rationale": "prepareImage rejects files above 25 MiB and decoded width-times-height above 25 million.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "J-73-2",
+      "disposition": "Supported with limitations",
+      "rationale": "The browser orients, white-composites, scales to 1600 pixels and tries JPEG qualities 0.92/0.8/0.65/0.5.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "J-73-3",
+      "disposition": "Supported with limitations",
+      "rationale": "The processed File is passed to analysis and used for the displayed preview.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "J-73-4",
+      "disposition": "Supported with limitations",
+      "rationale": "The API caps read bytes and the executor verifies supported decoders and decoded dimensions.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "J-73-5",
+      "disposition": "Supported with limitations",
+      "rationale": "These mechanisms preserve a shared processed-image coordinate frame and constrain accepted inputs.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "J-75-1",
+      "disposition": "Supported with limitations",
+      "rationale": "The diagram correctly separates explicit journal saving from the recommendation request/provider path.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "J-75-2",
+      "disposition": "Supported with limitations",
+      "rationale": "Saving is explicit, while advice omits grams/history and Groq receives the name/energy subset.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "J-101-1",
+      "disposition": "Reproduced",
+      "rationale": "Reconciliation confirms 1,010 food rows and 103 mappings, including legacy entries.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "J-101-2",
+      "disposition": "Reproduced",
+      "rationale": "All 72 canonical labels have entries in the current precomputed mapping layer.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "J-101-3",
+      "disposition": "Supported with limitations",
+      "rationale": "Local workbook hash matches the pinned upstream hash recorded in nutrition-provenance evidence.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "J-101-4",
+      "disposition": "Supported with limitations",
+      "rationale": "The five supplemental names and literals correspond to the cited product/recipe records.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "J-101-5",
+      "disposition": "Supported with limitations",
+      "rationale": "These values originate in source records rather than physical measurement of the uploaded dish.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "J-103-1",
+      "disposition": "Supported with limitations",
+      "rationale": "resolve_class_mapping checks developer mappings before the automatic helper.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "J-103-2",
+      "disposition": "Supported with limitations",
+      "rationale": "The builder uses the shared name/alias helper and its outer 0.78 acceptance gate.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "J-103-3",
+      "disposition": "Supported with limitations",
+      "rationale": "Supplemental rows are concatenated before the mapping loop; runtime follows the same database lookup.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "J-103-4",
+      "disposition": "Supported with limitations",
+      "rationale": "The executed helper uses equality/containment/length ratios rather than edit distance or learned embeddings.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "J-103-5",
+      "disposition": "Supported with limitations",
+      "rationale": "find_best_match returns equality or a variation-containment candidate with length ratio at least 0.5.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "J-105-1",
+      "disposition": "Supported with limitations",
+      "rationale": "The runtime source implements the stated mapping, equality, scored containment and first variation-containment order.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "J-105-2",
+      "disposition": "Supported with limitations",
+      "rationale": "The final outer 0.4 gate cannot admit nonexact helper candidates below the helper's 0.5 minimum.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "J-105-3",
+      "disposition": "Reproduced",
+      "rationale": "get_food_variations returns a set-derived list; eight-seed tests demonstrate different fallback rows for some inputs.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "J-105-4",
+      "disposition": "Reproduced",
+      "rationale": "The direct precomputed branch executes first; canonical outputs stayed stable in the seed checks.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "J-105-5",
+      "disposition": "Supported with limitations",
+      "rationale": "Nondeterministic fallback ordering and unreviewed mappings defeat the stronger deterministic/clinical characterization.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "J-107-1",
+      "disposition": "Supported with limitations",
+      "rationale": "The analysis response preserves nutrition_source and optional URL/caution fields from the lookup.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "J-107-2",
+      "disposition": "Supported with limitations",
+      "rationale": "Missing lookup returns macros=null while retaining the detection; browser fixtures retain unknown items.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "J-107-3",
+      "disposition": "Reproduced",
+      "rationale": "The fixed audit counts 21 canonical mappings below 0.9 or without a score.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "J-107-4",
+      "disposition": "Supported with limitations",
+      "rationale": "Complete fields and heuristic score 1.0 do not provide independent recipe-match judgments.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "J-107-5",
+      "disposition": "Supported with limitations",
+      "rationale": "The router deduplicates lookups with dict.fromkeys while retaining detection rows; the LRU-like cache is bounded at 256.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "J-110-1",
+      "disposition": "Supported with limitations",
+      "rationale": "The included-item set and partial row mapping are consistent with included flags and nullable per100g records.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "J-110-2",
+      "disposition": "Supported with limitations",
+      "rationale": "The four-component vector has the same units/order as calories, protein, carbohydrate and fat fields.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "J-110-3",
+      "disposition": "Supported with limitations",
+      "rationale": "This lead-in is completed by the following explicit known-subset equation.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "J-110-4",
+      "disposition": "Supported with limitations",
+      "rationale": "I_m denotes the included detections defined in the surrounding sentence.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "J-110-5",
+      "disposition": "Supported with limitations",
+      "rationale": "m is the meal-draft index in the surrounding definition.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "J-110-6",
+      "disposition": "Supported with limitations",
+      "rationale": "mu(c) denotes a database-row mapping with an unavailable alternative.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "J-110-7",
+      "disposition": "Supported with limitations",
+      "rationale": "Bottom denotes unavailable nutrition rather than a numeric zero vector.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "J-110-8",
+      "disposition": "Supported with limitations",
+      "rationale": "v_r denotes the per-100-g nutrient vector already defined in the paragraph.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "J-111-1",
+      "disposition": "Supported with limitations",
+      "rationale": "The set comprehension correctly excludes items whose mapping is unavailable.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "J-114-1",
+      "disposition": "Supported with limitations",
+      "rationale": "The sentence introduces assumed grams and known subtotal/missingness, as implemented below.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "J-114-2",
+      "disposition": "Supported with limitations",
+      "rationale": "w_q is the user-entered gram quantity in the associated formula.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "J-115-1",
+      "disposition": "Reproduced",
+      "rationale": "The subtotal scales each known vector by grams/100 and flags any included unknown; independent arithmetic fixtures agree.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "J-120-1",
+      "disposition": "Reproduced",
+      "rationale": "Unknown rows are skipped from the known subtotal and set incomplete=true; unknown-only displays are not numeric zero totals.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "J-120-2",
+      "disposition": "Reproduced",
+      "rationale": "Draft initialization uses 100 g and the controls enumerate 25\u20131000 in steps of 25.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "J-120-3",
+      "disposition": "Reproduced",
+      "rationale": "125/100 is exactly 1.25; portion-oracle comparisons cover this setting.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "J-120-4",
+      "disposition": "Reproduced",
+      "rationale": "Excluded items do not enter totalNutrition's included-item loop, so they affect neither sum nor incomplete flag.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "J-122-1",
+      "disposition": "Supported with limitations",
+      "rationale": "The saved-meal set uses stored localDate equality, consistent with the journal implementation.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "J-122-2",
+      "disposition": "Supported with limitations",
+      "rationale": "The lead-in is completed by the following saved-day sum and incompleteness formula.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "J-122-3",
+      "disposition": "Supported with limitations",
+      "rationale": "S_d denotes explicitly saved meals assigned to the stored local date d.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "J-122-4",
+      "disposition": "Supported with limitations",
+      "rationale": "d is the local calendar date used to select saved records.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "J-123-1",
+      "disposition": "Reproduced",
+      "rationale": "The daily sum of saved known subtotals and OR of missingness flags matches the implementation and journal fixtures.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "J-130-1",
+      "disposition": "Reproduced",
+      "rationale": "Unsaved scans remain outside the stored meal collection and leave daily totals unchanged in browser tests.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "J-130-2",
+      "disposition": "Reproduced",
+      "rationale": "saveDraft upserts by draft ID and retains an existing record's savedAt/localDate; tests exercise updates.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "J-130-3",
+      "disposition": "Reproduced",
+      "rationale": "A new analysis creates a new draft identity while previous saved records remain intact.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "J-130-4",
+      "disposition": "Reproduced",
+      "rationale": "useJournal registers focus/visibility listeners and a local-midnight timer; timer and focus paths were tested.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "J-130-5",
+      "disposition": "Supported with limitations",
+      "rationale": "The arithmetic is the saved known subtotal, not independently measured consumption.",
+      "corrected_after_initial_review": true
+    },
+    {
+      "occurrence_id": "J-130-6",
+      "disposition": "Supported with limitations",
+      "rationale": "S_d refers to the previously defined saved-day meal set.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "J-132-1",
+      "disposition": "Supported with limitations",
+      "rationale": "saveDraft retains all draft items with included flags; exclusion affects totals, not removal from stored records.",
+      "corrected_after_initial_review": true
+    },
+    {
+      "occurrence_id": "J-132-2",
+      "disposition": "Reproduced",
+      "rationale": "parseJournal reconstructs the storage shape without photos, health, boxes, confidence, source URLs or mapping notes.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "J-132-3",
+      "disposition": "Supported with limitations",
+      "rationale": "Omitted source URLs, mapping notes, model/source revisions and images limit scientific provenance.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "J-132-4",
+      "disposition": "Reproduced",
+      "rationale": "Corrupt, unsupported and unavailable storage tests preserve existing bytes, pause saving and retain scanning.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "J-135-1",
+      "disposition": "Supported with limitations",
+      "rationale": "Daily target calculation and current-meal nutrient sums use separate state/functions.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "J-135-2",
+      "disposition": "Supported with limitations",
+      "rationale": "Policy JSON supplies three positive goal weights and multiplicative condition modifiers.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "J-135-3",
+      "disposition": "Supported with limitations",
+      "rationale": "The three-index domain is correctly introduced as carbohydrate, protein and fat.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "J-135-4",
+      "disposition": "Supported with limitations",
+      "rationale": "b_k denotes a policy base weight.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "J-135-5",
+      "disposition": "Supported with limitations",
+      "rationale": "r_k denotes the selected policy modifier.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "J-135-6",
+      "disposition": "Supported with limitations",
+      "rationale": "The index set c,p,f corresponds to the three implemented macro categories.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "J-136-1",
+      "disposition": "Reproduced",
+      "rationale": "The formula multiplies and normalizes policy weights, rounds carbs/protein ties-to-even and makes fat the remainder.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "J-141-1",
+      "disposition": "Supported with limitations",
+      "rationale": "E is the supplied calorie target used by the next equation.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "J-141-2",
+      "disposition": "Supported with limitations",
+      "rationale": "E is a calorie target in kcal.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "J-142-1",
+      "disposition": "Reproduced",
+      "rationale": "Percentage-to-gram conversions divide E*p by 400 or 900 and use the implemented ties-to-even rule.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "J-147-1",
+      "disposition": "Reproduced",
+      "rationale": "Independent backend/frontend rational-oracle sweeps report no differences over the tested integer calorie/context domain.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "J-147-2",
+      "disposition": "Reproduced",
+      "rationale": "55+20+20=95; normalization gives 57.8947/21.0526/21.0526, rounded to 58/21/21.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "J-147-3",
+      "disposition": "Supported with limitations",
+      "rationale": "The route allows positive integers through 5000; browser saving validates 500\u20135000.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "J-147-4",
+      "disposition": "Supported with limitations",
+      "rationale": "No qualified policy review is supplied, and the text explicitly avoids calling the values validated prescriptions.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "J-147-5",
+      "disposition": "Reproduced",
+      "rationale": "Canonical policy contains none plus eight supported conditions, with matching generated frontend options.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "J-149-1",
+      "disposition": "Supported with limitations",
+      "rationale": "Request schema permits 1\u201310 foods and the hook sends up to ten included detections with macros, goal and canonical context.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "J-149-2",
+      "disposition": "Supported with limitations",
+      "rationale": "_build_prompt serializes names and rounded calories per 100 g, not numeric protein/carbs/fat.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "J-149-3",
+      "disposition": "Supported with limitations",
+      "rationale": "The request schema/hook contains no selected grams, target calories, daily totals or saved history.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "J-149-4",
+      "disposition": "Supported with limitations",
+      "rationale": "The inspected prompt expressly disclaims consumption inference, unsupplied nutrients and medical suitability.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "J-151-1",
+      "disposition": "Reproduced",
+      "rationale": "Actual SDK with mock transport verifies timeout=20 and max_retries=0, with local fallback after failures.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "J-151-2",
+      "disposition": "Reproduced",
+      "rationale": "The fallback joins the first two names; condition templates override goal templates and ignore macro values.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "J-151-3",
+      "disposition": "Supported with limitations",
+      "rationale": "Retained strings include 'After having', 'is fine' and 'is good'; lexical triage identifies these patterns.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "J-151-4",
+      "disposition": "Supported with limitations",
+      "rationale": "No expert content reference or clinical outcomes are supplied; fallback availability and prompt restrictions are insufficient.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "J-153-1",
+      "disposition": "Reproduced",
+      "rationale": "The derived recommendation state hides stored advice on key changes; the browser verifies immediate loading/no prior badge.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "J-153-2",
+      "disposition": "Reproduced",
+      "rationale": "Standard abort behavior and deliberately delivered late responses are both tested across context/goal/food/scan changes.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "J-153-3",
+      "disposition": "Reproduced",
+      "rationale": "Runtime response validation requires the expected canonical context; 36 goal/context combinations and mismatch/retry fixtures verify badges.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "J-153-4",
+      "disposition": "Supported with limitations",
+      "rationale": "No expert review accompanies the backend echo; the inference drawn is appropriately limited.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "J-157-1",
+      "disposition": "Supported with limitations",
+      "rationale": "The frozen input manifest covers the 72-class export, five source downloads, SQLite and archived training artifacts.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "J-157-2",
+      "disposition": "Supported with limitations",
+      "rationale": "The validation run uses read-only dataset/model access and report writes; no training or label repair is recorded.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "J-157-3",
+      "disposition": "Supported with limitations",
+      "rationale": "Duplicate identities demonstrate that exported file records are not equivalent to unique originals.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "J-159-1",
+      "disposition": "Supported with limitations",
+      "rationale": "Each table count/version matches local metadata and the source inventory; class entries are not summed as a distinct vocabulary.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "J-159-2",
+      "disposition": "Supported with limitations",
+      "rationale": "The caption accurately defines local source records, per-export class entries and metadata-derived versions/URLs.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "J-159-3",
+      "disposition": "Supported with limitations",
+      "rationale": "The header identifies export, listed classes and image-file counts.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "J-159-4",
+      "disposition": "Reproduced",
+      "rationale": "The local first source YAML lists 17 classes; the reproduced inventory contains 9,053 images.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "J-159-5",
+      "disposition": "Reproduced",
+      "rationale": "The second source YAML lists 29 classes and inventory records 8,406 images.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "J-159-6",
+      "disposition": "Reproduced",
+      "rationale": "The IndianFood-7 local YAML lists 7 classes and inventory records 1,949 images.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "J-159-7",
+      "disposition": "Reproduced",
+      "rationale": "The IndianFoodNet source YAML lists 30 classes and inventory records 13,036 images.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "J-159-8",
+      "disposition": "Reproduced",
+      "rationale": "The South Indian source YAML lists 31 classes and inventory records 8,353 images.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "J-159-9",
+      "disposition": "Reproduced",
+      "rationale": "9,053+8,406+1,949+13,036+8,353 equals the generated total 40,797.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "J-178-1",
+      "disposition": "Historical only",
+      "rationale": "The preserved build_master_dataset source collects source samples, canonicalizes labels, splits indices and augments training.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "J-178-2",
+      "disposition": "Historical only",
+      "rationale": "Builder target ratios precede training-only augmentation, and final observed counts do not follow 70/15/15.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "J-178-3",
+      "disposition": "Historical only",
+      "rationale": "Source READMEs describe augmentation in the first, second and IndianFoodNet downloads.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "J-178-4",
+      "disposition": "Supported with limitations",
+      "rationale": "Splitting derived records by index cannot remove relationships already present in the records.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "J-181-1",
+      "disposition": "Supported with limitations",
+      "rationale": "inspect_image records path/split/file and label hashes, accepted class IDs, dimensions and issues.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "J-181-2",
+      "disposition": "Supported with limitations",
+      "rationale": "The pixel digest includes oriented RGB dimensions and RGB bytes without rescaling.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "J-181-3",
+      "disposition": "Supported with limitations",
+      "rationale": "duplicate_summary marks a hash group crossing when its members occupy multiple partition labels.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "J-181-4",
+      "disposition": "Supported with limitations",
+      "rationale": "Pair summaries count shared hash groups rather than all pairwise image combinations.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "J-181-5",
+      "disposition": "Supported with limitations",
+      "rationale": "Equality checks only the hashed representation; crops/recompression can evade pixel/file equality.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "J-183-1",
+      "disposition": "Supported with limitations",
+      "rationale": "The strict parser enforces five fields, integer class range, finite coordinates and stated center/size intervals.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "J-183-2",
+      "disposition": "Reproduced",
+      "rationale": "Fresh strict counts reject 65 zero-width/height rows, with accepted instances reported separately.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "J-183-3",
+      "disposition": "Supported with limitations",
+      "rationale": "The original strict row predicate does not test edges, completeness, object uniqueness or semantic classes.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "J-183-4",
+      "disposition": "Supported with limitations",
+      "rationale": "Rows without accepted annotations but with parser flags are not counted as clean empty-label negatives.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "J-183-5",
+      "disposition": "Supported with limitations",
+      "rationale": "The closed interval matches allowed normalized center coordinates.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "J-183-6",
+      "disposition": "Supported with limitations",
+      "rationale": "The half-open interval matches strictly positive width/height up to one.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "J-186-1",
+      "disposition": "Supported with limitations",
+      "rationale": "load_verified_manifest checks path safety, membership, row hashes/content and class-order agreement before reuse.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "J-186-2",
+      "disposition": "Supported with limitations",
+      "rationale": "source_record hashes source bytes and family keys; only exported rows carry the oriented-pixel hash.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "J-186-3",
+      "disposition": "Supported with limitations",
+      "rationale": "family_key takes a source-qualified case-folded prefix at the earliest recognized .rf.32-hex marker.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "J-186-4",
+      "disposition": "Supported with limitations",
+      "rationale": "The source/export identifier prefixes the filename-family key, preventing cross-export name-only joining.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "J-188-1",
+      "disposition": "Supported with limitations",
+      "rationale": "build_components unions repeated byte, exported-pixel and source-family tokens.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "J-188-2",
+      "disposition": "Supported with limitations",
+      "rationale": "Combined source and export records share union-find, allowing transitive links through source-only records.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "J-188-3",
+      "disposition": "Supported with limitations",
+      "rationale": "The code emits components for union roots with exported members.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "J-188-4",
+      "disposition": "Supported with limitations",
+      "rationale": "Source-qualified filename-prefix heuristics can overmerge generic names within a source and miss renamed relatives.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "J-190-1",
+      "disposition": "Supported with limitations",
+      "rationale": "The code propagates unresolved/naming/annotation/empty-label/pixel-label-conflict reasons across entire components.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "J-190-2",
+      "disposition": "Supported with limitations",
+      "rationale": "The generic byte-inequality limitation must be distinguished from this run: zero direct groups were formatting/order-only.",
+      "corrected_after_initial_review": true
+    },
+    {
+      "occurrence_id": "J-190-3",
+      "disposition": "Supported with limitations",
+      "rationale": "Quarantined components have candidate_split=None and are written to manifests; the tool does not remove files.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "J-193-1",
+      "disposition": "Supported with limitations",
+      "rationale": "The greedy assigner gives each eligible component one scalar candidate split.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "J-193-2",
+      "disposition": "Supported with limitations",
+      "rationale": "priority orders rarest represented class count, negative component size, then seeded SHA-256 tie-break.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "J-193-3",
+      "disposition": "Supported with limitations",
+      "rationale": "cost computes incremental target-normalized squared deviations for total images and per-class image counts.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "J-193-4",
+      "disposition": "Reproduced",
+      "rationale": "The recorded grouped run uses seed 42 and ratios 0.70/0.15/0.15 over eligible records.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "J-193-5",
+      "disposition": "Supported with limitations",
+      "rationale": "The one-step assigner balances image-count targets without an optimizer or object-instance objective.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "J-195-1",
+      "disposition": "Supported with limitations",
+      "rationale": "The notation correctly states the desired pairwise component-ID separation.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "J-195-2",
+      "disposition": "Supported with limitations",
+      "rationale": "G_tr/G_va/G_te denote the three eligible component-ID sets.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "J-196-1",
+      "disposition": "Supported with limitations",
+      "rationale": "A component's single split plus assignment validation enforces the stated pairwise-disjoint component-set invariant.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "J-199-1",
+      "disposition": "Supported with limitations",
+      "rationale": "validate_assignments rejects known family/byte/pixel tokens appearing under different group IDs.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "J-199-2",
+      "disposition": "Supported with limitations",
+      "rationale": "Construction/validation check the known-token invariant and the sentence explicitly rejects completeness inference.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "J-199-3",
+      "disposition": "Supported with limitations",
+      "rationale": "The checkpoint was developed using the old export; changing partition labels cannot erase prior exposure.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "J-202-1",
+      "disposition": "Supported with limitations",
+      "rationale": "audit_nutrition iterates all fixed canonical labels directly against the current database, without invoking detection.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "J-202-2",
+      "disposition": "Reproduced",
+      "rationale": "The implementation creates full/automatic service instances, clears only the automatic mappings and separately checks normalized exact matches.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "J-202-3",
+      "disposition": "Supported with limitations",
+      "rationale": "j indexes the three lookup methods in the following equation.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "J-202-4",
+      "disposition": "Supported with limitations",
+      "rationale": "j is a method index.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "J-203-1",
+      "disposition": "Reproduced",
+      "rationale": "The indicator sum divided by the 72-label vocabulary matches the implemented availability count.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "J-207-1",
+      "disposition": "Supported with limitations",
+      "rationale": "The audit and nutrition service open SQLite with mode=ro and clear mappings only in memory.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "J-207-2",
+      "disposition": "Supported with limitations",
+      "rationale": "The comparator reuses the existing alias/containment runtime path without independent retrieval tuning.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "J-207-3",
+      "disposition": "Supported with limitations",
+      "rationale": "The older availability receipt omitted a hash seed; the new eight-seed sweep records all seeds explicitly.",
+      "corrected_after_initial_review": true
+    },
+    {
+      "occurrence_id": "J-209-1",
+      "disposition": "Supported with limitations",
+      "rationale": "Availability increments when a row is returned, regardless of its recipe correctness.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "J-209-2",
+      "disposition": "Supported with limitations",
+      "rationale": "No correctness/advice/quantity reference enters the availability predicate.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "J-209-3",
+      "disposition": "Supported with limitations",
+      "rationale": "The supplied ablation clears precomputed mappings only; no supplemental- or macro-check-removal result is reported.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "J-212-1",
+      "disposition": "Supported with limitations",
+      "rationale": "The source tests and passing receipts cover the table's backend, frontend and mocked browser scenarios.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "J-212-2",
+      "disposition": "Supported with limitations",
+      "rationale": "Selected check receipts show lint, types, generated-contract drift, build and credential-disabled test commands.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "J-212-3",
+      "disposition": "Supported with limitations",
+      "rationale": "Research-tool tests create artificial images and records to test validation behavior.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "J-212-4",
+      "disposition": "Supported with limitations",
+      "rationale": "Local/website operational checks and archived model scores are distinct artifacts with different environments and outcomes.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "J-214-1",
+      "disposition": "Supported with limitations",
+      "rationale": "The listed test areas correspond to inspected suites and passing receipts, including extended reverse-order and journal cases.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "J-214-2",
+      "disposition": "Supported with limitations",
+      "rationale": "The caption correctly limits tests to software properties rather than health or usability benefit.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "J-214-3",
+      "disposition": "Supported with limitations",
+      "rationale": "The header distinguishes test area from its stated scope.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "J-214-4",
+      "disposition": "Reproduced",
+      "rationale": "Unit and browser fixtures exercise gram scaling, exclusion/unknown arithmetic, save/update, edit/delete/undo, reload, midnight and storage failures.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "J-214-5",
+      "disposition": "Reproduced",
+      "rationale": "Standard and extended suites exercise context races, invalid echoes, labels, timeout/fallback and user-triggered retry.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "J-214-6",
+      "disposition": "Supported with limitations",
+      "rationale": "Upload tests explicitly exercise orientation, alignment, bad inputs, busy/rate errors and timeout presentation.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "J-214-7",
+      "disposition": "Supported with limitations",
+      "rationale": "Browser checks cover desktop and 360-pixel views, keyboard controls and visible status/error behavior.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "J-214-8",
+      "disposition": "Supported with limitations",
+      "rationale": "Lifecycle, override, capacity and log-field tests passed for the backend resource boundaries.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "J-233-1",
+      "disposition": "Reproduced",
+      "rationale": "The independently checked manifest contains exactly 48,693 exported file records.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "J-233-2",
+      "disposition": "Reproduced",
+      "rationale": "The census table keeps image, accepted-instance and flagged-image denominators separate.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "J-233-3",
+      "disposition": "Historical only",
+      "rationale": "Notebook aggregates record 8,812/8,875 instances; the parser accepts 8,805/8,868, exactly seven fewer per split.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "J-233-4",
+      "disposition": "Supported with limitations",
+      "rationale": "Historical evaluator aggregation and strict row validation are visibly different procedures.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "J-235-1",
+      "disposition": "Reproduced",
+      "rationale": "Every table cell matches the reproduced original split census and invalid-record counts.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "J-235-2",
+      "disposition": "Supported with limitations",
+      "rationale": "The caption correctly separates flagged-row incidence from annotation correctness.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "J-235-3",
+      "disposition": "Supported with limitations",
+      "rationale": "The header explicitly identifies the three different census units.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "J-235-4",
+      "disposition": "Reproduced",
+      "rationale": "Training row matches 36,852 images, 56,287 accepted instances and 51 flagged images.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "J-235-5",
+      "disposition": "Reproduced",
+      "rationale": "Validation row matches 5,922 images, 8,805 accepted instances and seven flagged images.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "J-235-6",
+      "disposition": "Reproduced",
+      "rationale": "Test row matches 5,919 images, 8,868 accepted instances and seven flagged images.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "J-250-1",
+      "disposition": "Reproduced",
+      "rationale": "Byte and pixel grouping each reproduce 138 groups/276 records, partitioned 63/56/19 across split pairs.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "J-250-2",
+      "disposition": "Reproduced",
+      "rationale": "The two named images were independently SHA-256 checked again and match exactly.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "J-251-1",
+      "disposition": "Reproduced",
+      "rationale": "Both named files hash to b35452e6c111bc60b6eda66cbfcf695652304abb2c2c94dd63ce282d5072439a.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "J-255-1",
+      "disposition": "Supported with limitations",
+      "rationale": "No clean-control detector experiment accompanies the duplicate census, so inflation magnitude is not identified.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "J-255-2",
+      "disposition": "Reproduced",
+      "rationale": "All 65 flags were independently classified as 45 zero-width and 20 zero-height rows.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "J-255-3",
+      "disposition": "Supported with limitations",
+      "rationale": "Neither qualified semantic labels nor a valid no-food evaluation cohort exists in these artifacts.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "J-258-1",
+      "disposition": "Reproduced",
+      "rationale": "Regeneration yields 23,933 exported-record components, including 5,548 lineage groups crossing old splits.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "J-258-2",
+      "disposition": "Supported with limitations",
+      "rationale": "Components combine byte/pixel identities and within-export family keys, not independent confirmation of thousands of originals.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "J-260-1",
+      "disposition": "Reproduced",
+      "rationale": "The referenced candidate table matches the generated review-only assignment artifact.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "J-260-2",
+      "disposition": "Reproduced",
+      "rationale": "Each eligible candidate split has nonzero image support for all 72 canonical classes.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "J-260-3",
+      "disposition": "Reproduced",
+      "rationale": "Per-class image minima are 17 in validation and test; group minima are smaller at nine and eleven.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "J-260-4",
+      "disposition": "Supported with limitations",
+      "rationale": "Class presence lacks a target precision, effect size or independence-based sample-size calculation.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "J-262-1",
+      "disposition": "Reproduced",
+      "rationale": "All candidate split group/image/unique-pixel cells reproduce the generated summary.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "J-262-2",
+      "disposition": "Supported with limitations",
+      "rationale": "The caption accurately states within-partition pixel counts and retained repeat records.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "J-262-3",
+      "disposition": "Supported with limitations",
+      "rationale": "The candidate table header names groups, images and unique pixels as different units.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "J-262-4",
+      "disposition": "Reproduced",
+      "rationale": "Candidate training row is 10,251 groups, 26,384 images and 26,251 unique pixels.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "J-262-5",
+      "disposition": "Reproduced",
+      "rationale": "Candidate validation row is 2,203 groups, 5,655 images and 5,629 unique pixels.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "J-262-6",
+      "disposition": "Reproduced",
+      "rationale": "Candidate test row is 2,205 groups, 5,652 images and 5,620 unique pixels.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "J-262-7",
+      "disposition": "Reproduced",
+      "rationale": "Quarantine contains 9,274 groups and 11,002 images; the pixel subtotal is intentionally unreported.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "J-278-1",
+      "disposition": "Reproduced",
+      "rationale": "Eligible images sum to 37,691; subtracting 37,500 distinct eligible pixels yields 191 extra records.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "J-278-2",
+      "disposition": "Reproduced",
+      "rationale": "Whole-component quarantine reproduces 11,002 affected exported images.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "J-278-3",
+      "disposition": "Reproduced",
+      "rationale": "The four nonexclusive propagated reason counts reproduce 9,127/1,455/542/424.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "J-278-4",
+      "disposition": "Supported with limitations",
+      "rationale": "Reasons attach to components and may co-occur; summing them would double-count members.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "J-280-1",
+      "disposition": "Supported with limitations",
+      "rationale": "Both retained earlier summaries have identical assignment and source-inventory hashes.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "J-280-2",
+      "disposition": "Supported with limitations",
+      "rationale": "The earlier summaries record different script hashes, and the verified implementation includes input/class checks.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "J-280-3",
+      "disposition": "Supported with limitations",
+      "rationale": "Matching retained outputs and the fresh regeneration support bounded repeatability, not independent replication.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "J-280-4",
+      "disposition": "Supported with limitations",
+      "rationale": "The original summaries retain identities but lack a complete historical dependency/runtime record.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "J-283-1",
+      "disposition": "Reproduced",
+      "rationale": "The availability table reflects the measured exact/automatic/current lookup comparison.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "J-283-2",
+      "disposition": "Supported with limitations",
+      "rationale": "Counts increase from 19 to 55 to 72, while independent mapping references remain blank.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "J-283-3",
+      "disposition": "Supported with limitations",
+      "rationale": "The original 21 review flags are heuristic score/missing-score flags, not a validated error detector.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "J-285-1",
+      "disposition": "Reproduced",
+      "rationale": "The availability table reproduces 19/72, 55/72 and 72/72 with 26.39%, 76.39% and 100.00%.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "J-285-2",
+      "disposition": "Supported with limitations",
+      "rationale": "The caption correctly limits the percentages to row availability.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "J-285-3",
+      "disposition": "Supported with limitations",
+      "rationale": "The header uses classes with a row and availability, avoiding an accuracy label.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "J-285-4",
+      "disposition": "Reproduced",
+      "rationale": "Normalized exact matching returns 19/72 classes, rounding to 26.39%.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "J-285-5",
+      "disposition": "Reproduced",
+      "rationale": "Automatic lookup without precomputed mappings returns 55/72, rounding to 76.39%.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "J-285-6",
+      "disposition": "Reproduced",
+      "rationale": "Current mappings return all 72 canonical classes, hence 100% availability.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "J-300-1",
+      "disposition": "Supported with limitations",
+      "rationale": "The fixed 72-class enumeration is a vocabulary census, not a random-sample accuracy estimator.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "J-300-2",
+      "disposition": "Supported with limitations",
+      "rationale": "Workbook identity and source literal comparisons support provenance/transcription agreement only.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "J-303-1",
+      "disposition": "Supported with limitations",
+      "rationale": "Recorded local suites passed save-only totals and matching health-response scenarios.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "J-303-2",
+      "disposition": "Supported with limitations",
+      "rationale": "The software table lists scenario coverage and does not report a medical-safety score.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "J-303-3",
+      "disposition": "Supported with limitations",
+      "rationale": "Nutrition arithmetic is separate from advice state, and tested scenarios preserve that boundary.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "J-305-1",
+      "disposition": "Supported with limitations",
+      "rationale": "The inference runtime has one executor worker and a capacity-two semaphore.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "J-305-2",
+      "disposition": "Supported with limitations",
+      "rationale": "Code uses a shielded 110-second backend wait and 120,000-ms client analysis timeout.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "J-305-3",
+      "disposition": "Supported with limitations",
+      "rationale": "Recommendation capacity defaults to two and uses a nonblocking semaphore with no waiter queue.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "J-305-4",
+      "disposition": "Supported with limitations",
+      "rationale": "Defaults are ten analysis and five recommendation requests per minute, keyed by remote address.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "J-305-5",
+      "disposition": "Supported with limitations",
+      "rationale": "These mechanisms bound selected instance resources rather than global provider spending or uptime.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "J-308-1",
+      "disposition": "Supported with limitations",
+      "rationale": "The baseline records original manuscript/runtime bytes and the review's preservation boundary before tests.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "J-308-2",
+      "disposition": "Supported with limitations",
+      "rationale": "Reports retain commands, environment/input metadata and both failing and passing browser attempts.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "J-308-3",
+      "disposition": "Supported with limitations",
+      "rationale": "Validation environment records Windows and Python 3.12.7, with no detector rerun.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "J-310-1",
+      "disposition": "Reproduced",
+      "rationale": "Fresh census and grouping match the earlier dataset, source-inventory and assignment hashes exactly.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "J-310-2",
+      "disposition": "Reproduced",
+      "rationale": "The independent annotation parser agreed with manifest accepted classes on every one of 48,693 records.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "J-310-3",
+      "disposition": "Reproduced",
+      "rationale": "The flag breakdown is 45 zero-width, 20 zero-height and 47 affected images without accepted instances.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "J-310-4",
+      "disposition": "Reproduced",
+      "rationale": "All 65 original images and all flagged rows were individually inspected and recorded by the AI reviewer.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "J-310-5",
+      "disposition": "Reproduced",
+      "rationale": "Direct conflicting pixel groups total 104/209 images: 69 box differences, 35 class/instance-multiset differences and zero formatting-only groups.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "J-310-6",
+      "disposition": "Reproduced",
+      "rationale": "The extra geometric screen records 3,794 rows across 3,346 images at tolerance 1e-6.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "J-310-7",
+      "disposition": "Supported with limitations",
+      "rationale": "Reports explicitly retain original files and classify edge flags as review candidates.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "J-310-8",
+      "disposition": "Reproduced",
+      "rationale": "The inline tolerance 10^-6 is the constant used for normalized box-edge checks.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "J-312-1",
+      "disposition": "Reproduced",
+      "rationale": "Minimum class-specific group support is 43/9/11 for train/validation/test, all attained by bhakri.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "J-312-2",
+      "disposition": "Reproduced",
+      "rationale": "The bounded screen hashed 2,020 sampled images, compared 1,360,132 eligible pairs and queued 16 at distance <=6.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "J-312-3",
+      "disposition": "Supported with limitations",
+      "rationale": "All queue entries explicitly retain pending expert adjudication.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "J-312-4",
+      "disposition": "Reproduced",
+      "rationale": "Each of 12 originals passed the screening threshold after JPEG compression/resizing, and none after the specified crop/mirror/rotation probes.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "J-312-5",
+      "disposition": "Supported with limitations",
+      "rationale": "The small synthetic probe directly demonstrates transformations that this screen misses.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "J-314-1",
+      "disposition": "Supported with limitations",
+      "rationale": "Independent import reconciliation records 1,014 source rows minus nine duplicates plus five supplemental rows =1,010.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "J-314-2",
+      "disposition": "Supported with limitations",
+      "rationale": "All 1,010 rows times four macro fields agree within the stated 1e-9 absolute tolerance.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "J-314-3",
+      "disposition": "Supported with limitations",
+      "rationale": "The source review records per-100-g literal agreement, including Nandu Kari retrieved from cache after direct-fetch failure.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "J-314-4",
+      "disposition": "Supported with limitations",
+      "rationale": "The reconciliation and source checks measure copied-value consistency rather than pictured-recipe equivalence.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "J-314-5",
+      "disposition": "Supported with limitations",
+      "rationale": "The inline 10^-9 matches numeric_absolute_tolerance in the nutrient comparison report.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "J-316-1",
+      "disposition": "Supported with limitations",
+      "rationale": "The report records 4 goals x9 contexts x4,501 integer calorie values =162,036 cases for each implementation.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "J-316-2",
+      "disposition": "Supported with limitations",
+      "rationale": "Both frontend and backend goal discrepancy counts are zero over that enumerated sweep.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "J-316-3",
+      "disposition": "Supported with limitations",
+      "rationale": "Frontend results record 2,880 portion cases, 11,520 macro comparisons and maximum deviation 9.094947017729282e-13.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "J-316-4",
+      "disposition": "Supported with limitations",
+      "rationale": "The oracle checks implementational agreement with the frozen policy, not clinical suitability of its modifiers.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "J-316-5",
+      "disposition": "Supported with limitations",
+      "rationale": "The measured maximum 9.0949e-13 is indeed below the inline 10^-12 bound.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "J-318-1",
+      "disposition": "Supported with limitations",
+      "rationale": "The hash-seed matrix explicitly lists eight seeds, 181 labels per run and two methods.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "J-318-2",
+      "disposition": "Supported with limitations",
+      "rationale": "The report records 30 changing method/label pairs and six changing canonical pairs after mappings are removed.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "J-318-3",
+      "disposition": "Supported with limitations",
+      "rationale": "The changing-current-canonical-pairs count is zero across the eight tested seeds.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "J-318-4",
+      "disposition": "Supported with limitations",
+      "rationale": "Cross-seed changes expose bounded set-order instability in fallback matching.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "J-320-1",
+      "disposition": "Supported with limitations",
+      "rationale": "The report contains a 216-case 4x9x6 matrix and 16 actual-SDK/MockTransport adapter cases, all passing structurally.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "J-320-2",
+      "disposition": "Supported with limitations",
+      "rationale": "The completed browser receipt covers all 36 combinations and tests delayed replies across context, goal, food and scan changes.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "J-320-3",
+      "disposition": "Supported with limitations",
+      "rationale": "Two retained harness reports fail, followed by corrected passing reports; failures identify missing option-route mocking.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "J-320-4",
+      "disposition": "Awaiting qualified review/approval",
+      "rationale": "The recommendation report explicitly leaves all fallback-template clinical/content approval pending.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "J-323-1",
+      "disposition": "Supported with limitations",
+      "rationale": "Observed partition overlap conflicts with interpreting archived scores as independent generalization evidence.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "J-323-2",
+      "disposition": "Supported with limitations",
+      "rationale": "Explicit connected components and nonexclusive quarantine reasons expose known relationships.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "J-323-3",
+      "disposition": "Supported with limitations",
+      "rationale": "No retraining, counterfactual evaluation or dataset repair was performed.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "J-325-1",
+      "disposition": "Supported with limitations",
+      "rationale": "Exact/family linkage and failed transformation probes establish plausible unresolved dependence and annotation threats.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "J-325-2",
+      "disposition": "Supported with limitations",
+      "rationale": "The 104 directly checked pixel groups all have numeric annotation-set differences; none is formatting-only.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "J-325-3",
+      "disposition": "Supported with limitations",
+      "rationale": "Byte/pixel equality checks cannot rule out crops, rotations, unrelated family merges or other dependence.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "J-325-4",
+      "disposition": "Supported with limitations",
+      "rationale": "No validated empty-negative cohort exists, and the 47 no-accepted-instance flagged images visibly contain food.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "J-325-5",
+      "disposition": "Awaiting qualified review/approval",
+      "rationale": "Benchmark interpretation still requires review of lineage, representative choice and labels.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "J-327-1",
+      "disposition": "Supported with limitations",
+      "rationale": "The software separates class labels, assumed portions, database estimates and context advice, which require different references.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "J-327-2",
+      "disposition": "Supported with limitations",
+      "rationale": "Grams are user inputs, nutrition is a lookup, and a health key is echoed response metadata.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "J-327-3",
+      "disposition": "Supported with limitations",
+      "rationale": "Retained templates contain consumption/suitability wording; adapter inputs do not supply measured sodium, sugar or ingredients.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "J-327-4",
+      "disposition": "Awaiting qualified review/approval",
+      "rationale": "An educational-only boundary is warranted while dietary review and independent evaluation remain pending.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "J-329-1",
+      "disposition": "Supported with limitations",
+      "rationale": "The fixed vocabulary, small candidate class supports and unresolved transforms limit transportability.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "J-329-2",
+      "disposition": "Supported with limitations",
+      "rationale": "Browser records use scripted synthetic scenarios and fixtures, not sampled human participants.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "J-329-3",
+      "disposition": "Supported with limitations",
+      "rationale": "The artifacts contain no logging-effort, adoption, diet-outcome or personalized-medical evaluation.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "J-331-1",
+      "disposition": "Supported with limitations",
+      "rationale": "Historic checkpoint identities and full environment capture are incomplete, with unresolved lineage.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "J-331-2",
+      "disposition": "Supported with limitations",
+      "rationale": "The checkout commit is verified locally; the exact public revision URL fetch failed with a cache miss. A failed fetch does not prove public unavailability or establish public availability.",
+      "corrected_after_initial_review": true
+    },
+    {
+      "occurrence_id": "J-331-3",
+      "disposition": "Supported with limitations",
+      "rationale": "The notebook retains outputs and a model path but no evaluation-time checkpoint SHA-256.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "J-331-4",
+      "disposition": "Supported with limitations",
+      "rationale": "Deployment documentation records quota-limited hosting and bounded acceptance checks, not an SLA or latency distribution.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "J-334-1",
+      "disposition": "Proposed",
+      "rationale": "The section explicitly introduces future evaluation rather than reporting completed experiments.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "J-337-1",
+      "disposition": "Proposed",
+      "rationale": "Freezing database and candidate outputs is a prescribed review-control step.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "J-337-2",
+      "disposition": "Proposed",
+      "rationale": "The packet supplies accepted/unsupported/indeterminate categories but calls for substantive scope definitions.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "J-337-3",
+      "disposition": "Proposed",
+      "rationale": "The proposed blinded workflow withholds current predictions and heuristic scores from reviewers.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "J-337-4",
+      "disposition": "Proposed",
+      "rationale": "Two initial references and a distinct adjudication artifact are supported by the planned workflow.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "J-339-1",
+      "disposition": "Supported with limitations",
+      "rationale": "The preserved v1 scorer parses a set of acceptable database names for each class.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "J-339-2",
+      "disposition": "Supported with limitations",
+      "rationale": "The v1 evaluator counts a nonempty prediction inside the reference set as correct and otherwise wrong.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "J-339-3",
+      "disposition": "Supported with limitations",
+      "rationale": "The v1 evaluator distinguishes correct abstention from missed support according to whether the reference set is empty.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "J-339-4",
+      "disposition": "Supported with limitations",
+      "rationale": "The v2 packet separates indeterminate cases, references two initial reviews and validates database/reference hashes.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "J-339-5",
+      "disposition": "Supported with limitations",
+      "rationale": "V2 scoring excludes indeterminate cases from scorable counts and the templates remain pending.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "J-339-6",
+      "disposition": "Proposed",
+      "rationale": "The proposed reporting includes all four decisions and appropriate agreement/uncertainty rather than coverage alone.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "J-339-7",
+      "disposition": "Supported with limitations",
+      "rationale": "Schema validation and self-attestation only inspect supplied fields.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "J-339-8",
+      "disposition": "Supported with limitations",
+      "rationale": "The 72 classes are the existing development vocabulary used to build/review mappings.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "J-339-9",
+      "disposition": "Supported with limitations",
+      "rationale": "The first R_c occurrence defines the acceptable-name reference set.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "J-339-10",
+      "disposition": "Supported with limitations",
+      "rationale": "The second R_c occurrence is the set-membership test used for a nonempty prediction.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "J-339-11",
+      "disposition": "Supported with limitations",
+      "rationale": "The third R_c occurrence determines whether an abstention is supported.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "J-342-1",
+      "disposition": "Proposed",
+      "rationale": "The proposed manifest freeze follows review of groups, quarantine, representatives and annotations.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "J-342-2",
+      "disposition": "Proposed",
+      "rationale": "Retraining on reviewed partitions or obtaining untouched external data is proposed to recover evaluation independence.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "J-342-3",
+      "disposition": "Proposed",
+      "rationale": "The requested checkpoint, package, threshold and dataset records address missing historical provenance.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "J-342-4",
+      "disposition": "Supported with limitations",
+      "rationale": "Reassigning images does not undo exposure of an already-developed checkpoint.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "J-344-1",
+      "disposition": "Proposed",
+      "rationale": "Per-class reporting and background/no-food cases are future evaluation requirements.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "J-344-2",
+      "disposition": "Proposed",
+      "rationale": "Source-aware uncertainty is proposed because related images violate independent-image sampling assumptions.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "J-344-3",
+      "disposition": "Proposed",
+      "rationale": "Matched data/budget/settings and a claim-specific augmentation ablation are proposed comparison controls.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "J-344-4",
+      "disposition": "Proposed",
+      "rationale": "Independent recipe/portion references are required before nutrient-error claims would be measurable.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "J-347-1",
+      "disposition": "Proposed",
+      "rationale": "The proposal calls for a qualified, prespecified content review separate from transport tests.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "J-347-2",
+      "disposition": "Proposed",
+      "rationale": "Consumption-assuming fallback text is documented, and revision or explicit limitation is a proposed prerequisite.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "J-347-3",
+      "disposition": "Proposed",
+      "rationale": "A participant study would require a defined protocol and appropriate consent/data/ethics assessment.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "J-347-4",
+      "disposition": "Supported with limitations",
+      "rationale": "The review records no participant study or ethics approval claim.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "J-350-1",
+      "disposition": "Supported with limitations",
+      "rationale": "The delivered work consists of system documentation and artifact-audit evidence for the existing app.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "J-350-2",
+      "disposition": "Reproduced",
+      "rationale": "The full census reproduces 138 exact cross-partition groups and 65 strict-flag images.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "J-350-3",
+      "disposition": "Reproduced",
+      "rationale": "Source-family grouping produces the documented review-only assignment with 11,002 quarantined images.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "J-350-4",
+      "disposition": "Supported with limitations",
+      "rationale": "All 72 canonical labels return a current row, while no qualified recipe-reference accuracy exists.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "J-350-5",
+      "disposition": "Supported with limitations",
+      "rationale": "Separate domain calculations, save semantics, advice state and evidence categories make the implementation inspectable.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "J-350-6",
+      "disposition": "Awaiting qualified review/approval",
+      "rationale": "Independent evaluation and owner/supervisor permissions remain explicit gates.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "J-353-1",
+      "disposition": "Supported with limitations",
+      "rationale": "The checkout commit is verified locally; the exact public revision URL fetch failed with a cache miss. A failed fetch does not prove public unavailability or establish public availability.",
+      "corrected_after_initial_review": true
+    },
+    {
+      "occurrence_id": "J-353-2",
+      "disposition": "Supported with limitations",
+      "rationale": "Repository evidence stores identities for the named model, database, workbook, scripts and manifests.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "J-353-3",
+      "disposition": "Supported with limitations",
+      "rationale": "Evidence macros are generated from JSON reports and checked for structural/numeric drift.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "J-353-4",
+      "disposition": "Supported with limitations",
+      "rationale": "The baseline explicitly distinguishes uncommitted validation tooling from the base commit.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "J-353-5",
+      "disposition": "Supported with limitations",
+      "rationale": "Baseline entries record current-file byte hashes for the revised manuscripts and runtime inputs.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "J-357-1",
+      "disposition": "Reproduced",
+      "rationale": "The full new and earlier manifests are local .deployment/research artifacts.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "J-357-2",
+      "disposition": "Supported with limitations",
+      "rationale": "The local manifest paths are excluded from ordinary tracked repository content and not embedded in the PDF.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "J-357-3",
+      "disposition": "Proposed",
+      "rationale": "Separate authorized manifest packaging is proposed for an artifact review.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "J-357-4",
+      "disposition": "Proposed",
+      "rationale": "Provider access and applicable rights review are prescribed for obtaining source data.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "J-357-5",
+      "disposition": "Supported with limitations",
+      "rationale": "Both inspected README files expressly flag potentially unauthorized copyrighted crawled material.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "J-357-6",
+      "disposition": "Awaiting qualified review/approval",
+      "rationale": "Workbook identity has evidence, but dataset/model/database/figure redistribution terms are not settled by it.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "J-357-7",
+      "disposition": "Supported with limitations",
+      "rationale": "The review's stated boundary grants no new blanket license or asset release.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "J-360-1",
+      "disposition": "Supported with limitations",
+      "rationale": "The audit/review receipts document AI-assisted inspection, citation checking and editorial work.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "J-360-2",
+      "disposition": "Awaiting qualified review/approval",
+      "rationale": "Final text, references and analyses require accountable author verification.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "J-360-3",
+      "disposition": "Awaiting qualified review/approval",
+      "rationale": "Authorship, contributions, funding/conflicts and institutional requirements are explicitly unresolved.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "J-360-4",
+      "disposition": "Supported with limitations",
+      "rationale": "Run boundaries and executed reports show no clinical study, participant enrollment, detector training or paper submission.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "J-364-1",
+      "disposition": "Historical only",
+      "rationale": "Final notebook cells eight and nine record val/test evaluation of an exported best.pt path.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "J-364-2",
+      "disposition": "Historical only",
+      "rationale": "The referenced metrics are retained notebook observations on the old overlapping partitions.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "J-367-1",
+      "disposition": "Historical only",
+      "rationale": "All table values match the final notebook's console P/R and rounded mAP values.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "J-367-2",
+      "disposition": "Historical only",
+      "rationale": "P/R are console-rounded; mAP is rounded from stored printed values to three decimals.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "J-367-3",
+      "disposition": "Supported with limitations",
+      "rationale": "The header distinguishes precision, recall, AP at .50 and AP averaged across .50:.95.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "J-367-4",
+      "disposition": "Historical only",
+      "rationale": "Validation row matches P=.847, R=.807, mAP50=.830 and mAP50:95=.692 after declared rounding.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "J-367-5",
+      "disposition": "Historical only",
+      "rationale": "Test row matches P=.842, R=.801, mAP50=.820 and mAP50:95=.680 after declared rounding.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "J-367-6",
+      "disposition": "Supported with limitations",
+      "rationale": "Subscript50 identifies the single IoU threshold in the historical table header.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "J-367-7",
+      "disposition": "Supported with limitations",
+      "rationale": "Subscript50:95 identifies the historical averaged-IoU AP metric.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "J-381-1",
+      "disposition": "Historical only",
+      "rationale": "The notebook output explicitly reports 8.4.60, Python3.12.13, Torch2.10.0+cu128 and TeslaT4/14,913MiB.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "J-381-2",
+      "disposition": "Historical only",
+      "rationale": "The selected notebook cells provide data/device/split but no explicit confidence or NMS threshold override.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "J-381-3",
+      "disposition": "Historical only",
+      "rationale": "The notebook prints approximately11ms/image inference on its GPU evaluation path.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "J-381-4",
+      "disposition": "Supported with limitations",
+      "rationale": "Hardware/path and evaluation-threshold differences preclude treating that figure as website latency or a matched operating-point result.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "J-383-1",
+      "disposition": "Reproduced",
+      "rationale": "Reconstruction confirms 100 contiguous distinct epochs in the merged CSV.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "J-383-2",
+      "disposition": "Historical only",
+      "rationale": "Archived maxima are mAP50=.83379 at78 and mAP50:95=.69226 at97.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "J-383-3",
+      "disposition": "Supported with limitations",
+      "rationale": "Neither a maximum CSV metric nor its epoch records the full checkpoint selection identity.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "J-383-4",
+      "disposition": "Reproduced",
+      "rationale": "Current deployed and final archived checkpoint hashes match, while the notebook stores no evaluation-time checkpoint hash.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "J-383-5",
+      "disposition": "Historical only",
+      "rationale": "The result-merge notebook points to the older pre-discontinuation checkpoint and reports different evaluation values.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "J-383-6",
+      "disposition": "Supported with limitations",
+      "rationale": "The mAP50 subscript refers to the archived CSV maximum at the stated IoU.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "J-383-7",
+      "disposition": "Supported with limitations",
+      "rationale": "The mAP50:95 subscript refers to the other archived CSV maximum.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "J-385-1",
+      "disposition": "Reproduced",
+      "rationale": "All numeric cells reconstructed from epochs1\u201355 and56\u2013100 match the merged CSV.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "J-385-2",
+      "disposition": "Reproduced",
+      "rationale": "Time falls from42,555.1 at the first stage end to904.781 at the resumed first row; the final stage ends38,290.5.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "J-385-3",
+      "disposition": "Historical only",
+      "rationale": "The preserved initial-training notebook contains a legacy30-class workflow rather than complete72-class initial-stage provenance.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "J-385-4",
+      "disposition": "Supported with limitations",
+      "rationale": "Available old prediction artifacts correspond to the older model, not the final checkpoint table.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "J-388-1",
+      "disposition": "Supported with limitations",
+      "rationale": "Production manifests pin the listed Python/Torch/Torchvision/headlessUltralytics/Next/React versions.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "J-388-2",
+      "disposition": "Supported with limitations",
+      "rationale": "The inference class defers model import/loading, while readiness describes loading state.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "J-388-3",
+      "disposition": "Supported with limitations",
+      "rationale": "Nutrition queries open SQLite with URI mode=ro.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "J-388-4",
+      "disposition": "Supported with limitations",
+      "rationale": "Application processing uses transient upload bytes and the browser journal does not persist photos.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "J-390-1",
+      "disposition": "Supported with limitations",
+      "rationale": "The table's prefixes locate full SHA-256 values recorded in evidence.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "J-391-1",
+      "disposition": "Reproduced",
+      "rationale": "All five displayed prefixes match the current recorded full model/database/workbook/assignment/notebook hashes.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "J-391-2",
+      "disposition": "Supported with limitations",
+      "rationale": "The caption correctly identifies truncated values and points to full recorded hashes.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "J-391-3",
+      "disposition": "Supported with limitations",
+      "rationale": "The header identifies artifact names and SHA-256 prefixes rather than full hashes.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "J-391-4",
+      "disposition": "Reproduced",
+      "rationale": "The deployed checkpoint fingerprint begins935a1b34365b as displayed.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "J-391-5",
+      "disposition": "Reproduced",
+      "rationale": "The nutrition database fingerprint begins3bdfb92fafd2 as displayed.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "J-391-6",
+      "disposition": "Reproduced",
+      "rationale": "The local workbook fingerprint begins65f91911de09 and matches the previously recorded upstream identity.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "J-391-7",
+      "disposition": "Reproduced",
+      "rationale": "The regenerated and earlier assignment fingerprints begin54fa9cc4cea5 and match in full.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "J-391-8",
+      "disposition": "Reproduced",
+      "rationale": "The final-training notebook fingerprint begins9f927f3a2bba as displayed.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "C-19-1",
+      "disposition": "Supported with limitations",
+      "rationale": "The abstract distinguishes detector output, lookup values, estimated quantities and explicit saved intake.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "C-19-2",
+      "disposition": "Supported with limitations",
+      "rationale": "The companion presents the existing educational application and its artifact audit.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "C-19-3",
+      "disposition": "Supported with limitations",
+      "rationale": "The named inference, nutrition, portion/journal and recommendation-state components exist in the implementation.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "C-19-4",
+      "disposition": "Reproduced",
+      "rationale": "The abstract's macro counts expand to48,693 images,72classes,138cross-partition groups and65flagged images.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "C-19-5",
+      "disposition": "Reproduced",
+      "rationale": "The abstract's source-linkage figure is the reproduced5,548candidate groups spanning old splits.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "C-19-6",
+      "disposition": "Reproduced",
+      "rationale": "All72classes remain represented while11,002images are quarantined; the existing model's exposure is unchanged.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "C-19-7",
+      "disposition": "Reproduced",
+      "rationale": "Availability counts reproduce19/72 exact,55/72 automatic and72/72 current mappings.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "C-19-8",
+      "disposition": "Supported with limitations",
+      "rationale": "The abstract correctly labels these as availability rather than correctness.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "C-19-9",
+      "disposition": "Supported with limitations",
+      "rationale": "The delivered artifacts include a system description, fingerprinted audit and a concrete candidate-recovery/review process.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "C-19-10",
+      "disposition": "Supported with limitations",
+      "rationale": "No detector invention, measured food weight, user-benefit experiment or medical-efficacy study is in this run.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "C-19-11",
+      "disposition": "Awaiting qualified review/approval",
+      "rationale": "Independent model evaluation, qualified mapping review and permissions are outstanding gates.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "C-22-1",
+      "disposition": "Supported with limitations",
+      "rationale": "The keywords reflect the system and audit topics actually addressed.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "C-25-1",
+      "disposition": "Supported with limitations",
+      "rationale": "The conference document is explicitly a shorter companion review copy of the same work.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "C-31-1",
+      "disposition": "Supported with limitations",
+      "rationale": "The introduction preserves the separation between a label, lookup estimate, assumed grams and recorded meal.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "C-31-2",
+      "disposition": "Supported with limitations",
+      "rationale": "Correct arithmetic can operate on an approximate recipe or an uneaten/unsaved portion.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "C-31-3",
+      "disposition": "Supported with limitations",
+      "rationale": "Recognition, mapping, portions and advice have distinct target quantities and supporting artifacts.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "C-33-1",
+      "disposition": "Supported with limitations",
+      "rationale": "The named existing application is examined as an engineering case study.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "C-33-2",
+      "disposition": "Supported with limitations",
+      "rationale": "The stated detector, lookup, gram review, saved journal and context labels match implemented components.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "C-33-3",
+      "disposition": "Reproduced",
+      "rationale": "Baseline identities and repeat audits retain the detector, database/dataset and inherited policy while validation tooling is added.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "C-35-1",
+      "disposition": "Supported with limitations",
+      "rationale": "The four stated questions correspond to the actual identity/annotation, grouping, availability and invariant evidence.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "C-35-2",
+      "disposition": "Supported with limitations",
+      "rationale": "The claimed system description, audit/recovery artifacts and measured availability comparison are present.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "C-35-3",
+      "disposition": "Supported with limitations",
+      "rationale": "The stated contribution is an application/audit case study; neither a new architecture nor completed clinical validation is presented.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "C-38-1",
+      "disposition": "Supported with limitations",
+      "rationale": "The cited survey's recorded scope includes the listed food-computing tasks.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "C-38-2",
+      "disposition": "Supported with limitations",
+      "rationale": "Recorded ICCV/author evidence describes a food diary linking recognition and nutrient lookup before this project.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "C-38-3",
+      "disposition": "Supported with limitations",
+      "rationale": "Primary full-text/author-PDF checks support regional detection and the Thali recognition/weight/nutrition scope.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "C-38-4",
+      "disposition": "Supported with limitations",
+      "rationale": "The cited studies did not use this exact merged export, fixed checkpoint, and evaluation protocol.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "C-40-1",
+      "disposition": "Supported with limitations",
+      "rationale": "Nutrition 5 k's recorded source describes component weights and nutritional annotations.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "C-40-2",
+      "disposition": "Supported with limitations",
+      "rationale": "Meal arithmetic uses user-entered grams and stored per-100-g values, with no independent weighed-meal outcome dataset.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "C-40-3",
+      "disposition": "Supported with limitations",
+      "rationale": "The INDB record supports recipe composition, while label lookup supplies no observed recipe identity.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "C-40-4",
+      "disposition": "Supported with limitations",
+      "rationale": "The recorded corrigendum concerns missing IFCT author/source attribution, not a correction of this application's estimates.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "C-42-1",
+      "disposition": "Supported with limitations",
+      "rationale": "The cited leakage article supports the methodological warning about non-independent evaluation.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "C-42-2",
+      "disposition": "Supported with limitations",
+      "rationale": "The recorded near-duplicate study distinguishes broader candidate retrieval/review from exact equality.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "C-42-3",
+      "disposition": "Supported with limitations",
+      "rationale": "Audit/grouping code uses exact identities and filename-family links while explicitly retaining unresolved lineage.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "C-42-4",
+      "disposition": "Supported with limitations",
+      "rationale": "The surrounding text does not transfer another dataset's numerical leakage effect.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "C-44-1",
+      "disposition": "Supported with limitations",
+      "rationale": "The versioned FKG.in source check supports structural, semantic, and source-fidelity validation of extracted recipes.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "C-44-2",
+      "disposition": "Supported with limitations",
+      "rationale": "Knowledge-graph recipe curation does not furnish independent acceptable-row judgments for this fixed mapping problem.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "C-48-1",
+      "disposition": "Supported with limitations",
+      "rationale": "Production configuration and application sources implement FastAPI with a static Next.js frontend and an existing YOLO 11 s checkpoint.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "C-48-2",
+      "disposition": "Supported with limitations",
+      "rationale": "The inspected inference path pins CPU execution, imgsz 640, confidence 0.25, and IoU 0.45.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "C-48-3",
+      "disposition": "Supported with limitations",
+      "rationale": "Legacy override keys use names absent from the current lower-snake-case checkpoint vocabulary.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "C-48-4",
+      "disposition": "Supported with limitations",
+      "rationale": "No calibration experiment connects detector confidence to correct nutrient composition.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "C-50-1",
+      "disposition": "Supported with limitations",
+      "rationale": "Browser preparation re-encodes an oriented image with longest-side and encoded-size bounds before analysis.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "C-50-2",
+      "disposition": "Supported with limitations",
+      "rationale": "The scan path passes the prepared upload image to both the preview and the request.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "C-50-3",
+      "disposition": "Supported with limitations",
+      "rationale": "Server upload/decode validation enforces supported formats, a 4 MiB byte cap and 25-million-pixel decoded bound.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "C-50-4",
+      "disposition": "Supported with limitations",
+      "rationale": "analyzeFood supplies a 120000 ms HTTP budget in the typed endpoint wrapper.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "C-50-5",
+      "disposition": "Supported with limitations",
+      "rationale": "No accuracy measurement follows from input validation or coordinate-system consistency alone.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "C-51-1",
+      "disposition": "Supported with limitations",
+      "rationale": "The diagram correctly separates explicit journal saving from advice requests, and separates request fields from Groq's name/energy subset.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "C-51-2",
+      "disposition": "Supported with limitations",
+      "rationale": "Saving is explicit; recommendation payload construction omits selected grams/history, and prompt construction retains food names and energy.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "C-77-1",
+      "disposition": "Reproduced",
+      "rationale": "The read-only reconciliation reports 1010 food rows, 103 mappings and 72 canonical classes, with current mapping coverage 72.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "C-77-2",
+      "disposition": "Supported with limitations",
+      "rationale": "The pinned workbook identity is rechecked against the previously recorded upstream SHA-256.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "C-77-3",
+      "disposition": "Supported with limitations",
+      "rationale": "The five builder literals and citation records identify exactly these product/recipe supplements.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "C-77-4",
+      "disposition": "Supported with limitations",
+      "rationale": "Hash equality and nutrient transcription do not prove dish equivalence or grant redistribution rights.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "C-79-1",
+      "disposition": "Supported with limitations",
+      "rationale": "Offline mapping construction checks manual mappings before the normalized/variation helper and applies the 0.78 outer score gate.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "C-79-2",
+      "disposition": "Supported with limitations",
+      "rationale": "NutritionService's lookup sequence is precomputed mapping, normalized equality, scored containment, ungated variation containment, then helper.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "C-79-3",
+      "disposition": "Supported with limitations",
+      "rationale": "find_best_match uses exact equality and substring length-ratio tests; the unused SequenceMatcher method is not on this path.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "C-79-4",
+      "disposition": "Reproduced",
+      "rationale": "The code returns the first variation containment hit without a score gate; eight fixed-seed runs expose changing ambiguous method/label pairs.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "C-79-5",
+      "disposition": "Supported with limitations",
+      "rationale": "The final service gate is >=0.4, but find_best_match only emits containment candidates at >=0.5.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "C-79-6",
+      "disposition": "Reproduced",
+      "rationale": "Precomputed canonical entries are returned before fallback matching, and current canonical selections remained stable in the fixed-seed runs.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "C-79-7",
+      "disposition": "Supported with limitations",
+      "rationale": "Observed fallback order dependence rejects blanket determinism, and no independent clinical judgment establishes conservative matching.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "C-81-1",
+      "disposition": "Supported with limitations",
+      "rationale": "The notation defines included detections and the subset with an available nutrition row, matching the implemented inclusion/missingness distinction.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "C-81-2",
+      "disposition": "Supported with limitations",
+      "rationale": "Database nutrition is expressed as a four-component per-100-g vector, matching the stored macro shape.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "C-81-3",
+      "disposition": "Supported with limitations",
+      "rationale": "This sentence introduces the following gram-scaled sum; it must be read with its display equation.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "C-81-4",
+      "disposition": "Supported with limitations",
+      "rationale": "I_m denotes included detections in the immediately preceding definition.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "C-81-5",
+      "disposition": "Supported with limitations",
+      "rationale": "m labels the current meal draft in the surrounding definition.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "C-81-6",
+      "disposition": "Supported with limitations",
+      "rationale": "mu(c) is the described class-to-database-row lookup abstraction.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "C-81-7",
+      "disposition": "Supported with limitations",
+      "rationale": "Bottom denotes unavailable nutrition lookup in the immediately preceding definition.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "C-81-8",
+      "disposition": "Supported with limitations",
+      "rationale": "K_m filters included detections to those with an available row, matching the implementation's known-item branch.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "C-81-9",
+      "disposition": "Supported with limitations",
+      "rationale": "The vector symbol refers to database per-100-g calories/protein/carbohydrate/fat values.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "C-81-10",
+      "disposition": "Supported with limitations",
+      "rationale": "w_q denotes user-estimated grams for a retained detection.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "C-82-1",
+      "disposition": "Reproduced",
+      "rationale": "totalNutrition sums grams/100 times available per-100-g macros for included items and independently flags missing included nutrition.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "C-86-1",
+      "disposition": "Supported with limitations",
+      "rationale": "The summation index is restricted to K_m, and code skips an included item's null per 100 g value.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "C-86-2",
+      "disposition": "Reproduced",
+      "rationale": "The missing-nutrition branch sets incomplete=true and continues without incrementing known nutrient values.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "C-86-3",
+      "disposition": "Reproduced",
+      "rationale": "Draft creation defaults to 100 g, and UI/storage validation restricts grams to 25..1000 in 25 g increments.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "C-86-4",
+      "disposition": "Supported with limitations",
+      "rationale": "The included flag removes items from arithmetic; the current interface does not implement relabeling.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "C-88-1",
+      "disposition": "Reproduced",
+      "rationale": "Daily summary uses saved meals filtered by localDate; a scan draft alone does not contribute.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "C-88-2",
+      "disposition": "Reproduced",
+      "rationale": "saveDraft upserts by draft ID and preserves existing savedAt/localDate on edits.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "C-88-3",
+      "disposition": "Supported with limitations",
+      "rationale": "Starting a scan creates a new draft identity, distinct from a previously saved draft.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "C-88-4",
+      "disposition": "Supported with limitations",
+      "rationale": "useJournal schedules refresh after local midnight and on focus and visibility changes.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "C-88-5",
+      "disposition": "Supported with limitations",
+      "rationale": "saveDraft retains all draft items with included flags; exclusion affects totals, not removal from stored records.",
+      "corrected_after_initial_review": true
+    },
+    {
+      "occurrence_id": "C-88-6",
+      "disposition": "Supported with limitations",
+      "rationale": "Journal serialization omits image/detector/provenance fields needed for a full scientific observation archive.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "C-88-7",
+      "disposition": "Supported with limitations",
+      "rationale": "Invalid stored formats block writes, storage exceptions are surfaced, and scanning is independent of journal persistence.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "C-91-1",
+      "disposition": "Supported with limitations",
+      "rationale": "The recommendation hook sends up to ten included detection records plus goal and normalized session-only condition.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "C-91-2",
+      "disposition": "Supported with limitations",
+      "rationale": "Prompt construction extracts display names/labels and rounded calorie estimates per 100 g, not numeric protein/carbs/fat.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "C-91-3",
+      "disposition": "Supported with limitations",
+      "rationale": "Neither recommendation payload construction nor prompt construction uses gram edits, calorie targets, daily totals or journal history.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "C-91-4",
+      "disposition": "Reproduced",
+      "rationale": "Goal rules normalize macro weights and round outputs; independent oracles verify implementation arithmetic.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "C-93-1",
+      "disposition": "Supported with limitations",
+      "rationale": "Production service selection uses AsyncGroq with the configured 20-second timeout and max_retries=0, then local fallback.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "C-93-2",
+      "disposition": "Reproduced",
+      "rationale": "Fallback templates use the first two names; non-general condition templates override goal templates and ignore numeric macros.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "C-93-3",
+      "disposition": "Supported with limitations",
+      "rationale": "Recorded fallback strings include consumption-assuming and suitability wording; structural prompt checks do not establish medical safety.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "C-95-1",
+      "disposition": "Reproduced",
+      "rationale": "The hook derives loading state immediately on key changes, aborts superseded work, and gates state updates on cancellation.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "C-95-2",
+      "disposition": "Reproduced",
+      "rationale": "Response validation requires matching health_condition; only successful state exposes recommendation content and its context label.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "C-95-3",
+      "disposition": "Supported with limitations",
+      "rationale": "The echoed response key provides transport/context consistency only.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "C-99-1",
+      "disposition": "Reproduced",
+      "rationale": "Five locally indexed source exports sum to 40797 records, with the named versions recorded in source metadata.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "C-99-2",
+      "disposition": "Supported with limitations",
+      "rationale": "Grouping records declared URLs/versions and source YAML hashes from local export metadata.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "C-99-3",
+      "disposition": "Supported with limitations",
+      "rationale": "The historical builder workflow pooled source inputs before resplitting and applied further training augmentation.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "C-99-4",
+      "disposition": "Supported with limitations",
+      "rationale": "Local augmentation/family metadata supports preexisting variants; final audit proportions differ from the declared 70/15/15 target.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "C-101-1",
+      "disposition": "Supported with limitations",
+      "rationale": "The audit implementation records byte/label hashes, dimensions, accepted classes and flags, plus EXIF-oriented RGB pixel hashes without resize.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "C-101-2",
+      "disposition": "Reproduced",
+      "rationale": "Both audit and fresh inspection retain separate byte and oriented-pixel duplicate group counters.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "C-101-3",
+      "disposition": "Supported with limitations",
+      "rationale": "Exact identity tests cannot detect all recompression, crops, rotations or other transformed relationships.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "C-103-1",
+      "disposition": "Supported with limitations",
+      "rationale": "The strict row parser checks field count, integer class index, finite coordinates and the stated center/size ranges.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "C-103-2",
+      "disposition": "Supported with limitations",
+      "rationale": "The listed checks inspect numeric syntax/ranges without determining whether a food label or object extent is correct.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "C-103-3",
+      "disposition": "Supported with limitations",
+      "rationale": "Center and positive-size range checks alone do not ensure all edges are inside the image or all objects are annotated.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "C-103-4",
+      "disposition": "Supported with limitations",
+      "rationale": "A rejected annotation row supplies no evidence that its image contains no food;47 flagged images had zero accepted instances.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "C-103-5",
+      "disposition": "Supported with limitations",
+      "rationale": "The interval is the stated inclusive range for center coordinates in the strict parser.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "C-103-6",
+      "disposition": "Supported with limitations",
+      "rationale": "The interval excludes zero for width/height while allowing one.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "C-106-1",
+      "disposition": "Supported with limitations",
+      "rationale": "Recovery verifies saved-record hashes and class ordering against current export inputs before grouping.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "C-106-2",
+      "disposition": "Supported with limitations",
+      "rationale": "Source indexing hashes bytes and extracts the prefix before the earliest Roboflow marker; source-pixel hashes are not an additional source index.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "C-106-3",
+      "disposition": "Supported with limitations",
+      "rationale": "Union-find uses byte, exported-pixel and family-key links, including source-only intermediaries.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "C-108-1",
+      "disposition": "Supported with limitations",
+      "rationale": "The grouping implementation propagates the listed unresolved/invalid/empty/conflict reasons to whole components.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "C-108-2",
+      "disposition": "Supported with limitations",
+      "rationale": "The generic byte-inequality limitation must be distinguished from this run: zero direct groups were formatting/order-only.",
+      "corrected_after_initial_review": true
+    },
+    {
+      "occurrence_id": "C-108-3",
+      "disposition": "Supported with limitations",
+      "rationale": "Recovery writes manifests/reports and assignments; it does not delete or move input images.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "C-110-1",
+      "disposition": "Supported with limitations",
+      "rationale": "The candidate assignment algorithm greedily balances eligible image and per-class image counts toward 70/15/15 ratios.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "C-110-2",
+      "disposition": "Supported with limitations",
+      "rationale": "The saved grouping configuration fixes seed 42 and uses seeded hash ordering for ties.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "C-110-3",
+      "disposition": "Reproduced",
+      "rationale": "Output validation checks that each component has one assignment and candidate split component sets are disjoint.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "C-110-4",
+      "disposition": "Supported with limitations",
+      "rationale": "The group-separation assertion verifies construction invariants, while naming heuristics retain unresolved relationships.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "C-110-5",
+      "disposition": "Supported with limitations",
+      "rationale": "A checkpoint already developed with the original export cannot gain a fresh independent test set by repartitioning those same records.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "C-113-1",
+      "disposition": "Reproduced",
+      "rationale": "The audit and new nutrition pass compare exactly these three lookup configurations over the same 72 canonical labels and frozen database.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "C-113-2",
+      "disposition": "Supported with limitations",
+      "rationale": "The reported availability denominator is the fixed canonical label count and the numerator counts returned rows.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "C-113-3",
+      "disposition": "Supported with limitations",
+      "rationale": "Lookup/reconciliation opens SQLite read-only and creates no independent nutrient-composition truth set.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "C-115-1",
+      "disposition": "Supported with limitations",
+      "rationale": "The recorded unit/contract/browser suites exercise the listed journal, arithmetic, storage, upload and request-state behaviors.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "C-115-2",
+      "disposition": "Supported with limitations",
+      "rationale": "Browser suites include desktop and 360-pixel layouts plus keyboard interaction.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "C-115-3",
+      "disposition": "Supported with limitations",
+      "rationale": "The named test suites measure implementation assertions, not user benefit, clinical quality or independent detector accuracy.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "C-119-1",
+      "disposition": "Reproduced",
+      "rationale": "The fresh census reports 48693 exported file records; duplicate and lineage evidence shows records cannot be equated with independent originals.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "C-119-2",
+      "disposition": "Supported with limitations",
+      "rationale": "The table separates image counts from accepted-instance counts and strict flagged-image counts.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "C-120-1",
+      "disposition": "Reproduced",
+      "rationale": "All three image/accepted-instance/flagged cells match the fresh audit and generated macro values.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "C-120-2",
+      "disposition": "Supported with limitations",
+      "rationale": "The caption accurately scopes the table to an archived-export census under strict checks.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "C-120-3",
+      "disposition": "Supported with limitations",
+      "rationale": "Column labels correctly distinguish records, accepted instances and flagged images.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "C-120-4",
+      "disposition": "Reproduced",
+      "rationale": "Training reports 36852 images,56287 accepted instances and 51 flagged images.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "C-120-5",
+      "disposition": "Reproduced",
+      "rationale": "Validation reports 5922 images,8805 accepted instances and 7 flagged images.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "C-120-6",
+      "disposition": "Reproduced",
+      "rationale": "Test reports 5919 images,8868 accepted instances and 7 flagged images.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "C-134-1",
+      "disposition": "Reproduced",
+      "rationale": "Fresh byte/pixel aggregation reproduces 138 crossing groups and 276 records, with pair counts 63/56/19.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "C-134-2",
+      "disposition": "Supported with limitations",
+      "rationale": "No matched clean-vs-contaminated detector experiment estimates score inflation.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "C-134-3",
+      "disposition": "Reproduced",
+      "rationale": "The strict audit and separate annotation read agree on 65 flagged images with zero-area rows.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "C-134-4",
+      "disposition": "Historical only",
+      "rationale": "Archived evaluator instances 8812/8875 exceed strict 8805/8868 by seven per split.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "C-137-1",
+      "disposition": "Reproduced",
+      "rationale": "Reproduced grouping reports 23933 export-containing components and 5548 candidate family groups spanning old splits.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "C-137-2",
+      "disposition": "Supported with limitations",
+      "rationale": "Filename and transitive links are not all visually confirmed family identities.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "C-138-1",
+      "disposition": "Reproduced",
+      "rationale": "Candidate group/image counts match saved assignments, and each eligible split contains all 72 canonical labels.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "C-138-2",
+      "disposition": "Supported with limitations",
+      "rationale": "The caption correctly distinguishes full label representation from unproved sample independence/adequacy.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "C-138-3",
+      "disposition": "Supported with limitations",
+      "rationale": "The header correctly names assignment status, component count and image-record count.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "C-138-4",
+      "disposition": "Reproduced",
+      "rationale": "Candidate training contains 10251 groups and 26384 images.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "C-138-5",
+      "disposition": "Reproduced",
+      "rationale": "Candidate validation contains 2203 groups and 5655 images.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "C-138-6",
+      "disposition": "Reproduced",
+      "rationale": "Candidate test contains 2205 groups and 5652 images.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "C-138-7",
+      "disposition": "Reproduced",
+      "rationale": "Whole-group quarantine contains 9274 groups and 11002 images.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "C-153-1",
+      "disposition": "Reproduced",
+      "rationale": "Eligible images 37691 minus within-split unique-pixel totals 37500 gives 191 excess records.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "C-153-2",
+      "disposition": "Reproduced",
+      "rationale": "The saved grouping result propagates quarantine to 11002 records at component level.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "C-153-3",
+      "disposition": "Reproduced",
+      "rationale": "Nonexclusive propagated counts 9127/1455/542/424 match the grouped report.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "C-153-4",
+      "disposition": "Supported with limitations",
+      "rationale": "A group-level reason can quarantine otherwise unflagged members, and reasons overlap.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "C-155-1",
+      "disposition": "Supported with limitations",
+      "rationale": "Recorded old grouping outputs share inventory/assignment hashes while the rerun adds input/class validation.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "C-155-2",
+      "disposition": "Supported with limitations",
+      "rationale": "Matching output hashes in the same workflow supports repeatability, not independent replication.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "C-155-3",
+      "disposition": "Awaiting qualified review/approval",
+      "rationale": "Unresolved transformed copies, family collisions and source augmentation require qualified review beyond the implemented linkage.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "C-155-4",
+      "disposition": "Supported with limitations",
+      "rationale": "Frozen run boundaries and training evidence show analysis/review only, with no new candidate-split detector training.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "C-158-1",
+      "disposition": "Reproduced",
+      "rationale": "The table's 19/72,55/72 and 72/72 availability values and 26.39/76.39/100.00 percentages match audit and reconciliation.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "C-158-2",
+      "disposition": "Supported with limitations",
+      "rationale": "The caption accurately labels measured row availability rather than matching accuracy.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "C-158-3",
+      "disposition": "Supported with limitations",
+      "rationale": "The table header describes availability counts and percentages, not accuracy metrics.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "C-158-4",
+      "disposition": "Reproduced",
+      "rationale": "Normalized exact matching returns 19 of 72 rows, rounded to 26.39 percent.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "C-158-5",
+      "disposition": "Reproduced",
+      "rationale": "Automatic lookup without precomputed entries returns 55 of 72 rows, rounded to 76.39 percent.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "C-158-6",
+      "disposition": "Reproduced",
+      "rationale": "The current mapping layer returns 72 of 72 rows, or 100 percent availability.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "C-172-1",
+      "disposition": "Reproduced",
+      "rationale": "All 72 canonical labels return rows; blank independent reference packets provide no completed judgments about their correctness.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "C-172-2",
+      "disposition": "Supported with limitations",
+      "rationale": "The legacy audit lists 21 lower/missing-score review candidates; scores are developer/heuristic metadata rather than expert validation.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "C-172-3",
+      "disposition": "Supported with limitations",
+      "rationale": "The denominator is the complete fixed 72-label vocabulary used for this census, not a sample of unseen food names.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "C-172-4",
+      "disposition": "Supported with limitations",
+      "rationale": "The recorded comparison contains exact/automatic/current matching only, without either named removal ablation.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "C-175-1",
+      "disposition": "Supported with limitations",
+      "rationale": "Recorded backend/frontend suites and corrected mocked-browser runs pass saved-only totals and response-context matching cases.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "C-175-2",
+      "disposition": "Supported with limitations",
+      "rationale": "Assertions validate intended software behavior in their fixtures, not user logging burden or recommendation quality.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "C-175-3",
+      "disposition": "Supported with limitations",
+      "rationale": "Serialized journal shape omits photos/health selections, and upload processing does not deliberately persist image data.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "C-177-1",
+      "disposition": "Supported with limitations",
+      "rationale": "InferenceRuntime uses one executor worker and a capacity limit allowing one additional pending analysis.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "C-177-2",
+      "disposition": "Supported with limitations",
+      "rationale": "Recommendation admission caps active operations at two with immediate busy rejection rather than an extra waiting queue.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "C-177-3",
+      "disposition": "Supported with limitations",
+      "rationale": "Application limits reside in per-instance state and therefore cannot be global account-spend controls.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "C-177-4",
+      "disposition": "Supported with limitations",
+      "rationale": "Readiness describes model operational state and deployment criteria are acceptance thresholds, not measured latency distributions or guarantees.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "C-180-1",
+      "disposition": "Reproduced",
+      "rationale": "Fresh inspection compares the dataset fingerprint, source-inventory hash and assignment hash to saved outputs and reports equality.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "C-180-2",
+      "disposition": "Reproduced",
+      "rationale": "Separate annotation aggregation reports 65 flags split 45 zero-width/20 zero-height;65 originals have AI visual review records.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "C-180-3",
+      "disposition": "Reproduced",
+      "rationale": "The 104 direct identical-pixel conflict groups partition into 69 same-class box differences and 35 class/instance-multiset differences.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "C-180-4",
+      "disposition": "Reproduced",
+      "rationale": "The additional edge test reports 3794 flagged rows in 3346 images at tolerance 1 e-6.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "C-180-5",
+      "disposition": "Reproduced",
+      "rationale": "Per-class group support minima are 43 training,9 validation and 11 test, independently derived from the support table.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "C-180-6",
+      "disposition": "Reproduced",
+      "rationale": "The perceptual report samples 2020 records, queues 16 cross-candidate-partition pairs, and misses each tested crop/mirror/rotation probe.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "C-180-7",
+      "disposition": "Supported with limitations",
+      "rationale": "The results explicitly leave family identities, annotations and evaluation independence unresolved.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "C-182-1",
+      "disposition": "Reproduced",
+      "rationale": "Independent XLSX/import reconciliation matches 1010 database rows and 4040 numeric fields within the stated tolerance.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "C-182-2",
+      "disposition": "Reproduced",
+      "rationale": "Recorded rational oracles report 162036 goal cases for each implementation and 2880 actual-frontend portion cases without discrepancies.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "C-182-3",
+      "disposition": "Reproduced",
+      "rationale": "Eight seeds over 181 labels in two methods produce 30 changing method/label pairs, with zero changing current-canonical pairs.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "C-182-4",
+      "disposition": "Reproduced",
+      "rationale": "Recommendation matrix totals 216, adapter cases 16, and final corrected browser matrix covers 36 goal/context combinations plus forced late responses.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "C-182-5",
+      "disposition": "Supported with limitations",
+      "rationale": "The reported observations concern source transcription and implementation, while reference forms and clinical assessments remain incomplete.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "C-182-6",
+      "disposition": "Supported with limitations",
+      "rationale": "Run environment records Windows/Python 3.12.7; production locks target Linux, and retained browser attempts record harness failures.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "C-185-1",
+      "disposition": "Supported with limitations",
+      "rationale": "Exact cross-partition overlap is directly observed, while no new clean-versus-old detector accuracy experiment is recorded.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "C-185-2",
+      "disposition": "Supported with limitations",
+      "rationale": "Exact hashes cannot recover all transforms, filename heuristics can overmerge, and broader family annotation conflicts remain unadjudicated.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "C-185-3",
+      "disposition": "Supported with limitations",
+      "rationale": "The candidate protocol enforces separation of known groups but lacks a certificate that all related photographs share those groups.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "C-185-4",
+      "disposition": "Supported with limitations",
+      "rationale": "Recorded work contains no verified-negative performance experiment, expert semantic error rate or leakage effect-size experiment.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "C-187-1",
+      "disposition": "Supported with limitations",
+      "rationale": "User portions and label-to-row lookup do not observe actual recipe ingredients, preparation or mass.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "C-187-2",
+      "disposition": "Supported with limitations",
+      "rationale": "Prompt fields are limited and fallback strings include unreviewed consumption/suitability statements.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "C-187-3",
+      "disposition": "Supported with limitations",
+      "rationale": "Context matching and repeatable arithmetic provide software correctness evidence only, not clinical personalization validity.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "C-187-4",
+      "disposition": "Supported with limitations",
+      "rationale": "The recorded validation comprises code/artifact/mock tests, not participant outcomes.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "C-189-1",
+      "disposition": "Proposed",
+      "rationale": "The sentence prescribes future review, a frozen manifest and a justified retraining or untouched-data protocol.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "C-189-2",
+      "disposition": "Proposed",
+      "rationale": "Recording model/data/environment/selection provenance is a prospective requirement for a future evaluation.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "C-189-3",
+      "disposition": "Proposed",
+      "rationale": "Matched baselines and dependency-aware uncertainty are requirements for future comparative claims.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "C-191-1",
+      "disposition": "Proposed",
+      "rationale": "The sentence sets a future frozen-output/database and qualified blinded-reference protocol.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "C-191-2",
+      "disposition": "Proposed",
+      "rationale": "Acceptable recipes, approximations and indeterminate/unsupported cases require a prespecified reference policy.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "C-191-3",
+      "disposition": "Supported with limitations",
+      "rationale": "The implemented v 2 format keeps two initial reviews and separate hash-bound adjudication, with indeterminate cases excluded from the scorable denominator.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "C-191-4",
+      "disposition": "Proposed",
+      "rationale": "The requested future report separates correct/wrong matches from correct abstention and missed supported cases.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "C-191-5",
+      "disposition": "Supported with limitations",
+      "rationale": "Current templates contain pending/blank judgments, and scorer checks can only validate form structure and stated attestations.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "C-191-6",
+      "disposition": "Awaiting qualified review/approval",
+      "rationale": "Advice appropriateness and user benefits require separate assessment and relevant institutional-review decisions.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "C-194-1",
+      "disposition": "Supported with limitations",
+      "rationale": "Current components implement detection presentation, database estimates, gram review, explicit saved history and keyed advice context.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "C-194-2",
+      "disposition": "Reproduced",
+      "rationale": "Audit reproduces 138 exact cross-partition groups and 65 flagged images; grouping records broader heuristic links and quarantine.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "C-194-3",
+      "disposition": "Reproduced",
+      "rationale": "The current mapping layer returns a row for each of 72 canonical labels, with no completed independent reference judgments.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "C-194-4",
+      "disposition": "Awaiting qualified review/approval",
+      "rationale": "Reviewed evaluation and author/rights decisions remain outstanding rather than being resolved by extra interface features.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "C-197-1",
+      "disposition": "Supported with limitations",
+      "rationale": "The accompanying journal draft contains detailed methods, runtime caveats and prospective evaluation sections.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "C-197-2",
+      "disposition": "Supported with limitations",
+      "rationale": "The checkout commit is verified locally; the exact public revision URL fetch failed with a cache miss. A failed fetch does not prove public unavailability or establish public availability.",
+      "corrected_after_initial_review": true
+    },
+    {
+      "occurrence_id": "C-197-3",
+      "disposition": "Supported with limitations",
+      "rationale": "Full manifests are local ignored artifacts, whereas the tracked paper and aggregate summaries do not include them.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "C-197-4",
+      "disposition": "Supported with limitations",
+      "rationale": "The baseline distinguishes the base commit from new working-copy validation tooling and reports.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "C-197-5",
+      "disposition": "Awaiting qualified review/approval",
+      "rationale": "Attribution alone does not constitute permission for every dataset, model or derived database artifact.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "C-201-1",
+      "disposition": "Supported with limitations",
+      "rationale": "The review workflow explicitly uses AI-assisted inspection, citation checking and editorial support.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "C-201-2",
+      "disposition": "Awaiting qualified review/approval",
+      "rationale": "The listed authorship, funding, conflicts and permission confirmations are responsibilities for the authors before submission.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "C-201-3",
+      "disposition": "Supported with limitations",
+      "rationale": "Frozen run boundaries and reports document artifact/code/mock evaluation without clinical experiments, participants or new detector training.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "C-205-1",
+      "disposition": "Historical only",
+      "rationale": "Archived notebook outputs round to validation/test mAP 50 .830/.820 and mAP 50:95 .692/.680; strict audit establishes overlap.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "C-205-2",
+      "disposition": "Historical only",
+      "rationale": "The notebook output records Ultralytics 8.4.60, Python 3.12.13, Torch 2.10.0+cu 128 and TeslaT 4.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "C-205-3",
+      "disposition": "Historical only",
+      "rationale": "Archived calls omit explicit confidence/NMS overrides and report approximately 11 ms/image GPU inference.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "C-205-4",
+      "disposition": "Historical only",
+      "rationale": "The inspected notebook outputs do not contain a hash of the evaluated checkpoint at execution time.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "C-205-5",
+      "disposition": "Historical only",
+      "rationale": "The surrounding appendix explicitly limits the archived outputs to traceability rather than clean held-out generalization.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "C-205-6",
+      "disposition": "Supported with limitations",
+      "rationale": "The journal appendix names final_version_training.ipynb and distinguishes result-merge.ipynb's older checkpoint outputs.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "C-205-7",
+      "disposition": "Historical only",
+      "rationale": "The inline subscript belongs to the historical mAP 50 metric in the enclosing sentence.",
+      "corrected_after_initial_review": false
+    },
+    {
+      "occurrence_id": "C-205-8",
+      "disposition": "Historical only",
+      "rationale": "The inline 50:95 subscript labels the historical averaged-IoU mAP metric in the enclosing sentence.",
+      "corrected_after_initial_review": false
+    }
+  ],
+  "correction_candidates": [
+    {
+      "occurrence_id": "J-69-1",
+      "required_correction": "Prefer 'is configured to serve' if this is intended as a current deployment-status claim."
+    },
+    {
+      "occurrence_id": "J-69-4",
+      "required_correction": "Use 'production checkpoint artifact' instead of 'deployed checkpoint' unless current deployment linkage is separately verified."
+    },
+    {
+      "occurrence_id": "J-130-5",
+      "required_correction": "Replace 'consumed subtotal' with 'saved known subtotal' for consistency with the paper's measurement boundary."
+    },
+    {
+      "occurrence_id": "J-132-1",
+      "required_correction": "Clarify that saved records also retain excluded items with inclusion flags."
+    },
+    {
+      "occurrence_id": "J-190-2",
+      "required_correction": "Clarify that formatting-only conflict is a generic predicate possibility, not an observed category in this run."
+    },
+    {
+      "occurrence_id": "J-207-3",
+      "required_correction": "Qualify this as the earlier availability run and distinguish the new explicit hash-seed sweep."
+    },
+    {
+      "occurrence_id": "J-331-2",
+      "required_correction": "Replace the unqualified public-availability claim with local/pinned-revision status and state that exact public access remains unverified."
+    },
+    {
+      "occurrence_id": "J-353-1",
+      "required_correction": "Describe the pinned local/source reference without asserting verified public availability; separately state the access-verification limitation."
+    },
+    {
+      "occurrence_id": "C-88-5",
+      "required_correction": "Clarify that saved draft item records include both included and excluded detections with inclusion flags; only included items contribute to totals."
+    },
+    {
+      "occurrence_id": "C-108-2",
+      "required_correction": "Clarify that formatting/order is a generic limitation of byte tests, while no formatting-only case was found in the 104 direct groups."
+    },
+    {
+      "occurrence_id": "C-197-2",
+      "required_correction": "Replace the availability assertion with a local-checkout revision/repository reference and explicitly state current public access was not verified."
+    }
+  ],
+  "errors": [],
+  "status": "pass",
+  "boundary": "AI-assisted artifact review and complete indexing are not qualified nutrition review or external submission approval."
+}

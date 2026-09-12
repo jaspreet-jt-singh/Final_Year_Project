@@ -41,6 +41,30 @@ jobs:
       - run: .venv/bin/python scripts/test_deployment.py
       - run: .venv/bin/python scripts/test_architecture.py
       - run: .venv/bin/python scripts/test_publication.py
+      - run: .venv/bin/ruff check scripts/generate_paper_evidence.py scripts/test_paper_evidence.py scripts/check_manuscripts.py scripts/test_manuscripts.py scripts/build_papers.py
+      - run: .venv/bin/python scripts/generate_paper_evidence.py --check
+      - run: .venv/bin/python scripts/test_paper_evidence.py
+      - run: .venv/bin/python scripts/check_manuscripts.py
+      - run: .venv/bin/python scripts/test_manuscripts.py
+      # Synthetic validators and sealed-report drift checks only: no private data,
+      # full dataset scans, model inference, live providers or scientific experiments.
+      - run: .venv/bin/ruff check scripts/start_validation.py scripts/run_validation_checks.py scripts/seal_validation.py scripts/validate_paper_claims.py scripts/test_validation_tools.py scripts/validate_dataset_training.py scripts/record_dataset_visual_review.py scripts/test_validate_dataset_training.py scripts/validate_nutrition_evidence.py scripts/test_validate_nutrition_evidence.py scripts/score_mapping_reference.py scripts/test_score_mapping_reference.py scripts/validate_recommendation_evidence.py scripts/test_recommendation_evidence.py
+      - run: .venv/bin/python scripts/test_validation_tools.py
+      - run: .venv/bin/python scripts/test_validate_dataset_training.py
+      - run: .venv/bin/python scripts/test_validate_nutrition_evidence.py
+      - run: .venv/bin/python scripts/test_score_mapping_reference.py
+      - run: .venv/bin/python scripts/test_recommendation_evidence.py
+      - run: .venv/bin/ruff check scripts/check_validation_numbers.py scripts/test_validation_numbers.py
+      - run: .venv/bin/python scripts/test_validation_numbers.py
+      - run: .venv/bin/python scripts/check_validation_numbers.py --check
+      - run: .venv/bin/ruff check scripts/test_claim_ledger.py
+      - run: .venv/bin/python scripts/test_claim_ledger.py
+      - run: .venv/bin/python scripts/validate_paper_claims.py --run-id validation-2026-09-12-v1 --output-name claims-final.json --check
+      - run: .venv/bin/ruff check scripts/check_claim_reviews.py scripts/test_claim_reviews.py scripts/record_claim_corrections.py scripts/record_validation_documents.py
+      - run: .venv/bin/python scripts/test_claim_reviews.py
+      - run: .venv/bin/python scripts/check_claim_reviews.py --check
+      - run: .venv/bin/python scripts/record_validation_documents.py --check
+      - run: node --import ./frontend/node_modules/tsx/dist/loader.mjs scripts/test_nutrition_oracle.mjs --self-test
       - run: .venv/bin/ruff check scripts/prepare_research_split.py scripts/verify_nutrition_provenance.py
       - run: .venv/bin/python scripts/verify_nutrition_provenance.py
       - run: npm --prefix frontend run lint

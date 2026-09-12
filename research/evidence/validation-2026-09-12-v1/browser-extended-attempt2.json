@@ -1,0 +1,875 @@
+{
+  "schema_version": 1,
+  "run_id": "validation-2026-09-12-v1",
+  "started_at_utc": "2026-09-12T05:36:24.279Z",
+  "command": [
+    "C:\\Program Files\\nodejs\\node.exe",
+    "G:\\Projects\\Final_Year_Project\\scripts\\test_validation_browser.mjs",
+    "--run-id",
+    "validation-2026-09-12-v1",
+    "--report-name",
+    "browser-extended-attempt2.json"
+  ],
+  "baseline_sha256": "f2ce75cc2424134b44022b0ee9208c59ce5c78f896fa98a6346b840f61e91397",
+  "source_commit": "0a4edfa92818945ccd7f16b023299c847c745f0d",
+  "runtime_inputs": [
+    {
+      "path": "frontend/lib/useRecommendations.ts",
+      "sha256": "37a37dd12cf31653d52dc3642059044b64a59f7d8cec6ddedd1c6cdac0fdad9f",
+      "baseline_sha256": "37a37dd12cf31653d52dc3642059044b64a59f7d8cec6ddedd1c6cdac0fdad9f",
+      "matches_baseline": true
+    },
+    {
+      "path": "frontend/lib/endpoints.ts",
+      "sha256": "64400d7020b50b96d72487f2c251f5a19c99b19a3698880a6ab75b29e4431cc2",
+      "baseline_sha256": "64400d7020b50b96d72487f2c251f5a19c99b19a3698880a6ab75b29e4431cc2",
+      "matches_baseline": true
+    },
+    {
+      "path": "frontend/lib/api.ts",
+      "sha256": "4daed552c52f57f44bb133273c6fd37303cd3ff8a8cfe6b905354842b4206062",
+      "baseline_sha256": "4daed552c52f57f44bb133273c6fd37303cd3ff8a8cfe6b905354842b4206062",
+      "matches_baseline": true
+    },
+    {
+      "path": "frontend/lib/useGoalSettings.ts",
+      "sha256": "fa6a0d54d800aef1b7d2fa5ef3dcfc1a5f83a907eeeed94d52bfcdd1e20bea39",
+      "baseline_sha256": "fa6a0d54d800aef1b7d2fa5ef3dcfc1a5f83a907eeeed94d52bfcdd1e20bea39",
+      "matches_baseline": true
+    },
+    {
+      "path": "frontend/lib/useJournal.ts",
+      "sha256": "2ec3642995dd494043d91bcb1424d76efbd4758db531431a48521dae524cee4f",
+      "baseline_sha256": "2ec3642995dd494043d91bcb1424d76efbd4758db531431a48521dae524cee4f",
+      "matches_baseline": true
+    },
+    {
+      "path": "frontend/lib/journalStorage.ts",
+      "sha256": "d1770499f1037cc17e0668c94a4ed3346f570e3caef079405cee4e96cd2132c9",
+      "baseline_sha256": "d1770499f1037cc17e0668c94a4ed3346f570e3caef079405cee4e96cd2132c9",
+      "matches_baseline": true
+    },
+    {
+      "path": "frontend/lib/meals.ts",
+      "sha256": "5395c9842f815ba5db48cd7357e9ee394b8002f39e296d160813f9f6661a48b3",
+      "baseline_sha256": "5395c9842f815ba5db48cd7357e9ee394b8002f39e296d160813f9f6661a48b3",
+      "matches_baseline": true
+    },
+    {
+      "path": "frontend/lib/generated/nutritionPolicy.ts",
+      "sha256": "1bf02e699bed4cce796d1b34f7557d65e80166592cc9798945a84b1d9870e428",
+      "baseline_sha256": "1bf02e699bed4cce796d1b34f7557d65e80166592cc9798945a84b1d9870e428",
+      "matches_baseline": true
+    },
+    {
+      "path": "frontend/components/RecommendationPanel.tsx",
+      "sha256": "7e8a2d7432671b5f9320304e282c828ff31e26f48fc7c9b48b9287fabe26a58c",
+      "baseline_sha256": "7e8a2d7432671b5f9320304e282c828ff31e26f48fc7c9b48b9287fabe26a58c",
+      "matches_baseline": true
+    },
+    {
+      "path": "frontend/components/GoalSettings.tsx",
+      "sha256": "cb6432734efd74547f75b155b96d1bcb8ce665d9dafbcf5bd186cfec41e866ad",
+      "baseline_sha256": "cb6432734efd74547f75b155b96d1bcb8ce665d9dafbcf5bd186cfec41e866ad",
+      "matches_baseline": true
+    },
+    {
+      "path": "frontend/components/MealItems.tsx",
+      "sha256": "b366cb486a67cc38ad97aa8a48adadada5d5d88ec237eee51dc675e295141232",
+      "baseline_sha256": "b366cb486a67cc38ad97aa8a48adadada5d5d88ec237eee51dc675e295141232",
+      "matches_baseline": true
+    },
+    {
+      "path": "frontend/components/DailySummary.tsx",
+      "sha256": "541b7716acabab36d8da08b9d189f9f8e4a674c38edffdce026f1ce2e1b0e22e",
+      "baseline_sha256": "541b7716acabab36d8da08b9d189f9f8e4a674c38edffdce026f1ce2e1b0e22e",
+      "matches_baseline": true
+    },
+    {
+      "path": "frontend/components/ImageUpload.tsx",
+      "sha256": "0c9f511bd933bb8fbf36f0848ccdd93b32c16c65c0dd73ec17878e580737ae7e",
+      "baseline_sha256": "0c9f511bd933bb8fbf36f0848ccdd93b32c16c65c0dd73ec17878e580737ae7e",
+      "matches_baseline": true
+    },
+    {
+      "path": "frontend/package-lock.json",
+      "sha256": "81c57cbf48762774a828fba268482447dc241413a86cfebd1d868fc2edc76f40",
+      "baseline_sha256": "81c57cbf48762774a828fba268482447dc241413a86cfebd1d868fc2edc76f40",
+      "matches_baseline": true
+    },
+    {
+      "path": "scripts/browser_support.mjs",
+      "sha256": "a247ff2709bf2e79944d4e1d6499d98606d80dfde596465a25b0344a4457e9e6",
+      "baseline_sha256": "a247ff2709bf2e79944d4e1d6499d98606d80dfde596465a25b0344a4457e9e6",
+      "matches_baseline": true
+    },
+    {
+      "path": "backend/domain/nutrition_policy.json",
+      "sha256": "1af598ce13ab2db17936ab2fbf922fa2997dd8d842e7cd7c625b718b158fe912",
+      "baseline_sha256": "1af598ce13ab2db17936ab2fbf922fa2997dd8d842e7cd7c625b718b158fe912",
+      "matches_baseline": true
+    }
+  ],
+  "validator": {
+    "path": "scripts/test_validation_browser.mjs",
+    "sha256": "7eaee2890eb27966b2a6231ea352ea9501ced6267f86db4f712be108ac27d60b"
+  },
+  "fixture_identity": {
+    "version": "synthetic-browser-v1",
+    "sha256": "3945196def521853e1c59aed990a174adb52a706a5e5757ac09f1b475217789c",
+    "fixtures": {
+      "pair": [
+        {
+          "food_label": "Synthetic_A",
+          "display_name": "Synthetic A",
+          "confidence": 0.9,
+          "bounding_box": [
+            10,
+            10,
+            80,
+            80
+          ],
+          "macros": {
+            "calories": 123,
+            "protein_g": 4,
+            "carbs_g": 20,
+            "fat_g": 3
+          },
+          "macros_unit": "per_100g",
+          "nutrition_source": "Synthetic fixture only"
+        },
+        {
+          "food_label": "Synthetic_B",
+          "display_name": "Synthetic B",
+          "confidence": 0.9,
+          "bounding_box": [
+            10,
+            10,
+            80,
+            80
+          ],
+          "macros": {
+            "calories": 123,
+            "protein_g": 4,
+            "carbs_g": 20,
+            "fat_g": 3
+          },
+          "macros_unit": "per_100g",
+          "nutrition_source": "Synthetic fixture only"
+        }
+      ],
+      "replacement": [
+        {
+          "food_label": "Synthetic_Replacement",
+          "display_name": "Synthetic Replacement",
+          "confidence": 0.9,
+          "bounding_box": [
+            10,
+            10,
+            80,
+            80
+          ],
+          "macros": {
+            "calories": 123,
+            "protein_g": 4,
+            "carbs_g": 20,
+            "fat_g": 3
+          },
+          "macros_unit": "per_100g",
+          "nutrition_source": "Synthetic fixture only"
+        }
+      ],
+      "unknown": [
+        {
+          "food_label": "Synthetic_Unknown",
+          "display_name": "Synthetic Unknown",
+          "confidence": 0.9,
+          "bounding_box": [
+            10,
+            10,
+            80,
+            80
+          ],
+          "macros": null,
+          "macros_unit": "per_100g",
+          "nutrition_source": null
+        }
+      ]
+    },
+    "description": "Invented food names/macros and canvas PNG; intercepted responses are not real inference or clinical advice.",
+    "processed_input_png_sha256": "15afd8a453765b9adf42d35ef9ecb59acb9598ca80e115db73d9344387479ea6"
+  },
+  "environment": {
+    "node": "v24.14.1",
+    "platform": "win32",
+    "architecture": "x64",
+    "playwright": "1.63.0",
+    "browser_channel": "bundled-chromium",
+    "browser": "153.0.8010.12"
+  },
+  "static_export_index_sha256": "e75f8aaa1969e90a732417be2d32aa8b90036e4ec8ed4c428000ee4184cc1ead",
+  "cases": [
+    {
+      "id": "all_36_goal_context_badges_and_sources",
+      "status": "pass",
+      "duration_seconds": 19.6987151,
+      "combinations": 36,
+      "scan_did_not_change_saved_totals": true,
+      "live_provider_calls": 0
+    },
+    {
+      "id": "context_supersession_delivered_reverse_order",
+      "status": "pass",
+      "duration_seconds": 1.1192910999999985,
+      "network_abort_deliberately_ignored": true,
+      "old_response_delivered_after_new": true
+    },
+    {
+      "id": "goal_supersession_delivered_reverse_order",
+      "status": "pass",
+      "duration_seconds": 1.182213899999999,
+      "network_abort_deliberately_ignored": true
+    },
+    {
+      "id": "included_food_supersession_delivered_reverse_order",
+      "status": "pass",
+      "duration_seconds": 1.1098790000000007,
+      "network_abort_deliberately_ignored": true
+    },
+    {
+      "id": "three_superseded_context_goal_food_responses_released_reverse_order",
+      "status": "pass",
+      "duration_seconds": 2.3376643000000006,
+      "reversed_late_responses": 3,
+      "network_abort_deliberately_ignored": true
+    },
+    {
+      "id": "all_excluded_cancels_pending_and_sends_no_empty_food_request",
+      "status": "pass",
+      "duration_seconds": 1.2601807000000007,
+      "quiet_window_ms": 650,
+      "empty_food_requests": 0
+    },
+    {
+      "id": "new_scan_supersedes_pending_old_scan_advice_and_reset_restores_focus",
+      "status": "pass",
+      "duration_seconds": 1.323077300000001,
+      "network_abort_deliberately_ignored": true,
+      "reset_restored_keyboard_focus": true
+    },
+    {
+      "id": "unknown_only_journal_reload_local_date_focus_rollover_mobile_keyboard",
+      "status": "pass",
+      "duration_seconds": 1.8077060999999994,
+      "viewport": "360x800",
+      "timezone": "Asia/Kolkata",
+      "saved_local_date_differs_from_utc": true,
+      "unknown_retained_on_reload": true,
+      "focus_rollover_preserves_history": true
+    }
+  ],
+  "matrix": [
+    {
+      "goal": "weight_loss",
+      "context": "none",
+      "adjustment_label": "General nutrition guidance",
+      "source": "fallback",
+      "status": "pass",
+      "duration_seconds": 0.4471048999999998
+    },
+    {
+      "goal": "weight_loss",
+      "context": "diabetic",
+      "adjustment_label": "Adjusted for diabetes",
+      "source": "groq",
+      "status": "pass",
+      "duration_seconds": 0.4912470000000003
+    },
+    {
+      "goal": "weight_loss",
+      "context": "hypertension",
+      "adjustment_label": "Adjusted for high blood pressure",
+      "source": "fallback",
+      "status": "pass",
+      "duration_seconds": 0.4956185999999998
+    },
+    {
+      "goal": "weight_loss",
+      "context": "heart_disease",
+      "adjustment_label": "Adjusted for heart disease",
+      "source": "groq",
+      "status": "pass",
+      "duration_seconds": 0.4942061000000003
+    },
+    {
+      "goal": "weight_loss",
+      "context": "high_cholesterol",
+      "adjustment_label": "Adjusted for high cholesterol",
+      "source": "fallback",
+      "status": "pass",
+      "duration_seconds": 0.5081891000000005
+    },
+    {
+      "goal": "weight_loss",
+      "context": "digestive_issues",
+      "adjustment_label": "Adjusted for digestive issues",
+      "source": "groq",
+      "status": "pass",
+      "duration_seconds": 0.4819153999999999
+    },
+    {
+      "goal": "weight_loss",
+      "context": "kidney_disease",
+      "adjustment_label": "Adjusted for kidney disease",
+      "source": "fallback",
+      "status": "pass",
+      "duration_seconds": 0.48801530000000004
+    },
+    {
+      "goal": "weight_loss",
+      "context": "anemia",
+      "adjustment_label": "Adjusted for anemia",
+      "source": "groq",
+      "status": "pass",
+      "duration_seconds": 0.47858380000000034
+    },
+    {
+      "goal": "weight_loss",
+      "context": "thyroid",
+      "adjustment_label": "Adjusted for thyroid disorder",
+      "source": "fallback",
+      "status": "pass",
+      "duration_seconds": 0.4987061999999996
+    },
+    {
+      "goal": "muscle_gain",
+      "context": "none",
+      "adjustment_label": "General nutrition guidance",
+      "source": "fallback",
+      "status": "pass",
+      "duration_seconds": 0.4805667999999987
+    },
+    {
+      "goal": "muscle_gain",
+      "context": "diabetic",
+      "adjustment_label": "Adjusted for diabetes",
+      "source": "groq",
+      "status": "pass",
+      "duration_seconds": 0.4743863000000001
+    },
+    {
+      "goal": "muscle_gain",
+      "context": "hypertension",
+      "adjustment_label": "Adjusted for high blood pressure",
+      "source": "fallback",
+      "status": "pass",
+      "duration_seconds": 0.48025420000000124
+    },
+    {
+      "goal": "muscle_gain",
+      "context": "heart_disease",
+      "adjustment_label": "Adjusted for heart disease",
+      "source": "groq",
+      "status": "pass",
+      "duration_seconds": 0.48513980000000084
+    },
+    {
+      "goal": "muscle_gain",
+      "context": "high_cholesterol",
+      "adjustment_label": "Adjusted for high cholesterol",
+      "source": "fallback",
+      "status": "pass",
+      "duration_seconds": 0.4866134000000002
+    },
+    {
+      "goal": "muscle_gain",
+      "context": "digestive_issues",
+      "adjustment_label": "Adjusted for digestive issues",
+      "source": "groq",
+      "status": "pass",
+      "duration_seconds": 0.487674500000001
+    },
+    {
+      "goal": "muscle_gain",
+      "context": "kidney_disease",
+      "adjustment_label": "Adjusted for kidney disease",
+      "source": "fallback",
+      "status": "pass",
+      "duration_seconds": 0.4811741999999995
+    },
+    {
+      "goal": "muscle_gain",
+      "context": "anemia",
+      "adjustment_label": "Adjusted for anemia",
+      "source": "groq",
+      "status": "pass",
+      "duration_seconds": 0.481570099999999
+    },
+    {
+      "goal": "muscle_gain",
+      "context": "thyroid",
+      "adjustment_label": "Adjusted for thyroid disorder",
+      "source": "fallback",
+      "status": "pass",
+      "duration_seconds": 0.4740702000000001
+    },
+    {
+      "goal": "maintenance",
+      "context": "none",
+      "adjustment_label": "General nutrition guidance",
+      "source": "fallback",
+      "status": "pass",
+      "duration_seconds": 0.4663626999999997
+    },
+    {
+      "goal": "maintenance",
+      "context": "diabetic",
+      "adjustment_label": "Adjusted for diabetes",
+      "source": "groq",
+      "status": "pass",
+      "duration_seconds": 0.46377200000000085
+    },
+    {
+      "goal": "maintenance",
+      "context": "hypertension",
+      "adjustment_label": "Adjusted for high blood pressure",
+      "source": "fallback",
+      "status": "pass",
+      "duration_seconds": 0.45708919999999853
+    },
+    {
+      "goal": "maintenance",
+      "context": "heart_disease",
+      "adjustment_label": "Adjusted for heart disease",
+      "source": "groq",
+      "status": "pass",
+      "duration_seconds": 0.45583439999999975
+    },
+    {
+      "goal": "maintenance",
+      "context": "high_cholesterol",
+      "adjustment_label": "Adjusted for high cholesterol",
+      "source": "fallback",
+      "status": "pass",
+      "duration_seconds": 0.4457644
+    },
+    {
+      "goal": "maintenance",
+      "context": "digestive_issues",
+      "adjustment_label": "Adjusted for digestive issues",
+      "source": "groq",
+      "status": "pass",
+      "duration_seconds": 0.45960379999999895
+    },
+    {
+      "goal": "maintenance",
+      "context": "kidney_disease",
+      "adjustment_label": "Adjusted for kidney disease",
+      "source": "fallback",
+      "status": "pass",
+      "duration_seconds": 0.45835089999999945
+    },
+    {
+      "goal": "maintenance",
+      "context": "anemia",
+      "adjustment_label": "Adjusted for anemia",
+      "source": "groq",
+      "status": "pass",
+      "duration_seconds": 0.4461731
+    },
+    {
+      "goal": "maintenance",
+      "context": "thyroid",
+      "adjustment_label": "Adjusted for thyroid disorder",
+      "source": "fallback",
+      "status": "pass",
+      "duration_seconds": 0.4595561999999991
+    },
+    {
+      "goal": "endurance",
+      "context": "none",
+      "adjustment_label": "General nutrition guidance",
+      "source": "fallback",
+      "status": "pass",
+      "duration_seconds": 0.4634373999999989
+    },
+    {
+      "goal": "endurance",
+      "context": "diabetic",
+      "adjustment_label": "Adjusted for diabetes",
+      "source": "groq",
+      "status": "pass",
+      "duration_seconds": 0.46589170000000013
+    },
+    {
+      "goal": "endurance",
+      "context": "hypertension",
+      "adjustment_label": "Adjusted for high blood pressure",
+      "source": "fallback",
+      "status": "pass",
+      "duration_seconds": 0.4621047000000035
+    },
+    {
+      "goal": "endurance",
+      "context": "heart_disease",
+      "adjustment_label": "Adjusted for heart disease",
+      "source": "groq",
+      "status": "pass",
+      "duration_seconds": 0.45813680000000023
+    },
+    {
+      "goal": "endurance",
+      "context": "high_cholesterol",
+      "adjustment_label": "Adjusted for high cholesterol",
+      "source": "fallback",
+      "status": "pass",
+      "duration_seconds": 0.4571002000000008
+    },
+    {
+      "goal": "endurance",
+      "context": "digestive_issues",
+      "adjustment_label": "Adjusted for digestive issues",
+      "source": "groq",
+      "status": "pass",
+      "duration_seconds": 0.4570290000000023
+    },
+    {
+      "goal": "endurance",
+      "context": "kidney_disease",
+      "adjustment_label": "Adjusted for kidney disease",
+      "source": "fallback",
+      "status": "pass",
+      "duration_seconds": 0.4752128999999986
+    },
+    {
+      "goal": "endurance",
+      "context": "anemia",
+      "adjustment_label": "Adjusted for anemia",
+      "source": "groq",
+      "status": "pass",
+      "duration_seconds": 0.4772295000000013
+    },
+    {
+      "goal": "endurance",
+      "context": "thyroid",
+      "adjustment_label": "Adjusted for thyroid disorder",
+      "source": "fallback",
+      "status": "pass",
+      "duration_seconds": 0.475244999999999
+    }
+  ],
+  "page_errors": [],
+  "unexpected_network": [
+    {
+      "origin": "http://127.0.0.1:4173",
+      "path": "/api/user/goals",
+      "reason": "unmocked_api"
+    },
+    {
+      "origin": "http://127.0.0.1:4173",
+      "path": "/api/user/health-conditions",
+      "reason": "unmocked_api"
+    },
+    {
+      "origin": "http://127.0.0.1:4173",
+      "path": "/api/user/calculate-macros",
+      "reason": "unmocked_api"
+    },
+    {
+      "origin": "http://127.0.0.1:4173",
+      "path": "/api/user/calculate-macros",
+      "reason": "unmocked_api"
+    },
+    {
+      "origin": "http://127.0.0.1:4173",
+      "path": "/api/user/calculate-macros",
+      "reason": "unmocked_api"
+    },
+    {
+      "origin": "http://127.0.0.1:4173",
+      "path": "/api/user/calculate-macros",
+      "reason": "unmocked_api"
+    },
+    {
+      "origin": "http://127.0.0.1:4173",
+      "path": "/api/user/calculate-macros",
+      "reason": "unmocked_api"
+    },
+    {
+      "origin": "http://127.0.0.1:4173",
+      "path": "/api/user/calculate-macros",
+      "reason": "unmocked_api"
+    },
+    {
+      "origin": "http://127.0.0.1:4173",
+      "path": "/api/user/calculate-macros",
+      "reason": "unmocked_api"
+    },
+    {
+      "origin": "http://127.0.0.1:4173",
+      "path": "/api/user/calculate-macros",
+      "reason": "unmocked_api"
+    },
+    {
+      "origin": "http://127.0.0.1:4173",
+      "path": "/api/user/calculate-macros",
+      "reason": "unmocked_api"
+    },
+    {
+      "origin": "http://127.0.0.1:4173",
+      "path": "/api/user/calculate-macros",
+      "reason": "unmocked_api"
+    },
+    {
+      "origin": "http://127.0.0.1:4173",
+      "path": "/api/user/calculate-macros",
+      "reason": "unmocked_api"
+    },
+    {
+      "origin": "http://127.0.0.1:4173",
+      "path": "/api/user/calculate-macros",
+      "reason": "unmocked_api"
+    },
+    {
+      "origin": "http://127.0.0.1:4173",
+      "path": "/api/user/calculate-macros",
+      "reason": "unmocked_api"
+    },
+    {
+      "origin": "http://127.0.0.1:4173",
+      "path": "/api/user/calculate-macros",
+      "reason": "unmocked_api"
+    },
+    {
+      "origin": "http://127.0.0.1:4173",
+      "path": "/api/user/calculate-macros",
+      "reason": "unmocked_api"
+    },
+    {
+      "origin": "http://127.0.0.1:4173",
+      "path": "/api/user/calculate-macros",
+      "reason": "unmocked_api"
+    },
+    {
+      "origin": "http://127.0.0.1:4173",
+      "path": "/api/user/calculate-macros",
+      "reason": "unmocked_api"
+    },
+    {
+      "origin": "http://127.0.0.1:4173",
+      "path": "/api/user/calculate-macros",
+      "reason": "unmocked_api"
+    },
+    {
+      "origin": "http://127.0.0.1:4173",
+      "path": "/api/user/calculate-macros",
+      "reason": "unmocked_api"
+    },
+    {
+      "origin": "http://127.0.0.1:4173",
+      "path": "/api/user/calculate-macros",
+      "reason": "unmocked_api"
+    },
+    {
+      "origin": "http://127.0.0.1:4173",
+      "path": "/api/user/calculate-macros",
+      "reason": "unmocked_api"
+    },
+    {
+      "origin": "http://127.0.0.1:4173",
+      "path": "/api/user/calculate-macros",
+      "reason": "unmocked_api"
+    },
+    {
+      "origin": "http://127.0.0.1:4173",
+      "path": "/api/user/calculate-macros",
+      "reason": "unmocked_api"
+    },
+    {
+      "origin": "http://127.0.0.1:4173",
+      "path": "/api/user/calculate-macros",
+      "reason": "unmocked_api"
+    },
+    {
+      "origin": "http://127.0.0.1:4173",
+      "path": "/api/user/calculate-macros",
+      "reason": "unmocked_api"
+    },
+    {
+      "origin": "http://127.0.0.1:4173",
+      "path": "/api/user/calculate-macros",
+      "reason": "unmocked_api"
+    },
+    {
+      "origin": "http://127.0.0.1:4173",
+      "path": "/api/user/calculate-macros",
+      "reason": "unmocked_api"
+    },
+    {
+      "origin": "http://127.0.0.1:4173",
+      "path": "/api/user/calculate-macros",
+      "reason": "unmocked_api"
+    },
+    {
+      "origin": "http://127.0.0.1:4173",
+      "path": "/api/user/calculate-macros",
+      "reason": "unmocked_api"
+    },
+    {
+      "origin": "http://127.0.0.1:4173",
+      "path": "/api/user/calculate-macros",
+      "reason": "unmocked_api"
+    },
+    {
+      "origin": "http://127.0.0.1:4173",
+      "path": "/api/user/calculate-macros",
+      "reason": "unmocked_api"
+    },
+    {
+      "origin": "http://127.0.0.1:4173",
+      "path": "/api/user/calculate-macros",
+      "reason": "unmocked_api"
+    },
+    {
+      "origin": "http://127.0.0.1:4173",
+      "path": "/api/user/calculate-macros",
+      "reason": "unmocked_api"
+    },
+    {
+      "origin": "http://127.0.0.1:4173",
+      "path": "/api/user/calculate-macros",
+      "reason": "unmocked_api"
+    },
+    {
+      "origin": "http://127.0.0.1:4173",
+      "path": "/api/user/calculate-macros",
+      "reason": "unmocked_api"
+    },
+    {
+      "origin": "http://127.0.0.1:4173",
+      "path": "/api/user/calculate-macros",
+      "reason": "unmocked_api"
+    },
+    {
+      "origin": "http://127.0.0.1:4173",
+      "path": "/api/user/calculate-macros",
+      "reason": "unmocked_api"
+    },
+    {
+      "origin": "http://127.0.0.1:4173",
+      "path": "/api/user/goals",
+      "reason": "unmocked_api"
+    },
+    {
+      "origin": "http://127.0.0.1:4173",
+      "path": "/api/user/health-conditions",
+      "reason": "unmocked_api"
+    },
+    {
+      "origin": "http://127.0.0.1:4173",
+      "path": "/api/user/calculate-macros",
+      "reason": "unmocked_api"
+    },
+    {
+      "origin": "http://127.0.0.1:4173",
+      "path": "/api/user/calculate-macros",
+      "reason": "unmocked_api"
+    },
+    {
+      "origin": "http://127.0.0.1:4173",
+      "path": "/api/user/calculate-macros",
+      "reason": "unmocked_api"
+    },
+    {
+      "origin": "http://127.0.0.1:4173",
+      "path": "/api/user/calculate-macros",
+      "reason": "unmocked_api"
+    },
+    {
+      "origin": "http://127.0.0.1:4173",
+      "path": "/api/user/calculate-macros",
+      "reason": "unmocked_api"
+    },
+    {
+      "origin": "http://127.0.0.1:4173",
+      "path": "/api/user/calculate-macros",
+      "reason": "unmocked_api"
+    },
+    {
+      "origin": "http://127.0.0.1:4173",
+      "path": "/api/user/calculate-macros",
+      "reason": "unmocked_api"
+    },
+    {
+      "origin": "http://127.0.0.1:4173",
+      "path": "/api/user/calculate-macros",
+      "reason": "unmocked_api"
+    },
+    {
+      "origin": "http://127.0.0.1:4173",
+      "path": "/api/user/calculate-macros",
+      "reason": "unmocked_api"
+    },
+    {
+      "origin": "http://127.0.0.1:4173",
+      "path": "/api/user/goals",
+      "reason": "unmocked_api"
+    },
+    {
+      "origin": "http://127.0.0.1:4173",
+      "path": "/api/user/health-conditions",
+      "reason": "unmocked_api"
+    },
+    {
+      "origin": "http://127.0.0.1:4173",
+      "path": "/api/user/calculate-macros",
+      "reason": "unmocked_api"
+    },
+    {
+      "origin": "http://127.0.0.1:4173",
+      "path": "/api/user/goals",
+      "reason": "unmocked_api"
+    },
+    {
+      "origin": "http://127.0.0.1:4173",
+      "path": "/api/user/health-conditions",
+      "reason": "unmocked_api"
+    }
+  ],
+  "boundaries": {
+    "live_provider_calls": 0,
+    "live_inference_calls": 0,
+    "external_network_allowed": false,
+    "clinical_validity_established": false,
+    "production_deployment_validated": false
+  },
+  "retained_regressions": [
+    {
+      "script": "scripts/test_journal_browser.mjs",
+      "coverage": "Midnight timer, corrupt/unsupported/blocked/quota storage, portion edits, deletion/undo, clearing, keyboard upload, scan/save separation.",
+      "sha256": "f3bcea8e562d7bf9e0330f68b06ddeb86ec18e03eb33bb36c3752dfc8a15603e",
+      "executed_by_this_script": false
+    },
+    {
+      "script": "scripts/test_frontend.mjs",
+      "coverage": "Upload preparation/orientation, boxes, empty/invalid responses, request timeout/rate errors.",
+      "sha256": "fdaf92a57189f54cb21d6253812c3681d596f2c22c39088c0f5908039b7735f0",
+      "executed_by_this_script": false
+    },
+    {
+      "script": "scripts/test_health_browser.mjs",
+      "coverage": "Missing/mismatched context, explicit retry, fallback labels, portion-only non-refetch and standard abort race.",
+      "sha256": "2d4176d461826d99d82847770e0bd14bf721066eed2e59474cb48d0b8d380606",
+      "executed_by_this_script": false
+    }
+  ],
+  "status": "fail",
+  "failure": "Expected values to be strictly deep-equal:\n+ actual - expected\n\n+ [\n+   {\n+     origin: 'http://127.0.0.1:4173',\n+     path: '/api/user/goals',\n+     reason: 'unmocked_api'\n+   },\n+   {\n+     origin: 'http://127.0.0.1:4173',\n+     path: '/api/user/health-conditions',\n+     reason: 'unmocked_api'\n+   },\n+   {\n+     origin: 'http://127.0.0.1:4173',\n+     path: '/api/user/calculate-macros',\n+     reason: 'unmocked_api'\n+   },\n+   {\n+     origin: 'http://127.0.0.1:4173',\n+     path: '/api/user/calculate-macros',\n+     reason: 'unmocked_api'\n+   },\n+   {\n+     origin: 'http://127.0.0.1:4173',\n+     path: '/api/user/calculate-macros',\n+     reason: 'unmocked_api'\n+   },\n+   {\n+     origin: 'http://127.0.0.1:4173',\n+     path: '/api/user/calculate-macros',\n+     reason: 'unmocked_api'\n+   },\n+   {\n+     origin: 'http://127.0.0.1:4173',\n+     path: '/api/user/calculate-macros',\n+     reason: 'unmocked_api'\n+   },\n+   {\n+     origin: 'http://127.0.0.1:4173',\n+     path: '/api/user/calculate-macros',\n+     reason: 'unmocked_api'\n+   },\n+   {\n+     origin: 'http://127.0.0.1:4173',\n+     path: '/api/user/calculate-macros',\n+     reason: 'unmocked_api'\n+   },\n+   {\n+     origin: 'http://127.0.0.1:4173',\n+     path: '/api/user/calculate-macros',\n+     reason: 'unmocked_api'\n+   },\n+   {\n+     origin: 'http://127.0.0.1:4173',\n+     path: '/api/user/calculate-macros',\n+     reason: 'unmocked_api'\n+   },\n+   {\n+     origin: 'http://127.0.0.1:4173',\n+     path: '/api/user/calculate-macros',\n+     reason: 'unmocked_api'\n+   },\n+   {\n+     origin: 'http://127.0.0.1:4173',\n+     path: '/api/user/calculate-macros',\n+     reason: 'unmocked_api'\n+   },\n+   {\n+     origin: 'http://127.0.0.1:4173',\n+     path: '/api/user/calculate-macros',\n+     reason: 'unmocked_api'\n+   },\n+   {\n+     origin: 'http://127.0.0.1:4173',\n+     path: '/api/user/calculate-macros',\n+     reason: 'unmocked_api'\n+   },\n+   {\n+     origin: 'http://127.0.0.1:4173',\n+     path: '/api/user/calculate-macros',\n+     reason: 'unmocked_api'\n+   },\n+   {\n+     origin: 'http://127.0.0.1:4173',\n+     path: '/api/user/calculate-macros',\n+     reason: 'unmocked_api'\n+   },\n+   {\n+     origin: 'http://127.0.0.1:4173',\n+     path: '/api/user/calculate-macros',\n+     reason: 'unmocked_api'\n+   },\n+   {\n+     origin: 'http://127.0.0.1:4173',\n+     path: '/api/user/calculate-macros',\n+     reason: 'unmocked_api'\n+   },\n+   {\n+     origin: 'http://127.0.0.1:4173',\n+     path: '/api/user/calculate-macros',\n+     reason: 'unmocked_api'\n+   },\n+   {\n+     origin: 'http://127.0.0.1:4173',\n+     path: '/api/user/calculate-macros',\n+     reason: 'unmocked_api'\n+   },\n+   {\n+     origin: 'http://127.0.0.1:4173',\n+     path: '/api/user/calculate-macros',\n+     reason: 'unmocked_api'\n+   },\n+   {\n+     origin: 'http://127.0.0.1:4173',\n+     path: '/api/user/calculate-macros',\n+     reason: 'unmocked_api'\n+   },\n+   {\n+     origin: 'http://127.0.0.1:4173',\n+     path: '/api/user/calculate-macros',\n+     reason: 'unmocked_api'\n+   },\n+   {\n+     origin: 'http://127.0.0.1:4173',\n+     path: '/api/user/calculate-macros',\n+     reason: 'unmocked_api'\n+   },\n+   {\n+     origin: 'http://127.0.0.1:4173',\n+     path: '/api/user/calculate-macros',\n+     reason: 'unmocked_api'\n+   },\n+   {\n+     origin: 'http://127.0.0.1:4173',\n+     path: '/api/user/calculate-macros',\n+     reason: 'unmocked_api'\n+   },\n+   {\n+     origin: 'http://127.0.0.1:4173',\n+     path: '/api/user/calculate-macros',\n+     reason: 'unmocked_api'\n+   },\n+   {\n+     origin: 'http://127.0.0.1:4173',\n+     path: '/api/user/calculate-macros',\n+     reason: 'unmocked_api'\n+   },\n+   {\n+     origin: 'http://127.0.0.1:4173',\n+     path: '/api/user/calculate-macros',\n+     reason: 'unmocked_api'\n+   },\n+   {\n+     origin: 'http://127.0.0.1:4173',\n+     path: '/api/user/calculate-macros',\n+     reason: 'unmocked_api'\n+   },\n+   {\n+     origin: 'http://127.0.0.1:4173',\n+     path: '/api/user/calculate-macros',\n+     reason: 'unmocked_api'\n+   },\n+   {\n+     origin: 'http://127.0.0.1:4173',\n+     path: '/api/user/calculate-macros',\n+     reason: 'unmocked_api'\n+   },\n+   {\n+     origin: 'http://127.0.0.1:4173',\n+     path: '/api/user/calculate-macros',\n+     reason: 'unmocked_api'\n+   },\n+   {\n+     origin: 'http://127.0.0.1:4173',\n+     path: '/api/user/calculate-macros',\n+     reason: 'unmocked_api'\n+   },\n+   {\n+     origin: 'http://127.0.0.1:4173',\n+     path: '/api/user/calculate-macros',\n+     reason: 'unmocked_api'\n+   },\n+   {\n+     origin: 'http://127.0.0.1:4173',\n+     path: '/api/user/calculate-macros',\n+     reason: 'unmocked_api'\n+   },\n+   {\n+     origin: 'http://127.0.0.1:4173',\n+     path: '/api/user/calculate-macros',\n+     reason: 'unmocked_api'\n+   },\n+   {\n+     origin: 'http://127.0.0.1:4173',\n+     path: '/api/user/calculate-macros',\n+     reason: 'unmocked_api'\n+   },\n+   {\n+     origin: 'http://127.0.0.1:4173',\n+     path: '/api/user/goals',\n+     reason: 'unmocked_api'\n+   },\n+   {\n+     origin: 'http://127.0.0.1:4173',\n+     path: '/api/user/health-conditions',\n+     reason: 'unmocked_api'\n+   },\n+   {\n+     origin: 'http://127.0.0.1:4173',\n+     path: '/api/user/calculate-macros',\n+     reason: 'unmocked_api'\n+   },\n+   {\n+     origin: 'http://127.0.0.1:4173',\n+     path: '/api/user/calculate-macros',\n+     reason: 'unmocked_api'\n+   },\n+   {\n+     origin: 'http://127.0.0.1:4173',\n+     path: '/api/user/calculate-macros',\n+     reason: 'unmocked_api'\n+   },\n+   {\n+     origin: 'http://127.0.0.1:4173',\n+     path: '/api/user/calculate-macros',\n+     reason: 'unmocked_api'\n+   },\n+   {\n+     origin: 'http://127.0.0.1:4173',\n+     path: '/api/user/calculate-macros',\n+     reason: 'unmocked_api'\n+   },\n+   {\n+     origin: 'http://127.0.0.1:4173',\n+     path: '/api/user/calculate-macros',\n+     reason: 'unmocked_api'\n+   },\n+   {\n+     origin: 'http://127.0.0.1:4173',\n+     path: '/api/user/calculate-macros',\n+     reason: 'unmocked_api'\n+   },\n+   {\n+     origin: 'http://127.0.0.1:4173',\n+     path: '/api/user/calculate-macros',\n+     reason: 'unmocked_api'\n+   },\n+   {\n+     origin: 'http://127.0.0.1:4173',\n+     path: '/api/user/calculate-macros',\n+     reason: 'unmocked_api'\n+   },\n+   {\n+     origin: 'http://127.0.0.1:4173',\n+     path: '/api/user/goals',\n+     reason: 'unmocked_api'\n+   },\n+   {\n+     origin: 'http://127.0.0.1:4173',\n+     path: '/api/user/health-conditions',\n+     reason: 'unmocked_api'\n+   },\n+   {\n+     origin: 'http://127.0.0.1:4173',\n+     path: '/api/user/calculate-macros',\n+     reason: 'unmocked_api'\n+   },\n+   {\n+     origin: 'http://127.0.0.1:4173',\n+     path: '/api/user/goals',\n+     reason: 'unmocked_api'\n+   },\n+   {\n+     origin: 'http://127.0.0.1:4173',\n+     path: '/api/user/health-conditions',\n+     reason: 'unmocked_api'\n+   }\n+ ]\n- []\n",
+  "completed_at_utc": "2026-09-12T05:36:57.615Z",
+  "duration_seconds": 33.3360317,
+  "summary": {
+    "passed": 8,
+    "failed": 0,
+    "goal_context_combinations": 36
+  }
+}
