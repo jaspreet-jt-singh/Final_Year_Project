@@ -7,6 +7,7 @@ Scan a food photo, review estimated portions, and explicitly save a meal to your
 ## What is implemented
 
 - CPU YOLO detection with unchanged production checkpoint, confidence settings and class mappings.
+- A searchable, static list of the model's 72 supported food categories before upload, with recognition-limit and empty-result guidance.
 - User-estimated portions (25–1,000 g), exclusions, saved-only daily totals, editing and deletion/undo.
 - Version-1 local journal with validation, unavailable-storage handling and local-day rollover.
 - Async Groq recommendations with timeout, bounded concurrency and local fallback; context-matching diabetes/BP labels.
@@ -36,6 +37,8 @@ In another terminal, run `npm --prefix frontend run dev`. Local frontend request
 ```sh
 uv pip install -r scripts/requirements-dev.txt
 uv run python scripts/generate_contracts.py --check
+uv run python scripts/generate_supported_foods.py --check
+uv run python scripts/test_supported_foods.py
 uv run python scripts/test_deployment.py
 uv run python scripts/test_architecture.py
 uv run python scripts/test_publication.py
@@ -48,6 +51,10 @@ npm --prefix frontend run test:browser
 ```
 
 CI never needs provider credentials or live AI calls. It includes synthetic source-grouping tests and an offline check of the pinned INDB workbook. The full research audit and candidate split preparation are separate from CI because source images are not in the runtime release.
+
+The recognition catalog is generated from the ordered labels in `data/food_dataset/data.yaml`, not nutrition-database entries or aliases. After an approved class-vocabulary change, run `python scripts/generate_supported_foods.py` and commit the generated frontend catalog. The `--check` command detects drift without writing or loading the model. Browsing/searching the list makes no API requests. Supported categories do not guarantee recognition or coverage of every recipe variation. Browser checks include desktop/360 px layouts, keyboard search, and preserving the uploaded preview while browsing.
+
+Browser meal history and preferences belong to the website address where they were saved. If a new address is introduced, records do not automatically transfer; keep using the original address to access its existing journal. No cross-domain migration or automatic redirect is provided.
 
 For research preparation, run `python scripts/audit_publication.py`, then `python scripts/prepare_research_split.py --output .deployment/research/my-reviewed-candidate`. The second command verifies the audited files, groups known source families and quarantines unresolved records in a new manifest; it never rewrites the dataset or trains a model. See the limitations before using it for experiments. Verify the original workbook with `python scripts/verify_nutrition_provenance.py --online`.
 

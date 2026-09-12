@@ -47,12 +47,15 @@ try {
   assert.deepEqual(size, [1600, 1067])
   assert(uploadedBytes < 4.5 * 1000000)
   assert.equal(await page.locator('.pointer-events-none').first().evaluate(el => el.style.left), '10%')
-  for (const [name, message] of [['limited', 'Too many requests. Please wait a minute and try again.'], ['invalid', 'Invalid image from server'], ['busy', 'Analyzer is busy. Please retry shortly.'], ['none', 'No food detected in this image.']]) {
+  for (const [name, message] of [['limited', 'Too many requests. Please wait a minute and try again.'], ['invalid', 'Invalid image from server'], ['busy', 'Analyzer is busy. Please retry shortly.'], ['none', 'No supported food was detected in this photo.']]) {
     scenario = name
     await page.getByRole('button', { name: 'Choose another image' }).click()
     await upload()
     await page.getByText(message, { exact: true }).waitFor()
-    if (name !== 'none') assert.equal(await page.getByText('No food detected in this image.', { exact: true }).count(), 0)
+    if (name !== 'none') {
+      assert.equal(await page.getByText('No supported food was detected in this photo.', { exact: true }).count(), 0)
+      assert.equal(await page.getByRole('button', { name: 'View supported foods', exact: true }).count(), 0)
+    }
   }
   await page.getByRole('button', { name: 'Choose another image' }).click()
   await page.locator('input[type=file]').setInputFiles({ name: 'too-large.jpg', mimeType: 'image/jpeg', buffer: Buffer.alloc(26 * 1024 * 1024) })

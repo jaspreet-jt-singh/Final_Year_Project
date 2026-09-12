@@ -18,7 +18,7 @@ const server = createServer(async (request, response) => {
 })
 await new Promise((resolve, reject) => { server.once('error', reject); server.listen(4173, '127.0.0.1', resolve) })
 try {
-  for (const name of ['test_frontend.mjs', 'test_journal_browser.mjs', 'test_health_browser.mjs']) {
+  for (const name of ['test_frontend.mjs', 'test_supported_foods_browser.mjs', 'test_journal_browser.mjs', 'test_health_browser.mjs']) {
     await new Promise((resolve, reject) => {
       const child = spawn(process.execPath, [path.join(root, 'scripts', name)], { cwd: root, stdio: 'inherit' })
       child.on('error', reject)

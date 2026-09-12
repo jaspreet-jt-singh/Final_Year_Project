@@ -5,8 +5,8 @@ import { Inter } from 'next/font/google'
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
-  title: 'AI Based Food Recognition with Nutrition Aware Recommendations',
-  description: 'Scan your food, review portion estimates, and keep a private daily meal journal with nutrition-aware recommendations.',
+  title: 'AI Food Recognition | Nutrition-Aware Recommendations',
+  description: 'Recognize supported foods from a photo, explore nutrition estimates and general recommendations, then optionally save meals in a private browser journal.',
 }
 
 export default function RootLayout({

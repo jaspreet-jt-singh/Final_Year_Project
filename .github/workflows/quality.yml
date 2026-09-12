@@ -38,6 +38,9 @@ jobs:
       - run: npm ci --prefix frontend
       - run: .venv/bin/ruff check backend
       - run: .venv/bin/python scripts/generate_contracts.py --check
+      - run: .venv/bin/python scripts/generate_supported_foods.py --check
+      - run: .venv/bin/python scripts/test_supported_foods.py
+      - run: .venv/bin/ruff check scripts/generate_supported_foods.py scripts/test_supported_foods.py
       - run: .venv/bin/python scripts/test_deployment.py
       - run: .venv/bin/python scripts/test_architecture.py
       - run: .venv/bin/python scripts/test_publication.py
