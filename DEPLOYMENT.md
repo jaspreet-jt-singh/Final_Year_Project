@@ -45,8 +45,8 @@ node --test scripts/test_meals.mjs
 The last command prints a small `.deployment/release-*` directory and creates
 or fast-forwards the local `vercel-live` branch. It does not switch branches,
 modify the research index, push, or copy `.env`. `release-manifest.json` records
-the source commit and exact SHA-256 digest of every deployed file, including
-any implementation edits not yet committed to the source branch.
+the clean source commit and exact SHA-256 digest of every deployed file.
+Uncommitted implementation edits must be committed before release generation.
 
 Connect `vercel-live` from the existing GitHub repository and choose it as the
 production branch. For the initial release, deploy the printed directory with
@@ -145,6 +145,23 @@ tests pass. Operational logs contain allowlisted event metadata and generated
 request IDs, not request bodies, health selections, prompts, or API keys.
 
 ## Publication-readiness release
+
+The supported-food catalog is a required tracked frontend release asset. Run `python scripts/generate_supported_foods.py --check` before release; the generator and dataset YAML/images are not included in runtime packaging. When the checkpoint or vocabulary changes, also verify their ordered class names in the local inference environment before publishing:
+
+```python
+from pathlib import Path
+import hashlib
+import yaml
+from ultralytics import YOLO
+
+checkpoint = Path("results_after_discontinuation/yolo11s_indian_food_best.pt")
+expected = yaml.safe_load(Path("data/food_dataset/data.yaml").read_text())["names"]
+names = YOLO(str(checkpoint)).names
+assert [names[index] for index in range(len(names))] == expected
+print(len(names), hashlib.sha256(checkpoint.read_bytes()).hexdigest())
+```
+
+This metadata-only local verification passed for all 72 labels on 2026-09-12, checkpoint SHA-256 `935a1b34365bb949b75a7256facbc0ffa81629dd96ee1d0ac40260a4715a0827`. It does not measure detection accuracy. CI checks catalog generation without loading Torch or calling providers.
 
 Release generation now refuses a dirty source tree and only includes tracked allowlisted files. Commit the source changes, wait for that exact commit's GitHub quality checks, prepare the release, and verify its deployment before publishing. The manifest identifies the clean source commit and hashes of included files. Preserve the previous production deployment for rollback.
 

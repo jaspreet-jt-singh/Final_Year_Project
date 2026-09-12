@@ -50,6 +50,9 @@
   .upload-icon { @apply flex justify-center items-center w-16 h-16 rounded-2xl mx-auto mb-5; color: #a63c17; background: #f0e4d6; }
   .notice { @apply text-sm leading-relaxed p-4 rounded-xl; background: #fff0d9; color: #794017; border: 1px solid #eccda5; overflow-wrap: anywhere; }
   .scan-status { @apply text-sm mt-4 font-medium; color: #426440; }
+  .supported-foods { @apply rounded-2xl p-4; background: #faf6ef; border: 1px solid #e5dacc; }
+  .supported-food-list { @apply grid gap-2 text-sm max-h-72 overflow-y-auto p-1; grid-template-columns: repeat(auto-fit, minmax(min(100%, 140px), 1fr)); }
+  .supported-food-list li { @apply rounded-lg px-3 py-2; background: #fffefa; overflow-wrap: anywhere; }
   .daily-summary { background: #f1eddf; border-color: #dfd7c2; }
   .daily-number { @apply text-5xl font-semibold tracking-tighter; }
   .daily-number span { @apply text-sm ml-2 font-normal tracking-normal; }

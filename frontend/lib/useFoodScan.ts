@@ -33,7 +33,7 @@ export function useFoodScan() {
       if (result.detections.length) {
         setDraft(createDraft(result, crypto.randomUUID()))
         setStatus(`Detected ${result.detections.length} Food Item${result.detections.length === 1 ? '' : 's'}. Review portions before saving.`)
-      } else setStatus('No food detected in this image.')
+      } else setStatus('No supported food was detected in this photo.')
     } catch (err) {
       if (!controller.signal.aborted) setError(err instanceof ApiError ? err.message : 'Could not analyze your photo. Please retry.')
     } finally { running.current = false; if (!controller.signal.aborted) setBusy(false) }

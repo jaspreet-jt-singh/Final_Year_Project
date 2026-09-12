@@ -1,7 +1,9 @@
 'use client'
 
 import { ArrowRight, Leaf, Utensils } from 'lucide-react'
+import { useRef } from 'react'
 import ImageUpload from '@/components/ImageUpload'
+import SupportedFoods, { type SupportedFoodsHandle } from '@/components/SupportedFoods'
 import ResultsPanel from '@/components/ResultsPanel'
 import MealHistory from '@/components/MealHistory'
 import DailySummary from '@/components/DailySummary'
@@ -11,6 +13,7 @@ import { useGoalSettings } from '@/lib/useGoalSettings'
 import { useMealJournal } from '@/lib/useMealJournal'
 
 export default function Home() {
+  const supportedFoods = useRef<SupportedFoodsHandle>(null)
   const scan = useFoodScan()
   const { analysis, draft, setDraft, imageUrl, file, busy, error, status, setStatus, analyzeFood, reset } = scan
   const meals = useMealJournal(draft, setDraft, setStatus)
@@ -28,9 +31,15 @@ export default function Home() {
     <div className="dashboard-grid">
       <div className="min-w-0 space-y-7">
         <section id="scan" className="panel" aria-labelledby="scan-heading"><div className="section-heading"><div><p className="eyebrow">01 / Start with a photo</p><h2 id="scan-heading">Let’s see your meal.</h2></div><span className="pill">Food scanner</span></div>
+          <SupportedFoods ref={supportedFoods} />
           <ImageUpload onImageSelect={analyzeFood} isAnalyzing={busy} previewUrl={imageUrl} onReset={reset} />
           {error && <div className="notice mt-4"><p role="alert">{error}</p>{file && <button className="btn-secondary mt-3" disabled={busy} onClick={() => void analyzeFood(file)}>Retry analysis</button>}</div>}
-          {analysis && !analysis.detections.length && <p className="notice mt-4">Try a clearer photo with good lighting and the food centered.</p>}
+          {analysis && !analysis.detections.length && <div className="notice mt-4">
+            <p>The food may be outside the supported categories, or the photo may be difficult to recognize.</p>
+            <p className="mt-2">For a listed food, try a clear, well-lit photo with the food centered.</p>
+            <button type="button" className="text-button mt-2" onClick={() => supportedFoods.current?.openAndFocus()}>View supported foods</button>
+          </div>}
+          {!!analysis?.detections.length && <p className="muted text-sm mt-4">Other foods in the photo may not have been recognized.</p>}
           <p role="status" aria-live="polite" className={status ? 'scan-status' : 'sr-only'}>{status}</p>
           <p className="muted text-xs mt-4">Your photo is processed for analysis, never saved in your meal journal.</p>
         </section>
