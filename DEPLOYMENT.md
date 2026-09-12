@@ -5,6 +5,21 @@ the native Python runtime. No container registry or paid storage is used.
 Large Python functions are a beta feature; a successful Linux preview is a
 release requirement, not something the local Windows checks establish.
 
+## Verified release — 13 September 2026
+
+- Public URL: https://ai-food-recognition.vercel.app. Displayed name: **AI Food Recognition**; browser title: **AI Food Recognition | Nutrition-Aware Recommendations**.
+- Existing URL retained without redirect: https://food-recognition-nutrition.vercel.app. Journals/preferences remain specific to each browser origin; no automatic migration is provided.
+- Source commit: `88d7c88463c0aa442a81055850bc957cfce3bef3`; release branch commit: `02fb06cecf310f8cd7ce4b25482902b0410d19fd`.
+- Promoted deployment: `dpl_ECEHZoTtkgPFG5u7k8jTw7YFeK2a`, built from the clean allowlisted release. Both public domains were read back pointing to this deployment.
+- [Source GitHub checks](https://github.com/jaspreet-jt-singh/Final_Year_Project/actions/runs/34711356993) passed. The Git-triggered release rebuild was kept unpromoted; the explicitly tested staged deployment was promoted instead. Automatic domain assignment was restored to its original enabled setting after that rebuild completed.
+- Vercel reported the Mumbai Python function at **476.48 MB**. The highest process high-water mark observed in the staged smoke logs was **484.6 MiB**, below the 1.6 GB acceptance threshold. This is not isolated per-request memory or a worst-case workload guarantee.
+- The first browser analysis took **4.02 seconds**, with the model initially `not_loaded`; runtime logs recorded initialization/inference in 3.83 and 3.72 seconds. This establishes a model-cold analysis, not a separately measured platform cold-instance startup.
+- Staged browser checks passed: real scan, processed-image/bounding-box alignment, saved-only totals, save/reload, empty-result recovery, invalid upload, all 72 searchable categories, keyboard use, and 360 px layout. Exactly three live recommendation requests returned Groq success with matching general/diabetes/high-blood-pressure labels; no additional provider requests were made during final public-address verification.
+- The public address passed a real scan and journal reload test. Both domains returned HTTP 200 for the homepage, static assets, health, and user-policy routes. The hosting account was verified as active Hobby; no paid plan or purchased domain was introduced.
+- Rollback target: `dpl_6coyY4Rhg8f4K3H3Ccds3GpbzAiQ` (`food-recognition-nutrition-jnmgem5fs-jaspreet-jt-singh.vercel.app`). Keep this deployment. To recover, use `vercel rollback dpl_6coyY4Rhg8f4K3H3Ccds3GpbzAiQ --scope jaspreet-jt-singh` and verify both domain assignments afterward.
+
+This release record and the README link update are documentation-only follow-ups; they do not change the deployed source commit above. Operational evidence is retained locally under `.deployment/publish-2026-09-12/` without credentials or uploaded photographs.
+
 ## Project settings
 
 - Framework: FastAPI. Root directory: repository root. Node: 24.x. Python: 3.12.

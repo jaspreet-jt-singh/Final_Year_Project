@@ -1,6 +1,8 @@
 # AI Food Recognition with Nutrition-Aware Recommendations
 
-[Live educational demo](https://food-recognition-nutrition.vercel.app)
+[Live educational demo](https://ai-food-recognition.vercel.app)
+
+The [previous address](https://food-recognition-nutrition.vercel.app) remains available without a redirect, including access to the browser journal saved at that address.
 
 Scan a food photo, review estimated portions, and explicitly save a meal to your browser-only journal. The app detects supported Indian foods, looks up database nutrition per 100 g, and offers general goal/health-context guidance. It does not measure food weight or provide medically validated dietary advice.
 
